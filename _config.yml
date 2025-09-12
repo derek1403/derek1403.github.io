@@ -1,0 +1,16 @@
+# My Jupyter Book config file
+title: "MB"
+author: "ABC Name"
+
+# ---------------------------------------
+# 設定 notebook 執行方式
+execute:
+  execute_notebooks: "off"   # 不執行 notebook，避免 Windows asyncio 問題
+
+# ---------------------------------------
+# HTML 設定
+html:
+  favicon: null
+  logo: null
+  theme:
+    name: "sphinx_book_theme"
