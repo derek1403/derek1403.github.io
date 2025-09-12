@@ -7,6 +7,17 @@ This is a simple file to help you get started and show off some syntax.
 
 ## What is MyST?
 
+```{math}
+:label: eq8
+
+\begin{align*}
+\frac{D \mathbf{u}}{Dt}&=-\frac{\nabla p}{\rho}+\nu\nabla^{2}\mathbf{u}+\mathbf{F} \\
+\frac{D\rho}{Dt}&=0 \\
+\frac{D\theta}{Dt}&=\frac{1}{c_p}(\frac{\theta}{T})\dot{Q} \\
+\end{align*}
+```
+
+
 MyST stands for "Markedly Structured Text". It
 is a slight variation on a flavor of markdown called "CommonMark" markdown,
 with small syntax extensions to allow you to write **roles** and **directives**
