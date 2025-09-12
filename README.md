@@ -7,5 +7,7 @@ PAIN Painful!
 新增筆記本:
 jupyter-book create Control-System
 要改_config.yml
+
+
 更新:
-jupyter-book build my-book --builder html
+jupyter-book build Control-System --builder html
