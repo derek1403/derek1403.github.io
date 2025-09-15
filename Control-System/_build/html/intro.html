@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to your Jupyter Book &#8212; MB</title>
+    <title>控制系統-目錄 &#8212; 控制系統</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="介紹控制系統" href="Introduction_of_control_systems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    <p class="title logo__title">MB</p>
+    <p class="title logo__title">控制系統</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -157,14 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to your Jupyter Book
+                    控制系統-目錄
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction_of_control_systems.html">介紹控制系統</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematical_Foundation.html">數學基礎</a></li>
 </ul>
 
     </div>
@@ -290,7 +289,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -301,11 +302,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>控制系統-目錄</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlines">Outlines</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -315,19 +324,119 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>控制系統-目錄<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>這是根據葉廷仁教授在<a class="reference external" href="https://ocw.nthu.edu.tw/ocw/index.php?page=course&amp;cid=133&amp;">清華大學公開課-控制系統一</a>上的內容，
+詳細和更準確的內容可以去參閱他的公開影片。</p>
+</div>
+<div class="section" id="outlines">
+<h2>Outlines<a class="headerlink" href="#outlines" title="Permalink to this heading">#</a></h2>
+<p><strong>Part I: 控制系統一</strong></p>
+<ul class="simple">
+<li><p><span class="xref std std-ref">介紹控制系統</span></p>
+<ul>
+<li><p>開迴路控制系統與閉迴路控制系統</p></li>
+<li><p>定義變數</p></li>
+<li><p>控制系統的主要目的</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">數學基礎</span></p>
+<ul>
+<li><p>Laplace Transform and Inverse Laplace Transform</p></li>
+<li><p>Impulse Response</p></li>
+<li><p>Bounded-input Bounded-output Stability</p></li>
+<li><p>Routh-Hurwitz Criterion</p></li>
+<li><p>Frequency Response</p></li>
+<li><p>Bode Plot</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">方塊圖(Block diagrams)</span></p>
+<ul>
+<li><p>The origins of the story</p></li>
+<li><p>Rayleigh-Barnard Convection</p></li>
+<li><p>Lorenz 63 model I (solutions)</p></li>
+<li><p>Lorenz 63 model II (stability analysis)</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">動態系統建模(Modeling dynamic system)</span></p>
+<ul>
+<li><p>The physical and mathematical background</p></li>
+<li><p>Single Scale</p></li>
+<li><p>Multi-scale interations</p></li>
+<li><p>HW3: Lorenz 96 model (calculating the Layapynov exponent) (10%)</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">控制系統的時域分析</span></p>
+<ul>
+<li><p>Introduction to Liouville equation</p></li>
+<li><p>Jacobian Matrix and Determinant</p></li>
+<li><p>Connections between Liouville equation and ensemble forecasts</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">根軌跡圖(Root locus analysis)</span></p>
+<ul>
+<li><p>Liouville equation as a function of initial state vs current state</p></li>
+<li><p>Solution to Liouville equation</p></li>
+<li><p>Liouville equation in 1st-order ODE case</p></li>
+<li><p>Liouville equation in Lorenz 63 model</p></li>
+<li><p>Challengs of applying Liouville Equation to weather forecast</p></li>
+<li><p>Liouville equation and Singular Value Decomposition</p></li>
+<li><p>HW4: Derivation of Liouville equation + LE in 1st-order ODE and Lorenz 84 model (20%)</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">控制系統的頻域分析</span></p>
+<ul>
+<li><p>Direct Method</p></li>
+<li><p>von Neumann method</p></li>
+<li><p>Energy Method</p></li>
+<li><p>Stability in Geophysical Fluid Dynamics (Shear instability and Eady problem)</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">控制系統的設計</span></p>
+<ul>
+<li><p>Generalized stability theorem</p></li>
+<li><p>Modal vs non-modal systems</p></li>
+<li><p>Reduced-dimension problems</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/goodplant1.png" /></p>
+<p><strong>Part II: 控制系統與大氣科學</strong></p>
+<ul class="simple">
+<li><p>Week 11: <strong>The predictability of a flow which possesses many scales of motions (Lorenz 1969)</strong></p>
+<ul>
+<li><p>Key Lecture: Week 8</p></li>
+</ul>
+</li>
+<li><p>Week 12: <strong>Stochastic Forcing of ENSO by the Intraseasonal Oscillation (Moore and Kleeman 1999)</strong></p>
+<ul>
+<li><p>Key Lecture: Week 9</p></li>
+</ul>
+</li>
+<li><p>Week 13: <strong>Ensemble-based sensitivity analysis (Hakim and Torn 2008)</strong></p>
+<ul>
+<li><p>Key Lecture: Week 9</p></li>
+</ul>
+</li>
+<li><p>Week 14: <strong>The Critical Role of Non-Normality in Partitioning Tropical and Extratropical Contributions to PNA Growth (Henderson et al. 2020)</strong></p>
+<ul>
+<li><p>Key Lecture: Week 9</p></li>
+</ul>
+</li>
+<li><p>Week 15: <strong>Physically Interpretable Neural Networks for the Geosciences: Applications to Earth System Variability (Toms et al. 2020)</strong></p>
+<ul>
+<li><p>Key Lecture: Week 10</p></li>
+</ul>
+</li>
+</ul>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction_of_control_systems.html">介紹控制系統</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematical_Foundation.html">數學基礎</a></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -362,11 +471,11 @@ It does not go in-depth into any particular topic - check out <a class="referenc
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="markdown.html"
+       href="Introduction_of_control_systems.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">介紹控制系統</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -377,6 +486,20 @@ It does not go in-depth into any particular topic - check out <a class="referenc
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlines">Outlines</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -386,7 +509,7 @@ It does not go in-depth into any particular topic - check out <a class="referenc
   <div class="footer-item">
     
 <p class="component-author">
-By ABC Name
+By PC YE
 </p>
 
   </div>

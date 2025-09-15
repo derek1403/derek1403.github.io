@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content with notebooks &#8212; 控制系統</title>
+    <title>介紹控制系統 &#8212; 控制系統</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Introduction_of_control_systems';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="介紹控制系統" href="Introduction_of_control_systems.html" />
+    <link rel="next" title="數學基礎" href="Mathematical_Foundation.html" />
+    <link rel="prev" title="控制系統-目錄" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,14 +160,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    控制系統-目錄
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Introduction_of_control_systems.html">介紹控制系統</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">介紹控制系統</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematical_Foundation.html">數學基礎</a></li>
 </ul>
 
     </div>
@@ -222,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/notebooks.ipynb" target="_blank"
+      <li><a href="_sources/Introduction_of_control_systems.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +305,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Content with notebooks</h1>
+    <h1>介紹控制系統</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -316,9 +315,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">控制系統可以簡單分為兩類:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">定義變數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">控制系統的主要目的有4個 :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">小補充</a></li>
 </ul>
             </nav>
         </div>
@@ -330,75 +330,99 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="content-with-notebooks">
-<h1>Content with notebooks<a class="headerlink" href="#content-with-notebooks" title="Permalink to this heading">#</a></h1>
-<p>You can also create content with Jupyter Notebooks. This means that you can include
-code blocks and their outputs in your book.</p>
-<div class="section" id="markdown-notebooks">
-<h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Permalink to this heading">#</a></h2>
-<p>As it is markdown, you can embed images, HTML, etc into your posts!</p>
-<p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg" /></p>
-<p>You can also <span class="math notranslate nohighlight">\(add_{math}\)</span> and</p>
-<div class="math notranslate nohighlight">
-\[
-math^{blocks}
-\]</div>
-<p>or</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>介紹控制系統<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<div class="section" id="id2">
+<h2>控制系統可以簡單分為兩類:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>開迴路控制系統(Open-loop control system) :</p>
+<p>任何變量在一開始就要想到並設定，不會自動調整輸出到目標，也就是干擾排除(disturbance rejection)能力弱。</p>
+</li>
+</ol>
+<p><img alt="" src="_images/001-001_openloop_control_system.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>通常一個方框會代表裡面有很多複雜子系統。</p>
+</div>
+<ol class="arabic" start="2">
+<li><p>閉迴路控制系統(Close-loop control system) :</p>
+<p>相較於開迴路控制系統多拉了回授的給輸入端，使輸出可以自動調整到目標，也就是干擾排除能力強。</p>
+</li>
+</ol>
+<p><img alt="" src="_images/001-002_closeloop_control_system.png" /></p>
+<ul class="simple">
+<li><p>受控場(Plant):可以是整個實體，也可以是一個部件。例如:冷氣機(熱交換機、馬達、壓縮機)、機器人(桿臂、關節、馬達)。</p></li>
+<li><p>感測器(Sensor):將輸出端的物理量回授給輸入端的電子信號，使<code class="docutils literal notranslate"><span class="pre">控制器</span></code>可以比較<code class="docutils literal notranslate"><span class="pre">輸入Reference</span> <span class="pre">input</span></code>與<code class="docutils literal notranslate"><span class="pre">回授訊號Feedback</span> <span class="pre">signal</span></code>的差異得出<code class="docutils literal notranslate"><span class="pre">error</span></code>。</p></li>
+<li><p>控制器(Controller):根據<code class="docutils literal notranslate"><span class="pre">輸入與回授訊號的差異error</span></code>給出<code class="docutils literal notranslate"><span class="pre">驅動訊號v</span></code>給<code class="docutils literal notranslate"><span class="pre">受控場</span></code>。</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>定義變數<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>這是一個簡化後的閉迴路控制系統，<span class="math notranslate nohighlight">\(G\)</span>是結合控制器與受控場的方框，<span class="math notranslate nohighlight">\(H\)</span>是將輸出端回授給輸入端的方框。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{aligned}
-\mbox{mean} la_{tex} \\ \\
-math blocks
-\end{aligned}
+\begin{align*}
+e&amp;=r-b \tag{eq.1.1}\\
+y&amp;=Ge \\
+b&amp;=Hy \\
+\end{align*}
 \end{split}\]</div>
-<p>But make sure you $Escape $your $dollar signs $you want to keep!</p>
+<p><img alt="" src="_images/001-003_one_feedback_loop_system.png" /></p>
+<ol class="arabic">
+<li><p>Input-Output relationship (<span class="math notranslate nohighlight">\(M\)</span>) :</p>
+<div class="math notranslate nohighlight">
+\[
+    M \overset{def}{=} \frac{y}{r} =\frac{G}{1+GH} \tag{eq.1.2}
+    \]</div>
+<p>說明輸入和輸出的縮放關係，如果沒有回饋(<span class="math notranslate nohighlight">\(H=0\)</span>)則<span class="math notranslate nohighlight">\(M \overset{def}{=} \frac{y}{r}=G \)</span>，如果有回饋則<span class="math notranslate nohighlight">\(M\)</span>會隨著<span class="math notranslate nohighlight">\(G\)</span>和<span class="math notranslate nohighlight">\(H\)</span>的頻率而變化。另外可以注意到有無回授的系統特性之一的<code class="docutils literal notranslate"><span class="pre">零點zeros</span></code>從不存在(或者說是無限遠處)變成<span class="math notranslate nohighlight">\(GH=-1\)</span>處。</p>
+</li>
+<li><p>Sensitivity (<span class="math notranslate nohighlight">\(S^{M}_{G}\)</span>) :</p>
+<div class="math notranslate nohighlight">
+\[
+    S^{M}_{G} \overset{def}{=} \frac{\frac{\partial M}{M}}{\frac{\partial G}{G}} =\frac{\partial M}{\partial G} \frac{G}{M} = \frac{1}{1+GH} \tag{eq.1.3}
+    \]</div>
+<p>說明該系統有多麼敏感，從定義可以得知是<code class="docutils literal notranslate"><span class="pre">輸入輸出縮放關變化的百分比</span></code>除以<code class="docutils literal notranslate"><span class="pre">系統性能變化的百分比</span></code>。改變一個單位的外在條件(<span class="math notranslate nohighlight">\(\Delta T \sim 1^\circ C\)</span>)，系統的性能可能改變很多(<span class="math notranslate nohighlight">\(10s \rightarrow 15s\)</span>)，所以我們應該會希望系統應該要非常不敏感。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>但是在我後面要提到的大氣控制就不一定會要求敏感度了，或許反而可以變成測量模式的工具。</p>
 </div>
-<div class="section" id="myst-markdown">
-<h2>MyST markdown<a class="headerlink" href="#myst-markdown" title="Permalink to this heading">#</a></h2>
-<p>MyST markdown works in Jupyter Notebooks as well. For more information about MyST markdown, check
-out <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST guide in Jupyter Book</a>,
-or see <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">the MyST markdown documentation</a>.</p>
+<p>要讓系統的敏感度降低透過<span class="math notranslate nohighlight">\(eq.1.3\)</span>看到可以增加<span class="math notranslate nohighlight">\(GH\)</span></p>
+</li>
+<li><p>抗干擾能力(<span class="math notranslate nohighlight">\(\frac{y}{disturbance}\)</span>)、抗雜訊能力(<span class="math notranslate nohighlight">\(\frac{y}{noise}\)</span>) :</p>
+<p>若抗干擾能力、抗雜訊能力趨近無限大，則表示系統很能抗干擾能力、抗雜訊能力。</p>
+<p>假設看閉迴路控制系統的圖片並將外部干擾移至控制器與受控場之間，我們可以得到:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{align*}
+    \frac{y}{d}&amp;=\frac{P}{1+HCP}   \tag{eq.1.4}\\
+    \frac{y}{n}&amp;=\frac{HCP}{1+HCP} \\
+    \end{align*}
+    \end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>得到eq1.4的方式可以想像輸出到輸入之間的關係，會直接經過的放在分子、會回授的放分母。</p>
 </div>
-<div class="section" id="code-blocks-and-outputs">
-<h2>Code blocks and outputs<a class="headerlink" href="#code-blocks-and-outputs" title="Permalink to this heading">#</a></h2>
-<p>Jupyter Book will also embed your code blocks and output in your book.
-For example, here’s some sample Matplotlib code:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
-</pre></div>
+</li>
+</ol>
 </div>
+<div class="section" id="id4">
+<h2>控制系統的主要目的有4個 :<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>改變系統的反應速度</p></li>
+<li><p>降低外部干擾的影響</p></li>
+<li><p>改變系統的穩定性</p></li>
+<li><p>降低系統性能對於特定參數的敏感度</p></li>
+</ul>
+<p>具體怎麼改變就是後面章節再談的事情了。</p>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">ii</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
-
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
-<span class="n">custom_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">.5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">1.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
+<div class="section" id="id5">
+<h2>小補充<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="_images/001-004_two_feedback_loop_system.png" /></p>
+<p>若是閉迴路控制系統外面還有閉迴路控制系統包著，變數可以計算得出 :</p>
+<div class="math notranslate nohighlight">
+\[
+M \overset{def}{=} \frac{y}{r} =\frac{G}{1+GH+GF} \tag{eq.1.5}
+\]</div>
 </div>
 </div>
 
@@ -433,20 +457,20 @@ with your book. For more information about this, see <a class="reference externa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Introduction_of_control_systems.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">介紹控制系統</p>
+        <p class="prev-next-title">控制系統-目錄</p>
       </div>
     </a>
     <a class="right-next"
-       href="markdown-notebooks.html"
+       href="Mathematical_Foundation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title">數學基礎</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -465,9 +489,10 @@ with your book. For more information about this, see <a class="reference externa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">控制系統可以簡單分為兩類:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">定義變數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">控制系統的主要目的有4個 :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">小補充</a></li>
 </ul>
   </nav></div>
 

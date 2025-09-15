@@ -1,6 +1,6 @@
 # My Jupyter Book config file
-title: "MB"
-author: "ABC Name"
+title: "控制系統"
+author: "PC YE"
 
 # ---------------------------------------
 # 設定 notebook 執行方式
@@ -14,3 +14,6 @@ html:
   logo: null
   theme:
     name: "sphinx_book_theme"
+
+
+
