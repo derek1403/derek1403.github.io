@@ -315,10 +315,45 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-and-inverse-laplace-transform">Laplace Transform and Inverse Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bold-plot">Bold Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse-response">Impulse Response 脈衝響應</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 物理意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-input-bounded-output-bibo-stability">Bounded Input Bounded Output (BIBO) Stability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1. 定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#routhhurwitz-stability-criterion">Routh–Hurwitz stability criterion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1. 目的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 方程式的根都在左半平面的<code class="docutils literal notranslate"><span class="pre">必要條件(並不充分)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3. 正常操作</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4. 特殊操作</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5. 用途</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-respound">Frequency Respound</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1. 假設與證明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2. 物理觀念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-domain-plot-of-g-s">3. Frequency Domain Plot of G(s)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquist-plot-polar-plot">Nyquist Plot (Polar Plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1. 主要概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2. 例子</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bode-plot">Bode Plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1. 主要概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2. 例子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3. 名詞定義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">補充</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-m-pade"><span class="math notranslate nohighlight">\([n/m]\)</span> Padé 的系統化推導（線性方程）</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -348,7 +383,7 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>線性非時變系統簡單來說就是可以將一個狀態分解成幾個組成的線性疊加，例如說可以分解成由外力引起的響應+由初始條件引起的響應=總體的響應。</p>
 <p>我覺得從控制的角度Laplace Transform是Fourier transform的升級版，相當於拓展了卷積定理，存在<span class="math notranslate nohighlight">\(e^{+t}\)</span>傅立葉會發散而拉普拉斯可以收斂。</p>
-<p>Laplace Transform拿到傳遞函數並在虛軸上求頻率響應:奈奎斯特圖(Nyquist plot)、伯德圖(Bold plot)。</p>
+<p>Laplace Transform拿到傳遞函數並在虛軸上求頻率響應:奈奎斯特圖(Nyquist plot)、波德圖(Bode plot)。</p>
 <p>Laplace Transform在數學上可以看作是矩量生成函數(moment generating function, MGF)的一種形式。</p>
 </div>
 <ol class="arabic simple" start="2">
@@ -404,7 +439,7 @@ document.write(`
 \[\begin{split}
 \begin{array}{|c|c|}
 \hline
-\text{時域函數 } f(t) &amp; \text{頻域函數 } F(s) = \mathcal{L}\{f(t)\} \\
+\text{時域函數 } f(t) &amp; \text{頻域函數 } F(s) = \mathcal{L}[f(t)] \\
 \hline
 1 &amp; \dfrac{1}{s}, \quad \Re(s) &gt; 0 \\
 \hline
@@ -524,7 +559,7 @@ $<span class="math notranslate nohighlight">\(
   \]</div>
 <ul>
 <li><p>解法2(Laplace) :</p>
-<p>丟到<span class="math notranslate nohighlight">\(\mathcal{L}\)</span>再<span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\)</span>丟回來。</p>
+<p>丟到<span class="math notranslate nohighlight">\(\mathcal{L}\)</span>利用導數關係再<span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\)</span>丟回來。</p>
 </li>
 </ul>
 <div class="math notranslate nohighlight">
@@ -550,190 +585,1180 @@ $<span class="math notranslate nohighlight">\(
 \[
   \underline{y(t) = \mathcal{L}^{-1}\{Y(s)\} = -\frac{1}{3} e^{-3t} - 2 e^{-2t} + \frac{1}{3},\quad t\ge 0}
   \]</div>
+<ul>
+<li><p>解法3(LTI) :</p>
+<p>將<code class="docutils literal notranslate"><span class="pre">總響應</span></code>分解成由<code class="docutils literal notranslate"><span class="pre">外力引起的響應(Zero-State</span> <span class="pre">response,</span> <span class="pre">ZSR)</span></code>與由<code class="docutils literal notranslate"><span class="pre">初始條件引起的響應(Zero-Input</span> <span class="pre">response,</span> <span class="pre">ZIR)</span></code>。</p>
+<div class="math notranslate nohighlight">
+\[
+    Total \quad response = ZSR + ZIR  
+    \]</div>
+<ul class="simple">
+<li><p>For ZSR</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{align*}
+    Y_{zs}(s) (s^2 + 5s + 6) &amp;= \frac{2}{s} \\
+    Y_{zs}(s) &amp;= \frac{\frac{1}{3}}{s} + \frac{-1}{s+2} + \frac{\frac{2}{3}}{s+3} \\\\
+    \end{align*}
+    \end{split}\]</div>
+<ul class="simple">
+<li><p>For ZIR</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{align*}
+    s(sY_{zi}(s)+2)-5 + 5(sY_{zi}(s)+2) + 6Y_{zi}(s) &amp;= 0 \\
+    Y_{zi}(s) &amp;= \frac{-2s-5}{s^2+5s+6} = \frac{-1}{s+2} + \frac{-1}{s+3}
+    \end{align*}
+    \end{split}\]</div>
+<ul class="simple">
+<li><p>Total response</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{align*}
+    y(t) &amp;= \mathcal{L}^{-1}[Y(s)] \\
+    &amp;= \mathcal{L}^{-1}[ Y_{zs}(s) + Y_{zi}(s) ]\\
+    &amp;= \mathcal{L}^{-1}[ \frac{\frac{1}{3}}{s} + \frac{-1}{s+2} + \frac{\frac{2}{3}}{s+3} + \frac{-1}{s+2} + \frac{-1}{s+3} ] \\
+    &amp;= \underline{ -\frac{1}{3} e^{-3t} - 2 e^{-2t} + \frac{1}{3},\quad t\ge 0}
+    \end{align*}
+    \end{split}\]</div>
+</li>
+</ul>
 </div>
-<div class="section" id="bold-plot">
-<h2>Bold Plot<a class="headerlink" href="#bold-plot" title="Permalink to this heading">#</a></h2>
+<div class="section" id="impulse-response">
+<h2>Impulse Response 脈衝響應<a class="headerlink" href="#impulse-response" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id2">
+<h3>1. 定義<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="_images/002-001_Impulse.png" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\delta_\Delta(t) = \dfrac{1}{\Delta}\Big( u_s\!\left(t+\tfrac{\Delta}{2}\right) - u_s\!\left(t-\tfrac{\Delta}{2}\right) \Big), \\[1.2ex]
+\delta(t) = \lim_{\Delta \to 0} \delta_\Delta(t), \\[1.2ex]
+\mathcal{L}[\delta(t)] = 1
+\end{cases}
+\end{split}\]</div>
+</div>
+<div class="section" id="id3">
+<h3>2. 物理意義<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>如果初始條件為<span class="math notranslate nohighlight">\(0\)</span>，並用Impulse來激發一個LTI系統，其Response為Transform function，因為<span class="math notranslate nohighlight">\(Y(s)=1*G(s)\)</span>，透過輸入Impulse的實驗可以得到該系統在各個頻率下的Impulse response也就是Transform function的微分方程式，電機相關系統常常透過這種方式做實驗可以得到Transform funciton。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta\)</span>要足夠小，具體來說就是要遠小於系統的反應時間。對於一般電機系統，瞬間高頻的電流訊號可以當作Impulse、對於大氣科學中一般的對流來說聲波可以當作Impulse。 [應該吧]</p></li>
+</ul>
+<p>###　3. 重點</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y(s)=U(s)G(s)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(G(s)\)</span>的分母為系統的特徵方程式</p></li>
+<li><p>Impulse Response(ZIR)的基底由<span class="math notranslate nohighlight">\(G(s)\)</span>的pole決定</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="bounded-input-bounded-output-bibo-stability">
+<h2>Bounded Input Bounded Output (BIBO) Stability<a class="headerlink" href="#bounded-input-bounded-output-bibo-stability" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="_images/002-002_BIBO_sdomain.png" /></p>
+<div class="section" id="id4">
+<h3>1. 定義<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align*}
+  |y(t)| &amp;= \left|\int_{0}^{\infty} u(1-\tau)\,g(\tau)\,d\tau\right|  \\
+  &amp;\le \int_{0}^{\infty} \left|u(1-\tau)\,g(\tau)\right|d\tau\  \\
+  &amp;\le M \int_{0}^{\infty} \left|g(\tau)\right|d\tau  \quad, \left|u(t) \right| \le  M \quad, M\in\mathbb{R} \\
+  \end{align*}
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+  \text{系統 BIBO 穩定}
+  \;\;\Longleftrightarrow\;\;
+  \exists Q &gt; 0 \;\; \text{s.t.} \;\;
+  \int_{0}^{\infty} \lvert g(\tau)\rvert \, d\tau \;\le\; Q
+  \;\;\Longleftrightarrow\;\;
+  \text{傳遞函數 } G(s) \text{ 的所有極點位於開左半平面 (LHP)}
+  \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(g(t)\)</span>：系統的脈衝響應</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_0^\infty |g(\tau)| d\tau &lt; \infty\)</span> ⇔ 脈衝響應 <strong>絕對可積</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(G(s)\)</span>：傳遞函數（<span class="math notranslate nohighlight">\(G(s)=\mathcal{L}[g(t)]\)</span></p></li>
+<li><p>開左半平面：<span class="math notranslate nohighlight">\(\Re(s) &lt; 0\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>2. 意義<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>BIBO Stability在衡量LIT系統是否穩定，如果穩定則代表<code class="docutils literal notranslate"><span class="pre">輸入在time</span> <span class="pre">domain中都沒有發散</span></code>，也就是s-domain中極點都在左半平面。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="routhhurwitz-stability-criterion">
+<h2>Routh–Hurwitz stability criterion<a class="headerlink" href="#routhhurwitz-stability-criterion" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id6">
+<h3>1. 目的<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Routh criterion 是控制理論中的一個對於LTI系統穩定的充分必要條件的判據，可以判斷線性系統其特徵方程式的根是否都有負的實部(都在左半平面才BIBO穩定)。</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>2. 方程式的根都在左半平面的<code class="docutils literal notranslate"><span class="pre">必要條件(並不充分)</span></code><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>方程式所有係數都要存在(None of the coefficients vanish)</p></li>
+<li><p>方程式所有係數都要同號(All coefficients have same sign)</p></li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h3>3. 正常操作<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  F(s)=a_6s^6+a_5s^5+a_4s^4+a_3s^3+a_2s^2+a_1s^1+a_0s^0
+  \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{|c|c|c|}
+  \hline
+  s^6 &amp; a_6 &amp; a_4 &amp; a_2 &amp; a_0 &amp; 0 \\
+  \hline
+  s^5 &amp; a_5 &amp; a_3 &amp; a_1 &amp; 0  &amp; 0\\
+  \hline
+  s^4 &amp; \frac{a_5a_4-a_6a_3} {a_5} = A &amp; \frac{a_5a_2-a_6a_1} {a_5} = B &amp; \frac{a_5a_0-a_60} {a_5} = a_0 &amp; \frac{a_50-a_60} {a_5}=0  &amp;  \\
+  \hline
+  s^3 &amp; \frac{Aa_3-a_5B} {A} = C &amp; \frac{Aa_1-a_5a_0} {A} = D &amp; \frac{A0-a_50} {A} = 0 &amp;   &amp;  \\
+  \hline
+  s^2 &amp; \frac{CB-AD} {C} = E &amp; \frac{Ca_0-A0} {C} = a_0 &amp; \frac{C0-A0} {C} = 0 &amp;  &amp;  \\
+  \hline
+  s^1 &amp; \frac{E0-Ca_0} {E} = F &amp; \frac{E0-C0} {E} = 0 &amp;  &amp;   &amp;  \\
+  \hline
+  s^0 &amp; \frac{Fa_0-E0} {F} = a_0 &amp;  &amp;  &amp;   &amp;  \\
+  \hline
+  \end{array}
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>檢查第一排<span class="math notranslate nohighlight">\(a_6 ,\quad a_5 ,\quad A ,\quad C ,\quad E ,\quad F ,\quad a_0\)</span>有沒有變號，如果沒有表示該方程式<span class="math notranslate nohighlight">\(F(s)\)</span>的根都在左半平面(BIBO穩定)，若沒有則看變號k次則有k個根在右半平面，例如<span class="math notranslate nohighlight">\((+,-,+,-,-,+,-)\)</span>變號5次則有5個根在右半平面;<span class="math notranslate nohighlight">\((+,-,-,-,-,-,+)\)</span>變號2次則有兩個根在右半平面。</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>4. 特殊操作<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>碰到<span class="math notranslate nohighlight">\(\frac{a}{0}\)</span>就在上一步的0假設趨近於0的<span class="math notranslate nohighlight">\(\epsilon\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+  F(s)=s^4+s^3+3s^2+3s+5=0
+  \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{|c|c|c|}
+  \hline
+  s^4 &amp; a_4=1 &amp; a_2=3 &amp; a_0=5  \\
+  \hline
+  s^3 &amp; a_3=1 &amp; a_1=3 &amp; 0 \\
+  \hline
+  s^2 &amp; 0 &amp; 5 &amp;   \\
+  \hline
+  s^1 &amp; \frac{-5} {0} &amp; 5 &amp;      \\
+  \hline
+  s^0 &amp;  &amp;  \\
+  \hline
+  \end{array}
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{|c|c|c|}
+  \hline
+  s^4 &amp; a_4=1 &amp; a_2=3 &amp; a_0=5  \\
+  \hline
+  s^3 &amp; a_3=1 &amp; a_1=3 &amp; 0 \\
+  \hline
+  s^2 &amp; \epsilon &amp; 5 &amp;   \\
+  \hline
+  s^1 &amp; \frac{3\epsilon-5} {\epsilon}= \frac{-5} {\epsilon}&amp; 0 &amp;     \\
+  \hline
+  s^0 &amp; \frac{\frac{-25} {\epsilon}} {\frac{-5} {\epsilon}}=5 &amp;  \\
+  \hline
+  \end{array}
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>變號2次有兩個根在右半平面，BIBO不穩定</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>碰到<span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>，在上一步找輔助多項式(Auxiliary Polynomial)，並對其<span class="math notranslate nohighlight">\(\frac{dA(s)}{ds}\)</span>繼續做判據。</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+  F(s)=s^5+3s^4+6s^3+6s^2+5s+3
+  \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{|c|c|c|}
+  \hline
+  s^5 &amp; 1 &amp; 6 &amp; 5  \\
+  \hline
+  s^4 &amp; 3 &amp; 6 &amp; 3 \\
+  \hline
+  s^3 &amp; 4 &amp; 4 &amp;   \\
+  \hline
+  s^2 &amp; 3 &amp; 3 &amp;   \\
+  \hline
+  s^1 &amp; 0 &amp; 0    \\
+  \hline
+  s^0 &amp; \frac{0-0}{0} &amp;  \\
+  \hline
+  \end{array}
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  A(s) = 3s^2+0s+3 \\
+  \frac{d}{ds}[ 3s^2+0s+3 ] =6s
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{|c|c|c|}
+  \hline
+  s^1 &amp; 6 &amp; 0    \\
+  \hline
+  s^0 &amp; 3 &amp;  \\
+  \hline
+  \end{array}
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>沒有變號，根都在左半平面(BIBO穩定)</p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>5. 用途<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>可以確定加了一個增益器K使系統能夠穩定的範圍。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  F(s)=s^3+2Ks^2+(K+3)s+5 = 0
+  \]</div>
+<ul class="simple">
+<li><p>穩定的必要條件個係數都有且同號</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \left\{
+  \begin{aligned}
+  &amp;K &gt; 0 \\
+  &amp;K &gt; -3
+  \end{aligned}
+  \right.
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>操作</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{|c|c|c|}
+  \hline
+  s^3 &amp; 1 &amp; K+3 &amp; 0 \\
+  \hline
+  s^2 &amp; 2K &amp; 5 &amp;   \\
+  \hline
+  s^1 &amp; \frac{2K(K+3)-5} {2K}&amp; 0 &amp;     \\
+  \hline
+  s^0 &amp; 5 &amp;  \\
+  \hline
+  \end{array}
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>第一直行<span class="math notranslate nohighlight">\((1,2K,\frac{2K(K+3)-5} {2K},5)\)</span>不能變號</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \left\{
+  \begin{aligned}
+  &amp;K &gt; 0 \\
+  &amp;2K^2+6K-5 &gt; 0
+  \end{aligned}
+  \right.
+  \;\Longrightarrow\;
+  \left\{
+  \begin{aligned}
+  &amp;K &gt; 0 \\
+  &amp;K &gt; \frac{-3+\sqrt{19}}{2} \quad or \quad K &lt; \frac{-3-\sqrt{19}}{2}
+  \end{aligned}
+  \right.
+  \end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">routh_hurwitz</span><span class="p">(</span><span class="n">coeffs</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Routh-Hurwitz 判準</span>
+<span class="sd">    coeffs: [a_n, a_{n-1}, ..., a_0]</span>
+<span class="sd">    eps: 避免除以零的小數</span>
+<span class="sd">    return: (first_column, is_stable)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># 每列長度</span>
+    <span class="n">routh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+
+    <span class="c1"># 填前兩列</span>
+    <span class="n">routh</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">coeffs</span><span class="p">[::</span><span class="mi">2</span><span class="p">])]</span> <span class="o">=</span> <span class="n">coeffs</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">routh</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">coeffs</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])]</span> <span class="o">=</span> <span class="n">coeffs</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># 遍歷每列</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">:</span>  <span class="c1"># 避免除以零</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">eps</span>
+
+            <span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span>
+
+        <span class="c1"># 如果整列都是 0 → 輔助多項式法</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">):</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span>
+            <span class="n">prev_poly</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">prev_poly</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="c1"># 建立上一列對應的多項式</span>
+            <span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">prev_poly</span><span class="p">)</span>
+            <span class="n">deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyder</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+            <span class="n">deriv_coeffs</span> <span class="o">=</span> <span class="n">deriv</span><span class="o">.</span><span class="n">coeffs</span>
+            <span class="c1"># 填入</span>
+            <span class="n">routh</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">deriv_coeffs</span><span class="p">)]</span> <span class="o">=</span> <span class="n">deriv_coeffs</span>
+
+    <span class="c1"># 取出第一列</span>
+    <span class="n">first_column</span> <span class="o">=</span> <span class="n">routh</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># 判斷是否穩定</span>
+    <span class="n">is_stable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">first_column</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">first_column</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">first_column</span><span class="p">,</span> <span class="n">is_stable</span>
+
+
+<span class="c1"># 測試案例</span>
+<span class="n">coeffs1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>   <span class="c1"># 會遇到 a/0 問題</span>
+<span class="n">coeffs2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># 會遇到 0/0 問題</span>
+
+<span class="k">for</span> <span class="n">coeffs</span> <span class="ow">in</span> <span class="p">[</span><span class="n">coeffs1</span><span class="p">,</span> <span class="n">coeffs2</span><span class="p">]:</span>
+    <span class="n">fc</span><span class="p">,</span> <span class="n">stable</span> <span class="o">=</span> <span class="n">routh_hurwitz</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;係數:&quot;</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Routh表第一列:&quot;</span><span class="p">,</span> <span class="n">fc</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;是否BIBO穩定:&quot;</span><span class="p">,</span> <span class="n">stable</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>係數: [1, 1, 3, 3, 5]
+Routh表第一列: [ 1.000000e+00  1.000000e+00  0.000000e+00 -4.999997e+06  5.000000e+00]
+是否BIBO穩定: False
+----
+係數: [1, 3, 6, 6, 5, 3]
+Routh表第一列: [1. 3. 4. 3. 3. 3.]
+是否BIBO穩定: True
+----
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="frequency-respound">
+<h2>Frequency Respound<a class="headerlink" href="#frequency-respound" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id11">
+<h3>1. 假設與證明<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>假設 :</p></li>
+</ol>
+<ul class="simple">
+<li><p>只討論輸入是由 sinusoidal wave 引起的訊號<span class="math notranslate nohighlight">\(u(t)=sin(\omega_0t) \cdot u_s(t) \)</span>在穩態的響應<span class="math notranslate nohighlight">\(y(t)\)</span></p></li>
+<li><p>假設 <span class="math notranslate nohighlight">\(G(s)\)</span> 是穩定的，因為<span class="math notranslate nohighlight">\(ZIR\)</span>的基底是<span class="math notranslate nohighlight">\(G(s)\)</span>所以最終會decay，因此只要看<span class="math notranslate nohighlight">\(ZSR\)</span>就好</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>證明 :</p></li>
+</ol>
+<ul class="simple">
+<li><p>這部份想證明輸入<span class="math notranslate nohighlight">\(u(t)\)</span>和輸出<span class="math notranslate nohighlight">\(y(t)\)</span>之間的關係</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+   y(t) = M sin(\omega_0t+\phi) \tag{eq.2.2}
+   \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \left\{
+   \begin{aligned}
+   &amp;M  &amp;=&amp; \sqrt{\Re[G(j\omega_0)]^2+\Im[G(j\omega_0)]^2}&amp;=\left| G(j\omega_0) \right| \\
+   &amp;\phi &amp;=&amp; tan^{-1}(\frac{\Im[G(j\omega_0)]}{\Re[G(j\omega_0)]}) &amp;=\angle G(j\omega_0)
+   \end{aligned}
+   \right.
+   \end{split}\]</div>
+<ul class="simple">
+<li><p>由<span class="math notranslate nohighlight">\(eq2.1\)</span>開始，將<span class="math notranslate nohighlight">\(G(s)\)</span>和<span class="math notranslate nohighlight">\(U(s)\)</span>以部分分式的形式，輸入<span class="math notranslate nohighlight">\(\mathcal{L}[sin(\omega_0t) \cdot u_s(t)]=\frac{\omega_0}{s^2+\omega_0^2}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \begin{aligned}
+   Y(s) &amp;= G(s)U(s) \\\\
+   &amp;=\sum\limits_{i=1}^{n} \frac{\alpha_i}{s+P_i}+\frac{\alpha_0}{s+j\omega_0}+\frac{\alpha_0^*}{s-j\omega_0} \\\\
+   \end{aligned}
+   \end{split}\]</div>
+<ul class="simple">
+<li><p>找出部分分式係數<span class="math notranslate nohighlight">\(\alpha_0\)</span>和與其共軛的<span class="math notranslate nohighlight">\(\alpha_0^*\)</span>，可以利用<span class="math notranslate nohighlight">\(\lim\limits_{s \to s_0} (s-s_0)Y(s)\)</span>找出分母為<span class="math notranslate nohighlight">\(s-s_0\)</span>項的係數</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \left\{
+   \begin{aligned}
+   &amp;\alpha_0  &amp;=&amp; \lim\limits_{s \to j\omega_0} [(s-j\omega_0)G(s) \frac{\omega_0}{(s-j\omega_0)(s+j\omega_0)}]&amp;=&amp; \frac{G(j\omega_0)}{2\cdot j\omega_0} \\
+   &amp;\alpha_0^* &amp;=&amp; \lim\limits_{s \to -j\omega_0}[ (s+j\omega_0)G(s) \frac{\omega_0}{(s-j\omega_0)(s+j\omega_0)}]&amp;=&amp; \frac{G(-j\omega_0)}{2\cdot -j\omega_0} \\
+   \end{aligned}
+   \right.
+   \end{split}\]</div>
+<ul class="simple">
+<li><p>因為前面有假設是在看穩態<span class="math notranslate nohighlight">\(t \to \infty \)</span>的響應，所以<span class="math notranslate nohighlight">\(G(s) \to 1\)</span>，在從<span class="math notranslate nohighlight">\(eq2.1\)</span>開始，把<span class="math notranslate nohighlight">\(U(s)\)</span>配成可以返回time domain的形式</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \begin{aligned}
+   Y(s)&amp;=G(s)U(s)=1 \cdot U(s) \\
+   &amp;=\frac{\alpha_0}{s+j\omega_0}+\frac{\alpha_0^*}{s-j\omega_0} \\
+   &amp;=\frac{(\alpha_0 + \alpha_0^*) s}{s^2+\omega_0^2}+\frac{(\alpha_0 - \alpha_0^*) j\omega_0}{s^2+\omega_0^2}
+   \end{aligned}
+   \end{split}\]</div>
+<ul class="simple">
+<li><p>可以注意到 <span class="math notranslate nohighlight">\((\alpha_0 + \alpha_0^*)\)</span>是<span class="math notranslate nohighlight">\(2\alpha_0\)</span>的實部且<span class="math notranslate nohighlight">\((\alpha_0 - \alpha_0^*)\)</span>是<span class="math notranslate nohighlight">\(2\alpha_0\)</span>的虛部。<span class="math notranslate nohighlight">\(2\Re[\alpha_0]=\Im[G(j\omega_0)]\)</span> 和 <span class="math notranslate nohighlight">\(2\Re[\alpha_0j]=\Re[G(j\omega_0)]\)</span>並求出<span class="math notranslate nohighlight">\(y(t)\)</span>，在利用合角公式使<span class="math notranslate nohighlight">\(y(t)\)</span>變成相對於<span class="math notranslate nohighlight">\(u(t)\)</span>放大<span class="math notranslate nohighlight">\(M\)</span>倍和相位移動<span class="math notranslate nohighlight">\(\phi\)</span>。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \begin{aligned}
+   y(t) =\mathcal{L}^{-1}[Y(s)]&amp;= 2\Re[\alpha_0]cos(\omega_0t)+2\Re[\alpha_0j]sin(\omega_0t) \\\\
+   &amp;\overset{\mathrm{def}}{=}M \cdot sin(\omega_0t+\phi)
+   \end{aligned}
+   \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \left\{
+   \begin{aligned}
+   &amp;M  &amp;=&amp; \sqrt{\Re[G(j\omega_0)]^2+\Im[G(j\omega_0)]^2}&amp;=\left| G(j\omega_0) \right| \\
+   &amp;\phi &amp;=&amp; tan^{-1}(\frac{\Im[G(j\omega_0)]}{\Re[G(j\omega_0)]}) &amp;=\angle G(j\omega_0)
+   \end{aligned}
+   \right.
+   \end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>其實對於相角差更好的定義方式是numpy中的 atan2(Im,Re) ，對於會經過虛軸的相角差才能找到真實值(這又何嘗不是一種折錯誤差呢:D)。
+例如:atan(1,-1)=3/4 pi，相反tan([1]/[-1])=-1/4 pi。</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>2. 物理觀念<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>一個LTI系統受到<code class="docutils literal notranslate"><span class="pre">旋波</span></code>激發，在穩態的輸出會是一樣的旋波振福放大<span class="math notranslate nohighlight">\(M\)</span>倍、相位前進(或落後)<span class="math notranslate nohighlight">\(\phi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(M\)</span>和<span class="math notranslate nohighlight">\(\phi\)</span>的改變油<code class="docutils literal notranslate"><span class="pre">系統(Transfer</span> <span class="pre">function</span> <span class="pre">,</span> <span class="pre">G)</span></code>來決定</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \left\{
+  \begin{aligned}
+  &amp;M  &amp;=\left| G(j\omega_0) \right| \\
+  &amp;\phi &amp;=\angle G(j\omega_0)
+  \end{aligned}
+  \right.
+  \end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>工程上想了解系統，有效的手段是給很多不同頻率的旋波，並看輸入和輸出之間的關係</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>大氣科學中有些現象可能不太適合用旋波去描述，可能就無法適用後面的Nyquist Plot和Bode Plot。
+大氣科學中的頻散波和波破碎過程用這套方式解釋可能是有爭議的，所以我也有點束手無策qq</p>
+</div>
+</div>
+<div class="section" id="frequency-domain-plot-of-g-s">
+<h3>3. Frequency Domain Plot of G(s)<a class="headerlink" href="#frequency-domain-plot-of-g-s" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>連結<code class="docutils literal notranslate"><span class="pre">系統</span></code>和<code class="docutils literal notranslate"><span class="pre">輸出輸入之間的關係</span></code>的直觀理解，增加對於非線性系統的理解(?)</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Nyquist Plot (Polar Plot)</p></li>
+<li><p><strong>Bode Plot</strong></p></li>
+<li><p>Magnitude-Phase Plot</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="nyquist-plot-polar-plot">
+<h2>Nyquist Plot (Polar Plot)<a class="headerlink" href="#nyquist-plot-polar-plot" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id13">
+<h3>1. 主要概念<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Nyquist Plot把 <span class="math notranslate nohighlight">\(G(j\omega)\)</span>畫在s-domain上使 <span class="math notranslate nohighlight">\(\omega \in (-\infty,\infty)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \in (-\infty,0)\)</span>和<span class="math notranslate nohighlight">\(\omega \in (0,\infty)\)</span>為上下半的曲線為鏡射關係，因為是<span class="math notranslate nohighlight">\(G(s^*)=G(s)^*\)</span>所以只需要對<span class="math notranslate nohighlight">\(\omega \in (0,\infty)\)</span>作圖即可</p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>2. 例子<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{1}{Ts+1}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \left\{
+  \begin{aligned}
+  \left| G(j\omega_0) \right| &amp;= \frac{1}{\sqrt{1+\omega^2T^2}}  \\
+  \angle G(j\omega_0)    &amp;=-tan^{-1}(\omega T)
+  \end{aligned}
+  \right.
+  \end{split}\]</div>
+<p><img alt="" src="_images/002-003_nyquist_plot1_1-2.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{T_2s+1}{T_1s+1}\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>需要分成 <span class="math notranslate nohighlight">\(T_2&gt;T_1\)</span> 和 <span class="math notranslate nohighlight">\(T_2&lt;T_1\)</span> 的情況去討論，但其實可以注意到就是一個不動點 <span class="math notranslate nohighlight">\((1,0)\)</span> 和一個會動的點<span class="math notranslate nohighlight">\((\frac{T_2}{T_1},0)\)</span> 所構成的圖形</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \left\{
+  \begin{aligned}
+  \left| G(j\omega_0) \right| &amp;= \sqrt{\frac{1+\omega^2T_2^2}{1+\omega^2T_1^2}}  \\
+  \angle G(j\omega_0)    &amp;=tan^{-1}(\omega T_2)-tan^{-1}(\omega T_1)
+  \end{aligned}
+  \right.
+  \end{split}\]</div>
+<p><img alt="" src="_images/002-004_nyquist_plot3-1_5-1.png" /></p>
+<p><img alt="" src="_images/002-005_nyquist_plot5-1_3-1.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{10}{s(s+1)}\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>可以注意到當 <span class="math notranslate nohighlight">\(\omega \to \infty \)</span> 時， <span class="math notranslate nohighlight">\(G(j\omega)=-10+0j\)</span> ，也就是存在漸進線 <span class="math notranslate nohighlight">\((\Re[s]=-10)\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{aligned}
+  G(j\omega) &amp;=\frac{10}{j\omega(j\omega+1)} \\\\
+  &amp;=\frac{10 (\omega^2+j\omega)}{(-\omega^2+j\omega)(\omega^2+j\omega)} \\\\
+  &amp;=\frac{-10\omega^2}{\omega^4+\omega^2}+\frac{-10\omega}{\omega^4+\omega^2}j
+  \end{aligned}
+  \end{split}\]</div>
+<p><img alt="" src="_images/002-006_nyquist_plot10_1-1-0.png" /></p>
+<ol class="arabic simple" start="4">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{10}{s(s+1)(s+2)}\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>在實係數的 <span class="math notranslate nohighlight">\(G(s)\)</span> 若想確定重根可以解出過實軸的 <span class="math notranslate nohighlight">\(\omega=\sqrt{2}\)</span> ，有 <span class="math notranslate nohighlight">\((\frac{-5}{3},0)\)</span> 的交點</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{aligned}
+  G(j\omega) &amp;=\frac{10 \cdot j\omega (j\omega-1)(j\omega-2)}{-\omega^2(-\omega^2-1)(-\omega^2-4)} \\\\
+  &amp;=\frac{-30\omega^2}{\omega^2(\omega^2+1)(\omega^2+4)}+\frac{-10\omega^3-20\omega}{\omega^2(\omega^2+1)(\omega^2+4)}j \\\\
+  &amp;=\frac{-30}{(\omega^2+1)(\omega^2+4)}+\frac{-10\omega^2-20}{\omega(\omega^2+1)(\omega^2+4)}j
+  \end{aligned}
+  \end{split}\]</div>
+<p><img alt="" src="_images/002-007_nyquist_plot10_1-3-2-0.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">plot_bode</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">w_min</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">w_max</span><span class="o">=</span><span class="mf">1e2</span><span class="p">,</span> <span class="n">num_points</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">dB</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">nyquist_plot</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">,</span> <span class="n">w_min</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">w_max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">points</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    繪製任意傳遞函數 G(s) 的 Bode Plot（幅值與相位）。</span>
+<span class="sd">    畫 Nyquist Plot，並標記 w -&gt; 0+ 與 w -&gt; ∞ 的位置</span>
+<span class="sd">    num: list, 分子多項式係數 (最高次在前)</span>
+<span class="sd">    den: list, 分母多項式係數 (最高次在前)</span>
+<span class="sd">    w_min, w_max: 頻率範圍 (rad/s)</span>
+<span class="sd">    points: 頻率採樣點數</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 建立傳遞函數</span>
+    <span class="n">system</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
 
-<span class="sd">    參數：</span>
-<span class="sd">    --------</span>
+    <span class="c1"># 頻率取樣 (對數刻度)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">w_min</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">w_max</span><span class="p">),</span> <span class="n">points</span><span class="p">)</span>
+
+    <span class="c1"># 計算頻率響應</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">freqresp</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+
+    <span class="c1"># Nyquist Plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Nyquist Curve&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="o">-</span><span class="n">H</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mirror&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 標記 -1 點</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;-1 point&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 標記 w -&gt; 0+</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s1">&#39;go&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\omega \to 0^+$&quot;</span><span class="p">)</span>
+    <span class="c1">#plt.text(H[0].real, H[0].imag, r&quot;$\omega \to 0^+$&quot;, fontsize=10, ha=&#39;right&#39;, color=&quot;green&quot;)</span>
+
+    <span class="c1"># 標記 w -&gt; ∞</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\omega \to \infty$&quot;</span><span class="p">)</span>
+    <span class="c1">#plt.text(H[-1].real, H[-1].imag, r&quot;$\omega \to \infty$&quot;, fontsize=10, ha=&#39;left&#39;, color=&quot;blue&quot;)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">],[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span><span class="s1">&#39;r&#39;</span> <span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Re[G(jω)]&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Im[G(jω)]&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Nyquist Plot&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="c1">#plt.axis(&quot;equal&quot;)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">num_part</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span>
+    <span class="n">den_part</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">den</span><span class="p">))</span>
+    <span class="c1">#plt.savefig(f&quot;nyquist_plot{num_part}_{den_part}.png&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+
+<span class="c1"># 🎯 範例：G(s) = 10 / (s^2 + 1s + 0)</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#nyquist_plot(num, den)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bode-plot">
+<h2>Bode Plot<a class="headerlink" href="#bode-plot" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id15">
+<h3>1. 主要概念<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bode Plot把 <span class="math notranslate nohighlight">\(G(j\omega)\)</span> 分成 <span class="math notranslate nohighlight">\(\left| G(j\omega)\right|\)</span> 和 <span class="math notranslate nohighlight">\(\angle G(j\omega)\)</span> 對輸入的頻率 <span class="math notranslate nohighlight">\(\omega\)</span> 上作圖，所以一組Bode Plot會有兩張圖。</p></li>
+<li><p>通常假設 <span class="math notranslate nohighlight">\(G(s)=K \frac{\prod\limits_{i=1}^{n} (s-z_i)}{\prod\limits_{i=1}^{n} (s-p_i)}\)</span> 所以log後計算只要處理加減法會比較方便</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \in (-\infty,0)\)</span>和<span class="math notranslate nohighlight">\(\omega \in (0,\infty)\)</span> 在 <span class="math notranslate nohighlight">\(\left| G(j\omega)\right|\)</span> 是相同的，而在 <span class="math notranslate nohighlight">\(\angle G(j\omega)\)</span> 相差一個負號(對於x軸對稱)，因為是<span class="math notranslate nohighlight">\(G(s^*)=G(s)^*\)</span>所以只需要對<span class="math notranslate nohighlight">\(\omega \in (0,\infty)\)</span>作圖即可</p></li>
+<li><p>Bode Plot的第一張圖<span class="math notranslate nohighlight">\(y:\left| G(j\omega)\right| ,x: \omega\)</span> 可以看到LTI系統對於輸入頻率的響應放大<span class="math notranslate nohighlight">\(\left| G(j\omega)\right|\)</span>。第二張圖<span class="math notranslate nohighlight">\(y:\angle G(j\omega) ,x: \omega\)</span> 可以看到LTI系統對於輸入頻率的響應延遲 <span class="math notranslate nohighlight">\(\angle G(j\omega)\)</span></p></li>
+<li><p>碰到 <span class="math notranslate nohighlight">\(G(j\omega)\)</span> 的<code class="docutils literal notranslate"><span class="pre">zeros零點</span></code>或<code class="docutils literal notranslate"><span class="pre">poles極點</span></code>，Bode Plot的第一張圖在xy軸都是log座標下的斜率會增加1或減少1的 <span class="math notranslate nohighlight">\(\frac{\left| G(j\omega)\right|}{\omega}\)</span> 斜率，工程上會說 <span class="math notranslate nohighlight">\(\pm 20dB/dec \)</span>。Bode Plot的第二張圖相位會增加 <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> 或減少 <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>工程上常常把 <span class="math notranslate nohighlight">\(\left| G(j\omega)\right|\)</span> 使用log軸並改成dB為單位，但是我在這裡只會使用log軸，因為加入dB討論我覺得只是徒增混亂。
+仍保留使用log是因為Transfer function通常是由相乘(或連乘函數)所組成，所以log座標下只要把兩個響應相加就會是合在一起的響應，更直觀理解。
+工程上y軸常常用dB、x軸常常用decade來表示。 注意到:10dB/dec=1</p>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>2. 例子<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(G(s)=k \quad , k \)</span> is constant</p></li>
+</ol>
+<ul class="simple">
+<li><p>量值放大K倍，相位沒有改變</p></li>
+</ul>
+<p><img alt="" src="_images/002-008_Bode_plot_5_1.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(G(s)=s^n  \)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>量值斜率為<span class="math notranslate nohighlight">\(n\)</span>，相位位移<span class="math notranslate nohighlight">\(\frac{\pi}{2}n\)</span></p></li>
+</ul>
+<p><img alt="" src="_images/002-009_Bode_plot_sn_1.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\(G(s)=sT+1  \)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T\)</span>會影響轉折點，用手處理Bode Plot都會要求把常數變成1，所以處理 <span class="math notranslate nohighlight">\(G(s)=sT+2\)</span> 會先變成 <span class="math notranslate nohighlight">\(G(s)=2(s\frac{T}{2}+1)\)</span> ，也就是量值放大2倍、相位與原先的 <span class="math notranslate nohighlight">\(G(s)=sT+1 \)</span> 一樣。</p></li>
+</ul>
+<p><img alt="" src="_images/002-010_Bode_plot_Ts%2B1_1.png" /></p>
+<ol class="arabic simple" start="4">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{1}{sT+1}  \)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>配合第3個例子可以構想到， <span class="math notranslate nohighlight">\(G(s)=\frac{1}{(sT+1)^2}\)</span>量值平方、相位與原先的 <span class="math notranslate nohighlight">\(G(s)=\frac{1}{sT+1} \)</span> 放大2倍。</p></li>
+</ul>
+<p><img alt="" src="_images/002-011_Bode_plot_1_5-1.png" /></p>
+<ol class="arabic simple" start="5">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{\omega_n^2}{s^2+2\zeta\omega_ns+\omega_n^2}  \)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>這是個標準常見的2階系統， <span class="math notranslate nohighlight">\(\omega_n\)</span> 表示該系統的自然震盪頻率、 <span class="math notranslate nohighlight">\(\zeta\)</span> 為該系統的阻尼比 <span class="math notranslate nohighlight">\((0\le \zeta \le 1)\)</span></p></li>
+<li><p>當系統阻尼比趨近於0 <span class="math notranslate nohighlight">\((\zeta \to 0)\)</span> ，則 <span class="math notranslate nohighlight">\(\left| G(j\omega_n) \right| \to \infty\)</span></p></li>
+</ul>
+<p><img alt="" src="_images/002-012_Bode_plot_wn_1-2zetawn-wn2.png" /></p>
+<ul class="simple">
+<li><p>上圖顯示一輸入至系統 <span class="math notranslate nohighlight">\(G\)</span> ，其輸出的<code class="docutils literal notranslate"><span class="pre">振幅比</span></code>和<code class="docutils literal notranslate"><span class="pre">相位差</span></code>隨輸入的頻率不同而改變，如果拿示波器測量</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{|c|c|c|}
+  \hline
+   &amp; \omega_{input} \ll \omega_n  &amp;   &amp; \omega_{input}\sim \omega_n &amp;   &amp; \omega_{input} \gg \omega_n \\
+  \hline
+  M   &amp; 1 &amp; &gt;1 &amp; Max &amp;  &amp; 0\\
+  \hline
+  \phi &amp; 0 &amp; &lt;0  &amp; -\frac{\pi}{2}  &amp; &lt;-\frac{\pi}{2}  &amp;  \sim -\pi\\
+  \hline
+  \end{array}
+  \end{split}\]</div>
+<ol class="arabic simple" start="6">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{s^2+2\zeta\omega_ns+\omega_n^2}{\omega_n^2} \)</span></p></li>
+</ol>
+<p><img alt="" src="_images/002-013_Bode_plot_1-0.4-4_4.png" /></p>
+<ol class="arabic simple" start="7">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{s^2+2\zeta_z\omega_ns+\omega_n^2}{s^2+2\zeta_p\omega_ns+\omega_n^2} \)</span></p></li>
+</ol>
+<p><img alt="" src="_images/002-014_Bode_plot_1-0.4-4_1-4.0-4.png" /></p>
+<ul class="simple">
+<li><p>當 <span class="math notranslate nohighlight">\(\zeta_p &gt; \zeta_z\)</span> 會是凹(notch)的量值，<span class="math notranslate nohighlight">\(\zeta_p &lt; \zeta_z\)</span> 則為凸的量值</p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta_z\)</span> 決定了notch的寬窄，當 <span class="math notranslate nohighlight">\(\zeta_z\)</span> 大則寬、 <span class="math notranslate nohighlight">\(\zeta_z\)</span> 小則窄</p></li>
+<li><p>工程中因為台灣的電壓頻率是110V、60Hz的，為了不讓外界影響器具都會給定一個濾波器，讓<code class="docutils literal notranslate"><span class="pre">特定頻率</span></code>的輸出為0，而非特定頻率則輸出1</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>讀到這裡我想起大氣窗也是這種性質，是不是在模式計算中很消耗資源的輻射計算可以透過給定一個相當複雜的transfer function來加速運算呢?</p>
+</div>
+<ol class="arabic simple" start="8">
+<li><p><span class="math notranslate nohighlight">\(G(s)=e^{-sT} \)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>可以做一點輕鬆地推導</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  G(j\omega) = e^{-j\omega T}=-\cos(\omega T)+j\sin(\omega T)
+  \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \left\{
+  \begin{aligned}
+  &amp;\left| G(j\omega) \right|  &amp;=&amp; \sqrt{\cos^2(\omega T)+\sin^2(\omega T)}&amp;=&amp;1 \\
+  &amp;\angle G(j\omega) &amp;=&amp; \tan^{-1}(\frac{\sin(\omega T)}{\cos(\omega T)}) &amp;=&amp; \omega T \bmod 2\pi
+  \end{aligned}
+  \right.
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>我們程式繪圖運行transfer function定義時希望能配成分子分母的多項式形式。數值上如果想要將一個函數展開會用泰勒展開(Taylor expansion)，但是這並沒有配成分子分母都是多項式的形式，所以可以使用Pade approximant，想法上也很簡單</p></li>
+</ul>
+<ol class="arabic simple" start="9">
+<li><p><span class="math notranslate nohighlight">\(G(s)=\frac{10(s+10)}{s(s+2)(s+5)} \)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>定義了一些輸入的頻率 <span class="math notranslate nohighlight">\(\omega_g\)</span> 和 <span class="math notranslate nohighlight">\(\omega_p\)</span></p></li>
+</ul>
+<p><img alt="" src="_images/002-015_Bode_plot_10-100_1-7-10-0.png" /></p>
+</div>
+<div class="section" id="id17">
+<h3>3. 名詞定義<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Gain-crossover frequency <span class="math notranslate nohighlight">\(\omega_g\)</span> :特定的輸入頻率使的輸出的量值為<span class="math notranslate nohighlight">\(1\)</span>， <span class="math notranslate nohighlight">\(\left| G(j\omega_g) \right|=1\)</span></p></li>
+<li><p>Phase-crossover frequency <span class="math notranslate nohighlight">\(\omega_p\)</span> :特定的輸入頻率使的輸出的相位差為 <span class="math notranslate nohighlight">\(-\pi\)</span> ， <span class="math notranslate nohighlight">\(\angle G(j\omega_p) =-\pi\)</span></p></li>
+<li><p>Minimum-phase transger functions(極小相位系統):極點、零點都在s-domain中的左半平面。透過振幅響應就足以完整描述系統在時域和頻域的行為</p></li>
+<li><p>Non-minimum-phase transger functions(非極小相位系統):存在一個以上的極點、零點在s-domain中的右半平面。通常代表不穩定和不好預測。</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_bode_fixed_asymptote</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">w_min</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">w_max</span><span class="o">=</span><span class="mf">1e2</span><span class="p">,</span> <span class="n">num_points</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                              <span class="n">dB</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">logy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">asymptotes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                              <span class="n">fc_tol_rel</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">fc_tol_abs</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span>
+                              <span class="n">show_individual_breaks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                              <span class="n">asym_alpha</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">asym_linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">asym_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    繪製以 rad/s 為主軸的 Bode plot（幅值+相位），並可選擇繪出漸進線。</span>
+
+<span class="sd">    參數:</span>
+<span class="sd">    -------</span>
 <span class="sd">    G : scipy.signal.TransferFunction</span>
-<span class="sd">        傳遞函數物件，例如 signal.TransferFunction([1, T], [1])</span>
+<span class="sd">        傳遞函數 (s-domain)，注意 scipy 的 TransferFunction 使用 s 的係數</span>
 <span class="sd">    w_min, w_max : float</span>
 <span class="sd">        頻率範圍 (rad/s)</span>
 <span class="sd">    num_points : int</span>
-<span class="sd">        頻率取樣點數</span>
+<span class="sd">        頻率採樣點數</span>
 <span class="sd">    dB : bool</span>
-<span class="sd">        True 則幅值以 dB 顯示，False 則顯示線性值</span>
+<span class="sd">        True -&gt; 顯示 dB，False -&gt; 顯示線性幅值</span>
+<span class="sd">    logy : bool</span>
+<span class="sd">        True -&gt; 當線性幅值時用對數 y 軸 (10^n)。若 dB=True 則忽略此參數。</span>
+<span class="sd">    asymptotes : bool</span>
+<span class="sd">        是否繪製漸進線（break-frequency-based）</span>
+<span class="sd">    fc_tol_rel / fc_tol_abs: float</span>
+<span class="sd">        tolerance for grouping nearly-equal break freqs</span>
+
+<span class="sd">    show_individual_breaks: bool</span>
+<span class="sd">        draw each root&#39;s vertical marker (useful to see cancellations)</span>
+
+<span class="sd">    asym_alpha : float</span>
+<span class="sd">        漸進線透明度</span>
+<span class="sd">    asym_linestyle, asym_color : style for asymptote lines</span>
+
+<span class="sd">    ------</span>
+<span class="sd">    returns info dict with zeros/poles and grouped events</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># 頻率軸</span>
+    <span class="c1"># frequency array (rad/s)</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">w_min</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">w_max</span><span class="p">),</span> <span class="n">num_points</span><span class="p">)</span>
 
-    <span class="c1"># 計算頻率響應</span>
-    <span class="n">w</span><span class="p">,</span> <span class="n">mag</span><span class="p">,</span> <span class="n">phase</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>  <span class="c1"># mag 已經是 dB，phase 是度</span>
+    <span class="c1"># extract numerator/denominator arrays if TransferFunction provided</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">):</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">num</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+        <span class="n">den</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">den</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num</span><span class="p">,</span> <span class="n">den</span> <span class="o">=</span> <span class="n">G</span>
 
-    <span class="c1"># 幅值處理</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">dB</span><span class="p">:</span>
-        <span class="n">mag</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">mag</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># 轉回線性</span>
+    <span class="c1"># exact bode (mag in dB, phase in deg)</span>
+    <span class="n">w_out</span><span class="p">,</span> <span class="n">mag_db</span><span class="p">,</span> <span class="n">phase</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">bode</span><span class="p">((</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">),</span> <span class="n">w</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
 
-    <span class="c1"># 畫幅值圖</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">mag</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+    <span class="c1"># compute zeros/poles in rad/s</span>
+    <span class="n">z</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">tf2zpk</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+    <span class="n">z_wc_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+    <span class="n">p_wc_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+
+    <span class="c1"># count origin multiplicity (wc == 0)</span>
+    <span class="n">z_origin_count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">z_wc_all</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">p_origin_count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">p_wc_all</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">origin_slope</span> <span class="o">=</span> <span class="n">z_origin_count</span> <span class="o">-</span> <span class="n">p_origin_count</span>  <span class="c1"># in &quot;exponent&quot; (linear), dB/dec = 20 * origin_slope</span>
+
+    <span class="c1"># gather raw events for wc &gt; 0: each zero =&gt; +1, each pole =&gt; -1</span>
+    <span class="n">events_raw</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">wc</span> <span class="ow">in</span> <span class="n">z_wc_all</span><span class="p">:</span>
+        <span class="n">wc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">wc</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">wc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">events_raw</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">wc</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">wc</span> <span class="ow">in</span> <span class="n">p_wc_all</span><span class="p">:</span>
+        <span class="n">wc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">wc</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">wc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">events_raw</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">wc</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">events_raw</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># group events by proximity (tolerance)</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">events_raw</span><span class="p">:</span>
+        <span class="n">cur_wc</span><span class="p">,</span> <span class="n">cur_delta</span> <span class="o">=</span> <span class="n">events_raw</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">wc</span><span class="p">,</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">events_raw</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">tol</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">fc_tol_abs</span><span class="p">,</span> <span class="n">fc_tol_rel</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="n">cur_wc</span><span class="p">,</span> <span class="n">wc</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">wc</span> <span class="o">-</span> <span class="n">cur_wc</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tol</span><span class="p">:</span>
+                <span class="n">cur_delta</span> <span class="o">+=</span> <span class="n">delta</span>
+                <span class="n">cur_wc</span> <span class="o">=</span> <span class="p">(</span><span class="n">cur_wc</span> <span class="o">*</span> <span class="n">count</span> <span class="o">+</span> <span class="n">wc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">grouped</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur_wc</span><span class="p">,</span> <span class="n">cur_delta</span><span class="p">))</span>
+                <span class="n">cur_wc</span><span class="p">,</span> <span class="n">cur_delta</span> <span class="o">=</span> <span class="n">wc</span><span class="p">,</span> <span class="n">delta</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">grouped</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur_wc</span><span class="p">,</span> <span class="n">cur_delta</span><span class="p">))</span>
+
+    <span class="c1"># Build piecewise asymptote in dB using continuity at each breakpoint</span>
+    <span class="n">asym_db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">base_w</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">base_db</span> <span class="o">=</span> <span class="n">mag_db</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">slope_count</span> <span class="o">=</span> <span class="n">origin_slope</span>
+    <span class="n">slope_db_per_dec</span> <span class="o">=</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="n">slope_count</span>
+
+    <span class="n">seg_starts_w</span> <span class="o">=</span> <span class="p">[</span><span class="n">base_w</span><span class="p">]</span>
+    <span class="n">seg_starts_db</span> <span class="o">=</span> <span class="p">[</span><span class="n">base_db</span><span class="p">]</span>
+    <span class="n">seg_slope_db</span> <span class="o">=</span> <span class="p">[</span><span class="n">slope_db_per_dec</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">wc</span><span class="p">,</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">wc</span> <span class="o">&lt;=</span> <span class="n">base_w</span><span class="p">:</span>
+            <span class="n">slope_count</span> <span class="o">+=</span> <span class="n">delta</span>
+            <span class="n">slope_db_per_dec</span> <span class="o">=</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="n">slope_count</span>
+            <span class="n">seg_slope_db</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">slope_db_per_dec</span>
+            <span class="k">continue</span>
+        <span class="n">db_at_wc</span> <span class="o">=</span> <span class="n">base_db</span> <span class="o">+</span> <span class="n">slope_db_per_dec</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">wc</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">base_w</span><span class="p">))</span>
+        <span class="n">seg_starts_w</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wc</span><span class="p">)</span>
+        <span class="n">seg_starts_db</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">db_at_wc</span><span class="p">)</span>
+        <span class="n">slope_count</span> <span class="o">+=</span> <span class="n">delta</span>
+        <span class="n">slope_db_per_dec</span> <span class="o">=</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="n">slope_count</span>
+        <span class="n">seg_slope_db</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slope_db_per_dec</span><span class="p">)</span>
+        <span class="n">base_w</span> <span class="o">=</span> <span class="n">wc</span>
+        <span class="n">base_db</span> <span class="o">=</span> <span class="n">db_at_wc</span>
+
+    <span class="n">seg_boundaries</span> <span class="o">=</span> <span class="n">seg_starts_w</span> <span class="o">+</span> <span class="p">[</span><span class="n">w</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seg_starts_w</span><span class="p">)):</span>
+        <span class="n">w_start</span> <span class="o">=</span> <span class="n">seg_starts_w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">w_end</span> <span class="o">=</span> <span class="n">seg_boundaries</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span> <span class="o">&gt;=</span> <span class="n">w_start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">w</span> <span class="o">&lt;</span> <span class="n">w_end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">asym_db</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">seg_starts_db</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">seg_slope_db</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">w_start</span><span class="p">))</span>
+
+    <span class="n">nan_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">asym_db</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">nan_mask</span><span class="p">):</span>
+        <span class="n">last_i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seg_starts_w</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">asym_db</span><span class="p">[</span><span class="n">nan_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">seg_starts_db</span><span class="p">[</span><span class="n">last_i</span><span class="p">]</span> <span class="o">+</span> <span class="n">seg_slope_db</span><span class="p">[</span><span class="n">last_i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">nan_mask</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">seg_starts_w</span><span class="p">[</span><span class="n">last_i</span><span class="p">]))</span>
+
+    <span class="c1"># Convert asymptote to linear magnitude if needed</span>
+    <span class="n">asym_linear</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">asym_db</span> <span class="o">/</span> <span class="mf">20.0</span><span class="p">)</span>
+    <span class="n">mag_linear</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">mag_db</span> <span class="o">/</span> <span class="mf">20.0</span><span class="p">)</span>
+
+    <span class="c1"># ---------- plotting ----------</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">dB</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">mag_db</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact (dB)&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">asymptotes</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">asym_db</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">asym_linestyle</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">asym_alpha</span><span class="p">,</span>
+                         <span class="n">lw</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">asym_color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asymptote (dB)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnitude (dB)&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">logy</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">mag_linear</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">asymptotes</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">asym_linear</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">asym_linestyle</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">asym_alpha</span><span class="p">,</span>
+                           <span class="n">lw</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">asym_color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asymptote&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|G(j\omega)|$&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">mag_linear</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact (linear)&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">asymptotes</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">asym_linear</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">asym_linestyle</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">asym_alpha</span><span class="p">,</span>
+                             <span class="n">lw</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">asym_color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asymptote (linear)&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|G(j\omega)|$ (linear)&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show_individual_breaks</span><span class="p">:</span>
+        <span class="n">ylim</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">wc</span> <span class="ow">in</span> <span class="n">z_wc_all</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">wc</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">w_min</span> <span class="o">&lt;=</span> <span class="n">wc</span> <span class="o">&lt;=</span> <span class="n">w_max</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">wc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">wc</span><span class="p">,</span> <span class="n">ylim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">wc</span> <span class="ow">in</span> <span class="n">p_wc_all</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">wc</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">w_min</span> <span class="o">&lt;=</span> <span class="n">wc</span> <span class="o">&lt;=</span> <span class="n">w_max</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">wc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">wc</span><span class="p">,</span> <span class="n">ylim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Frequency $\omega$ (rad/s)&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;|G(jω)|&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39; [dB]&#39;</span> <span class="k">if</span> <span class="n">dB</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Angular frequency $\omega$ (rad/s)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bode Magnitude&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
-    <span class="c1"># 畫相位圖</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">phase</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Frequency $\omega$ (rad/s)&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Phase (deg)&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bode Phase&#39;</span><span class="p">)</span>
+    <span class="c1">#plt.savefig(f&#39;Bode_plot_magnitude_{num_part}_{den_part}.png&#39;)</span>
+
+    <span class="c1"># ===== Phase plot =====</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">phase</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Angular frequency $\omega$ (rad/s)&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Phase (deg)&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Bode Phase (exact)&#39;</span><span class="p">)</span>
+
+    <span class="c1"># rad/s &lt;-&gt; Hz 轉換</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rads_to_hz</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hz_to_rads</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span>
+
+    <span class="c1"># 副軸 (Hz)</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">secondary_xaxis</span><span class="p">(</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">functions</span><span class="o">=</span><span class="p">(</span><span class="n">rads_to_hz</span><span class="p">,</span> <span class="n">hz_to_rads</span><span class="p">))</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency f (Hz)&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">((</span><span class="s2">&quot;outward&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Bode_plot_phase_</span><span class="si">{</span><span class="n">num_part</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">den_part</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1"># ===== 使用範例 =====</span>
-<span class="c1"># G(s) = 1 + sT, 假設 T = 1</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">]</span>   <span class="c1"># 分子係數</span>
-<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>      <span class="c1"># 分母係數</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+    <span class="c1"># debug info</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;zeros&#39;</span><span class="p">:</span> <span class="n">z</span><span class="p">,</span> <span class="s1">&#39;poles&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;gain_k&#39;</span><span class="p">:</span> <span class="n">k</span><span class="p">,</span>
+        <span class="s1">&#39;z_wc_all&#39;</span><span class="p">:</span> <span class="n">z_wc_all</span><span class="p">,</span> <span class="s1">&#39;p_wc_all&#39;</span><span class="p">:</span> <span class="n">p_wc_all</span><span class="p">,</span>
+        <span class="s1">&#39;origin_counts&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;zeros&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">z_origin_count</span><span class="p">),</span> <span class="s1">&#39;poles&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">p_origin_count</span><span class="p">)},</span>
+        <span class="s1">&#39;events_raw&#39;</span><span class="p">:</span> <span class="n">events_raw</span><span class="p">,</span>
+        <span class="s1">&#39;grouped_events&#39;</span><span class="p">:</span> <span class="n">grouped</span><span class="p">,</span>
+        <span class="s1">&#39;segment_starts_w&#39;</span><span class="p">:</span> <span class="n">seg_starts_w</span><span class="p">,</span>
+        <span class="s1">&#39;segment_starts_db&#39;</span><span class="p">:</span> <span class="n">seg_starts_db</span><span class="p">,</span>
+        <span class="s1">&#39;segment_slope_db&#39;</span><span class="p">:</span> <span class="n">seg_slope_db</span>
+    <span class="p">}</span>
 
-<span class="n">plot_bode</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">dB</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># 線性幅值</span>
-<span class="n">plot_bode</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">dB</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># dB 幅值</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;zeros (z):&quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;poles (p):&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;zero wc (rad/s):&quot;</span><span class="p">,</span> <span class="n">z_wc_all</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pole wc (rad/s):&quot;</span><span class="p">,</span> <span class="n">p_wc_all</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;origin zero count:&quot;</span><span class="p">,</span> <span class="n">z_origin_count</span><span class="p">,</span> <span class="s2">&quot; origin pole count:&quot;</span><span class="p">,</span> <span class="n">p_origin_count</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;raw events (wc,+1/-1):&quot;</span><span class="p">,</span> <span class="n">events_raw</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;grouped events (wc_center, net delta):&quot;</span><span class="p">,</span> <span class="n">grouped</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">info</span>
+
+<span class="c1"># ===== 使用範例 =====</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TransferFunction</span>
+
+
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">wn</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">zeta</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+    <span class="c1"># 2接</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">*</span><span class="n">wn</span> <span class="p">,</span> <span class="n">wn</span><span class="o">**</span><span class="mi">2</span> <span class="p">]</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="n">wn</span> <span class="p">,</span> <span class="n">wn</span><span class="o">**</span><span class="mi">2</span> <span class="p">]</span>
+
+    <span class="c1"># Pade</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">T</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">12</span> <span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span>  <span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">12</span> <span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">num_part</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span>
+    <span class="n">den_part</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">den</span><span class="p">))</span>
+
+
+    <span class="c1">#G = TransferFunction([wn**2], [1 , 2*zeta*wn , wn**2 ])</span>
+    <span class="c1">#G = TransferFunction([T , 1], [1 ])</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+
+    <span class="c1">#需要繪圖跑程式再打開</span>
+    <span class="c1">#info = plot_bode_fixed_asymptote(G, w_min=1e-1, w_max=1e2, dB=False, logy=True, asymptotes=True)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/c09ed2c6044cd88642de3b81e9051c40057d26d59c50426d23152f0fdb89852c.png" src="_images/c09ed2c6044cd88642de3b81e9051c40057d26d59c50426d23152f0fdb89852c.png" />
-<img alt="_images/5b3deaacb635ce794cadf8a2b800822e565346d78c0be88ecfa44a653c4eaf58.png" src="_images/5b3deaacb635ce794cadf8a2b800822e565346d78c0be88ecfa44a653c4eaf58.png" />
-<img alt="_images/25997a7ac0a439b040f3bb1531541dd296e8015be8435ba16e4869f39197d074.png" src="_images/25997a7ac0a439b040f3bb1531541dd296e8015be8435ba16e4869f39197d074.png" />
-<img alt="_images/5b3deaacb635ce794cadf8a2b800822e565346d78c0be88ecfa44a653c4eaf58.png" src="_images/5b3deaacb635ce794cadf8a2b800822e565346d78c0be88ecfa44a653c4eaf58.png" />
 </div>
 </div>
 </div>
-<div class="section" id="markdown-notebooks">
-<h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Permalink to this heading">#</a></h2>
-<p>As it is markdown, you can embed images, HTML, etc into your posts!</p>
-<p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg" /></p>
-<p>You can also <span class="math notranslate nohighlight">\(add_{math}\)</span> and</p>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <a href="#id2"><span class="problematic" id="id3">holdgraf_evidence_2014</span></a>.
-1</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-```{math}
-:label: eq8\\\begin{split}\begin{align*}
-\frac{D \mathbf{u}}{Dt}&amp;=-\frac{\nabla p}{\rho}+\nu\nabla^{2}\mathbf{u}+\mathbf{F} \\
-\frac{D\rho}{Dt}&amp;=0 \\
-\frac{D\theta}{Dt}&amp;=\frac{1}{c_p}(\frac{\theta}{T})\dot{Q} \\
-\end{align*}
-```
-\end{split}\end{aligned}\end{align} \]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-\frac{D \mathbf{u}}{Dt}&amp;=-\frac{\nabla p}{\rho}+\nu\nabla^{2}\mathbf{u}+\mathbf{F} \tag{8}\\
-\frac{D\rho}{Dt}+1&amp;=0 \\
-\frac{D\theta}{Dt}&amp;=\frac{1}{c_p}\left(\frac{\theta}{T}\right)\dot{Q} \\
-\end{align*}
-\end{split}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
+<div class="section" id="id18">
+<h2>補充<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<div class="section" id="n-m-pade">
+<h3><span class="math notranslate nohighlight">\([n/m]\)</span> Padé 的系統化推導（線性方程）<a class="headerlink" href="#n-m-pade" title="Permalink to this heading">#</a></h3>
+<p>設要逼近一個函數的 Maclaurin 級數</p>
 <div class="math notranslate nohighlight">
 \[
-math^{blocks}
-\]</div>
-<p>or</p>
+  f(x) = \sum_{k=0}^{\infty} c_k x^k,
+  \]</div>
+<p>求有理式</p>
+<div class="math notranslate nohighlight">
+\[
+  R(x)=\frac{P(x)}{Q(x)}=\frac{a_0 + a_1 x + \cdots + a_n x^n}{1 + b_1 x + \cdots + b_m x^m}
+  \]</div>
+<p>使得 <span class="math notranslate nohighlight">\(R(x)\)</span> 與 <span class="math notranslate nohighlight">\(f(x)\)</span> 的 Maclaurin 展開在前 <span class="math notranslate nohighlight">\(n+m\)</span> 階相同，亦即</p>
+<div class="math notranslate nohighlight">
+\[
+  Q(x) f(x) - P(x) = O(x^{n+m+1}).
+  \]</div>
+<p>把 <span class="math notranslate nohighlight">\(Q(x) f(x)\)</span> 展開，等價於對係數 <span class="math notranslate nohighlight">\(k=0,\dots,n+m\)</span> 要滿足</p>
+<div class="math notranslate nohighlight">
+\[
+  \sum_{j=0}^{\min(k,m)} b_j\, c_{k-j} - a_k = 0,
+  \]</div>
+<p>其中我們取 <span class="math notranslate nohighlight">\(b_0=1\)</span>，且當 <span class="math notranslate nohighlight">\(k&gt;n\)</span> 時 <span class="math notranslate nohighlight">\(a_k=0\)</span>。</p>
+<p>把等式分成兩組：</p>
+<ul class="simple">
+<li><p>對 <span class="math notranslate nohighlight">\(k=0,\dots,n\)</span>，由上式可以解出 <span class="math notranslate nohighlight">\(a_0,\dots,a_n\)</span>（每個 <span class="math notranslate nohighlight">\(a_k\)</span> 是 <span class="math notranslate nohighlight">\(b\)</span> 的線性函數），因為這些方程包含 <span class="math notranslate nohighlight">\(a_k\)</span>。</p></li>
+<li><p>對 <span class="math notranslate nohighlight">\(k=n+1,\dots,n+m\)</span>（總共 m 個方程），這些方程中 <span class="math notranslate nohighlight">\(a_k=0\)</span>，會變成只含 <span class="math notranslate nohighlight">\(b_1,\dots,b_m\)</span> 的線性方程組。寫成矩陣形式：</p></li>
+</ul>
+<p>對 <span class="math notranslate nohighlight">\(k=n+1,\dots,n+m\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[
+  \sum_{j=1}^m b_j\, c_{k-j} = -c_k .
+  \]</div>
+<p>改寫索引（令 <span class="math notranslate nohighlight">\(i=k-(n+1)\)</span>，<span class="math notranslate nohighlight">\(i=0,\dots,m-1\)</span>）後，可得到一個 <span class="math notranslate nohighlight">\(m\times m\)</span> 的線性系統：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{aligned}
-\mbox{mean} la_{tex} \\ \\
-math blocks
-\end{aligned}
-\end{split}\]</div>
-<p>But make sure you $Escape $your $dollar signs $you want to keep!</p>
-</div>
-<div class="section" id="myst-markdown">
-<h2>MyST markdown<a class="headerlink" href="#myst-markdown" title="Permalink to this heading">#</a></h2>
-<p>MyST markdown works in Jupyter Notebooks as well. For more information about MyST markdown, check
-out <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST guide in Jupyter Book</a>,
-or see <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">the MyST markdown documentation</a>.</p>
-</div>
-<div class="section" id="code-blocks-and-outputs">
-<h2>Code blocks and outputs<a class="headerlink" href="#code-blocks-and-outputs" title="Permalink to this heading">#</a></h2>
-<p>Jupyter Book will also embed your code blocks and output in your book.
-For example, here’s some sample Matplotlib code:</p>
-<blockquote>
-<div><p><strong>Note:</strong> Here is a note </n> </n></n> 88
-/15</p>
-</div></blockquote>
-<div class="alert alert-info">
-<b>Note:</b> Here is a note
-<p>5</p>
-</div>
-<blockquote>
-<div><p><strong>Note:</strong> Here is a note</p>
-</div></blockquote>
-<blockquote>
-<div><p><strong>Note:</strong> Here is a note</p>
-</div></blockquote>
+  \underbrace{\begin{bmatrix}
+  c_{n} &amp; c_{n-1} &amp; \cdots &amp; c_{n-m+1} \\
+  c_{n+1} &amp; c_{n} &amp; \cdots &amp; c_{n-m+2} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  c_{n+m-1} &amp; c_{n+m-2} &amp; \cdots &amp; c_{n}
+  \end{bmatrix}}_{A}
+  \begin{bmatrix} b_1\\ b_2\\ \vdots\\ b_m \end{bmatrix}
+  =
+  - \begin{bmatrix} c_{n+1}\\ c_{n+2}\\ \vdots\\ c_{n+m} \end{bmatrix}.
+  \end{split}\]</div>
+<p>（這個矩陣是 Toeplitz 形式，由 <span class="math notranslate nohighlight">\(c\)</span> 的項構成。）</p>
+<p>解出 <span class="math notranslate nohighlight">\(b\)</span> 後，回代前面 <span class="math notranslate nohighlight">\(k=0\ldots n\)</span> 的方程求出 <span class="math notranslate nohighlight">\(a\)</span>。</p>
+<p>因此 <span class="math notranslate nohighlight">\([n/m]\)</span> Padé 問題等價於「解一個 m × m 的線性系統再回代」，數值上很穩定（除非 <span class="math notranslate nohighlight">\(c_k\)</span> 導致矩陣奇異）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pade_from_taylor</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    c : list/array of Taylor coefficients c0, c1, c2, ... up to at least n+m</span>
+<span class="sd">    n, m : numerator/denominator degrees</span>
+<span class="sd">    returns: (a_coeffs, b_coeffs) where</span>
+<span class="sd">      P(x) = a0 + a1 x + ... + a_n x^n</span>
+<span class="sd">      Q(x) = 1 + b1 x + ... + b_m x^m</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;need Taylor coefficients up to c_{n+m}&quot;</span>
+
+    <span class="c1"># Build matrix A for b unknowns (m x m)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+    <span class="n">rhs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="c1"># row i corresponds to equation for k = n+1 + i</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span>
+        <span class="n">rhs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>   <span class="c1"># c_{k-1}, c_{k-2}, ...</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+
+    <span class="c1"># compute a coefficients using k=0..n: a_k = sum_{j=0..min(k,m)} b_j c_{k-j}, with b0=1</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">bj</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="n">bj</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+    <span class="c1"># return arrays (P numerator coefficients, Q denominator with leading 1)</span>
+    <span class="n">b_full</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">b</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">b_full</span>
+
+<span class="c1"># Example: e^x  =&gt; c_k = 1/k!</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">taylor_coeffs_expx</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># test [2/2] for e^x</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">taylor_coeffs_expx</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># need up to c_{n+m}=c_4</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">pade_from_taylor</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P (numerator) coeffs:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>   <span class="c1"># a0, a1, a2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q (denominator) coeffs:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># [1, b1, b2]</span>
+
+<span class="c1"># If you want to build TransferFunction approximation for e^{-sT}, substitute x = -sT:</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="c1"># for e^{-sT}, the polynomial in s: P(-sT), Q(-sT)</span>
+<span class="c1"># If P(x) = a0 + a1 x + a2 x^2, then P(-sT) coeffs (in descending powers of s) are:</span>
+<span class="c1"># numer(s) = a2*(T^2)*s^2 + a1*(-T)*s + a0  (but TransferFunction expects descending poly as list)</span>
+<span class="c1"># best is to construct polynomials in s by replacing x with -s*T</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">poly_in_s_from_a</span><span class="p">(</span><span class="n">a_coeffs</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="c1"># a_coeffs: [a0, a1, a2, ...] (ascending)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_coeffs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="c1"># build array of s-coeffs from highest power to constant term</span>
+    <span class="n">s_coeffs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">ak</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_coeffs</span><span class="p">):</span>
+        <span class="c1"># term ak * (-s*T)^k =&gt; coefficient for s^k: ak * (-T)^k</span>
+        <span class="n">s_coeffs</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">ak</span> <span class="o">*</span> <span class="p">((</span><span class="o">-</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>  <span class="c1"># put in descending order</span>
+    <span class="k">return</span> <span class="n">s_coeffs</span>
+
+<span class="n">num_s</span> <span class="o">=</span> <span class="n">poly_in_s_from_a</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">den_s</span> <span class="o">=</span> <span class="n">poly_in_s_from_a</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TransferFunction numerator (s-descending):&quot;</span><span class="p">,</span> <span class="n">num_s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TransferFunction denominator (s-descending):&quot;</span><span class="p">,</span> <span class="n">den_s</span><span class="p">)</span>
+
+<span class="c1"># Build scipy TransferFunction</span>
+<span class="n">G_approx</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">(</span><span class="n">num_s</span><span class="p">,</span> <span class="n">den_s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">G_approx</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x7f7a551f76b0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P (numerator) coeffs: [1.         0.5        0.08333333]
+Q (denominator) coeffs: [ 1.         -0.5         0.08333333]
+TransferFunction numerator (s-descending): [np.float64(2.0833333333333344), np.float64(-2.5), np.float64(1.0)]
+TransferFunction denominator (s-descending): [np.float64(2.083333333333333), np.float64(2.4999999999999996), np.float64(1.0)]
+TransferFunctionContinuous(
+array([ 1.  , -1.2 ,  0.48]),
+array([1.  , 1.2 , 0.48]),
+dt: None
+)
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">ii</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
-
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
-<span class="n">custom_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">.5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">1.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
-</pre></div>
 </div>
-</div>
-</div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
 </div>
 </div>
 
@@ -792,10 +1817,45 @@ with your book. For more information about this, see <a class="reference externa
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-and-inverse-laplace-transform">Laplace Transform and Inverse Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bold-plot">Bold Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse-response">Impulse Response 脈衝響應</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 物理意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-input-bounded-output-bibo-stability">Bounded Input Bounded Output (BIBO) Stability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1. 定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#routhhurwitz-stability-criterion">Routh–Hurwitz stability criterion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1. 目的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 方程式的根都在左半平面的<code class="docutils literal notranslate"><span class="pre">必要條件(並不充分)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3. 正常操作</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4. 特殊操作</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5. 用途</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-respound">Frequency Respound</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1. 假設與證明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2. 物理觀念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-domain-plot-of-g-s">3. Frequency Domain Plot of G(s)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquist-plot-polar-plot">Nyquist Plot (Polar Plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1. 主要概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2. 例子</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bode-plot">Bode Plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1. 主要概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2. 例子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3. 名詞定義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">補充</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-m-pade"><span class="math notranslate nohighlight">\([n/m]\)</span> Padé 的系統化推導（線性方程）</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
