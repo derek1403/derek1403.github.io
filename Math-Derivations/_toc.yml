@@ -5,5 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: markdown
-- file: notebooks
+- file: Derivation_of_Higher_Order_Moments_Normal_Distribution
 - file: markdown-notebooks
