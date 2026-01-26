@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="常態分佈高階期望值 \(E[x^n]\) 之證明" href="Derivation_of_Higher_Order_Moments_Normal_Distribution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    歡迎來到 PC 的筆記本：那些被「略過」的細節
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Derivation_of_Higher_Order_Moments_Normal_Distribution.html">常態分佈高階期望值 <span class="math notranslate nohighlight">\(E[x^n]\)</span> 之證明</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEmpirical_Orthogonal_Functions_The_Math_and_Physical_Intuition.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eof">EOF 的數學本質</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">第一部分：EOF的<strong>矩陣</strong>形式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-c">第二部分：推導 <strong>共變異數矩陣(<span class="math notranslate nohighlight">\(\mathbf{C}\)</span>)</strong> 並解<strong>特徵值問題</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="empirical-orthogonal-functions-eof-the-math-and-physical-intuition">
+<h1>經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition<a class="headerlink" href="#empirical-orthogonal-functions-eof-the-math-and-physical-intuition" title="Link to this heading">#</a></h1>
+<section id="eof">
+<h2>EOF 的數學本質<a class="headerlink" href="#eof" title="Link to this heading">#</a></h2>
+<p>在所有正交線性座標系中，能用最少 <span class="math notranslate nohighlight">\(r\)</span> 個座標捕捉最多能量(最多資訊)的那一組</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{X} = \sum_{k=1}^{r} \sqrt{\lambda_k} \mathbf{\phi}_k \mathbf{p}_k^T\]</div>
+<p>其中：</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\mathbf{X}\)</span>：資料矩陣（距平值 Anomaly）</strong></p>
+<ul>
+<li><p>空間資料數量： <span class="math notranslate nohighlight">\(n\)</span> 、時間資料數量： <span class="math notranslate nohighlight">\(m\)</span> 。大小 <span class="math notranslate nohighlight">\((n \times m)\)</span></p></li>
+<li><p>對於每個空間已減去該空間在時間上的平均</p></li>
+</ul>
+</li>
+<li><p><strong><span class="math notranslate nohighlight">\(\mathbf{\phi}_k\)</span>：EOF 空間模態（特徵向量）</strong></p>
+<ul>
+<li><p>空間上的分佈型態</p></li>
+<li><p>維度為 <span class="math notranslate nohighlight">\(n \times 1\)</span></p></li>
+<li><p>通常假定為單位向量 ( <span class="math notranslate nohighlight">\(||\mathbf{\phi}_k|| = 1\)</span>)</p></li>
+<li><p>無因次</p></li>
+</ul>
+</li>
+<li><p><strong><span class="math notranslate nohighlight">\(\mathbf{p}_k\)</span>：PC（標準化時間係數）</strong></p>
+<ul>
+<li><p>對應 <span class="math notranslate nohighlight">\(\text{EOF}_k\)</span> 的時間序列係數</p></li>
+<li><p>維度為 <span class="math notranslate nohighlight">\(m \times 1\)</span>，轉置後為 <span class="math notranslate nohighlight">\(1 \times m\)</span></p></li>
+<li><p>公式裡 <span class="math notranslate nohighlight">\(\sqrt{\lambda_k}\)</span> 被獨立提出來了，所以這裡的 <span class="math notranslate nohighlight">\(\mathbf{p}_k\)</span> 是單位向量( <span class="math notranslate nohighlight">\(||\mathbf{p}_k|| = 1\)</span>)</p></li>
+<li><p>無因次</p></li>
+</ul>
+</li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lambda_k\)</span>：特徵值（解釋變異量）</strong></p>
+<ul>
+<li><p>每個方向承載的能量(變異度)</p></li>
+<li><p>純量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 \ge \lambda_2 \ge \cdots\)</span></p></li>
+<li><p>因次為 <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> 的平方</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{matrix}
+\text{第 1 個空間點的時間序列} \rightarrow\\
+\text{第 2 個空間點的時間序列} \rightarrow\\
+\vdots \\
+\text{第 } n \text{ 個空間點的時間序列} \rightarrow
+\end{matrix}
+\underset{\substack{\begin{matrix}
+\uparrow &amp; \uparrow &amp; &amp; \uparrow \\
+t_1 &amp; t_2 &amp; \cdots &amp; t_m \\
+\text{時刻} &amp; \text{時刻} &amp; &amp; \text{時刻}
+\end{matrix}}}{
+\begin{bmatrix}
+x_{1,1} &amp; x_{1,2} &amp; \cdots &amp; x_{1,m} \\
+x_{2,1} &amp; x_{2,2} &amp; \cdots &amp; x_{2,m} \\
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+x_{n,1} &amp; x_{n,2} &amp; \cdots &amp; x_{n,m}  \\
+\end{bmatrix}}
+=\sum_{k=1}^{r} \sqrt{\lambda_k} 
+\underbrace{\begin{bmatrix} \phi_{1,k} \\ \vdots \\ \phi_{n,k} \end{bmatrix}}_{\text{空間型態 } (n \times 1)} 
+\underbrace{\begin{bmatrix} p_{k,1} &amp; \cdots &amp; p_{k,m} \end{bmatrix}}_{\text{時間係數 } (1 \times m)}
+\end{split}\]</div>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>【假設 1】線性疊加假設</strong> ： 假設複雜的氣候場可以表示為幾個空間型態的 <strong>線性組合</strong></p>
+<ul>
+<li><p>只關心二階統計，不看偏態、峰態、非線性結構</p></li>
+<li><p><strong>限制</strong> ：對於強烈非線性、或存在「氣候模態切換 (Regime-switching)」的系統，線性的 EOF 可能會 <strong>失真</strong> ，這時可能需要考慮 Nonlinear PCA 或 Autoencoder。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】模態正交性</strong> 數學上使拆解出來的每一個模態<strong>空間</strong>彼此垂直、<strong>時間</strong>彼此垂直（Uncorrelated）</p>
+<ul>
+<li><p><strong>Space</strong> ：<span class="math notranslate nohighlight">\(\text{EOF}_i \perp \text{EOF}_j\)</span> (不同空間結構完全不同)</p></li>
+<li><p><strong>Time</strong> ：<span class="math notranslate nohighlight">\(\text{PC}_i \perp \text{PC}_j\)</span> (不同時間變化完全獨立)</p></li>
+<li><p><strong>限制</strong> ：這純粹是為了數學上求出唯一解的方便，資料沒有義務要遵守正交性，真實的物理過程（如兩個交互作用的天氣系統）常常是非正交的</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h2>第一部分：EOF的<strong>矩陣</strong>形式<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>我們先<strong>定義</strong>這三個大矩陣長什麼樣子：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{\Phi}\)</span> (空間矩陣)：把 <span class="math notranslate nohighlight">\(\phi_1, \phi_2\)</span> 像柱子(column)一樣排起來。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{\Phi} = \begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{\phi}_1 &amp; \mathbf{\phi}_2 &amp; \cdots &amp; \mathbf{\phi}_r \\ | &amp; | &amp; &amp; | \end{bmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p>滿足 <span class="math notranslate nohighlight">\(\mathbf{\Phi}^T \mathbf{\Phi} = \mathbf{I}_{(r \times r)}\)</span> 、 <span class="math notranslate nohighlight">\(\mathbf{\Phi} \mathbf{\Phi}^T = \mathbf{I}_{(n \times n)}\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\sqrt{\mathbf{\Lambda}}\)</span> (特徵矩陣)：把 <span class="math notranslate nohighlight">\(\sqrt{\lambda}\)</span> 放在對角線(diagonal)上。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sqrt{\mathbf{\Lambda}} = \begin{bmatrix} \sqrt{\lambda_1} &amp; 0 &amp; \cdots &amp; 0\\ 0 &amp; \sqrt{\lambda_2} &amp;\cdots &amp; 0\\  \vdots&amp;\vdots&amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots&amp;\sqrt{\lambda_r} \end{bmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sqrt{\mathbf{\Lambda}}\sqrt{\mathbf{\Lambda}} = \mathbf{\Lambda}\)</span></p></li>
+<li><p><strong>數學詮釋：</strong> <span class="math notranslate nohighlight">\(\mathbf{\phi}_i\)</span> 解釋了<strong>資料總變異數</strong>中的 <span class="math notranslate nohighlight">\(\frac{\mathbf{\lambda}_i}{\sum_{k=1}^{r}\mathbf{\lambda}_k}\)</span> 比例</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{P}^T\)</span> (時間矩陣的轉置)：把 <span class="math notranslate nohighlight">\(\mathbf{p}_1^T, \mathbf{p}_2^T\)</span> 像橫梁(row)一樣疊起來。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{P}^T = \begin{bmatrix} - \mathbf{p}_1^T - \\ - \mathbf{p}_2^T - \\ \vdots \\ - \mathbf{p}_r^T - \end{bmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{P}^T \mathbf{P} = \mathbf{I}_{(r \times r)}\)</span> 、 <span class="math notranslate nohighlight">\(\mathbf{P} \mathbf{P}^T = \mathbf{I}_{(m \times m)} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{P} = \begin{bmatrix} | &amp; | \\ \mathbf{p}_1 &amp; \mathbf{p}_2 \\ | &amp; | \end{bmatrix}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>從 <span class="math notranslate nohighlight">\(\mathbf{X} = \sum_{k=1}^{r} \sqrt{\lambda_k} \mathbf{\phi}_k \mathbf{p}_k^T\)</span> 出發，寫成矩陣有利於後續的分解和化簡：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{matrix}
+\begin{bmatrix}
+x_{1,1} &amp; x_{1,2} &amp; \cdots &amp; x_{1,m} \\
+x_{2,1} &amp; x_{2,2} &amp; \cdots &amp; x_{2,m} \\
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+x_{n,1} &amp; x_{n,2} &amp; \cdots &amp; x_{n,m}  \\
+\end{bmatrix}
+&amp;=&amp;\sum_{k=1}^{r} \sqrt{\lambda_k} 
+\begin{bmatrix} \phi_{1,k} \\ \vdots \\ \phi_{n,k} \end{bmatrix}
+\begin{bmatrix} p_{k,1} &amp; \cdots &amp; p_{k,m} \end{bmatrix} \\
+&amp;=&amp;
+\begin{bmatrix}
+\sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{1,k}p_{k,1} &amp; \sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{1,k}p_{k,2} &amp; \cdots &amp; \sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{1,k}p_{k,m} \\
+\sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{2,k}p_{k,1} &amp; \sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{2,k}p_{k,2} &amp; \cdots &amp; \sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{2,k}p_{k,m} \\
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+\sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{n,k}p_{k,1} &amp; \sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{n,k}p_{n,2} &amp; \cdots &amp; \sum_{k=1}^{r} \sqrt{\lambda_k} \phi_{n,k}p_{k,m}  \\
+\end{bmatrix}\\
+&amp;=&amp;
+\begin{bmatrix}
+\phi_{1,1} &amp; \phi_{1,2} &amp; \cdots &amp; \phi_{1,r} \\
+\phi_{2,1} &amp; \phi_{2,2} &amp; \cdots &amp; \phi_{2,r} \\
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+\phi_{n,1} &amp; \phi_{n,2} &amp; \cdots &amp; \phi_{n,r}  \\
+\end{bmatrix}_{(n \times r)}
+\begin{bmatrix}
+\sqrt{\lambda_1} &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; \sqrt{\lambda_2} &amp; \cdots &amp; 0 \\
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+0 &amp; 0 &amp; \cdots &amp; \sqrt{\lambda_r}  \\
+\end{bmatrix}_{(r \times r)}
+\begin{bmatrix}
+p_{1,1} &amp; p_{1,2} &amp; \cdots &amp; p_{1,m} \\
+p_{2,1} &amp; p_{2,2} &amp; \cdots &amp; p_{2,m} \\
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+p_{r,1} &amp; p_{r,2} &amp; \cdots &amp; p_{r,m}  \\
+\end{bmatrix}_{(r \times m)} \\
+&amp;=&amp;
+\begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{\phi}_1 &amp; \mathbf{\phi}_2 &amp; \cdots &amp; \mathbf{\phi}_r \\ | &amp; | &amp; &amp; | \end{bmatrix}
+\begin{bmatrix} \sqrt{\lambda_1} &amp; 0 &amp; \cdots &amp; 0\\ 0 &amp; \sqrt{\lambda_2} &amp;\cdots &amp; 0\\  \vdots&amp;\vdots&amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots&amp;\sqrt{\lambda_r} \end{bmatrix}
+\begin{bmatrix} - \mathbf{p}_1^T - \\ - \mathbf{p}_2^T - \\ \vdots \\ - \mathbf{p}_r^T - \end{bmatrix} \\
+&amp;\overset{def}{=}&amp;
+\mathbf{\Phi} \sqrt{\mathbf{\Lambda}}\mathbf{P}^T
+\end{matrix} 
+\end{split}\]</div>
+</section>
+<section id="mathbf-c">
+<h2>第二部分：推導 <strong>共變異數矩陣(<span class="math notranslate nohighlight">\(\mathbf{C}\)</span>)</strong> 並解<strong>特徵值問題</strong><a class="headerlink" href="#mathbf-c" title="Link to this heading">#</a></h2>
+<p>我們先<strong>定義</strong>共變異數矩陣(<span class="math notranslate nohighlight">\(\mathbf{C}\)</span>)長什麼樣子：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(n \times n)}\)</span> (空間共變異數矩陣)</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(n \times n)} \overset{\text{def}}{=}\frac{1}{m-1} \mathbf{X}\mathbf{X}^T \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(n \times n)} = \mathbf{C}_{(n \times n)}^T \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(n \times n)}\)</span> 的第 <span class="math notranslate nohighlight">\((i, j)\)</span> 個元素告訴你：第 <span class="math notranslate nohighlight">\(i\)</span> 個空間點和第 <span class="math notranslate nohighlight">\(j\)</span> 個空間點的變化有多同步</p></li>
+<li><p>特徵向量：直接得到 <strong>空間模態 (Spatial Map, EOFs)</strong></p></li>
+<li><p>解出 <span class="math notranslate nohighlight">\(\mathbf{C}_{(n \times n)}\)</span> 的特徵向量矩陣 <span class="math notranslate nohighlight">\(\mathbf{\Phi}\)</span>（也就是 EOFs 空間地圖）後可以透過投影的方式找 PCs：<span class="math notranslate nohighlight">\(\mathbf{p}_k^T = \frac{1}{\sqrt{\lambda_k}} \mathbf{\phi}_k^T \mathbf{X}\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(m \times m)}\)</span> (時間共變異數矩陣)，或者<span class="math notranslate nohighlight">\(\mathbf{C'}_{(m \times m)}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(m \times m)} \overset{\text{def}}{=}\frac{1}{n-1} \mathbf{X}^T\mathbf{X} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(m \times m)} = \mathbf{C}_{(m \times m)}^T \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C}_{(m \times m)}\)</span> 的第 <span class="math notranslate nohighlight">\((i, j)\)</span> 個元素告訴你：第 <span class="math notranslate nohighlight">\(i\)</span> 個時間點和第 <span class="math notranslate nohighlight">\(j\)</span> 個時間點的長得像不像</p></li>
+<li><p>特徵向量：直接得到 <strong>時間係數 (Time Series, PCs)</strong></p></li>
+<li><p>解出 <span class="math notranslate nohighlight">\(\mathbf{C}_{(m \times m)}\)</span> 的特徵向量矩陣 <span class="math notranslate nohighlight">\(\mathbf{P}\)</span>（也就是 PCs 時間序列）後可以透過投影的方式找 EOFs：<span class="math notranslate nohighlight">\(\mathbf{\phi}_k = \frac{1}{\sqrt{\lambda_k}} \mathbf{X}  \mathbf{p}_k  \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>化簡<strong>空間共變異數矩陣</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{matrix}
+\mathbf{X}\mathbf{X}^T &amp;=&amp; (\mathbf{\Phi} \sqrt{\mathbf{\Lambda}} \mathbf{P}^T) (\mathbf{\Phi} \sqrt{\mathbf{\Lambda}} \mathbf{P}^T)^T \\
+&amp;=&amp; \mathbf{\Phi} \sqrt{\mathbf{\Lambda}} \mathbf{P}^T \mathbf{P} \sqrt{\mathbf{\Lambda}}^T \mathbf{\Phi}^T \\
+&amp;=&amp; \mathbf{\Phi} \sqrt{\mathbf{\Lambda}}  \mathbf{I}  \sqrt{\mathbf{\Lambda}} \mathbf{\Phi}^T \\
+&amp;=&amp; \mathbf{\Phi} \mathbf{\Lambda} \mathbf{\Phi}^T \\
+\end{matrix} 
+\end{split}\]</div>
+<p>寫成<strong>特徵值問題</strong>的形式，因為<strong>空間共變異數矩陣</strong>的定義會需要乘一項 <span class="math notranslate nohighlight">\(\frac{1}{m-1}\)</span> 使原本的 <span class="math notranslate nohighlight">\(\mathbf{\Lambda}\)</span> 需要調整成 <span class="math notranslate nohighlight">\(\mathbf{\Lambda}_{\text{stat}}\)</span> ，其中 <span class="math notranslate nohighlight">\(\mathbf{\Lambda}_{\text{stat}} \overset{\text{let}}{=} \frac{1}{m-1} \mathbf{\Lambda}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{matrix}
+(\mathbf{X}\mathbf{X}^T) \mathbf{\Phi} &amp;=&amp; \mathbf{\Phi} \mathbf{\Lambda}\mathbf{\Phi}^T \mathbf{\Phi}\\
+&amp;=&amp; \mathbf{\Phi} \mathbf{\Lambda}\mathbf{I}\\
+\mathbf{C}\mathbf{\Phi}&amp;\overset{\text{def}}{=}&amp; \mathbf{\Phi} \mathbf{\Lambda}_\text{stat}\\
+\frac{1}{m-1}
+\begin{bmatrix}
+\sum_{k=1}^{m} x_{1,k} x_{1,k} &amp; \sum_{k=1}^{m} x_{1,k} x_{2,k} &amp; \cdots &amp; \sum_{k=1}^{m} x_{1,k} x_{n,k} \\
+\sum_{k=1}^{m} x_{2,k} x_{1,k} &amp; \sum_{k=1}^{m} x_{2,k} x_{2,k} &amp; \cdots &amp; \sum_{k=1}^{m} x_{2,k} x_{n,k} \\
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+\sum_{k=1}^{m} x_{n,k} x_{1,k} &amp; \sum_{k=1}^{m} x_{n,k} x_{2,k} &amp; \cdots &amp; \sum_{k=1}^{m} x_{n,k} x_{n,k}
+\end{bmatrix}
+\underset{\text{單位特徵向量}}{\begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{\phi}_1 &amp; \mathbf{\phi}_2 &amp; \cdots &amp; \mathbf{\phi}_r \\ | &amp; | &amp; &amp; | \end{bmatrix}}
+&amp;=&amp; \begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{\phi}_1 &amp; \mathbf{\phi}_2 &amp; \cdots &amp; \mathbf{\phi}_r \\ | &amp; | &amp; &amp; | \end{bmatrix}\frac{1}{m-1}
+\begin{bmatrix} \lambda_1 &amp; 0 &amp; \cdots &amp; 0\\ 0 &amp; \lambda_2 &amp;\cdots &amp; 0\\  \vdots&amp;\vdots&amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots&amp;\lambda_r \end{bmatrix}\\
+\end{matrix} 
+\end{split}\]</div>
+<p>12</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Derivation_of_Higher_Order_Moments_Normal_Distribution.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">常態分佈高階期望值 <span class="math notranslate nohighlight">\(E[x^n]\)</span> 之證明</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eof">EOF 的數學本質</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">第一部分：EOF的<strong>矩陣</strong>形式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-c">第二部分：推導 <strong>共變異數矩陣(<span class="math notranslate nohighlight">\(\mathbf{C}\)</span>)</strong> 並解<strong>特徵值問題</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
