@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>歡迎來到 PC 的筆記本：那些被「略過」的細節 &#8212; My sample book</title>
+    <title>Levi-Civita Symbol in 3D &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Levi-Civita_symbol';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="Progrem 相關筆記" href="progrem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,18 +174,18 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     歡迎來到 PC 的筆記本：那些被「略過」的細節
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Derivation_of_Higher_Order_Moments_Normal_Distribution.html">常態分佈高階期望值 <span class="math notranslate nohighlight">\(E[x^n]\)</span> 之證明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition.html">經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="LC/progrem.html">測試選單</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="LC/Levi-Civita_symbol.html">Levi-Civita Symbol in 3D</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="progrem.html">Progrem 相關筆記</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Levi-Civita Symbol in 3D</a></li>
 </ul>
 </details></li>
 </ul>
@@ -261,7 +259,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLevi-Civita_symbol.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +289,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Levi-Civita_symbol.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +299,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -375,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>歡迎來到 PC 的筆記本：那些被「略過」的細節</h1>
+    <h1>Levi-Civita Symbol in 3D</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,20 +383,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">歡迎來到 PC 的筆記本：那些被「略過」的細節</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">這裡會有什麼內容？</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">關於 AI 協作與我的信念</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">數值驗證</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 核心定義：指標與置換</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 數學本質：行列式的代數化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">第一步：寫成指標形式</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第二步：展開內層的旋度</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第五步：轉回向量符號</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome-to-pc-s-notebook-uncovering-the-skipped-details">Welcome to PC’s Notebook: Uncovering the “Skipped” Details</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect">What to Expect?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-collaboration-and-my-philosophy">AI Collaboration and My Philosophy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-verification">Numerical Verification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">老師的小結</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -409,83 +409,157 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pc">
-<h1>歡迎來到 PC 的筆記本：那些被「略過」的細節<a class="headerlink" href="#pc" title="Link to this heading">#</a></h1>
-<p>歡迎各位讀者。</p>
-<p>建立這個筆記本的初衷源於我在學習過程中常遇到的一個痛點：課本或論文中那些常被 <strong>一筆帶過</strong> 的數學概念與推導。</p>
-<p>在這裡我嘗試將這些缺漏的拼圖補齊，我不追求繁複華麗的數學技巧而是力求 <strong>「簡單」</strong> 與 <strong>「邏輯清晰」</strong>，在每一個證明區塊中我會明確地採用以下結構：</p>
-<ol class="arabic simple">
-<li><p><strong>【已知】(Preliminaries)</strong>：我們先擁有哪些工具</p></li>
-<li><p><strong>【假設】(Assumptions)</strong>：我們在什麼樣的前提下進行討論</p></li>
-<li><p><strong>【證明】(Proof)</strong>：若您同意上述兩點，那麼我們如何順理成章地推導出結果</p></li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="levi-civita-symbol-in-3d">
+<h1>Levi-Civita Symbol in 3D<a class="headerlink" href="#levi-civita-symbol-in-3d" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>這裡會有什麼內容？<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>我不拘泥於純數學領域，內容將涵蓋：</p>
-<ul class="simple">
-<li><p><strong>數學原理</strong>：課程中那些 <strong>「顯然可得」</strong> 但其實需要一番推導的小知識</p></li>
-<li><p><strong>物理推導</strong>：補完那些被跳過的物理計算步驟</p></li>
-<li><p><strong>程式技巧</strong>：數據處理相關的實用邏輯與技巧</p></li>
-</ul>
-</section>
-<section id="ai">
-<h2>關於 AI 協作與我的信念<a class="headerlink" href="#ai" title="Link to this heading">#</a></h2>
-<p>在這個筆記本中許多內容是經過我與 AI 深度討論後的產物，但我必須強調 AI 是我的助手而非我的槍手。</p>
-<p>我對 AI 產出抱持著 <strong>「攻防」</strong> 的態度，我會盡全力去質疑、攻擊 AI 的推導過程；如果它產出的內容無法通過我的知識審查，我將反覆詰問。</p>
+<h2>1. 核心定義：指標與置換<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>簡單來說在 <span class="math notranslate nohighlight">\(n\)</span> 維空間中 <strong>交換任何兩個指標時都會變號</strong> ，且分量值為 <span class="math notranslate nohighlight">\(\pm 1\)</span> 或 <span class="math notranslate nohighlight">\(0\)</span> 的張量。</p>
+<p>Levi-Civita symbol 是一個用來描述指標置換關係與空間方向性的符號，Levi-Civita symbol 的本質類似於「完全反對稱張量 (Totally Antisymmetric Tensor)」描述了 <strong>空間中的方向與體積。</strong> 而在三維笛卡兒座標系中其定義如下：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\varepsilon_{ijk} = 
+\begin{cases} 
++1 &amp; \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的偶置換（與右手座標系同向）} \\
+-1 &amp; \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的奇置換} \\
+0 &amp; \text{若任何兩個指標重複} 
+\end{cases}\end{split}\]</div>
+<p>或者將3維的情況列出來：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\varepsilon_{ijk}\overset{\text{let}}{=}1\)</span></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{iii}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{iij}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{iik}=0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{iji}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{ijj}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{ijk}=1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{iki}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{ikj}=-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{ikk}=0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{jii}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jij}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jik}=-1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{jji}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jjj}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jjk}=0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{jki}=1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jkj}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jkk}=0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{kii}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kij}=1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kik}=0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{kji}=-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kjj}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kjk}=0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{kki}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kkj}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kkk}=0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <blockquote>
-<div><p><strong>「在高等教育中我們討論的真理，很大程度上取決於『能不能說服人』。」</strong></p>
+<div><p>嚴格來說，<span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> 在這裡是一個「符號 (Symbol)」。在曲線座標或廣義相對論中真正的 Levi-Civita Tensor 需要額外考慮度量張量的行列式 (<span class="math notranslate nohighlight">\(\sqrt{g}\)</span>)，但在標準流體力學運算中我們通常在笛卡兒座標下將其視為張量使用。</p>
 </div></blockquote>
-<p>只有當 AI 的解釋能夠在邏輯上完全說服我並挺過我所有的反思與質疑時，我才會採納並將其整理於此，這是我使用 AI 的信念也是我對這些筆記負責的方式。儘管如此，錯誤在所難免若您發現任何謬誤非常歡迎指正。</p>
 </section>
 <section id="id2">
-<h2>數值驗證<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>我經常使用 Python 。除了理論推導，我會盡可能在結論後附上 <strong>Python 程式碼驗證</strong>，我希望透過數值模擬的方式，讓這些理論不只停留在符號運算而是能在數據上被接受、被看見。</p>
-<p>希望看完這些證明的你們，未來在面對那些跳過無數過程的課本、論文或敘述時，能有一種<strong>豁然開朗</strong>的通透感。</p>
-<p><strong>聯絡我</strong>：<code class="docutils literal notranslate"><span class="pre">derek116100&#64;gmail.com.tw</span></code></p>
-<p>感謝你的閱讀，
-<strong>PC</strong></p>
+<h2>2. 數學本質：行列式的代數化<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Levi-Civita symbol將幾何上的有向體積轉化為可運算的指標形式，所以涉及 <strong>旋轉</strong> 與 <strong>垂直</strong> 的物理量像是涉及外積的推導中容易看到Levi-Civita symbol， <strong>能夠讓方程式更簡單地去推導證明</strong> ：</p>
+<div class="math notranslate nohighlight">
+\[\det(\mathbf{A}) = \varepsilon_{ijk} A_{1i} A_{2j} A_{3k}\]</div>
+<div class="math notranslate nohighlight">
+\[(\mathbf{A} \times \mathbf{B})_i = \varepsilon_{ijk} A_j B_k\]</div>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【假設 1】線性疊加假設</strong> ： 假設複雜的氣候場可以表示為幾個空間型態的 <strong>線性組合</strong></p>
+<ul class="simple">
+<li><p>只關心二階統計，不看偏態、峰態、非線性結構</p></li>
+<li><p><strong>限制</strong> ：對於強烈非線性、或存在「氣候模態切換 (Regime-switching)」的系統，線性的 EOF 可能會 <strong>失真</strong> ，這時可能需要考慮 Nonlinear PCA 或 Autoencoder。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> 恆等式</strong> ：把 <strong>旋轉（外積）</strong> 變成 <strong>內積（投影）</strong> 的翻譯器</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon_{ijk} \varepsilon_{imn} = \delta_{jm} \delta_{kn} - \delta_{jn} \delta_{km}\]</div>
+<ul class="simple">
+<li><p>其中 <span class="math notranslate nohighlight">\(\delta_{\text{index1 index2}} = \begin{cases} 1, &amp; \text{如果 } \text{index1} = \text{index2} \\0, &amp; \text{如果 } \text{index1} \neq \text{index2} \end{cases}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<section id="determinant">
+<h3>2. 它與行列式 (Determinant) 的靈魂連結<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h3>
+<p>為什麼這個符號在物理中無處不在？因為它其實就是<strong>行列式</strong>的代數縮影。</p>
+<p>對於一個  的矩陣 ，其行列式可以用 Levi-Civita 符號定義為：</p>
+<p>這解釋了為什麼它常出現在向量外積中：外積的本質就是一個計算「平行四邊形面積」的過程，而面積（或更高維的體積）正是由行列式決定的。</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>3. 方程式推導實戰：證明向量恆等式<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>這是老師最想展示給你的一幕。在流體力學或電磁學中，我們經常遇到「旋度的旋度」這種複雜的算式。</p>
+<p><strong>目標：</strong> 證明</p>
+<section id="id4">
+<h4>第一步：寫成指標形式<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>我們將左式第  個分量寫出來：</p>
+<p>這裡的  代表 。</p>
+</section>
+<section id="id5">
+<h4>第二步：展開內層的旋度<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>再用一次  符號展開括號內的部分：</p>
+</section>
+<section id="identity">
+<h4>第三步：使用核心恆等式 ( Identity)<a class="headerlink" href="#identity" title="Link to this heading">#</a></h4>
+<p>我們利用上一堂課提到的定理：。
+將其代入算式：</p>
+</section>
+<section id="kronecker-delta">
+<h4>第四步：化簡 Kronecker delta<a class="headerlink" href="#kronecker-delta" title="Link to this heading">#</a></h4>
+<p>當  遇到指標時會進行「篩選」。</p>
+<ol class="arabic simple">
+<li><p>第一項 ：只有當  且  時才存活，變成 。</p></li>
+<li><p>第二項 ：只有當  且  時才存活，變成 。</p></li>
+</ol>
+<p>整理後得到：</p>
+</section>
+<section id="id6">
+<h4>第五步：轉回向量符號<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>就是散度 。</p></li>
+<li><p>是梯度運算。</p></li>
+<li><p>是拉普拉斯算子 。</p></li>
+</ul>
+<p>結果即為：</p>
+<p><strong>證明完畢。</strong></p>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="welcome-to-pc-s-notebook-uncovering-the-skipped-details">
-<h1>Welcome to PC’s Notebook: Uncovering the “Skipped” Details<a class="headerlink" href="#welcome-to-pc-s-notebook-uncovering-the-skipped-details" title="Link to this heading">#</a></h1>
-<p>Welcome, readers.</p>
-<p>The motivation behind this notebook stems from a common frustration I encountered during my learning journey: those mathematical concepts and derivations in textbooks or papers that are often <strong>“glossed over”</strong> or dismissed as trivial.</p>
-<p>Here, I attempt to piece together these missing puzzles. I do not aim for overly complex or flamboyant mathematical techniques; instead, I strive for <strong>simplicity</strong> and <strong>logical clarity</strong>. For every proof presented, I adhere to the following structure:</p>
-<ol class="arabic simple">
-<li><p><strong>Preliminaries (Knowns)</strong>: What tools do we already possess?</p></li>
-<li><p><strong>Assumptions</strong>: Under what premises are we conducting this discussion?</p></li>
-<li><p><strong>Proof</strong>: If you accept the above, here is how we logically derive the result.</p></li>
-</ol>
-<section id="what-to-expect">
-<h2>What to Expect?<a class="headerlink" href="#what-to-expect" title="Link to this heading">#</a></h2>
-<p>I do not limit myself to pure mathematics. The content will cover:</p>
-<ul class="simple">
-<li><p><strong>Mathematical Principles</strong>: “Obvious” classroom knowledge that actually requires rigorous derivation.</p></li>
-<li><p><strong>Physics Derivations</strong>: Filling in the missing calculation steps often skipped in physics problems.</p></li>
-<li><p><strong>Programming Techniques</strong>: Practical logic and techniques related to data processing.</p></li>
-</ul>
+<section id="id7">
+<h3>老師的小結<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>透過 Levi-Civita 符號，我們不需要去背那些冗長的微積分公式，只需要掌握<strong>指標的交換規律</strong>（也就是那幾條  的定理），所有的向量恆等式都能像拼圖一樣輕鬆解開。這在處理大氣動力學中的<strong>渦度方程 (Vorticity Equation)</strong> 推導時，能幫你省下大量的計算時間並減少錯誤。</p>
+<p>你想試著用這個方法，自己推導看看為什麼「梯度的旋度恆等於零」（）嗎？這只需要兩行就能證明出來喔！</p>
 </section>
-<section id="ai-collaboration-and-my-philosophy">
-<h2>AI Collaboration and My Philosophy<a class="headerlink" href="#ai-collaboration-and-my-philosophy" title="Link to this heading">#</a></h2>
-<p>Many contents in this notebook are the result of deep discussions with AI. However, I must emphasize that AI is my assistant, not my ghostwriter.</p>
-<p>I adopt an <strong>“adversarial”</strong> attitude towards AI-generated content. I do my best to question and attack its logic. If its output cannot pass my knowledge scrutiny, I will question it repeatedly.</p>
-<blockquote>
-<div><p><strong>“In higher education, the truth we strive for is largely grounded in the ability to persuade.”</strong></p>
-</div></blockquote>
-<p>I only adopt and organize concepts here if the AI’s explanation can logically convince me and withstand my rigorous reflection. This is my conviction in using AI, and it is how I take responsibility for these notes. Nevertheless, errors are inevitable. If you find any fallacies, your feedback is highly appreciated.</p>
 </section>
-<section id="numerical-verification">
-<h2>Numerical Verification<a class="headerlink" href="#numerical-verification" title="Link to this heading">#</a></h2>
-<p>I am a heavy Python user.
-Beyond theoretical derivations, I will, whenever possible, include <strong>Python code for verification</strong> after the conclusions. I hope that through <strong>Numerical Simulation</strong>, these theories will not just remain abstract symbols but become tangible and accepted through data.</p>
-<p>I hope that after reading these proofs, you will find a moment of <strong>clarity</strong> when facing those textbooks, papers, or narratives that skip countless steps.</p>
-<p><strong>Contact</strong>: <code class="docutils literal notranslate"><span class="pre">derek116100&#64;gmail.com.tw</span></code></p>
-<p>Thank you for reading,
-<strong>PC</strong></p>
-</section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -518,14 +592,14 @@ Beyond theoretical derivations, I will, whenever possible, include <strong>Pytho
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="markdown.html"
-       title="next page">
+    <a class="left-prev"
+       href="progrem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Progrem 相關筆記</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -543,20 +617,22 @@ Beyond theoretical derivations, I will, whenever possible, include <strong>Pytho
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">歡迎來到 PC 的筆記本：那些被「略過」的細節</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">這裡會有什麼內容？</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">關於 AI 協作與我的信念</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">數值驗證</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 核心定義：指標與置換</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 數學本質：行列式的代數化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">第一步：寫成指標形式</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第二步：展開內層的旋度</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第五步：轉回向量符號</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome-to-pc-s-notebook-uncovering-the-skipped-details">Welcome to PC’s Notebook: Uncovering the “Skipped” Details</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect">What to Expect?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-collaboration-and-my-philosophy">AI Collaboration and My Philosophy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-verification">Numerical Verification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">老師的小結</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

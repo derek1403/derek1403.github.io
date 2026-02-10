@@ -1,9 +1,12 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
+
+
 chapters:
-- file: markdown
-- file: Derivation_of_Higher_Order_Moments_Normal_Distribution
-- file: Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition
+  # 這是原本獨立的檔案，保持不變
+  - file: markdown
+  - file: Derivation_of_Higher_Order_Moments_Normal_Distribution
+  - file: Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition
+  - file: LC/progrem  # <--- 這是父節點 (Parent)，也就是我們剛建的那個檔案
+    sections:      # <--- 代表下面的檔案都屬於它
+      - file: LC/Levi-Civita_symbol
