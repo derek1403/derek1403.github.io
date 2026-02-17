@@ -384,18 +384,22 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 核心定義：指標與置換</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 數學本質：行列式的代數化</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">第一步：寫成指標形式</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第二步：展開內層的旋度</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第五步：轉回向量符號</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 數學本質：將 <strong>張量</strong> 代數化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-summation-convention">3. 天作之合：愛因斯坦求和約定(Einstein summation convention)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">約定:</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">老師的小結</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第一步：寫成指標形式</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第二步：展開內層的旋度</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">第五步：轉回向量符號</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">老師的小結</a></li>
 </ul>
 </li>
 </ul>
@@ -414,9 +418,9 @@ document.write(`
 <section id="id1">
 <h2>1. 核心定義：指標與置換<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>簡單來說在 <span class="math notranslate nohighlight">\(n\)</span> 維空間中 <strong>交換任何兩個指標時都會變號</strong> ，且分量值為 <span class="math notranslate nohighlight">\(\pm 1\)</span> 或 <span class="math notranslate nohighlight">\(0\)</span> 的張量。</p>
-<p>Levi-Civita symbol 是一個用來描述指標置換關係與空間方向性的符號，Levi-Civita symbol 的本質類似於「完全反對稱張量 (Totally Antisymmetric Tensor)」描述了 <strong>空間中的方向與體積。</strong> 而在三維笛卡兒座標系中其定義如下：</p>
+<p>Levi-Civita symbol 是一個用來描述指標置換關係與空間方向性的符號，Levi-Civita symbol 是 <strong>符號</strong> 而非 <strong>張量</strong> 但其本質類似於「完全反對稱張量 (Totally Antisymmetric Tensor)」描述了 <strong>空間中的方向與體積。</strong> 而在三維笛卡兒座標系中其定義如下：</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\varepsilon_{ijk} = 
+\[\begin{split}\varepsilon_{ijk} \overset{\text{def}}{=} 
 \begin{cases} 
 +1 &amp; \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的偶置換（與右手座標系同向）} \\
 -1 &amp; \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的奇置換} \\
@@ -428,50 +432,50 @@ document.write(`
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\varepsilon_{ijk}\overset{\text{let}}{=}1\)</span></p></th>
 <th class="head"><p></p></th>
 <th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{iii}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{iij}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{iik}=0\)</span></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jii}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jij}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jik}=-1\)</span></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kii}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kij}=1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kik}=0\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{iji}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{ijj}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{ijk}=1\)</span></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jji}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jjj}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jjk}=0\)</span></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kji}=-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kjj}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kjk}=0\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{iki}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{ikj}=-1\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{ikk}=0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
 <td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{jii}=0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jij}=0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jik}=-1\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{jji}=0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jjj}=0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jjk}=0\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{jki}=1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{jki}=1\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{jkj}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{jkk}=0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
 <td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{kii}=0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kij}=1\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kik}=0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{kji}=-1\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kjj}=0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kjk}=0\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon_{kki}=0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon_{kki}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{kkj}=0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\varepsilon_{kkk}=0\)</span></p></td>
 </tr>
@@ -479,16 +483,47 @@ document.write(`
 </table>
 </div>
 <blockquote>
-<div><p>嚴格來說，<span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> 在這裡是一個「符號 (Symbol)」。在曲線座標或廣義相對論中真正的 Levi-Civita Tensor 需要額外考慮度量張量的行列式 (<span class="math notranslate nohighlight">\(\sqrt{g}\)</span>)，但在標準流體力學運算中我們通常在笛卡兒座標下將其視為張量使用。</p>
+<div><p>~~嚴格來說，<span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> 在這裡是一個「符號 (Symbol)」。在曲線座標或廣義相對論中真正的 Levi-Civita Tensor 需要額外考慮度量張量的行列式 (<span class="math notranslate nohighlight">\(\sqrt{g}\)</span>)，但在標準流體力學運算中我們通常在笛卡兒座標下將其視為張量使用。~~</p>
 </div></blockquote>
 </section>
 <section id="id2">
-<h2>2. 數學本質：行列式的代數化<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>2. 數學本質：將 <strong>張量</strong> 代數化<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Levi-Civita symbol將幾何上的有向體積轉化為可運算的指標形式，所以涉及 <strong>旋轉</strong> 與 <strong>垂直</strong> 的物理量像是涉及外積的推導中容易看到Levi-Civita symbol， <strong>能夠讓方程式更簡單地去推導證明</strong> ：</p>
 <div class="math notranslate nohighlight">
-\[\det(\mathbf{A}) = \varepsilon_{ijk} A_{1i} A_{2j} A_{3k}\]</div>
+\[\det(\mathbf{A}) \overset{\text{LC}}{=} \sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk} A_{1i} A_{2j} A_{3k}\]</div>
+<div class="math notranslate nohighlight">
+\[(\mathbf{A} \times \mathbf{B}) \overset{\text{LC}}{=} (\sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{1jk} A_j B_k , \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{2jk} A_j B_k , \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{3jk} A_j B_k)\]</div>
+</section>
+<section id="einstein-summation-convention">
+<h2>3. 天作之合：愛因斯坦求和約定(Einstein summation convention)<a class="headerlink" href="#einstein-summation-convention" title="Link to this heading">#</a></h2>
+<p>是簡化 <strong>Levi-Civita symbol</strong> 的好工具。</p>
+<section id="id3">
+<h3>約定:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Index出現 1 次：自由指標 (Free Index)</p>
+<p>一個Index在方程式的某一項中只出現一次，它被稱為 <strong>自由指標</strong>。</p>
+<ul class="simple">
+<li><p>含義： 它代表方程式的一個 <strong>分量</strong>。</p></li>
+<li><p>規則： 方程式等號兩邊出現的自由指標必須完全一致。</p></li>
+<li><p>範例： 牛頓第二運動定律 <span class="math notranslate nohighlight">\(\mathbf{F}_i = m\mathbf{a}_i\)</span>，這裡 <span class="math notranslate nohighlight">\(i\)</span> 只出現一次，表示這是一個向量方程式，它實際上代表了三個獨立的等式：<span class="math notranslate nohighlight">\(\left\{\begin{aligned}F_1 &amp;= ma_1, \\F_2 &amp;= ma_2, \\F_3 &amp;= ma_3\end{aligned}\right.\)</span></p></li>
+</ul>
+</li>
+<li><p>Index出現 2 次：啞指標 (Dummy Index)</p>
+<p>一個Index出現兩次，它被稱為 <strong>啞指標</strong>。</p>
+<ul class="simple">
+<li><p>含義： 它代表對整個範圍求和。</p></li>
+<li><p>規則： 既然是求和 index 的符號就不重要了，可以把 <span class="math notranslate nohighlight">\(i\)</span>全部換成 <span class="math notranslate nohighlight">\(k\)</span> 而結果不變。</p></li>
+<li><p>範例： 向量內積 <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{3} u_iv_i \overset{\text{Esc}}{=} u_iv_i = u_kv_k \)</span></p></li>
+</ul>
+</li>
+<li><p>Index出現 3 次或更多：語法錯誤 (Syntax Error)</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[(\mathbf{A} \times \mathbf{B})_i = \varepsilon_{ijk} A_j B_k\]</div>
+<p><span class="math notranslate nohighlight">\(\sum_{i=1}^{3} A_i B_i\)</span></p>
+<p>\overset{\text{LC}}{=}
+\overset{\text{Esc}}{=}</p>
+</section>
 </section>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
@@ -499,7 +534,26 @@ document.write(`
 <li><p><strong>限制</strong> ：對於強烈非線性、或存在「氣候模態切換 (Regime-switching)」的系統，線性的 EOF 可能會 <strong>失真</strong> ，這時可能需要考慮 Nonlinear PCA 或 Autoencoder。</p></li>
 </ul>
 </li>
-<li><p><strong>【已知 1】 <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> 恆等式</strong> ：把 <strong>旋轉（外積）</strong> 變成 <strong>內積（投影）</strong> 的翻譯器</p>
+<li><p><strong>【定義 1】 Levi-Civita</strong> ：或者叫排列符號 (Permutation Symbol)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\varepsilon_{ijk} \overset{\text{def}}{=} 
+  \begin{cases} 
+  +1 &amp; \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的偶置換（與右手座標系同向）} \\
+  -1 &amp; \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的奇置換} \\
+  0 &amp; \text{若任何兩個指標重複} 
+  \end{cases}\end{split}\]</div>
+</li>
+<li><p><strong>【定義 2】 Kronecker delta</strong> ：<span class="math notranslate nohighlight">\(\delta_{ij}\)</span> 是一個二元函數</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\delta_{ij} \overset{\text{def}}{=}\begin{cases}1 &amp; (i = j) \\0 &amp; (i \ne j)\end{cases}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 1】 愛因斯坦求和約定(Einstein summation convention)</strong> ：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \delta_{ii} \overset{\text{Esc}}{=} \delta_{ii} = 3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk}\varepsilon_{ijk} \overset{\text{Esc}}{=} \varepsilon_{ijk}\varepsilon_{ijk} = \varepsilon_{123}\varepsilon_{123}+ \varepsilon_{231}\varepsilon_{231}+ \varepsilon_{312}\varepsilon_{312}+\varepsilon_{132}\varepsilon_{132}+\varepsilon_{213}\varepsilon_{213}+\varepsilon_{321}\varepsilon_{321}=6\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> 恆等式</strong> ：把 <strong>旋轉（外積）</strong> 變成 <strong>內積（投影）</strong> 的翻譯器</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon_{ijk} \varepsilon_{imn} = \delta_{jm} \delta_{kn} - \delta_{jn} \delta_{km}\]</div>
 <ul class="simple">
@@ -515,17 +569,17 @@ document.write(`
 <p>這解釋了為什麼它常出現在向量外積中：外積的本質就是一個計算「平行四邊形面積」的過程，而面積（或更高維的體積）正是由行列式決定的。</p>
 </section>
 <hr class="docutils" />
-<section id="id3">
-<h3>3. 方程式推導實戰：證明向量恆等式<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>3. 方程式推導實戰：證明向量恆等式<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>這是老師最想展示給你的一幕。在流體力學或電磁學中，我們經常遇到「旋度的旋度」這種複雜的算式。</p>
 <p><strong>目標：</strong> 證明</p>
-<section id="id4">
-<h4>第一步：寫成指標形式<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="id5">
+<h4>第一步：寫成指標形式<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>我們將左式第  個分量寫出來：</p>
 <p>這裡的  代表 。</p>
 </section>
-<section id="id5">
-<h4>第二步：展開內層的旋度<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<section id="id6">
+<h4>第二步：展開內層的旋度<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <p>再用一次  符號展開括號內的部分：</p>
 </section>
 <section id="identity">
@@ -542,8 +596,8 @@ document.write(`
 </ol>
 <p>整理後得到：</p>
 </section>
-<section id="id6">
-<h4>第五步：轉回向量符號<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<section id="id7">
+<h4>第五步：轉回向量符號<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>就是散度 。</p></li>
 <li><p>是梯度運算。</p></li>
@@ -554,8 +608,8 @@ document.write(`
 </section>
 </section>
 <hr class="docutils" />
-<section id="id7">
-<h3>老師的小結<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3>老師的小結<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>透過 Levi-Civita 符號，我們不需要去背那些冗長的微積分公式，只需要掌握<strong>指標的交換規律</strong>（也就是那幾條  的定理），所有的向量恆等式都能像拼圖一樣輕鬆解開。這在處理大氣動力學中的<strong>渦度方程 (Vorticity Equation)</strong> 推導時，能幫你省下大量的計算時間並減少錯誤。</p>
 <p>你想試著用這個方法，自己推導看看為什麼「梯度的旋度恆等於零」（）嗎？這只需要兩行就能證明出來喔！</p>
 </section>
@@ -618,18 +672,22 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 核心定義：指標與置換</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 數學本質：行列式的代數化</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">第一步：寫成指標形式</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第二步：展開內層的旋度</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第五步：轉回向量符號</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 數學本質：將 <strong>張量</strong> 代數化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-summation-convention">3. 天作之合：愛因斯坦求和約定(Einstein summation convention)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">約定:</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">老師的小結</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第一步：寫成指標形式</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第二步：展開內層的旋度</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">第五步：轉回向量符號</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">老師的小結</a></li>
 </ul>
 </li>
 </ul>

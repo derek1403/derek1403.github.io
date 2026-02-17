@@ -487,7 +487,7 @@ x_{n,1} &amp; x_{n,2} &amp; \cdots &amp; x_{n,m}  \\
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\mathbf{\Phi}\)</span> (空間矩陣)：把 <span class="math notranslate nohighlight">\(\phi_1, \phi_2\)</span> 像柱子(column)一樣排起來。</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{\Phi} = \begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{\phi}_1 &amp; \mathbf{\phi}_2 &amp; \cdots &amp; \mathbf{\phi}_r \\ | &amp; | &amp; &amp; | \end{bmatrix}\end{split}\]</div>
+\[\begin{split}\mathbf{\Phi} = \begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{\phi}_1 &amp; \mathbf{\phi}_2 &amp; \cdots &amp; \mathbf{\phi}_r \\ | &amp; | &amp; &amp; | \end{bmatrix}_{(n \times r)}\end{split}\]</div>
 <ul class="simple">
 <li><p>滿足 <span class="math notranslate nohighlight">\(\mathbf{\Phi}^T \mathbf{\Phi} = \mathbf{I}_{(r \times r)}\)</span> 、 <span class="math notranslate nohighlight">\(\mathbf{\Phi} \mathbf{\Phi}^T = \mathbf{I}_{(n \times n)}\)</span></p></li>
 </ul>
@@ -505,7 +505,7 @@ x_{n,1} &amp; x_{n,2} &amp; \cdots &amp; x_{n,m}  \\
 \[\begin{split}\mathbf{P}^T = \begin{bmatrix} - \mathbf{p}_1^T - \\ - \mathbf{p}_2^T - \\ \vdots \\ - \mathbf{p}_r^T - \end{bmatrix}\end{split}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{P}^T \mathbf{P} = \mathbf{I}_{(r \times r)}\)</span> 、 <span class="math notranslate nohighlight">\(\mathbf{P} \mathbf{P}^T = \mathbf{I}_{(m \times m)} \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{P} = \begin{bmatrix} | &amp; | \\ \mathbf{p}_1 &amp; \mathbf{p}_2 \\ | &amp; | \end{bmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{P} = \begin{bmatrix} | &amp; |&amp; &amp; | \\ \mathbf{p}_1 &amp; \mathbf{p}_2 &amp; \cdots &amp;\mathbf{p}_r \\ | &amp; |&amp; &amp; | \end{bmatrix}_{(m \times r)}\)</span></p></li>
 </ul>
 </li>
 </ul>
@@ -552,7 +552,7 @@ p_{r,1} &amp; p_{r,2} &amp; \cdots &amp; p_{r,m}  \\
 \begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{\phi}_1 &amp; \mathbf{\phi}_2 &amp; \cdots &amp; \mathbf{\phi}_r \\ | &amp; | &amp; &amp; | \end{bmatrix}
 \begin{bmatrix} \sqrt{\lambda_1} &amp; 0 &amp; \cdots &amp; 0\\ 0 &amp; \sqrt{\lambda_2} &amp;\cdots &amp; 0\\  \vdots&amp;\vdots&amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots&amp;\sqrt{\lambda_r} \end{bmatrix}
 \begin{bmatrix} - \mathbf{p}_1^T - \\ - \mathbf{p}_2^T - \\ \vdots \\ - \mathbf{p}_r^T - \end{bmatrix} \\
-&amp;\overset{def}{=}&amp;
+&amp;\overset{\text{def}}{=}&amp;
 \mathbf{\Phi} \sqrt{\mathbf{\Lambda}}\mathbf{P}^T
 \end{matrix} 
 \end{split}\]</div>
