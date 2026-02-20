@@ -389,17 +389,52 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">約定:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第一步：寫成指標形式</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第二步：展開內層的旋度</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">第五步：轉回向量符號</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">小試身手 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-cdot-mathbf-b-times-mathbf-c-mathbf-b-cdot-mathbf-c-times-mathbf-a-mathbf-c-cdot-mathbf-a-times-mathbf-b">1. <span class="math notranslate nohighlight">\(\mathbf{A} \cdot (\mathbf{B} \times \mathbf{C}) = \mathbf{B} \cdot (\mathbf{C} \times \mathbf{A}) = \mathbf{C} \cdot (\mathbf{A} \times \mathbf{B}) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-mathbf-a-cdot-mathbf-c-mathbf-b-mathbf-a-cdot-mathbf-b-mathbf-c">2. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-cdot-mathbf-c-times-mathbf-d-mathbf-a-cdot-mathbf-c-mathbf-b-cdot-mathbf-d-mathbf-a-cdot-mathbf-d-mathbf-b-cdot-mathbf-c">3. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D})  = (\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C})\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a">4. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  = ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} = ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \)</span></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">老師的小結</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">小試身手 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-nabla-f-0">1. <span class="math notranslate nohighlight">\(\nabla \times (\nabla f) = 0\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">物理意義：</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-times-mathbf-v-0">2. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla \times \mathbf{V}) = 0\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">物理意義：</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-nabla-times-mathbf-v-nabla-nabla-cdot-mathbf-v-nabla-2-mathbf-v">3. <span class="math notranslate nohighlight">\(\nabla \times (\nabla \times \mathbf{V}) = \nabla (\nabla \cdot \mathbf{V}) - \nabla^2 \mathbf{V}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-helmholtz-decomposition-theorem">Helmholtz 分解定理 (Helmholtz Decomposition Theorem)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-times-mathbf-a-mathbf-a-cdot-nabla-times-mathbf-b">4. <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot  (\nabla \times \mathbf{A}) - \mathbf{A} \cdot  (\nabla \times \mathbf{B})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">核心恆等式：交互作用的散度</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a. 物理實例：用在哪裡？ (能量守恆)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b. 幾何圖像：怎麼想像它？ (旋度的投影)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">💡 實戰使用指南</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-mathbf-a-nabla-cdot-mathbf-b-mathbf-a-mathbf-a-cdot-nabla-mathbf-b-nabla-cdot-mathbf-a-mathbf-b">5. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">7. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">數學定義</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">8. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-f-g-g-nabla-f-f-nabla-g">9. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">10. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">11. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">12. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">13. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">14. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">15. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">第五步：轉回向量符號</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -518,20 +553,14 @@ document.write(`
 </li>
 <li><p>Index出現 3 次或更多：語法錯誤 (Syntax Error)</p></li>
 </ol>
-<div class="math notranslate nohighlight">
-\[(\mathbf{A} \times \mathbf{B})_i = \varepsilon_{ijk} A_j B_k\]</div>
-<p><span class="math notranslate nohighlight">\(\sum_{i=1}^{3} A_i B_i\)</span></p>
-<p>\overset{\text{LC}}{=}
-\overset{\text{Esc}}{=}</p>
 </section>
 </section>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【假設 1】線性疊加假設</strong> ： 假設複雜的氣候場可以表示為幾個空間型態的 <strong>線性組合</strong></p>
+<li><p><strong>【假設 1】在3D空間</strong> ： 只處理3維空間的情況</p>
 <ul class="simple">
-<li><p>只關心二階統計，不看偏態、峰態、非線性結構</p></li>
-<li><p><strong>限制</strong> ：對於強烈非線性、或存在「氣候模態切換 (Regime-switching)」的系統，線性的 EOF 可能會 <strong>失真</strong> ，這時可能需要考慮 Nonlinear PCA 或 Autoencoder。</p></li>
+<li><p>假設對於 <strong>愛因斯坦求和約定</strong> 的定義域空間只有3維度的情況。</p></li>
 </ul>
 </li>
 <li><p><strong>【定義 1】 Levi-Civita</strong> ：或者叫排列符號 (Permutation Symbol)</p>
@@ -542,62 +571,573 @@ document.write(`
   -1 &amp; \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的奇置換} \\
   0 &amp; \text{若任何兩個指標重複} 
   \end{cases}\end{split}\]</div>
+<ul class="simple">
+<li><p>可以知道 <span class="math notranslate nohighlight">\(\varepsilon_{ijk} = \varepsilon_{kij}\)</span></p></li>
+</ul>
 </li>
 <li><p><strong>【定義 2】 Kronecker delta</strong> ：<span class="math notranslate nohighlight">\(\delta_{ij}\)</span> 是一個二元函數</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\delta_{ij} \overset{\text{def}}{=}\begin{cases}1 &amp; (i = j) \\0 &amp; (i \ne j)\end{cases}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 1】 愛因斯坦求和約定(Einstein summation convention)</strong> ：</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \delta_{ii} \overset{\text{Esc}}{=} \delta_{ii} = 3\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk}\varepsilon_{ijk} \overset{\text{Esc}}{=} \varepsilon_{ijk}\varepsilon_{ijk} = \varepsilon_{123}\varepsilon_{123}+ \varepsilon_{231}\varepsilon_{231}+ \varepsilon_{312}\varepsilon_{312}+\varepsilon_{132}\varepsilon_{132}+\varepsilon_{213}\varepsilon_{213}+\varepsilon_{321}\varepsilon_{321}=6\)</span></p></li>
+<li><p>對於有數個 <span class="math notranslate nohighlight">\(\delta_{\text{index1 index2}}\)</span> 相乘可以認為是當 <span class="math notranslate nohighlight">\(\text{index1} = \text{index2}\)</span> 才有數值例如 <span class="math notranslate nohighlight">\(\delta_{il} \delta_{jm} A_j B_l C_m = A_j B_l C_j\)</span> ，因為 <span class="math notranslate nohighlight">\(j \ne m\)</span> 的情況會使這一項等於 <span class="math notranslate nohighlight">\(0\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 3】 <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> 恆等式</strong> ：把 <strong>旋轉（外積）</strong> 變成 <strong>內積（投影）</strong> 的翻譯器</p>
+<li><p><strong>【已知 1】 愛因斯坦求和約定(Einstein summation convention)</strong> ：</p>
+<p>根據 <strong>假設 1</strong> 我們只處理3維的情況，所以加和的index範圍是 <span class="math notranslate nohighlight">\(i = 1 \)</span> to <span class="math notranslate nohighlight">\( i = 3 \)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \delta_{ii} \overset{\text{Esc}}{=} \delta_{ii} = 3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk}\varepsilon_{ijk} \overset{\text{Esc}}{=} \varepsilon_{ijk}\varepsilon_{ijk} \\= \varepsilon_{123}\varepsilon_{123}+ \varepsilon_{231}\varepsilon_{231}+ \varepsilon_{312}\varepsilon_{312}+\varepsilon_{132}\varepsilon_{132}+\varepsilon_{213}\varepsilon_{213}+\varepsilon_{321}\varepsilon_{321}=6\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 愛因斯坦求和約定(Einstein summation convention) 向量</strong> ：</p>
+<p>對於向量 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 和向量 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A} \cdot \mathbf{B} \overset{\text{Esc}}{=} A_iB_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A} \times \mathbf{B} \overset{\text{Esc}}{=} (\mathbf{A} \times \mathbf{B})_i \overset{\text{LC}}{=} \varepsilon_{ijk} A_j B_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{ij} A_j = A_i\)</span></p></li>
+</ul>
+<p>對於純量 <span class="math notranslate nohighlight">\(f\)</span> 和向量 <span class="math notranslate nohighlight">\(\mathbf{V}\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nabla f = (\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}) \overset{\text{Esc}}{=} \quad (\nabla f)_i = \partial_i f \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{V} = (\frac{\partial V_x}{\partial x},\frac{\partial V_y}{\partial y},\frac{\partial V_z}{\partial z}) \overset{\text{Esc}}{=} \partial_i V_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla \times \mathbf{V} \overset{\text{Esc}}{=} (\nabla \times \mathbf{V})_i \overset{\text{LC}}{=} \varepsilon_{ijk} \nabla_j \mathbf{V}_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla^2 f = \nabla \cdot (\nabla f) \overset{\text{Esc}}{=} \partial_i \partial_i f \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla^2 \mathbf{V} = (\nabla \cdot \nabla )\mathbf{V} = (\frac{\partial^2 V_x}{\partial x^2} + \frac{\partial^2 V_x}{\partial y^2} + \frac{\partial^2 V_x}{\partial z^2},\frac{\partial^2 V_y}{\partial x^2} + \frac{\partial^2 V_y}{\partial y^2} + \frac{\partial^2 V_y}{\partial z^2},\frac{\partial^2 V_z}{\partial x^2} + \frac{\partial^2 V_z}{\partial y^2} + \frac{\partial^2 V_z}{\partial z^2}) \\ \overset{\text{Esc}}{=} \partial_j \partial_j V_i \)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 愛因斯坦求和約定(Einstein summation convention) 矩陣</strong> ：</p>
+<p>對於矩陣 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 和矩陣 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 和矩陣 <span class="math notranslate nohighlight">\(\mathbf{C}\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{B} = \sum_{j=1}^{3} A_{ij}B_{jk} \overset{\text{Esc}}{=} A_{ij}B_{jk} = C_{ik} = \mathbf{C}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> 恆等式</strong> ：把 <strong>旋轉（外積）</strong> 變成 <strong>內積（投影）</strong> 的翻譯器</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon_{ijk} \varepsilon_{imn} = \delta_{jm} \delta_{kn} - \delta_{jn} \delta_{km}\]</div>
 <ul class="simple">
-<li><p>其中 <span class="math notranslate nohighlight">\(\delta_{\text{index1 index2}} = \begin{cases} 1, &amp; \text{如果 } \text{index1} = \text{index2} \\0, &amp; \text{如果 } \text{index1} \neq \text{index2} \end{cases}\)</span></p></li>
+<li><p>其中 <span class="math notranslate nohighlight">\(\delta_{\text{index1 index2}} \overset{\text{def}}{=} \begin{cases} 1, &amp; \text{如果 } \text{index1} = \text{index2} \\0, &amp; \text{如果 } \text{index1} \neq \text{index2} \end{cases}\)</span></p></li>
 </ul>
 </li>
 </ul>
-<hr class="docutils" />
-<section id="determinant">
-<h3>2. 它與行列式 (Determinant) 的靈魂連結<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h3>
-<p>為什麼這個符號在物理中無處不在？因為它其實就是<strong>行列式</strong>的代數縮影。</p>
-<p>對於一個  的矩陣 ，其行列式可以用 Levi-Civita 符號定義為：</p>
-<p>這解釋了為什麼它常出現在向量外積中：外積的本質就是一個計算「平行四邊形面積」的過程，而面積（或更高維的體積）正是由行列式決定的。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\nabla f &amp;= \partial_i f \hat{e}_i, \quad (\nabla f)_i = \partial_i f \\
+\nabla \cdot \vec{V} &amp;= \partial_i V_i \\
+\nabla \times \vec{V} &amp;= \varepsilon_{ijk} \hat{e}_i \partial_j V_k = \varepsilon_{ijk} \partial_i V_j \hat{e}_k, \quad (\nabla \times \vec{V})_i = \varepsilon_{ijk} \partial_j V_k
+\end{align*}
+\end{split}\]</div>
 </section>
-<hr class="docutils" />
 <section id="id4">
-<h3>3. 方程式推導實戰：證明向量恆等式<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>這是老師最想展示給你的一幕。在流體力學或電磁學中，我們經常遇到「旋度的旋度」這種複雜的算式。</p>
-<p><strong>目標：</strong> 證明</p>
+<h2>小試身手 1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>對於向量 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 向量 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 向量 <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> 向量 <span class="math notranslate nohighlight">\(\mathbf{D}\)</span> 我們可以證明以下幾點。</p>
+<section id="mathbf-a-cdot-mathbf-b-times-mathbf-c-mathbf-b-cdot-mathbf-c-times-mathbf-a-mathbf-c-cdot-mathbf-a-times-mathbf-b">
+<h3>1. <span class="math notranslate nohighlight">\(\mathbf{A} \cdot (\mathbf{B} \times \mathbf{C}) = \mathbf{B} \cdot (\mathbf{C} \times \mathbf{A}) = \mathbf{C} \cdot (\mathbf{A} \times \mathbf{B}) \)</span><a class="headerlink" href="#mathbf-a-cdot-mathbf-b-times-mathbf-c-mathbf-b-cdot-mathbf-c-times-mathbf-a-mathbf-c-cdot-mathbf-a-times-mathbf-b" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\mathbf{A}\cdot (\mathbf{B} \times \mathbf{C}) &amp;\overset{\text{Esc}}{=} &amp; A_i (\mathbf{B} \times \mathbf{C})_i \\
+&amp;\overset{\text{LC}}{=} &amp; A_i \varepsilon_{ijk} B_j C_k \\
+&amp;\overset{\text{定義 1}}{=} &amp; B_j \varepsilon_{jki} C_k A_i   &amp;\overset{\text{定義 1}}{=}&amp;  C_k \varepsilon_{kij} A_i B_j\\
+&amp;\overset{\text{LC}^{-1}}{=}&amp;B_j (\mathbf{C} \times \mathbf{A})_j &amp;\overset{\text{LC}^{-1}}{=}&amp;  C_k (\mathbf{A} \times \mathbf{B})_k\\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp;B\cdot (\mathbf{C} \times \mathbf{A})  &amp;\overset{\text{Esc}^{-1}}{=}&amp;  C\cdot (\mathbf{A} \times \mathbf{B})
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="mathbf-a-times-mathbf-b-times-mathbf-c-mathbf-a-cdot-mathbf-c-mathbf-b-mathbf-a-cdot-mathbf-b-mathbf-c">
+<h3>2. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}\)</span><a class="headerlink" href="#mathbf-a-times-mathbf-b-times-mathbf-c-mathbf-a-cdot-mathbf-c-mathbf-b-mathbf-a-cdot-mathbf-b-mathbf-c" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) &amp;\overset{\text{Esc}}{=}&amp; (\mathbf{A}  (\mathbf{B} \times \mathbf{C}))_i \\
+&amp;\overset{\text{LC}}{=}&amp; \varepsilon_{ijk} A_j  (\mathbf{B} \times \mathbf{C})_k \\
+&amp;\overset{\text{LC}}{=}&amp; \varepsilon_{ijk} A_j \varepsilon_{klm} B_l C_m \\
+&amp;=&amp; \varepsilon_{ijk} \varepsilon_{klm} A_j B_l C_m \\  
+&amp;\overset{\text{定義 1}}{=}&amp;\varepsilon_{kij} \varepsilon_{klm} A_j B_l C_m \\
+&amp;\overset{\text{已知 4}}{=}&amp;  (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) A_j B_l C_m \\
+&amp;\overset{\text{定義 2}}{=}&amp; A_j B_l C_j - A_j B_j C_m \\
+&amp;=&amp; A_j C_j B_l - A_j B_j C_m \\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp; (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="mathbf-a-times-mathbf-b-cdot-mathbf-c-times-mathbf-d-mathbf-a-cdot-mathbf-c-mathbf-b-cdot-mathbf-d-mathbf-a-cdot-mathbf-d-mathbf-b-cdot-mathbf-c">
+<h3>3. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D})  = (\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C})\)</span><a class="headerlink" href="#mathbf-a-times-mathbf-b-cdot-mathbf-c-times-mathbf-d-mathbf-a-cdot-mathbf-c-mathbf-b-cdot-mathbf-d-mathbf-a-cdot-mathbf-d-mathbf-b-cdot-mathbf-c" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+(\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D}) &amp;\overset{\text{Esc}}{=}&amp; (\mathbf{A} \times \mathbf{B})_i \cdot (\mathbf{C} \times \mathbf{D})_i \\
+&amp;\overset{\text{LC}}{=}&amp; \varepsilon_{ijk} A_j B_k  \varepsilon_{ilm} C_l D_m \\
+&amp;=&amp;  \varepsilon_{ijk} \varepsilon_{ilm} A_j B_k C_l D_m \\
+&amp;\overset{\text{已知 4}}{=}&amp; (\delta_{jl} \delta_{km} - \delta_{jm} \delta_{kl})  A_j B_k C_l D_m \\
+&amp;\overset{\text{定義 2}}{=}&amp; A_j B_k C_j D_k - A_j B_k C_k D_j \\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp;(\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C}) \\
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a">
+<h3>4. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  = ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} = ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \)</span><a class="headerlink" href="#mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}) &amp;\overset{\text{Esc}}{=}&amp; ((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}))_i \\
+&amp;\overset{\text{LC}}{=}&amp; \varepsilon_{ijk} (\mathbf{A} \times \mathbf{B})_j  (\mathbf{C} \times \mathbf{D})_k \\
+&amp;\overset{\text{LC}}{=}&amp; \varepsilon_{ijk} \varepsilon_{jlm} A_l B_m  \varepsilon_{kqp} C_q D_p \\
+&amp;\overset{\text{定義 1:}k}{=}&amp; \varepsilon_{kij} \varepsilon_{kqp} \varepsilon_{jlm} A_l B_m C_q D_p \\
+&amp;\overset{\text{已知 4}}{=}&amp; (\delta_{iq} \delta_{jp} - \delta_{ip} \delta_{jq})  \varepsilon_{jlm} A_l B_m C_q D_p \\
+&amp;\overset{\text{定義 2}}{=}&amp; \varepsilon_{jlm} A_l B_m C_i D_j - \varepsilon_{jlm} A_l B_m C_j D_i \\
+&amp;\overset{\text{LC}^{-1}}{=}&amp; (\mathbf{A} \times \mathbf{B})_j C_i D_j - (\mathbf{A} \times \mathbf{B})_j C_j D_i \\ 
+&amp;\overset{\text{Esc}^{-1}}{=}&amp; ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D}  \\
+\end{gather*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}) &amp;\overset{\text{Esc}}{=}&amp; ((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}))_i \\
+&amp;\overset{\text{LC}}{=}&amp; \varepsilon_{ijk} (\mathbf{A} \times \mathbf{B})_j  (\mathbf{C} \times \mathbf{D})_k \\
+&amp;\overset{\text{LC}}{=}&amp; \varepsilon_{ijk} \varepsilon_{jlm} A_l B_m  \varepsilon_{kqp} C_q D_p \\
+&amp;\overset{\text{定義 1:}j}{=}&amp; \varepsilon_{jki} \varepsilon_{jlm} \varepsilon_{kqp}  A_l B_m C_q D_p \\
+&amp;\overset{\text{已知 4}}{=}&amp; (\delta_{kl} \delta_{im} - \delta_{km} \delta_{il})  \varepsilon_{kqp} A_l B_m C_q D_p \\
+&amp;\overset{\text{定義 2}}{=}&amp; \varepsilon_{kqp} A_k B_i C_q D_p - \varepsilon_{kqp} A_i B_k C_q D_p \\
+&amp;\overset{\text{LC}^{-1}}{=}&amp; (\mathbf{C} \times \mathbf{D})_k A_k B_i - (\mathbf{C} \times \mathbf{D})_k A_i B_k \\ 
+&amp;\overset{\text{Esc}^{-1}}{=}&amp; ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A}  \\
+\end{gather*}
+\end{split}\]</div>
+</section>
+</section>
 <section id="id5">
-<h4>第一步：寫成指標形式<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
-<p>我們將左式第  個分量寫出來：</p>
-<p>這裡的  代表 。</p>
-</section>
+<h2>小試身手 2<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>對於向量 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 向量 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 向量 <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> 純量 <span class="math notranslate nohighlight">\(f\)</span> 純量 <span class="math notranslate nohighlight">\(g\)</span> 我們可以證明以下幾點。</p>
+<section id="nabla-times-nabla-f-0">
+<h3>1. <span class="math notranslate nohighlight">\(\nabla \times (\nabla f) = 0\)</span><a class="headerlink" href="#nabla-times-nabla-f-0" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \times (\nabla f) &amp;\overset{\text{Esc}}{=} &amp; (\nabla \times (\nabla f))_i \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j \partial_k f \\
+&amp;\overset{\text{定義 1}}{=} &amp; -\varepsilon_{ikj} \partial_j \partial_k f \\
+&amp;= &amp; -\varepsilon_{ikj} \partial_k \partial_j f \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; -(\nabla \times (\nabla f))_i \\
+&amp;\overset{\text{LC}^{-1}}{=}&amp; - \nabla \times (\nabla f)\\
+&amp;=&amp;0
+\end{gather*}
+\end{split}\]</div>
 <section id="id6">
-<h4>第二步：展開內層的旋度<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
-<p>再用一次  符號展開括號內的部分：</p>
+<h4>物理意義：<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>力學：如果 <span class="math notranslate nohighlight">\(f\)</span> 是位能 <span class="math notranslate nohighlight">\(U\)</span></p>
+<p><span class="math notranslate nohighlight">\(U : [J],\quad \nabla U : [\frac{J}{m}] = [N],\quad \nabla \times (\nabla U) : [\frac{N}{m}]\)</span></p>
+<p>因為力場 <span class="math notranslate nohighlight">\(\mathbf{F} = -\nabla U\)</span> 是保守力場，其旋度 <span class="math notranslate nohighlight">\([\frac{N}{m}]\)</span> 為零，表示位能產生的力場不會形成 <strong>循環力</strong> 或 <strong>渦旋</strong> ，這保證了 <strong>能量守恆</strong> ，也就是繞一圈重力所做的功為 <span class="math notranslate nohighlight">\(0\)</span></p>
+<ul>
+<li><p>循環力（非保守力）：</p>
+<p>繞一圈回來，能量卻增加（減少）了的力 <span class="math notranslate nohighlight">\((\Delta U = \oint_C \mathbf{F} \cdot d\mathbf{r} \neq 0)\)</span></p>
+</li>
+<li><p>渦旋：</p>
+<p>力場在 <strong>局部微觀</strong>上的旋轉特性 <span class="math notranslate nohighlight">\(\nabla \times \mathbf{F} \neq 0\)</span></p>
+</li>
+</ul>
+</li>
+<li><p>電磁學：如果 <span class="math notranslate nohighlight">\(f\)</span> 是電位 <span class="math notranslate nohighlight">\(V\)</span></p>
+<p><span class="math notranslate nohighlight">\(V : [\frac{J}{C}],\quad \nabla V : [\frac{V}{m}] = [\frac{N}{C}],\quad \nabla \times (\nabla V) : [\frac{N}{C}\frac{1}{m}]\)</span></p>
+<p>因為電場 <span class="math notranslate nohighlight">\(\mathbf{E} = -\nabla V : [\frac{N}{C}]\)</span> 的旋度 <span class="math notranslate nohighlight">\([\frac{N}{C}\frac{1}{m}]\)</span> 為零，表示靜電場沒有局部旋轉或環流。</p>
+<ul class="simple">
+<li><p>Maxwell 方程</p>
+<ul>
+<li><p>靜電的情況 <span class="math notranslate nohighlight">\(\nabla \times \mathbf{E} = 0\)</span></p></li>
+<li><p>動態電磁場 <span class="math notranslate nohighlight">\(\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \neq 0\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>流體力學：如果 <span class="math notranslate nohighlight">\(f\)</span> 是速度位勢 <span class="math notranslate nohighlight">\(\phi\)</span></p>
+<p><span class="math notranslate nohighlight">\(\phi : [\frac{m^2}{s}],\quad \nabla \phi : [\frac{m}{s}],\quad \nabla \times (\nabla \phi) : [\frac{1}{s}]\)</span></p>
+<p>因為流體速度場 <span class="math notranslate nohighlight">\(\mathbf{v} = \nabla \phi :[\frac{m}{s}]\)</span> 的旋度 <span class="math notranslate nohighlight">\([\frac{1}{s}]\)</span> 為零，表示此流體為無旋流沒有渦度。</p>
+<ul>
+<li><p>渦度 <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{\omega} = \nabla \times \mathbf{v} : [\frac{1}{s}] \)</span></p>
+</li>
+<li><p>速度位勢 <span class="math notranslate nohighlight">\(\phi\)</span></p>
+<p><strong>「如果一個向量場沒有旋度（</strong> <span class="math notranslate nohighlight">\(\nabla \times \mathbf{v} = 0\)</span> <strong>），那它一定可以寫成某個純量函數的梯度」</strong></p>
+<p>假設某個流體流動是 <strong>無旋的 (Irrotational)</strong> (<span class="math notranslate nohighlight">\(\nabla \times \mathbf{v} = 0\)</span>)，那就太棒了！既然它無旋就不用處理麻煩的向量 <span class="math notranslate nohighlight">\(\mathbf{v} = (u, v, w)\)</span> 可以創造一個虛擬的純量函數 <span class="math notranslate nohighlight">\(\phi(x, y, z)\)</span>，使得 <span class="math notranslate nohighlight">\(\mathbf{v} = \nabla \phi\)</span></p>
+</li>
+</ul>
+</li>
+<li><p>流體力學：如果 <span class="math notranslate nohighlight">\(f\)</span> 是壓力除以密度 <span class="math notranslate nohighlight">\(\frac{P}{\rho}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{P}{\rho}: [\frac{N}{m^2}][\frac{m^3}{kg}]=[\frac{m^2}{s^2}] ,\quad \nabla \frac{P}{\rho}:[\frac{m}{s^2}] ,\quad \nabla \times (\nabla \frac{P}{\rho}) : [\frac{1}{s^2}]\)</span></p>
+<p>在 <strong>正壓流體</strong> 假設下壓力位勢 <span class="math notranslate nohighlight">\(\frac{P}{\rho}\)</span> 的 gradient 給出流體加速度場 <span class="math notranslate nohighlight">\([\frac{m}{s^2}]\)</span>，其旋度 <span class="math notranslate nohighlight">\([\frac{1}{s^2}]\)</span> 為零，表示純壓力位勢無法產生渦度。</p>
+<ul>
+<li><p>正壓流體</p>
+<ul class="simple">
+<li><p>在流體力學的動量方程式（Navier-Stokes），壓力項通常是寫成：<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \nabla P\)</span> 而不是寫成 <span class="math notranslate nohighlight">\(-\nabla(\frac{P}{\rho})\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\nabla \left(\frac{P}{\rho}\right) = \frac{1}{\rho}\nabla P + P \nabla \left(\frac{1}{\rho}\right)\]</div>
+<ul class="simple">
+<li><p>只有當 <span class="math notranslate nohighlight">\(\rho\)</span> 是常數（不可壓縮流） 或者 <span class="math notranslate nohighlight">\(\rho\)</span> 只是 <span class="math notranslate nohighlight">\(P\)</span> 的函數（正壓流體 Barotropic） 時，我們才能把壓力項視為一個純量場的梯度，這時候渦度才不會產生。</p></li>
+<li><p>若壓力梯度力可以寫成位勢 <span class="math notranslate nohighlight">\(\nabla(\frac{P}{\rho})\)</span>，此時壓力項無法產生渦度，但在斜壓流體中密度與壓力的交錯分佈將會破壞此恆等式並產生渦度</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>只由『高低差』（純量場 <span class="math notranslate nohighlight">\(f\)</span>）所驅動的系統，永遠無法自己產生『旋轉』。</strong></p></li>
+</ul>
+<p>​</p>
 </section>
-<section id="identity">
-<h4>第三步：使用核心恆等式 ( Identity)<a class="headerlink" href="#identity" title="Link to this heading">#</a></h4>
-<p>我們利用上一堂課提到的定理：。
-將其代入算式：</p>
 </section>
-<section id="kronecker-delta">
-<h4>第四步：化簡 Kronecker delta<a class="headerlink" href="#kronecker-delta" title="Link to this heading">#</a></h4>
-<p>當  遇到指標時會進行「篩選」。</p>
-<ol class="arabic simple">
-<li><p>第一項 ：只有當  且  時才存活，變成 。</p></li>
-<li><p>第二項 ：只有當  且  時才存活，變成 。</p></li>
-</ol>
-<p>整理後得到：</p>
-</section>
+<section id="nabla-cdot-nabla-times-mathbf-v-0">
+<h3>2. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla \times \mathbf{V}) = 0\)</span><a class="headerlink" href="#nabla-cdot-nabla-times-mathbf-v-0" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \cdot (\nabla \times \mathbf{V}) &amp;\overset{\text{Esc}}{=} &amp; \partial_i (\nabla \times \mathbf{V})_i \\
+&amp;\overset{\text{LC}}{=} &amp; \partial_i \varepsilon_{ijk} \partial_j V_k  \\
+&amp;\overset{\text{定義 1}}{=} &amp; \partial_i (-\varepsilon_{jik}) \partial_j V_k \\
+&amp;= &amp; \partial_j (-\varepsilon_{jik}) \partial_i V_k \\
+&amp;\overset{\text{LC}^{-1}}{=} &amp; -\partial_j (\nabla \times \mathbf{V})_j \\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp; - \nabla \cdot (\nabla \times \mathbf{V})\\
+&amp;=&amp;0
+\end{gather*}
+\end{split}\]</div>
 <section id="id7">
-<h4>第五步：轉回向量符號<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<h4>物理意義：<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>磁學 (為什麼找不到磁單極子?)</p>
+<p>磁場 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 是由向量位勢 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 的旋度產生的：<span class="math notranslate nohighlight">\(\mathbf{B} = \nabla \times \mathbf{A}\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot \mathbf{B} = \nabla \cdot (\nabla \times \mathbf{A}) = 0\]</div>
+<ul class="simple">
+<li><p>馬克士威方程組中的 <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{B} = 0\)</span>（磁高斯定律）。</p>
+<ul>
+<li><p>宇宙中沒有 <strong>磁單極子（Magnetic Monopole）</strong></p></li>
+<li><p>找不到一個單獨的 <strong>北極 (N)</strong> 讓磁力線像射出來不到無窮遠卻不閉合的線</p></li>
+<li><p>磁力線永遠是從 N 極出發回到 S 極，形成一個 <strong>閉合迴路</strong> ，這就是 <strong>旋度的散度為零</strong> 的直接證據</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>流體力學 (龍捲風為什麼不能被截斷?)</p>
+<p>渦度 (Vorticity) <span class="math notranslate nohighlight">\(\boldsymbol{\omega} = \nabla \times \mathbf{v}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot \boldsymbol{\omega} = 0\]</div>
+<ul>
+<li><p>Helmholtz’s Theorem：「渦管 (Vortex Tube) 不能在流體內部中斷。」，渦管在數學幾何上是連續的，它無法在流體內部憑空形成 <strong>斷頭</strong> 或 <strong>起點</strong> 因此它只有三種存在的形態：</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>延伸至邊界 (Boundary Termination)：渦管的兩端必須 <strong>錨定</strong> 在流體的邊界上。例子： 龍捲風（上端接雲層邊界，下端接地面邊界）、水槽漩渦（上接水面，下接排水口）。</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>形成閉合迴路 (Closed Loop)：渦管頭尾相接形成一個封閉的環狀結構。例子： 煙圈 (Smoke Ring)、海豚吐出的氣泡環。</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>擴散或重連 (Diffusion / Reconnection) ：如果在流體內部強行切斷它（如手碰觸），渦管不會變成兩條斷頭線而是會發生以下情況：</p></li>
+</ol>
+<ul class="simple">
+<li><p>重連： 斷開的端點會瞬間尋找彼此或新的邊界接合（Reconnection）</p></li>
+<li><p>擴散： 或者因黏滯力使渦度迅速擴散為零，使渦管結構在數學上「消散」而非幾何上「中斷」</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>任何純旋轉場都不可能是源或匯，旋轉本身不會產生淨流出或淨流入</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="nabla-times-nabla-times-mathbf-v-nabla-nabla-cdot-mathbf-v-nabla-2-mathbf-v">
+<h3>3. <span class="math notranslate nohighlight">\(\nabla \times (\nabla \times \mathbf{V}) = \nabla (\nabla \cdot \mathbf{V}) - \nabla^2 \mathbf{V}\)</span><a class="headerlink" href="#nabla-times-nabla-times-mathbf-v-nabla-nabla-cdot-mathbf-v-nabla-2-mathbf-v" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \times (\nabla \times \mathbf{V}) &amp;\overset{\text{Esc}}{=} &amp; (\nabla \times (\nabla \times \mathbf{V}))_i \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j (\nabla \times \mathbf{V})_k  \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j \varepsilon_{klm} \partial_l V_m  \\
+&amp;\overset{\text{定義 1}}{=} &amp; \varepsilon_{kij} \varepsilon_{klm} \partial_j \partial_l V_m\\
+&amp;\overset{\text{已知 4}}{=} &amp; (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) \partial_j \partial_l V_m \\
+&amp;\overset{\text{定義 2}}{=} &amp; \partial_j \partial_i V_j  - \partial_j \partial_j V_i \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; \partial_i (\nabla \cdot \mathbf{V} )  - (\nabla \cdot \nabla)  V_i \\ 
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; \nabla (\nabla \cdot \mathbf{V} )  - \nabla^2  \mathbf{V} \\
+\end{gather*}
+\end{split}\]</div>
+<section id="helmholtz-helmholtz-decomposition-theorem">
+<h4>Helmholtz 分解定理 (Helmholtz Decomposition Theorem)<a class="headerlink" href="#helmholtz-helmholtz-decomposition-theorem" title="Link to this heading">#</a></h4>
+<p>任何一個物理上合理的（在無窮遠處衰減夠快）向量場 <span class="math notranslate nohighlight">\(\mathbf{V}\)</span>，都可以寫成：</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{V} = \underbrace{-\nabla f}_{\text{無旋部分 (Irrotational)}} + \underbrace{\nabla \times \mathbf{A}}_{\text{無散部分 (Solenoidal)}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{V}\)</span> (速度場)、<span class="math notranslate nohighlight">\(\mathbf{E}\)</span> (電場)、<span class="math notranslate nohighlight">\(\mathbf{B}\)</span> (磁場) 都可以。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla^2 \mathbf{V}\)</span> (黏滯力場)： <span class="math notranslate nohighlight">\(\underbrace{\nabla^2  \mathbf{V}}_{\text{複雜的物理作用}} = \underbrace{\nabla (\nabla \cdot \mathbf{V} )}_{\text{Irrotational}} - \underbrace{\nabla \times (\nabla \times \mathbf{V})}_{\text{Solenoidal}}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\nabla^2 \mathbf{V}\)</span>把這裡的速度差異抹平！</p></li>
+<li><p>無旋 :　<span class="math notranslate nohighlight">\(\nabla \times ( \nabla (\nabla \cdot \mathbf{V} )) =  \nabla \times (\nabla (f)) \overset{\text{小試身手2-1}}{=} 0\)</span></p></li>
+<li><p>無輻散 :　<span class="math notranslate nohighlight">\(\nabla \cdot ( \nabla \times (\nabla \times \mathbf{V})) =  \nabla \cdot (\nabla \times \mathbf{A}) \overset{\text{小試身手2-2}}{=} 0\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="nabla-cdot-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-times-mathbf-a-mathbf-a-cdot-nabla-times-mathbf-b">
+<h3>4. <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot  (\nabla \times \mathbf{A}) - \mathbf{A} \cdot  (\nabla \times \mathbf{B})\)</span><a class="headerlink" href="#nabla-cdot-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-times-mathbf-a-mathbf-a-cdot-nabla-times-mathbf-b" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \cdot (\mathbf{A} \times \mathbf{B}) &amp;\overset{\text{Esc}}{=} &amp; \partial_i (\mathbf{A} \times \mathbf{B})_i \\
+&amp;\overset{\text{LC}}{=} &amp; \partial_i \varepsilon_{ijk} A_j B_k  \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} (\partial_i A_j ) B_k  + \varepsilon_{ijk} A_j  (\partial_i B_k) \\
+&amp;\overset{\text{定義 1}}{=} &amp; B_k \varepsilon_{kij} (\partial_i A_j ) + A_j (-\varepsilon_{jik}) (\partial_i B_k) \\
+&amp;\overset{\text{LC}^{-1}}{=} &amp; B_k (\nabla \times \mathbf{A})_k  + A_j (-\nabla \times \mathbf{B})_j \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; \mathbf{B} \cdot  (\nabla \times \mathbf{A}) - \mathbf{A} \cdot  (\nabla \times \mathbf{B}) \\
+\end{gather*}
+\end{split}\]</div>
+<section id="id8">
+<h4>核心恆等式：交互作用的散度<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\]</div>
+<ul class="simple">
+<li><p><strong>一句話靈魂：</strong>「兩個場的『糾纏旋轉』，製造了『交互作用流』的源頭與匯聚。」</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="a">
+<h4>a. 物理實例：用在哪裡？ (能量守恆)<a class="headerlink" href="#a" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>標準代換：</strong> 設 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 為電場 <span class="math notranslate nohighlight">\(\mathbf{E}\)</span>，<span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 為磁場 <span class="math notranslate nohighlight">\(\mathbf{H}\)</span>。</p></li>
+<li><p><strong>交互作用流：</strong> 兩者的叉積 <span class="math notranslate nohighlight">\(\mathbf{E} \times \mathbf{H} = \mathbf{S}\)</span> ，這正是<strong>波印廷向量</strong>（電磁能量流）。</p></li>
+<li><p><strong>物理意義：</strong> 等號左邊是  <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{S}\)</span> ，代表「空間中某點流出的總能量」。</p></li>
+<li><p><strong>守恆結論：</strong> 能量不會憑空噴出。流出的能量必然等於右邊 <strong>磁場與電場的旋轉交織</strong> 所帶來的能量轉換與作功損耗。</p></li>
+</ul>
+</section>
+<section id="b">
+<h4>b. 幾何圖像：怎麼想像它？ (旋度的投影)<a class="headerlink" href="#b" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>現象本質：</strong> 這條公式把物理世界的兩種動作連起來了：左邊算的是「發散 / 壓縮」，右邊算的是「旋轉」。</p></li>
+<li><p><strong>流體類比：</strong> <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 氣流與 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 側風交會，擠出了垂直的「側向傳輸流 (<span class="math notranslate nohighlight">\(\mathbf{A} \times \mathbf{B}\)</span>)」。</p></li>
+<li><p><strong>發散的條件：</strong> 這個側向流如果要變多（產生散度），不能只靠平移。必須是「 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>的旋轉軸」剛好順著「<span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 的方向」（也就是 <span class="math notranslate nohighlight">\(\mathbf{B} \cdot (\nabla \times \mathbf{A}) \neq 0\)</span>），像抽水馬達一樣把流體捲進來或擠出去。</p></li>
+</ul>
+</section>
+<section id="id9">
+<h4>💡 實戰使用指南<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>何時該使用它？</strong> 當你在推導流體力學或電磁學時，只要看到 <strong>「要求一個叉積的散度」</strong> <span class="math notranslate nohighlight">\(\nabla \cdot (\text{叉積})\)</span>，就立刻寫下這條公式。</p></li>
+<li><p><strong>它的強大之處：</strong> 它可以把一個未知的「複雜交互流的發散量」，完美轉換成兩個已知場的「旋度點積」相減，通常其中一項在物理上會剛好等於 0（例如某個場是無旋的），式子瞬間就會大幅簡化！</p></li>
+<li><p><a class="reference internal" href="new_project.html#test"><span class="std std-ref">或者做一點實作</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="nabla-times-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-mathbf-a-nabla-cdot-mathbf-b-mathbf-a-mathbf-a-cdot-nabla-mathbf-b-nabla-cdot-mathbf-a-mathbf-b">
+<h3>5. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span><a class="headerlink" href="#nabla-times-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-mathbf-a-nabla-cdot-mathbf-b-mathbf-a-mathbf-a-cdot-nabla-mathbf-b-nabla-cdot-mathbf-a-mathbf-b" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \times (\mathbf{A} \times \mathbf{B}) &amp;\overset{\text{Esc}}{=} &amp; (\nabla \times (\mathbf{A} \times \mathbf{B}))_i \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j (\mathbf{A} \times \mathbf{B})_k  \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j (\varepsilon_{klm} A_l B_m ) \\
+&amp;\overset{\text{定義 1}}{=} &amp; \varepsilon_{kij} \varepsilon_{klm} \partial_j (A_l B_m)\\
+&amp;\overset{\text{已知 4}}{=} &amp; (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) \partial_j (A_l B_m)\\
+&amp;\overset{\text{定義 2}}{=} &amp; \partial_j (A_i B_j) - \partial_j (A_j B_i) \\
+&amp;\overset{\text{chain rule}}{=} &amp; (\partial_j A_i ) B_j + A_i(\partial_j B_j) - (\partial_j A_j )B_i- A_j(\partial_j B_i)\\
+&amp; = &amp; B_j (\partial_j A_i ) +  (\partial_j B_j) A_i- (\partial_j A_j )B_i- A_j(\partial_j B_i) \\
+&amp; = &amp; B_j \partial_j A_i  +  \partial_j B_j A_i- \partial_j A_j B_i- A_j \partial_j B_i \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; (\mathbf{B} \cdot \nabla) A_i + (\nabla \cdot \mathbf{B}) A_i -  (\nabla \cdot \mathbf{A}) B_i - (\mathbf{A} \cdot \nabla) B_i \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} -  (\nabla \cdot \mathbf{A}) \mathbf{B}- (\mathbf{A} \cdot \nabla) \mathbf{B}   \\
+&amp;=&amp; (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}
+\end{gather*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>注意
+$<span class="math notranslate nohighlight">\((\mathbf{B} \cdot \nabla) = B_x \frac{\partial}{\partial x} + B_y \frac{\partial}{\partial y} + B_z \frac{\partial}{\partial z}\)</span><span class="math notranslate nohighlight">\(當它作用在 \)</span>\mathbf{A}<span class="math notranslate nohighlight">\( 上時：\)</span><span class="math notranslate nohighlight">\((\mathbf{B} \cdot \nabla) \mathbf{A} = \left( B_x \frac{\partial \mathbf{A}}{\partial x} + B_y \frac{\partial \mathbf{A}}{\partial y} + B_z \frac{\partial \mathbf{A}}{\partial z} \right)\)</span>$</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>6. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \times (\mathbf{A} \times \mathbf{B}) &amp;\overset{\text{Esc}}{=} &amp; (\nabla \times (\mathbf{A} \times \mathbf{B}))_i \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j (\mathbf{A} \times \mathbf{B})_k  \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j (\varepsilon_{klm} A_l B_m ) \\
+&amp;\overset{\text{定義 1}}{=} &amp; \varepsilon_{kij} \varepsilon_{klm} \partial_j (A_l B_m)\\
+&amp;\overset{\text{已知 4}}{=} &amp; (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) \partial_j (A_l B_m)\\
+&amp;\overset{\text{定義 2}}{=} &amp; \partial_j (A_i B_j) - \partial_j (A_j B_i) \\
+&amp;\overset{\text{chain rule}}{=} &amp; (\partial_j A_i ) B_j + A_i(\partial_j B_j) - (\partial_j A_j )B_i- A_j(\partial_j B_i)\\
+&amp; = &amp; B_j (\partial_j A_i ) +  (\partial_j B_j) A_i- (\partial_j A_j )B_i- A_j(\partial_j B_i) \\
+&amp; = &amp; B_j \partial_j A_i  +  \partial_j B_j A_i- \partial_j A_j B_i- A_j \partial_j B_i \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; (\mathbf{B} \cdot \nabla) A_i + (\nabla \cdot \mathbf{B}) A_i -  (\nabla \cdot \mathbf{A}) B_i - (\mathbf{A} \cdot \nabla) B_i \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} -  (\nabla \cdot \mathbf{A}) \mathbf{B}- (\mathbf{A} \cdot \nabla) \mathbf{B}   \\
+&amp;=&amp; (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">
+<h3>7. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span><a class="headerlink" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\mathbf{A} \times (\nabla \times \mathbf{B}) &amp;\overset{\text{Esc}}{=} &amp; (\mathbf{A} \times (\nabla \times \mathbf{B}))_i \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} A_j (\nabla \times \mathbf{B})_k  \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} A_j \varepsilon_{klm} \partial_l B_m \\
+&amp;\overset{\text{定義 1}}{=} &amp; \varepsilon_{kij} \varepsilon_{klm} A_j \partial_l B_m\\
+&amp;\overset{\text{已知 4}}{=} &amp; (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) A_j \partial_l B_m\\
+&amp;\overset{\text{定義 2}}{=} &amp; A_j \partial_i B_j - A_j \partial_j B_i \\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; \mathbf{A}_{(1\times 3)} (\nabla_{(3\times 1)} \mathbf{B}_{( 1\times 3)} )^{\top} + (\mathbf{A} \cdot \nabla) B_i\\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \\
+&amp;=&amp; \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B}
+\end{gather*}
+\end{split}\]</div>
+<section id="id11">
+<h4>數學定義<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p>由於碰到了不知道怎麼處理的 <span class="math notranslate nohighlight">\(A_j \partial_i B_j\)</span> ，我們只能派出矩陣來解決這個數學表達，想像 <span class="math notranslate nohighlight">\(j\)</span> 和 <span class="math notranslate nohighlight">\(j\)</span> 必須再一起，所以要用轉置 <span class="math notranslate nohighlight">\(\top\)</span> 將<span class="math notranslate nohighlight">\(( \nabla \mathbf{B})\)</span> 的index <span class="math notranslate nohighlight">\(j\)</span> 和 <span class="math notranslate nohighlight">\(i\)</span> 的位置交換。這道題目用Levi-Civita來證明是一件挺尷尬的事情，所以我用國小二年級的方法證明 <span class="math notranslate nohighlight">\(A_j \partial_i B_j\)</span> 在 <span class="math notranslate nohighlight">\(\text{Esc}^{-1}\)</span> 的情況下可以寫成 <span class="math notranslate nohighlight">\(\mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top}\)</span></p>
+<p>計算 <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B})\)</span> 和  <span class="math notranslate nohighlight">\((\mathbf{A} \cdot \nabla) \mathbf{B}\)</span> ， <span class="math notranslate nohighlight">\(\mathbf{A} = (A_x,A_y,A_z) , \mathbf{B} = (B_x,B_y,B_z) ,\nabla = (\partial_x,\partial_y,\partial_z) \)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\mathbf{A} \times (\nabla \times \mathbf{B}) = (
+&amp;A_y \partial_x B_y - A_y \partial_y B_x - A_z \partial_z B_x + A_z \partial_x B_z,\\
+&amp;A_z \partial_y B_z - A_z \partial_z B_y - A_x \partial_x B_y + A_x \partial_y B_x,\\
+&amp;A_x \partial_z B_x - A_x \partial_x B_z - A_y \partial_y B_z + A_y \partial_z B_y)
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+(\mathbf{A} \cdot \nabla) \mathbf{B} = (
+&amp;A_x \partial_x B_x +A_y \partial_y B_x +A_z \partial_z B_x,\\
+&amp;A_x \partial_x B_y +A_y \partial_y B_y +A_z \partial_z B_y,\\
+&amp;A_x \partial_x B_z +A_y \partial_y B_z +A_z \partial_z B_z)
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\mathbf{A} \times (\nabla \times \mathbf{B}) + (\mathbf{A} \cdot \nabla) \mathbf{B} = ( 
+&amp;A_x \partial_x B_x + A_y \partial_x B_y + A_z \partial_x B_z,\\ 
+&amp;A_y \partial_y B_y + A_z \partial_y B_z + A_x \partial_y B_x,\\
+&amp;A_z \partial_z B_z + A_x \partial_z B_x + A_y \partial_z B_y)\\
+&amp;\overset{\text{pf}}{=} \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} \underset{\text{let}}{\overset{\text{Esc}}{=}} A_j \partial_i B_j
+\end{aligned}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>其中</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\nabla \mathbf{B} = \begin{bmatrix} \partial_x \\ \partial_y \\ \partial_z  \end{bmatrix} \begin{bmatrix} B_x  B_y B_z  \end{bmatrix} = \begin{bmatrix} \partial_x B_x &amp; \partial_x B_y &amp; \partial_x B_z \\ \partial_y B_x &amp; \partial_y B_y &amp; \partial_y B_z  \\ \partial_z B_x &amp; \partial_z B_y &amp; \partial_z B_z \end{bmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A} (\nabla \mathbf{B})^{\top} = \begin{bmatrix} A_x  A_y A_z  \end{bmatrix} \begin{bmatrix}\partial_x B_x &amp; \partial_y B_x &amp; \partial_z B_x\\ \partial_x B_y &amp; \partial_y B_y &amp;  \partial_z B_y\\ \partial_x B_z &amp; \partial_y B_z &amp; \partial_z B_z \end{bmatrix} = \begin{bmatrix} A_x\partial_x B_x+ A_y\partial_x B_y+A_z\partial_x B_z \quad A_x\partial_y B_x+ A_y\partial_y B_y+A_z\partial_y B_z \quad A_x\partial_z B_x+ A_y\partial_z B_y+A_z\partial_z B_z  \end{bmatrix}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">
+<h3>8. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span><a class="headerlink" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla (\mathbf{A} \cdot \mathbf{B}) &amp;\overset{\text{Esc}}{=} &amp; \partial_i ( A_j B_j) \\
+&amp;\overset{\text{chain rule}}{=} &amp; (\partial_i  A_j) B_j + A_j (\partial_i B_j) \\
+&amp;= &amp;  B_j (\partial_i  A_j) + A_j (\partial_i B_j) \\
+&amp;\underset{\text{小試身手2-7}}{\overset{\text{Esc}^{-1}}{=}}&amp; \mathbf{B}_{( 1\times 3)} ( \nabla \mathbf{A})_{( 3\times 3)}^{\top} + \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} \\
+&amp;=&amp; \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \\
+&amp;\underset{\text{小試身手2-7}}{=}&amp;  \mathbf{B} \times (\nabla \times \mathbf{A}) + (\mathbf{B} \cdot \nabla) \mathbf{A} + \mathbf{A} \times (\nabla \times \mathbf{B}) + (\mathbf{A} \cdot \nabla) \mathbf{B} 
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="nabla-f-g-g-nabla-f-f-nabla-g">
+<h3>9. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span><a class="headerlink" href="#nabla-f-g-g-nabla-f-f-nabla-g" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla (f g) &amp;\overset{\text{Esc}}{=} &amp; \partial_i ( f g) \\
+&amp;\overset{\text{chain rule}}{=} &amp; (\partial_i  f) g + f (\partial_i g) \\
+&amp;= &amp;  g(\partial_i  f)  + f (\partial_i g) \\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp; g\nabla(f) + f\nabla(g)
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">
+<h3>10. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span><a class="headerlink" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \cdot (f \mathbf{V}) &amp;\overset{\text{Esc}}{=} &amp; \partial_i ( f V_i) \\
+&amp;\overset{\text{chain rule}}{=} &amp; (\partial_i  f) V_i + f (\partial_i V_i) \\
+&amp;= &amp;  V_i (\partial_i  f)  + f (\partial_i V_i) \\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp; (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">
+<h3>11. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span><a class="headerlink" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \times (f \mathbf{V}) &amp;\overset{\text{Esc}}{=} &amp;  (\nabla \times (f \mathbf{V}))_i \\
+&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j ( f V_k) \\
+&amp;\overset{\text{chain rule}}{=} &amp; \varepsilon_{ijk} ((\partial_j  f) V_k + f (\partial_j V_k)) \\
+&amp;= &amp;  \varepsilon_{ijk}  (\partial_j  f) V_k  + \varepsilon_{ijk} f (\partial_j V_k) \\
+&amp;\overset{\text{LC}^{-1}}{=}&amp; ((\nabla f) \times \mathbf{V})_i + ( \nabla \times \mathbf{V})_i f\\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp; (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">
+<h3>12. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span><a class="headerlink" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \cdot (\nabla f \times \nabla g) &amp;\overset{\text{Esc}}{=} &amp;  \partial_i (\nabla f \times \nabla g)_i \\
+&amp;\overset{\text{LC}}{=} &amp; \partial_i (\varepsilon_{ijk} \partial_j (f)  \partial_k (g)  )\\
+&amp;\overset{\text{chain rule}}{=} &amp; \varepsilon_{ijk} (\partial_i\partial_j (f)  \partial_k (g)  + \partial_j (f)  \partial_i\partial_k (g) ) \\
+&amp;= &amp; \partial_k (g) \varepsilon_{ijk} \partial_i\partial_j (f)    + \partial_j (f)  \varepsilon_{ijk} \partial_i\partial_k (g)  \\
+&amp;\overset{\text{定義 1 }}{=} &amp; \partial_k (g) \varepsilon_{kij} \partial_i\partial_j (f)    + \partial_j (f)  (-\varepsilon_{jik}) \partial_i\partial_k (g) \\
+&amp;\overset{\text{LC}^{-1}}{=}&amp;  \partial_k (g)  (\nabla \times \nabla f )_k - \partial_j (f)  (\nabla \times \nabla g )_j\\
+&amp;\overset{\text{Esc}^{-1}}{=}&amp;(\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) \\
+&amp;\underset{\text{小試身手2-1}}{=}&amp;(\nabla g) \cdot (0) - (\nabla f) \cdot (0) \\
+&amp;=&amp;0
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">
+<h3>13. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span><a class="headerlink" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla \cdot ( f \nabla g) &amp;\overset{\text{Esc}}{=} &amp;  \partial_i ( f \partial_i (g)) \\
+&amp;\overset{\text{chain rule}}{=} &amp; \partial_i (f) \partial_i (g) + f \partial_i \partial_i (g)\\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; (\nabla f) \cdot (\nabla g) + f \nabla^2 g\\
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">
+<h3>14. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span><a class="headerlink" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla^2 ( f g) &amp;\overset{\text{Esc}}{=} &amp;  \partial_i \partial_i ( f g) \\
+&amp;\overset{\text{chain rule}}{=} &amp; \partial_i (g \partial_i (f) + f \partial_i (g))\\
+&amp;\overset{\text{chain rule}}{=} &amp; g \partial_i\partial_i (f) + \partial_i (g)\partial_i (f) + \partial_i (f) \partial_i (g) +  f \partial_i \partial_i (g)\\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\\
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">
+<h3>15. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span><a class="headerlink" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{gather*}
+\nabla^2 ( f \mathbf{V}) &amp;\overset{\text{Esc}}{=} &amp;  \partial_i \partial_i ( f V_j) \\
+&amp;\overset{\text{chain rule}}{=} &amp; \partial_i ( \partial_i (f) V_j + f \partial_i (V_j))\\
+&amp;\overset{\text{chain rule}}{=} &amp; \partial_i\partial_i (f) V_j+ \partial_i (f)\partial_i (V_j) + \partial_i (f) \partial_i (V_j) +  f \partial_i \partial_i (V_j)\\
+&amp;\overset{\text{Esc}^{-1}}{=} &amp; ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\\
+\end{gather*}
+\end{split}\]</div>
+</section>
+<section id="id12">
+<h3>3. 方程式推導實戰：證明向量恆等式<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>這是老師最想展示給你的一幕。在流體力學或電磁學中，我們經常遇到「旋度的旋度」這種複雜的算式。</p>
+<p>**</p>
+<section id="id13">
+<h4>第五步：轉回向量符號<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>就是散度 。</p></li>
 <li><p>是梯度運算。</p></li>
@@ -605,13 +1145,10 @@ document.write(`
 </ul>
 <p>結果即為：</p>
 <p><strong>證明完畢。</strong></p>
-</section>
-</section>
 <hr class="docutils" />
-<section id="id8">
-<h3>老師的小結<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
-<p>透過 Levi-Civita 符號，我們不需要去背那些冗長的微積分公式，只需要掌握<strong>指標的交換規律</strong>（也就是那幾條  的定理），所有的向量恆等式都能像拼圖一樣輕鬆解開。這在處理大氣動力學中的<strong>渦度方程 (Vorticity Equation)</strong> 推導時，能幫你省下大量的計算時間並減少錯誤。</p>
+<p>都能像拼圖一樣輕鬆解開。這在處理大氣動力學中的<strong>渦度方程 (Vorticity Equation)</strong> 推導時，能幫你省下大量的計算時間並減少錯誤。</p>
 <p>你想試著用這個方法，自己推導看看為什麼「梯度的旋度恆等於零」（）嗎？這只需要兩行就能證明出來喔！</p>
+</section>
 </section>
 </section>
 </section>
@@ -677,17 +1214,52 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">約定:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinant">2. 它與行列式 (Determinant) 的靈魂連結</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第一步：寫成指標形式</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">第二步：展開內層的旋度</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity">第三步：使用核心恆等式 ( Identity)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kronecker-delta">第四步：化簡 Kronecker delta</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">第五步：轉回向量符號</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">小試身手 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-cdot-mathbf-b-times-mathbf-c-mathbf-b-cdot-mathbf-c-times-mathbf-a-mathbf-c-cdot-mathbf-a-times-mathbf-b">1. <span class="math notranslate nohighlight">\(\mathbf{A} \cdot (\mathbf{B} \times \mathbf{C}) = \mathbf{B} \cdot (\mathbf{C} \times \mathbf{A}) = \mathbf{C} \cdot (\mathbf{A} \times \mathbf{B}) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-mathbf-a-cdot-mathbf-c-mathbf-b-mathbf-a-cdot-mathbf-b-mathbf-c">2. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-cdot-mathbf-c-times-mathbf-d-mathbf-a-cdot-mathbf-c-mathbf-b-cdot-mathbf-d-mathbf-a-cdot-mathbf-d-mathbf-b-cdot-mathbf-c">3. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D})  = (\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C})\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a">4. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  = ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} = ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \)</span></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">老師的小結</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">小試身手 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-nabla-f-0">1. <span class="math notranslate nohighlight">\(\nabla \times (\nabla f) = 0\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">物理意義：</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-times-mathbf-v-0">2. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla \times \mathbf{V}) = 0\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">物理意義：</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-nabla-times-mathbf-v-nabla-nabla-cdot-mathbf-v-nabla-2-mathbf-v">3. <span class="math notranslate nohighlight">\(\nabla \times (\nabla \times \mathbf{V}) = \nabla (\nabla \cdot \mathbf{V}) - \nabla^2 \mathbf{V}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-helmholtz-decomposition-theorem">Helmholtz 分解定理 (Helmholtz Decomposition Theorem)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-times-mathbf-a-mathbf-a-cdot-nabla-times-mathbf-b">4. <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot  (\nabla \times \mathbf{A}) - \mathbf{A} \cdot  (\nabla \times \mathbf{B})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">核心恆等式：交互作用的散度</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a. 物理實例：用在哪裡？ (能量守恆)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b. 幾何圖像：怎麼想像它？ (旋度的投影)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">💡 實戰使用指南</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-mathbf-a-nabla-cdot-mathbf-b-mathbf-a-mathbf-a-cdot-nabla-mathbf-b-nabla-cdot-mathbf-a-mathbf-b">5. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">7. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">數學定義</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">8. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-f-g-g-nabla-f-f-nabla-g">9. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">10. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">11. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">12. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">13. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">14. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">15. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">第五步：轉回向量符號</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

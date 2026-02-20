@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>讓我們試著把您學到的恆等式 \(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)，直接對應到風場與渦度上！ &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'LC/new_project';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    歡迎來到 PC 的筆記本：那些被「略過」的細節
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Derivation_of_Higher_Order_Moments_Normal_Distribution.html">常態分佈高階期望值 <span class="math notranslate nohighlight">\(E[x^n]\)</span> 之證明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition.html">經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="progrem.html">測試選單</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Levi-Civita_symbol.html">Levi-Civita Symbol in 3D</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLC/new_project.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/LC/new_project.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>讓我們試著把您學到的恆等式 \nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})，直接對應到風場與渦度上！</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">第一步：定義我們的氣象變數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第二步：把氣象變數套入恆等式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第三步：這在氣象上代表什麼意義？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">如何用您的資料進行驗證？（計算策略）</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>這是一個絕佳的想法！身為老師，聽到學生說要拿真實的數據來驗證抽象的數學公式，絕對是最令人振奮的時刻。</p>
+<p>大氣科學和氣象學正是向量微積分最完美的「虛擬實驗室」。如果您手邊有氣象網格資料（例如 ERA5 或是模式輸出的網格資料），我們完全可以把這個恆等式轉化為大氣動力學中非常重要的一個物理量。</p>
+<section id="nabla-cdot-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-times-mathbf-a-mathbf-a-cdot-nabla-times-mathbf-b">
+<h1>讓我們試著把您學到的恆等式 <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)</span>，直接對應到風場與渦度上！<a class="headerlink" href="#nabla-cdot-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-times-mathbf-a-mathbf-a-cdot-nabla-times-mathbf-b" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>第一步：定義我們的氣象變數<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>在大氣動力學中，我們做以下設定：</p>
+<ul class="simple">
+<li><p>讓 <span class="math notranslate nohighlight">\(\mathbf{A} = \mathbf{V}\)</span> （三維風場向量，包含 <span class="math notranslate nohighlight">\(u, v, w\)</span>）。</p></li>
+<li><p>讓 <span class="math notranslate nohighlight">\(\mathbf{B} = \boldsymbol{\omega}\)</span> （三維渦度向量 Vorticity，定義為 <span class="math notranslate nohighlight">\(\boldsymbol{\omega} = \nabla \times \mathbf{V}\)</span>）。</p></li>
+</ul>
+<p>這時候，恆等式左邊括號裡面的叉積 <span class="math notranslate nohighlight">\(\mathbf{V} \times \boldsymbol{\omega}\)</span> 有一個專屬的物理名稱，叫做 <strong>蘭姆向量 (Lamb Vector)</strong> 或 <strong>渦動量流 (Vortex Force)</strong>。這項在探討颱風結構或氣旋發展時非常關鍵，它代表了因為風場與渦度交錯而產生的非線性加速度。</p>
+<p><a id="test"></a></p>
+</section>
+<section id="id2">
+<h2>第二步：把氣象變數套入恆等式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>我們把 <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> 和 <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span>  代入您的恆等式：</p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot (\mathbf{V} \times \boldsymbol{\omega}) = \boldsymbol{\omega} \cdot (\nabla \times \mathbf{V}) - \mathbf{V} \cdot (\nabla \times \boldsymbol{\omega})\]</div>
+<p>現在，見證數學魔法的時刻到了！
+觀察等號右邊的第一項：我們知道 <span class="math notranslate nohighlight">\(\nabla \times \mathbf{V}\)</span> 剛好就是渦度 <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span>。
+所以第一項變成了 <span class="math notranslate nohighlight">\(\boldsymbol{\omega} \cdot \boldsymbol{\omega}\)</span>，也就是 <span class="math notranslate nohighlight">\(|\boldsymbol{\omega}|^2\)</span> (渦度大小的平方)！</p>
+<p>公式瞬間進化成了大氣動力學的模樣：</p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot (\mathbf{V} \times \boldsymbol{\omega}) = |\boldsymbol{\omega}|^2 - \mathbf{V} \cdot (\nabla \times \boldsymbol{\omega})\]</div>
+</section>
+<section id="id3">
+<h2>第三步：這在氣象上代表什麼意義？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>這個化簡後的公式，物理意義美得令人驚嘆：</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(|\boldsymbol{\omega}|^2\)</span> (** (渦度平方)：**
+在大氣湍流或氣旋研究中，這叫做 <strong>擬能 (Enstrophy)</strong>。它代表了流場中「旋轉能量」的總和。</p></li>
+<li><p><strong>公式的詮釋：</strong>
+「蘭姆向量的散度（<span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{V} \times \boldsymbol{\omega})\)</span>），等於該處的『旋轉總能量 (擬能)』，扣掉『風場去平流輸送渦度旋度的效應』。」</p></li>
+</ol>
+<p>如果您在分析颱風的眼牆結構，您可以計算這個等式。當您發現某個區域  <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{V} \times \boldsymbol{\omega})\)</span>  非常強烈且為正值時，往往對應著該處擬能（劇烈旋轉）的爆發！</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2>如何用您的資料進行驗證？（計算策略）<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>既然您要用程式碼來驗證，我們需要把微積分變成<strong>數值差分 (Numerical Differentiation)</strong>。</p>
+<p>假設您的資料格式是包含經度、緯度、高度（或氣壓層）的三維網格點：</p>
+<ol class="arabic simple">
+<li><p><strong>準備資料：</strong> 讀取三維風場 <span class="math notranslate nohighlight">\(u, v, w\)</span>。</p></li>
+<li><p><strong>算 <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span>：</strong> 利用相鄰網格點的距離 (<span class="math notranslate nohighlight">\(\Delta x, \Delta y, \Delta z\)</span>)，計算偏微分 <span class="math notranslate nohighlight">\(\frac{\partial w}{\partial y} - \frac{\partial v}{\partial z}\)</span> 等等，得到渦度 <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> 的三個分量。</p></li>
+<li><p><strong>算左邊 (LHS)：</strong> 先把 <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> 和 <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> 做外積得到一個新向量，再對這個新向量算散度 (<span class="math notranslate nohighlight">\(\nabla \cdot\)</span>)</p></li>
+<li><p><strong>算右邊 (RHS)：</strong> 計算 <span class="math notranslate nohighlight">\(|\boldsymbol{\omega}|^2\)</span>，接著再對渦度算一次旋度 (<span class="math notranslate nohighlight">\(\nabla \times \boldsymbol{\omega}\)</span>)，最後與 <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> 做內積相減。</p></li>
+<li><p><strong>相減驗證：</strong> 將 LHS 減去 RHS，看看結果是不是在機器的浮點數誤差範圍內（趨近於 0）。</p></li>
+</ol>
+<p>如果您習慣使用 Python 的科學計算生態系，這整個驗證過程其實只需要非常少量的程式碼就能優雅地完成。</p>
+<p>需要我用 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 或是 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> 的語法，示範一段計算「風場渦度」與「散度差分」的 Pseudo-code（虛擬碼），讓您當作這個驗證小專案的起手式嗎？</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./LC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">第一步：定義我們的氣象變數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第二步：把氣象變數套入恆等式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第三步：這在氣象上代表什麼意義？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">如何用您的資料進行驗證？（計算策略）</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

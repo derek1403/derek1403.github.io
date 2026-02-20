@@ -10,3 +10,4 @@ chapters:
   - file: LC/progrem  # <--- 這是父節點 (Parent)，也就是我們剛建的那個檔案
     sections:      # <--- 代表下面的檔案都屬於它
       - file: LC/Levi-Civita_symbol
+      - file: LC/new_program
