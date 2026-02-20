@@ -394,7 +394,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-cdot-mathbf-b-times-mathbf-c-mathbf-b-cdot-mathbf-c-times-mathbf-a-mathbf-c-cdot-mathbf-a-times-mathbf-b">1. <span class="math notranslate nohighlight">\(\mathbf{A} \cdot (\mathbf{B} \times \mathbf{C}) = \mathbf{B} \cdot (\mathbf{C} \times \mathbf{A}) = \mathbf{C} \cdot (\mathbf{A} \times \mathbf{B}) \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-mathbf-a-cdot-mathbf-c-mathbf-b-mathbf-a-cdot-mathbf-b-mathbf-c">2. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-cdot-mathbf-c-times-mathbf-d-mathbf-a-cdot-mathbf-c-mathbf-b-cdot-mathbf-d-mathbf-a-cdot-mathbf-d-mathbf-b-cdot-mathbf-c">3. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D})  = (\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C})\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a">4. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  = ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} = ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-aligned-mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a-end-aligned">4. <span class="math notranslate nohighlight">\(\begin{aligned} &amp;(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  \\ =&amp; ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} \\ =&amp; ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \end{aligned}\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">小試身手 2</a><ul class="nav section-nav flex-column">
@@ -448,7 +448,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="levi-civita-symbol-in-3d">
+  <style>
+div.output_area [class*="MathJax"] {
+    overflow-x: auto !important;
+    display: block !important;
+}
+</style>
+<style>
+    /* 針對 Jupyter Lab / Notebook 的主容器 */
+    .container, .jp-Notebook, .container-fluid {
+        width: 95% !important; /* 使用螢幕寬度的 95% */
+        max-width: none !important; /* 取消最大寬度限制 */
+    }
+</style>
+<style>
+    @media print {
+        h2 {
+            break-before: page; /* 在每個二級標題前自動換一頁 */
+        }
+    }
+</style><section class="tex2jax_ignore mathjax_ignore" id="levi-civita-symbol-in-3d">
 <h1>Levi-Civita Symbol in 3D<a class="headerlink" href="#levi-civita-symbol-in-3d" title="Link to this heading">#</a></h1>
 <section id="id1">
 <h2>1. 核心定義：指標與置換<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
@@ -608,7 +627,7 @@ document.write(`
 <li><p><strong>【已知 3】 愛因斯坦求和約定(Einstein summation convention) 矩陣</strong> ：</p>
 <p>對於矩陣 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 和矩陣 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 和矩陣 <span class="math notranslate nohighlight">\(\mathbf{C}\)</span></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{B} = \sum_{j=1}^{3} A_{ij}B_{jk} \overset{\text{Esc}}{=} A_{ij}B_{jk} = C_{ik} = \mathbf{C}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{B} = \sum_{j=1}^{3} A_{ij}B_{jk} \overset{\text{Esc}}{=} A_{ij}B_{jk} = C_{ik} \overset{\text{Esc}^{-1}}{=} \mathbf{C}\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【已知 4】 <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> 恆等式</strong> ：把 <strong>旋轉（外積）</strong> 變成 <strong>內積（投影）</strong> 的翻譯器</p>
@@ -619,14 +638,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-\nabla f &amp;= \partial_i f \hat{e}_i, \quad (\nabla f)_i = \partial_i f \\
-\nabla \cdot \vec{V} &amp;= \partial_i V_i \\
-\nabla \times \vec{V} &amp;= \varepsilon_{ijk} \hat{e}_i \partial_j V_k = \varepsilon_{ijk} \partial_i V_j \hat{e}_k, \quad (\nabla \times \vec{V})_i = \varepsilon_{ijk} \partial_j V_k
-\end{align*}
-\end{split}\]</div>
 </section>
 <section id="id4">
 <h2>小試身手 1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
@@ -675,8 +686,8 @@ document.write(`
 \end{gather*}
 \end{split}\]</div>
 </section>
-<section id="mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a">
-<h3>4. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  = ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} = ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \)</span><a class="headerlink" href="#mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a" title="Link to this heading">#</a></h3>
+<section id="begin-aligned-mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a-end-aligned">
+<h3>4. <span class="math notranslate nohighlight">\(\begin{aligned} &amp;(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  \\ =&amp; ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} \\ =&amp; ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \end{aligned}\)</span><a class="headerlink" href="#begin-aligned-mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a-end-aligned" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gather*}
@@ -946,9 +957,17 @@ document.write(`
 \end{gather*}
 \end{split}\]</div>
 <ul class="simple">
-<li><p>注意
-$<span class="math notranslate nohighlight">\((\mathbf{B} \cdot \nabla) = B_x \frac{\partial}{\partial x} + B_y \frac{\partial}{\partial y} + B_z \frac{\partial}{\partial z}\)</span><span class="math notranslate nohighlight">\(當它作用在 \)</span>\mathbf{A}<span class="math notranslate nohighlight">\( 上時：\)</span><span class="math notranslate nohighlight">\((\mathbf{B} \cdot \nabla) \mathbf{A} = \left( B_x \frac{\partial \mathbf{A}}{\partial x} + B_y \frac{\partial \mathbf{A}}{\partial y} + B_z \frac{\partial \mathbf{A}}{\partial z} \right)\)</span>$</p></li>
+<li><p>注意</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+(\mathbf{B} \cdot \nabla) = B_x \frac{\partial}{\partial x} + B_y \frac{\partial}{\partial y} + B_z \frac{\partial}{\partial z}
+\]</div>
+<p>當它作用在 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 上時：</p>
+<div class="math notranslate nohighlight">
+\[
+(\mathbf{B} \cdot \nabla) \mathbf{A} = \left( B_x \frac{\partial \mathbf{A}}{\partial x} + B_y \frac{\partial \mathbf{A}}{\partial y} + B_z \frac{\partial \mathbf{A}}{\partial z} \right)
+\]</div>
 </section>
 <section id="id10">
 <h3>6. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
@@ -1022,7 +1041,7 @@ $<span class="math notranslate nohighlight">\((\mathbf{B} \cdot \nabla) = B_x \f
 <li><p>其中</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\nabla \mathbf{B} = \begin{bmatrix} \partial_x \\ \partial_y \\ \partial_z  \end{bmatrix} \begin{bmatrix} B_x  B_y B_z  \end{bmatrix} = \begin{bmatrix} \partial_x B_x &amp; \partial_x B_y &amp; \partial_x B_z \\ \partial_y B_x &amp; \partial_y B_y &amp; \partial_y B_z  \\ \partial_z B_x &amp; \partial_z B_y &amp; \partial_z B_z \end{bmatrix}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{A} (\nabla \mathbf{B})^{\top} = \begin{bmatrix} A_x  A_y A_z  \end{bmatrix} \begin{bmatrix}\partial_x B_x &amp; \partial_y B_x &amp; \partial_z B_x\\ \partial_x B_y &amp; \partial_y B_y &amp;  \partial_z B_y\\ \partial_x B_z &amp; \partial_y B_z &amp; \partial_z B_z \end{bmatrix} = \begin{bmatrix} A_x\partial_x B_x+ A_y\partial_x B_y+A_z\partial_x B_z \quad A_x\partial_y B_x+ A_y\partial_y B_y+A_z\partial_y B_z \quad A_x\partial_z B_x+ A_y\partial_z B_y+A_z\partial_z B_z  \end{bmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\begin{aligned}\mathbf{A} (\nabla \mathbf{B})^{\top} &amp;= \begin{bmatrix} A_x &amp; A_y &amp; A_z \end{bmatrix} \begin{bmatrix}\partial_x B_x &amp; \partial_y B_x &amp; \partial_z B_x\\ \partial_x B_y &amp; \partial_y B_y &amp; \partial_z B_y\\ \partial_x B_z &amp; \partial_y B_z &amp; \partial_z B_z \end{bmatrix} \\&amp;= \begin{bmatrix} A_x\partial_x B_x+ A_y\partial_x B_y+A_z\partial_x B_z &amp; A_x\partial_y B_x+ A_y\partial_y B_y+A_z\partial_y B_z &amp; A_x\partial_z B_x+ A_y\partial_z B_z+A_z\partial_z B_z \end{bmatrix}\end{aligned}\)</span></p></li>
 </ul>
 </li>
 </ul>
@@ -1219,7 +1238,7 @@ $<span class="math notranslate nohighlight">\((\mathbf{B} \cdot \nabla) = B_x \f
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-cdot-mathbf-b-times-mathbf-c-mathbf-b-cdot-mathbf-c-times-mathbf-a-mathbf-c-cdot-mathbf-a-times-mathbf-b">1. <span class="math notranslate nohighlight">\(\mathbf{A} \cdot (\mathbf{B} \times \mathbf{C}) = \mathbf{B} \cdot (\mathbf{C} \times \mathbf{A}) = \mathbf{C} \cdot (\mathbf{A} \times \mathbf{B}) \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-mathbf-a-cdot-mathbf-c-mathbf-b-mathbf-a-cdot-mathbf-b-mathbf-c">2. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-cdot-mathbf-c-times-mathbf-d-mathbf-a-cdot-mathbf-c-mathbf-b-cdot-mathbf-d-mathbf-a-cdot-mathbf-d-mathbf-b-cdot-mathbf-c">3. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D})  = (\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C})\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a">4. <span class="math notranslate nohighlight">\((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  = ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} = ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-aligned-mathbf-a-times-mathbf-b-times-mathbf-c-times-mathbf-d-mathbf-a-times-mathbf-b-cdot-mathbf-d-mathbf-c-mathbf-a-times-mathbf-b-cdot-mathbf-c-mathbf-d-mathbf-c-times-mathbf-d-cdot-mathbf-a-mathbf-b-mathbf-c-times-mathbf-d-cdot-mathbf-b-mathbf-a-end-aligned">4. <span class="math notranslate nohighlight">\(\begin{aligned} &amp;(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  \\ =&amp; ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} \\ =&amp; ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \end{aligned}\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">小試身手 2</a><ul class="nav section-nav flex-column">
