@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'LC/Levi-Civita_symbol';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="讓我們試著把您學到的恆等式 \(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)，直接對應到風場與渦度上！" href="new_project.html" />
     <link rel="prev" title="測試選單" href="progrem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition.html">經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="progrem.html">測試選單</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Levi-Civita Symbol in 3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_project.html">讓我們試著把您學到的恆等式 <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)</span>，直接對應到風場與渦度上！</a></li>
 </ul>
 </details></li>
 </ul>
@@ -418,25 +420,22 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-mathbf-a-nabla-cdot-mathbf-b-mathbf-a-mathbf-a-cdot-nabla-mathbf-b-nabla-cdot-mathbf-a-mathbf-b">5. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">7. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">數學定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">6. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">數學定義</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">8. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-f-g-g-nabla-f-f-nabla-g">9. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">10. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">11. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">12. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">13. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">14. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">15. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">第五步：轉回向量符號</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">7. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-f-g-g-nabla-f-f-nabla-g">8. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">9. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">10. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">11. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">12. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">13. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">14. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span></a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tke-equation">方程式推導實戰：　TKE equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">參考資料</a></li>
 </ul>
             </nav>
         </div>
@@ -559,7 +558,7 @@ div.output_area [class*="MathJax"] {
 <ul class="simple">
 <li><p>含義： 它代表方程式的一個 <strong>分量</strong>。</p></li>
 <li><p>規則： 方程式等號兩邊出現的自由指標必須完全一致。</p></li>
-<li><p>範例： 牛頓第二運動定律 <span class="math notranslate nohighlight">\(\mathbf{F}_i = m\mathbf{a}_i\)</span>，這裡 <span class="math notranslate nohighlight">\(i\)</span> 只出現一次，表示這是一個向量方程式，它實際上代表了三個獨立的等式：<span class="math notranslate nohighlight">\(\left\{\begin{aligned}F_1 &amp;= ma_1, \\F_2 &amp;= ma_2, \\F_3 &amp;= ma_3\end{aligned}\right.\)</span></p></li>
+<li><p>範例： <span class="math notranslate nohighlight">\(\mathbf{F} = m\mathbf{a}\)</span> 牛頓第二運動定律 <span class="math notranslate nohighlight">\(F_i = ma_i\)</span> ，這裡 <span class="math notranslate nohighlight">\(i\)</span> 只出現一次，表示這是一個向量方程式，它實際上代表了三個獨立的等式：<span class="math notranslate nohighlight">\(\left\{\begin{aligned}F_1 &amp;= ma_1, \\F_2 &amp;= ma_2, \\F_3 &amp;= ma_3\end{aligned}\right.\)</span></p></li>
 </ul>
 </li>
 <li><p>Index出現 2 次：啞指標 (Dummy Index)</p>
@@ -605,7 +604,7 @@ div.output_area [class*="MathJax"] {
 <p>根據 <strong>假設 1</strong> 我們只處理3維的情況，所以加和的index範圍是 <span class="math notranslate nohighlight">\(i = 1 \)</span> to <span class="math notranslate nohighlight">\( i = 3 \)</span></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \delta_{ii} \overset{\text{Esc}}{=} \delta_{ii} = 3\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk}\varepsilon_{ijk} \overset{\text{Esc}}{=} \varepsilon_{ijk}\varepsilon_{ijk} \\= \varepsilon_{123}\varepsilon_{123}+ \varepsilon_{231}\varepsilon_{231}+ \varepsilon_{312}\varepsilon_{312}+\varepsilon_{132}\varepsilon_{132}+\varepsilon_{213}\varepsilon_{213}+\varepsilon_{321}\varepsilon_{321}=6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \begin{aligned} &amp;\sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk}\varepsilon_{ijk} \overset{\text{Esc}}{=} \varepsilon_{ijk}\varepsilon_{ijk} \\&amp;= \varepsilon_{123}\varepsilon_{123}+ \varepsilon_{231}\varepsilon_{231}+ \varepsilon_{312}\varepsilon_{312}+\varepsilon_{132}\varepsilon_{132}+\varepsilon_{213}\varepsilon_{213}+\varepsilon_{321}\varepsilon_{321}=6 \end{aligned}\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【已知 2】 愛因斯坦求和約定(Einstein summation convention) 向量</strong> ：</p>
@@ -651,7 +650,7 @@ div.output_area [class*="MathJax"] {
 &amp;\overset{\text{LC}}{=} &amp; A_i \varepsilon_{ijk} B_j C_k \\
 &amp;\overset{\text{定義 1}}{=} &amp; B_j \varepsilon_{jki} C_k A_i   &amp;\overset{\text{定義 1}}{=}&amp;  C_k \varepsilon_{kij} A_i B_j\\
 &amp;\overset{\text{LC}^{-1}}{=}&amp;B_j (\mathbf{C} \times \mathbf{A})_j &amp;\overset{\text{LC}^{-1}}{=}&amp;  C_k (\mathbf{A} \times \mathbf{B})_k\\
-&amp;\overset{\text{Esc}^{-1}}{=}&amp;B\cdot (\mathbf{C} \times \mathbf{A})  &amp;\overset{\text{Esc}^{-1}}{=}&amp;  C\cdot (\mathbf{A} \times \mathbf{B})
+&amp;\overset{\text{Esc}^{-1}}{=}&amp;\mathbf{B}\cdot (\mathbf{C} \times \mathbf{A})  &amp;\overset{\text{Esc}^{-1}}{=}&amp;  \mathbf{C}\cdot (\mathbf{A} \times \mathbf{B})
 \end{gather*}
 \end{split}\]</div>
 </section>
@@ -969,28 +968,8 @@ div.output_area [class*="MathJax"] {
 (\mathbf{B} \cdot \nabla) \mathbf{A} = \left( B_x \frac{\partial \mathbf{A}}{\partial x} + B_y \frac{\partial \mathbf{A}}{\partial y} + B_z \frac{\partial \mathbf{A}}{\partial z} \right)
 \]</div>
 </section>
-<section id="id10">
-<h3>6. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split} 
-\begin{gather*}
-\nabla \times (\mathbf{A} \times \mathbf{B}) &amp;\overset{\text{Esc}}{=} &amp; (\nabla \times (\mathbf{A} \times \mathbf{B}))_i \\
-&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j (\mathbf{A} \times \mathbf{B})_k  \\
-&amp;\overset{\text{LC}}{=} &amp; \varepsilon_{ijk} \partial_j (\varepsilon_{klm} A_l B_m ) \\
-&amp;\overset{\text{定義 1}}{=} &amp; \varepsilon_{kij} \varepsilon_{klm} \partial_j (A_l B_m)\\
-&amp;\overset{\text{已知 4}}{=} &amp; (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) \partial_j (A_l B_m)\\
-&amp;\overset{\text{定義 2}}{=} &amp; \partial_j (A_i B_j) - \partial_j (A_j B_i) \\
-&amp;\overset{\text{chain rule}}{=} &amp; (\partial_j A_i ) B_j + A_i(\partial_j B_j) - (\partial_j A_j )B_i- A_j(\partial_j B_i)\\
-&amp; = &amp; B_j (\partial_j A_i ) +  (\partial_j B_j) A_i- (\partial_j A_j )B_i- A_j(\partial_j B_i) \\
-&amp; = &amp; B_j \partial_j A_i  +  \partial_j B_j A_i- \partial_j A_j B_i- A_j \partial_j B_i \\
-&amp;\overset{\text{Esc}^{-1}}{=} &amp; (\mathbf{B} \cdot \nabla) A_i + (\nabla \cdot \mathbf{B}) A_i -  (\nabla \cdot \mathbf{A}) B_i - (\mathbf{A} \cdot \nabla) B_i \\
-&amp;\overset{\text{Esc}^{-1}}{=} &amp; (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} -  (\nabla \cdot \mathbf{A}) \mathbf{B}- (\mathbf{A} \cdot \nabla) \mathbf{B}   \\
-&amp;=&amp; (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}
-\end{gather*}
-\end{split}\]</div>
-</section>
 <section id="mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">
-<h3>7. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span><a class="headerlink" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b" title="Link to this heading">#</a></h3>
+<h3>6. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span><a class="headerlink" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1005,8 +984,8 @@ div.output_area [class*="MathJax"] {
 &amp;=&amp; \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B}
 \end{gather*}
 \end{split}\]</div>
-<section id="id11">
-<h4>數學定義<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<section id="id10">
+<h4>數學定義<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>由於碰到了不知道怎麼處理的 <span class="math notranslate nohighlight">\(A_j \partial_i B_j\)</span> ，我們只能派出矩陣來解決這個數學表達，想像 <span class="math notranslate nohighlight">\(j\)</span> 和 <span class="math notranslate nohighlight">\(j\)</span> 必須再一起，所以要用轉置 <span class="math notranslate nohighlight">\(\top\)</span> 將<span class="math notranslate nohighlight">\(( \nabla \mathbf{B})\)</span> 的index <span class="math notranslate nohighlight">\(j\)</span> 和 <span class="math notranslate nohighlight">\(i\)</span> 的位置交換。這道題目用Levi-Civita來證明是一件挺尷尬的事情，所以我用國小二年級的方法證明 <span class="math notranslate nohighlight">\(A_j \partial_i B_j\)</span> 在 <span class="math notranslate nohighlight">\(\text{Esc}^{-1}\)</span> 的情況下可以寫成 <span class="math notranslate nohighlight">\(\mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top}\)</span></p>
 <p>計算 <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B})\)</span> 和  <span class="math notranslate nohighlight">\((\mathbf{A} \cdot \nabla) \mathbf{B}\)</span> ， <span class="math notranslate nohighlight">\(\mathbf{A} = (A_x,A_y,A_z) , \mathbf{B} = (B_x,B_y,B_z) ,\nabla = (\partial_x,\partial_y,\partial_z) \)</span></p>
 <div class="math notranslate nohighlight">
@@ -1048,21 +1027,21 @@ div.output_area [class*="MathJax"] {
 </section>
 </section>
 <section id="nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">
-<h3>8. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span><a class="headerlink" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top" title="Link to this heading">#</a></h3>
+<h3>7. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span><a class="headerlink" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
 \nabla (\mathbf{A} \cdot \mathbf{B}) &amp;\overset{\text{Esc}}{=} &amp; \partial_i ( A_j B_j) \\
 &amp;\overset{\text{chain rule}}{=} &amp; (\partial_i  A_j) B_j + A_j (\partial_i B_j) \\
 &amp;= &amp;  B_j (\partial_i  A_j) + A_j (\partial_i B_j) \\
-&amp;\underset{\text{小試身手2-7}}{\overset{\text{Esc}^{-1}}{=}}&amp; \mathbf{B}_{( 1\times 3)} ( \nabla \mathbf{A})_{( 3\times 3)}^{\top} + \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} \\
+&amp;\underset{\text{小試身手2-6}}{\overset{\text{Esc}^{-1}}{=}}&amp; \mathbf{B}_{( 1\times 3)} ( \nabla \mathbf{A})_{( 3\times 3)}^{\top} + \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} \\
 &amp;=&amp; \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \\
-&amp;\underset{\text{小試身手2-7}}{=}&amp;  \mathbf{B} \times (\nabla \times \mathbf{A}) + (\mathbf{B} \cdot \nabla) \mathbf{A} + \mathbf{A} \times (\nabla \times \mathbf{B}) + (\mathbf{A} \cdot \nabla) \mathbf{B} 
+&amp;\underset{\text{小試身手2-6}}{=}&amp;  \mathbf{B} \times (\nabla \times \mathbf{A}) + (\mathbf{B} \cdot \nabla) \mathbf{A} + \mathbf{A} \times (\nabla \times \mathbf{B}) + (\mathbf{A} \cdot \nabla) \mathbf{B} 
 \end{gather*}
 \end{split}\]</div>
 </section>
 <section id="nabla-f-g-g-nabla-f-f-nabla-g">
-<h3>9. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span><a class="headerlink" href="#nabla-f-g-g-nabla-f-f-nabla-g" title="Link to this heading">#</a></h3>
+<h3>8. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span><a class="headerlink" href="#nabla-f-g-g-nabla-f-f-nabla-g" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1074,7 +1053,7 @@ div.output_area [class*="MathJax"] {
 \end{split}\]</div>
 </section>
 <section id="nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">
-<h3>10. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span><a class="headerlink" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f" title="Link to this heading">#</a></h3>
+<h3>9. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span><a class="headerlink" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1086,7 +1065,7 @@ div.output_area [class*="MathJax"] {
 \end{split}\]</div>
 </section>
 <section id="nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">
-<h3>11. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span><a class="headerlink" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f" title="Link to this heading">#</a></h3>
+<h3>10. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span><a class="headerlink" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1100,7 +1079,7 @@ div.output_area [class*="MathJax"] {
 \end{split}\]</div>
 </section>
 <section id="nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">
-<h3>12. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span><a class="headerlink" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0" title="Link to this heading">#</a></h3>
+<h3>11. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span><a class="headerlink" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1117,7 +1096,7 @@ div.output_area [class*="MathJax"] {
 \end{split}\]</div>
 </section>
 <section id="nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">
-<h3>13. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span><a class="headerlink" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g" title="Link to this heading">#</a></h3>
+<h3>12. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span><a class="headerlink" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1128,7 +1107,7 @@ div.output_area [class*="MathJax"] {
 \end{split}\]</div>
 </section>
 <section id="nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">
-<h3>14. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span><a class="headerlink" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g" title="Link to this heading">#</a></h3>
+<h3>13. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span><a class="headerlink" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1140,7 +1119,7 @@ div.output_area [class*="MathJax"] {
 \end{split}\]</div>
 </section>
 <section id="nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">
-<h3>15. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span><a class="headerlink" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v" title="Link to this heading">#</a></h3>
+<h3>14. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span><a class="headerlink" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{gather*}
@@ -1151,24 +1130,16 @@ div.output_area [class*="MathJax"] {
 \end{gather*}
 \end{split}\]</div>
 </section>
-<section id="id12">
-<h3>3. 方程式推導實戰：證明向量恆等式<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
-<p>這是老師最想展示給你的一幕。在流體力學或電磁學中，我們經常遇到「旋度的旋度」這種複雜的算式。</p>
-<p>**</p>
-<section id="id13">
-<h4>第五步：轉回向量符號<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+</section>
+<section id="tke-equation">
+<h2>方程式推導實戰：　TKE equation<a class="headerlink" href="#tke-equation" title="Link to this heading">#</a></h2>
+</section>
+<section id="id11">
+<h2>參考資料<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>就是散度 。</p></li>
-<li><p>是梯度運算。</p></li>
-<li><p>是拉普拉斯算子 。</p></li>
+<li><p><a class="reference external" href="https://medium.com/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%9A%84%E8%B5%B7%E9%BB%9E-%E9%82%81%E5%90%91%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%85%89%E9%87%91%E8%A1%93%E5%B8%AB%E4%B9%8B%E8%B7%AF/%E5%B7%A5%E6%95%B8%E7%AD%86%E8%A8%98-%E6%84%9B%E5%9B%A0%E6%96%AF%E5%9D%A6%E6%B1%82%E5%92%8C%E7%B4%84%E5%AE%9A-einstein-summation-convention-ae5b786de439">工數筆記-愛因斯坦求和約定（Einstein summation convention）</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=CWIaPrwLyjM&amp;amp;list=PLkZjai-2JcxnYmkg6fpzz4WFumGVl7MOa&amp;amp;index=8">Vector Calculus for Engineers ,YT&#64;Jeffrey Chasnov</a></p></li>
 </ul>
-<p>結果即為：</p>
-<p><strong>證明完畢。</strong></p>
-<hr class="docutils" />
-<p>都能像拼圖一樣輕鬆解開。這在處理大氣動力學中的<strong>渦度方程 (Vorticity Equation)</strong> 推導時，能幫你省下大量的計算時間並減少錯誤。</p>
-<p>你想試著用這個方法，自己推導看看為什麼「梯度的旋度恆等於零」（）嗎？這只需要兩行就能證明出來喔！</p>
-</section>
-</section>
 </section>
 </section>
 
@@ -1210,6 +1181,15 @@ div.output_area [class*="MathJax"] {
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">測試選單</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="new_project.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">讓我們試著把您學到的恆等式 <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)</span>，直接對應到風場與渦度上！</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -1262,25 +1242,22 @@ div.output_area [class*="MathJax"] {
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-mathbf-a-times-mathbf-b-mathbf-b-cdot-nabla-mathbf-a-nabla-cdot-mathbf-b-mathbf-a-mathbf-a-cdot-nabla-mathbf-b-nabla-cdot-mathbf-a-mathbf-b">5. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6. <span class="math notranslate nohighlight">\(\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}  \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">7. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">數學定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-a-times-nabla-times-mathbf-b-mathbf-a-nabla-mathbf-b-top-mathbf-a-cdot-nabla-mathbf-b">6. <span class="math notranslate nohighlight">\(\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">數學定義</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">8. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-f-g-g-nabla-f-f-nabla-g">9. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">10. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">11. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">12. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">13. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">14. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">15. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3. 方程式推導實戰：證明向量恆等式</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">第五步：轉回向量符號</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-mathbf-a-cdot-mathbf-b-mathbf-b-nabla-mathbf-a-top-mathbf-a-nabla-mathbf-b-top">7. <span class="math notranslate nohighlight">\(\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-f-g-g-nabla-f-f-nabla-g">8. <span class="math notranslate nohighlight">\(\nabla (f g) = g\nabla(f) + f\nabla(g) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-mathbf-v-mathbf-v-cdot-nabla-f-nabla-cdot-mathbf-v-f">9. <span class="math notranslate nohighlight">\(\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-times-f-mathbf-v-nabla-f-times-mathbf-v-nabla-times-mathbf-v-f">10. <span class="math notranslate nohighlight">\(\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-nabla-f-times-nabla-g-nabla-g-cdot-nabla-times-nabla-f-nabla-f-cdot-nabla-times-nabla-g-0">11. <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-f-nabla-g-nabla-f-cdot-nabla-g-f-nabla-2-g">12. <span class="math notranslate nohighlight">\(\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-g-g-nabla-2-f-2-nabla-f-cdot-nabla-g-f-nabla-2-g">13. <span class="math notranslate nohighlight">\(\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2-f-mathbf-v-nabla-2-f-mathbf-v-2-nabla-f-cdot-nabla-mathbf-v-f-nabla-2-mathbf-v">14. <span class="math notranslate nohighlight">\(\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\)</span></a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tke-equation">方程式推導實戰：　TKE equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">參考資料</a></li>
 </ul>
   </nav></div>
 
