@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>任意 \(N\) 點的幾何覆蓋問題：機率方法推導與蒙地卡羅驗證 &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_Intuitions/n_points_coverage_threshold_coverage_ratio';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03_Intuitions/n_points_coverage_threshold_coverage_ratio.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/03_Intuitions/n_points_coverage_threshold_coverage_ratio.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>任意 N 點的幾何覆蓋問題：機率方法推導與蒙地卡羅驗證</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>機率方法推導</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>第一章：無重疊衛星陣列的挑戰（提出問題）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>第二章：轉換視角——從「幾何」走向「機率」</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>第三章：滿鋪大地與最壞的打算（數學推導）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>第四章：圓形的極限與點數的邊界</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>第五章：形狀的褪色與覆蓋率的勝利</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>程式：蒙地卡羅驗證</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="n">
+<h1><strong>任意 <span class="math notranslate nohighlight">\(N\)</span> 點的幾何覆蓋問題：機率方法推導與蒙地卡羅驗證</strong><a class="headerlink" href="#n" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2><strong>機率方法推導</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3><strong>第一章：無重疊衛星陣列的挑戰（提出問題）</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>想像你正在一片廣袤無垠的平原上進行研究，平原上已經隨機散佈了 <span class="math notranslate nohighlight">\(N\)</span> 個氣象觀測站。</p>
+<p>我們現在擁有無限多顆人造衛星，每顆衛星能掃描的地面區域都是一個<strong>大小完全相同的正圓形</strong>。這裡有一個嚴格的限制：為了避免掃描訊號互相干擾，這些<strong>衛星的掃描圓圈絕對不可以重疊</strong>。</p>
+<p>我們要解決的核心問題是：面對地上這 <span class="math notranslate nohighlight">\(N\)</span> 個位置未知的觀測站，我們是否<strong>一定能找到至少一種</strong>擺放這群衛星的方法，使得這 <span class="math notranslate nohighlight">\(N\)</span> 個觀測站同時都在掃描範圍內？</p>
+<p><img alt="" src="../_images/question.png" /></p>
+</section>
+<section id="id3">
+<h3><strong>第二章：轉換視角——從「幾何」走向「機率」</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>要從純幾何的角度去尋找那個完美的相對位置非常困難。因此，我們轉換視角，引入離散數學中的「機率方法（Probabilistic Method）」。</p>
+<p>機率方法的核心思想是：<strong>如果我們隨機進行一個操作，只要「目標事件發生的機率嚴格大於 0」，那麼能達成該目標的具體方法就「必定存在」。</strong></p>
+<p>用數學語言來表達：
+令事件 <span class="math notranslate nohighlight">\(E\)</span> 為「<span class="math notranslate nohighlight">\(N\)</span> 個點全部被圓形覆蓋」。
+我們不需要精確算出 <span class="math notranslate nohighlight">\(P(E)\)</span> 的值，只要證明 <span class="math notranslate nohighlight">\(P(E) &gt; 0\)</span>，就能確立「至少存在一種覆蓋方法」。</p>
+<p>也就是說，如果我們把一整組衛星掃描陣列，透過一個隨機的二維向量 <span class="math notranslate nohighlight">\(v\)</span> 進行平移，只要：</p>
+<div class="math notranslate nohighlight">
+\[P(\text{所有 } N \text{ 個點都被覆蓋}) &gt; 0\]</div>
+<p>我們的幾何難題就迎刃而解了。</p>
+</section>
+<section id="id4">
+<h3><strong>第三章：滿鋪大地與最壞的打算（數學推導）</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>現在，我們一步步來推導這個 <span class="math notranslate nohighlight">\(P(\text{所有 } N \text{ 個點都被覆蓋})\)</span> 機率。</p>
+<p><strong>步驟一：無限滿鋪與單點機率</strong>
+因為我們現在只在乎 <strong>「存不存在至少一種覆蓋方法」</strong> ，所以我們先不管到底需要動用多少顆衛星。我們直接把無數個圓形，以不重疊的方式盡可能地鋪滿整個平原 。</p>
+<p>假設我們選定了一種鋪排方式，這種排法的 <strong>「覆蓋率」為 <span class="math notranslate nohighlight">\(x\)</span></strong>（介於 0 到 1 之間，代表圓形面積佔總面積的比例）。
+當我們把這整片無限延伸的圓形陣列進行隨機平移時，對於地面上 <strong>任意「單一個觀測站」</strong> 來說，它剛好落入某個圓圈內的機率，就恰好等於覆蓋率 <span class="math notranslate nohighlight">\(x\)</span>。
+反過來說，單一觀測站「不幸落入掃描死角（沒被覆蓋）」的機率，令其為 <span class="math notranslate nohighlight">\(P(A_i)\)</span>，則：</p>
+<div class="math notranslate nohighlight">
+\[P(A_i) = 1 - x\]</div>
+<p><strong>步驟二：最壞情況下的「聯集上界（Union Bound）」</strong>
+我們有 <span class="math notranslate nohighlight">\(N\)</span> 個觀測站，我們失敗的條件是「<strong>至少有 1 個</strong>觀測站沒被覆蓋」。
+根據機率論中的聯集上界（Boole’s inequality），多個事件發生至少一個的機率，必定小於或等於各事件發生機率的總和，因為每一個點沒被覆蓋的機率都是 <span class="math notranslate nohighlight">\(1-x\)</span>，所以失敗機率的最壞情況（上限）為：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(\text{至少一個沒被覆蓋}) = P\left(\bigcup_{i=1}^{N} A_i\right) &amp;\le&amp; \sum_{i=1}^{N} P(A_i) \\
+P(\text{失敗}) &amp;\le&amp; N(1 - x)
+\end{gather*}\end{split}\]</div>
+<p><strong>步驟三：確保勝利的門檻</strong>
+我們希望成功的機率大於 0。因為 <span class="math notranslate nohighlight">\(P(\text{成功}) = 1 - P(\text{失敗})\)</span>，我們將剛才的上限代入，為了保證 <span class="math notranslate nohighlight">\(P(\text{成功}) &gt; 0\)</span>，我們得到關於覆蓋率 <span class="math notranslate nohighlight">\(x\)</span> 的不等式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;P(\text{失敗}) &amp;\le&amp; N(1 - x) \\
+&amp;1 - P(\text{成功})&amp;\le&amp; N(1 - x) \\
+&amp;1 - N(1 - x) &amp;\le&amp; P(\text{成功}) \\
+\overset{P(\text{成功}) &gt; 0}{\Rightarrow}&amp;1 - N(1 - x) &amp;&gt;&amp; 0 \\
+&amp;x &amp;&gt;&amp; 1 - \frac{1}{N}\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id5">
+<h3><strong>第四章：圓形的極限與點數的邊界</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>現在我們回到影片中的特例：我們使用的是「正圓形」。</p>
+<p>數學家已經證明，在二維平面上用大小相同的圓形進行不重疊鋪排，最密集的排法是「六角形網格排法」，此時的極限覆蓋率為：</p>
+<p><img alt="" src="../_images/Hexagonal_Circle_Packing.png" /></p>
+<div class="math notranslate nohighlight">
+\[x = \frac{\pi}{2\sqrt{3}} \approx 0.906899\]</div>
+<p>這是一個固定的常數。現在我們把它套用回我們剛才推導出的門檻 <span class="math notranslate nohighlight">\(x &gt; 1 - 1/N\)</span>：</p>
+<ul class="simple">
+<li><p><strong>當 <span class="math notranslate nohighlight">\(N=10\)</span> 時：</strong>
+需要的覆蓋率門檻是 <span class="math notranslate nohighlight">\(1 - 1/10 = 0.9\)</span>。
+因為 <strong>0.906899 &gt; 0.9</strong>，不等式完美成立！這代表我們「絕對可以」找到一種平移方式，用不重疊的圓形蓋住平面上任意隨機散佈的 10 個點。</p></li>
+<li><p><strong>當 <span class="math notranslate nohighlight">\(N=11\)</span> 時：</strong>
+需要的覆蓋率門檻變成 <span class="math notranslate nohighlight">\(1 - 1/11 \approx 0.909\)</span>。
+這時 <strong>0.906899 &lt; 0.909</strong>，不等式被打破了。這意味著機率方法無法再給予我們保證。對於某些極端排列的 11 個點，圓形陣列可能真的會束手無策。</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3><strong>第五章：形狀的褪色與覆蓋率的勝利</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>讓我們重新凝視剛剛得出的最終不等式：</p>
+<div class="math notranslate nohighlight">
+\[x &gt; 1 - \frac{1}{N}\]</div>
+<p><strong>步驟一：檢視我們「沒有」用到什麼資訊</strong>
+請仔細看這個公式，裡面有半徑 <span class="math notranslate nohighlight">\(r\)</span> 嗎？有邊長 <span class="math notranslate nohighlight">\(a\)</span> 嗎？有任何關於角度、曲率、甚至是圖形是否連續的變數嗎？
+<strong>完全沒有。</strong></p>
+<p>這就是這個證明最優美的地方。在第一章到第三章的推導過程中，我們唯一使用到跟「圖形」有關的物理量，只有<strong>覆蓋率</strong> <span class="math notranslate nohighlight">\(x\)</span>。我們完全不在乎那個用來覆蓋的圖案到底是完美的圓形、整齊的正方形、還是邊緣參差不齊的碎塊。</p>
+<p>為什麼會這樣？因為在機率的視角下，一個點落入掃描區域的機率，只跟「掃描區域佔總面積的比例（也就是覆蓋率 <span class="math notranslate nohighlight">\(x\)</span>）」有關，而與這些面積是如何被塑造成什麼形狀毫無關聯。這成功地把一個極度複雜的「幾何空間問題」，降維打擊成了一個純粹的「機率與面積問題」。</p>
+<p><strong>步驟二：普適法則與 N=100 的極端挑戰</strong>
+既然公式與形狀無關，這就賦予了這個定理強大的「普適性」。它告訴我們一個不可思議的幾何真理：<strong>任何形狀的圖案，只要覆蓋的密度夠高，就必定具備覆蓋任意散佈點的能力。</strong></p>
+<p>我們直接用 <span class="math notranslate nohighlight">\(N=100\)</span> 來舉例。假設今天平原上有 100 個觀測站，某個不懷好意的人故意把它們排成極度刁鑽、極度分散的位置，我們需要多強大的掃描系統才能保證一次覆蓋它們？</p>
+<p>把 <span class="math notranslate nohighlight">\(N=100\)</span> 代入我們的不等式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\underline{x &gt; 1 - \frac{1}{100} =  0.99}
+\end{gather*}\]</div>
+<p>這代表什麼意思呢？
+這意味著，不管你的掃描圖案長得多奇怪——哪怕是像變形蟲🐛一樣的圖形，只要你把它們不重疊地鋪滿大地時 <strong>覆蓋率能超過 99%</strong> ，那麼面對這 100 個被惡意擺放的觀測站，你<strong>絕對可以</strong>找到至少一個平移位置將這 100 個點完美地同時籠罩在你的圖形之內。</p>
+<p>反之，如果你的圖案覆蓋率只有 98% 🐞，即使你的圖案形狀設計得再精妙，<strong>只要對手把這 100 個點放在某些特定的死角，你就可能永遠找不到一次把它們全部蓋住的方法。</strong></p>
+</section>
+</section>
+<section id="id7">
+<h2><strong>程式：蒙地卡羅驗證</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>這個結論將機率的優雅展現得淋漓盡致，我們用極簡的邏輯，打敗了無限多種複雜的幾何排列可能。</p>
+<p>既然我們已經徹底破解了這個二維平面上的覆蓋問題，試著思考看看：如果我們把這個推導邏輯寫成一小段 Python 程式碼，用蒙地卡羅方法（Monte Carlo method）隨機生成點位和網格來驗證這個給定 <span class="math notranslate nohighlight">\(x\)</span> 和 <span class="math notranslate nohighlight">\(N\)</span> 的計算科學界線。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_perfect_coverage</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">max_attempts</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    第一階段：尋找完美覆蓋的位置</span>
+<span class="sd">    使用拉斯維加斯演算法，不斷隨機嘗試直到找到解。</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 檢查是否符合我們的數學定理門檻 x &gt; 1 - 1/N</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;【數學定理檢查】&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;點數 N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">, 設定覆蓋率 x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;定理要求最低門檻: x &gt; </span><span class="si">{</span><span class="n">threshold</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;警告：目前的 x 沒有大於門檻，數學定理不保證有解！可能會找不到。&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;定理成立！保證絕對存在至少一個完美覆蓋的位置。開始搜尋...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1">#np.random.seed(42) # 固定種子讓點的分佈一致</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    
+    <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">best_translation</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">all_covered</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="c1"># 不斷隨機嘗試，直到找到為止 (或達到最高嘗試次數)</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">all_covered</span> <span class="ow">and</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="n">max_attempts</span><span class="p">:</span>
+        <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># 隨機產生一個平移向量 (正方形的左下角基準點)</span>
+        <span class="n">translation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        
+        <span class="c1"># 利用 NumPy 廣播與取餘數 (% 1.0) 實作小精靈週期性邊界</span>
+        <span class="n">relative_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">points</span> <span class="o">-</span> <span class="n">translation</span><span class="p">)</span> <span class="o">%</span> <span class="mf">1.0</span>
+        
+        <span class="c1"># 檢查是否所有的點都在 L x L 的正方形內</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">((</span><span class="n">relative_pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">relative_pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">)):</span>
+            <span class="n">all_covered</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">best_translation</span> <span class="o">=</span> <span class="n">translation</span>
+            
+    <span class="k">if</span> <span class="n">all_covered</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;【搜尋成功】電腦嘗試了 </span><span class="si">{</span><span class="n">attempts</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> 次後，成功找到了完美位置！&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">points</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">best_translation</span><span class="p">,</span> <span class="n">attempts</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;【搜尋失敗】嘗試了 </span><span class="si">{</span><span class="n">max_attempts</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> 次仍未找到。請確認 x 是否大於門檻。&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">points</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">attempts</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_perfect_coverage</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">translation</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">attempts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    第二階段：將找到的完美覆蓋位置視覺化</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">translation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;沒有找到可用的平移位置，無法視覺化。&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+    
+    <span class="c1"># 1. 畫出實驗平原邊界</span>
+    <span class="n">main_area</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">main_area</span><span class="p">)</span>
+    
+    <span class="c1"># 2. 畫出觀測站</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observation station&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># 3. 畫出小精靈穿牆的九宮格分身</span>
+    <span class="k">for</span> <span class="n">dx</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">dy</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="n">base_x</span> <span class="o">=</span> <span class="n">translation</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span>
+            <span class="n">base_y</span> <span class="o">=</span> <span class="n">translation</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dy</span>
+            <span class="n">rect</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">base_x</span><span class="p">,</span> <span class="n">base_y</span><span class="p">),</span> <span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> 
+                <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span>
+            <span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+            
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">translation</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">translation</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Perfect scanning reference point&#39;</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Perfect coverage achieved! (Attempts required: </span><span class="si">{</span><span class="n">attempts</span><span class="si">}</span><span class="s2"> )</span><span class="se">\n</span><span class="s2">N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">, Coverage rate x=</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ==========================================</span>
+<span class="c1"># 主程式執行區</span>
+<span class="c1"># ==========================================</span>
+<span class="c1"># 參數設定：N=10，根據定理 x 必須大於 0.9</span>
+<span class="n">N_points</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">coverage_x</span> <span class="o">=</span> <span class="mf">0.70</span>  <span class="c1"># 設定在安全區 (0.95 &gt; 0.90)</span>
+
+<span class="c1"># 1. 執行搜尋</span>
+<span class="n">points_data</span><span class="p">,</span> <span class="n">side_length</span><span class="p">,</span> <span class="n">perfect_trans</span><span class="p">,</span> <span class="n">try_count</span> <span class="o">=</span> <span class="n">find_perfect_coverage</span><span class="p">(</span><span class="n">N_points</span><span class="p">,</span> <span class="n">coverage_x</span><span class="p">)</span>
+
+<span class="c1"># 2. 執行視覺化</span>
+<span class="n">visualize_perfect_coverage</span><span class="p">(</span><span class="n">points_data</span><span class="p">,</span> <span class="n">side_length</span><span class="p">,</span> <span class="n">perfect_trans</span><span class="p">,</span> <span class="n">N_points</span><span class="p">,</span> <span class="n">coverage_x</span><span class="p">,</span> <span class="n">try_count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>【數學定理檢查】
+點數 N=10, 設定覆蓋率 x=0.7
+定理要求最低門檻: x &gt; 0.9000
+警告：目前的 x 沒有大於門檻，數學定理不保證有解！可能會找不到。
+【搜尋成功】電腦嘗試了 27 次後，成功找到了完美位置！
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\admin\AppData\Local\Temp\ipykernel_15204\3339517056.py:75: UserWarning: Setting the &#39;color&#39; property will override the edgecolor or facecolor properties.
+  rect = patches.Rectangle(
+</pre></div>
+</div>
+<img alt="../_images/2bc360cdc3d44a6b08bbddba431d2ef0d0d48a902055269a0b9c0d3aab8fe0c6.png" src="../_images/2bc360cdc3d44a6b08bbddba431d2ef0d0d48a902055269a0b9c0d3aab8fe0c6.png" />
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>參考資料<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>[1]<a class="reference external" href="https://www.bilibili.com/video/BV1HqcizoEk6">平面上任意10个点一定能用互不重叠的单位圆盘覆盖吗？</a></p></li>
+<li><p>[2]<a class="reference external" href="https://www.bilibili.com/video/BV1ub4y1y77K">什么是密铺？What is a Tessellation?</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./03_Intuitions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>機率方法推導</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>第一章：無重疊衛星陣列的挑戰（提出問題）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>第二章：轉換視角——從「幾何」走向「機率」</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>第三章：滿鋪大地與最壞的打算（數學推導）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>第四章：圓形的極限與點數的邊界</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>第五章：形狀的褪色與覆蓋率的勝利</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>程式：蒙地卡羅驗證</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
