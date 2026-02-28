@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+chapters:
+  # 這是原本獨立的檔案，保持不變
+  - file: 01_Derivations\01_Derivations.md  
+    sections:      
+      - file: 01_Derivations\golden_ratio_gaussian_integral
+  - file: 03_Intuitions\03_Intuitions.md  # <--- 這是父節點 (Parent)，也就是我們剛建的那個檔案
+    sections:      # <--- 代表下面的檔案都屬於它
+      - file: 03_Intuitions\n_points_coverage_threshold_coverage_ratio
+      #- file: 03_Intuitions\Levi-Civita_symbol/new_project
