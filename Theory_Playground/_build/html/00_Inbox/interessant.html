@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>interessant Video &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00_Inbox/interessant';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F00_Inbox/interessant.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/00_Inbox/interessant.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>interessant Video</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>interessant Video</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interessant">**interessant **</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="interessant-video">
+<h1><strong>interessant Video</strong><a class="headerlink" href="#interessant-video" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1i6cnzzEP7">一个简单消除交通堵塞的办法</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1uUFHzFEiS/">【中配】二维与三维随机游走的本质区别：马尔可夫链视角 - Mathemaniac</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1aCZTBJEPr">数学模型50讲第27讲:贝特朗悖论与无知先验</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1uUFHzFEiS/">风力发电的效率竟然存在上限？详述贝茨极限</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Mof7B5EPj/">任选两个正整数，互质的概率是多少</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1QCFYzwEKS/">非构造性证明，如何在毒巧克力游戏中活下来</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=pKNuTXUhuNU">勒贝格积分，狄利克雷函数，让我们来拯救积分概念！</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=g2UThTsJLcc">【无痛线代】彻底搞懂SVD！矩阵究竟怎么就奇异了？</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV12XfiBfE3Q/">为什么连续完美洗牌8次不会打乱牌的顺序？用对称群的知识为你揭开谜底！</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1chzTBXEoo/">x的x次方积分难题，为什么困扰了数学家一个世纪?</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV13tFozhEjA/">马尔可夫预测基础：无记忆性核心逻辑 + 天气案例</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1sSZZB7EA3/">最“马”的面试题，找到最快的马！（没有秒表）</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1L8f3BBEDi/">恒星最可能在第几年炸？反直觉的数学问题</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1GmiTBcEMd/">为什么人类被“锁定”在了三维？从0维到4维：用数学推导重建你的”四维之眼”</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=BHdbsHFs2P0">The Hairy Ball Theorem</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1QVznBrERj/">數學国家集训队，一行妙解！</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=6tT0PN7E2GM">【漫士科普】為什麼說數學思維就是抽象</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=W4vRsg0Ptw0">如何用 Cursor 讓 AI 開發一個 Python Streamlit 的資料可視化小工具，然後一鍵免費部署到雲端分享給同事使用？</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1gSr7BMEQt/">【中字】从正则系综到线性回归：物理原理如何变成回归模型</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1w16dBhEW3/">扩散模型、流匹配和强化学习的统一视角</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1dQrWBFEaK/">中字】机器学习里的物理二重性：概率视角解析</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1f3kVB6EjS/">傅里叶不是全部，“小波”才是图像压缩幕后英雄</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1yYrqBSE19/">作用量、能量与对称性：从欧拉 - 拉格朗日方程到诺特定理</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1pUzJBfEDm/">中配】我们能制造出人造重力吗？ - Real Engineering</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1SNkYBjEvy/">【中配】在混沌中寻找秩序：将双摆模拟推向极致 - Drew’s Campfire</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1BWzYBWEtX/">红色面积的期望值是蓝色的多少倍</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1dezABPELY/">【拉格朗日】四平方和的奥妙，无穷递降法的古典巅峰</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV16HzyBWEwZ/">【矩阵与线性映射】换个更准确的表述吧！“矩阵的本质是线性映射”到底在说什么？（新版）</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1GfzVBZEdu/">为何无人想到这一点？暗物质或许只是普通物质【每日科学新闻】</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1PqrxBEEvK/">【中字】一个量子概念帮我秒懂机器学习（K均值 &amp; 高斯混合）</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1iFrkBmEhj/">【时序预测】时序 EDA 全攻略：可视化 + 平稳性 + 窗口函数实操</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=szMaPkJEMrw">Padé Approximants</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1fmrxB6Eo1/">【中字】这款受物理启发的显微镜，揭示了神经网络隐藏的几何结构</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1ZqBYBSEVD/">【中配】人工智能学会走路</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1FCrWBiENX/">【中字】量子视角下的机器学习：聊聊多项式回归</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1jGrxBvEe6/">中字】大部分神经网络的训练都是白费功夫——物理告诉你原因</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1UKr4BtEbA/">【中配】利用同构简化问题：群论的强大工具 (Ep. 2) - Nemean</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1p3rFBgEu5/">中配】2025 年物理学三大突破性进展 - Quanta Magazine</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV14s64BpEwt/">让人摸不着头脑的冰激凌魔法</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1bdrkBgESP/">【中配】混沌理论：关于（不）稳定性的语言 - Gonkee</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Qwr4BcEjJ/">【中配】什么是群论？—— 抽象代数的基石 (Ep. 1) - Nemean</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Xb411k787/">2(0)分钟认识史密斯圆图，阻抗圆图的简单讲解</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1yb2FBxEUj/">电气工程中最可怕的东西——史密斯圆图</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1L3411C7ox/">潮汐现象与惯性离心力</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Zv4y1U73W/">贝尔不等式的推导</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1rV41157pW/">【交叉熵】信息世界的隐秘节奏，数据分布的背后真谛</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1EE41127HV/">信息熵(Information Entropy)详解</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1fbvdBCEpL/">【中配】从零开始理解熵，Entropy - ScienceClic English</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1mkgwzZEN9/">什么是信息量、信息熵、交叉熵与KL散度，及其相互之间的关系</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Ga41127Zu/">【机器学习】直观理解信息量和信息熵的含义</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV15dzeBnE7s/">数学模型50讲第24讲:知识、不确定性和最大熵原理</a> 99</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=PEl2GuppQD0">我終於理解了不確定性原理的深刻內涵！</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=INrkLxPWxFk">我用物理公式”造”了一個黑洞，結果和NASA拍的一模一樣！</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV16zZPBsEka">【数学史】数学危机（下）——数学基础的确立与英雄时代的落幕</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/&#64;CCWangTeaching/videos">C.-C. Wang</a></p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="interessant">
+<h1>**interessant **<a class="headerlink" href="#interessant" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="http://mopl.as.ntu.edu.tw/web/image/class/Synoptic_Meteorology_1092/Synoptic_Meteo-chap2.1(2021).pdf">天氣學二</a></p></li>
+<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/637746303">TKE</a></p></li>
+<li><p><a class="reference external" href="https://boundary-layer-meteo.github.io/lectures/7_tke.html">TKE</a></p></li>
+<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/1999179112649081003?share_code=wCsOMRq5q5Tu&amp;amp;utm_psn=2001101075185427717">知识、不确定性和最大熵原理</a> 99</p></li>
+<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./00_Inbox"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>interessant Video</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interessant">**interessant **</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
