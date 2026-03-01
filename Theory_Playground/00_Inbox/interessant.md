@@ -64,7 +64,7 @@
  * [TKE](https://zhuanlan.zhihu.com/p/637746303)
  * [TKE](https://boundary-layer-meteo.github.io/lectures/7_tke.html)
  * [知识、不确定性和最大熵原理](https://zhuanlan.zhihu.com/p/1999179112649081003?share_code=wCsOMRq5q5Tu&utm_psn=2001101075185427717) 99
- * []()
+ * [2021 AIME II Problems/Problem 12](https://artofproblemsolving.com/wiki/index.php?title=2021_AIME_II_Problems%2FProblem_12)
  * []()
  * []()
  * []()
