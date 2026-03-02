@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -494,11 +494,11 @@ P(\text{失敗}) &amp;\le&amp; N(1 - x)
 <p>既然我們已經徹底破解了這個二維平面上的覆蓋問題，試著思考看看：如果我們把這個推導邏輯寫成一小段 Python 程式碼，用蒙地卡羅方法（Monte Carlo method）隨機生成點位和網格來驗證這個給定 <span class="math notranslate nohighlight">\(x\)</span> 和 <span class="math notranslate nohighlight">\(N\)</span> 的計算科學界線。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">find_perfect_coverage</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">max_attempts</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">find_perfect_coverage</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">max_attempts</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    第一階段：尋找完美覆蓋的位置</span>
 <span class="sd">    使用拉斯維加斯演算法，不斷隨機嘗試直到找到解。</span>
@@ -543,7 +543,7 @@ P(\text{失敗}) &amp;\le&amp; N(1 - x)
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;【搜尋失敗】嘗試了 </span><span class="si">{</span><span class="n">max_attempts</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> 次仍未找到。請確認 x 是否大於門檻。&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">points</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">attempts</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">visualize_perfect_coverage</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">translation</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">attempts</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">visualize_perfect_coverage</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">translation</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">attempts</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    第二階段：將找到的完美覆蓋位置視覺化</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -603,14 +603,14 @@ P(\text{失敗}) &amp;\le&amp; N(1 - x)
 點數 N=10, 設定覆蓋率 x=0.7
 定理要求最低門檻: x &gt; 0.9000
 警告：目前的 x 沒有大於門檻，數學定理不保證有解！可能會找不到。
-【搜尋成功】電腦嘗試了 27 次後，成功找到了完美位置！
+【搜尋成功】電腦嘗試了 2 次後，成功找到了完美位置！
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\admin\AppData\Local\Temp\ipykernel_15204\3339517056.py:75: UserWarning: Setting the &#39;color&#39; property will override the edgecolor or facecolor properties.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\PDK\AppData\Local\Temp\ipykernel_23348\3339517056.py:75: UserWarning: Setting the &#39;color&#39; property will override the edgecolor or facecolor properties.
   rect = patches.Rectangle(
 </pre></div>
 </div>
-<img alt="../_images/2bc360cdc3d44a6b08bbddba431d2ef0d0d48a902055269a0b9c0d3aab8fe0c6.png" src="../_images/2bc360cdc3d44a6b08bbddba431d2ef0d0d48a902055269a0b9c0d3aab8fe0c6.png" />
+<img alt="../_images/aaa44432bd3698389b38940493c8af52251f9123af044969a0aaaea428d92b4b.png" src="../_images/aaa44432bd3698389b38940493c8af52251f9123af044969a0aaaea428d92b4b.png" />
 </div>
 </div>
 </section>
