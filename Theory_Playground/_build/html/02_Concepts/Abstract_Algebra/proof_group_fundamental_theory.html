@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Proof: The Identity Element in a Group is Unique &#8212; Theory_Playground</title>
+    <title>Proof of Group Fundamental Theory &#8212; Theory_Playground</title>
   
   
   
@@ -59,9 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02_Concepts/Abstract_Algebra/proof_group_theory_identity_uniqueness';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_Concepts/Abstract_Algebra/proof_group_fundamental_theory';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Reynolds Number \(Re\)" href="../Fluid_Dynamics/Reynolds_number.html" />
+    <link rel="prev" title="🧩 02_Concepts: 核心觀念區" href="../02_Concepts.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,7 +181,25 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_Derivations/01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+</ul>
+</details></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -251,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_Concepts/Abstract_Algebra/proof_group_theory_identity_uniqueness.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +299,7 @@
       
       
       
-      <li><a href="../../_sources/02_Concepts/Abstract_Algebra/proof_group_theory_identity_uniqueness.ipynb" target="_blank"
+      <li><a href="../../_sources/02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -365,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Proof: The Identity Element in a Group is Unique</h1>
+    <h1>Proof of Group Fundamental Theory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,7 +393,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">數學定理小推導 —— 單位元素是唯一的嗎？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-the-identity-element-in-a-group-is-unique">Proof: The Identity Element in a Group is Unique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-the-inverse-element-in-a-group-is-unique">Proof: The Inverse Element in a Group is Unique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-inverse-of-an-inverse">Proof : Inverse of an Inverse (反元素的反元素)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-4-inverse-of-a-product">Proof 4: Inverse of a Product (乘積的反元素)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-5a-unique-solutions-for-equations">Proof 5a: Unique Solutions for Equations (方程式的唯一解)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-5b-cancellation-laws">Proof 5b: Cancellation Laws (消去律)</a></li>
 </ul>
             </nav>
         </div>
@@ -387,17 +410,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="proof-the-identity-element-in-a-group-is-unique">
-<h1>Proof: The Identity Element in a Group is Unique<a class="headerlink" href="#proof-the-identity-element-in-a-group-is-unique" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>數學定理小推導 —— 單位元素是唯一的嗎？<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>群有其中一個定義:</p>
-<blockquote>
-<div><p>「There is an element <span class="math notranslate nohighlight">\(e \in G\)</span> such that <span class="math notranslate nohighlight">\(a = a * e = e * a\)</span> for each <span class="math notranslate nohighlight">\(a \in G\)</span>」</p>
-</div></blockquote>
-<p>這句話聽起來像是有可能存在好幾個不同的 <span class="math notranslate nohighlight">\(e\)</span>，但實際上一個群的單位元素永遠是獨一無二的。</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="proof-of-group-fundamental-theory">
+<h1>Proof of Group Fundamental Theory<a class="headerlink" href="#proof-of-group-fundamental-theory" title="Link to this heading">#</a></h1>
+<section id="proof-the-identity-element-in-a-group-is-unique">
+<h2>Proof: The Identity Element in a Group is Unique<a class="headerlink" href="#proof-the-identity-element-in-a-group-is-unique" title="Link to this heading">#</a></h2>
 <p>證明目標： 證明群 <span class="math notranslate nohighlight">\(G\)</span> 中的單位元素唯一。</p>
-<p>推導：</p>
+<p><strong>推導：</strong></p>
 <ol class="arabic simple">
 <li><p>反證法起手： 假設這個群有兩個不同的單位元素，我們分別叫它們 <span class="math notranslate nohighlight">\(e_1\)</span> 和 <span class="math notranslate nohighlight">\(e_2\)</span>。</p></li>
 <li><p>利用 <span class="math notranslate nohighlight">\(e_1\)</span> 的定義： 既然 <span class="math notranslate nohighlight">\(e_1\)</span> 是單位元素，那麼任何元素碰到它都不變。我們讓 <span class="math notranslate nohighlight">\(e_2\)</span> 去碰到它，可以得到：</p></li>
@@ -415,6 +433,114 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[e_1 = e_2\]</div>
 <p>這就證明了，無論你一開始假設有幾個單位元素，它們最終都會被證明是同一個東西。</p>
+</section>
+<section id="proof-the-inverse-element-in-a-group-is-unique">
+<h2>Proof: The Inverse Element in a Group is Unique<a class="headerlink" href="#proof-the-inverse-element-in-a-group-is-unique" title="Link to this heading">#</a></h2>
+<p>證明目標： 證明元素 <span class="math notranslate nohighlight">\(a \in G\)</span> 中的反元素唯一。</p>
+<p><strong>推導：</strong></p>
+<p>假設 <span class="math notranslate nohighlight">\(b\)</span> 和 <span class="math notranslate nohighlight">\(c\)</span> 是 <span class="math notranslate nohighlight">\(a\)</span> 的反元素，那麼:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+b &amp;=&amp; b * e \\
+&amp;=&amp; b * (a * c)  \\
+&amp;=&amp; (b * a) * c \\
+&amp;=&amp; e * c \\
+&amp;=&amp; c
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> 的反元素記做 <span class="math notranslate nohighlight">\(a^{-1}\)</span></p></li>
+</ul>
+</section>
+<section id="proof-inverse-of-an-inverse">
+<h2>Proof : Inverse of an Inverse (反元素的反元素)<a class="headerlink" href="#proof-inverse-of-an-inverse" title="Link to this heading">#</a></h2>
+<p><strong>證明目標：</strong> 證明對於所有 <span class="math notranslate nohighlight">\(a \in G\)</span>，其反元素的反元素 <span class="math notranslate nohighlight">\((a^{-1})^{-1} = a\)</span>。</p>
+<p><strong>推導：</strong>
+根據群的定義，任何元素 <span class="math notranslate nohighlight">\(x\)</span> 若要成為 <span class="math notranslate nohighlight">\(a^{-1}\)</span> 的反元素，必須滿足與它相乘等於單位元素 <span class="math notranslate nohighlight">\(e\)</span>，即 <span class="math notranslate nohighlight">\(x * a^{-1} = a^{-1} * x = e\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+a^{-1}(a^{-1})^{-1} &amp;=&amp;  e \\
+a a^{-1}(a^{-1})^{-1}&amp;=&amp; a   \\
+e(a^{-1})^{-1}&amp;=&amp; a \\
+(a^{-1})^{-1}&amp;=&amp; a\\
+\end{gather*}\end{split}\]</div>
+<p>觀察上式，這正好說明了 <span class="math notranslate nohighlight">\(a\)</span> 本身就完美符合「作為 <span class="math notranslate nohighlight">\(a^{-1}\)</span> 反元素」的條件。
+由於群中的反元素必定是唯一的，因此 <span class="math notranslate nohighlight">\(a^{-1}\)</span> 的反元素只能是 <span class="math notranslate nohighlight">\(a\)</span>，即：</p>
+<div class="math notranslate nohighlight">
+\[(a^{-1})^{-1} = a\]</div>
+</section>
+<hr class="docutils" />
+<section id="proof-4-inverse-of-a-product">
+<h2>Proof 4: Inverse of a Product (乘積的反元素)<a class="headerlink" href="#proof-4-inverse-of-a-product" title="Link to this heading">#</a></h2>
+<p><strong>證明目標：</strong> 證明對於所有 <span class="math notranslate nohighlight">\(a, b \in G\)</span>，相乘後的反元素 <span class="math notranslate nohighlight">\((a * b)^{-1} = b^{-1} * a^{-1}\)</span>。</p>
+<p><strong>推導：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+(a * b)*(a * b)^{-1} &amp;=&amp;  e \\
+a^{-1}*(a * b)*(a * b)^{-1} &amp;=&amp;  a^{-1}*e \\
+b*(a * b)^{-1}&amp;=&amp; a^{-1}   \\
+b^{-1}*b*(a * b)^{-1}&amp;=&amp; b^{-1}*a^{-1}   \\
+(a * b)^{-1}&amp;=&amp; b^{-1}*a^{-1}  \\
+\end{gather*}\end{split}\]</div>
+<p>要證明 <span class="math notranslate nohighlight">\(b^{-1} * a^{-1}\)</span> 確實是 <span class="math notranslate nohighlight">\((a * b)\)</span> 的反元素，我們必須證明兩者相乘的結果為單位元素 <span class="math notranslate nohighlight">\(e\)</span>。
+利用群的結合律，我們將它們相乘：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;&amp;(a * b) * (b^{-1} * a^{-1})  \\
+&amp;=&amp;a *e*a^{-1}  \\
+&amp;=&amp; e \\
+\end{gather*}\end{split}\]</div>
+<p>同理，我們也檢查反方向的相乘：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;&amp;(b^{-1} * a^{-1})*(a * b)   \\
+&amp;=&amp;b *e*b^{-1}  \\
+&amp;=&amp; e \\
+\end{gather*}\end{split}\]</div>
+<p>既然正向與反向相乘的結果皆為 <span class="math notranslate nohighlight">\(e\)</span>，根據反元素的唯一性，可知 <span class="math notranslate nohighlight">\((a * b)\)</span> 的反元素必定是 <span class="math notranslate nohighlight">\(b^{-1} * a^{-1}\)</span>。</p>
+</section>
+<hr class="docutils" />
+<section id="proof-5a-unique-solutions-for-equations">
+<h2>Proof 5a: Unique Solutions for Equations (方程式的唯一解)<a class="headerlink" href="#proof-5a-unique-solutions-for-equations" title="Link to this heading">#</a></h2>
+<p><strong>證明目標：</strong> 證明對於所有 <span class="math notranslate nohighlight">\(a, b \in G\)</span>，方程式 <span class="math notranslate nohighlight">\(a * x = b\)</span> （與 <span class="math notranslate nohighlight">\(y * a = b\)</span>）在群 <span class="math notranslate nohighlight">\(G\)</span> 中有唯一解。</p>
+<p><strong>推導：</strong>
+我們以 <span class="math notranslate nohighlight">\(a * x = b\)</span> 為例，這可以分為兩步來嚴格證明：</p>
+<p><strong>1. 證明解存在 (Existence)：</strong>
+因為 <span class="math notranslate nohighlight">\(a \in G\)</span>，所以必定存在 <span class="math notranslate nohighlight">\(a^{-1}\)</span>。我們構造一個解 <span class="math notranslate nohighlight">\(x = a^{-1} * b\)</span> （由於封閉性，此解必定存在於 <span class="math notranslate nohighlight">\(G\)</span> 中）。
+將其代入方程式左側檢驗：</p>
+<div class="math notranslate nohighlight">
+\[a * (a^{-1} * b) = (a * a^{-1}) * b = e * b = b\]</div>
+<p>等式成立，證明至少存在一個解。</p>
+<p><strong>2. 證明解唯一 (Uniqueness)：</strong>
+假設有兩個解 <span class="math notranslate nohighlight">\(x_1\)</span> 與 <span class="math notranslate nohighlight">\(x_2\)</span> 都滿足條件，即 <span class="math notranslate nohighlight">\(a * x_1 = b\)</span> 且 <span class="math notranslate nohighlight">\(a * x_2 = b\)</span>。
+這表示 <span class="math notranslate nohighlight">\(a * x_1 = a * x_2\)</span>。我們在等式兩邊的「左側」同時乘上 <span class="math notranslate nohighlight">\(a^{-1}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[a^{-1} * (a * x_1) = a^{-1} * (a * x_2)\]</div>
+<p>利用結合律展開：</p>
+<div class="math notranslate nohighlight">
+\[(a^{-1} * a) * x_1 = (a^{-1} * a) * x_2\]</div>
+<div class="math notranslate nohighlight">
+\[e * x_1 = e * x_2\]</div>
+<div class="math notranslate nohighlight">
+\[x_1 = x_2\]</div>
+<p>因為任意兩個解最終必定相等，故證明該方程式的解是唯一的。（方程式 <span class="math notranslate nohighlight">\(y * a = b\)</span> 的證明邏輯完全相同，只需在右側同乘 <span class="math notranslate nohighlight">\(a^{-1}\)</span> 即可）。</p>
+</section>
+<hr class="docutils" />
+<section id="proof-5b-cancellation-laws">
+<h2>Proof 5b: Cancellation Laws (消去律)<a class="headerlink" href="#proof-5b-cancellation-laws" title="Link to this heading">#</a></h2>
+<p><strong>證明目標：</strong> 證明如果 <span class="math notranslate nohighlight">\(a * b = a * c\)</span>，則推導出 <span class="math notranslate nohighlight">\(b = c\)</span>；如果 <span class="math notranslate nohighlight">\(a * b = c * b\)</span>，則推導出 <span class="math notranslate nohighlight">\(a = c\)</span>。</p>
+<p><strong>推導：</strong>
+我們以左消去律（Left cancellation） <span class="math notranslate nohighlight">\(a * b = a * c\)</span> 為例。
+由於 <span class="math notranslate nohighlight">\(a \in G\)</span>，其反元素 <span class="math notranslate nohighlight">\(a^{-1}\)</span> 必定存在。我們在等式兩側的「左邊」同乘 <span class="math notranslate nohighlight">\(a^{-1}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[a^{-1} * (a * b) = a^{-1} * (a * c)\]</div>
+<p>利用結合律將括號重新組合：</p>
+<div class="math notranslate nohighlight">
+\[(a^{-1} * a) * b = (a^{-1} * a) * c\]</div>
+<div class="math notranslate nohighlight">
+\[e * b = e * c\]</div>
+<div class="math notranslate nohighlight">
+\[b = c\]</div>
+<p>同理，對於右消去律（Right cancellation） <span class="math notranslate nohighlight">\(a * b = c * b\)</span>，我們只需在等式的「右邊」同時乘上 <span class="math notranslate nohighlight">\(b^{-1}\)</span>，便能以完全相同的步驟推導出 <span class="math notranslate nohighlight">\(a = c\)</span>。</p>
 </section>
 </section>
 
@@ -448,6 +574,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../02_Concepts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>🧩 02_Concepts</strong>: 核心觀念區</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Fluid_Dynamics/Reynolds_number.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reynolds Number <span class="math notranslate nohighlight">\(Re\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -464,7 +608,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">數學定理小推導 —— 單位元素是唯一的嗎？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-the-identity-element-in-a-group-is-unique">Proof: The Identity Element in a Group is Unique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-the-inverse-element-in-a-group-is-unique">Proof: The Inverse Element in a Group is Unique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-inverse-of-an-inverse">Proof : Inverse of an Inverse (反元素的反元素)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-4-inverse-of-a-product">Proof 4: Inverse of a Product (乘積的反元素)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-5a-unique-solutions-for-equations">Proof 5a: Unique Solutions for Equations (方程式的唯一解)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-5b-cancellation-laws">Proof 5b: Cancellation Laws (消去律)</a></li>
 </ul>
   </nav></div>
 

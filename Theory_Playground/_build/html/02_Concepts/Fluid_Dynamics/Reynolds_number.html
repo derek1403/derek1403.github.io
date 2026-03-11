@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Reynolds Number \(Re\) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_Concepts/Fluid_Dynamics/Reynolds_number';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Terminal Velocity" href="Terminal_velocity.html" />
+    <link rel="prev" title="Proof of Group Fundamental Theory" href="../Abstract_Algebra/proof_group_fundamental_theory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_Derivations/01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminal_velocity.html">[流體力學] 終端速度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_Concepts/Fluid_Dynamics/Reynolds_number.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/02_Concepts/Fluid_Dynamics/Reynolds_number.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Reynolds Number Re</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re">定義 <strong>雷諾數 <span class="math notranslate nohighlight">\(Re\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">常見參數參考表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-re">多少算高 Re？多少算低 Re？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-1"><strong>低雷諾數（黏滯力主宰）：<span class="math notranslate nohighlight">\(Re &lt; 1\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-1000"><strong>過渡區：<span class="math notranslate nohighlight">\(1 &lt; Re &lt; 1000\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>高雷諾數（慣性力主宰）：<span class="math notranslate nohighlight">\(Re &gt; 1000\)</span></strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="reynolds-number-re">
+<h1>Reynolds Number <span class="math notranslate nohighlight">\(Re\)</span><a class="headerlink" href="#reynolds-number-re" title="Link to this heading">#</a></h1>
+<section id="re">
+<h2>定義 <strong>雷諾數 <span class="math notranslate nohighlight">\(Re\)</span></strong><a class="headerlink" href="#re" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(Re\)</span> 是由慣性力和黏滯力的比值所形成的無因次參數，當 <span class="math notranslate nohighlight">\(Re \gg 1\)</span> (雷諾數很高)的時候，物體受到的力主要由慣性力主導，當 <span class="math notranslate nohighlight">\(Re \ll 1\)</span>  (雷諾數很低)的時候，物體受到的力主要由黏滯力主導。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+Re &amp; \overset{\text{def}}{=}&amp; \frac{\text{慣性力}}{\text{黏滯力}} \\
+&amp;=&amp; \frac{\rho u r}{\mu} \\
+&amp;=&amp; \frac{ u r}{\nu} \\
+&amp;=&amp; \frac{L^2 / \nu}{L/U} \\
+&amp;=&amp; \frac{T_{\text{viscous}}}{T_{\text{inertia}}} &amp;=&amp;  \frac{\text{物體感受到黏滯力時間尺度}}{\text{物體感受到慣性力時間尺度}}
+\end{gather*}\end{split}\]</div>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> 是<strong>特徵速度</strong>，單位 <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> 是<strong>特徵長度</strong>，單位 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p>
+<p>是<strong>速度場（Velocity Field）發生顯著變化的空間跨度</strong>，例如:</p>
+<ul class="simple">
+<li><p>雨滴：速度從水滴表面的 <span class="math notranslate nohighlight">\(U\)</span> 降到遠處的 0，跨度大約是 雨滴半徑。</p></li>
+<li><p>颱風：速度從眼牆的 <span class="math notranslate nohighlight">\(U_{max}\)</span> 降到外圍的 0，跨度大約是 颱風半徑。</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\delta_{颱風} = \frac{15 \text{ km}}{500 \text{ km}} \approx 0.03 \ll 1\)</span> ，垂直速度遠小於水平速度，主要受阻力在水平方向上</p></li>
+</ul>
+</li>
+<li><p>颱風中的一個小氣塊：速度從氣塊表面的 <span class="math notranslate nohighlight">\(U\)</span> 降到遠處的 0，跨度大約是 氣塊半徑。</p></li>
+<li><p>水管：速度從管中心的 <span class="math notranslate nohighlight">\(U_{max}\)</span> 降到管壁的 0，跨度大約是 水管直徑。</p></li>
+<li><p>對流雲：地面被加熱空氣往上衝，一直衝到「對流層頂（大約 10~15 公里高）」遇到穩定的平流層被迫向外散開</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\delta_{對流雲} = \frac{10 \text{ km}}{10 \text{ km}} \approx 1\)</span> (各向同性)，垂直速度大於水平速度，主要受阻力在垂直方向上</p></li>
+</ul>
+</li>
+</ul>
+<p>通常<strong>假設氣塊是球</strong>就會用半徑<span class="math notranslate nohighlight">\(r\)</span>來代表特徵尺度</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> 是<strong>運動黏滯係數(Kinematic Viscosity)</strong>，單位 <span class="math notranslate nohighlight">\([\text{m}^2 \cdot \text{s}^{-1}]\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu \overset{\text{def}}{=}\frac{\mu}{\rho}\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> 是<strong>動態黏滯係數(Dynamic Viscosity)</strong>，單位 <span class="math notranslate nohighlight">\([\text{kg}^2 \cdot \text{m}^{-1}\cdot \text{s}^{-1}] = [\text{Pa} \cdot \text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> 是<strong>密度</strong>，單位 <span class="math notranslate nohighlight">\([\text{kg}^2 \cdot \text{m}^{-3}]\)</span></p>
+<p>是被擾動的背景的密度例如:</p>
+<ul class="simple">
+<li><p>水中的氣泡： 流動的是水，所以 <span class="math notranslate nohighlight">\(\rho\)</span> 帶入水的密度，<span class="math notranslate nohighlight">\(\mu\)</span> 帶入水的黏滯係數。</p></li>
+<li><p>空氣中的雨滴： 流動的是空氣，所以 <span class="math notranslate nohighlight">\(\rho\)</span> 帶入空氣密度，<span class="math notranslate nohighlight">\(\mu\)</span> 帶入空氣黏滯係數。</p></li>
+<li><p>大氣中的氣塊（例如對流雲）： 流動的是周圍的環境空氣，所以 <span class="math notranslate nohighlight">\(\rho\)</span> 和 <span class="math notranslate nohighlight">\(\mu\)</span> 都是帶入大氣環境的值。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h2>常見參數參考表<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>重力加速度 (<span class="math notranslate nohighlight">\(g\)</span>)：</strong>  <span class="math notranslate nohighlight">\(9.81[\text{m}^2 \cdot \text{s}^{-2}]\)</span></p></li>
+<li><p><strong>水的密度 (<span class="math notranslate nohighlight">\(\rho_{water}\)</span>)：</strong>  <span class="math notranslate nohighlight">\(1000[\text{kg}^2 \cdot \text{m}^{-3}]\)</span></p>
+<ul>
+<li><p>常溫常壓（約 20°C, 1 atm）下的近似值</p></li>
+</ul>
+</li>
+<li><p><strong>空氣的密度 (<span class="math notranslate nohighlight">\(\rho_{air}\)</span>)：</strong>  <span class="math notranslate nohighlight">\(1.2[\text{kg}^2 \cdot \text{m}^{-3}]\)</span></p>
+<ul>
+<li><p>常溫常壓（約 20°C, 1 atm）下的近似值</p></li>
+</ul>
+</li>
+<li><p><strong>水的動態黏滯係數 (<span class="math notranslate nohighlight">\(\mu_{water}\)</span>)：</strong> <span class="math notranslate nohighlight">\(1.0 \times 10^{-3} [\text{kg}^2 \cdot \text{m}^{-1}\cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><strong>空氣的動態黏滯係數 (<span class="math notranslate nohighlight">\(\mu_{air}\)</span>)：</strong> <span class="math notranslate nohighlight">\(1.8 \times 10^{-5} [\text{kg}^2 \cdot \text{m}^{-1}\cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><strong>空氣的運動黏滯係數 (<span class="math notranslate nohighlight">\(\nu_{air}\)</span>)：</strong> <span class="math notranslate nohighlight">\(1.5 \times 10^{-5} [\text{m}^2 \cdot \text{s}^{-1}]\)</span></p></li>
+</ul>
+</section>
+<section id="re-re">
+<h2>多少算高 Re？多少算低 Re？<a class="headerlink" href="#re-re" title="Link to this heading">#</a></h2>
+<p>對於流過球體的流場，工程與物理上通常這樣界定：</p>
+<section id="re-1">
+<h3><strong>低雷諾數（黏滯力主宰）：<span class="math notranslate nohighlight">\(Re &lt; 1\)</span></strong><a class="headerlink" href="#re-1" title="Link to this heading">#</a></h3>
+<p>此時流線非常平滑完全貼合球體稱為蠕流（Creeping flow），斯托克斯定律（Stokes law）完美適用，慣性力幾乎不存在，動量瞬間就被黏滯力擴散掉，物體只要一停止出力就會瞬間停在原地，完全沒有「滑行」這回事。</p>
+<ul>
+<li><p><strong>ex1:</strong> 精子或大腸桿菌在水中游動（微觀視角）</p>
+<ul class="simple">
+<li><p><strong>特徵長度 <span class="math notranslate nohighlight">\(L\)</span>：</strong> 細菌長度約 <span class="math notranslate nohighlight">\(2 [\mu\text{m}] = 2 \times 10^{-6} [\text{m}]\)</span></p></li>
+<li><p><strong>特徵速度 <span class="math notranslate nohighlight">\(U\)</span>：</strong> 游動速度約 <span class="math notranslate nohighlight">\(20 [\mu\text{m}\cdot \text{s}^{-1}] = 2 \times 10^{-5} [\text{m}\cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><strong>水的運動黏滯係數 <span class="math notranslate nohighlight">\(\nu\)</span>：</strong> <span class="math notranslate nohighlight">\(10^{-6} [\text{m}^2\cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><strong>帶入公式：</strong> <span class="math notranslate nohighlight">\(Re = \frac{2 \times 10^{-5} \times 2 \times 10^{-6}}{10^{-6}} = 0.00004 \ll 1\)</span></p></li>
+</ul>
+<p>物理直覺： 對細菌來說，水根本不像水，水黏稠得像是柏油或濃稠的蜂蜜！在這麼低的雷諾數下，物理學家珀塞爾（E.M. Purcell）提出了一個著名的「扇貝定理（Scallop Theorem）」。如果你像扇貝一樣，只是簡單地「打開、合上、打開、合上」對稱地拍打水，在低雷諾數下你只會原地前後抖動，根本無法前進！（因為沒有慣性可以讓你在合上的瞬間滑行）。所以細菌必須演化出「螺旋狀的鞭毛」，像開瓶器一樣在水裡「鑽」著前進。</p>
+</li>
+<li><p><strong>ex2:</strong> 地球的地函對流（宏觀但極慢）</p>
+<ul class="simple">
+<li><p><strong>特徵長度 <span class="math notranslate nohighlight">\(L\)</span>：</strong> 地函厚度約 <span class="math notranslate nohighlight">\(3000 \text{ km} = 3 \times 10^6 \text{ m}\)</span>（極大！）</p></li>
+<li><p><strong>特徵速度 <span class="math notranslate nohighlight">\(U\)</span>：</strong> 板塊移動速度大約每年幾公分，算 <span class="math notranslate nohighlight">\(10^{-9} \text{ m/s}\)</span>（極慢！）</p></li>
+<li><p><strong>地函的運動黏滯係數 <span class="math notranslate nohighlight">\(\nu\)</span>：</strong> 大約高達 <span class="math notranslate nohighlight">\(10^{17} \text{ m}^2\text{/s}\)</span>（極度黏！）</p></li>
+<li><p><strong>帶入公式：</strong> <span class="math notranslate nohighlight">\(Re = \frac{10^{-9} \times 3 \times 10^6}{10^{17}} = 3 \times 10^{-20}\)</span></p></li>
+</ul>
+<p>這是物理界能找到<strong>最小的雷諾數之一</strong>！所以地函對流是完美的層流，沒有任何亂流，幾億年來都維持著極度平滑的運動軌跡。</p>
+</li>
+</ul>
+</section>
+<section id="re-1000">
+<h3><strong>過渡區：<span class="math notranslate nohighlight">\(1 &lt; Re &lt; 1000\)</span></strong><a class="headerlink" href="#re-1000" title="Link to this heading">#</a></h3>
+<p>流體開始在物體後方產生穩定的漩渦，黏滯力無法完全壓制慣性，流場開始在物體後方「剝離（Separation）」產生<strong>漩渦</strong>，但這些漩渦還沒有碎裂成混亂的亂流，而是呈現極度規律的幾何排列。</p>
+<ul>
+<li><p><strong>ex 1:</strong> 微風吹過電線發出「嗡嗡聲」（卡門渦街）</p>
+<p>當微風吹過一根細細的電線或天線時，我們來算算看：</p>
+<ul class="simple">
+<li><p><strong>特徵長度 <span class="math notranslate nohighlight">\(L\)</span>：</strong> 電線直徑約 <span class="math notranslate nohighlight">\(2 \text{ mm} = 0.002 \text{ m}\)</span></p></li>
+<li><p><strong>特徵速度 <span class="math notranslate nohighlight">\(U\)</span>：</strong> 微風約 <span class="math notranslate nohighlight">\(1.5 \text{ m/s}\)</span></p></li>
+<li><p><strong>空氣運動黏滯係數 <span class="math notranslate nohighlight">\(\nu\)</span>：</strong> <span class="math notranslate nohighlight">\(1.5 \times 10^{-5} \text{ m}^2\text{/s}\)</span></p></li>
+<li><p><strong>帶入公式：</strong> <span class="math notranslate nohighlight">\(Re = \frac{1.5 \times 0.002}{1.5 \times 10^{-5}} = 200\)</span></p></li>
+</ul>
+<p>在這個大約 <span class="math notranslate nohighlight">\(Re \approx 200\)</span> 的過渡區，流體會在電線後方交替地產生一左一右的漩渦，這被稱為 <strong>卡門渦街（Von Kármán vortex street）</strong> ，這交替脫落的漩渦會對電線產生週期性的拉扯力，讓電線震動。如果震動頻率剛好落在人耳的聽覺範圍內，你就會聽到電線在風中「唱歌」！</p>
+<p>大氣中的例子</p>
+<p><a class="reference external" href="https://www.earthdata.nasa.gov/news/worldview-image-archive/swirls-clouds-off-guadalupe-island-baja-california-mexico"><img alt="" src="https://earthdata.nasa.gov/s3fs-public/styles/hds_large/public/2022-05/GuadalupeIsland_10Apr2022_Suomi_lg.jpeg?VersionId=SX5Oi4ofKSU0lQL3QLckmBtUxP4YxC7Q&amp;itok=7o9k6ptr" /></a></p>
+</li>
+<li><p><strong>ex 2:</strong> 果蠅與蚊子的飛行</p>
+<p>這也是生物學家曾經困惑很久的謎題。</p>
+<ul class="simple">
+<li><p><strong>特徵長度 <span class="math notranslate nohighlight">\(L\)</span>：</strong> 昆蟲翅膀寬度約 <span class="math notranslate nohighlight">\(1 \text{ mm} = 10^{-3} \text{ m}\)</span></p></li>
+<li><p><strong>特徵速度 <span class="math notranslate nohighlight">\(U\)</span>：</strong> 拍翅速度約 <span class="math notranslate nohighlight">\(1 \text{ m/s}\)</span></p></li>
+<li><p><strong>帶入公式：</strong> <span class="math notranslate nohighlight">\(Re = \frac{1 \times 10^{-3}}{1.5 \times 10^{-5}} \approx 66\)</span></p></li>
+</ul>
+<p>這剛好落在過渡區！早期的空氣動力學家如果用老鷹或飛機（高雷諾數）的公式去算，會發現蜜蜂和果蠅產生的升力根本不足以飛起來（著名的都市傳說：根據物理定律，大黃蜂不應該會飛）。
+後來才發現，昆蟲就是利用了<strong>過渡區會產生穩定漩渦</strong>的特性。牠們在翅膀前緣製造出一個「前緣渦流（Leading-Edge Vortex）」，這個漩渦沒有碎成亂流，而是黏在翅膀上，像一個低壓吸塵器一樣把昆蟲往上吸，提供了額外的巨大升力！</p>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h3><strong>高雷諾數（慣性力主宰）：<span class="math notranslate nohighlight">\(Re &gt; 1000\)</span></strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>後方產生混亂的尾流（Wake），阻力係數 <span class="math notranslate nohighlight">\(C_D\)</span> 趨近於常數（約 0.4 到 0.5）。這時就是 <span class="math notranslate nohighlight">\(v \sim r^{0.5}\)</span> 成立的區間。</p>
+<ul>
+<li><p><strong>範例 1：對流雲（積雨雲的上升氣流）</strong></p>
+<ul class="simple">
+<li><p>特徵長度 <span class="math notranslate nohighlight">\(L\)</span>：對流雲的尺度大約 1 km 到 10 km，我們取 1000 m。</p></li>
+<li><p>特徵速度 <span class="math notranslate nohighlight">\(u\)</span>：強烈的上升氣流大約 10 m/s。</p></li>
+<li><p>代入公式： <span class="math notranslate nohighlight">\(Re = \frac{u L}{\nu_{air}} = \frac{10 \times 1000}{1.5 \times 10^{-5}} \approx 6.7 \times 10^8\)</span></p></li>
+</ul>
+<p>這代表對流雲內部的流動是<strong>極度高雷諾數</strong>，慣性力遠大於黏滯力，這也是為什麼雲裡面的氣流總是呈現高度混亂的湍流（Turbulence）狀態。</p>
+</li>
+<li><p><strong>範例 2：颱風（Typhoon / Hurricane）</strong></p>
+<ul class="simple">
+<li><p>特徵長度 <span class="math notranslate nohighlight">\(L\)</span>：颱風半徑大約 100 km，即 100,000 m。</p></li>
+<li><p>特徵速度 <span class="math notranslate nohighlight">\(u\)</span>：最大風速算 50 m/s。</p></li>
+<li><p>代入公式：<span class="math notranslate nohighlight">\(Re = \frac{u L}{\nu_{air}} = \frac{50 \times 100,000}{1.5 \times 10^{-5}} \approx 3.3 \times 10^{11}\)</span></p></li>
+</ul>
+<p>這是一個天文數字！這說明在巨觀的天氣系統中，空氣分子的摩擦力（分子黏滯性）微乎其微，幾乎可以忽略不計。</p>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>進階概念延伸：</strong>
+既然颱風的雷諾數這麼大，分子黏滯性根本不起作用，那為什麼颱風的風速不會無止盡增加？能量是如何耗散的？
+這就帶出了在數值天氣預報（如 FCNv2 或其他大氣模型）中一個極度重要的概念：<strong>渦旋黏滯係數（Eddy Viscosity）</strong>。</p>
+<p>在大尺度下，大氣不是靠「分子摩擦」來消耗能量，而是靠「大小不一的亂流漩渦」互相碰撞來傳遞和消耗動量。所以大氣科學家發明了「渦旋黏滯係數 <span class="math notranslate nohighlight">\(K_m\)</span>」來取代公式裡的 <span class="math notranslate nohighlight">\(\mu\)</span>。這個 <span class="math notranslate nohighlight">\(K_m\)</span> 比分子的 <span class="math notranslate nohighlight">\(\mu\)</span> 大了成千上萬倍！</p>
+<p>這就像是：在擁擠的夜市裡（大氣亂流），你無法前進不是因為空氣很黏（分子黏滯），而是因為你一直撞到其他走來走去的人（渦旋動量交換）。</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02_Concepts\Fluid_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Abstract_Algebra/proof_group_fundamental_theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Proof of Group Fundamental Theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Terminal_velocity.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Terminal Velocity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re">定義 <strong>雷諾數 <span class="math notranslate nohighlight">\(Re\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">常見參數參考表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-re">多少算高 Re？多少算低 Re？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-1"><strong>低雷諾數（黏滯力主宰）：<span class="math notranslate nohighlight">\(Re &lt; 1\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-1000"><strong>過渡區：<span class="math notranslate nohighlight">\(1 &lt; Re &lt; 1000\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>高雷諾數（慣性力主宰）：<span class="math notranslate nohighlight">\(Re &gt; 1000\)</span></strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

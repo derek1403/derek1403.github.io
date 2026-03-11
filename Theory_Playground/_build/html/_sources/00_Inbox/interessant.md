@@ -54,6 +54,7 @@
   * [数学模型50讲第24讲:知识、不确定性和最大熵原理](https://www.bilibili.com/video/BV15dzeBnE7s/) 99
   * [我終於理解了不確定性原理的深刻內涵！](https://www.youtube.com/watch?v=PEl2GuppQD0)
   * [我用物理公式"造"了一個黑洞，結果和NASA拍的一模一樣！](https://www.youtube.com/watch?v=INrkLxPWxFk)
+  * [Fantastic KL Divergence and How to (Actually) Compute It KL散度（Kullback-Leibler Divergence，簡稱KLD），又稱相對熵](https://www.youtube.com/watch?v=tXE23653JrU)
 
 
 * [【数学史】数学危机（下）——数学基础的确立与英雄时代的落幕](https://www.bilibili.com/video/BV16zZPBsEka)
