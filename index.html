@@ -6,61 +6,71 @@
     <title>我的筆記總覽</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif; /*稍微優化字體*/
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             
             /* --- 背景圖片設定開始 --- */
-            /* 設定圖片路徑 */
             background-image: url('./item/Cat_and_Dog_pic.png');
-            
-            /* 讓圖片不重複 */
             background-repeat: no-repeat;
-            
-            /* 讓圖片永遠置中 */
             background-position: center center;
-            
-            /* 讓背景固定，不隨卷軸移動 */
             background-attachment: fixed;
-            
-            /* 核心：cover 模式讓圖片填滿整個視窗大小 */
             background-size: cover;
             /* --- 背景圖片設定結束 --- */
             
-            /* 確保高度至少佔滿整個視窗，這樣背景才不會切斷 */
             min-height: 100vh;
-            
-            /* 使用 Flexbox 讓內容垂直水平置中 (選用，讓畫面更像首頁) */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* 新增一個容器樣式，用來像「卡片」一樣承載文字 */
         .container {
             max-width: 800px;
-            width: 90%; /* 手機版留邊 */
-            background-color: rgba(255, 255, 255, 0.9); /* 90% 不透明的白色背景 */
+            width: 90%; 
+            background-color: rgba(255, 255, 255, 0.9); 
             padding: 40px;
-            border-radius: 15px; /* 圓角看起來比較柔和 */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 加上陰影讓卡片浮起來 */
+            border-radius: 15px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            
+            /* 讓內容在卡片內有更好的上下空間分配 */
+            margin: 40px 0; 
         }
 
         h1 { 
             text-align: center; 
             color: #333;
             margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        /* 新增：次級標題的樣式，用來區分不同區塊 */
+        h2 {
+            color: #444;
+            font-size: 1.4em;
+            border-bottom: 2px solid #007bff; /* 藍色底線，增加層次感 */
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        /* 新增：文字描述的樣式 */
+        p.description {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 0;
+            margin-bottom: 15px;
         }
 
         ul { 
             list-style: none; 
             padding: 0; 
+            margin-bottom: 30px; /* 讓列表底部留白，與下一個標題隔開 */
         }
 
         li { 
             margin: 15px 0; 
-            border-bottom: 1px dashed #ccc; /* 增加分隔線，像筆記本內頁 */
+            border-bottom: 1px dashed #ccc; 
             padding-bottom: 10px;
         }
 
@@ -68,23 +78,35 @@
             text-decoration: none;
             color: #007bff;
             font-size: 1.2em;
-            display: block; /* 讓整個區域都可點擊 */
-            transition: color 0.3s; /* 平滑過渡效果 */
+            display: block; 
+            transition: color 0.3s, padding-left 0.3s; /* 將 padding-left 也加入過渡效果，會更滑順 */
         }
 
         a:hover { 
             color: #0056b3; 
-            padding-left: 10px; /* hover 時稍微向右移動的動態感 */
+            padding-left: 10px; 
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>我的筆記總覽</h1>
+
+        <h2>貓探長 🐈🕵️</h2>
+        <p class="description">旺旺 筆記整理：</p>
         <ul>
-            <li><a href="./Control-System/_build/html/index.html" target="_blank">Control-System</a></li>
-            <li><a href="./Math-Derivations/_build/html/intro.html" target="_blank">Math-Derivations</a></li>
-            <li><a href="https://derek1403.github.io/PC-NTU/Chaos%20and%20Predictability/hw1/Chaos_hw1.html" target="_blank">測試主題 ：CP</a></li>
+            <li><a href="./Control-System/_build/html/index.html" target="_blank">Control-System (控制系統)</a></li>
+            <li><a href="./Math-Derivations/_build/html/intro.html" target="_blank">Math-Derivations (數學推導)</a></li>
+            <li><a href="./Theory_Playground/_build/html/intro.html" target="_blank">Theory_Playground (理論遊樂場)</a></li>
+            <li><a href="https://derek1403.github.io/PC-NTU/Chaos%20and%20Predictability/hw1/Chaos_hw1.html" target="_blank">測試主題 ：CP (混沌與可預測性)</a></li>
+        </ul>
+
+        <h2>狗勾好朋友 🐕</h2>
+        <p class="description">喵喵 筆記整理：</p>
+        <ul>
+            <li><a href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/lecture.html" target="_blank">高等大氣動力學 (Advanced Atmospheric Dynamics)</a></li>
+            <li><a href="https://derek1403.github.io/PC-NTU/Cryptography/_build/html/lecture/Algebra/Abstract_Algebra/Group.html" target="_blank">密碼學 (Cryptography)</a></li>
+            <li><a href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/lecture.html" target="_blank">近代物理 (Modern Physics)</a></li>
         </ul>
     </div>
 </body>
