@@ -1,0 +1,958 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Spherical Coordinate Transformation : Momentum Equation &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="🧩 02_Concepts: 核心觀念區" href="../../02_Concepts/02_Concepts.html" />
+    <link rel="prev" title="Proof \(\int_{-\infty}^{+\infty} \frac{e^{-x^2} \sin^2(x^2)}{x^2} \mathrm{d}x = \sqrt{\pi} (\sqrt{\phi} - 1)\)" href="../golden_ratio_gaussian_integral.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[座標系統] 球坐標變換的動量方程</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spherical Coordinate Transformation : Momentum Equation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">操作流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-global-constants"><strong>[Step 1] 定義全域常數 (Global Constants)：建立絕對直角參考座標系</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-setup">1. 座標系的幾何定義 (The Setup)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mathematical-property">2. 核心數學性質 (The Mathematical Property)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-local-basis-objects"><strong>[Step 2] 實作局部物件 (Local Basis Objects)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-k-radial-direction">1. 定義 <span class="math notranslate nohighlight">\(\hat{k}\)</span> (正上方 / Radial direction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-j-meridional-direction">2. 定義 <span class="math notranslate nohighlight">\(\hat{j}\)</span> (正北方 / Meridional direction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-i-zonal-direction">3. 定義 <span class="math notranslate nohighlight">\(\hat{i}\)</span> (正東方 / Zonal direction)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-chain-rule"><strong>[Step 3] 呼叫時間導數方法 (Chain Rule)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-hat-i-dt">1. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{i}}{Dt}\)</span> (向東向量的時間導數)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-hat-j-dt">2. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{j}}{Dt}\)</span> (向北向量的時間導數)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-hat-k-dt">3. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{k}}{Dt}\)</span> (向上向量的時間導數)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-product-rule"><strong>[Step 4] 執行總速度展開 (Product Rule)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5"><strong>[Step 5] 靠慮其他外力(科氏力)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vec-omega">1. 定義全域自轉向量 <span class="math notranslate nohighlight">\(\vec{\Omega}\)</span> 的局部投影</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">2. 執行外積運算 (Cross Product)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 科氏力項當作外力合體加速度項</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6"><strong>[Step 6] 靠慮其他外力(氣壓梯度力、科氏力、重力、其他項)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-gradient-force">1. 「氣壓梯度力」 (Pressure Gradient Force)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-gravity">2. 「有效重力」 (Effective Gravity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 大合體</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spherical-coordinate-transformation-momentum-equation">
+<h1>Spherical Coordinate Transformation : Momentum Equation<a class="headerlink" href="#spherical-coordinate-transformation-momentum-equation" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>目標<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>將動量方程式</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D \vec{V}}{D t}+ f\hat{k}\times \vec{v}= -\frac{1}{\rho}\nabla P
+\]</div>
+<p><strong>寫在球面座標</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\text{[u 緯向]} \quad &amp;\frac{Du}{Dt} + \left( 2\Omega + \frac{u}{R \cos\phi} \right)(w \cos\phi - v \sin\phi) = -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} + \text{RHS}_{\hat{i}} \\
+\text{[v 經向]} \quad &amp;\frac{Dv}{Dt} + \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \sin\phi + \frac{vw}{R} = -\frac{1}{\rho R} \frac{\partial P}{\partial \phi}  + \text{RHS}_{\hat{j}} \\
+\text{[w 垂直]} \quad &amp;\frac{Dw}{Dt} - \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \cos\phi - \frac{v^2}{R} = -\frac{1}{\rho} \frac{\partial P}{\partial R} - g  + \text{RHS}_{\hat{k}}
+\end{aligned}
+\end{split}\]</div>
+</section>
+<section id="id2">
+<h2>操作流程<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>推導方法的標準作業流程（SOP）流程圖：</p>
+<p><strong>[Step 1] 定義全域常數 (Global Constants)</strong></p>
+<p>👉 在太空中建立絕對不會動的直角參考座標系 <span class="math notranslate nohighlight">\((\hat{I}, \hat{J}, \hat{K})\)</span>。</p>
+<p><strong>[Step 2] 實作局部物件 (Local Basis Objects)</strong></p>
+<p>👉 將地表會旋轉的局部基底向量 <span class="math notranslate nohighlight">\((\hat{i}, \hat{j}, \hat{k})\)</span>，用經緯度 <span class="math notranslate nohighlight">\((\lambda, \phi)\)</span> 投影到絕對座標系上（建立 Mapping）。</p>
+<p><strong>[Step 3] 呼叫時間導數方法 (Chain Rule)</strong></p>
+<p>👉 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{i}}{Dt}, \frac{D\hat{j}}{Dt}, \frac{D\hat{k}}{Dt}\)</span>。利用微積分連鎖律，求出基底向量隨流體移動（<span class="math notranslate nohighlight">\(\lambda, \phi\)</span> 改變）時互相轉換的「旋轉變化量」。</p>
+<p><strong>[Step 4] 執行總速度展開 (Product Rule)</strong></p>
+<p>👉 對總速度 <span class="math notranslate nohighlight">\(\vec{V} = u\hat{i} + v\hat{j} + w\hat{k}\)</span> 執行全質導數 <span class="math notranslate nohighlight">\(\frac{D\vec{V}}{Dt}\)</span>：</p>
+<p>套用公式 <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">(純量加速度</span> <span class="pre">*</span> <span class="pre">基底向量)</span> <span class="pre">+</span> <span class="pre">(純量速度</span> <span class="pre">*</span> <span class="pre">基底向量的時間導數)</span></code>。</p>
+<p><strong>[Step 5] 靠慮其他外力(科氏力)</strong></p>
+<p>👉 「科氏力」這個獨立的物理量算出來，然後跟上一篇算出來的「總加速度（包含度量項）」</p>
+</section>
+<hr class="docutils" />
+<section id="step-1-global-constants">
+<h2><strong>[Step 1] 定義全域常數 (Global Constants)：建立絕對直角參考座標系</strong><a class="headerlink" href="#step-1-global-constants" title="Link to this heading">#</a></h2>
+<p>流體質塊在地表上移動時，它的「東、北、上」每走一步都在改變，如果我們要對這些會變動的局部向量（<span class="math notranslate nohighlight">\(\hat{i}, \hat{j}, \hat{k}\)</span>）進行微積分，我們必須先架設一個 <strong>「上帝視角」</strong> ——一個絕對不會因為經緯度改變而彎曲、旋轉的框架。</p>
+<p>這就是我們現在要建立的<strong>全域直角座標系 <span class="math notranslate nohighlight">\((\hat{I}, \hat{J}, \hat{K})\)</span></strong>。在大氣科學與地球物理中，我們通常將它定義為 <strong>ECEF (Earth-Centered, Earth-Fixed)</strong> 座標系。</p>
+<section id="the-setup">
+<h3>1. 座標系的幾何定義 (The Setup)<a class="headerlink" href="#the-setup" title="Link to this heading">#</a></h3>
+<p>我們將原點 <span class="math notranslate nohighlight">\((0,0,0)\)</span> 釘在<strong>地球的球心</strong>。接著，伸出三根互相垂直且筆直的軸：</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\hat{K}\)</span> (Z-axis)</strong>：從地心出發，貫穿<strong>北極點 (North Pole)</strong>。這條軸剛好是地球的自轉軸方向。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\hat{I}\)</span> (X-axis)</strong>：從地心出發，貫穿赤道與<strong>本初子午線 (Prime Meridian, 經度 <span class="math notranslate nohighlight">\(\lambda = 0\)</span>)</strong> 的交點。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\hat{J}\)</span> (Y-axis)</strong>：從地心出發，貫穿赤道與<strong>東經 90 度 (<span class="math notranslate nohighlight">\(\lambda = \pi/2\)</span>)</strong> 的交點。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Earth-Centered_coordinate.png" /></p>
+</section>
+<section id="the-mathematical-property">
+<h3>2. 核心數學性質 (The Mathematical Property)<a class="headerlink" href="#the-mathematical-property" title="Link to this heading">#</a></h3>
+<p>因為這三根軸是筆直地穿出地球，無論流體質塊今天是在台灣還是飛到了紐約，<strong>這三根軸的方向在相對於地球的空間中永遠不會改變</strong>。</p>
+<p>因此，它們的全質導數（時間變化率）嚴格為零：</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D \hat{I}}{Dt} = 0, \quad \frac{D \hat{J}}{Dt} = 0, \quad \frac{D \hat{K}}{Dt} = 0
+\]</div>
+<p><strong>老師的特別提醒（物理意義）：</strong>
+為什麼我們要把它固定在地球上（Earth-Fixed），而不是固定在遙遠的太空中？
+因為在我們的大氣動力方程式 <span class="math notranslate nohighlight">\(\frac{D \vec{V}}{Dt} + 2\vec{\Omega} \times \vec{V} = -\frac{1}{\rho}\nabla P\)</span> 已經有 <span class="math notranslate nohighlight">\(2\vec{\Omega} \times \vec{V}\)</span> 這個科氏力項了，這個科氏力項已經幫我們處理了「地球自轉」帶來的假力。因此，我們的座標系 <span class="math notranslate nohighlight">\((\hat{I}, \hat{J}, \hat{K})\)</span> 只需要跟著地球一起轉就好，我們後續計算的 <span class="math notranslate nohighlight">\(\frac{D}{Dt}\)</span> 都是 <strong>「相對於地表」</strong> 的變化，這樣可以完美分離出「科氏力」與「幾何曲率產生的度量項」！</p>
+</section>
+</section>
+<section id="step-2-local-basis-objects">
+<h2><strong>[Step 2] 實作局部物件 (Local Basis Objects)</strong><a class="headerlink" href="#step-2-local-basis-objects" title="Link to this heading">#</a></h2>
+<p>我們的目標是把局部的 <span class="math notranslate nohighlight">\((\hat{i}, \hat{j}, \hat{k})\)</span> 寫成絕對座標 <span class="math notranslate nohighlight">\((\hat{I}, \hat{J}, \hat{K})\)</span> 的線性組合。為了推導嚴謹，我們從最直觀的「正上方」開始。</p>
+<p><img alt="" src="../../_images/East-North-Up_coordinate.png" /></p>
+<section id="hat-k-radial-direction">
+<h3>1. 定義 <span class="math notranslate nohighlight">\(\hat{k}\)</span> (正上方 / Radial direction)<a class="headerlink" href="#hat-k-radial-direction" title="Link to this heading">#</a></h3>
+<p>流體質塊的位置向量 <span class="math notranslate nohighlight">\(\vec{r}\)</span> 是從地心出發，指向地表。這個方向剛好就是 <span class="math notranslate nohighlight">\(\hat{k}\)</span> 的方向。</p>
+<ul class="simple">
+<li><p>我們先看它在<strong>赤道面</strong>上的投影：長度是 <span class="math notranslate nohighlight">\(\cos\phi\)</span>。</p></li>
+<li><p>這個赤道面上的投影，又可以依據經度 <span class="math notranslate nohighlight">\(\lambda\)</span> 分解到 X 軸 (<span class="math notranslate nohighlight">\(\hat{I}\)</span>) 和 Y 軸 (<span class="math notranslate nohighlight">\(\hat{J}\)</span>)：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{I}\)</span> 分量：<span class="math notranslate nohighlight">\(\cos\phi \cos\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{J}\)</span> 分量：<span class="math notranslate nohighlight">\(\cos\phi \sin\lambda\)</span></p></li>
+</ul>
+</li>
+<li><p>最後，它在 Z 軸 (<span class="math notranslate nohighlight">\(\hat{K}\)</span>) 的垂直分量就是 <span class="math notranslate nohighlight">\(\sin\phi\)</span>。</p></li>
+</ul>
+<p>組合起來，我們得到第一個局部物件：</p>
+<div class="math notranslate nohighlight">
+\[\hat{k} = \cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K}\]</div>
+<p><em>(物理意義：這是流體質塊對抗地心引力的方向。)</em></p>
+</section>
+<section id="hat-j-meridional-direction">
+<h3>2. 定義 <span class="math notranslate nohighlight">\(\hat{j}\)</span> (正北方 / Meridional direction)<a class="headerlink" href="#hat-j-meridional-direction" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\hat{j}\)</span> 是沿著經線（Longitude circle）指向北極的切線方向。
+在微積分幾何中，要找切線方向，就是把位置向量（或 <span class="math notranslate nohighlight">\(\hat{k}\)</span>）對著緯度 <span class="math notranslate nohighlight">\(\phi\)</span> 微分！
+因為當你往北走，你的角度 <span class="math notranslate nohighlight">\(\phi\)</span> 在增加，這時的變化率方向就是正北方。</p>
+<p>我們直接對剛剛寫出來的 <span class="math notranslate nohighlight">\(\hat{k}\)</span> 取偏微分 <span class="math notranslate nohighlight">\(\frac{\partial}{\partial \phi}\)</span>：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial \phi} (\cos\phi \cos\lambda) = -\sin\phi \cos\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial \phi} (\cos\phi \sin\lambda) = -\sin\phi \sin\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial \phi} (\sin\phi) = \cos\phi\)</span></p></li>
+</ul>
+<p>組合起來，我們完美得到第二個局部物件：</p>
+<div class="math notranslate nohighlight">
+\[\hat{j} = -\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\]</div>
+<p><em>(物理意義：這個向量告訴流體，往北極點走應該朝哪個絕對方向前進。)</em></p>
+</section>
+<section id="hat-i-zonal-direction">
+<h3>3. 定義 <span class="math notranslate nohighlight">\(\hat{i}\)</span> (正東方 / Zonal direction)<a class="headerlink" href="#hat-i-zonal-direction" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\hat{i}\)</span> 是沿著緯線圈（Latitude circle）指向東方的切線方向。
+要找東方，我們要看的是當經度 <span class="math notranslate nohighlight">\(\lambda\)</span> 增加時的變化方向。因為正東方是一個水平向量，它完全沒有垂直向上的分量，所以它在 <span class="math notranslate nohighlight">\(\hat{K}\)</span> 軸上的投影一定是 0。</p>
+<p>我們可以直接觀察赤道面上的旋轉。指向外側的水平向量是 <span class="math notranslate nohighlight">\((\cos\lambda \hat{I} + \sin\lambda \hat{J})\)</span>，將它逆時針旋轉 90 度（或者是對 <span class="math notranslate nohighlight">\(\lambda\)</span> 微分再單位化），就會得到指向切線正東方的向量：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{I}\)</span> 分量：<span class="math notranslate nohighlight">\(-\sin\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{J}\)</span> 分量：<span class="math notranslate nohighlight">\(\cos\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{K}\)</span> 分量：<span class="math notranslate nohighlight">\(0\)</span></p></li>
+</ul>
+<p>所以第三個局部物件是：
+$<span class="math notranslate nohighlight">\(\hat{i} = -\sin\lambda \hat{I} + \cos\lambda \hat{J}\)</span><span class="math notranslate nohighlight">\(
+*(物理意義：這個向量完全不受緯度 \)</span>\phi$ 影響，因為不管你在哪個緯度，正東方永遠平行於赤道面！)*</p>
+<p><img alt="" src="../../_images/Local_Basis_Objects_ijkhat.png" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\hat{i} &amp;=&amp; -\sin\lambda \hat{I} &amp;+&amp; \cos\lambda \hat{J}&amp;&amp;\\
+\hat{j} &amp;=&amp; -\sin\phi \cos\lambda \hat{I} &amp;-&amp; \sin\phi \sin\lambda \hat{J} &amp;+&amp; \cos\phi \hat{K}\\
+\hat{k} &amp;=&amp; \cos\phi \cos\lambda \hat{I} &amp;+&amp; \cos\phi \sin\lambda \hat{J} &amp;+&amp; \sin\phi \hat{K}
+\end{aligned}\end{split}\]</div>
+<p>或者經過一點觀察 <span class="math notranslate nohighlight">\(\mathbf{R}^{-1} = \mathbf{R}^T\)</span> 可以得到</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+\hat{I} \\
+\hat{J} \\
+\hat{K} 
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\sin\lambda &amp; -\sin\phi\cos\lambda &amp; \cos\phi\cos\lambda \\
+\cos\lambda &amp; -\sin\phi\sin\lambda &amp; \cos\phi\sin\lambda \\
+0 &amp; \cos\phi &amp; \sin\phi 
+\end{bmatrix}
+\begin{bmatrix}
+\hat{i} \\
+\hat{j} \\
+\hat{k} 
+\end{bmatrix}\end{split}\]</div>
+</section>
+</section>
+<section id="step-3-chain-rule">
+<h2><strong>[Step 3] 呼叫時間導數方法 (Chain Rule)</strong><a class="headerlink" href="#step-3-chain-rule" title="Link to this heading">#</a></h2>
+<p><strong>定理：全質導數的連鎖律</strong></p>
+<p>對於任何依賴於空間位置 <span class="math notranslate nohighlight">\((\lambda, \phi)\)</span> 的向量 <span class="math notranslate nohighlight">\(\hat{e}\)</span>，當質塊隨流體移動時，其全質導數可以展開為：</p>
+<div class="math notranslate nohighlight">
+\[\frac{D\hat{e}}{Dt} = \frac{\partial \hat{e}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{e}}{\partial \phi} \frac{D\phi}{Dt}\]</div>
+<p><em>(物理翻譯：向量隨時間的改變 ＝ 往東走造成的幾何旋轉 ＋ 往北走造成的幾何旋轉)</em></p>
+<p><strong>定義角速度：</strong>
+我們已知流體往東的速度是 <span class="math notranslate nohighlight">\(u\)</span>，往北的速度是 <span class="math notranslate nohighlight">\(v\)</span>，在半徑為 <span class="math notranslate nohighlight">\(R\)</span> 的地球上：</p>
+<ol class="arabic simple">
+<li><p><strong>經度改變率 (往東的角速度)</strong>：<span class="math notranslate nohighlight">\(\frac{D\lambda}{Dt} = \frac{u}{R \cos\phi}\)</span> (注意要除以 <span class="math notranslate nohighlight">\(\cos\phi\)</span>，因為高緯度的緯線圈比較小)</p></li>
+<li><p><strong>緯度改變率 (往北的角速度)</strong>：<span class="math notranslate nohighlight">\(\frac{D\phi}{Dt} = \frac{v}{R}\)</span></p></li>
+</ol>
+<p>我們把 [Step 2] 寫好的三個局部向量偏微分！</p>
+<section id="frac-d-hat-i-dt">
+<h3>1. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{i}}{Dt}\)</span> (向東向量的時間導數)<a class="headerlink" href="#frac-d-hat-i-dt" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D\hat{i}}{Dt} &amp;=&amp; \frac{\partial \hat{i}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{i}}{\partial \phi} \frac{D\phi}{Dt}\\
+&amp;=&amp; \frac{\partial }{\partial \lambda}\left[-\sin\lambda \hat{I} + \cos\lambda \hat{J}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[-\sin\lambda \hat{I} + \cos\lambda \hat{J}\right] \frac{D\phi}{Dt}\\
+&amp;=&amp; (-\cos\lambda \hat{I} - \sin\lambda \hat{J}) \frac{D\lambda}{Dt} + 0 \frac{D\phi}{Dt}\\
+&amp;=&amp; \left(-\cos\lambda (-\sin\lambda \hat{i} -\sin\phi\cos\lambda \hat{j}+ \cos\phi\cos\lambda \hat{k}) - \sin\lambda (\cos\lambda \hat{i} -\sin\phi\sin\lambda \hat{j} + \cos\phi\sin\lambda\hat{k}) \right)\frac{D\lambda}{Dt} \\
+&amp;=&amp; \left((\cos\lambda \sin\lambda - \sin\lambda \cos\lambda )\hat{i} +
+( \cos\lambda \sin\phi\cos\lambda + \sin\lambda \sin\phi\sin\lambda )\hat{j} +
+(-\cos\lambda \cos\phi\cos\lambda - \sin\lambda \cos\phi\sin\lambda )\hat{k}  \right)\frac{D\lambda}{Dt} \\
+&amp;=&amp; (\sin\phi \hat{j} - \cos\phi \hat{k}) \frac{D\lambda}{Dt} \\
+&amp;=&amp;(\sin\phi \hat{j} - \cos\phi \hat{k}) \left( \frac{u}{R \cos\phi} \right) \\
+&amp;=&amp;\frac{u \tan\phi}{R} \hat{j} - \frac{u}{R} \hat{k}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="frac-d-hat-j-dt">
+<h3>2. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{j}}{Dt}\)</span> (向北向量的時間導數)<a class="headerlink" href="#frac-d-hat-j-dt" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D\hat{j}}{Dt} &amp;=&amp; \frac{\partial \hat{j}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{j}}{\partial \phi} \frac{D\phi}{Dt}\\
+&amp;=&amp; \frac{\partial }{\partial \lambda}\left[-\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[-\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\right] \frac{D\phi}{Dt}\\
+&amp;=&amp; (\sin\phi \sin\lambda \hat{I} - \sin\phi \cos\lambda \hat{J}) \frac{D\lambda}{Dt} + ( -\cos\phi \cos\lambda \hat{I} - \cos\phi \sin\lambda \hat{J} - \sin\phi \hat{K}) \frac{D\phi}{Dt}\\
+&amp;=&amp; -\sin\phi (-\sin\lambda \hat{I} +\cos\lambda \hat{J})\frac{D\lambda}{Dt} - ( \cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K}) \frac{D\phi}{Dt} \\
+&amp;=&amp; -\sin\phi \hat{i}\frac{D\lambda}{Dt} -  \hat{k} \frac{D\phi}{Dt}  \\
+&amp;=&amp; (-\sin\phi \hat{i}) \left( \frac{u}{R \cos\phi} \right) + (-\hat{k}) \left( \frac{v}{R} \right) \\
+&amp;=&amp; -\frac{u \tan\phi}{R} \hat{i} - \frac{v}{R} \hat{k}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="frac-d-hat-k-dt">
+<h3>3. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{k}}{Dt}\)</span> (向上向量的時間導數)<a class="headerlink" href="#frac-d-hat-k-dt" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D\hat{k}}{Dt} &amp;=&amp; \frac{\partial \hat{k}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{k}}{\partial \phi} \frac{D\phi}{Dt}\\
+&amp;=&amp; \frac{\partial }{\partial \lambda}\left[\cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[ \cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K} \right] \frac{D\phi}{Dt}\\
+&amp;=&amp; (-\cos\phi \sin\lambda \hat{I} + \cos\phi \cos\lambda \hat{J}) \frac{D\lambda}{Dt} + ( -\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}) \frac{D\phi}{Dt}\\
+&amp;=&amp; \cos\phi (-\sin\lambda \hat{I} + \cos\lambda \hat{J})\frac{D\lambda}{Dt} + ( -\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}) \frac{D\phi}{Dt} \\
+&amp;=&amp; \cos\phi  \hat{i}\frac{D\lambda}{Dt} +  \hat{j} \frac{D\phi}{Dt}  \\
+&amp;=&amp; (\cos\phi \hat{i}) \left( \frac{u}{R \cos\phi} \right) + (\hat{j}) \left( \frac{v}{R} \right) \\
+&amp;=&amp;  \frac{u}{R} \hat{i} + \frac{v}{R} \hat{j}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="step-4-product-rule">
+<h2><strong>[Step 4] 執行總速度展開 (Product Rule)</strong><a class="headerlink" href="#step-4-product-rule" title="Link to this heading">#</a></h2>
+<p><strong>1. 寫出乘法規則的骨架</strong>
+我們將 <span class="math notranslate nohighlight">\(\frac{D}{Dt}\)</span> 作用在總速度向量上，將其展開為「純量加速度項」與「基底向量旋轉項」：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+\frac{D\vec{V}}{Dt} &amp;=&amp; \frac{D}{Dt}(u\hat{i} + v\hat{j} + w\hat{k}) \\
+&amp;=&amp; \underbrace{\left( \frac{Du}{Dt}\hat{i} + \frac{Dv}{Dt}\hat{j} + \frac{Dw}{Dt}\hat{k} \right)}_{\text{純量加速度項}} + \underbrace{\left( u\frac{D\hat{i}}{Dt} + v\frac{D\hat{j}}{Dt} + w\frac{D\hat{k}}{Dt} \right)}_{\text{基底旋轉項 (度量項的來源)}}\\
+&amp;=&amp; \left( \frac{Du}{Dt}\hat{i} + \frac{Dv}{Dt}\hat{j} + \frac{Dw}{Dt}\hat{k} \right) + \left(
+u\left( \frac{u \tan\phi}{R} \hat{j} - \frac{u}{R} \hat{k} \right) 
++ v\left( -\frac{u \tan\phi}{R} \hat{i} - \frac{v}{R} \hat{k} \right) 
++ w\left( \frac{u}{R} \hat{i} + \frac{v}{R} \hat{j} \right) \right) \\
+&amp;=&amp; \left( \frac{Du}{Dt}\hat{i} + \frac{Dv}{Dt}\hat{j} + \frac{Dw}{Dt}\hat{k} \right) + \left(
+\frac{u^2 \tan\phi}{R} \hat{j} - \frac{u^2}{R} \hat{k}
+-\frac{uv \tan\phi}{R} \hat{i} - \frac{v^2}{R} \hat{k}
++\frac{uw}{R} \hat{i} + \frac{vw}{R} \hat{j} \right) \\
+&amp;=&amp; \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}
++\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}
++\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="step-5">
+<h2><strong>[Step 5] 靠慮其他外力(科氏力)</strong><a class="headerlink" href="#step-5" title="Link to this heading">#</a></h2>
+<section id="vec-omega">
+<h3>1. 定義全域自轉向量 <span class="math notranslate nohighlight">\(\vec{\Omega}\)</span> 的局部投影<a class="headerlink" href="#vec-omega" title="Link to this heading">#</a></h3>
+<p>地球的自轉角速度向量 <span class="math notranslate nohighlight">\(\vec{\Omega}\)</span> 跟之前定義的全域 <span class="math notranslate nohighlight">\(\hat{K}\)</span> 方向同向，但是流體質塊是在地表上的局部座標 <span class="math notranslate nohighlight">\((\hat{i}, \hat{j}, \hat{k})\)</span> 中觀察世界的，所以我們必須先把 <span class="math notranslate nohighlight">\(\vec{\Omega}\)</span> 投影到這個局部座標系裡。</p>
+<p>在緯度 <span class="math notranslate nohighlight">\(\phi\)</span> 的地方，把指向北極的向量分解成局部座標系：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\vec{\Omega} &amp;=&amp; \left| \vec{\Omega} \right| \hat{K}\\
+&amp;=&amp;0 \hat{i} + \Omega \cos\phi \hat{j} + \Omega \sin\phi \hat{k}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="cross-product">
+<h3>2. 執行外積運算 (Cross Product)<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h3>
+<p>科氏力的定義是 <span class="math notranslate nohighlight">\(2\vec{\Omega} \times \vec{V}\)</span>。
+這在線性代數中，就是計算一個三階行列式（Determinant）。我們把基底向量放第一列，<span class="math notranslate nohighlight">\(2\vec{\Omega}\)</span> 放第二列，速度 <span class="math notranslate nohighlight">\(\vec{V}\)</span> 放第三列：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\vec{F}&amp;=&amp;\vec{F}{_\text{Coriolis force}}\\
+&amp;=&amp;2\vec{\Omega} \times \vec{V} \\
+&amp;=&amp; \begin{vmatrix}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+0 &amp; 2\Omega \cos\phi &amp; 2\Omega \sin\phi \\
+u &amp; v &amp; w
+\end{vmatrix} \\
+&amp;=&amp; 
++ \hat{i} \left[ (2\Omega \cos\phi)(w) - (2\Omega \sin\phi)(v) \right]
+- \hat{j} \left[ (0)(w) - (2\Omega \sin\phi)(u) \right]
++ \hat{k} \left[ (0)(v) - (2\Omega \cos\phi)(u) \right] \\
+&amp;=&amp; 
+2\Omega (w \cos\phi - v \sin\phi) \, \hat{i}
++2\Omega u \sin\phi \, \hat{j}
+-2\Omega u \cos\phi \, \hat{k}\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id3">
+<h3>3. 科氏力項當作外力合體加速度項<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>把[Step 4]辛苦算出來的加速度項，加上剛剛算出來的科氏力項。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\vec{F}=\frac{D\vec{V}}{Dt} &amp;=&amp;  \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
+\vec{F}{_\text{Coriolis force}}&amp;=&amp;  \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
+2\Omega (w \cos\phi - v \sin\phi) \, \hat{i}
++2\Omega u \sin\phi \, \hat{j}
+-2\Omega u \cos\phi \, \hat{k}&amp;=&amp;
+\left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
+0&amp;=&amp;
+\left(\frac{Du}{Dt} + \left( \frac{uw}{R} - \frac{uv \tan\phi}{R} \right) + 2\Omega (w \cos\phi - v \sin\phi)\right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + 2\Omega u \sin\phi + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2}{R} - 2\Omega u \cos\phi - \frac{v^2}{R}\right)\hat{k}\\
+0&amp;=&amp;
+\left(\frac{Du}{Dt} +  \left( 2\Omega + \frac{u}{R \cos\phi} \right)(w \cos\phi - v \sin\phi) \right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \sin\phi + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \cos\phi - \frac{v^2}{R}\right)\hat{k}\\
+\end{aligned}\end{split}\]</div>
+<p>也可以分開來寫，若只考慮科氏力則 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{i}}=0\)</span> 、 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{j}}=0\)</span> 、 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{k}}=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\text{[u 緯向]} \quad &amp;\frac{Du}{Dt} + \left(2\Omega + \frac{u}{R \cos\phi}\right)(w \cos\phi - v \sin\phi) = \text{RHS}_{\hat{i}} \\
+\text{[v 經向]} \quad &amp;\frac{Dv}{Dt} + \left(2\Omega + \frac{u}{R \cos\phi}\right)u \sin\phi + \frac{vw}{R} = \text{RHS}_{\hat{j}} \\
+\text{[w 垂直]} \quad &amp;\frac{Dw}{Dt} - \left(2\Omega + \frac{u}{R \cos\phi}\right)u \cos\phi - \frac{v^2}{R} = \text{RHS}_{\hat{k}}
+\end{aligned}
+\end{split}\]</div>
+</section>
+</section>
+<section id="step-6">
+<h2><strong>[Step 6] 靠慮其他外力(氣壓梯度力、科氏力、重力、其他項)</strong><a class="headerlink" href="#step-6" title="Link to this heading">#</a></h2>
+<section id="pressure-gradient-force">
+<h3>1. 「氣壓梯度力」 (Pressure Gradient Force)<a class="headerlink" href="#pressure-gradient-force" title="Link to this heading">#</a></h3>
+<p>氣壓梯度力是推動大氣運動的真正引擎，它的物理意義是「流體會從氣壓高的地方往氣壓低的地方被推擠」。其向量形式為：
+$<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \nabla P\)</span>$</p>
+<p>但在球面座標系中，計算梯度（Gradient, <span class="math notranslate nohighlight">\(\nabla\)</span>）不能只對角度微分，因為**「角度不等於實際的物理距離」**。我們必須把經緯度的變化量，轉換成以公尺（meters）為單位的弧長。這就像是在處理陣列索引（Index）與實際物理座標的 Mapping：</p>
+<ol class="arabic simple">
+<li><p><strong>正東方 (<span class="math notranslate nohighlight">\(\hat{i}\)</span>) 的實體距離</strong>：當經度改變 <span class="math notranslate nohighlight">\(d\lambda\)</span> 時，實際走過的弧長是 <span class="math notranslate nohighlight">\(R \cos\phi \, d\lambda\)</span>。</p>
+<ul class="simple">
+<li><p>分量：<span class="math notranslate nohighlight">\(-\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>正北方 (<span class="math notranslate nohighlight">\(\hat{j}\)</span>) 的實體距離</strong>：當緯度改變 <span class="math notranslate nohighlight">\(d\phi\)</span> 時，實際走過的弧長是 <span class="math notranslate nohighlight">\(R \, d\phi\)</span>。</p>
+<ul class="simple">
+<li><p>分量：<span class="math notranslate nohighlight">\(-\frac{1}{\rho R} \frac{\partial P}{\partial \phi}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>正上方 (<span class="math notranslate nohighlight">\(\hat{k}\)</span>) 的實體距離</strong>：高度改變就是半徑 <span class="math notranslate nohighlight">\(R\)</span> 的改變量 <span class="math notranslate nohighlight">\(dR\)</span>（在大氣科學中常寫作 <span class="math notranslate nohighlight">\(dz\)</span>）。</p>
+<ul class="simple">
+<li><p>分量：<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \frac{\partial P}{\partial R}\)</span></p></li>
+</ul>
+</li>
+</ol>
+<p>所以，完整的氣壓梯度力物件為：</p>
+<div class="math notranslate nohighlight">
+\[\vec{F}_{PGF} = -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} \hat{i} - \frac{1}{\rho R} \frac{\partial P}{\partial \phi} \hat{j} - \frac{1}{\rho} \frac{\partial P}{\partial R} \hat{k}\]</div>
+</section>
+<section id="effective-gravity">
+<h3>2. 「有效重力」 (Effective Gravity)<a class="headerlink" href="#effective-gravity" title="Link to this heading">#</a></h3>
+<p>這裡有一個非常重要且嚴謹的物理細節</p>
+<p>地球有萬有引力 <span class="math notranslate nohighlight">\(\vec{g}^*\)</span> 指向地心。但因為地球本身在自轉，大氣層裡的空氣跟著地球一起轉，會感受到一個向外的「離心力（Centrifugal Force）」。
+在大氣動力學中，我們通常把「萬有引力」與「地球自轉產生的靜態離心力」合併成一個變數，稱為<strong>有效重力（Effective Gravity, <span class="math notranslate nohighlight">\(\vec{g}\)</span>）</strong>。</p>
+<div class="math notranslate nohighlight">
+\[\vec{F}_{Gravity} = -g \hat{k}\]</div>
+<p><em>(注意：它完全沒有水平分量 <span class="math notranslate nohighlight">\(\hat{i}\)</span> 和 <span class="math notranslate nohighlight">\(\hat{j}\)</span>。)</em></p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h3>3. 大合體<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>把[Step 4]辛苦算出來的加速度項，加上 氣壓梯度力項、科氏力項、重力項 、 其他項。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\vec{F}=\frac{D\vec{V}}{Dt} &amp;=&amp;  \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
+\vec{F}{_\text{Coriolis force}}+\vec{F}{_\text{Coriolis force}} +\vec{F}{_\text{Coriolis force}}+ \vec{F}{_\text{other force}} &amp;=&amp;  \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
+-\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} \hat{i} - \frac{1}{\rho R} \frac{\partial P}{\partial \phi} \hat{j} - \frac{1}{\rho} \frac{\partial P}{\partial R} \hat{k} \\
++2\Omega (w \cos\phi - v \sin\phi) \, \hat{i}+2\Omega u \sin\phi \, \hat{j}-2\Omega u \cos\phi \, \hat{k}
+-g \hat{k} +  \vec{F}{_\text{other force}}\
+&amp;=&amp;
+\left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
+-\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} \hat{i} - \frac{1}{\rho R} \frac{\partial P}{\partial \phi} \hat{j} - \frac{1}{\rho} \frac{\partial P}{\partial R} \hat{k}-g \hat{k}+  \vec{F}{_\text{other force}}
+&amp;=&amp;
+\left(\frac{Du}{Dt} + \left( 2\Omega + \frac{u}{R \cos\phi} \right)(w \cos\phi - v \sin\phi)\right) \hat{i} \\
+&amp;&amp;+\left(\frac{Dv}{Dt} + \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \sin\phi + \frac{vw}{R}\right)\hat{j}\\
+&amp;&amp;+\left(\frac{Dw}{Dt} - \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \cos\phi - \frac{v^2}{R}\right)\hat{k}\\
+\end{aligned}\end{split}\]</div>
+<p>也可以分開來寫，若只考氣壓梯度力項、科氏力項、重力項則 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{i}}=0\)</span> 、 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{j}}=0\)</span> 、 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{k}}=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\text{[u 緯向]} \quad &amp;\frac{Du}{Dt} + \left( 2\Omega + \frac{u}{R \cos\phi} \right)(w \cos\phi - v \sin\phi) = -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} + \text{RHS}_{\hat{i}} \\
+\text{[v 經向]} \quad &amp;\frac{Dv}{Dt} + \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \sin\phi + \frac{vw}{R} = -\frac{1}{\rho R} \frac{\partial P}{\partial \phi}  + \text{RHS}_{\hat{j}} \\
+\text{[w 垂直]} \quad &amp;\frac{Dw}{Dt} - \left( 2\Omega + \frac{u}{R \cos\phi} \right) u \cos\phi - \frac{v^2}{R} = -\frac{1}{\rho} \frac{\partial P}{\partial R} - g  + \text{RHS}_{\hat{k}}
+\end{aligned}
+\end{split}\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Coordinate_System"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../golden_ratio_gaussian_integral.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Proof <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty} \frac{e^{-x^2} \sin^2(x^2)}{x^2} \mathrm{d}x = \sqrt{\pi} (\sqrt{\phi} - 1)\)</span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../02_Concepts/02_Concepts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>🧩 02_Concepts</strong>: 核心觀念區</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">操作流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-global-constants"><strong>[Step 1] 定義全域常數 (Global Constants)：建立絕對直角參考座標系</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-setup">1. 座標系的幾何定義 (The Setup)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mathematical-property">2. 核心數學性質 (The Mathematical Property)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-local-basis-objects"><strong>[Step 2] 實作局部物件 (Local Basis Objects)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-k-radial-direction">1. 定義 <span class="math notranslate nohighlight">\(\hat{k}\)</span> (正上方 / Radial direction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-j-meridional-direction">2. 定義 <span class="math notranslate nohighlight">\(\hat{j}\)</span> (正北方 / Meridional direction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-i-zonal-direction">3. 定義 <span class="math notranslate nohighlight">\(\hat{i}\)</span> (正東方 / Zonal direction)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-chain-rule"><strong>[Step 3] 呼叫時間導數方法 (Chain Rule)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-hat-i-dt">1. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{i}}{Dt}\)</span> (向東向量的時間導數)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-hat-j-dt">2. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{j}}{Dt}\)</span> (向北向量的時間導數)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-hat-k-dt">3. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{k}}{Dt}\)</span> (向上向量的時間導數)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-product-rule"><strong>[Step 4] 執行總速度展開 (Product Rule)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5"><strong>[Step 5] 靠慮其他外力(科氏力)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vec-omega">1. 定義全域自轉向量 <span class="math notranslate nohighlight">\(\vec{\Omega}\)</span> 的局部投影</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">2. 執行外積運算 (Cross Product)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 科氏力項當作外力合體加速度項</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6"><strong>[Step 6] 靠慮其他外力(氣壓梯度力、科氏力、重力、其他項)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-gradient-force">1. 「氣壓梯度力」 (Pressure Gradient Force)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-gravity">2. 「有效重力」 (Effective Gravity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 大合體</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

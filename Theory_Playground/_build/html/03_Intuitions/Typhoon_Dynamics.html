@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>interessant Video &#8212; Theory_Playground</title>
+    <title>颱風動力學：從大氣環流到台灣極端降雨機制 &#8212; Theory_Playground</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '00_Inbox/interessant';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_Intuitions/Typhoon_Dynamics';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="📐 01_Derivations: 硬核推導區" href="../01_Derivations/01_Derivations.html" />
-    <link rel="prev" title="歡迎來到 Theory Playground：因為好奇而聚集的小窩" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,8 +181,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>interessant Video</strong></a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01_Derivations/01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01_Derivations/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
@@ -193,8 +195,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
 </ul>
 </details></li>
 </ul>
@@ -268,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F00_Inbox/interessant.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03_Intuitions/Typhoon_Dynamics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +300,7 @@
       
       
       
-      <li><a href="../_sources/00_Inbox/interessant.md" target="_blank"
+      <li><a href="../_sources/03_Intuitions/Typhoon_Dynamics.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +310,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -382,7 +384,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>interessant Video</h1>
+    <h1>颱風動力學：從大氣環流到台灣極端降雨機制</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,10 +394,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>interessant Video</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interessant">**interessant **</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第一部分：颱風的溫床 (影響生成的環境場)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第二部分：颱風如何長大？ (動力機制與群聚效應)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-energy-accumulation">1. 波能量累積 (Wave Energy Accumulation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barotropic-instability">2. 正壓不穩定 (Barotropic Instability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rossby-wave-dispersion">3. 羅斯貝波頻散 (Rossby Wave Dispersion)</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">第三部分：颱風的移動與結構 (路徑與降雨機制)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">第四部分：經典天氣事件剖析 (Case Studies)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-typhoon-morakot">事件 A：莫拉克颱風 (Typhoon Morakot) —— 地形鎖定與慢颱風的極致</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-typhoon-gaemi">事件 B：凱米颱風 (Typhoon Gaemi) —— 登陸前打轉與西南氣流拖尾</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-back-building">事件 C：嘉義平原 / 小林村豪雨 —— 後向建構 (Back-building)</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -406,81 +419,101 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="interessant-video">
-<h1><strong>interessant Video</strong><a class="headerlink" href="#interessant-video" title="Link to this heading">#</a></h1>
+  <p>這是一份為你重新編排、融會貫通的「颱風動力學」專屬筆記。</p>
+<p>我結合了你提供的所有課堂細節，採用了**「總（大環境）— 分（物理推導）— 案例（實際天氣事件）」**的架構。同時，我也為你加上了詳細的物理意義拆解與生活化的比喻，希望能幫你把這門課的數學公式與觀測現象真正連結起來。你可以直接將這份內容存入你的筆記軟體中：</p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>颱風動力學：從大氣環流到台灣極端降雨機制<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>第一部分：颱風的溫床 (影響生成的環境場)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>要了解颱風，我們必須先看懂孕育它的「大環境」。西北太平洋的環境配置非常獨特，這也是為什麼這裡的颱風特別多、特別強的原因。</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1i6cnzzEP7">一个简单消除交通堵塞的办法</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1uUFHzFEiS/">【中配】二维与三维随机游走的本质区别：马尔可夫链视角 - Mathemaniac</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1aCZTBJEPr">数学模型50讲第27讲:贝特朗悖论与无知先验</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1uUFHzFEiS/">风力发电的效率竟然存在上限？详述贝茨极限</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Mof7B5EPj/">任选两个正整数，互质的概率是多少</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1QCFYzwEKS/">非构造性证明，如何在毒巧克力游戏中活下来</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=pKNuTXUhuNU">勒贝格积分，狄利克雷函数，让我们来拯救积分概念！</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=g2UThTsJLcc">【无痛线代】彻底搞懂SVD！矩阵究竟怎么就奇异了？</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV12XfiBfE3Q/">为什么连续完美洗牌8次不会打乱牌的顺序？用对称群的知识为你揭开谜底！</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1chzTBXEoo/">x的x次方积分难题，为什么困扰了数学家一个世纪?</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV13tFozhEjA/">马尔可夫预测基础：无记忆性核心逻辑 + 天气案例</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1sSZZB7EA3/">最“马”的面试题，找到最快的马！（没有秒表）</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1L8f3BBEDi/">恒星最可能在第几年炸？反直觉的数学问题</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1GmiTBcEMd/">为什么人类被“锁定”在了三维？从0维到4维：用数学推导重建你的”四维之眼”</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=BHdbsHFs2P0">The Hairy Ball Theorem</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1QVznBrERj/">數學国家集训队，一行妙解！</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=6tT0PN7E2GM">【漫士科普】為什麼說數學思維就是抽象</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=W4vRsg0Ptw0">如何用 Cursor 讓 AI 開發一個 Python Streamlit 的資料可視化小工具，然後一鍵免費部署到雲端分享給同事使用？</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1gSr7BMEQt/">【中字】从正则系综到线性回归：物理原理如何变成回归模型</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1w16dBhEW3/">扩散模型、流匹配和强化学习的统一视角</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1dQrWBFEaK/">中字】机器学习里的物理二重性：概率视角解析</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1f3kVB6EjS/">傅里叶不是全部，“小波”才是图像压缩幕后英雄</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1yYrqBSE19/">作用量、能量与对称性：从欧拉 - 拉格朗日方程到诺特定理</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1pUzJBfEDm/">中配】我们能制造出人造重力吗？ - Real Engineering</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1SNkYBjEvy/">【中配】在混沌中寻找秩序：将双摆模拟推向极致 - Drew’s Campfire</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1BWzYBWEtX/">红色面积的期望值是蓝色的多少倍</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1dezABPELY/">【拉格朗日】四平方和的奥妙，无穷递降法的古典巅峰</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV16HzyBWEwZ/">【矩阵与线性映射】换个更准确的表述吧！“矩阵的本质是线性映射”到底在说什么？（新版）</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1GfzVBZEdu/">为何无人想到这一点？暗物质或许只是普通物质【每日科学新闻】</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1PqrxBEEvK/">【中字】一个量子概念帮我秒懂机器学习（K均值 &amp; 高斯混合）</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1iFrkBmEhj/">【时序预测】时序 EDA 全攻略：可视化 + 平稳性 + 窗口函数实操</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=szMaPkJEMrw">Padé Approximants</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1fmrxB6Eo1/">【中字】这款受物理启发的显微镜，揭示了神经网络隐藏的几何结构</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1ZqBYBSEVD/">【中配】人工智能学会走路</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1FCrWBiENX/">【中字】量子视角下的机器学习：聊聊多项式回归</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1jGrxBvEe6/">中字】大部分神经网络的训练都是白费功夫——物理告诉你原因</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1UKr4BtEbA/">【中配】利用同构简化问题：群论的强大工具 (Ep. 2) - Nemean</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1p3rFBgEu5/">中配】2025 年物理学三大突破性进展 - Quanta Magazine</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV14s64BpEwt/">让人摸不着头脑的冰激凌魔法</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1bdrkBgESP/">【中配】混沌理论：关于（不）稳定性的语言 - Gonkee</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Qwr4BcEjJ/">【中配】什么是群论？—— 抽象代数的基石 (Ep. 1) - Nemean</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Xb411k787/">2(0)分钟认识史密斯圆图，阻抗圆图的简单讲解</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1yb2FBxEUj/">电气工程中最可怕的东西——史密斯圆图</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1L3411C7ox/">潮汐现象与惯性离心力</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Zv4y1U73W/">贝尔不等式的推导</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1rV41157pW/">【交叉熵】信息世界的隐秘节奏，数据分布的背后真谛</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1EE41127HV/">信息熵(Information Entropy)详解</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1fbvdBCEpL/">【中配】从零开始理解熵，Entropy - ScienceClic English</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1mkgwzZEN9/">什么是信息量、信息熵、交叉熵与KL散度，及其相互之间的关系</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Ga41127Zu/">【机器学习】直观理解信息量和信息熵的含义</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV15dzeBnE7s/">数学模型50讲第24讲:知识、不确定性和最大熵原理</a> 99</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=PEl2GuppQD0">我終於理解了不確定性原理的深刻內涵！</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=INrkLxPWxFk">我用物理公式”造”了一個黑洞，結果和NASA拍的一模一樣！</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=tXE23653JrU">Fantastic KL Divergence and How to (Actually) Compute It KL散度（Kullback-Leibler Divergence，簡稱KLD），又稱相對熵</a></p></li>
-<li><p><a class="reference external" href="https://www.bilibili.com/video/BV16zZPBsEka">【数学史】数学危机（下）——数学基础的确立与英雄时代的落幕</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/&#64;CCWangTeaching/videos">C.-C. Wang</a></p></li>
+<li><p><strong>海洋熱含量 (Ocean Heat Content, OHC)</strong>：雖然大西洋颱風很看重 OHC，但在西北太平洋，整體的熱量通常都很充足，因此 OHC 反而不是決定颱風生成的最關鍵變數。</p></li>
+<li><p><strong>季風槽 (Monsoon Trough)</strong>：這是低層大氣最關鍵的特徵。副熱帶高壓帶來的「東風」與西南季風帶來的「西風」在這裡交會，形成一個巨大的狹長低壓區。</p></li>
+<li><p><strong>斜壓結構與 TUTT</strong>：在季風槽上方，因為大量降雨釋放潛熱，高層反而會形成高壓。這種「下層低壓、上層高壓」的上下顛倒結構（第一斜壓模，First Baroclinic Mode）造就了極小的垂直風切，是颱風生存的完美環境。高層質量向外擴散時，還會形成「熱帶對流層上部槽 (TUTT)」。</p></li>
+<li><p><strong>大氣的呼吸 (季內震盪, ISO/MJO)</strong>：環境不是靜止的，而是以 7~10 天為週期在低頻變化。當 MJO（馬登－朱利安震盪）移入西北太平洋時，會減弱背景東風，創造短暫但極強的「東西風合流區」，這就是颱風胚胎最活躍的「走廊」。</p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="interessant">
-<h1>**interessant **<a class="headerlink" href="#interessant" title="Link to this heading">#</a></h1>
+<section id="id3">
+<h2>第二部分：颱風如何長大？ (動力機制與群聚效應)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>觀測發現，西北太平洋的颱風往往是「不生成則已，一生成就是連續生成」（群聚效應）。這背後有三個核心的物理動力機制：</p>
+<section id="wave-energy-accumulation">
+<h3>1. 波能量累積 (Wave Energy Accumulation)<a class="headerlink" href="#wave-energy-accumulation" title="Link to this heading">#</a></h3>
+<p>當東風波（波長約 2000 公里）進入極大風切的「東西風合流區」時，數學上算出的<strong>群速度 (Group Velocity) 會趨近於零</strong>。</p>
+<blockquote>
+<div><p>💡 <strong>老師的比喻</strong>：相速度是單一車輛的車速，群速度是整批車隊的推進速度。當車隊遇到施工瓶頸（合流區），群速度降為零，後方車輛不斷湧入造成大塞車。這股「塞車的能量」無法頻散，全數聚集起來引發對流爆發。</p>
+</div></blockquote>
+</section>
+<section id="barotropic-instability">
+<h3>2. 正壓不穩定 (Barotropic Instability)<a class="headerlink" href="#barotropic-instability" title="Link to this heading">#</a></h3>
+<p>這是擾動長大成颱風的最核心數學機制。我們一步步來拆解：</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://mopl.as.ntu.edu.tw/web/image/class/Synoptic_Meteorology_1092/Synoptic_Meteo-chap2.1(2021).pdf">天氣學二</a></p></li>
-<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/637746303">TKE</a></p></li>
-<li><p><a class="reference external" href="https://boundary-layer-meteo.github.io/lectures/7_tke.html">TKE</a></p></li>
-<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/1999179112649081003?share_code=wCsOMRq5q5Tu&amp;amp;utm_psn=2001101075185427717">知识、不确定性和最大熵原理</a> 99</p></li>
-<li><p><a class="reference external" href="https://artofproblemsolving.com/wiki/index.php?title=2021_AIME_II_Problems%2FProblem_12">2021 AIME II Problems/Problem 12</a></p></li>
-<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
-<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
-<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
-<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
-<li><p><a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+<li><p><strong>Step 1: 雷諾分解 (Reynolds Decomposition)</strong>
+把實際風場 (<span class="math notranslate nohighlight">\(u, v\)</span>) 拆成「背景季風大河」(<span class="math notranslate nohighlight">\(\bar{u}, \bar{v}\)</span>) 與「微小的天氣擾動漩渦」(<span class="math notranslate nohighlight">\(u', v'\)</span>)：
+<span class="math notranslate nohighlight">\(u = \bar{u} + u'\)</span></p></li>
+<li><p><strong>Step 2: 擾動動能方程式</strong>
+我們關心小漩渦的動能 <span class="math notranslate nohighlight">\(\overline{K'} = \frac{1}{2}(\overline{u'^2 + v'^2})\)</span> 會不會隨時間變大。經過水平運動方程式的推導，決定生死的是這項：
+<span class="math notranslate nohighlight">\(\frac{\partial \overline{K'}}{\partial t} \approx -\overline{u'v'} \frac{\partial \bar{u}}{\partial y}\)</span></p></li>
+<li><p><strong>Step 3: 物理意義</strong>
+<span class="math notranslate nohighlight">\(\frac{\partial \bar{u}}{\partial y}\)</span> 代表南北向的風速差異（極大的水平風切）。當小漩渦的形狀與旋轉方向（<span class="math notranslate nohighlight">\(-\overline{u'v'}\)</span>）剛好配合大環境的風切時，等式右邊會大於零。</p></li>
 </ul>
+<blockquote>
+<div><p>💡 <strong>老師的比喻</strong>：這就像小漩渦成功從季風槽這條「大河」身上偷走了動能 (<span class="math notranslate nohighlight">\(\frac{\partial \overline{K'}}{\partial t} &gt; 0\)</span>)，讓自己越來越強大。</p>
+</div></blockquote>
+</section>
+<section id="rossby-wave-dispersion">
+<h3>3. 羅斯貝波頻散 (Rossby Wave Dispersion)<a class="headerlink" href="#rossby-wave-dispersion" title="Link to this heading">#</a></h3>
+<p>第一個颱風生成後，其能量會以羅斯貝波的形式向東輻射頻散。這股向東傳遞的波動會觸發下一個擾動，進而每隔 5~6 天長出第二個、第三個颱風。</p>
+</section>
+</section>
+<section id="id4">
+<h2>第三部分：颱風的移動與結構 (路徑與降雨機制)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>螺旋雨帶成因</strong>：颱風中心釋放潛熱激發出<strong>慣性重力波 (Inertia-gravity wave)</strong>。因為颱風背景旋轉極快（慣性頻率極高），波動向外傳遞時被強烈牽引拉扯，最終散開成螺旋狀。</p></li>
+<li><p><strong>地形鎖定與移速變慢</strong>：為什麼極端暴雨的慢速颱風，幾乎全數集中在台灣北邊登陸？這牽涉到地形與渦度的正回饋機制。</p></li>
+</ul>
+<p><strong>【數學推導：為什麼南部降雨會拉住北邊的颱風？】</strong></p>
+<ul class="simple">
+<li><p><strong>Step 1: 渦度伸展 (Vortex Stretching)</strong>
+由渦度方程式得知：<span class="math notranslate nohighlight">\(\frac{d(\zeta + f)}{dt} = -(\zeta + f)(\nabla \cdot \vec{V})\)</span>
+當颱風環流將水氣帶入台灣南部山區，被迫抬升下大雨，低層會產生強烈的輻合（即 <span class="math notranslate nohighlight">\(\nabla \cdot \vec{V} &lt; 0\)</span>）。負負得正，使得局部的相對渦度 (<span class="math notranslate nohighlight">\(\zeta\)</span>) 隨時間快速飆升。</p></li>
+</ul>
+<blockquote>
+<div><p>💡 <strong>老師的比喻</strong>：這就像滑冰選手（角動量守恆），對流把空氣往上抽，等同選手把手臂往身體收縮，旋轉速度（渦度）瞬間飆高！</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Step 2: Wave Number 1 的拉力</strong>
+颱風前方的渦度變大、後方變小，產生了 Wave Number 1 的不對稱分佈。這個在台灣南部新生成的「渦度異常區」就像一顆強大的磁鐵，將位在北邊的颱風主體往南「拉住」，使得颱風移速變得更慢。走得越慢，雨下得越久，拉力就越強（正回饋）。</p></li>
+</ul>
+</section>
+<section id="case-studies">
+<h2>第四部分：經典天氣事件剖析 (Case Studies)<a class="headerlink" href="#case-studies" title="Link to this heading">#</a></h2>
+<p>了解了上面的機制，我們現在把它們套用到台灣歷史上著名的極端天氣事件中，作為驗證：</p>
+<section id="a-typhoon-morakot">
+<h3>事件 A：莫拉克颱風 (Typhoon Morakot) —— 地形鎖定與慢颱風的極致<a class="headerlink" href="#a-typhoon-morakot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>現象</strong>：登陸後移速極其緩慢，在中南部山區降下破紀錄的致災性總雨量。</p></li>
+<li><p><strong>物理機制驗證</strong>：完美印證了「<strong>地形鎖定與 Wave Number 1</strong>」。莫拉克從北邊移入時速度本來就不快，環流在南部山區降下大雨，產生的局部渦度異常區強烈地「拉住」了颱風，使其幾乎停滯。</p></li>
+</ul>
+</section>
+<section id="b-typhoon-gaemi">
+<h3>事件 B：凱米颱風 (Typhoon Gaemi) —— 登陸前打轉與西南氣流拖尾<a class="headerlink" href="#b-typhoon-gaemi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>現象</strong>：登陸前在東部外海打了一個明顯的轉 (Looping)，且離陸後引發嚴重的強降雨。</p></li>
+<li><p><strong>物理機制驗證</strong>：登陸前打轉是典型的<strong>地形效應</strong>干擾導引氣流；而離陸後的大雨，則驗證了颱風尾端與西南季風結合，引發強烈的<strong>後向建構 (Back-building)</strong>。</p></li>
+</ul>
+</section>
+<section id="c-back-building">
+<h3>事件 C：嘉義平原 / 小林村豪雨 —— 後向建構 (Back-building)<a class="headerlink" href="#c-back-building" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>現象</strong>：即使颱風中心已經離開或不在正上方，平地與迎風坡依然發生長時間暴雨。</p></li>
+<li><p><strong>物理機制驗證</strong>：西南氣流在海面上游或迎風坡不斷長出新的對流胞，並隨著氣流一波接著一波「排隊」移入陸地。實驗證明，這需要「<strong>中央山脈地形阻擋 + 充沛西南氣流水氣</strong>」兩者結合才會發生。</p></li>
+</ul>
+<hr class="docutils" />
+<p>這樣將「理論框架」與「實際案例」分開但互為印證的筆記架構，在未來複習時，你只要看到「莫拉克」，腦袋裡就能自動調用「渦度伸展」和「Wave Number 1」的函式了！</p>
+<p>還有哪一個方程式或觀念，需要老師再用其他比喻為你拆解嗎？</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -496,7 +529,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./00_Inbox"
+            path: "./03_Intuitions"
         },
         predefinedOutput: true
     }
@@ -513,24 +546,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">歡迎來到 Theory Playground：因為好奇而聚集的小窩</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../01_Derivations/01_Derivations.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>📐 01_Derivations</strong>: 硬核推導區</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -547,10 +562,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>interessant Video</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interessant">**interessant **</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第一部分：颱風的溫床 (影響生成的環境場)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第二部分：颱風如何長大？ (動力機制與群聚效應)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-energy-accumulation">1. 波能量累積 (Wave Energy Accumulation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barotropic-instability">2. 正壓不穩定 (Barotropic Instability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rossby-wave-dispersion">3. 羅斯貝波頻散 (Rossby Wave Dispersion)</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">第三部分：颱風的移動與結構 (路徑與降雨機制)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">第四部分：經典天氣事件剖析 (Case Studies)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-typhoon-morakot">事件 A：莫拉克颱風 (Typhoon Morakot) —— 地形鎖定與慢颱風的極致</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-typhoon-gaemi">事件 B：凱米颱風 (Typhoon Gaemi) —— 登陸前打轉與西南氣流拖尾</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-back-building">事件 C：嘉義平原 / 小林村豪雨 —— 後向建構 (Back-building)</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
