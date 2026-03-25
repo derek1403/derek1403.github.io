@@ -9,6 +9,8 @@ chapters:
         title: "[微積分] 黃金比例與高斯積分"
       - file: 01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.ipynb
         title: "[座標系統] 球坐標變換的動量方程"
+      - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.ipynb
+        title: "[座標系統] 圓柱坐標變換的動量方程"
   - file: 02_Concepts/02_Concepts.md
     sections:      # 直接將檔案列在這裡，把它們當作 02_Concepts 的子節點
       - file: 02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.ipynb
