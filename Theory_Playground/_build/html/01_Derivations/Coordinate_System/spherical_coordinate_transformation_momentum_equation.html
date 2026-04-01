@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="🧩 02_Concepts: 核心觀念區" href="../../02_Concepts/02_Concepts.html" />
+    <link rel="next" title="Cylindrical Coordinate Transformation : Momentum Equation" href="cylindrical_coordinate_transformation_momentum_equation.html" />
     <link rel="prev" title="Proof \(\int_{-\infty}^{+\infty} \frac{e^{-x^2} \sin^2(x^2)}{x^2} \mathrm{d}x = \sqrt{\pi} (\sqrt{\phi} - 1)\)" href="../golden_ratio_gaussian_integral.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,12 +187,17 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Angular_Momentum_Equation.html">[流體力學] 軸對稱角動量方程</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -444,9 +449,9 @@ document.write(`
 <p><strong>將動量方程式</strong></p>
 <div class="math notranslate nohighlight">
 \[
-\frac{D \vec{V}}{D t}+ f\hat{k}\times \vec{v}= -\frac{1}{\rho}\nabla P
+\frac{D \vec{V}}{D t} + f\hat{k}\times \vec{V} = -\frac{1}{\rho}\nabla P - g\hat{k} + \text{Friction}
 \]</div>
-<p><strong>寫在球面座標</strong></p>
+<p><strong>寫在球面座標系 <span class="math notranslate nohighlight">\(( \lambda, \phi, R)\)</span></strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -469,7 +474,7 @@ document.write(`
 <p>👉 對總速度 <span class="math notranslate nohighlight">\(\vec{V} = u\hat{i} + v\hat{j} + w\hat{k}\)</span> 執行全質導數 <span class="math notranslate nohighlight">\(\frac{D\vec{V}}{Dt}\)</span>：</p>
 <p>套用公式 <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">(純量加速度</span> <span class="pre">*</span> <span class="pre">基底向量)</span> <span class="pre">+</span> <span class="pre">(純量速度</span> <span class="pre">*</span> <span class="pre">基底向量的時間導數)</span></code>。</p>
 <p><strong>[Step 5] 靠慮其他外力(科氏力)</strong></p>
-<p>👉 「科氏力」這個獨立的物理量算出來，然後跟上一篇算出來的「總加速度（包含度量項）」</p>
+<p>👉 「科氏力」這個獨立的物理量算出來，然後跟[Step 4]算出來的「總加速度（包含度量項）」</p>
 </section>
 <hr class="docutils" />
 <section id="step-1-global-constants">
@@ -580,9 +585,9 @@ $<span class="math notranslate nohighlight">\(\hat{i} = -\sin\lambda \hat{I} + \
 <section id="step-3-chain-rule">
 <h2><strong>[Step 3] 呼叫時間導數方法 (Chain Rule)</strong><a class="headerlink" href="#step-3-chain-rule" title="Link to this heading">#</a></h2>
 <p><strong>定理：全質導數的連鎖律</strong></p>
-<p>對於任何依賴於空間位置 <span class="math notranslate nohighlight">\((\lambda, \phi)\)</span> 的向量 <span class="math notranslate nohighlight">\(\hat{e}\)</span>，當質塊隨流體移動時，其全質導數可以展開為：</p>
+<p>對於任何依賴於空間位置 <span class="math notranslate nohighlight">\((\lambda, \phi, R )\)</span> 的向量 <span class="math notranslate nohighlight">\(\hat{e}\)</span>，當質塊隨流體移動時，其全質導數可以展開為：</p>
 <div class="math notranslate nohighlight">
-\[\frac{D\hat{e}}{Dt} = \frac{\partial \hat{e}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{e}}{\partial \phi} \frac{D\phi}{Dt}\]</div>
+\[\frac{D\hat{e}}{Dt} = \frac{\partial \hat{e}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{e}}{\partial \phi} \frac{D\phi}{Dt}  + \frac{\partial \hat{e}}{\partial R} \frac{D R}{Dt}\]</div>
 <p><em>(物理翻譯：向量隨時間的改變 ＝ 往東走造成的幾何旋轉 ＋ 往北走造成的幾何旋轉)</em></p>
 <p><strong>定義角速度：</strong>
 我們已知流體往東的速度是 <span class="math notranslate nohighlight">\(u\)</span>，往北的速度是 <span class="math notranslate nohighlight">\(v\)</span>，在半徑為 <span class="math notranslate nohighlight">\(R\)</span> 的地球上：</p>
@@ -595,9 +600,9 @@ $<span class="math notranslate nohighlight">\(\hat{i} = -\sin\lambda \hat{I} + \
 <h3>1. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{i}}{Dt}\)</span> (向東向量的時間導數)<a class="headerlink" href="#frac-d-hat-i-dt" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\frac{D\hat{i}}{Dt} &amp;=&amp; \frac{\partial \hat{i}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{i}}{\partial \phi} \frac{D\phi}{Dt}\\
-&amp;=&amp; \frac{\partial }{\partial \lambda}\left[-\sin\lambda \hat{I} + \cos\lambda \hat{J}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[-\sin\lambda \hat{I} + \cos\lambda \hat{J}\right] \frac{D\phi}{Dt}\\
-&amp;=&amp; (-\cos\lambda \hat{I} - \sin\lambda \hat{J}) \frac{D\lambda}{Dt} + 0 \frac{D\phi}{Dt}\\
+\frac{D\hat{i}}{Dt} &amp;=&amp; \frac{\partial \hat{i}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{i}}{\partial \phi} \frac{D\phi}{Dt} + \frac{\partial \hat{i}}{\partial R} \frac{D R}{Dt} \\
+&amp;=&amp; \frac{\partial }{\partial \lambda}\left[-\sin\lambda \hat{I} + \cos\lambda \hat{J}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[-\sin\lambda \hat{I} + \cos\lambda \hat{J}\right] \frac{D\phi}{Dt} +  \frac{\partial }{\partial R} \left[-\sin\lambda \hat{I} + \cos\lambda \hat{J}\right] \frac{D R}{Dt}\\
+&amp;=&amp; (-\cos\lambda \hat{I} - \sin\lambda \hat{J}) \frac{D\lambda}{Dt} + 0 \frac{D\phi}{Dt} +    0 \frac{D R}{Dt}\\
 &amp;=&amp; \left(-\cos\lambda (-\sin\lambda \hat{i} -\sin\phi\cos\lambda \hat{j}+ \cos\phi\cos\lambda \hat{k}) - \sin\lambda (\cos\lambda \hat{i} -\sin\phi\sin\lambda \hat{j} + \cos\phi\sin\lambda\hat{k}) \right)\frac{D\lambda}{Dt} \\
 &amp;=&amp; \left((\cos\lambda \sin\lambda - \sin\lambda \cos\lambda )\hat{i} +
 ( \cos\lambda \sin\phi\cos\lambda + \sin\lambda \sin\phi\sin\lambda )\hat{j} +
@@ -611,9 +616,9 @@ $<span class="math notranslate nohighlight">\(\hat{i} = -\sin\lambda \hat{I} + \
 <h3>2. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{j}}{Dt}\)</span> (向北向量的時間導數)<a class="headerlink" href="#frac-d-hat-j-dt" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\frac{D\hat{j}}{Dt} &amp;=&amp; \frac{\partial \hat{j}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{j}}{\partial \phi} \frac{D\phi}{Dt}\\
-&amp;=&amp; \frac{\partial }{\partial \lambda}\left[-\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[-\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\right] \frac{D\phi}{Dt}\\
-&amp;=&amp; (\sin\phi \sin\lambda \hat{I} - \sin\phi \cos\lambda \hat{J}) \frac{D\lambda}{Dt} + ( -\cos\phi \cos\lambda \hat{I} - \cos\phi \sin\lambda \hat{J} - \sin\phi \hat{K}) \frac{D\phi}{Dt}\\
+\frac{D\hat{j}}{Dt} &amp;=&amp; \frac{\partial \hat{j}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{j}}{\partial \phi} \frac{D\phi}{Dt} + \frac{\partial \hat{j}}{\partial R} \frac{DR}{Dt} \\
+&amp;=&amp; \frac{\partial }{\partial \lambda}\left[-\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[-\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\right] \frac{D\phi}{Dt} + \frac{\partial }{\partial R} \left[-\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}\right] \frac{DR}{Dt}\\
+&amp;=&amp; (\sin\phi \sin\lambda \hat{I} - \sin\phi \cos\lambda \hat{J}) \frac{D\lambda}{Dt} + ( -\cos\phi \cos\lambda \hat{I} - \cos\phi \sin\lambda \hat{J} - \sin\phi \hat{K}) \frac{D\phi}{Dt} + 0 \frac{DR}{Dt}\\
 &amp;=&amp; -\sin\phi (-\sin\lambda \hat{I} +\cos\lambda \hat{J})\frac{D\lambda}{Dt} - ( \cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K}) \frac{D\phi}{Dt} \\
 &amp;=&amp; -\sin\phi \hat{i}\frac{D\lambda}{Dt} -  \hat{k} \frac{D\phi}{Dt}  \\
 &amp;=&amp; (-\sin\phi \hat{i}) \left( \frac{u}{R \cos\phi} \right) + (-\hat{k}) \left( \frac{v}{R} \right) \\
@@ -624,9 +629,9 @@ $<span class="math notranslate nohighlight">\(\hat{i} = -\sin\lambda \hat{I} + \
 <h3>3. 計算 <span class="math notranslate nohighlight">\(\frac{D\hat{k}}{Dt}\)</span> (向上向量的時間導數)<a class="headerlink" href="#frac-d-hat-k-dt" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\frac{D\hat{k}}{Dt} &amp;=&amp; \frac{\partial \hat{k}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{k}}{\partial \phi} \frac{D\phi}{Dt}\\
-&amp;=&amp; \frac{\partial }{\partial \lambda}\left[\cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[ \cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K} \right] \frac{D\phi}{Dt}\\
-&amp;=&amp; (-\cos\phi \sin\lambda \hat{I} + \cos\phi \cos\lambda \hat{J}) \frac{D\lambda}{Dt} + ( -\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}) \frac{D\phi}{Dt}\\
+\frac{D\hat{k}}{Dt} &amp;=&amp; \frac{\partial \hat{k}}{\partial \lambda} \frac{D\lambda}{Dt} + \frac{\partial \hat{k}}{\partial \phi} \frac{D\phi}{Dt} + \frac{\partial \hat{k}}{\partial R} \frac{D R}{Dt} \\
+&amp;=&amp; \frac{\partial }{\partial \lambda}\left[\cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K}\right] \frac{D\lambda}{Dt} + \frac{\partial }{\partial \phi} \left[ \cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K} \right] \frac{D\phi}{Dt} + \frac{\partial }{\partial R} \left[ \cos\phi \cos\lambda \hat{I} + \cos\phi \sin\lambda \hat{J} + \sin\phi \hat{K} \right] \frac{D R}{Dt}\\
+&amp;=&amp; (-\cos\phi \sin\lambda \hat{I} + \cos\phi \cos\lambda \hat{J}) \frac{D\lambda}{Dt} + ( -\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}) \frac{D\phi}{Dt} + 0  \frac{D R}{Dt}\\
 &amp;=&amp; \cos\phi (-\sin\lambda \hat{I} + \cos\lambda \hat{J})\frac{D\lambda}{Dt} + ( -\sin\phi \cos\lambda \hat{I} - \sin\phi \sin\lambda \hat{J} + \cos\phi \hat{K}) \frac{D\phi}{Dt} \\
 &amp;=&amp; \cos\phi  \hat{i}\frac{D\lambda}{Dt} +  \hat{j} \frac{D\phi}{Dt}  \\
 &amp;=&amp; (\cos\phi \hat{i}) \left( \frac{u}{R \cos\phi} \right) + (\hat{j}) \left( \frac{v}{R} \right) \\
@@ -735,7 +740,7 @@ u &amp; v &amp; w
 <h3>1. 「氣壓梯度力」 (Pressure Gradient Force)<a class="headerlink" href="#pressure-gradient-force" title="Link to this heading">#</a></h3>
 <p>氣壓梯度力是推動大氣運動的真正引擎，它的物理意義是「流體會從氣壓高的地方往氣壓低的地方被推擠」。其向量形式為：
 $<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \nabla P\)</span>$</p>
-<p>但在球面座標系中，計算梯度（Gradient, <span class="math notranslate nohighlight">\(\nabla\)</span>）不能只對角度微分，因為**「角度不等於實際的物理距離」**。我們必須把經緯度的變化量，轉換成以公尺（meters）為單位的弧長。這就像是在處理陣列索引（Index）與實際物理座標的 Mapping：</p>
+<p>但在球面座標系中，計算梯度（Gradient, <span class="math notranslate nohighlight">\(\nabla\)</span>）不能只對角度微分，因為 <strong>「角度不等於實際的物理距離」</strong> 。我們必須把經緯度的變化量，轉換成以公尺（meters）為單位的弧長。這就像是在處理陣列索引（Index）與實際物理座標的 Mapping：</p>
 <ol class="arabic simple">
 <li><p><strong>正東方 (<span class="math notranslate nohighlight">\(\hat{i}\)</span>) 的實體距離</strong>：當經度改變 <span class="math notranslate nohighlight">\(d\lambda\)</span> 時，實際走過的弧長是 <span class="math notranslate nohighlight">\(R \cos\phi \, d\lambda\)</span>。</p>
 <ul class="simple">
@@ -755,7 +760,7 @@ $<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \nabla P\)</span>$
 </ol>
 <p>所以，完整的氣壓梯度力物件為：</p>
 <div class="math notranslate nohighlight">
-\[\vec{F}_{PGF} = -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} \hat{i} - \frac{1}{\rho R} \frac{\partial P}{\partial \phi} \hat{j} - \frac{1}{\rho} \frac{\partial P}{\partial R} \hat{k}\]</div>
+\[\vec{F}{_\text{PGF}} = -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} \hat{i} - \frac{1}{\rho R} \frac{\partial P}{\partial \phi} \hat{j} - \frac{1}{\rho} \frac{\partial P}{\partial R} \hat{k}\]</div>
 </section>
 <section id="effective-gravity">
 <h3>2. 「有效重力」 (Effective Gravity)<a class="headerlink" href="#effective-gravity" title="Link to this heading">#</a></h3>
@@ -763,7 +768,7 @@ $<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \nabla P\)</span>$
 <p>地球有萬有引力 <span class="math notranslate nohighlight">\(\vec{g}^*\)</span> 指向地心。但因為地球本身在自轉，大氣層裡的空氣跟著地球一起轉，會感受到一個向外的「離心力（Centrifugal Force）」。
 在大氣動力學中，我們通常把「萬有引力」與「地球自轉產生的靜態離心力」合併成一個變數，稱為<strong>有效重力（Effective Gravity, <span class="math notranslate nohighlight">\(\vec{g}\)</span>）</strong>。</p>
 <div class="math notranslate nohighlight">
-\[\vec{F}_{Gravity} = -g \hat{k}\]</div>
+\[\vec{F}{_\text{Gravity}} = -g \hat{k}\]</div>
 <p><em>(注意：它完全沒有水平分量 <span class="math notranslate nohighlight">\(\hat{i}\)</span> 和 <span class="math notranslate nohighlight">\(\hat{j}\)</span>。)</em></p>
 </section>
 <hr class="docutils" />
@@ -776,7 +781,7 @@ $<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \nabla P\)</span>$
 \vec{F}=\frac{D\vec{V}}{Dt} &amp;=&amp;  \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
 &amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
 &amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
-\vec{F}{_\text{Coriolis force}}+\vec{F}{_\text{Coriolis force}} +\vec{F}{_\text{Coriolis force}}+ \vec{F}{_\text{other force}} &amp;=&amp;  \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
+\vec{F}{_\text{PGF}}+\vec{F}{_\text{Coriolis force}} +\vec{F}{_\text{Gravity}}+ \vec{F}{_\text{other force}} &amp;=&amp;  \left(\frac{Du}{Dt} - \frac{uv \tan\phi}{R} + \frac{uw}{R}\right) \hat{i}\\
 &amp;&amp;+\left(\frac{Dv}{Dt} + \frac{u^2 \tan\phi}{R} + \frac{vw}{R}\right)\hat{j}\\
 &amp;&amp;+\left(\frac{Dw}{Dt} - \frac{u^2 + v^2}{R}\right)\hat{k}\\
 -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} \hat{i} - \frac{1}{\rho R} \frac{\partial P}{\partial \phi} \hat{j} - \frac{1}{\rho} \frac{\partial P}{\partial R} \hat{k} \\
@@ -845,11 +850,11 @@ $<span class="math notranslate nohighlight">\(-\frac{1}{\rho} \nabla P\)</span>$
       </div>
     </a>
     <a class="right-next"
-       href="../../02_Concepts/02_Concepts.html"
+       href="cylindrical_coordinate_transformation_momentum_equation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>🧩 02_Concepts</strong>: 核心觀念區</p>
+        <p class="prev-next-title">Cylindrical Coordinate Transformation : Momentum Equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

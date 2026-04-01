@@ -11,6 +11,10 @@ chapters:
         title: "[座標系統] 球坐標變換的動量方程"
       - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.ipynb
         title: "[座標系統] 圓柱坐標變換的動量方程"
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.ipynb
+        title: "[流體力學] 梯度風平衡"
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Angular_Momentum_Equation.ipynb
+        title: "[流體力學] 軸對稱角動量方程"
   - file: 02_Concepts/02_Concepts.md
     sections:      # 直接將檔案列在這裡，把它們當作 02_Concepts 的子節點
       - file: 02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.ipynb
@@ -19,6 +23,10 @@ chapters:
         title: "[流體力學] 雷諾數"
       - file: 02_Concepts/Fluid_Dynamics/Terminal_velocity.ipynb
         title: "[流體力學] 終端速度"
+      - file: 02_Concepts/Fluid_Dynamics/Anelastic_approximation.ipynb
+        title: "[流體力學] Anelastic近似"
+      - file: 02_Concepts/Fluid_Dynamics/Boussinesq_approximation.ipynb
+        title: "[流體力學] Boussinesq近似"
   - file: 03_Intuitions/03_Intuitions.md
     sections:      
       - file: 03_Intuitions/n_points_coverage_threshold_coverage_ratio
