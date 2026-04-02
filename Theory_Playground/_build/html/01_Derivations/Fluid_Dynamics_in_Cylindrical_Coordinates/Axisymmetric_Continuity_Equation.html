@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Gradient Wind Balance &#8212; Theory_Playground</title>
+    <title>Axisymmetric Continuity Equation (軸對稱連續方程式) &#8212; Theory_Playground</title>
   
   
   
@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Axisymmetric Angular Momentum Equation (軸對稱角動量方程式)" href="Axisymmetric_Angular_Momentum_Equation.html" />
-    <link rel="prev" title="Cylindrical Coordinate Transformation : Relative Vorticity" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,16 +181,16 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
 
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Angular_Momentum_Equation.html">[流體力學] 軸對稱角動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 </ul>
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Gradient Wind Balance</h1>
+    <h1>Axisymmetric Continuity Equation (軸對稱連續方程式)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,6 +405,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">💡 直觀比喻：甜甜圈形狀的房間</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-1-r-frac-partial-rho-r-u-partial-r">第一部分： <span class="math notranslate nohighlight">\(\frac{1}{r}\frac{\partial(\rho r u)}{\partial r}\)</span> —— 從「側門」擠進來的空氣 (徑向質量散度)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-rho-w-partial-z">第二部分： <span class="math notranslate nohighlight">\(\frac{\partial(\rho w)}{\partial z}\)</span> —— 從「天窗」跑出去的空氣 (垂直質量散度)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第三部分： 等號 <span class="math notranslate nohighlight">\(= 0\)</span> —— 大自然的完美配合 (次環流的誕生)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -416,90 +423,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gradient-wind-balance">
-<h1>Gradient Wind Balance<a class="headerlink" href="#gradient-wind-balance" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="axisymmetric-continuity-equation">
+<h1>Axisymmetric Continuity Equation (軸對稱連續方程式)<a class="headerlink" href="#axisymmetric-continuity-equation" title="Link to this heading">#</a></h1>
 <section id="id1">
 <h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[\frac{v^{2}}{r} + fv = \frac{\partial\phi}{\partial r}\]</div>
+\[\frac{1}{r}\frac{\partial(\rho ru)}{\partial r}+\frac{\partial(\rho w)}{\partial z}=0\]</div>
 </section>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">圓柱座標的 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 動量方程式</a>：</strong></p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#continuity-equation">三維連續方程式 (質量守恆)</a>：</strong></p>
 <div class="math notranslate nohighlight">
-\[\frac{Du}{Dt} - \frac{v^2}{r} - fv = -\frac{1}{\rho} \frac{\partial P}{\partial r} + \text{RHS}_{\hat{r}}\]</div>
+\[\frac{\partial \rho}{\partial t } + \nabla \cdot (\rho \mathbf{u}) = 0\]</div>
 </li>
-<li><p><strong>【假設 1】 僅考慮科氏力、壓力梯度力：</strong></p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">圓柱座標的散度 (Divergence in Cylindrical Coordinates)</a>：</strong> 對於任意向量場 <span class="math notranslate nohighlight">\(\mathbf{A} = (A_r, A_\lambda, A_z)\)</span>，其散度展開為：</p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot \mathbf{A} = \frac{1}{r}\frac{\partial (r A_r)}{\partial r} + \frac{1}{r}\frac{\partial A_\lambda}{\partial \lambda} + \frac{\partial A_z}{\partial z}\]</div>
 <ul class="simple">
-<li><p>忽略摩擦力或其他未解析的小尺度亂流外力</p></li>
-<li><p>自由大氣是 <strong>無黏滯性 (Inviscid)</strong> 的</p></li>
-<li><p>在圓柱座標的 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 動量方程式中 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{r}} = 0\)</span></p></li>
+<li><p>徑向要乘上 <span class="math notranslate nohighlight">\(r\)</span> 因為在圓柱座標中一個微小體積單元 (Volume Element) 不是完美的方塊而是一塊「扇形蛋糕」，它的內側面積是 <span class="math notranslate nohighlight">\(r d\lambda dz\)</span>，外側面積是 <span class="math notranslate nohighlight">\((r+dr) d\lambda dz\)</span>，當流體沿著徑向 (<span class="math notranslate nohighlight">\(\hat{r}\)</span>) 流動即使速度 <span class="math notranslate nohighlight">\(u\)</span> 不變，因為「外側的開口面積比內側大」使流出去的總量還是會變多，這就是在微分裡面必須把 <span class="math notranslate nohighlight">\(r\)</span> 塞進括號裡跟著一起微分的原因：我們看的是「通量 (Flux = 密度 <span class="math notranslate nohighlight">\(\times\)</span> 速度 <span class="math notranslate nohighlight">\(\times\)</span> 面積比例 <span class="math notranslate nohighlight">\(r\)</span>)」的變化。</p></li>
 </ul>
 </li>
-<li><p><strong>【假設 2】 軸對稱假設：</strong></p>
+<li><p><strong>【假設 1】 軸對稱假設 (Axisymmetric Assumption)：</strong></p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial\lambda} = 0\]</div>
-</li>
-<li><p><strong>【已知 2】 <span class="math notranslate nohighlight">\(\frac{Du}{Dt}\)</span> 的展開 ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\frac{Du}{Dt} = \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial r}  +  w\frac{\partial u}{\partial z}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\frac{Du}{Dt} = \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial r} + v\frac{\partial u}{\partial\lambda} +  w\frac{\partial u}{\partial z}\)</span> 但是【假設 2】可以知道 <span class="math notranslate nohighlight">\(\frac{\partial}{\partial\lambda} = 0\)</span></p></li>
+<li><p>系統在切線方向（方位角 <span class="math notranslate nohighlight">\(\lambda\)</span>）上沒有變化，這是一個成熟熱帶氣旋的標準假設。</p></li>
 </ul>
 </li>
-<li><p><strong>【假設 3】 尺度分析與主環流假設：</strong></p>
+<li><p><strong>【假設 2】 準穩定態假設 (Quasi-steady State Assumption)：</strong></p>
 <div class="math notranslate nohighlight">
-\[\frac{Du}{Dt} \ll \frac{v^2}{r}\]</div>
+\[\frac{\partial \rho}{\partial t} \approx 0\]</div>
 <ul class="simple">
-<li><p>對於一個成熟的颱風中</p>
+<li><p>對於一個發展成熟的颱風在我們觀測的短時間區間內，空間中某個固定點的空氣「密度」幾乎不會隨時間有劇烈改變。</p></li>
+<li><p><strong>尺度分析</strong>：</p>
 <ul>
-<li><p>水平長度尺度 (半徑)：<span class="math notranslate nohighlight">\(L \sim 10^5 \text{ m}\)</span> (<span class="math notranslate nohighlight">\(100 \text{ km}\)</span>)</p></li>
-<li><p>垂直高度尺度 (對流層)：<span class="math notranslate nohighlight">\(H \sim 10^4 \text{ m}\)</span> (<span class="math notranslate nohighlight">\(10 \text{ km}\)</span>)</p></li>
-<li><p>切線風速 (繞圈的主環流)：<span class="math notranslate nohighlight">\(V \sim 50 \text{m} \cdot \text{s}^{-1}\)</span></p></li>
-<li><p>徑向風速 (向內輻合的次環流)：<span class="math notranslate nohighlight">\(U \sim 5 \text{m} \cdot \text{s}^{-1}\)</span></p></li>
-<li><p>垂直風速 (上升氣流)：<span class="math notranslate nohighlight">\(W \sim 1 \text{m} \cdot \text{s}^{-1}\)</span></p></li>
-<li><p>科氏參數 (中低緯度)：<span class="math notranslate nohighlight">\(f \sim 10^{-4} \text{ s}^{-1}\)</span></p></li>
+<li><p>徑向質量通量散度：<span class="math notranslate nohighlight">\(\frac{1}{r}\frac{\partial (\rho r u)}{\partial r} \sim \frac{\rho U}{L} \sim \frac{1 \times 5}{100,000} = \mathbf{5 \times 10^{-5} } [\text{kg} \cdot \text{m}^{-3} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p>密度的局部時間變化：假設颱風中心氣壓在 3 小時 (<span class="math notranslate nohighlight">\(10^4\)</span> 秒) 內下降了 3 hPa，對應的密度變化大約只有 <span class="math notranslate nohighlight">\(\frac{\Delta P}{R_d T} = \Delta \rho \sim 0.003 \text{ kg} \cdot \text{m}^{-3}\)</span>。則 <span class="math notranslate nohighlight">\(\frac{\partial \rho}{\partial t} \sim \frac{0.003}{10^4} = \mathbf{3 \times 10^{-7} } [\text{kg} \cdot \text{m}^{-3} \cdot \text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
+<li><p>因為 <span class="math notranslate nohighlight">\(3 \times 10^{-7} \ll 5 \times 10^{-5}\)</span>，密度的局部時間變化項（相比於空間的通量變化）可以忽略不計。</p></li>
+<li><p><em>如果套用 Anelastic Approximation，這裡的 <span class="math notranslate nohighlight">\(\rho\)</span> 會直接被替換為只隨高度變化的背景密度 <span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span>，此時 <span class="math notranslate nohighlight">\(\frac{\partial \bar{\rho}}{\partial t}\)</span> 數學上就嚴格等於 <span class="math notranslate nohighlight">\(0\)</span></em></p></li>
 </ul>
-<ol class="arabic simple">
-<li><p>離心力項： <span class="math notranslate nohighlight">\(\frac{V^2}{L} \sim \frac{50^2}{100,000} = \frac{2500}{10^5} = \mathbf{0.025 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>科氏力項： <span class="math notranslate nohighlight">\(fV \sim (10^{-4}) \times 50 = \mathbf{0.005 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>徑向平流加速度 (<span class="math notranslate nohighlight">\(u\frac{\partial u}{\partial r}\)</span>):這代表風往內吹時，因為地形或結構改變導致的速度空間變化。<span class="math notranslate nohighlight">\(\frac{U^2}{L} \sim \frac{5^2}{100,000} = \frac{25}{10^5} = \mathbf{0.00025 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>垂直平流加速度 (<span class="math notranslate nohighlight">\(w\frac{\partial u}{\partial z}\)</span>):這代表上升氣流把不同高度的徑向風帶上來造成的加速度。<span class="math notranslate nohighlight">\(\frac{W \cdot U}{H} \sim \frac{1 \times 5}{10,000} = \mathbf{0.0005 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>局部時間變化 (<span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t}\)</span>):對於一個已經發展成熟的颱風，系統處於「準穩定態 (Quasi-steady)」，風速隨時間的變化非常緩慢所以這項通常比平流項還要小，我們大略估計它也是 <span class="math notranslate nohighlight">\(\sim 10^{-4}\)</span> 量級。</p></li>
-</ol>
-</li>
-<li><p><strong>【假設 4】 Anelastic Approximation：</strong></p>
-<ul class="simple">
-<li><p>氣壓：<span class="math notranslate nohighlight">\(P(r, \lambda, z, t) = \bar{P}(z) + P'(r, \lambda, z, t)\)</span></p></li>
-<li><p>密度：<span class="math notranslate nohighlight">\(\rho(r, \lambda, z, t) = \bar{\rho}(z) + \rho'(r, \lambda, z, t)\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【假設 5】 尺度分析：</strong></p>
-<div class="math notranslate nohighlight">
-\[\rho'(r, \lambda, z, t) \ll \bar{\rho}(z)\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\rho'(r, \lambda, z, t) \sim \)</span></p></li>
-<li><p>背景密度是隨著高度遞減的。大氣層越往上，空氣越稀薄 ：</p>
-<ul>
-<li><p>在近地表（海平面）： <span class="math notranslate nohighlight">\(\bar{\rho} \sim 1.2 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-<li><p>在 5 公里高空： <span class="math notranslate nohighlight">\(\bar{\rho} \sim 0.7 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-<li><p>在 10 公里高空： <span class="math notranslate nohighlight">\(\bar{\rho} \sim 0.4 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-</ul>
-</li>
-<li><p>擾動密度 <span class="math notranslate nohighlight">\(\rho'\)</span> 可以從理想氣體狀態方程式 <span class="math notranslate nohighlight">\(\frac{\rho'}{\bar{\rho}} \approx -\frac{\theta'}{\bar{\theta}}\)</span> 估計</p>
-<ul>
-<li><p>在近地表： <span class="math notranslate nohighlight">\(\rho' \approx 1.2 \times 0.016 \sim 0.019 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-<li><p>在 10 公里高空： <span class="math notranslate nohighlight">\(\rho' \approx 0.4 \times 0.016 \sim 0.006 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>【定義 1】 擾動位勢 <span class="math notranslate nohighlight">\(\phi\)</span>：</strong></p>
-<div class="math notranslate nohighlight">
-\[\phi(r, \lambda, z, t) \overset{\text{def}}{=} \frac{P'(r, \lambda, z, t)}{\bar{\rho}(z)}\]</div>
 </li>
 </ul>
 </section>
@@ -507,17 +472,74 @@ document.write(`
 <h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\frac{Du}{Dt} - \frac{v^2}{r} - fv &amp;\overset{\text{已知 1}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial r} + \text{RHS}_{\hat{r}}   \\
-\frac{Du}{Dt} - \frac{v^2}{r} - fv &amp;\overset{\text{假設 1}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial r} \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{假設 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial r} \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{假設 4}}{=}&amp; -\frac{1}{\bar{\rho}(z) + \rho'(r, \lambda, z, t)} \frac{\partial }{\partial r} \left[ \bar{P}(z) + P'(r, \lambda, z, t) \right] \\
-- \frac{v^2}{r} - fv &amp;=&amp; -\frac{1}{\bar{\rho}(z) + \rho'(r, \lambda, z, t)} \frac{\partial }{\partial r} \left[  P'(r, \lambda, z, t) \right] \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{假設 5}}{=}&amp; -\frac{1}{\bar{\rho}(z)} \frac{\partial }{\partial r} \left[  P'(r, \lambda, z, t) \right] \\
-- \frac{v^2}{r} - fv &amp;=&amp; -\frac{\partial }{\partial r} \left[ \frac{P'(r, \lambda, z, t)}{\bar{\rho}(z)}  \right] \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{定義 1}}{=}&amp; -\frac{\partial }{\partial r} \left[ \phi(r, \lambda, z, t)  \right] \\
-- \frac{v^2}{r} - fv &amp;=&amp; -\frac{\partial \phi}{\partial r}  \\
-\frac{v^2}{r} + fv &amp;=&amp; \frac{\partial \phi}{\partial r}  \\
+\frac{\partial \rho}{\partial t } + \nabla \cdot (\rho \mathbf{u}) &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+\frac{\partial \rho}{\partial t } + \nabla \cdot (\rho u, \rho v, \rho w) &amp;=&amp; 0 \\
+\frac{\partial \rho}{\partial t } + \frac{1}{r}\frac{\partial (r \rho u)}{\partial r} + \frac{1}{r}\frac{\partial (\rho v)}{\partial \lambda} + \frac{\partial (\rho w)}{\partial z} &amp;\overset{\text{已知 2}}{=}&amp; 0 \\
+\frac{\partial \rho}{\partial t } + \frac{1}{r}\frac{\partial (\rho r u)}{\partial r} + 0 + \frac{\partial (\rho w)}{\partial z} &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+0 + \frac{1}{r}\frac{\partial (\rho r u)}{\partial r} + \frac{\partial (\rho w)}{\partial z} &amp;\overset{\text{假設 2}}{=}&amp; 0 \\
+\frac{1}{r}\frac{\partial (\rho r u)}{\partial r} + \frac{\partial (\rho w)}{\partial z} &amp;=&amp; 0 \\
 \end{gather*}\end{split}\]</div>
+</section>
+<section id="id3">
+<h2>物理解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>💡 直觀比喻：甜甜圈形狀的房間<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>想像在颱風的某個高度，我們用紅龍柱圍出一個「甜甜圈形狀（環狀）的隱形房間」。
+這個房間有兩扇門：</p>
+<ol class="arabic simple">
+<li><p><strong>側門（徑向，<span class="math notranslate nohighlight">\(r\)</span> 方向）</strong>：外圈的牆壁和內圈的牆壁，空氣可以橫向穿過。</p></li>
+<li><p><strong>天窗與地板（垂直向，<span class="math notranslate nohighlight">\(z\)</span> 方向）</strong>：房間的屋頂和地板，空氣可以上下穿過。</p></li>
+</ol>
+<p>因為我們假設了「準穩定態（密度不隨時間改變）」，這意味著這個房間裡<strong>不能無限期地塞滿空氣，也不能被抽成真空</strong>。也就是說：<strong>「每秒鐘擠進房間的空氣總質量，必須剛好等於跑出去的空氣總質量。」</strong></p>
+<p>我們來看看方程式的每一項是如何描述這個過程的：</p>
+</section>
+<hr class="docutils" />
+<section id="frac-1-r-frac-partial-rho-r-u-partial-r">
+<h3>第一部分： <span class="math notranslate nohighlight">\(\frac{1}{r}\frac{\partial(\rho r u)}{\partial r}\)</span> —— 從「側門」擠進來的空氣 (徑向質量散度)<a class="headerlink" href="#frac-1-r-frac-partial-rho-r-u-partial-r" title="Link to this heading">#</a></h3>
+<p>這項描述的是空氣在水平方向（往圓心或背離圓心）流動時，造成的質量累積或流失。</p>
+<ul class="simple">
+<li><p><strong>為什麼要綁在一起看 <span class="math notranslate nohighlight">\(\rho r u\)</span>？</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\rho u\)</span> 是「質量通量」，代表每秒鐘穿過每 <span class="math notranslate nohighlight">\(1 \text{ m}^2\)</span> 面積的空氣公斤數。</p></li>
+<li><p>但在圓柱座標裡，越靠近圓心，圓的周長（<span class="math notranslate nohighlight">\(2\pi r\)</span>）就越小。也就是說，外圈的「側門」很大，內圈的「側門」很小。</p></li>
+<li><p>所以我們必須把 <span class="math notranslate nohighlight">\(\rho u\)</span> 乘上 <span class="math notranslate nohighlight">\(r\)</span>（代表總面積的比例），<span class="math notranslate nohighlight">\(\rho r u\)</span> 才是真正代表「總共有多少質量的空氣穿過這道環形牆壁」。</p></li>
+</ul>
+</li>
+<li><p><strong><span class="math notranslate nohighlight">\(\frac{\partial}{\partial r}(\rho r u)\)</span> 的物理意義：</strong></p>
+<ul>
+<li><p>它是「外圈流進來的量」與「內圈流出去的量」的<strong>差值</strong>。</p></li>
+<li><p>如果 <span class="math notranslate nohighlight">\(\frac{\partial(\rho r u)}{\partial r} &lt; 0\)</span>（也就是徑向質量通量往外遞減，或者說往內猛烈灌入），這代表外圈進來的車多，內圈出去的車少。這時空氣就會在這個環形房間裡<strong>嚴重塞車（輻合，Convergence）</strong>。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="frac-partial-rho-w-partial-z">
+<h3>第二部分： <span class="math notranslate nohighlight">\(\frac{\partial(\rho w)}{\partial z}\)</span> —— 從「天窗」跑出去的空氣 (垂直質量散度)<a class="headerlink" href="#frac-partial-rho-w-partial-z" title="Link to this heading">#</a></h3>
+<p>這項相對單純很多，因為垂直方向的面積不會隨高度改變（不像圓柱的側面積會隨半徑縮水）。</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\rho w\)</span></strong>：垂直的質量通量（每秒鐘有多少空氣往上或往下升降）。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\frac{\partial(\rho w)}{\partial z}\)</span> 的物理意義：</strong></p>
+<ul>
+<li><p>它是「從地板進來的量」與「從天花板出去的量」的<strong>差值</strong>。</p></li>
+<li><p>如果 <span class="math notranslate nohighlight">\(\frac{\partial(\rho w)}{\partial z} &gt; 0\)</span>，這代表從天花板跑出去的空氣，比從地板進來的還要多。也就是空氣正在<strong>往上抽離（輻散，Divergence）</strong>。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h3>第三部分： 等號 <span class="math notranslate nohighlight">\(= 0\)</span> —— 大自然的完美配合 (次環流的誕生)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>現在我們把它們加起來看：</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{\frac{1}{r}\frac{\partial(\rho ru)}{\partial r}}_{\text{側門的淨進出}} + \underbrace{\frac{\partial(\rho w)}{\partial z}}_{\text{上下的淨進出}} = 0\]</div>
+<p>這條方程式強制規定了一種大自然的「連動機制」。我們以<strong>颱風的底層眼牆 (Eyewall)</strong> 為例來推演：</p>
+<ol class="arabic simple">
+<li><p><strong>底層強烈輻合</strong>：在颱風底層，因為摩擦力和其他動力機制的關係，大量的空氣會朝著颱風中心狂飆（<span class="math notranslate nohighlight">\(u &lt; 0\)</span> 且向內急遽增加）。這會導致強烈的「徑向質量輻合」，也就是第一項變成一個<strong>極大的負值</strong>。</p></li>
+<li><p><strong>尋找出口</strong>：房間裡的空氣快被擠爆了，但因為 <span class="math notranslate nohighlight">\(=0\)</span> 的鐵律，這些空氣不能憑空消失。既然第一項是負的，<strong>第二項就必須被強迫變成正的</strong>，來抵消它！</p></li>
+<li><p><strong>被迫向上拔起</strong>：也就是說，<span class="math notranslate nohighlight">\(\frac{\partial(\rho w)}{\partial z}\)</span> 必須大於 <span class="math notranslate nohighlight">\(0\)</span>。在地面，垂直風速是零（<span class="math notranslate nohighlight">\(w=0\)</span>），所以唯一的解決辦法，就是<strong>在眼牆區域強迫產生極其猛烈的上升氣流（<span class="math notranslate nohighlight">\(w &gt; 0\)</span> 且隨高度急遽增加）</strong>，把剛剛從四周擠進來的空氣全部往上抽走！</p></li>
+</ol>
+<p><strong>總結來說：</strong>
+這條方程式的物理靈魂就是大氣中的 <strong>「質量連續性」</strong> ，水平方向的風（徑向風 <span class="math notranslate nohighlight">\(u\)</span>）和垂直方向的風（上升氣流 <span class="math notranslate nohighlight">\(w\)</span>）絕對不是各自獨立的， <strong>底層水平方向的「擠壓（輻合）」必然會直接轉換成垂直方向的「噴發（上升氣流）」</strong>，這正是維持熱帶氣旋生命週期中最關鍵的「次環流 (Secondary Circulation)」機制！🎆</p>
+</section>
 </section>
 </section>
 
@@ -551,24 +573,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Cylindrical Coordinate Transformation : Relative Vorticity</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Axisymmetric_Angular_Momentum_Equation.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Axisymmetric Angular Momentum Equation (軸對稱角動量方程式)</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -588,6 +592,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">💡 直觀比喻：甜甜圈形狀的房間</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-1-r-frac-partial-rho-r-u-partial-r">第一部分： <span class="math notranslate nohighlight">\(\frac{1}{r}\frac{\partial(\rho r u)}{\partial r}\)</span> —— 從「側門」擠進來的空氣 (徑向質量散度)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-rho-w-partial-z">第二部分： <span class="math notranslate nohighlight">\(\frac{\partial(\rho w)}{\partial z}\)</span> —— 從「天窗」跑出去的空氣 (垂直質量散度)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">第三部分： 等號 <span class="math notranslate nohighlight">\(= 0\)</span> —— 大自然的完美配合 (次環流的誕生)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

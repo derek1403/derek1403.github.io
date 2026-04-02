@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Cylindrical Coordinate Transformation : Relative Vorticity &#8212; Theory_Playground</title>
+    <title>Divergence Operator in Cylindrical Coordinates (圓柱座標中的散度算子) &#8212; Theory_Playground</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Gradient Wind Balance" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html" />
-    <link rel="prev" title="Divergence Operator in Cylindrical Coordinates (圓柱座標中的散度算子)" href="Divergence_Operator_in_Cylindrical_Coordinates.html" />
+    <link rel="next" title="Cylindrical Coordinate Transformation : Relative Vorticity" href="cylindrical_coordinate_transformation_Relative_Vorticity.html" />
+    <link rel="prev" title="Cylindrical Coordinate Transformation : Momentum Equation" href="cylindrical_coordinate_transformation_momentum_equation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,8 +188,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Angular_Momentum_Equation.html">[流體力學] 軸對稱角動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Cylindrical Coordinate Transformation : Relative Vorticity</h1>
+    <h1>Divergence Operator in Cylindrical Coordinates (圓柱座標中的散度算子)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,9 +402,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a></li>
 </ul>
             </nav>
         </div>
@@ -416,46 +416,89 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cylindrical-coordinate-transformation-relative-vorticity">
-<h1>Cylindrical Coordinate Transformation : Relative Vorticity<a class="headerlink" href="#cylindrical-coordinate-transformation-relative-vorticity" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="divergence-operator-in-cylindrical-coordinates">
+<h1>Divergence Operator in Cylindrical Coordinates (圓柱座標中的散度算子)<a class="headerlink" href="#divergence-operator-in-cylindrical-coordinates" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>目標<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p><strong>將相對渦度</strong></p>
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>對於任意向量場 <span class="math notranslate nohighlight">\(\mathbf{A} = A_r\hat{r} + A_\lambda\hat{\lambda} + A_z\hat{z}\)</span>，證明其散度為：</p>
 <div class="math notranslate nohighlight">
 \[
-\vec{\zeta} \overset{\text{def}}{=} \nabla \times \vec{V}
+\nabla \cdot \mathbf{A} = \frac{1}{r}\frac{\partial[r A_r]}{\partial r} + \frac{1}{r}\frac{\partial A_\lambda}{\partial \lambda} + \frac{\partial A_z}{\partial z}
 \]</div>
-<p><strong>寫在圓柱座標系 <span class="math notranslate nohighlight">\((r, \lambda, z)\)</span></strong>，對應速度 <span class="math notranslate nohighlight">\(([u\text{ 徑向}],[v\text{ 切向}],[w\text{ 垂直}])\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\left[\hat{r} \text{ 徑向}\right] \quad &amp;\vec{\zeta} \cdot  \hat{r} =  \frac{1}{r}\frac{\partial w}{\partial \lambda} - \frac{\partial v}{\partial z}   \\
-[\hat{\lambda} \text{ 切向}] \quad &amp;\vec{\zeta} \cdot  \hat{\lambda} =  \frac{\partial u}{\partial z} - \frac{\partial w}{\partial r}  \\
-\left[\hat{z} \text{ 垂直}\right] \quad &amp;\vec{\zeta} \cdot  \hat{z} = \frac{1}{r}\left( \frac{\partial (rv)}{\partial r} - \frac{\partial u}{\partial \lambda} \right)
-\end{aligned}\end{split}\]</div>
 </section>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】速度向量 <span class="math notranslate nohighlight">\(\vec{V}\)</span> ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\vec{V} = u\hat{r} + v\hat{\lambda} + w\hat{z}\]</div>
+<li><p><strong>【已知 1】 圓柱座標的 <span class="math notranslate nohighlight">\(\nabla\)</span> (Nabla) 算子定義：</strong>
+$<span class="math notranslate nohighlight">\(\nabla = \hat{r}\frac{\partial}{\partial r} + \hat{\lambda}\frac{1}{r}\frac{\partial}{\partial \lambda} + \hat{z}\frac{\partial}{\partial z}\)</span>$</p></li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html#step-2-local-basis-objects">圓柱座標單位向量的直角座標轉換</a>：</strong></p>
+<p>直角座標的單位向量 <span class="math notranslate nohighlight">\((\hat{I}, \hat{J}, \hat{K})\)</span> 是絕對固定的常數，但圓柱座標的單位向量 <span class="math notranslate nohighlight">\((\hat{r}, \hat{\lambda}, \hat{z})\)</span> 會隨著角度 <span class="math notranslate nohighlight">\(\lambda\)</span> 變化：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{r} = \cos\lambda \hat{I} + \sin\lambda \hat{J}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\lambda} = -\sin\lambda \hat{I} + \cos\lambda \hat{J}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{z} = \hat{K}\)</span></p></li>
+</ul>
 </li>
-<li><p><strong>【已知 2】 圓柱座標的 <span class="math notranslate nohighlight">\(\nabla\)</span> 算子 ：</strong></p>
+<li><p><strong>【已知 3】 單位向量的偏微分：</strong></p>
 <div class="math notranslate nohighlight">
-\[\nabla = \hat{r}\frac{\partial}{\partial r} + \hat{\lambda}\frac{1}{r}\frac{\partial}{\partial \lambda} + \hat{z}\frac{\partial}{\partial z}\]</div>
+\[\begin{split}\begin{bmatrix}
+  \frac{\partial \hat{r}}{\partial r}       &amp; \frac{\partial \hat{r}}{\partial \lambda}       &amp; \frac{\partial \hat{r}}{\partial z} \\
+  \frac{\partial \hat{\lambda}}{\partial r} &amp; \frac{\partial \hat{\lambda}}{\partial \lambda} &amp; \frac{\partial \hat{\lambda}}{\partial z} \\
+  \frac{\partial \hat{z}}{\partial r}       &amp; \frac{\partial \hat{z}}{\partial \lambda}       &amp; \frac{\partial \hat{z}}{\partial z}
+  \end{bmatrix} = \begin{bmatrix}
+  0 &amp; \mathbf{\hat{\lambda}} &amp; 0 \\
+  0 &amp; \mathbf{-\hat{r}}      &amp; 0 \\
+  0 &amp; 0                      &amp; 0 
+  \end{bmatrix}\end{split}\]</div>
+<p>利用【已知 2】，我們對 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 和 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> 取偏微分：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \hat{r}}{\partial \lambda} = -\sin\lambda \hat{i} + \cos\lambda \hat{j} = \mathbf{\hat{\lambda}}\)</span>  <em>(這代表徑向向量轉動時，變化量的方向切好是切線方向)</em></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \hat{\lambda}}{\partial \lambda} = -\cos\lambda \hat{i} - \sin\lambda \hat{j} = \mathbf{-\hat{r}}\)</span> <em>(這代表切線向量轉動時，變化量的方向是指向圓心的)</em></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 基底是正交的：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+  \hat{r} \cdot \hat{r}      &amp; \hat{\lambda} \cdot \hat{r}        &amp; \hat{z} \cdot \hat{r}       \\
+  \hat{r} \cdot \hat{\lambda} &amp;  \hat{\lambda} \cdot \hat{\lambda}&amp; \hat{z} \cdot \hat{\lambda} \\
+  \hat{r} \cdot \hat{z}       &amp; \hat{\lambda} \cdot \hat{r}       &amp; \hat{z} \cdot \hat{z}
+  \end{bmatrix} = \begin{bmatrix}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1 
+  \end{bmatrix}\end{split}\]</div>
 </li>
 </ul>
 </section>
 <section id="id2">
-<h2>證明<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>我們將 <span class="math notranslate nohighlight">\(\nabla\)</span> 算子與向量 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> 做內積 (Dot Product)。這是一條主線，我們只需要耐心把分配律展開：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\vec{\zeta} &amp; =&amp; \nabla \times \vec{V} \\
-&amp; \overset{\text{已知1,已知2}}{=}&amp; \left(\hat{r}\frac{\partial}{\partial r} + \hat{\lambda}\frac{1}{r}\frac{\partial}{\partial \lambda} + \hat{z}\frac{\partial}{\partial z} \right) \times \left(u\hat{r} + v\hat{\lambda} + w\hat{z} \right) \\
-&amp; =&amp; \begin{vmatrix} \hat{r} &amp; \hat{\lambda} &amp; \hat{z} \\ \frac{\partial}{\partial r} &amp; \frac{1}{r}\frac{\partial}{\partial \lambda} &amp; \frac{\partial}{\partial z} \\ u &amp; v &amp; w \end{vmatrix} \\
-&amp; =&amp;\left( \frac{1}{r}\frac{\partial w}{\partial \lambda} - \frac{\partial v}{\partial z} \right) \hat{r} + 
-\left( \frac{\partial u}{\partial z} - \frac{\partial w}{\partial r} \right) \hat{\lambda} +
-\frac{1}{r}\left( \frac{\partial (rv)}{\partial r} - \frac{\partial u}{\partial \lambda} \right)\hat{z} \\
+\nabla \cdot \mathbf{A} &amp;=&amp;&amp; \left( \hat{r}\frac{\partial}{\partial r} + \hat{\lambda}\frac{1}{r}\frac{\partial}{\partial \lambda} + \hat{z}\frac{\partial}{\partial z} \right) \cdot \left( A_r\hat{r} + A_\lambda\hat{\lambda} + A_z\hat{z} \right) \\
+&amp;=&amp;&amp;  \hat{r} \cdot \frac{\partial}{\partial r} \left( A_r\hat{r} + A_\lambda\hat{\lambda} + A_z\hat{z} \right) \\
+&amp;&amp;+&amp; \frac{1}{r} \hat{\lambda} \cdot \frac{\partial}{\partial \lambda} \left( A_r\hat{r} + A_\lambda\hat{\lambda} + A_z\hat{z} \right)\\
+&amp;&amp;+&amp;  \hat{z} \cdot \frac{\partial}{\partial z} \left( A_r\hat{r} + A_\lambda\hat{\lambda} + A_z\hat{z} \right)\\
+&amp;=&amp;&amp;  \hat{r} \cdot \left[ \left(\frac{\partial A_r}{\partial r}\hat{r} + A_r\frac{\partial \hat{r}}{\partial r}\right) + \left(\frac{\partial A_\lambda}{\partial r}\hat{\lambda} + A_\lambda\frac{\partial \hat{\lambda}}{\partial r}\right) + \left(\frac{\partial A_z}{\partial r}\hat{z} + A_z\frac{\partial \hat{z}}{\partial r}\right) \right] \\
+&amp;&amp;+&amp; \frac{1}{r} \hat{\lambda} \cdot \left[ \left(\frac{\partial A_r}{\partial \lambda}\hat{r} + A_r\frac{\partial \hat{r}}{\partial \lambda}\right) + \left(\frac{\partial A_\lambda}{\partial \lambda}\hat{\lambda} + A_\lambda\frac{\partial \hat{\lambda}}{\partial \lambda}\right) + \left(\frac{\partial A_z}{\partial \lambda}\hat{z} + A_z\frac{\partial \hat{z}}{\partial \lambda}\right) \right]\\
+&amp;&amp;+&amp;  \hat{z} \cdot \left[ \left(\frac{\partial A_r}{\partial z}\hat{r} + A_r\frac{\partial \hat{r}}{\partial z}\right) + \left(\frac{\partial A_\lambda}{\partial z}\hat{\lambda} + A_\lambda\frac{\partial \hat{\lambda}}{\partial z}\right) + \left(\frac{\partial A_z}{\partial z}\hat{z} + A_z\frac{\partial \hat{z}}{\partial z}\right) \right] \\
+&amp;\overset{\text{已知 3}}{=}&amp;&amp;  \hat{r} \cdot \left[ \left(\frac{\partial A_r}{\partial r}\hat{r} + A_r0\right) + \left(\frac{\partial A_\lambda}{\partial r}\hat{\lambda} + A_\lambda 0\right) + \left(\frac{\partial A_z}{\partial r}\hat{z} + A_z 0\right) \right] \\
+&amp;&amp;+&amp; \frac{1}{r} \hat{\lambda} \cdot \left[ \left(\frac{\partial A_r}{\partial \lambda}\hat{r} + A_r\hat{\lambda}\right) + \left(\frac{\partial A_\lambda}{\partial \lambda}\hat{\lambda} + A_\lambda (-\hat{r}) \right) + \left(\frac{\partial A_z}{\partial \lambda}\hat{z} + A_z 0\right) \right]\\
+&amp;&amp;+&amp;  \hat{z} \cdot \left[ \left(\frac{\partial A_r}{\partial z}\hat{r} + A_r 0\right) + \left(\frac{\partial A_\lambda}{\partial z}\hat{\lambda} + A_\lambda 0\right) + \left(\frac{\partial A_z}{\partial z}\hat{z} + A_z 0\right) \right] \\
+&amp;=&amp;&amp;  \hat{r} \cdot \left[ \frac{\partial A_r}{\partial r}\hat{r}  + \frac{\partial A_\lambda}{\partial r}\hat{\lambda} + \frac{\partial A_z}{\partial r}\hat{z} \right] \\
+&amp;&amp;+&amp; \frac{1}{r} \hat{\lambda} \cdot \left[ \left(\frac{\partial A_r}{\partial \lambda}\hat{r} + A_r\hat{\lambda}\right) + \left(\frac{\partial A_\lambda}{\partial \lambda}\hat{\lambda} + A_\lambda (-\hat{r}) \right) + \left(\frac{\partial A_z}{\partial \lambda}\hat{z} \right) \right]\\
+&amp;&amp;+&amp;  \hat{z} \cdot \left[ \frac{\partial A_r}{\partial z}\hat{r}  + \frac{\partial A_\lambda}{\partial z}\hat{\lambda}   + \frac{\partial A_z}{\partial z}\hat{z}  \right] \\
+&amp;=&amp;&amp;   \frac{\partial A_r}{\partial r}\hat{r} \cdot \hat{r}  + \frac{\partial A_\lambda}{\partial r}\hat{r} \cdot \hat{\lambda} +\frac{\partial A_z}{\partial r}\hat{r} \cdot \hat{z}  \\
+&amp;&amp;+&amp; \frac{1}{r}  \left[ \left(\frac{\partial A_r}{\partial \lambda}\hat{\lambda} \cdot \hat{r} + A_r\hat{\lambda} \cdot \hat{\lambda} \right)+ \left( \frac{\partial A_\lambda}{\partial \lambda}\hat{\lambda} \cdot \hat{\lambda} + A_\lambda \hat{\lambda} \cdot (-\hat{r})  \right)+ \frac{\partial A_z}{\partial \lambda}\hat{\lambda} \cdot \hat{z}  \right]\\
+&amp;&amp;+&amp;  \frac{\partial A_r}{\partial z}\hat{z} \cdot\hat{r}  + \frac{\partial A_\lambda}{\partial z}\hat{z} \cdot\hat{\lambda}  + \frac{\partial A_z}{\partial z}\hat{z} \cdot\hat{z}   \\
+&amp;\overset{\text{已知 4}}{=}&amp;&amp;   \frac{\partial A_r}{\partial r}  + \frac{\partial A_\lambda}{\partial r}0 +\frac{\partial A_z}{\partial r}0  \\
+&amp;&amp;+&amp; \frac{1}{r}  \left[ \left(\frac{\partial A_r}{\partial \lambda}0 + A_r \right)+ \left( \frac{\partial A_\lambda}{\partial \lambda} + A_\lambda 0  \right)+ \frac{\partial A_z}{\partial \lambda}0  \right]\\
+&amp;&amp;+&amp;  \frac{\partial A_r}{\partial z}0  + \frac{\partial A_\lambda}{\partial z}0  + \frac{\partial A_z}{\partial z}   \\
+&amp;=&amp;&amp;   \frac{\partial A_r}{\partial r}   +  \frac{1}{r}  \left[  A_r +  \frac{\partial A_\lambda}{\partial \lambda}  \right]+ \frac{\partial A_z}{\partial z}   \\
+&amp;=&amp;&amp;   \frac{\partial A_r}{\partial r}   +  \frac{1}{r}   A_r +  \frac{1}{r}\frac{\partial A_\lambda}{\partial \lambda}  + \frac{\partial A_z}{\partial z}   \\
+&amp;=&amp;&amp;   \left(\frac{\partial A_r}{\partial r}   +  \frac{1}{r}   A_r \right)+  \frac{1}{r}\frac{\partial A_\lambda}{\partial \lambda}  + \frac{\partial A_z}{\partial z}   \\
+&amp;=&amp;&amp;    \frac{1}{r} \left(r\frac{\partial A_r}{\partial r}   +    A_r \right)+  \frac{1}{r}\frac{\partial A_\lambda}{\partial \lambda}  + \frac{\partial A_z}{\partial z}   \\
+&amp;=&amp;&amp;   \frac{1}{r} \frac{\partial[r A_r]}{\partial r}+  \frac{1}{r}\frac{\partial A_\lambda}{\partial \lambda}  + \frac{\partial A_z}{\partial z}   \\
 \end{gather*}\end{split}\]</div>
 </section>
 </section>
@@ -491,20 +534,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Divergence_Operator_in_Cylindrical_Coordinates.html"
+       href="cylindrical_coordinate_transformation_momentum_equation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Divergence Operator in Cylindrical Coordinates (圓柱座標中的散度算子)</p>
+        <p class="prev-next-title">Cylindrical Coordinate Transformation : Momentum Equation</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html"
+       href="cylindrical_coordinate_transformation_Relative_Vorticity.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Gradient Wind Balance</p>
+        <p class="prev-next-title">Cylindrical Coordinate Transformation : Relative Vorticity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -524,9 +567,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a></li>
 </ul>
   </nav></div>
 

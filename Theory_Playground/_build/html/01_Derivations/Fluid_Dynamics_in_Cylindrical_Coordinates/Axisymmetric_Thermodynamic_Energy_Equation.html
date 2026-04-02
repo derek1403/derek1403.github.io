@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Cylindrical Coordinate Transformation : Relative Vorticity &#8212; Theory_Playground</title>
+    <title>Axisymmetric Thermodynamic Energy Equation (軸對稱熱力學能量方程式) &#8212; Theory_Playground</title>
   
   
   
@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Gradient Wind Balance" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html" />
-    <link rel="prev" title="Divergence Operator in Cylindrical Coordinates (圓柱座標中的散度算子)" href="Divergence_Operator_in_Cylindrical_Coordinates.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,18 +181,18 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
 
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">[座標系統] 圓柱坐標變換的相對渦度</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Angular_Momentum_Equation.html">[流體力學] 軸對稱角動量方程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Angular_Momentum_Equation.html">[流體力學] 軸對稱角動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Cylindrical Coordinate Transformation : Relative Vorticity</h1>
+    <h1>Axisymmetric Thermodynamic Energy Equation (軸對稱熱力學能量方程式)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,9 +402,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">💡 直觀比喻：財富與購買力</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -416,47 +419,79 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cylindrical-coordinate-transformation-relative-vorticity">
-<h1>Cylindrical Coordinate Transformation : Relative Vorticity<a class="headerlink" href="#cylindrical-coordinate-transformation-relative-vorticity" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="axisymmetric-thermodynamic-energy-equation">
+<h1>Axisymmetric Thermodynamic Energy Equation (軸對稱熱力學能量方程式)<a class="headerlink" href="#axisymmetric-thermodynamic-energy-equation" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>目標<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p><strong>將相對渦度</strong></p>
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[
-\vec{\zeta} \overset{\text{def}}{=} \nabla \times \vec{V}
-\]</div>
-<p><strong>寫在圓柱座標系 <span class="math notranslate nohighlight">\((r, \lambda, z)\)</span></strong>，對應速度 <span class="math notranslate nohighlight">\(([u\text{ 徑向}],[v\text{ 切向}],[w\text{ 垂直}])\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\left[\hat{r} \text{ 徑向}\right] \quad &amp;\vec{\zeta} \cdot  \hat{r} =  \frac{1}{r}\frac{\partial w}{\partial \lambda} - \frac{\partial v}{\partial z}   \\
-[\hat{\lambda} \text{ 切向}] \quad &amp;\vec{\zeta} \cdot  \hat{\lambda} =  \frac{\partial u}{\partial z} - \frac{\partial w}{\partial r}  \\
-\left[\hat{z} \text{ 垂直}\right] \quad &amp;\vec{\zeta} \cdot  \hat{z} = \frac{1}{r}\left( \frac{\partial (rv)}{\partial r} - \frac{\partial u}{\partial \lambda} \right)
-\end{aligned}\end{split}\]</div>
+\[\frac{\partial\theta}{\partial t}+u\frac{\partial\theta}{\partial r}+w\frac{\partial\theta}{\partial z}=\frac{\theta}{T}\frac{Q}{c_{p}}\]</div>
 </section>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】速度向量 <span class="math notranslate nohighlight">\(\vec{V}\)</span> ：</strong></p>
+<li><p><strong>【已知 1】 熱力學第一定律 (First Law of Thermodynamics)：</strong></p></li>
+<li><p>空氣塊吸收的熱量，會轉化為內能的增加（溫度上升）與對外作功（體積膨脹），寫成單位質量的隨時間變化率：</p>
 <div class="math notranslate nohighlight">
-\[\vec{V} = u\hat{r} + v\hat{\lambda} + w\hat{z}\]</div>
+\[Q = c_p \frac{DT}{Dt} - \alpha \frac{DP}{Dt}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q\)</span>: 非絕熱加熱率 (Diabatic heating rate)，例如輻射加熱、潛熱釋放 <span class="math notranslate nohighlight">\([\text{J} \cdot \text{kg}^{-1} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span>: 乾空氣定壓比熱 <span class="math notranslate nohighlight">\(c_p \sim 1004 \text{J} \cdot \text{kg}^{-1} \cdot \text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span>: 比容 (Specific volume, 即密度的倒數 <span class="math notranslate nohighlight">\(\alpha = \frac{1}{\rho}\)</span>) <span class="math notranslate nohighlight">\([\text{m}^3 \cdot \text{kg}^{-1}]\)</span></p></li>
+<li></li>
+</ul>
 </li>
-<li><p><strong>【已知 2】 圓柱座標的 <span class="math notranslate nohighlight">\(\nabla\)</span> 算子 ：</strong></p>
+<li><p><strong>【已知 2】 理想氣體方程式 (Ideal Gas Law)：</strong></p>
 <div class="math notranslate nohighlight">
-\[\nabla = \hat{r}\frac{\partial}{\partial r} + \hat{\lambda}\frac{1}{r}\frac{\partial}{\partial \lambda} + \hat{z}\frac{\partial}{\partial z}\]</div>
+\[P = \rho R_d T \implies \frac{1}{\rho} = \alpha = \frac{R_d T}{P}\]</div>
 </li>
+<li><p><strong>【已知 3】 位溫的定義 (Definition of Potential Temperature)：</strong></p></li>
+<li><div class="math notranslate nohighlight">
+\[\theta \overset{\text{def}}{=} T \left(\frac{P_s}{P}\right)^{R_d/c_p}\]</div>
+<ul class="simple">
+<li><p>乾空氣的氣體常數：<span class="math notranslate nohighlight">\(R_d \approx 287 \text{J}\cdot \text{kg}^{-1}\cdot \text{K}^{-1} \)</span></p></li>
+<li><p>乾空氣的定壓比熱：<span class="math notranslate nohighlight">\(C_p \approx 1004 \text{J}\cdot \text{kg}^{-1}\cdot \text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_s\)</span>: 參考氣壓 (通常為 <span class="math notranslate nohighlight">\(1000 \text{ hPa}\)</span>)，是一個<strong>常數</strong>。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 全導數 (Material Derivative) 的圓柱座標展開：</strong>
+$<span class="math notranslate nohighlight">\(\frac{D\theta}{Dt} = \frac{\partial\theta}{\partial t} + u\frac{\partial\theta}{\partial r} + \frac{v}{r}\frac{\partial\theta}{\partial\lambda} + w\frac{\partial\theta}{\partial z}\)</span>$</p></li>
+<li><p><strong>【假設 1】 軸對稱假設 (Axisymmetric Assumption)：</strong>
+$<span class="math notranslate nohighlight">\(\frac{\partial}{\partial\lambda} = 0\)</span>$</p></li>
 </ul>
 </section>
 <section id="id2">
-<h2>證明<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>這條證明的核心思路是：<strong>先對位溫取自然對數，然後對時間求全導數 <span class="math notranslate nohighlight">\(\frac{D}{Dt}\)</span>，最後把熱力學第一定律塞進去，對整個方程式取全導數 <span class="math notranslate nohighlight">\(\frac{D}{Dt}\)</span> ，等號左右兩邊同時乘上 <span class="math notranslate nohighlight">\(c_p T\)</span> ，把全導數依照座標系展開，並套用軸對稱假設</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\vec{\zeta} &amp; =&amp; \nabla \times \vec{V} \\
-&amp; \overset{\text{已知1,已知2}}{=}&amp; \left(\hat{r}\frac{\partial}{\partial r} + \hat{\lambda}\frac{1}{r}\frac{\partial}{\partial \lambda} + \hat{z}\frac{\partial}{\partial z} \right) \times \left(u\hat{r} + v\hat{\lambda} + w\hat{z} \right) \\
-&amp; =&amp; \begin{vmatrix} \hat{r} &amp; \hat{\lambda} &amp; \hat{z} \\ \frac{\partial}{\partial r} &amp; \frac{1}{r}\frac{\partial}{\partial \lambda} &amp; \frac{\partial}{\partial z} \\ u &amp; v &amp; w \end{vmatrix} \\
-&amp; =&amp;\left( \frac{1}{r}\frac{\partial w}{\partial \lambda} - \frac{\partial v}{\partial z} \right) \hat{r} + 
-\left( \frac{\partial u}{\partial z} - \frac{\partial w}{\partial r} \right) \hat{\lambda} +
-\frac{1}{r}\left( \frac{\partial (rv)}{\partial r} - \frac{\partial u}{\partial \lambda} \right)\hat{z} \\
+\theta &amp;\overset{\text{已知 3}}{=}&amp; T \left(\frac{P_s}{P}\right)^{R_d/c_p} \\
+\ln \theta &amp;=&amp; \ln \left( T \left(\frac{P_s}{P}\right)^{R_d/c_p} \right) \\
+\ln \theta &amp;=&amp; \ln T + \frac{R_d}{c_p}\ln P_s - \frac{R_d}{c_p}\ln P \\
+\frac{D}{Dt} \left[ \ln \theta  \right] &amp;=&amp; \frac{D}{Dt} \left[ \ln T  \right] + \frac{D}{Dt} \left[  \frac{R_d}{c_p}\ln P_s  \right] - \frac{D}{Dt} \left[ \frac{R_d}{c_p}\ln P \right]\\
+\frac{1}{\theta}\frac{D\theta}{Dt} &amp;=&amp; \frac{1}{T}\frac{DT}{Dt} + \frac{R_d}{c_p}0 - \frac{R_d}{c_p}\frac{1}{P}\frac{DP}{Dt} \\
+\frac{c_p T}{\theta}\frac{D\theta}{Dt} &amp;=&amp; c_p\frac{DT}{Dt} - \frac{R_d T}{P}\frac{DP}{Dt} \\
+\frac{c_p T}{\theta}\frac{D\theta}{Dt} &amp;\overset{\text{已知 2}}{=}&amp; c_p\frac{DT}{Dt} - \alpha\frac{DP}{Dt} \\
+\frac{c_p T}{\theta}\frac{D\theta}{Dt} &amp;\overset{\text{已知 1}}{=}&amp; Q \\
+\frac{D\theta}{Dt} &amp;=&amp; \frac{\theta}{T}\frac{Q}{c_p} \\
+\frac{\partial\theta}{\partial t} + u\frac{\partial\theta}{\partial r} + \frac{v}{r}\frac{\partial\theta}{\partial\lambda} + w\frac{\partial\theta}{\partial z} &amp;\overset{\text{已知 4}}{=}&amp; \frac{\theta}{T}\frac{Q}{c_p} \\
+\frac{\partial\theta}{\partial t} + u\frac{\partial\theta}{\partial r} + \frac{v}{r}0 + w\frac{\partial\theta}{\partial z} &amp;\overset{\text{假設 1}}{=}&amp; \frac{\theta}{T}\frac{Q}{c_p} \\
+\frac{\partial\theta}{\partial t} + u\frac{\partial\theta}{\partial r} + w\frac{\partial\theta}{\partial z} &amp;=&amp; \frac{\theta}{T}\frac{Q}{c_p}
 \end{gather*}\end{split}\]</div>
+<section id="id3">
+<h3>💡 直觀比喻：財富與購買力<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>這個方程式的物理意義非常漂亮，我們把它拆成兩邊來看：</p>
+<p><strong>1. 等號右邊：真正的「財富增加」(<span class="math notranslate nohighlight">\(\frac{\theta}{T}\frac{Q}{c_p}\)</span>)</strong>
+你可以把空氣塊的「絕對溫度 <span class="math notranslate nohighlight">\(T\)</span>」想像成「帳戶裡的存款數字」，而「氣壓 <span class="math notranslate nohighlight">\(P\)</span>」是「當地的物價」。
+如果今天你只是因為物價下跌而覺得自己變有錢了（絕熱膨脹），你的「實質購買力（位溫 <span class="math notranslate nohighlight">\(\theta\)</span>）」其實是<strong>沒有改變的</strong>。
+要讓你的實質購買力 <span class="math notranslate nohighlight">\(\theta\)</span> 真正增加，唯一的辦法就是<strong>有外部資金匯入你的帳戶（非絕熱加熱 <span class="math notranslate nohighlight">\(Q &gt; 0\)</span>）</strong>！例如：水氣凝結釋放潛熱（颱風增強的火力來源），或是太陽輻射加熱。如果 <span class="math notranslate nohighlight">\(Q=0\)</span>（絕熱過程），等號右邊就是 0，你的購買力 <span class="math notranslate nohighlight">\(\theta\)</span> 就永遠守恆。</p>
+<p><strong>2. 等號左邊：追蹤你某銀行的財富變化 (<span class="math notranslate nohighlight">\(\frac{\partial\theta}{\partial t} + u\frac{\partial\theta}{\partial r} + w\frac{\partial\theta}{\partial z}\)</span>)</strong>
+這三項代表我們站在一個固定的觀測站，看著周遭空氣的位溫變化：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial\theta}{\partial t}\)</span>：本地位溫隨時間的實際變化。 華南的錢💰</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\frac{\partial\theta}{\partial r} + w\frac{\partial\theta}{\partial z}\)</span>：<strong>平流項 (Advection)</strong>。意思是，即使沒有外部加熱 (<span class="math notranslate nohighlight">\(Q=0\)</span>)，如果遠方有一團「原本就很富有（高位溫）」的空氣，被水平風 <span class="math notranslate nohighlight">\(u\)</span> 或垂直風 <span class="math notranslate nohighlight">\(w\)</span> 吹到你的觀測站，你這個地方的平均位溫還是會上升。 <strong>從郵局匯錢💸到華南</strong></p></li>
+</ul>
+<p><strong>總結來說：</strong> 這個方程式告訴我們，一個固定地點的位溫會改變，只有兩個原因：一是<strong>外面有不同溫度的空氣被風吹過來了（平流）</strong>，二是<strong>空氣本身正在被加熱或冷卻（非絕熱過程 <span class="math notranslate nohighlight">\(Q\)</span>）</strong>！</p>
+</section>
 </section>
 </section>
 
@@ -473,7 +508,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./01_Derivations\Coordinate_System"
+            path: "./01_Derivations\Fluid_Dynamics_in_Cylindrical_Coordinates"
         },
         predefinedOutput: true
     }
@@ -490,24 +525,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Divergence_Operator_in_Cylindrical_Coordinates.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Divergence Operator in Cylindrical Coordinates (圓柱座標中的散度算子)</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Gradient Wind Balance</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -524,9 +541,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">💡 直觀比喻：財富與購買力</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

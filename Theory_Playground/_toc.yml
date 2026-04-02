@@ -11,10 +11,16 @@ chapters:
         title: "[座標系統] 球坐標變換的動量方程"
       - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.ipynb
         title: "[座標系統] 圓柱坐標變換的動量方程"
+      - file: 01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.ipynb
+        title: "[座標系統] 圓柱坐標中的散度算子"
+      - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.ipynb
+        title: "[座標系統] 圓柱坐標變換的相對渦度"
       - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.ipynb
         title: "[流體力學] 梯度風平衡"
       - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Angular_Momentum_Equation.ipynb
         title: "[流體力學] 軸對稱角動量方程"
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.ipynb
+        title: "[流體力學] 擾動的靜力平衡"
   - file: 02_Concepts/02_Concepts.md
     sections:      # 直接將檔案列在這裡，把它們當作 02_Concepts 的子節點
       - file: 02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.ipynb

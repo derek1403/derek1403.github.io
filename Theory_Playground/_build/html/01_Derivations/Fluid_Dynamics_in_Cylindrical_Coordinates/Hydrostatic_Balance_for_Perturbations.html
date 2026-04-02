@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Gradient Wind Balance &#8212; Theory_Playground</title>
+    <title>Hydrostatic Balance for Perturbations (擾動場的流體靜力平衡) &#8212; Theory_Playground</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Axisymmetric Angular Momentum Equation (軸對稱角動量方程式)" href="Axisymmetric_Angular_Momentum_Equation.html" />
-    <link rel="prev" title="Cylindrical Coordinate Transformation : Relative Vorticity" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html" />
+    <link rel="next" title="🧩 02_Concepts: 核心觀念區" href="../../02_Concepts/02_Concepts.html" />
+    <link rel="prev" title="Axisymmetric Angular Momentum Equation (軸對稱角動量方程式)" href="Axisymmetric_Angular_Momentum_Equation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,9 +190,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Angular_Momentum_Equation.html">[流體力學] 軸對稱角動量方程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[流體力學] 擾動的靜力平衡</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Gradient Wind Balance</h1>
+    <h1>Hydrostatic Balance for Perturbations (擾動場的流體靜力平衡)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,6 +405,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-g-theta-0-theta">步驟一：方程式的右邊 <span class="math notranslate nohighlight">\(\frac{g}{\theta_{0}}\theta'\)</span> —— 浮力的來源</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-phi-partial-z">步驟二：方程式的左邊 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z}\)</span> —— 擾動氣壓的垂直變化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">步驟三：等號 <span class="math notranslate nohighlight">\(=\)</span> —— 大自然的妥協與平衡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">💡 老師的直觀比喻：</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -416,90 +423,105 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gradient-wind-balance">
-<h1>Gradient Wind Balance<a class="headerlink" href="#gradient-wind-balance" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hydrostatic-balance-for-perturbations">
+<h1>Hydrostatic Balance for Perturbations (擾動場的流體靜力平衡)<a class="headerlink" href="#hydrostatic-balance-for-perturbations" title="Link to this heading">#</a></h1>
 <section id="id1">
 <h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[\frac{v^{2}}{r} + fv = \frac{\partial\phi}{\partial r}\]</div>
+\[\frac{\partial\phi}{\partial z}=\frac{g}{\theta_{0}}\theta\]</div>
+<ul class="simple">
+<li><p>註：為了符合大氣動力學的慣例，此處的 <span class="math notranslate nohighlight">\(\theta\)</span> 代表的是<strong>位溫的微小擾動量</strong>（即下文推導中的 <span class="math notranslate nohighlight">\(\theta'\)</span>）。這是一個描述 <strong>「垂直的擾動氣壓梯度力」</strong> 與 <strong>「浮力」</strong> 之間互相平衡的經典關係式</p></li>
+</ul>
 </section>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">圓柱座標的 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 動量方程式</a>：</strong></p>
-<div class="math notranslate nohighlight">
-\[\frac{Du}{Dt} - \frac{v^2}{r} - fv = -\frac{1}{\rho} \frac{\partial P}{\partial r} + \text{RHS}_{\hat{r}}\]</div>
-</li>
-<li><p><strong>【假設 1】 僅考慮科氏力、壓力梯度力：</strong></p>
+<li><p><strong>【已知 1】 圓柱座標的 <span class="math notranslate nohighlight">\(\hat{z}\)</span> 垂直動量方程式：</strong> $<span class="math notranslate nohighlight">\(\frac{Dw}{Dt} = -\frac{1}{\rho} \frac{\partial P}{\partial z} - g + \text{RHS}_{\hat{z}}\)</span>$</p></li>
+<li><p><strong>【假設 1】 靜力平衡假設 (Hydrostatic Assumption)：</strong> $<span class="math notranslate nohighlight">\(\frac{Dw}{Dt} \ll g \quad \text{且} \quad \text{RHS}_{\hat{z}} = 0\)</span>$</p>
 <ul class="simple">
-<li><p>忽略摩擦力或其他未解析的小尺度亂流外力</p></li>
-<li><p>自由大氣是 <strong>無黏滯性 (Inviscid)</strong> 的</p></li>
-<li><p>在圓柱座標的 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 動量方程式中 <span class="math notranslate nohighlight">\(\text{RHS}_{\hat{r}} = 0\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【假設 2】 軸對稱假設：</strong></p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial\lambda} = 0\]</div>
-</li>
-<li><p><strong>【已知 2】 <span class="math notranslate nohighlight">\(\frac{Du}{Dt}\)</span> 的展開 ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\frac{Du}{Dt} = \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial r}  +  w\frac{\partial u}{\partial z}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\frac{Du}{Dt} = \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial r} + v\frac{\partial u}{\partial\lambda} +  w\frac{\partial u}{\partial z}\)</span> 但是【假設 2】可以知道 <span class="math notranslate nohighlight">\(\frac{\partial}{\partial\lambda} = 0\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【假設 3】 尺度分析與主環流假設：</strong></p>
-<div class="math notranslate nohighlight">
-\[\frac{Du}{Dt} \ll \frac{v^2}{r}\]</div>
-<ul class="simple">
-<li><p>對於一個成熟的颱風中</p>
+<li><p>對於大尺度或中尺度系統（如颱風的環境場），垂直加速度與未解析的小尺度外力極小，可以忽略。</p></li>
+<li><p><strong>尺度分析</strong>：</p>
 <ul>
-<li><p>水平長度尺度 (半徑)：<span class="math notranslate nohighlight">\(L \sim 10^5 \text{ m}\)</span> (<span class="math notranslate nohighlight">\(100 \text{ km}\)</span>)</p></li>
-<li><p>垂直高度尺度 (對流層)：<span class="math notranslate nohighlight">\(H \sim 10^4 \text{ m}\)</span> (<span class="math notranslate nohighlight">\(10 \text{ km}\)</span>)</p></li>
-<li><p>切線風速 (繞圈的主環流)：<span class="math notranslate nohighlight">\(V \sim 50 \text{m} \cdot \text{s}^{-1}\)</span></p></li>
-<li><p>徑向風速 (向內輻合的次環流)：<span class="math notranslate nohighlight">\(U \sim 5 \text{m} \cdot \text{s}^{-1}\)</span></p></li>
-<li><p>垂直風速 (上升氣流)：<span class="math notranslate nohighlight">\(W \sim 1 \text{m} \cdot \text{s}^{-1}\)</span></p></li>
-<li><p>科氏參數 (中低緯度)：<span class="math notranslate nohighlight">\(f \sim 10^{-4} \text{ s}^{-1}\)</span></p></li>
+<li><p>垂直風速 (一般對流或主環流)：<span class="math notranslate nohighlight">\(W \sim 1 \text{ m/s}\)</span></p></li>
+<li><p>垂直高度尺度 (對流層)：<span class="math notranslate nohighlight">\(H \sim 10^4 \text{ m}\)</span></p></li>
+<li><p>垂直加速度：<span class="math notranslate nohighlight">\(\frac{Dw}{Dt} \sim \frac{W^2}{H} \sim \frac{1^2}{10000} = \mathbf{10^{-4}} \text{ m/s}^2\)</span></p></li>
+<li><p>重力加速度：<span class="math notranslate nohighlight">\(g \sim \mathbf{9.8} \text{ m/s}^2\)</span></p></li>
 </ul>
 </li>
+<li><p>垂直加速度的量級 (<span class="math notranslate nohighlight">\(10^{-4}\)</span>) 遠小於重力 (<span class="math notranslate nohighlight">\(10^1\)</span>)，因此將 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}\)</span> 視為 0。</p></li>
 </ul>
-<ol class="arabic simple">
-<li><p>離心力項： <span class="math notranslate nohighlight">\(\frac{V^2}{L} \sim \frac{50^2}{100,000} = \frac{2500}{10^5} = \mathbf{0.025 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>科氏力項： <span class="math notranslate nohighlight">\(fV \sim (10^{-4}) \times 50 = \mathbf{0.005 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>徑向平流加速度 (<span class="math notranslate nohighlight">\(u\frac{\partial u}{\partial r}\)</span>):這代表風往內吹時，因為地形或結構改變導致的速度空間變化。<span class="math notranslate nohighlight">\(\frac{U^2}{L} \sim \frac{5^2}{100,000} = \frac{25}{10^5} = \mathbf{0.00025 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>垂直平流加速度 (<span class="math notranslate nohighlight">\(w\frac{\partial u}{\partial z}\)</span>):這代表上升氣流把不同高度的徑向風帶上來造成的加速度。<span class="math notranslate nohighlight">\(\frac{W \cdot U}{H} \sim \frac{1 \times 5}{10,000} = \mathbf{0.0005 }\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
-<li><p>局部時間變化 (<span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t}\)</span>):對於一個已經發展成熟的颱風，系統處於「準穩定態 (Quasi-steady)」，風速隨時間的變化非常緩慢所以這項通常比平流項還要小，我們大略估計它也是 <span class="math notranslate nohighlight">\(\sim 10^{-4}\)</span> 量級。</p></li>
-</ol>
 </li>
-<li><p><strong>【假設 4】 Anelastic Approximation：</strong></p>
+<li><p><strong>【已知 2】 雷諾分解 (Reynolds Decomposition)：</strong> 我們將變數拆分為「只隨高度變化的背景平均態 (下標 0)」與「微小的擾動態 (上標 ‘ )」</p>
 <ul class="simple">
-<li><p>氣壓：<span class="math notranslate nohighlight">\(P(r, \lambda, z, t) = \bar{P}(z) + P'(r, \lambda, z, t)\)</span></p></li>
-<li><p>密度：<span class="math notranslate nohighlight">\(\rho(r, \lambda, z, t) = \bar{\rho}(z) + \rho'(r, \lambda, z, t)\)</span></p></li>
+<li><p>氣壓：<span class="math notranslate nohighlight">\(P = P_0(z) + P'\)</span></p></li>
+<li><p>密度：<span class="math notranslate nohighlight">\(\rho = \rho_0(z) + \rho'\)</span></p></li>
+<li><p>溫度：<span class="math notranslate nohighlight">\(T = T_0(z) + T'\)</span></p></li>
+<li><p>位溫：<span class="math notranslate nohighlight">\(\Theta = \theta_0(z) + \theta'\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【假設 5】 尺度分析：</strong></p>
+<li><p><strong>【假設 2】 背景場靜力平衡 (Background Hydrostatic Balance)：</strong> 假設背景大氣本身是完美平衡的。</p>
 <div class="math notranslate nohighlight">
-\[\rho'(r, \lambda, z, t) \ll \bar{\rho}(z)\]</div>
+\[\frac{\partial P_0}{\partial z} = -\rho_0 g\]</div>
+</li>
+<li><p><strong>【已知 3】 泰勒展開近似 (Taylor Series Approximation)：</strong> 對於微小擾動 <span class="math notranslate nohighlight">\(\rho' \ll \rho_0\)</span>，我們可以使用一階泰勒展開來處理密度的倒數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{1}{\rho} &amp;\overset{\text{已知 2}}{=}&amp; \frac{1}{\rho_0 + \rho'} \\
+  &amp;=&amp; \frac{1}{\rho_0 \left(1 + \frac{\rho'}{\rho_0}\right)} \\
+  &amp;\approx &amp; \frac{1}{\rho_0} \left( 1 - \frac{\rho'}{\rho_0} \right)
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 4】 狀態方程式 求 <span class="math notranslate nohighlight">\(\frac{dT}{T_0}\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  P &amp;=&amp; \rho R_d T \\
+  \ln P &amp;=&amp; \ln(\rho R_d T)\\
+  \ln P &amp;=&amp; \ln \rho + \ln R_d + \ln T \\
+  d[\ln P] &amp;=&amp; d[\ln \rho] + d[\ln R_d] + d[\ln T] \\
+  \frac{dP}{P} &amp;=&amp; \frac{d\rho}{\rho} + 0 + \frac{dT}{T}\\
+  \frac{dP}{P} &amp;=&amp; \frac{d\rho}{\rho} + \frac{dT}{T}\\
+  \frac{dT}{T} &amp;=&amp; \frac{dP}{P} - \frac{d\rho}{\rho}\\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 5】 位溫定義找和 <span class="math notranslate nohighlight">\(\frac{\rho'}{\rho_0}\)</span> 的關係：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \Theta &amp;\overset{\text{def}}{=}&amp; T \left(\frac{P_s}{P}\right)^{R_d/c_p}\\
+  \ln \Theta &amp;=&amp; \ln(T \left(\frac{P_s}{P}\right)^{R_d/c_p})\\
+  \ln \Theta &amp;=&amp; \ln T + \ln \left(\frac{P_s}{P}\right)^{R_d/c_p} \\
+  \ln \Theta &amp;=&amp; \ln T  + \frac{R_d}{c_p}\ln \left(\frac{P_s}{P}\right)  \\
+  \ln \Theta &amp;=&amp; \ln T  - \frac{R_d}{c_p}\ln \left(\frac{P}{P_s}\right) \\
+  d[\ln \Theta] &amp;=&amp; d[\ln T]  - d[\frac{R_d}{c_p}\ln \left(\frac{P}{P_s}\right)] \\
+  \frac{d\Theta}{\Theta} &amp;=&amp; \frac{dT}{T}  - \frac{R_d}{c_p} \frac{d[\frac{P}{P_s}]}{\frac{P}{P_s}} \\
+  \frac{d\Theta}{\Theta} &amp;=&amp; \frac{dT}{T}  - \frac{R_d}{c_p} \frac{dP}{P} \\
+  \frac{d\Theta}{\Theta} &amp;\overset{\text{已知 4}}{=}&amp; \frac{dP}{P} - \frac{d\rho}{\rho}  - \frac{R_d}{c_p} \frac{dP}{P} \\
+  \frac{d\Theta}{\Theta} &amp;=&amp; - \frac{d\rho}{\rho}  \left( 1-  \frac{R_d}{c_p} \right) \frac{dP}{P} \\
+  \frac{\theta'}{\theta_0} &amp;\overset{\text{已知 2}}{=}&amp; - \frac{\rho'}{\rho_0}  + \left( 1-  \frac{R_d}{c_p} \right) \frac{P'}{P_0} \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【假設 3】 布氏近似 / 尺度分析 (Boussinesq Approximation)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\rho'}{\rho_0} \approx -\frac{\theta'}{\theta_0}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\rho'(r, \lambda, z, t) \sim \)</span></p></li>
-<li><p>背景密度是隨著高度遞減的。大氣層越往上，空氣越稀薄 ：</p>
+<li><p>大氣中，壓力的相對擾動量通常遠小於溫度/位溫的相對擾動量。</p></li>
+<li><p><strong>尺度分析</strong>：</p>
 <ul>
-<li><p>在近地表（海平面）： <span class="math notranslate nohighlight">\(\bar{\rho} \sim 1.2 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-<li><p>在 5 公里高空： <span class="math notranslate nohighlight">\(\bar{\rho} \sim 0.7 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-<li><p>在 10 公里高空： <span class="math notranslate nohighlight">\(\bar{\rho} \sim 0.4 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
+<li><p>背景壓力：<span class="math notranslate nohighlight">\(P_0 \sim 10^5 \text{ Pa}\)</span></p></li>
+<li><p>擾動壓力：<span class="math notranslate nohighlight">\(P' \sim 100 \text{ Pa}\)</span> (<span class="math notranslate nohighlight">\(1 \text{ hPa}\)</span>) <span class="math notranslate nohighlight">\(\implies \frac{P'}{P_0} \sim \mathbf{10^{-3}}\)</span></p></li>
+<li><p>背景位溫：<span class="math notranslate nohighlight">\(\theta_0 \sim 300 \text{ K}\)</span></p></li>
+<li><p>擾動位溫：<span class="math notranslate nohighlight">\(\theta' \sim 3 \text{ K}\)</span> <span class="math notranslate nohighlight">\(\implies \frac{\theta'}{\theta_0} \sim \mathbf{10^{-2}}\)</span></p></li>
+<li><p>乾空氣的氣體常數：<span class="math notranslate nohighlight">\(R_d \approx 287 \text{J}\cdot \text{kg}^{-1}\cdot \text{K}^{-1} \)</span></p></li>
+<li><p>乾空氣的定壓比熱：<span class="math notranslate nohighlight">\(C_p \approx 1004 \text{J}\cdot \text{kg}^{-1}\cdot \text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_d / C_p \approx 0.286\)</span></p></li>
 </ul>
 </li>
-<li><p>擾動密度 <span class="math notranslate nohighlight">\(\rho'\)</span> 可以從理想氣體狀態方程式 <span class="math notranslate nohighlight">\(\frac{\rho'}{\bar{\rho}} \approx -\frac{\theta'}{\bar{\theta}}\)</span> 估計</p>
-<ul>
-<li><p>在近地表： <span class="math notranslate nohighlight">\(\rho' \approx 1.2 \times 0.016 \sim 0.019 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
-<li><p>在 10 公里高空： <span class="math notranslate nohighlight">\(\rho' \approx 0.4 \times 0.016 \sim 0.006 \text{kg} \cdot \text{m}^{-3}\)</span></p></li>
+<li><p>因為 <span class="math notranslate nohighlight">\(\frac{P'}{P_0} \ll \frac{\theta'}{\theta_0}\)</span>，【已知 5】中的壓力項可被忽略。這表示密度的改變主要由 <strong>位溫</strong> 決定</p></li>
 </ul>
 </li>
+<li><p><strong>【定義 1】 運動學壓力擾動 <span class="math notranslate nohighlight">\(\phi\)</span> (Kinematic Pressure Perturbation)：</strong> $<span class="math notranslate nohighlight">\(\phi \overset{\text{def}}{=} \frac{P'}{\rho_0}\)</span>$</p>
+<ul class="simple">
+<li><p>註：在布氏近似或非彈性近似中，通常視 <span class="math notranslate nohighlight">\(\rho_0\)</span> 的垂直變化遠小於 <span class="math notranslate nohighlight">\(P'\)</span> 的垂直變化，因此 <span class="math notranslate nohighlight">\(\frac{\partial \phi}{\partial z} \approx \frac{1}{\rho_0}\frac{\partial P'}{\partial z}\)</span>。</p></li>
 </ul>
-</li>
-<li><p><strong>【定義 1】 擾動位勢 <span class="math notranslate nohighlight">\(\phi\)</span>：</strong></p>
-<div class="math notranslate nohighlight">
-\[\phi(r, \lambda, z, t) \overset{\text{def}}{=} \frac{P'(r, \lambda, z, t)}{\bar{\rho}(z)}\]</div>
 </li>
 </ul>
 </section>
@@ -507,17 +529,62 @@ document.write(`
 <h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\frac{Du}{Dt} - \frac{v^2}{r} - fv &amp;\overset{\text{已知 1}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial r} + \text{RHS}_{\hat{r}}   \\
-\frac{Du}{Dt} - \frac{v^2}{r} - fv &amp;\overset{\text{假設 1}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial r} \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{假設 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial r} \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{假設 4}}{=}&amp; -\frac{1}{\bar{\rho}(z) + \rho'(r, \lambda, z, t)} \frac{\partial }{\partial r} \left[ \bar{P}(z) + P'(r, \lambda, z, t) \right] \\
-- \frac{v^2}{r} - fv &amp;=&amp; -\frac{1}{\bar{\rho}(z) + \rho'(r, \lambda, z, t)} \frac{\partial }{\partial r} \left[  P'(r, \lambda, z, t) \right] \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{假設 5}}{=}&amp; -\frac{1}{\bar{\rho}(z)} \frac{\partial }{\partial r} \left[  P'(r, \lambda, z, t) \right] \\
-- \frac{v^2}{r} - fv &amp;=&amp; -\frac{\partial }{\partial r} \left[ \frac{P'(r, \lambda, z, t)}{\bar{\rho}(z)}  \right] \\
-- \frac{v^2}{r} - fv &amp;\overset{\text{定義 1}}{=}&amp; -\frac{\partial }{\partial r} \left[ \phi(r, \lambda, z, t)  \right] \\
-- \frac{v^2}{r} - fv &amp;=&amp; -\frac{\partial \phi}{\partial r}  \\
-\frac{v^2}{r} + fv &amp;=&amp; \frac{\partial \phi}{\partial r}  \\
+\frac{Dw}{Dt} &amp;\overset{\text{已知 1}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial z} - g + \text{RHS}_{\hat{z}} \\
+0 &amp;\overset{\text{假設 1}}{=}&amp; -\frac{1}{\rho} \frac{\partial P}{\partial z} - g \\
+0 &amp;\overset{\text{已知 2}}{=}&amp; -\frac{1}{\rho_0 + \rho'} \frac{\partial}{\partial z} \left[ P_0 + P' \right] - g \\
+0 &amp;\overset{\text{已知 3}}{=}&amp; -\frac{1}{\rho_0} \left( 1 - \frac{\rho'}{\rho_0} \right) \left[ \frac{\partial P_0}{\partial z} + \frac{\partial P'}{\partial z} \right] - g \\
+0 &amp;=&amp; -\frac{1}{\rho_0}\frac{\partial P_0}{\partial z} - \frac{1}{\rho_0}\frac{\partial P'}{\partial z} + \frac{\rho'}{\rho_0^2}\frac{\partial P_0}{\partial z} + \underbrace{\frac{\rho'}{\rho_0^2}\frac{\partial P'}{\partial z}}_{\text{高階項，忽略}} - g \\
+0 &amp;\overset{\text{假設 2}}{=}&amp; -\frac{1}{\rho_0}(-\rho_0 g) - \frac{1}{\rho_0}\frac{\partial P'}{\partial z} + \frac{\rho'}{\rho_0^2}(-\rho_0 g) - g \\
+0 &amp;=&amp; g - \frac{1}{\rho_0}\frac{\partial P'}{\partial z} - g\frac{\rho'}{\rho_0} - g \\
+0 &amp;=&amp; -\frac{1}{\rho_0}\frac{\partial P'}{\partial z} - g\frac{\rho'}{\rho_0} \\
+0 &amp;\overset{\text{假設 3}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial P'}{\partial z} - g\left(-\frac{\theta'}{\theta_0}\right) \\
+\frac{1}{\rho_0}\frac{\partial P'}{\partial z} &amp;=&amp; g\frac{\theta'}{\theta_0} \\
+\frac{\partial \phi}{\partial z} &amp;\overset{\text{定義 1}}{=}&amp; g\frac{\theta'}{\theta_0} \\
+\frac{\partial\phi}{\partial z} &amp;=&amp; \frac{g}{\theta_{0}}\theta \quad \text{(令符號 } \theta' \text{ 為 } \theta \text{)}
 \end{gather*}\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>物理解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="frac-g-theta-0-theta">
+<h3>步驟一：方程式的右邊 <span class="math notranslate nohighlight">\(\frac{g}{\theta_{0}}\theta'\)</span> —— 浮力的來源<a class="headerlink" href="#frac-g-theta-0-theta" title="Link to this heading">#</a></h3>
+<p>在流體力學中，這個項代表的就是<strong>浮力 (Buoyancy)</strong>。</p>
+<ul class="simple">
+<li><p>當一團空氣比周圍環境還要溫暖時（位溫擾動 <span class="math notranslate nohighlight">\(\theta' &gt; 0\)</span>），它的密度會變小。</p></li>
+<li><p>根據阿基米德原理，密度比周圍小的物體會受到一個向上的浮力。</p></li>
+<li><p>所以，<strong>等式右邊的物理意義是：這團空氣因為溫度異常，產生了多大的淨浮力。</strong> 若 <span class="math notranslate nohighlight">\(\theta' &gt; 0\)</span>，浮力向上（正值）；若 <span class="math notranslate nohighlight">\(\theta' &lt; 0\)</span>（冷空氣），浮力向下（負值）。</p></li>
+</ul>
+</section>
+<section id="frac-partial-phi-partial-z">
+<h3>步驟二：方程式的左邊 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z}\)</span> —— 擾動氣壓的垂直變化<a class="headerlink" href="#frac-partial-phi-partial-z" title="Link to this heading">#</a></h3>
+<p>回憶一下 <span class="math notranslate nohighlight">\(\phi = \frac{P'}{\rho_0}\)</span>，所以 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z}\)</span> 其實就是在描述「擾動氣壓隨高度的變化率」。</p>
+<ul class="simple">
+<li><p>我們知道，氣壓梯度力 (Pressure Gradient Force) 的方向是<strong>從高壓指向低壓</strong>。在垂直方向上，氣壓梯度力正比於 <span class="math notranslate nohighlight">\(-\frac{\partial\phi}{\partial z}\)</span>（注意那個負號）。</p></li>
+<li><p>如果 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z} &gt; 0\)</span>，意思是「越往高空，擾動氣壓越大」。高空氣壓大、低空氣壓小，這會產生一個<strong>向下的擾動氣壓梯度力</strong>。</p></li>
+<li><p>所以，<strong>等式左邊的物理意義是：大氣必須要建立起一種特定的氣壓垂直分布，來對抗其他力。</strong></p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>步驟三：等號 <span class="math notranslate nohighlight">\(=\)</span> —— 大自然的妥協與平衡<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>為什麼它們會相等？因為我們假設了系統處於<strong>靜力平衡（垂直加速度 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt} \approx 0\)</span>）</strong>。</p>
+<p>這意味著這團空氣雖然很熱、很有向上衝的衝動（有浮力），但它<strong>並沒有</strong>瘋狂地向上加速。為什麼沒有？因為大自然產生了一個大小相等、方向相反的「擾動氣壓梯度力」把它硬生生壓住了。</p>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h3>💡 老師的直觀比喻：<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><strong>1. 基本比喻：潛水中的熱氣球</strong>
+想像你在水池底部（背景平衡態）放開一顆充滿熱氣的氣球（正位溫擾動 <span class="math notranslate nohighlight">\(\theta' &gt; 0\)</span>）。氣球本來應該要往上衝（浮力），但如果我告訴你這顆氣球現在「懸浮在水中沒有加速往上」，那是為什麼？
+因為我用手在氣球上方用力往下壓（建立了 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z} &gt; 0\)</span> 的壓力場）。這隻手往下壓的力道，剛剛好抵消了氣球向上的浮力。這就是擾動場的流體靜力平衡。</p>
+<p><strong>2. 進階大氣應用：為什麼颱風中心是強烈低氣壓？</strong>
+這個方程式完美解釋了<strong>颱風的暖心結構 (Warm Core)</strong> 與地面低壓的關係！</p>
+<ul class="simple">
+<li><p><strong>右邊 (浮力)：</strong> 颱風的眼牆內部有大量的潛熱釋放，導致颱風中心從低空到高空都充滿了非常溫暖的空氣（<span class="math notranslate nohighlight">\(\theta' &gt; 0\)</span> 極大）。這產生了極強的向上浮力。</p></li>
+<li><p><strong>左邊 (氣壓場反應)：</strong> 為了維持平衡，颱風中心的擾動氣壓必須滿足 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z} &gt; 0\)</span>（即 <span class="math notranslate nohighlight">\(\frac{g}{\theta_{0}}\theta'\)</span> 是正的）。</p></li>
+<li><p><strong>物理推論：</strong> <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z} &gt; 0\)</span> 代表「擾動氣壓由下往上遞增」。我們知道在大氣最頂層（平流層頂），擾動氣壓幾乎為零（<span class="math notranslate nohighlight">\(\phi_{\text{top}} \approx 0\)</span>）。如果氣壓是<strong>由下往上遞增到零</strong>，這代表什麼？</p></li>
+<li><p><strong>結論：</strong> 這代表底層的擾動氣壓必須是<strong>極大的負值 (<span class="math notranslate nohighlight">\(\phi_{\text{surface}} \ll 0\)</span>)</strong>！</p></li>
+</ul>
+<p>這就是為什麼當大氣中存在一根巨大的「暖柱」時，地面就必然會對應一個「強烈低氣壓」。這條短短的公式 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z} = \frac{g}{\theta_{0}}\theta\)</span>，用最精煉的數學，把熱力學（溫度擾動）與動力學（氣壓場建立）完美地綁在一起了！</p>
+</section>
 </section>
 </section>
 
@@ -552,20 +619,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html"
+       href="Axisymmetric_Angular_Momentum_Equation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Cylindrical Coordinate Transformation : Relative Vorticity</p>
+        <p class="prev-next-title">Axisymmetric Angular Momentum Equation (軸對稱角動量方程式)</p>
       </div>
     </a>
     <a class="right-next"
-       href="Axisymmetric_Angular_Momentum_Equation.html"
+       href="../../02_Concepts/02_Concepts.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Axisymmetric Angular Momentum Equation (軸對稱角動量方程式)</p>
+        <p class="prev-next-title"><strong>🧩 02_Concepts</strong>: 核心觀念區</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -588,6 +655,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-g-theta-0-theta">步驟一：方程式的右邊 <span class="math notranslate nohighlight">\(\frac{g}{\theta_{0}}\theta'\)</span> —— 浮力的來源</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-phi-partial-z">步驟二：方程式的左邊 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z}\)</span> —— 擾動氣壓的垂直變化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">步驟三：等號 <span class="math notranslate nohighlight">\(=\)</span> —— 大自然的妥協與平衡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">💡 老師的直觀比喻：</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
