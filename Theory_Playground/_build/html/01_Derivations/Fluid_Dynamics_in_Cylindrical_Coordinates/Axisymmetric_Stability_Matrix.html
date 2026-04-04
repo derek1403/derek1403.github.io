@@ -1,0 +1,858 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Axisymmetric Stability Matrix (\(AC - B^2\) 圓柱座標證明) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="穩定度矩陣與雅可比行列式之關係證明 (Axisymmetric Stability Matrix and Jacobian Matrix )" href="Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html" />
+    <link rel="prev" title="Axisymmetric Thermodynamic Energy Equation (軸對稱熱力學能量方程式)" href="Axisymmetric_Thermodynamic_Energy_Equation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Axisymmetric Stability Matrix (AC - B^2 圓柱座標證明)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddot-delta-r">1. 徑向加速度 <span class="math notranslate nohighlight">\(\ddot{\delta r}\)</span> (慣性與離心回復力)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddot-delta-z">2. 垂直加速度 <span class="math notranslate nohighlight">\(\ddot{\delta z}\)</span> (浮力回復力)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 矩陣化與行列式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">💡 物理學家的浪漫：不變的幾何對稱性</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">一、 數學迷思：真的有 81 種情況嗎？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-0-c-0-ac-b-2-0">二、 想像 <span class="math notranslate nohighlight">\(A&lt;0\)</span> , <span class="math notranslate nohighlight">\(C&lt;0\)</span> , <span class="math notranslate nohighlight">\(AC-B^2&gt;0\)</span> 的極端世界</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">三、 斜壓性 <span class="math notranslate nohighlight">\(B\)</span> 是正很多或負很多，不影響天氣嗎？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stability-matrix-taxonomy">四、 大氣穩定度矩陣狀態總表 (The Stability Matrix Taxonomy)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">相關資料</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="axisymmetric-stability-matrix-ac-b-2">
+<h1>Axisymmetric Stability Matrix (<span class="math notranslate nohighlight">\(AC - B^2\)</span> 圓柱座標證明)<a class="headerlink" href="#axisymmetric-stability-matrix-ac-b-2" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>證明在圓柱座標系 <span class="math notranslate nohighlight">\((r,\lambda,z)\)</span> 穩定度的表達：</p>
+<div class="math notranslate nohighlight">
+\[\det(\mathbf{S}_{\text{cyl}}) = \rho^2 (AC - B^2)\]</div>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【假設 1】 軸對稱假設與背景場 (Axisymmetric &amp; Background State Assumption)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial}{\partial\lambda} = 0 \quad ,\quad \begin{cases} v_e(r,z) = \overline{v}(r,z) \\ b_e(r,z) = \overline{b}(r,z) \end{cases}\end{split}\]</div>
+<ul class="simple">
+<li><p>系統在切線方向（方位角 <span class="math notranslate nohighlight">\(\lambda\)</span>）上沒有變化，這是一個成熟熱帶氣旋的標準假設。</p></li>
+<li><p>背景環境大氣（下標 <span class="math notranslate nohighlight">\(e\)</span> 表示 environment）存在穩定且軸對稱的切線風場 <span class="math notranslate nohighlight">\(\overline{v}\)</span> 和背景浮力 <span class="math notranslate nohighlight">\(\overline{b}\)</span>。</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 浮力 (Buoyancy) 的簡化代換：</strong>
+為了公式推導的簡潔，我們將含有重力加速度與參考位溫的項統一定義為浮力 <span class="math notranslate nohighlight">\(b\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[b \overset{\text{def}}{=} \frac{g}{\theta_0}\theta\]</div>
+</li>
+<li><p><strong>【定義 2】 絕對角動量 (Absolute Angular Momentum, <span class="math notranslate nohighlight">\(M\)</span>)：</strong>
+單位質量的空氣塊不僅有相對於地球的旋轉角動量，還包含了隨地球自轉的角動量。</p>
+<div class="math notranslate nohighlight">
+\[M(r,z) \overset{\text{def}}{=} r\overline{v}(r,z) + \frac{1}{2}fr^2\]</div>
+<ul class="simple">
+<li><p>對 <span class="math notranslate nohighlight">\(r\)</span> 偏微分：<span class="math notranslate nohighlight">\(\frac{\partial M}{\partial r} = \overline{v} + r\frac{\partial\overline{v}}{\partial r} + fr = r\left(f + \frac{\overline{v}}{r} + \frac{\partial\overline{v}}{\partial r}\right) = r(f+\zeta)\)</span></p></li>
+<li><p>對 <span class="math notranslate nohighlight">\(z\)</span> 偏微分：<span class="math notranslate nohighlight">\(\frac{\partial M}{\partial z} = r\frac{\partial\overline{v}}{\partial z}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">次環流結構參數 (Eliassen Coefficients)</a>：</strong>
+基於【假設 1】、【定義 1】，我們可以用 <strong>背景浮力</strong> <span class="math notranslate nohighlight">\(\overline{b}\)</span> 與 <strong>背景風場</strong> <span class="math notranslate nohighlight">\(\overline{v}\)</span> 重新表述結構參數：</p>
+<ul class="simple">
+<li><p>垂直穩定度： <span class="math notranslate nohighlight">\(A = \frac{\partial \overline{b}}{\partial z}\)</span></p></li>
+<li><p>熱力風 / 斜壓性： <span class="math notranslate nohighlight">\(B = -\frac{\partial \overline{b}}{\partial r} = -\left(f+\frac{2\overline{v}}{r}\right)\frac{\partial \overline{v}}{\partial z}\)</span></p></li>
+<li><p>慣性穩定度： <span class="math notranslate nohighlight">\(C = \left(f+\frac{2\overline{v}}{r}\right)(f+\zeta)\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">梯度風平衡 (Gradient Wind Balance)</a>：</strong>
+空氣塊在徑向受到的合力為零（離心力 + 科氏力 = 氣壓梯度力）</p>
+<div class="math notranslate nohighlight">
+\[\frac{v^2}{r} + fv = \frac{\partial\phi}{\partial r}\]</div>
+<ul class="simple">
+<li><p>對於起始位置的環境場：<span class="math notranslate nohighlight">\(\frac{v_e^2(r_0,z_0)}{r_0} + fv_e(r_0,z_0) = \frac{\partial\phi(r_0,z_0)}{\partial r} = F_{\text{PGF}}(r_0,z_0)\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 微小位移近似 (Small Displacement Approximation)：</strong>
+質點移動的距離遠小於其所在半徑（<span class="math notranslate nohighlight">\(\delta r \ll r_0\)</span>），因此在分母的幾何項可做一階近似：</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{r_0+\delta r} \approx \frac{1}{r_0}\]</div>
+</li>
+<li><p><strong>【假設 3】 質點守恆特性 (Parcel Theory)：</strong>
+假設一個空氣質點（下標 <span class="math notranslate nohighlight">\(p\)</span> 表示 parcel）在極短時間內被推離平衡位置 <span class="math notranslate nohighlight">\((r_0, z_0)\)</span>，移動了微小位移 <span class="math notranslate nohighlight">\((\delta r, \delta z)\)</span> 到達新位置。質點在過程中<strong>完全守恆</strong>它出發時的絕對角動量與浮力：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M_p(r_0+\delta r, z_0+ \delta z) = M_p(r_0, z_0) = M_e(r_0, z_0)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_p(r_0+\delta r, z_0+ \delta z) = b_p(r_0, z_0) = b_e(r_0, z_0)\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 4】 新位置的速度與環境速度皆十分接近原始出發點的環境速度：</strong></p>
+<div class="math notranslate nohighlight">
+\[v_p + v_e \approx 2\overline{v}(r_0,z_0)\]</div>
+</li>
+<li><p><strong>【已知 3】 將速度改寫為絕對角動量：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    v(r,z) &amp;\overset{\text{定義 2}}{=}&amp;\frac{M(r,z)}{r} - \frac{1}{2}fr \\
+    v_p(r_0+\delta r,z_0+\delta z) - v_e(r_0+\delta r,z_0+\delta z) &amp;=&amp; \left( \frac{M_p(r_0+\delta r,z_0+\delta z)}{r_0+\delta r} - \frac{1}{2}f(r_0+\delta r) \right) - \left( \frac{M_e(r_0+\delta r,z_0+\delta z)}{r_0+\delta r} - \frac{1}{2}f(r_0+\delta r) \right) \\
+    &amp;=&amp; \frac{M_p(r_0+\delta r,z_0+\delta z) - M_e(r_0+\delta r,z_0+\delta z)}{r_0+\delta r} \\
+    &amp;\overset{\text{假設 2}}{\approx}&amp; \frac{1}{r_0} \left[ M_p(r_0+\delta r,z_0+\delta z) - M_e(r_0+\delta r,z_0+\delta z) \right] \\
+    &amp;\overset{\text{假設 3}}{=}&amp; \frac{1}{r_0} \left[ M_e(r_0,z_0) - M_e(r_0+\delta r,z_0+\delta z) \right]
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 4】 環境場的一階泰勒展開 (First-order Taylor Expansion for Environment)：</strong>
+質點來到新位置 <span class="math notranslate nohighlight">\((r_0+\delta r, z_0+\delta z)\)</span> 時，周遭環境場的絕對角動量與浮力可近似為平衡位置的值加上微小變化：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M_e(r_0+\delta r, z_0+ \delta z) \approx M_e(r_0, z_0) + \frac{\partial M(r_0,z_0)}{\partial r}\delta r + \frac{\partial M(r_0,z_0)}{\partial z}\delta z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_e(r_0+\delta r, z_0+ \delta z) \approx b_e(r_0, z_0) + \frac{\partial b_e(r_0,z_0)}{\partial r}\delta r + \frac{\partial b_e(r_0,z_0)}{\partial z}\delta z\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>這個證明的核心思維是尋找「擾動後的淨力（回復力）」。我們先處理水平方向（徑向）的加速度，再處理垂直方向的加速度，最後將它們寫成矩陣形式。</p>
+<section id="ddot-delta-r">
+<h3>1. 徑向加速度 <span class="math notranslate nohighlight">\(\ddot{\delta r}\)</span> (慣性與離心回復力)<a class="headerlink" href="#ddot-delta-r" title="Link to this heading">#</a></h3>
+<p>質點的徑向加速度 <span class="math notranslate nohighlight">\(\ddot{\delta r}\)</span> 來自於質點自身向外的力（離心力＋科氏力），減去新位置環境給予的向內氣壓梯度力 <span class="math notranslate nohighlight">\(F_{\text{PGF}}\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\ddot{\delta r} &amp;=&amp; F_{\text{outward, parcel}} - F_{\text{inward, env}} \\
+&amp;\overset{\text{已知 2}}{=}&amp; \left( \frac{v_p^2(r_0+\delta r,z_0+\delta z)}{r_0+\delta r} + fv_p(r_0+\delta r,z_0+\delta z) \right) - F_{\text{PGF}}(r_0+\delta r,z_0+\delta z) \\
+&amp;\overset{\text{已知 2}}{=}&amp; \left( \frac{v_p^2(r_0+\delta r,z_0+\delta z)}{r_0+\delta r} + fv_p(r_0+\delta r,z_0+\delta z) \right) - \left( \frac{v_e^2(r_0+\delta r,z_0+\delta z)}{r_0+\delta r} + fv_e(r_0+\delta r,z_0+\delta z) \right) \\
+&amp;\overset{\text{假設 2}}{\approx}&amp; \left( \frac{v_p^2(r_0+\delta r,z_0+\delta z)}{r_0} + fv_p(r_0+\delta r,z_0+\delta z) \right) - \left( \frac{v_e^2(r_0+\delta r,z_0+\delta z)}{r_0} + fv_e(r_0+\delta r,z_0+\delta z) \right) \\
+&amp;=&amp; \frac{1}{r_0}\left[ v_p^2(r_0+\delta r,z_0+\delta z) - v_e^2(r_0+\delta r,z_0+\delta z) \right] + f\left[ v_p(r_0+\delta r,z_0+\delta z) - v_e(r_0+\delta r,z_0+\delta z) \right] \\
+&amp;=&amp; \frac{1}{r_0}\left[ v_p(r_0+\delta r,z_0+\delta z) + v_e(r_0+\delta r,z_0+\delta z) \right]\left[ v_p(r_0+\delta r,z_0+\delta z) - v_e(r_0+\delta r,z_0+\delta z) \right] \\
+&amp;&amp; + f\left[ v_p(r_0+\delta r,z_0+\delta z) - v_e(r_0+\delta r,z_0+\delta z) \right] \\
+&amp;=&amp; \left( \frac{v_p(r_0+\delta r,z_0+\delta z) + v_e(r_0+\delta r,z_0+\delta z)}{r_0} + f \right) \left[ v_p(r_0+\delta r,z_0+\delta z) - v_e(r_0+\delta r,z_0+\delta z) \right]\\
+&amp;\overset{\text{假設 4}}{=}&amp; \left( \frac{2\overline{v}(r_0,z_0)}{r_0} + f \right) \left[ v_p(r_0+\delta r,z_0+\delta z) - v_e(r_0+\delta r,z_0+\delta z) \right] \\
+&amp;\overset{\text{已知 3}}{=}&amp; \left( \frac{2\overline{v}(r_0,z_0)}{r_0} + f \right) \frac{1}{r_0} \left[ M_e(r_0,z_0) - M_e(r_0+\delta r,z_0+\delta z) \right] \\
+&amp;\overset{\text{已知 4}}{=}&amp; \left( \frac{2\overline{v}(r_0,z_0)}{r_0} + f \right) \frac{1}{r_0} \left[ M_e(r_0,z_0) - \left( M_e(r_0,z_0) + \frac{\partial M(r_0,z_0)}{\partial r}\delta r + \frac{\partial M(r_0,z_0)}{\partial z}\delta z \right) \right] \\
+&amp;=&amp; - \frac{1}{r_0} \left( f + \frac{2\overline{v}(r_0,z_0)}{r_0} \right) \left[ \frac{\partial M(r_0,z_0)}{\partial r}\delta r + \frac{\partial M(r_0,z_0)}{\partial z}\delta z \right] \\
+&amp;\overset{\text{定義 2}}{=}&amp; - \frac{1}{r_0} \left( f + \frac{2\overline{v}(r_0,z_0)}{r_0} \right) \left[ r_0(f+\zeta)\delta r + r_0\frac{\partial\overline{v}(r_0,z_0)}{\partial z}\delta z \right] \\
+&amp;=&amp; - \left( f + \frac{2\overline{v}(r_0,z_0)}{r_0} \right)(f+\zeta)\delta r - \left( f + \frac{2\overline{v}(r_0,z_0)}{r_0} \right)\frac{\partial\overline{v}(r_0,z_0)}{\partial z}\delta z \\
+&amp;\overset{\text{已知 1}}{=}&amp; -C\delta r + B\delta z
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="ddot-delta-z">
+<h3>2. 垂直加速度 <span class="math notranslate nohighlight">\(\ddot{\delta z}\)</span> (浮力回復力)<a class="headerlink" href="#ddot-delta-z" title="Link to this heading">#</a></h3>
+<p>垂直方向的加速度純粹來自於質點與新環境的浮力差（阿基米德浮力）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\ddot{\delta z} &amp;=&amp; b_p(r_0+\delta r,z_0+\delta z) - b_e(r_0+\delta r,z_0+\delta z) \\
+&amp;\overset{\text{假設 3}}{=}&amp; b_e(r_0,z_0) - b_e(r_0+\delta r,z_0+\delta z) \\
+&amp;\overset{\text{已知 4}}{=}&amp; b_e(r_0,z_0) - \left( b_e(r_0,z_0) + \frac{\partial b_e(r_0,z_0)}{\partial r}\delta r + \frac{\partial b_e(r_0,z_0)}{\partial z}\delta z \right) \\
+&amp;=&amp; - \frac{\partial b_e(r_0,z_0)}{\partial r}\delta r - \frac{\partial b_e(r_0,z_0)}{\partial z}\delta z \\
+&amp;\overset{\text{已知 1}}{=}&amp; B\delta r - A\delta z
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id3">
+<h3>3. 矩陣化與行列式<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>將兩個方向的回復力聯立，可以寫成優雅的穩定度矩陣形式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;\frac{d^2}{dt^2} \begin{bmatrix} \delta r \\ \delta z \end{bmatrix} &amp;=&amp; \begin{bmatrix} -C &amp; B \\ B &amp; -A \end{bmatrix} &amp;\begin{bmatrix} \delta r \\ \delta z \end{bmatrix} \\
+&amp;&amp;=&amp; -\begin{bmatrix} C &amp; -B \\ -B &amp; A \end{bmatrix} &amp;\begin{bmatrix} \delta r \\ \delta z \end{bmatrix} \\
+&amp;&amp;=&amp; -\mathbf{S}_{\text{cyl}}&amp; \begin{bmatrix} \delta r \\ \delta z \end{bmatrix} \\
+\Rightarrow&amp; \det(\mathbf{S}_{\text{cyl}}) &amp;=&amp; AC - (-B)(-B) &amp;= AC - B^2
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2>💡 物理學家的浪漫：不變的幾何對稱性<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>透過直接在圓柱座標中推導，我們印證了一件非常浪漫的事：<strong>不管是用直線座標系看鋒面，還是用極座標系看颱風，流體力學的「穩定度矩陣」結構是宇宙通用的！</strong></p>
+<p>唯一隱藏在細節裡的魔鬼是，圓柱座標在計算水平回復力時，那項對速度的偏微分 <span class="math notranslate nohighlight">\(\frac{\partial F}{\partial v} = f + \frac{2\overline{v}}{r}\)</span>，自然而然地把「離心力造成的剛性（<span class="math notranslate nohighlight">\(\frac{2\overline{v}}{r}\)</span>）」給生出來了。</p>
+<p>這個額外生出來的離心剛性，就是為什麼颱風的 <span class="math notranslate nohighlight">\(C\)</span> 參數會比中緯度鋒面的 <span class="math notranslate nohighlight">\(C\)</span> 參數大上好幾個數量級的原因。大自然用完全相同的數學矩陣（碗與馬鞍），透過換了一套座標系，就創造出了兩種截然不同的天氣系統！</p>
+<p>這是一個非常有深度的延伸思考！你精準地抓住了矩陣分析的核心，並且開始嘗試把數學的排列組合對應到真實的大自然中。</p>
+<p>我們一步步來破解你的疑問，先從數學排列的迷思開始，接著想像你提到的極端情況，討論 <span class="math notranslate nohighlight">\(B\)</span> 的正負號物理意義，最後我會幫你把大氣的狀態整理成一張系統性的表格。</p>
+<section id="id5">
+<h3>一、 數學迷思：真的有 81 種情況嗎？<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>答案是：<strong>沒有那麼多，只有 27 種基礎組合。</strong></p>
+<p>在我們的系統中，獨立的環境變數只有三個：<span class="math notranslate nohighlight">\(A\)</span>（垂直穩定度）、<span class="math notranslate nohighlight">\(C\)</span>（慣性穩定度）、<span class="math notranslate nohighlight">\(B\)</span>（斜壓性 / 熱力風）。
+這三個變數各自可以是正、零、負（3 種狀態），所以排列組合是 <span class="math notranslate nohighlight">\(3 \times 3 \times 3 = 27\)</span> 種。</p>
+<p>至於 <span class="math notranslate nohighlight">\(AC-B^2\)</span> 的正負號，它是被 <span class="math notranslate nohighlight">\(A, B, C\)</span> <strong>決定出來的結果</strong>，不能當作第四個獨立變數隨意組合。舉例來說，如果 <span class="math notranslate nohighlight">\(A&gt;0\)</span> 且 <span class="math notranslate nohighlight">\(C&lt;0\)</span>，那麼 <span class="math notranslate nohighlight">\(AC\)</span> 必定小於 0；此時無論 <span class="math notranslate nohighlight">\(B\)</span> 是多少（<span class="math notranslate nohighlight">\(B^2\)</span> 必定大於等於 0），<span class="math notranslate nohighlight">\(AC-B^2\)</span> <strong>永遠只能小於 0</strong>，不可能存在 <span class="math notranslate nohighlight">\(AC-B^2 &gt; 0\)</span> 的情況。因此，實際上的物理狀態遠比 81 種少得多。</p>
+</section>
+<hr class="docutils" />
+<section id="a-0-c-0-ac-b-2-0">
+<h3>二、 想像 <span class="math notranslate nohighlight">\(A&lt;0\)</span> , <span class="math notranslate nohighlight">\(C&lt;0\)</span> , <span class="math notranslate nohighlight">\(AC-B^2&gt;0\)</span> 的極端世界<a class="headerlink" href="#a-0-c-0-ac-b-2-0" title="Link to this heading">#</a></h3>
+<p>這是一個非常精彩的特例！我們用特徵值（Eigenvalue）來推導一下這代表什麼意思：</p>
+<p>我們的穩定度矩陣行列式（特徵值乘積）是：
+<span class="math notranslate nohighlight">\(\lambda_1 \lambda_2 = AC - B^2 &gt; 0\)</span>
+這代表兩個特徵值<strong>同號</strong>（不是兩個都正，就是兩個都負）。</p>
+<p>矩陣的跡（Trace，主對角線元素相加，等於特徵值相加）是：
+<span class="math notranslate nohighlight">\(\lambda_1 + \lambda_2 = A + C\)</span>
+因為已知 <span class="math notranslate nohighlight">\(A&lt;0\)</span> 且 <span class="math notranslate nohighlight">\(C&lt;0\)</span>，所以 <span class="math notranslate nohighlight">\(\lambda_1 + \lambda_2 &lt; 0\)</span>。</p>
+<p>兩個數字相乘大於 0，相加小於 0，唯一的可能就是：<strong><span class="math notranslate nohighlight">\(\lambda_1 &lt; 0\)</span> 且 <span class="math notranslate nohighlight">\(\lambda_2 &lt; 0\)</span></strong>。</p>
+<ul class="simple">
+<li><p><strong>數學曲面</strong>：這是一個<strong>向下開口的橢圓拋物面（倒蓋的碗）</strong>。</p></li>
+<li><p><strong>💡 直觀比喻</strong>：想像你把一顆彈珠精準地放在一座<strong>異常陡峭、完全平滑的冰山尖頂</strong>上。</p></li>
+<li><p><strong>物理與天氣意義</strong>：這被稱為<strong>絕對不穩定 (Absolute Instability)</strong>。大氣在垂直方向是頭重腳輕的（冷空氣在溫暖空氣正上方，<span class="math notranslate nohighlight">\(A&lt;0\)</span>），水平方向的旋轉也是互相撕裂的（絕對渦度為負，<span class="math notranslate nohighlight">\(C&lt;0\)</span>）。而且斜壓性 <span class="math notranslate nohighlight">\(B\)</span> 相對較弱，沒有提供足夠的耦合牽制。在這個環境下，無論你把空氣塊往哪個方向推（上下、左右、斜向），它都會<strong>沿著冰坡加速滾下去，呈現指數級別的劇烈噴發</strong>。在真實大氣中，這種狀態極難維持，只要一出現，瞬間就會爆發極度暴力的三維亂流與對流混合，強行把大氣「攪拌」回中性狀態。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="b">
+<h3>三、 斜壓性 <span class="math notranslate nohighlight">\(B\)</span> 是正很多或負很多，不影響天氣嗎？<a class="headerlink" href="#b" title="Link to this heading">#</a></h3>
+<p><strong>「系統會不會不穩定」只看 <span class="math notranslate nohighlight">\(B^2\)</span>（大小），但「天氣系統長什麼形狀」則看 <span class="math notranslate nohighlight">\(B\)</span> 的正負號（方向）！</strong></p>
+<ul class="simple">
+<li><p><strong>影響穩定度的是 <span class="math notranslate nohighlight">\(B^2\)</span></strong>：在判別式 <span class="math notranslate nohighlight">\(AC-B^2\)</span> 中，<span class="math notranslate nohighlight">\(B\)</span> 被平方了。這代表無論冷空氣在左邊還是右邊，只要「水平溫度梯度」夠大，系統用來維持穩定的「扣打」就會被大量消耗，使得矩陣更容易掉入小於 0 的馬鞍面（對稱不穩定）。</p></li>
+<li><p><strong>影響形狀的是 <span class="math notranslate nohighlight">\(B\)</span> 的正負</strong>：特徵向量（Eigenvector）的方向是由 <span class="math notranslate nohighlight">\(B\)</span> 決定的。特徵向量代表系統最容易滑動的「傾斜軌道」。</p>
+<ul>
+<li><p>如果 <span class="math notranslate nohighlight">\(B &gt; 0\)</span>，傾斜軌道可能朝向右上方傾斜（例如颱風眼牆向外傾斜的上升氣流）。</p></li>
+<li><p>如果 <span class="math notranslate nohighlight">\(B &lt; 0\)</span>，傾斜軌道就會朝向左上方傾斜。</p></li>
+<li><p><strong>總結</strong>：<span class="math notranslate nohighlight">\(B\)</span> 的大小決定了暴風雨會不會發生，而 <span class="math notranslate nohighlight">\(B\)</span> 的正負號決定了暴風雨是「往外斜著下」還是「往內斜著下」。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="the-stability-matrix-taxonomy">
+<h3>四、 大氣穩定度矩陣狀態總表 (The Stability Matrix Taxonomy)<a class="headerlink" href="#the-stability-matrix-taxonomy" title="Link to this heading">#</a></h3>
+<p>為了清晰，我們將 27 種組合收斂成最具代表性的物理情境。我們以 <span class="math notranslate nohighlight">\(A\)</span> 和 <span class="math notranslate nohighlight">\(C\)</span> 為主軸，並探討 <span class="math notranslate nohighlight">\(B\)</span> 的介入如何改變結果。</p>
+<p><em>(註：符號 <span class="math notranslate nohighlight">\(+\)</span> 代表大於 0，<span class="math notranslate nohighlight">\(-\)</span> 代表小於 0，0 代表等於 0)</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>垂直 (<span class="math notranslate nohighlight">\(A\)</span>)</p></th>
+<th class="head text-left"><p>慣性 (<span class="math notranslate nohighlight">\(C\)</span>)</p></th>
+<th class="head text-left"><p>斜壓性 (<span class="math notranslate nohighlight">\(B\)</span>)</p></th>
+<th class="head text-left"><p>判別式 (<span class="math notranslate nohighlight">\(AC-B^2\)</span>)</p></th>
+<th class="head text-left"><p>數學曲面特徵</p></th>
+<th class="head text-left"><p>物理狀態與大氣特徵</p></th>
+<th class="head text-left"><p>天氣系統範例</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p>弱 (小)</p></td>
+<td class="text-left"><p><strong><span class="math notranslate nohighlight">\(+\)</span></strong></p></td>
+<td class="text-left"><p>向上開口的碗 (<span class="math notranslate nohighlight">\(\lambda_1&gt;0, \lambda_2&gt;0\)</span>)</p></td>
+<td class="text-left"><p><strong>絕對穩定 (Symmetrically Stable)</strong><br>任何方向的擾動都會震盪回原位。</p></td>
+<td class="text-left"><p>晴朗無雲的穩定天氣、強烈高壓中心。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p>強 (大)</p></td>
+<td class="text-left"><p><strong><span class="math notranslate nohighlight">\(-\)</span></strong></p></td>
+<td class="text-left"><p>馬鞍面 (<span class="math notranslate nohighlight">\(\lambda_1&gt;0, \lambda_2&lt;0\)</span>)</p></td>
+<td class="text-left"><p><strong>對稱不穩定 (Symmetric Instability, SI)</strong><br>垂直和水平都穩定，但有一條特定的「斜線通道」阻力極小，質點會沿斜線噴發。</p></td>
+<td class="text-left"><p>鋒面系統的傾斜降雨帶、颱風的螺旋雨帶。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p>臨界</p></td>
+<td class="text-left"><p><strong>0</strong></p></td>
+<td class="text-left"><p>拋物柱面 (U型槽)</p></td>
+<td class="text-left"><p><strong>中性邊界狀態</strong><br>沿某個斜面擾動時無回復力（隨波逐流）。</p></td>
+<td class="text-left"><p>SI 即將觸發或剛混合完畢的過渡區。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td class="text-left"><p>任何值</p></td>
+<td class="text-left"><p><strong><span class="math notranslate nohighlight">\(-\)</span></strong></p></td>
+<td class="text-left"><p>馬鞍面 (<span class="math notranslate nohighlight">\(\lambda_1&gt;0, \lambda_2&lt;0\)</span>)</p></td>
+<td class="text-left"><p><strong>慣性不穩定主導 (Inertial Instability)</strong><br><span class="math notranslate nohighlight">\(A\)</span> 想拉回，但 <span class="math notranslate nohighlight">\(C\)</span> 崩壞。質點主要在水平方向失控擴散。</p></td>
+<td class="text-left"><p>赤道反氣旋邊緣、強烈高空噴流出口區右側的水平猛烈輻散。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td class="text-left"><p>任何值</p></td>
+<td class="text-left"><p><strong><span class="math notranslate nohighlight">\(-\)</span></strong></p></td>
+<td class="text-left"><p>馬鞍面 (<span class="math notranslate nohighlight">\(\lambda_1&gt;0, \lambda_2&lt;0\)</span>)</p></td>
+<td class="text-left"><p><strong>靜力不穩定主導 (Static Instability)</strong><br><span class="math notranslate nohighlight">\(C\)</span> 想拉回，但 <span class="math notranslate nohighlight">\(A\)</span> 崩壞。質點主要在垂直方向劇烈上升。</p></td>
+<td class="text-left"><p>午後熱對流、雷陣雨、積雨雲。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td class="text-left"><p>弱 (小)</p></td>
+<td class="text-left"><p><strong><span class="math notranslate nohighlight">\(+\)</span></strong></p></td>
+<td class="text-left"><p>向下開口的碗 (<span class="math notranslate nohighlight">\(\lambda_1&lt;0, \lambda_2&lt;0\)</span>)</p></td>
+<td class="text-left"><p><strong>絕對不穩定 (Absolute Instability)</strong><br>垂直與水平彈簧雙雙斷裂。</p></td>
+<td class="text-left"><p>極端罕見。可能短暫出現於強烈龍捲風內部或微爆流的核心破壞區。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td class="text-left"><p>強 (大)</p></td>
+<td class="text-left"><p><strong><span class="math notranslate nohighlight">\(-\)</span></strong></p></td>
+<td class="text-left"><p>馬鞍面 (但兩軸皆偏負)</p></td>
+<td class="text-left"><p><strong>強烈複合不穩定</strong><br>不僅垂直水平不穩定，熱力風還加劇了特定斜向的破壞力。</p></td>
+<td class="text-left"><p>猛烈的颮線 (Squall line) 發展初期。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>0</p></td>
+<td class="text-left"><p>0</p></td>
+<td class="text-left"><p>0</p></td>
+<td class="text-left"><p><strong>0</strong></p></td>
+<td class="text-left"><p>絕對平坦</p></td>
+<td class="text-left"><p><strong>絕對中性 (Absolute Neutral)</strong><br>沒有任何回復力或破壞力。</p></td>
+<td class="text-left"><p>大氣均質且無風的理想死寂狀態。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(+, 0, -\)</span></p></td>
+<td class="text-left"><p>0 或 0</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(B \neq 0\)</span></p></td>
+<td class="text-left"><p><strong><span class="math notranslate nohighlight">\(-\)</span></strong></p></td>
+<td class="text-left"><p>馬鞍面</p></td>
+<td class="text-left"><p><strong>邊界崩壞狀態</strong><br>只要 <span class="math notranslate nohighlight">\(A\)</span> 或 <span class="math notranslate nohighlight">\(C\)</span> 其中一個是 0，加上只要有一點點 <span class="math notranslate nohighlight">\(B\)</span>，系統必定掉入不穩定。</p></td>
+<td class="text-left"><p>大氣穩定度極度脆弱，一觸即發的暴風雨前兆。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>透過這張表你可以發現，大氣科學家之所以這麼在乎 <strong><span class="math notranslate nohighlight">\(AC-B^2\)</span></strong>，就是因為它完美統整了三維空間中各種複雜的受力關係，用一個簡單的數字正負號，就宣判了天氣系統的生與死！</p>
+</section>
+</section>
+<section id="id6">
+<h2>相關資料<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">穩定度矩陣與雅可比行列式之關係證明 (Axisymmetric Stability Matrix and Jacobian Matrix )</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Fluid_Dynamics_in_Cylindrical_Coordinates"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Axisymmetric_Thermodynamic_Energy_Equation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Axisymmetric Thermodynamic Energy Equation (軸對稱熱力學能量方程式)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">穩定度矩陣與雅可比行列式之關係證明 (Axisymmetric Stability Matrix and Jacobian Matrix )</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddot-delta-r">1. 徑向加速度 <span class="math notranslate nohighlight">\(\ddot{\delta r}\)</span> (慣性與離心回復力)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddot-delta-z">2. 垂直加速度 <span class="math notranslate nohighlight">\(\ddot{\delta z}\)</span> (浮力回復力)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 矩陣化與行列式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">💡 物理學家的浪漫：不變的幾何對稱性</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">一、 數學迷思：真的有 81 種情況嗎？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-0-c-0-ac-b-2-0">二、 想像 <span class="math notranslate nohighlight">\(A&lt;0\)</span> , <span class="math notranslate nohighlight">\(C&lt;0\)</span> , <span class="math notranslate nohighlight">\(AC-B^2&gt;0\)</span> 的極端世界</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">三、 斜壓性 <span class="math notranslate nohighlight">\(B\)</span> 是正很多或負很多，不影響天氣嗎？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stability-matrix-taxonomy">四、 大氣穩定度矩陣狀態總表 (The Stability Matrix Taxonomy)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">相關資料</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

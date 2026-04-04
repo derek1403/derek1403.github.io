@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Eliassen Secondary Circulation Coefficients (次環流方程式結構參數) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Eliassen Transverse Equation (次環流方程式)" href="Eliassen_Transverse_Equation.html" />
+    <link rel="prev" title="Axisymmetric Tangential Momentum Equation (軸對稱切線動量方程式)" href="Axisymmetric_Tangential_Momentum_Equation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Eliassen Secondary Circulation Coefficients (次環流方程式結構參數)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-a-rho-b">階段一：由熱力學推導 <span class="math notranslate nohighlight">\(\rho A\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的熱力型態</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-c-rho-b">階段二：由動力學推導 <span class="math notranslate nohighlight">\(\rho C\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的動力型態</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-wind-balance-rho-b">階段三：熱力風平衡 (Thermal Wind Balance) 證明 <span class="math notranslate nohighlight">\(\rho B\)</span> 的一致性</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-a-static-stability">1. <span class="math notranslate nohighlight">\(\rho A\)</span>: 垂直穩定度 (Static Stability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-c-inertial-stability">2. <span class="math notranslate nohighlight">\(\rho C\)</span>: 慣性穩定度 (Inertial Stability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-b">3. <span class="math notranslate nohighlight">\(\rho B\)</span>: 斜壓性 / 熱力風 耦合</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="eliassen-secondary-circulation-coefficients">
+<h1>Eliassen Secondary Circulation Coefficients (次環流方程式結構參數)<a class="headerlink" href="#eliassen-secondary-circulation-coefficients" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>透過聯立大氣的熱力與動力方程式，定義出決定次環流形狀的三個核心結構參數 <span class="math notranslate nohighlight">\(\rho A\)</span>、<span class="math notranslate nohighlight">\(\rho B\)</span>、<span class="math notranslate nohighlight">\(\rho C\)</span>：</p>
+<ol class="arabic simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\rho A = \frac{g}{\theta_0}\frac{\partial\theta}{\partial z}\)</span></strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\rho C = (f+\frac{2v}{r})(f+\zeta)\)</span></strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\rho B = -\frac{g}{\theta_0}\frac{\partial\theta}{\partial r} = -(f+\frac{2v}{r})\frac{\partial v}{\partial z}\)</span></strong></p></li>
+</ol>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">擾動場流體靜力平衡 (Hydrostatic Balance)</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\phi}{\partial z} = \frac{g}{\theta_0}\theta\]</div>
+<ul class="simple">
+<li><p>此處的 <span class="math notranslate nohighlight">\(\theta\)</span> 是 <strong>雷諾分解後的位溫擾動</strong> <span class="math notranslate nohighlight">\(\theta'\)</span> ，但可以當總位溫 <span class="math notranslate nohighlight">\(\Theta= \theta_0(z) + \theta'\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \theta'}{\partial t} = \frac{\partial\Theta}{\partial t} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \theta'}{\partial r} = \frac{\partial\Theta}{\partial r} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \theta'}{\partial \lambda} = \frac{\partial\Theta}{\partial \lambda} \)</span></p></li>
+<li><p>假設背景穩定度主導，<span class="math notranslate nohighlight">\(\frac{\partial\Theta}{\partial z} = \frac{\partial\theta_0}{\partial z} + \frac{\partial \theta'}{\partial z} \approx \frac{\partial\theta_0}{\partial z} = \frac{\partial\bar{\theta}}{\partial z}\)</span></p></li>
+</ul>
+</li>
+<li><p>為了避免誤會，我下面的證明會用 <span class="math notranslate nohighlight">\(\theta'\)</span> 這種正確的表達方式(起初會有 <span class="math notranslate nohighlight">\(\theta\)</span> 和 <span class="math notranslate nohighlight">\(\theta'\)</span> 混用是因為前人 <strong>懶+這樣寫太複雜了</strong> ，但我不這麼想所以我們該加 <span class="math notranslate nohighlight">\('\)</span> 就加)</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">軸對稱熱力學能量方程式 (Thermodynamic Equation)</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\theta}{\partial t} + u\frac{\partial\theta}{\partial r} + w\frac{\partial\theta}{\partial z} = \frac{\theta}{T}\frac{Q}{c_p}\]</div>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">梯度風平衡 (Gradient Wind Balance)</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{v^2}{r} + fv &amp;=&amp; \frac{\partial\phi}{\partial r} \\
+  \frac{\partial}{\partial t}\left[\frac{v^2}{r} + fv\right] &amp;=&amp; \frac{\partial^2\phi}{\partial t\partial r} \\
+  \frac{2v}{r}\frac{\partial v}{\partial t} + f\frac{\partial v}{\partial t} &amp;=&amp; \frac{\partial^2\phi}{\partial t\partial r} \\
+  \left(f + \frac{2v}{r}\right)\frac{\partial v}{\partial t} &amp;=&amp; \frac{\partial^2\phi}{\partial t\partial r}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>徑向動量的平衡</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">軸對稱切線動量方程式 (Axisymmetric Tangential Momentum Equation)</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v}{\partial t}+u(f+\zeta)+w\frac{\partial v}{\partial z}=X\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> 為次網格尺度的切線方向摩擦力或動量強迫作用 <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
+<li><p>切線動量的平衡</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 微積分偏導數可交換性 (Symmetry of Second Derivatives / Schwarz’s Theorem)：</strong></p>
+<p>對於連續可微的重力位高度場 <span class="math notranslate nohighlight">\(\phi(r,z)\)</span>，先對 <span class="math notranslate nohighlight">\(z\)</span> 微分再對 <span class="math notranslate nohighlight">\(r\)</span> 微分，必定等於先對 <span class="math notranslate nohighlight">\(r\)</span> 微分再對 <span class="math notranslate nohighlight">\(z\)</span> 微分：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial r}\left[\frac{\partial\phi}{\partial z}\right] = \frac{\partial}{\partial z}\left[\frac{\partial\phi}{\partial r}\right]\]</div>
+</li>
+<li><p><strong>【定義 1】 <span class="math notranslate nohighlight">\(\rho A\)</span> 垂直穩定度 (Static Stability)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\rho A \overset{\text{def}}{=} \frac{g}{\theta_0}\frac{\partial\theta}{\partial z}\]</div>
+</li>
+<li><p><strong>【定義 2】 <span class="math notranslate nohighlight">\(\rho B_{\text{thermal}}\)</span> 熱力風 (Thermal wind)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\rho B_{\text{thermal}} \overset{\text{def}}{=} -\frac{g}{\theta_0}\frac{\partial\theta}{\partial r}\]</div>
+</li>
+<li><p><strong>【定義 3】<span class="math notranslate nohighlight">\(\rho B_{\text{momentum}}\)</span> 斜壓性(Baroclinicity)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\rho B_{\text{momentum}} \overset{\text{def}}{=} -\left(f+\frac{2v}{r}\right)\frac{\partial v}{\partial z}\]</div>
+</li>
+<li><p><strong>【定義 4】 <span class="math notranslate nohighlight">\(\rho C\)</span> 慣性穩定度 (Inertial Stability)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\rho C \overset{\text{def}}{=} \left(f+\frac{2v}{r}\right)(f+\zeta)\]</div>
+</li>
+<li><p><strong>【定義 5】 熱力與動力強迫項 (Forcing Terms)：</strong>
+為簡化方程式，定義等效熱力強迫 <span class="math notranslate nohighlight">\(J\)</span> 與等效動力強迫 <span class="math notranslate nohighlight">\(F\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[J \overset{\text{def}}{=} \frac{g}{\theta_0}\frac{\theta}{T}\frac{Q}{c_p}\]</div>
+<div class="math notranslate nohighlight">
+\[F \overset{\text{def}}{=} \left(f+\frac{2v}{r}\right)X\]</div>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>我們將證明分為三個階段：熱力轉換、動力轉換、以及連接兩者的橋樑。</p>
+<section id="rho-a-rho-b">
+<h3>階段一：由熱力學推導 <span class="math notranslate nohighlight">\(\rho A\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的熱力型態<a class="headerlink" href="#rho-a-rho-b" title="Link to this heading">#</a></h3>
+<p>目標：探討 <strong>靜力平衡</strong> 隨時間的演變
+$<span class="math notranslate nohighlight">\(\begin{gather*}
+\frac{\partial\phi}{\partial z} &amp;\overset{\text{已知 1}}{=}&amp; \frac{g}{\theta_0}\theta' \\
+\frac{\partial}{\partial t}\left[\frac{\partial\phi}{\partial z}\right] &amp;=&amp; \frac{g}{\theta_0}\frac{\partial\theta'}{\partial t} \\
+\frac{\partial}{\partial t}\left[\frac{\partial\phi}{\partial z}\right] &amp;=&amp; \frac{g}{\theta_0}\frac{\partial\theta}{\partial t} \\
+\frac{\partial^2\phi}{\partial t\partial z} &amp;\overset{\text{已知 2}}{=}&amp; \frac{g}{\theta_0} \left( -u\frac{\partial\theta}{\partial r} - w\frac{\partial\theta}{\partial z} + \frac{\theta}{T}\frac{Q}{c_p} \right) \\
+\frac{\partial^2\phi}{\partial t\partial z} &amp;=&amp; -u\left(\frac{g}{\theta_0}\frac{\partial\theta}{\partial r}\right) - w\left(\frac{g}{\theta_0}\frac{\partial\theta}{\partial z}\right) + \frac{g}{\theta_0}\frac{\theta}{T}\frac{Q}{c_p} \\
+\frac{\partial^2\phi}{\partial t\partial z} +u\left(\frac{g}{\theta_0}\frac{\partial\theta}{\partial r}\right) + w\left(\frac{g}{\theta_0}\frac{\partial\theta}{\partial z}\right)&amp;=&amp;   \frac{g}{\theta_0}\frac{\theta}{T}\frac{Q}{c_p} \\
+\frac{\partial^2\phi}{\partial t\partial z} +u\rho A - w\rho B_{\text{thermal}}&amp;\overset{\text{定義 1,2}}{=}&amp;   \frac{g}{\theta_0}\frac{\theta}{T}\frac{Q}{c_p} \\
+\frac{\partial^2\phi}{\partial t\partial z} +u\rho A - w\rho B_{\text{thermal}}&amp;\overset{\text{定義 5}}{=}&amp;   J &amp;\quad \text{--- (式 I)}\\
+\end{gather*}\)</span>$</p>
+</section>
+<section id="rho-c-rho-b">
+<h3>階段二：由動力學推導 <span class="math notranslate nohighlight">\(\rho C\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的動力型態<a class="headerlink" href="#rho-c-rho-b" title="Link to this heading">#</a></h3>
+<p>目標：探討 <strong>梯度風平衡</strong> 隨時間的演變代入 <strong>切線動量方程式</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial v}{\partial t} + u(f+\zeta) + w\frac{\partial v}{\partial z} &amp;\overset{\text{已知 4}}{=}&amp; X \\
+\left(f+\frac{2v}{r}\right)\frac{\partial v}{\partial t} + u\left(f+\frac{2v}{r}\right)(f+\zeta) + w\left(f+\frac{2v}{r}\right)\frac{\partial v}{\partial z} &amp;=&amp; \left(f+\frac{2v}{r}\right)X \\
+\quad \quad \quad \quad\frac{\partial^2\phi}{\partial t\partial r} + u\left(f+\frac{2v}{r}\right)(f+\zeta) + w\left(f+\frac{2v}{r}\right)\frac{\partial v}{\partial z} &amp;\overset{\text{已知 3}}{=}&amp; \left(f+\frac{2v}{r}\right)X \\
+\frac{\partial^2\phi}{\partial t\partial r} - u\rho B_{\text{momentum}} + w \rho C &amp;\overset{\text{定義 3,4}}{=}&amp; \left(f+\frac{2v}{r}\right)X\\
+\frac{\partial^2\phi}{\partial t\partial r} - u\rho B_{\text{momentum}} + w \rho C &amp;\overset{\text{定義 5}}{=}&amp; F &amp;\quad \text{--- (式 II)}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="thermal-wind-balance-rho-b">
+<h3>階段三：熱力風平衡 (Thermal Wind Balance) 證明 <span class="math notranslate nohighlight">\(\rho B\)</span> 的一致性<a class="headerlink" href="#thermal-wind-balance-rho-b" title="Link to this heading">#</a></h3>
+<p>在式 I 與式 II 中，我們定義了兩個版本的 <span class="math notranslate nohighlight">\(\rho B\)</span> ，大自然應該要是和諧的，我們現在用證明它們實際上是同一個東西</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial}{\partial r}\left[\frac{\partial\phi}{\partial z}\right] &amp;\overset{\text{已知 5}}{=}&amp; \frac{\partial}{\partial z}\left[\frac{\partial\phi}{\partial r}\right] \\
+\frac{\partial}{\partial r}\left[\frac{g}{\theta_0}\theta'\right] &amp;\overset{\text{已知 1,3}}{=}&amp; \frac{\partial}{\partial z}\left[\frac{v^2}{r} + fv\right] \\
+\frac{g}{\theta_0}\frac{\partial\theta'}{\partial r} &amp;=&amp; \frac{2v}{r}\frac{\partial v}{\partial z} + f\frac{\partial v}{\partial z} \\
+\frac{g}{\theta_0}\frac{\partial\theta'}{\partial r} &amp;=&amp; \left(f + \frac{2v}{r}\right)\frac{\partial v}{\partial z}\\
+\frac{g}{\theta_0}\frac{\partial\theta}{\partial r} &amp;=&amp; \left(f + \frac{2v}{r}\right)\frac{\partial v}{\partial z}\\
+-\frac{g}{\theta_0}\frac{\partial\theta}{\partial r} &amp;=&amp; -\left(f + \frac{2v}{r}\right)\frac{\partial v}{\partial z}\\
+\rho B_{\text{thermal}}&amp;\overset{\text{定義 2,3}}{=}&amp;  \rho B_{\text{momentum}} &amp;\equiv \rho B
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>物理解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>這三個結構參數（<span class="math notranslate nohighlight">\(\rho A, \rho B, \rho C\)</span>）代表了颱風（渦旋系統）抵抗外界干擾的 <strong>「剛性 (Stiffness)」或「穩定度」</strong>。</p>
+<p><img alt="" src="../../_images/Eliassen_Transverse_Equation.png" /></p>
+<section id="rho-a-static-stability">
+<h3>1. <span class="math notranslate nohighlight">\(\rho A\)</span>: 垂直穩定度 (Static Stability)<a class="headerlink" href="#rho-a-static-stability" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>公式</strong>: <span class="math notranslate nohighlight">\(\rho A = \frac{g}{\theta_0}\frac{\partial\theta}{\partial z}\)</span></p></li>
+<li><p><strong>物理直覺</strong>: 它是大氣的「垂直彈簧」，當次環流的上升氣流 <span class="math notranslate nohighlight">\(w\)</span> 試圖往上衝時，如果環境位溫隨高度遞增得很快（<span class="math notranslate nohighlight">\(\rho A\)</span> 很大），空氣塊就會感受到強大的負浮力把他拉回原位。 <span class="math notranslate nohighlight">\(\rho A\)</span> 越大，系統越難產生深對流。這與直角座標中的布氏頻率平方 <span class="math notranslate nohighlight">\(N^2\)</span> 完全等價。</p></li>
+<li><p><span class="math notranslate nohighlight">\(A = \frac{\partial\overline{b}}{\partial z} = N^2\)</span>，也就是布蘭特-維賽拉頻率（Brunt-Väisälä Frequency）的平方</p></li>
+</ul>
+</section>
+<section id="rho-c-inertial-stability">
+<h3>2. <span class="math notranslate nohighlight">\(\rho C\)</span>: 慣性穩定度 (Inertial Stability)<a class="headerlink" href="#rho-c-inertial-stability" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>公式</strong>: <span class="math notranslate nohighlight">\(\rho C = \left(f+\frac{2v}{r}\right)(f+\zeta)\)</span></p></li>
+<li><p><strong>物理直覺</strong>: 它是大氣的「水平彈簧」。前項 <span class="math notranslate nohighlight">\(\left(f+\frac{2v}{r}\right)\)</span> 是「絕對角速度的兩倍」，後項 <span class="math notranslate nohighlight">\((f+\zeta)\)</span> 是「絕對渦度」。當次環流的徑向風 <span class="math notranslate nohighlight">\(u\)</span> 試圖把空氣塊往內推時，會受到科氏力與離心力改變所產生的反作用力。在強烈颱風的眼牆（切線風 <span class="math notranslate nohighlight">\(v\)</span> 極大，渦度 <span class="math notranslate nohighlight">\(\zeta\)</span> 極大），<span class="math notranslate nohighlight">\(\rho C\)</span> 會是一個超級大的正值，這意味著眼牆像一道堅不可摧的無形氣牆，很難被水平氣流穿透。</p></li>
+</ul>
+</section>
+<section id="rho-b">
+<h3>3. <span class="math notranslate nohighlight">\(\rho B\)</span>: 斜壓性 / 熱力風 耦合<a class="headerlink" href="#rho-b" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>公式</strong>: <span class="math notranslate nohighlight">\(\rho B = -\frac{g}{\theta_0}\frac{\partial\theta}{\partial r} = -\left(f+\frac{2v}{r}\right)\frac{\partial v}{\partial z}\)</span></p></li>
+<li><p><strong>物理直覺</strong>: 它代表水平溫度梯度（熱力），必然伴隨著垂直風切（動力），它告訴我們：次環流的推動（<span class="math notranslate nohighlight">\(u, w\)</span>）不是正交獨立的！當系統內部存在徑向溫度差異時，垂直運動與水平運動必須「傾斜地」互相配合，才能確保系統在演變過程中，永遠死死咬住「熱力風平衡」。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Fluid_Dynamics_in_Cylindrical_Coordinates"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Axisymmetric_Tangential_Momentum_Equation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Axisymmetric Tangential Momentum Equation (軸對稱切線動量方程式)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Eliassen_Transverse_Equation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Eliassen Transverse Equation (次環流方程式)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-a-rho-b">階段一：由熱力學推導 <span class="math notranslate nohighlight">\(\rho A\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的熱力型態</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-c-rho-b">階段二：由動力學推導 <span class="math notranslate nohighlight">\(\rho C\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的動力型態</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-wind-balance-rho-b">階段三：熱力風平衡 (Thermal Wind Balance) 證明 <span class="math notranslate nohighlight">\(\rho B\)</span> 的一致性</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-a-static-stability">1. <span class="math notranslate nohighlight">\(\rho A\)</span>: 垂直穩定度 (Static Stability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-c-inertial-stability">2. <span class="math notranslate nohighlight">\(\rho C\)</span>: 慣性穩定度 (Inertial Stability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-b">3. <span class="math notranslate nohighlight">\(\rho B\)</span>: 斜壓性 / 熱力風 耦合</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
