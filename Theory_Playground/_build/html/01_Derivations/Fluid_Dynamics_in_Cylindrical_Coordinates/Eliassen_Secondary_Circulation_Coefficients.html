@@ -209,6 +209,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -524,8 +525,9 @@ document.write(`
 <p>我們將證明分為三個階段：熱力轉換、動力轉換、以及連接兩者的橋樑。</p>
 <section id="rho-a-rho-b">
 <h3>階段一：由熱力學推導 <span class="math notranslate nohighlight">\(\rho A\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的熱力型態<a class="headerlink" href="#rho-a-rho-b" title="Link to this heading">#</a></h3>
-<p>目標：探討 <strong>靜力平衡</strong> 隨時間的演變
-$<span class="math notranslate nohighlight">\(\begin{gather*}
+<p>目標：探討 <strong>靜力平衡</strong> 隨時間的演變</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
 \frac{\partial\phi}{\partial z} &amp;\overset{\text{已知 1}}{=}&amp; \frac{g}{\theta_0}\theta' \\
 \frac{\partial}{\partial t}\left[\frac{\partial\phi}{\partial z}\right] &amp;=&amp; \frac{g}{\theta_0}\frac{\partial\theta'}{\partial t} \\
 \frac{\partial}{\partial t}\left[\frac{\partial\phi}{\partial z}\right] &amp;=&amp; \frac{g}{\theta_0}\frac{\partial\theta}{\partial t} \\
@@ -534,7 +536,7 @@ $<span class="math notranslate nohighlight">\(\begin{gather*}
 \frac{\partial^2\phi}{\partial t\partial z} +u\left(\frac{g}{\theta_0}\frac{\partial\theta}{\partial r}\right) + w\left(\frac{g}{\theta_0}\frac{\partial\theta}{\partial z}\right)&amp;=&amp;   \frac{g}{\theta_0}\frac{\theta}{T}\frac{Q}{c_p} \\
 \frac{\partial^2\phi}{\partial t\partial z} +u\rho A - w\rho B_{\text{thermal}}&amp;\overset{\text{定義 1,2}}{=}&amp;   \frac{g}{\theta_0}\frac{\theta}{T}\frac{Q}{c_p} \\
 \frac{\partial^2\phi}{\partial t\partial z} +u\rho A - w\rho B_{\text{thermal}}&amp;\overset{\text{定義 5}}{=}&amp;   J &amp;\quad \text{--- (式 I)}\\
-\end{gather*}\)</span>$</p>
+\end{gather*}\end{split}\]</div>
 </section>
 <section id="rho-c-rho-b">
 <h3>階段二：由動力學推導 <span class="math notranslate nohighlight">\(\rho C\)</span> 與 <span class="math notranslate nohighlight">\(\rho B\)</span> 的動力型態<a class="headerlink" href="#rho-c-rho-b" title="Link to this heading">#</a></h3>

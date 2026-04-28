@@ -56,6 +56,8 @@ chapters:
         title: "[流體力學] Anelastic近似"
       - file: 02_Concepts/Fluid_Dynamics/Boussinesq_approximation.ipynb
         title: "[流體力學] Boussinesq近似"
+      - file: 02_Concepts/Tropical_Cyclone/CISK_Theorem.ipynb
+        title: "[熱帶氣旋] CISK 定理"
   - file: 03_Intuitions/03_Intuitions.md
     sections:      
       - file: 03_Intuitions/n_points_coverage_threshold_coverage_ratio
