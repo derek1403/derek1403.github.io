@@ -413,15 +413,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concept-assumptions">一、 核心概念與基本假設 (Core Concept &amp; Assumptions)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-framework">二、 空間架構：6 個功能區域 (Spatial Framework)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-feedback-mechanism">三、 動力與熱力耦合：正回饋機制 (Positive Feedback Mechanism)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-modern-perspectives">四、 理論侷限與現代觀點比較 (Limitations &amp; Modern Perspectives)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">一、 垂直方向的 3 層劃分 (動力與熱力機制的垂直分層)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">二、 水平方向的 2 區劃分 (積雲尺度的空間分離)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">三、 6 個區域的功能解析矩陣</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">理論的數學運作邏輯</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-framework">二、 空間架構：6 個功能區域 (Spatial Framework)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-feedback-mechanism">三、 動力與熱力耦合：正回饋機制 (Positive Feedback Mechanism)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-modern-perspectives">四、 理論侷限與現代觀點比較 (Limitations &amp; Modern Perspectives)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">可參考的資料</a></li>
 </ul>
             </nav>
         </div>
@@ -438,8 +433,16 @@ document.write(`
 <section id="core-concept-assumptions">
 <h2>一、 核心概念與基本假設 (Core Concept &amp; Assumptions)<a class="headerlink" href="#core-concept-assumptions" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>理論概念：</strong> CISK 是一個描述大尺度環境（近中心邊界層輻合）與小尺度積雲（近中心中層潛熱釋放）互相合作的「尺度交互作用」正回饋機制</p></li>
-<li><p><strong>關鍵數學假設（積雲參數化）：</strong> 寫下加熱率與垂直速度的關係式 <span class="math notranslate nohighlight">\(Q \propto w_E \cdot q\)</span>。註明這個理論認為能量來源取決於「埃克曼抽吸速度」</p></li>
+<li><p><strong>理論概念：</strong> CISK 是一個描述大尺度環境（近中心邊界層輻合）與小尺度積雲（近中心中層潛熱釋放）互相合作的「尺度交互作用」正回饋機制</p>
+<ul>
+<li><p>適用於熱帶氣旋的 <strong>生成初期（Genesis）</strong> 、<strong>弱颱風（熱帶性低氣壓至輕度颱風階段）</strong></p></li>
+</ul>
+</li>
+<li><p><strong>關鍵數學假設（積雲參數化）：</strong> 假設整層氣柱的非絕熱加熱率 <span class="math notranslate nohighlight">\(Q\)</span> 直接正比於邊界層頂的埃克曼抽吸速度 <span class="math notranslate nohighlight">\(w_E\)</span> 與邊界層比濕 <span class="math notranslate nohighlight">\(q\)</span> 的乘積。 <span class="math notranslate nohighlight">\(Q \propto w_E \cdot q\)</span></p>
+<ul>
+<li><p><strong>物理意義：</strong> 此參數化關係式界定了系統的能量來源，明確指出積雲對流的發展、潛熱釋放量，完全由大尺度系統透過邊界層摩擦所產生的 <strong>Ekman pumping</strong> 來決定與控制</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="spatial-framework">
@@ -461,47 +464,46 @@ document.write(`
 </ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>垂直高度 \ 水平距離</p></th>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
 <th class="head text-left"><p>內部對流區 (<span class="math notranslate nohighlight">\(r &lt; 100\text{ km}\)</span>)</p></th>
 <th class="head text-left"><p>外部環境區 (<span class="math notranslate nohighlight">\(r &gt; 100\text{ km}\)</span>)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><strong>上層</strong></p></td>
-<td class="text-left"><p><strong>【動力排氣閥】強輻散區</strong><br>大量潛熱加熱導致此區等壓面抬升，產生極強的徑向向外氣壓梯度力。氣流在此強烈輻散流出，維持核心區底部的低壓不被填塞。</p></td>
-<td class="text-left"><p><strong>【高空質量接收與下沉起點】</strong><br>接收來自內部的流出質量。流出的空氣在此逐漸輻合，並在科氏力的作用下轉向，形成高空反氣旋 (Anticyclonic) 環流，隨後開始下沉。</p></td>
+<td class="text-left"><p><strong>【動力排氣閥】強輻散區</strong><br> 大量潛熱加熱導致此區等壓面抬升，產生極強的徑向向外氣壓梯度力，氣流在此強烈輻散流出，維持內部邊界層的低壓不被填塞</p></td>
+<td class="text-left"><p><strong>【高空質量接收與下沉起點】</strong><br>接收來自上層內部的流出質量，流出的空氣在此逐漸輻合，並在科氏力的作用下轉向形成高空反氣旋環流，隨後開始下沉。</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><strong>中層</strong></p></td>
-<td class="text-left"><p><strong>【熱力引擎核心】強烈上升與加熱區</strong><br>邊界層送上來的水氣在此大量凝結，釋放巨大的潛熱 (<span class="math notranslate nohighlight">\(Q \propto w_E \cdot q\)</span>)。強烈的上升運動拉伸了流體渦管 (Vortex stretching)，導致此層的相對渦度急遽增加。</p></td>
-<td class="text-left"><p><strong>【質量補償與抑制區】微弱下沉區</strong><br>為了滿足連續方程式的質量守恆，此區產生廣泛且微弱的絕熱下沉運動。下沉增溫使得外圍環境大氣層結趨於穩定，抑制了外圍的對流，確保能量集中於內部對流區。</p></td>
+<td class="text-left"><p><strong>【熱力引擎核心】強烈上升與加熱區</strong><br>邊界層送上來的水氣在此大量凝結，釋放巨大的潛熱 (<span class="math notranslate nohighlight">\(Q \propto w_E \cdot q\)</span>)，強烈的上升運動 <strong>拉伸了流體渦管</strong> ，導致此層的相對渦度急遽增加</p></td>
+<td class="text-left"><p><strong>【質量補償與抑制區】微弱下沉區</strong><br>為了滿足連續方程式的質量守恆，此區產生廣泛且微弱的絕熱下沉運動，下沉增溫使得外圍環境大氣層結趨於穩定，抑制了外圍的對流，確保能量集中於內部對流區。</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><strong>邊界層</strong></p></td>
-<td class="text-left"><p><strong>【抽吸泵浦】埃克曼抽吸區</strong><br>強烈的氣旋式風切與地表摩擦產生最強的邊界層輻合。這裡的垂直速度 (<span class="math notranslate nohighlight">\(w_E\)</span>) 達到最大值，將匯聚的潮濕空氣像煙囪一樣強行向上推入中層。</p></td>
-<td class="text-left"><p><strong>【水氣與角動量收集區】向心流入區</strong><br>氣流在向中心輻合的過程中，一方面不斷從溫暖的洋面吸收水氣與顯熱（增加相當位溫 <span class="math notranslate nohighlight">\(\theta_e\)</span>），另一方面將外圍的絕對角動量向中心輸送。</p></td>
+<td class="text-left"><p><strong>【抽吸泵浦】Ekman pumping</strong><br>強烈的氣旋式風切與地表摩擦產生最強的邊界層輻合，這裡的垂直速度 (<span class="math notranslate nohighlight">\(w_E\)</span>) 達到最大值，將匯聚的潮濕空氣像強行向上推入內部中層</p></td>
+<td class="text-left"><p><strong>【水氣與角動量收集區】向心流入區</strong><br>氣流在向中心輻合的過程中，一方面不斷從溫暖的洋面吸收水氣與潛熱（增加相當位溫 <span class="math notranslate nohighlight">\(\theta_e\)</span>），另一方面將外圍的絕對角動量向中心輸送。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
+<p><img alt="" src="../../_images/CISK_Mechanism_2D-cross-sectional_graph.png" /></p>
+</section>
 <section id="positive-feedback-mechanism">
-<h3>三、 動力與熱力耦合：正回饋機制 (Positive Feedback Mechanism)<a class="headerlink" href="#positive-feedback-mechanism" title="Link to this heading">#</a></h3>
-<p><strong>這一步在做什麼：</strong> 將第二部分的 6 個齒輪組裝起來，讓它們轉動。這裡要解釋因果關係，並且放入關鍵的數學推導來支撐物理直覺。</p>
-<ul class="simple">
-<li><p><strong>機制循環圖（文字版）：</strong></p>
+<h2>三、 動力與熱力耦合：正回饋機制 (Positive Feedback Mechanism)<a class="headerlink" href="#positive-feedback-mechanism" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>地表低壓與摩擦力產生非地轉風輻合。</p></li>
-<li><p>透過連續方程式推導出邊界層頂的埃克曼抽吸 <span class="math notranslate nohighlight">\(w_E = \frac{1}{\rho f} \hat{k} \cdot (\nabla \times \vec{\tau}_0)\)</span>。</p></li>
-<li><p><span class="math notranslate nohighlight">\(w_E\)</span> 將水氣送入中層，產生參數化潛熱加熱 <span class="math notranslate nohighlight">\(Q\)</span>。</p></li>
-<li><p>加熱導致高空高壓與強烈輻散。</p></li>
-<li><p>依據流體靜力平衡，高空排氣使得地表氣壓進一步下降，環流增強，回到步驟 1。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">內部邊界層</span></code> 存在初始低壓，使得有梯度風從 <code class="docutils literal notranslate"><span class="pre">外部邊界層</span></code> 吹向 <code class="docutils literal notranslate"><span class="pre">內部邊界層</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">外部邊界層</span></code> 輸送高濕度空氣至 <code class="docutils literal notranslate"><span class="pre">內部邊界層</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">內部邊界層</span></code> 透過摩擦輻合 <span class="math notranslate nohighlight">\(w_E = \frac{1}{\rho f} \hat{k} \cdot (\nabla \times \vec{\tau}_0)\)</span> 將水氣往上送入 <code class="docutils literal notranslate"><span class="pre">內部中層</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">內部中層</span></code> 發生參數化加熱 <span class="math notranslate nohighlight">\(Q \propto w_E\)</span>，加熱整個氣柱。</p></li>
+<li><p>氣柱加熱導致 <code class="docutils literal notranslate"><span class="pre">內部上層</span></code> 產生高壓與強輻散，進一步使得 <code class="docutils literal notranslate"><span class="pre">內部邊界層</span></code> 氣壓下降（依據流體靜力方程式 <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial z} = -\rho g\)</span> 積分）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">內部邊界層</span></code> 低壓加深，使得 <code class="docutils literal notranslate"><span class="pre">外部邊界層</span></code> 的流入更強，這又加大了 <code class="docutils literal notranslate"><span class="pre">內部邊界層</span></code> 的 <span class="math notranslate nohighlight">\(w_E\)</span>，完成正回饋。</p></li>
 </ol>
-</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">外部上層</span></code> 與 <code class="docutils literal notranslate"><span class="pre">外部中層</span></code> 則負責閉合這個二次環流，確保質量守恆。</p></li>
 </ul>
 </section>
-<hr class="docutils" />
 <section id="limitations-modern-perspectives">
-<h3>四、 理論侷限與現代觀點比較 (Limitations &amp; Modern Perspectives)<a class="headerlink" href="#limitations-modern-perspectives" title="Link to this heading">#</a></h3>
-<p><strong>這一步在做什麼：</strong> 科學是不斷修正的過程，記錄理論的缺陷與後續發展，能展現出宏觀的學術視野。這就是你原本規劃的「其他評論」。</p>
+<h2>四、 理論侷限與現代觀點比較 (Limitations &amp; Modern Perspectives)<a class="headerlink" href="#limitations-modern-perspectives" title="Link to this heading">#</a></h2>
+<p>科學是不斷修正的過程，記錄理論的缺陷與後續發展，能展現出宏觀的學術視野。</p>
 <ul class="simple">
 <li><p><strong>短波災難 (Short-wave Catastrophe)：</strong> 點出純線性 CISK 理論的數學缺陷（波數 <span class="math notranslate nohighlight">\(k \to \infty\)</span> 時，成長率 <span class="math notranslate nohighlight">\(\sigma \to \infty\)</span>），這也是為什麼後來 Ooyama 必須人為規定 <span class="math notranslate nohighlight">\(r = 100\text{ km}\)</span> 的內區。</p></li>
 <li><p><strong>與 WISHE 理論的對比：</strong></p>
@@ -512,49 +514,13 @@ document.write(`
 </ul>
 </li>
 </ul>
-<hr class="docutils" />
-<p>這樣的架構不僅涵蓋了機制，也包含了數學推導與學術史的演進。</p>
-<p>針對第三部分的數學推導（尤其是埃克曼抽吸速度 <span class="math notranslate nohighlight">\(w_E\)</span> 的完整積分過程），你需要我幫你整理成一段純 LaTeX 的語法區塊，方便你直接複製貼上到你的數位筆記中嗎？</p>
-<p>完全正確！你的物理直覺非常敏銳。我們直接拋棄類比，進入準確的動力與熱力學結構描述。</p>
-<p>在早期經典的理論與數值模型（例如 Ooyama 1969 年提出的熱帶氣旋發展模型）中，為了將大氣連續的流體簡化成可以用數學解析的框架，<strong>確實就是將系統切分為「水平 2 區 <span class="math notranslate nohighlight">\(\times\)</span> 垂直 3 層」，總共 6 個核心功能區</strong>。</p>
-<p>CISK 理論的本質是解釋「二次環流（徑向與垂直方向的 In-Up-Out-Down）」如何與「潛熱加熱」耦合。我們現在就用這 6 個區域來拆解整個系統的運作機制。</p>
 </section>
 <section id="id1">
-<h3>一、 垂直方向的 3 層劃分 (動力與熱力機制的垂直分層)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>在垂直方向上，流體靜力平衡控制了大局，每一層負責不同的質量傳輸與熱力轉換：</p>
-<ol class="arabic simple">
-<li><p><strong>邊界層 (地表至 <span class="math notranslate nohighlight">\(\sim 850\text{ hPa}\)</span> 或 <span class="math notranslate nohighlight">\(1\text{ km}\)</span>)：</strong> 動量耗散與水氣收集層。這裡是唯一摩擦力 (<span class="math notranslate nohighlight">\(\nabla \times \vec{\tau}_0\)</span>) 不可忽略的地方，負責破壞地轉平衡產生徑向流入 (Radial Inflow)。</p></li>
-<li><p><strong>中下對流層 (<span class="math notranslate nohighlight">\(\sim 750\text{ hPa}\)</span> 至 <span class="math notranslate nohighlight">\(500\text{ hPa}\)</span>)：</strong> 潛熱釋放與渦度增強層。積雲在此層發展，潛熱開始大量釋放，且因為質量輻合產生氣旋式渦度 (Spin-up)。</p></li>
-<li><p><strong>上對流層 (<span class="math notranslate nohighlight">\(\sim 200\text{ hPa}\)</span>)：</strong> 質量輻散與高壓排氣層。受下方潛熱加熱導致氣層厚度增加，形成局部高空高壓，負責將質量向外圍拋出 (Radial Outflow)。</p></li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="id2">
-<h3>二、 水平方向的 2 區劃分 (積雲尺度的空間分離)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>在水平方向上，CISK 理論區分了「有積雲對流發生的區域」與「無對流發生的環境區域」：</p>
-<ol class="arabic simple">
-<li><p><strong>內部對流區 (<span class="math notranslate nohighlight">\(r &lt; 100\text{ km}\)</span>)：</strong> 垂直速度大於零 (<span class="math notranslate nohighlight">\(w &gt; 0\)</span>) 的區域，相當於颱風的眼牆與核心雲帶。這裡是非絕熱加熱 (<span class="math notranslate nohighlight">\(Q &gt; 0\)</span>) 的主戰場。</p></li>
-<li><p><strong>外部環境/沉降區 (<span class="math notranslate nohighlight">\(r &gt; 100\text{ km}\)</span>)：</strong> 垂直速度小於或等於零 (<span class="math notranslate nohighlight">\(w \le 0\)</span>) 的區域。提供水氣來源，並透過微弱的下沉運動來補償核心區的質量消耗。</p></li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="id3">
-<h3>三、 6 個區域的功能解析矩陣<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>將上述條件相交，我們就可以清楚定義這 6 個區塊在 CISK 發展過程中所扮演的物理角色：</p>
-</section>
-<section id="id4">
-<h3>理論的數學運作邏輯<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>當這 6 個區域建立後，CISK 理論的數學封閉性（如何自己運轉）就非常清晰了：</p>
-<ol class="arabic simple">
-<li><p><strong>(外部邊界層)</strong> 輸送高濕度空氣至 <strong>(內部邊界層)</strong>。</p></li>
-<li><p><strong>(內部邊界層)</strong> 透過摩擦輻合 <span class="math notranslate nohighlight">\(w_E = \frac{1}{\rho f} \hat{k} \cdot (\nabla \times \vec{\tau}_0)\)</span> 將水氣往上送入 <strong>(內部中層)</strong>。</p></li>
-<li><p><strong>(內部中層)</strong> 發生參數化加熱 <span class="math notranslate nohighlight">\(Q \propto w_E\)</span>，加熱整個氣柱。</p></li>
-<li><p>氣柱加熱導致 <strong>(內部上層)</strong> 產生高壓與強輻散，進一步使得地表氣壓下降（依據流體靜力方程式 <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial z} = -\rho g\)</span> 積分）。</p></li>
-<li><p>地表低壓加深，使得 <strong>(外部邊界層)</strong> 的流入更強，這又加大了 <strong>(內部邊界層)</strong> 的 <span class="math notranslate nohighlight">\(w_E\)</span>，完成正回饋。</p></li>
-<li><p><strong>(外部上層)</strong> 與 <strong>(外部中層)</strong> 則負責閉合這個二次環流，確保質量守恆。</p></li>
-</ol>
-<p>透過這 6 個區塊的定義，我們就能把複雜的 3D 偏微分方程式，轉換為可以解析的物理機制，這也是大氣動力學中理解對流與大尺度環境交互作用的最經典框架。</p>
-</section>
+<h2>可參考的資料<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=vIsbJ6InwJc&amp;amp;t=134s">3 Potential Intensity of Tropical Cyclones</a></p></li>
+<li><p><a class="reference external" href="http://ww2010.atmos.uiuc.edu/(Gh)/guides/mtr/hurr/grow/cisk.rxml">CISK : how thunderstorms become hurricanes</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -623,15 +589,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concept-assumptions">一、 核心概念與基本假設 (Core Concept &amp; Assumptions)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-framework">二、 空間架構：6 個功能區域 (Spatial Framework)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-feedback-mechanism">三、 動力與熱力耦合：正回饋機制 (Positive Feedback Mechanism)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-modern-perspectives">四、 理論侷限與現代觀點比較 (Limitations &amp; Modern Perspectives)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">一、 垂直方向的 3 層劃分 (動力與熱力機制的垂直分層)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">二、 水平方向的 2 區劃分 (積雲尺度的空間分離)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">三、 6 個區域的功能解析矩陣</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">理論的數學運作邏輯</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-framework">二、 空間架構：6 個功能區域 (Spatial Framework)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-feedback-mechanism">三、 動力與熱力耦合：正回饋機制 (Positive Feedback Mechanism)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-modern-perspectives">四、 理論侷限與現代觀點比較 (Limitations &amp; Modern Perspectives)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">可參考的資料</a></li>
 </ul>
   </nav></div>
 
