@@ -72,3 +72,18 @@
  * []()
  * []()
 
+### 2026.05.18
+ * [通过浦丰投针来取弦，能否终结贝特朗悖论](https://www.bilibili.com/video/BV1Hc5r69ELs/)
+ * [如何从数学角度分析踩踏事故，人群如何跨越不归点](https://www.bilibili.com/video/BV1ALLA69Exu)
+ * [不只是你，反证法感觉不对劲 | Dr. Will Wood](https://www.bilibili.com/video/BV1KtopBQEDM/)
+ * [Vibe Coding 做產品為什麼失敗？營收 $0 全解析](https://www.youtube.com/watch?v=FR3q4mGQRUI)
+ * [Hardware-Efficient Neuro-Symbolic Networks with the Exp-Minus-Lo](https://arxiv.org/html/2604.13871v1)
+ * [【长波电台01】闲聊解答一下两年来攒的常见问题](https://www.bilibili.com/video/BV1Xe9yBjEyq/?spm_id_from=333.337.search-card.all.click&vd_source=ebe27e638fca1c0e60c87d20aa21d1ab)
+ * [随机扔硬币写一个程序（正面是1，反面是0），这个程序有多大概率最终会停机? | Quantia](https://www.bilibili.com/video/BV1JN5n6hEp2/)
+ * [GitHub上正在发生大规模API Key泄漏事件，小白需警惕](https://www.youtube.com/watch?v=GiBrY_93mCE)
+ * [https://geminicli.com/](https://geminicli.com/)
+ * [球的弦空间同胚于复射影空间CP²？这俩是怎么扯上关系的？](https://www.bilibili.com/video/BV1M3ReBLE1L/)
+ * [数学中最意外的答案 | Problems Visualised](https://www.bilibili.com/video/BV1cSR5BmE7t/)
+ * []()
+ * []()
+ * []()
