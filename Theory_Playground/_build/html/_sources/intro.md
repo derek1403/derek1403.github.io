@@ -17,7 +17,7 @@
 5. **🛠️ 04_Tools**: 武器庫。存放 Python Snippets、LaTeX 技巧、指標運算對照表
 6. **🚧 05_Projects**: 專案現場。具體的研究任務
 7. **📚 06_References**: 外部文獻。存放論文、書籍原始檔
-8. **🪦 99_Archive**: 封存區。過時但不想刪除的記憶
+8. **🗑️ 99_Archive**: 封存區。過時但不想刪除的記憶
 
 ```
 Theory_Playground/

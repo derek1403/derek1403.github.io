@@ -1,0 +1,1351 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Deep convection in elliptical and polygonal eyewalls of tropical cyclones &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_References/Tropical cyclone dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="📚 06_References: 外部文獻" href="../../06_References.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../01_Derivations/01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[熱帶氣旋動力學] Kuo2016-Deep convection in elliptical and polygonal eyewalls of tropical cyclones</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F06_References/Tropical cyclone dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/06_References/Tropical cyclone dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Deep convection in elliptical and polygonal eyewalls of tropical cyclones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">論文</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>1. Introduction</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-experiment-design"><strong>2. Model and Experiment Design</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-results"><strong>3. Numerical Results</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-concluding-remarks"><strong>4. Summary and Concluding Remarks</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">AI 觀點</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-physical-mechanisms">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-mechanisms-model-discussion">⚙️ 實例化與結構重組 (Dynamics, Mechanisms &amp; Model Discussion)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-mechanisms-final-conclusion">⚙️ 實例化與結構重組 (Dynamics, Mechanisms &amp; Final Conclusion)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-comparative-dynamics-outlook">⚙️ 實例化與結構重組 (Discussion, Comparative Dynamics &amp; Outlook)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">🌪️ 第一部分：邊界層動力學與跨層物理機制</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1. 風場極值區的跨層位移與收縮</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 極座標下的切向動量與下游推進機制</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-like-structure-updraft">3. 震波狀結構與強迫抬升 (Shock-like Structure &amp; Updraft)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">幾何形變：多邊形渦旋理論與觀測驗證</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1. 幾何形狀對對流強度的影響</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 旋轉週期與線性理論驗證</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nbm-sbl">🔬 第三部分：雙層模型 (NBM+SBL) 綜合探討與學術定位</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vrw">1. VRW 對邊界層的跨層組織作用 (核心機制)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">2. 動力量級對比：震波抬升 vs. 傳統艾克曼抽吸</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. 學術爭議與模型的科學定位</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">📊 本文專用變數與座標系對照表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">🔍 關鍵名詞</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">📌 一句話總結核心目的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">🧠 梳理前因後果（作者的思考路徑）</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="deep-convection-in-elliptical-and-polygonal-eyewalls-of-tropical-cyclones">
+<h1>Deep convection in elliptical and polygonal eyewalls of tropical cyclones<a class="headerlink" href="#deep-convection-in-elliptical-and-polygonal-eyewalls-of-tropical-cyclones" title="Link to this heading">#</a></h1>
+<p>Hung-Chi Kuo , Wei-Yi Cheng , Yi-Ting Yang  , Eric A. Hendricks , and Melinda S. Peng</p>
+<section id="id1">
+<h2>論文<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="abstract">
+<h3>Abstract<a class="headerlink" href="#abstract" title="Link to this heading">#</a></h3>
+<p>In observations, tropical cyclones with cyclonically rotating elliptical eyewalls are often characterized by <strong>wave number 2 (WN2) deep convection located at the edge of the major axis</strong>. A simple modeling framework is used to understand this phenomenon, where a <strong>nondivergent barotropic model (NBM) is employed to represent the elliptical vortex in the free atmosphere</strong>, and an <strong>asymmetric slab boundary layer (SBL) model is used to simulate the frictional boundary layer (BL) underneath the free atmosphere</strong>. The interaction is <strong>one way</strong> in that the overlying cyclonic flow drives the BL, but the BL pumping does not feed back to the overlying flow. The nonlinear-balanced pressure field from the NBM drives the winds in the SBL model, which then causes BL convergence and pumping near the eyewall. The strong updrafts at the edge of the major axis for the elliptic vortex in the BL <strong>are induced by the larger convergent radial wind from the asymmetric distribution of the pressure fields of the free atmosphere with noncircular vortex</strong>. The large radial inflow maintains the supergradient wind at the edge of the elliptical vortex. The results emphasize <strong>the cyclonic rotation of the WN2 feature of strong updrafts at the top of the BL from the local shock-like BL radial wind structure.</strong> Similar radial profiles and strong BL top updrafts occur at the edges of higher-order polygonal eyewalls with the <strong>magnitude of the peak updraft decreasing as the wave number structure of the vortex increases</strong>.</p>
+<p>在觀測中，具有氣旋式旋轉橢圓形眼牆的熱帶氣旋，其特徵通常是在<strong>長軸（半長軸長度為 <span class="math notranslate nohighlight">\(a\)</span>）的邊緣，出現方位角波數為 2（<span class="math notranslate nohighlight">\(m=2\)</span>）的深對流現象</strong>。為了理解此一現象，本研究使用了一個簡單的模型框架：其中採用<strong>無輻散正壓模型（NBM）來代表自由大氣（Free atmosphere）中的橢圓形渦旋</strong>（其高空切向風場記為 <span class="math notranslate nohighlight">\(v_{gr}\)</span> ）；並使用一個<strong>非對稱平板邊界層（SBL）模型來模擬自由大氣下方的受摩擦邊界層（BL）</strong>（其內部風場包含徑向流入風 <span class="math notranslate nohighlight">\(u_{sbl}\)</span> 與切向旋轉風 <span class="math notranslate nohighlight">\(v_{sbl}\)</span> ）。</p>
+<p>這兩個大氣分層之間的交互作用是<strong>單向的（One-way interaction）</strong>，也就是說，上方自由大氣的氣旋式氣流會向下驅動邊界層，但邊界層產生的抽吸作用（Pumping，即邊界層頂部的垂直上升速度 <span class="math notranslate nohighlight">\(w\)</span>）並不會向上反饋給高空的氣流。</p>
+<p>運作機制如下：來自高空 NBM 的非線性平衡氣壓場 <span class="math notranslate nohighlight">\(p\)</span> 會向下驅動 SBL 模型中的水平風場（<span class="math notranslate nohighlight">\(u, v\)</span>），進而在眼牆附近引起邊界層的流體輻合（Convergence）與邊界層頂部的垂直上升氣流 <span class="math notranslate nohighlight">\(w\)</span>。</p>
+<p>在邊界層內，橢圓渦旋長軸 <span class="math notranslate nohighlight">\(a\)</span> 邊緣之所以會激發出強烈的上升氣流 <span class="math notranslate nohighlight">\(w\)</span> ，是因為非圓形渦旋在高空自由大氣中形成了非對稱的氣壓場 <span class="math notranslate nohighlight">\(p\)</span> 分佈，這種不均勻的氣壓梯度力<strong>在長軸 <span class="math notranslate nohighlight">\(a\)</span> 的端點處，激發出了更大的邊界層輻合徑向流入風 <span class="math notranslate nohighlight">\(u_{sbl}\)</span></strong>。這股極大的徑向流入風 <span class="math notranslate nohighlight">\(u_{sbl}\)</span> ，成功地<strong>維持了橢圓渦旋長軸邊緣的「超梯度風」狀態（Supergradient wind，意即該處低空的實際切向風速 <span class="math notranslate nohighlight">\(v_{sbl}\)</span> 大於高空的平衡風速 <span class="math notranslate nohighlight">\(v_{gr}\)</span>）</strong>。</p>
+<p>研究結果強調，邊界層頂部波數二（<span class="math notranslate nohighlight">\(m=2\)</span>）的強烈上升氣流 <span class="math notranslate nohighlight">\(w\)</span> 特徵會呈現氣旋式旋轉，這主要是<strong>源自於低空局部出現、如同震波般在短距離內劇烈減速的邊界層徑向風 <span class="math notranslate nohighlight">\(u_{sbl}\)</span> 剖面結構（Local shock-like BL radial wind structure）</strong>。類似的徑向風剖面與邊界層頂強烈上升氣流 <span class="math notranslate nohighlight">\(w\)</span> 現象，也會發生在更高階的多邊形眼牆（如三角形 <span class="math notranslate nohighlight">\(m=3\)</span>、正方形 <span class="math notranslate nohighlight">\(m=4\)</span>、五邊形 <span class="math notranslate nohighlight">\(m=5\)</span>）邊緣，不過，<strong>隨著渦旋的波數結構 <span class="math notranslate nohighlight">\(m\)</span> 增加，其峰值上升氣流 <span class="math notranslate nohighlight">\(w_{max}\)</span> 的強度會隨之遞減</strong>。</p>
+</section>
+<section id="introduction">
+<h3><strong>1. Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
+<p>The organization and structure of a tropical cyclone (TC) is mainly controlled by the convective process. <em>Ooyama</em> [1969], using a symmetric vortex, suggested that the boundary layer (BL) convergence can contribute to the organization of convection in the inner core of a TC. <em>Powell</em> [1982] studied the isotach distribution in the BL of Hurricane Frederic (1979) and proposed a relationship between the BL wind, the convection, and the motion of the hurricane. The BL tangential winds were in general strong on the right-front quadrant of the TC. <em>Shapiro</em> [1983] used a slab boundary layer (SBL) model of constant depth to study the wave number 1 (WN1) asymmetric convection under a translating hurricane. Large convergence often occurred in the right-front quadrant of the storm motion in cases with large translation speed. In the convergent region, the tangential wind in the BL is supergradient within <span class="math notranslate nohighlight">\(r &lt; r_{\max}\)</span> and is subgradient in <span class="math notranslate nohighlight">\(r &gt; r_{\max}\)</span>, where <span class="math notranslate nohighlight">\(r_{\max}\)</span> is the radius of maximum wind (RMW). The modeling results were in general agreement with the observational study of <em>Powell</em> [1982].</p>
+<ul class="simple">
+<li><p><strong>Ooyama (1969)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：利用對稱渦旋模型（Symmetric vortex model）。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：指出邊界層（BL）輻合在熱帶氣旋（TC）核心內部的對流組織化過程中，扮演著至關重要的角色。</p></li>
+</ul>
+</li>
+<li><p><strong>Powell (1982)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：分析了 1979 年費德里克颶風（Hurricane Frederic）邊界層內的等風速線（Isotach，即等風速點的連線）分佈。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：建立了邊界層風場、對流與颶風移動之間的關係。具體觀測到邊界層的切向風（Tangential winds）通常在氣旋的 <strong>右前象限（Right-front quadrant）</strong> 最為強烈。</p></li>
+</ul>
+</li>
+<li><p><strong>Shapiro (1983)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：採用等厚度的平板邊界層（SBL）模型，研究移動型（平移）颶風下，波數 1（WN1）的不對稱對流。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：發現顯著的輻合頻繁發生在<strong>右前象限</strong>，特別是在風暴平移速度較快的情況下。</p></li>
+<li><p><strong>風場動力學 (Wind Dynamics)</strong>：在此輻合區域內，邊界層切向風相對於最大風速半徑（<span class="math notranslate nohighlight">\(r_{\max}\)</span>）表現出不同的特性：</p>
+<ul>
+<li><p><strong>超梯度風 (Supergradient)</strong>：發生在最大風速半徑之內（<span class="math notranslate nohighlight">\(r &lt; r_{\max}\)</span>）。</p></li>
+<li><p><strong>次梯度風 (Subgradient)</strong>：發生在最大風速半徑之外（<span class="math notranslate nohighlight">\(r &gt; r_{\max}\)</span>）。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Williams et al. [2013]</em> used an axisymmetric SBL model to interpret aircraft observations from Hurricane Hugo (1989). Their results indicate that in Category 3 hurricanes (tangential wind is approximately <span class="math notranslate nohighlight">\(55 \text{ m s}^{-1}\)</span>), the BL inflow decreases from approximately <span class="math notranslate nohighlight">\(22 \text{ m s}^{-1}\)</span> to zero over a radial distance of a few kilometers (i.e., a shock-like structure). They demonstrated that the nonlinear advection of the radial momentum produces shock-like structures for the radial wind within the TC BL. This radial convergence can lead to updrafts exceeding <span class="math notranslate nohighlight">\(22 \text{ m s}^{-1}\)</span> at a height of <span class="math notranslate nohighlight">\(1000 \text{ m}\)</span>, which is important to initiate convection in TCs. In addition, the shock-like structure in the BL has a strong impact on the tangential wind and vorticity. On the inner side of the shock, the tangential wind tendency is essentially zero, while on the outer side of the shock the tangential wind tendency is largely due to the strong radial inflow there. The result then is the development of a U-shaped tangential wind profile and large vorticity in a thin radial region. <em>Abarca et al. [2015]</em> suggested that shock-like structures are not found in the azimuthally averaged vortex BL. It is possible, however, that the shock-like structure may occur locally in the BL and not in the azimuthally averaged structure. Since the dynamical mechanism for shock formation is the nonlinear advection term in the momentum equation, shocks may also occur locally (without the assumption of axisymmetry or the choice of a particular coordinate system).</p>
+<ul class="simple">
+<li><p><strong>Williams et al. (2013)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：使用軸對稱邊界層（SBL）模型，分析 1989 年三級颱風雨果（Hurricane Hugo）的觀測資料。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：發現邊界層的徑向流入（Inflow）在數公里內從約 <span class="math notranslate nohighlight">\(22 \text{ m/s}\)</span> 驟降至零，形成明顯的「震波狀結構」（Shock-like structure）。</p></li>
+<li><p><strong>風場動力學與影響 (Wind Dynamics &amp; Impacts)</strong>：</p>
+<ul>
+<li><p><strong>機制</strong>：證明徑向動量方程式中的「非線性平流項」是產生此震波的主因。</p></li>
+<li><p><strong>垂直向</strong>：極端輻合在 <span class="math notranslate nohighlight">\(1000\)</span> 公尺高度引發超過 <span class="math notranslate nohighlight">\(22 \text{ m/s}\)</span> 的強烈上升氣流，利於系統內部對流的起始。</p></li>
+<li><p><strong>切向</strong>：震波外側強烈的徑向流入主導了切向風趨勢（震波內側的切向風幾乎不改），導致形成 U 型的切向風剖面，並在狹窄的徑向區域內產生極大渦度。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Abarca et al. (2015)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：探討方位角平均（Azimuthally averaged）狀態下的渦旋邊界層結構。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：指出在經過方位角平均的結構中，並未發現上述的震波狀結構。</p></li>
+<li><p><strong>綜合釋疑 (Synthesis)</strong>：由於震波形成的動力機制是「非線性平流」，這意味著震波可以不依賴軸對稱假設而局部（Locally）發生。因此，震波可能確實存在於局部邊界層中，只是在數學上進行方位角平均處理時，其特徵被隱藏或抵消了。</p></li>
+</ul>
+</li>
+</ul>
+<p>Using a nonlinear, nondivergent barotropic model (NBM), <em>Kuo et al.</em> [1999] suggested that the vortex Rossby wave (VRW) dynamics [<em>Montgomery and Kallenbach</em>, 1997] causes the elliptical eye to rotate anticyclonically relative to the mean flow. This causes the elliptical eye to move more slowly relative to the mean flow. Following the pioneering work of Kelvin [<em>Thomson</em>, 1880], <em>Kuo et al.</em> [1999] proposed that the cyclonic rotation of asymmetric perturbations in polygonal eyewalls as the VRW follows with <span class="math notranslate nohighlight">\(c = V_{\max} (1 - 1/m)\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is the wave phase speed, <span class="math notranslate nohighlight">\(V_{\max}\)</span> is the vortex maximum wind, and <span class="math notranslate nohighlight">\(m\)</span> is the azimuthal wave number. Results using the NBM for the cyclonic rotation of elliptical vortex by <em>Kuo et al.</em> [1999] are in general agreement with the nonlinear theory of the Kirchhoff elliptical vortex [<em>Lamb</em>, 1932, p. 232].</p>
+<ul class="simple">
+<li><p><strong>Kuo et al. (1999)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：採用非線性無輻散正壓模型（Nonlinear, nondivergent barotropic model, NBM）。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：</p>
+<ul>
+<li><p><strong>橢圓形風眼現象</strong>：發現橢圓形颱風眼（Elliptical eye）相對於平均氣流會產生「反氣旋式旋轉」（Anticyclonic rotation），這導致橢圓形風眼的移動速度相較於平均氣流來得緩慢。</p></li>
+<li><p><strong>多邊形眼牆現象</strong>：針對多邊形眼牆（Polygonal eyewalls），提出其不對稱擾動的「氣旋式旋轉」（Cyclonic rotation）是遵循渦旋羅斯貝波（Vortex Rossby wave, VRW）的傳播規律。</p></li>
+</ul>
+</li>
+<li><p><strong>風場動力學與綜合釋疑 (Wind Dynamics &amp; Synthesis)</strong>：</p>
+<ul>
+<li><p><strong>核心動力機制</strong>：上述旋轉現象主要由 VRW 動力學（延續 <em>Montgomery and Kallenbach</em>, 1997 的研究）所驅動。在多邊形眼牆的擾動中，波動相速（Wave phase speed, <span class="math notranslate nohighlight">\(c\)</span>）遵循公式：<span class="math notranslate nohighlight">\(c = V_{\max} (1 - 1/m)\)</span>，其中 <span class="math notranslate nohighlight">\(V_{\max}\)</span> 為渦旋最大風速，<span class="math notranslate nohighlight">\(m\)</span> 為方位角波數（Azimuthal wave number）。</p></li>
+<li><p><strong>理論驗證與連結</strong>：該研究使用 NBM 模擬橢圓渦旋旋轉的結果，與經典流體力學中的「克希荷夫橢圓渦旋（Kirchhoff elliptical vortex）」非線性理論（<em>Lamb</em>, 1932；源自 <em>Thomson/Kelvin</em>, 1880 的先驅工作）具有高度一致性。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Muramatsu</em> [1986] used a land-based radar data for a 15 h period to study polygonal eyewalls in Typhoon Wynne (1980). The polygonal structures investigated included squares, pentagons, and hexagons. It was shown that pentagons and squares had rotation periods of approximately 42 min and 48 min, respectively. The rotation period decreased as the tangential wave number (WN) structure of the vortex increased. This is in general agreement with the modeling results of <em>Kurihara and Bender</em> [1982]. <em>Itano and Hosoya</em> [2013] studied the geometry of convection in the polygonal eye of Typhoon Sinlaku (2002). Their analysis revealed the dominance of WN2 and WN5 convective perturbations with angular velocities of approximately <span class="math notranslate nohighlight">\(80^\circ \text{ h}^{-1}\)</span> and <span class="math notranslate nohighlight">\(130^\circ \text{ h}^{-1}\)</span>, respectively, in Typhoon Sinlaku. The observations were also in general agreement with the linear theory of Kelvin [<em>Thomson</em>, 1880].</p>
+<ul class="simple">
+<li><p><strong>Muramatsu (1986)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：利用長達 15 小時的陸基雷達資料，分析 1980 年溫妮颱風（Typhoon Wynne）的多邊形眼牆結構。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：</p>
+<ul>
+<li><p>觀測到風眼呈現多邊形結構，包含了四邊形、五邊形與六邊形。</p></li>
+<li><p>測量出五邊形的旋轉週期約為 42 分鐘，四邊形則約為 48 分鐘。</p></li>
+<li><p>總結出一個規律：渦旋的切向波數（Wave number, WN）越大（即多邊形的邊數越多），其旋轉週期就越短。</p></li>
+</ul>
+</li>
+<li><p><strong>綜合釋疑 (Synthesis)</strong>：這些實際觀測出來的旋轉特徵與遞減規律，與 Kurihara and Bender (1982) 過去的數值模擬結果相當吻合。</p></li>
+</ul>
+</li>
+<li><p><strong>Itano and Hosoya (2013)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：分析 2002 年辛樂克颱風（Typhoon Sinlaku）多邊形風眼內對流的幾何特徵。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：指出在辛樂克颱風的發展過程中，主要由波數 2（WN2，類似橢圓）與波數 5（WN5，五邊形）的對流擾動佔據主導地位。它們的角速度（Angular velocities）分別約為 <span class="math notranslate nohighlight">\(80^\circ/\text{h}\)</span> 與 <span class="math notranslate nohighlight">\(130^\circ/\text{h}\)</span>。</p></li>
+<li><p><strong>風場動力學與綜合釋疑 (Wind Dynamics &amp; Synthesis)</strong>：這些針對真實颱風角速度的現代觀測數據，進一步印證了經典流體力學中克耳文（<em>Thomson</em>, 1880）的線性理論（Linear theory）。</p></li>
+</ul>
+</li>
+</ul>
+<p>There is observational evidence that deep convection often occurs near the edges of the major axis of an elliptical eyewall. Examples include the Second Miyakojima Typhoon (1966) [<em>Mitsuta and Yoshizumi</em>, 1973, Figure 10], Hurricane Allen (1980) [<em>Shapiro</em>, 1983, Figure 10], Hurricane Elena (1985) [<em>Corbosiero et al.</em>, 2006, Figure 4a], and Hurricane Erin (2001) [<em>Aberson et al.</em>, 2006, Figure 3]. Figure 1 shows two examples of elliptical eyewall structures from the radar reflectivity observed for Typhoons Herb (1996) and Dujuan (2015). Figure 1a is the same as Figure 2 from <em>Kuo et al.</em> [1999], except in color and in a smaller domain. Both have WN2 deep convective structures at the edges of the major axis that rotate cyclonically with the elliptical eye. In the case of Typhoon Dujuan (2015), the rotation period of WN2 deep convection perturbation was approximately <span class="math notranslate nohighlight">\(150 \text{ min}\)</span> (<span class="math notranslate nohighlight">\(144^\circ \text{ h}^{-1}\)</span>). The maximum wind, as estimated by Central Weather Bureau in Taiwan, was <span class="math notranslate nohighlight">\(64 \text{ m s}^{-1}\)</span> and the size was <span class="math notranslate nohighlight">\(46 \text{ km}\)</span>. Thus, the rotation speed was found to be approximately half the maximum tangential wind. The presence of deep convection at the edges of the cyclonically rotating major axis has also been identified in numerical simulations. <em>Braun</em> [2002] used the Pennsylvania State University–National Center for Atmospheric Research fifth-generation Mesoscale Model with a horizontal resolution of <span class="math notranslate nohighlight">\(1.3 \text{ km}\)</span> on the finest nested mesh to simulate Hurricane Bob (1991). The distribution of radial flow, vertical motion, and precipitation were shown to be amplified by a WN2 asymmetry that rotates cyclonically around the center at about half the speed of the mean tangential winds, consistent with the linear theory of Kelvin.</p>
+<ul class="simple">
+<li><p><strong>Mitsuta and Yoshizumi (1973), Shapiro (1983), Corbosiero et al. (2006), Aberson et al. (2006)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：回顧並分析多個歷史氣旋的觀測資料（包含 1966 年第二宮古島颱風、1980 年颶風 Allen、1985 年颶風 Elena 以及 2001 年颶風 Erin）。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：提供了一致的觀測證據，指出深對流（Deep convection）通常發生在橢圓形眼牆的「長軸邊緣（Edges of the major axis）」。</p></li>
+</ul>
+</li>
+<li><p><strong>雷達觀測實例解析 (賀伯颱風 1996 與 杜鵑颱風 2015；結合 Kuo et al., 1999 之分析)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：利用雷達回波觀測資料，檢視 1996 年賀伯（Herb）與 2015 年杜鵑（Dujuan）颱風的橢圓眼牆結構。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：</p>
+<ul>
+<li><p>兩者皆在風眼長軸邊緣展現了波數 2（WN2）的深對流結構，並隨著橢圓風眼進行氣旋式旋轉。</p></li>
+<li><p>針對杜鵑颱風（依據台灣中央氣象局估算最大風速 <span class="math notranslate nohighlight">\(64 \text{ m s}^{-1}\)</span>、尺度 <span class="math notranslate nohighlight">\(46 \text{ km}\)</span>），精準測出其 WN2 深對流擾動的旋轉週期約為 <span class="math notranslate nohighlight">\(150 \text{ min} \approx \frac{2 \pi 46 \times 10^{3} \text{ m}}{64\text{ ms}^{-1}(1-\frac{1}{2}) \times 60 \text{ s}\cdot {min}^{-1}}\)</span>（等同角速度 <span class="math notranslate nohighlight">\(144^\circ \text{ h}^{-1}\)</span>）。</p></li>
+</ul>
+</li>
+<li><p><strong>風場動力學 (Wind Dynamics)</strong>：由杜鵑颱風的實際數據推導得出，此擾動結構的旋轉速度大約是最大切向風速的一半。</p></li>
+</ul>
+</li>
+<li><p><strong>Braun (2002)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)</strong>：使用高解析度（最細網格達 <span class="math notranslate nohighlight">\(1.3 \text{ km}\)</span>）的 MM5 中尺度數值模式（PSU-NCAR Mesoscale Model），模擬 1991 年颶風 Bob。</p></li>
+<li><p><strong>研究發現 (Finding)</strong>：數值模擬也印證了觀測現象。模型顯示徑向氣流、垂直運動與降水的分布，皆會被 WN2 的不對稱性所增強（Amplified）。</p></li>
+<li><p><strong>風場動力學與綜合釋疑 (Wind Dynamics &amp; Synthesis)</strong>：</p>
+<ul>
+<li><p>模擬指出，這種 WN2 不對稱結構會以大約平均切向風速一半的速度，繞著氣旋中心進行氣旋式旋轉。</p></li>
+<li><p>結論：這個基於現代高解析度模型的模擬結果，完美契合了克耳文（<em>Thomson</em>, 1880）在一個世紀前提出的經典線性理論（Linear theory）。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../../_images/fig1.png" /></p>
+<p>This paper investigates the structure of BL pumping and convection in TCs with elliptical or other polygonal eyewalls. In particular, our emphasis is on the dynamics associated with the WN2 deep BL pumping and convection at the edges of the major axis of the eyewall. We use a nonlinear NBM combined with an asymmetric SBL model for our study. The NBM is a one-layer model designed to model the cyclonic rotation of the elliptical vortex in the quasi-inviscid free atmosphere above the BL, and the asymmetric SBL model is designed to represent the BL underneath the free atmosphere. The system is used to obtain a basic understanding of how the BL responds to an elliptical or polygonal vortex of the free atmosphere. The rest of the paper is organized as follows: section 2 describes the system and the model parameters, the results from the numerical experiments are presented and discussed in section 3, and a summary is given in section 4.</p>
+<ul class="simple">
+<li><p>研究核心主旨 (Research Objective)</p>
+<ul>
+<li><p>探討主題：研究具備橢圓形或其他多邊形眼牆的熱帶氣旋（TC）中，邊界層抽吸（BL pumping）與對流的結構特徵。</p></li>
+<li><p>核心焦點：特別著重於眼牆長軸（Major axis）邊緣處，與 WN2（波數 2）深層邊界層抽吸及對流 相關的動力學機制。</p></li>
+</ul>
+</li>
+<li><p>研究方法與模型架構 (Methodology &amp; Modeling)</p>
+<ul>
+<li><p>研究方法：結合使用非線性正壓模型（NBM）與不對稱平板邊界層（SBL）模型。</p></li>
+<li><p>模型分工：</p>
+<ul>
+<li><p>NBM（單層模型）：專門用於模擬邊界層上方、準無黏性自由大氣（Quasi-inviscid free atmosphere）中橢圓渦旋的氣旋式旋轉。</p></li>
+<li><p>不對稱 SBL 模型：專門用於呈現並模擬自由大氣下方的邊界層（BL）狀態。</p></li>
+</ul>
+</li>
+<li><p>預期目標：藉由此系統，基本掌握邊界層如何對自由大氣中的橢圓形或多邊形渦旋做出響應。</p></li>
+</ul>
+</li>
+<li><p>論文架構安排 (Paper Outline)</p>
+<ul>
+<li><p>Section 2：描述系統架構與模型參數。</p></li>
+<li><p>Section 3：呈現並討論數值實驗的運行結果。</p></li>
+<li><p>Section 4：提供全文總結。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="model-and-experiment-design">
+<h3><strong>2. Model and Experiment Design</strong><a class="headerlink" href="#model-and-experiment-design" title="Link to this heading">#</a></h3>
+<p>A simple modeling framework of NBM and an asymmetric SBL model is used in the study. The NBM on an <span class="math notranslate nohighlight">\(f\)</span> plane with horizontal diffusivity can be written as</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \zeta}{\partial t} + J(\psi, \zeta) = \nu \nabla^2 \zeta, \qquad (1)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\zeta = \nabla^2 \psi, \qquad (2)
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(J(\psi, \zeta)\)</span> denotes the Jacobian  <span class="math notranslate nohighlight">\(J(\psi, \zeta) = u \frac{\partial \zeta}{\partial x} + v \frac{\partial \zeta}{\partial y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi\)</span> stream function</p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> relative vorticity</p></li>
+</ul>
+<p>The balanced pressure field in NBM can be solved from the nonlinear balance condition with the known stream function field:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\rho} \nabla^2 p = f \nabla^2 \psi + 2 \left[ \frac{\partial^2 \psi}{\partial x^2} \frac{\partial^2 \psi}{\partial y^2} - \left( \frac{\partial^2 \psi}{\partial x \partial y} \right)^2 \right]. \qquad (3)
+\]</div>
+<p>In order to address the asymmetric dynamics in BL, we write the governing SBL equations in Cartesian coordinates,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial u}{\partial t} &amp;=&amp; -u \frac{\partial u}{\partial x} - v \frac{\partial u}{\partial y} - w^- \left( \frac{u_r - u}{h} \right) + f \left( v - \frac{1}{\rho f} \frac{\partial p}{\partial x} \right) - C_D U \frac{u}{h} + K \nabla^2 u &amp;, \qquad (4)\\
+\frac{\partial v}{\partial t} &amp;=&amp; -u \frac{\partial v}{\partial x} - v \frac{\partial v}{\partial y} - w^- \left( \frac{v_r - v}{h} \right) - f \left( u - \frac{1}{\rho f} \frac{\partial p}{\partial y} \right) - C_D U \frac{v}{h} + K \nabla^2 v &amp;, \qquad (5)
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[w = -h \left( \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) , \qquad (6)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is the distance in the zonal direction</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> is the distance in the meridional direction,</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> is the zonal velocity,</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> is the meridional velocity,</p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> is the vertical motion at the top of the BL, <span class="math notranslate nohighlight">\(w^- \overset{\text{def}}{=} \frac{1}{2}(|w| - w)\)</span>, (65h告訴我這邊少一個負號應該要變成 <span class="math notranslate nohighlight">\(w^- \overset{\text{def}}{=} -\frac{1}{2}(|w| - w)\)</span>，但我不確定)</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> is the balanced pressure field,</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_r = -\frac{\partial \psi}{\partial y}\)</span> and <span class="math notranslate nohighlight">\(v_r = \frac{\partial \psi}{\partial x}\)</span> are the rotational winds from the NBM,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho = 1.13 \text{ kg m}^{-3}\)</span> is the density,</p></li>
+<li><p><span class="math notranslate nohighlight">\(K\)</span> is the diffusivity,</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_D\)</span> is the drag coefficient,</p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> is the constant depth of SBL</p></li>
+<li><p><span class="math notranslate nohighlight">\(f = 5 \times 10^{-5} \text{ s}^{-1}\)</span> is the Coriolis parameter.</p></li>
+</ul>
+<p><em>Powell et al.</em> [2003] found that the wind speed <span class="math notranslate nohighlight">\(U\)</span> for the drag coefficient is about 0.78 times the surface wind in general. We use <span class="math notranslate nohighlight">\(U = 0.78 (u^2 + v^2)^{1/2}\)</span> in our SBL model, the same as in <em>Williams et al.</em> [2013]. The drag coefficient <span class="math notranslate nohighlight">\(C_D\)</span> formula follows <em>Powell et al.</em> [2003],</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C_D = 10^{-3} \begin{cases} 2.70/U + 0.142 + 0.0764 \ U &amp; \text{if } U \leq 25 \\ 2.16 + 0.5406 \left[ 1 - \exp\left(-\frac{U - 25}{7.5}\right) \right] &amp; \text{if } U \geq 25. \end{cases} \qquad (7)
+\end{split}\]</div>
+<p>We have also used a <span class="math notranslate nohighlight">\(C_D\)</span> profile that does not decrease with increasing wind speeds in a vortex experiment with a maximum wind of <span class="math notranslate nohighlight">\(60 \text{ m s}^{-1}\)</span>. The BL pumping in our model does not appear to be sensitive to the choice of the <span class="math notranslate nohighlight">\(C_D\)</span> (not shown).</p>
+<p><em>Williams et al.</em> [2013] conducted a series of sensitivity tests of <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(K\)</span> in the SBL. They found that when reaching a steady state, a deeper <span class="math notranslate nohighlight">\(h\)</span> produces a stronger BL pumping, with the maximum pumping occurring at a larger radius and a larger <span class="math notranslate nohighlight">\(K\)</span> generating a broader shock-like structure and a smaller maximum pumping value. In the present work, since we are focusing on the dynamics of the asymmetric shock-like structure formation, we chose <span class="math notranslate nohighlight">\(K = 1500 \text{ m}^2 \text{ s}^{-1}\)</span>, as in <em>Zhang and Montgomery</em> [2012], and <span class="math notranslate nohighlight">\(h = 1000 \text{ m}\)</span>, following the work of <em>Williams et al.</em> [2013].</p>
+<p>該方案能精準模擬高風速下 <span class="math notranslate nohighlight">\(C_{D}\)</span> 趨於飽和的物理特徵。鑑於前人研究指出，較深的邊界層厚度 <span class="math notranslate nohighlight">\(h\)</span> 會增強邊界層抽吸，而較大的擴散係數 <span class="math notranslate nohighlight">\(K\)</span> 則會拓寬震波結構並平滑最大抽吸值；本研究為聚焦於不對稱震波狀結構（Shock-like structure）的形成動力學，遂將關鍵參數基準值設定為擴散係數 <span class="math notranslate nohighlight">\(K = 1500 \text{ m}^2 \text{ s}^{-1}\)</span> 與恆定邊界層厚度 <span class="math notranslate nohighlight">\(h = 1000 \text{ m}\)</span>，以確保數值模擬的準確性與動力機制分析的代表性。</p>
+<p>Equations (1)–(7) constitute a closed system with seven variables: <span class="math notranslate nohighlight">\(C_D, u, v, w, p, \psi,\)</span> and <span class="math notranslate nohighlight">\(\zeta\)</span>. The system can be time-integrated with the NBM to obtain the vorticity field and the rotational wind in the free atmosphere. The nonlinear balance equation is solved to obtain the pressure field. The pressure field and the rotational wind are then used to drive the SBL model and compute the BL pumping <span class="math notranslate nohighlight">\(w\)</span>. Equations (4) and (5) indicate that the SBL model is influenced by the free atmosphere dynamics through the downward-only vertical momentum flux associated with the <span class="math notranslate nohighlight">\(w^-\)</span> terms and the pressure gradient force term.</p>
+<p>Our model calculations are performed on a doubly periodic <span class="math notranslate nohighlight">\(f\)</span> plane. The discretization of both models is based on the Fourier pseudospectral method, with <span class="math notranslate nohighlight">\(768 \times 768\)</span> equally spaced collocation points on a <span class="math notranslate nohighlight">\(300 \times 300\text{ km}\)</span> domain. The model was run with a dealiased calculation of quadratic nonlinear terms with <span class="math notranslate nohighlight">\(256 \times 256\)</span> Fourier modes. A fourth-order Runge-Kutta method with a <span class="math notranslate nohighlight">\(3\text{ s}\)</span> time step was used for the time integration. The diffusion coefficient in the NBM was chosen to be <span class="math notranslate nohighlight">\(\nu = 6.5\text{ m}^2\text{ s}^{-1}\)</span>. For the <span class="math notranslate nohighlight">\(300 \times 300\text{ km}\)</span> domain, this value of <span class="math notranslate nohighlight">\(\nu\)</span> gives an <span class="math notranslate nohighlight">\(e\)</span>-folding damping time of <span class="math notranslate nohighlight">\(1.5\text{ h}\)</span> for all modes having a total wave number of 256 and a damping time of <span class="math notranslate nohighlight">\(5.9\text{ h}\)</span> for modes having a total wave number of 128.</p>
+<p>方程 (1)–(7) 組成了包含 <span class="math notranslate nohighlight">\(C_D, u, v, w, p, \psi, \zeta\)</span> 七個變數的封閉系統，可利用 NBM 進行時間積分以獲取渦度場與旋轉風場，並透過非線性平衡方程求解壓力場 。壓力場與旋轉風場隨後用於驅動 SBL 模型並計算邊界層抽吸 <span class="math notranslate nohighlight">\(w\)</span>，其中 SBL 模型受自由大氣動力學中 <span class="math notranslate nohighlight">\(w^-\)</span> 項的向下垂直動量通量及壓力梯度力影響  。</p>
+<p>模型在雙週期 <span class="math notranslate nohighlight">\(f\)</span> 平面上進行計算，採用傅立葉偽譜法進行離散化，在 <span class="math notranslate nohighlight">\(300 \times 300 \text{ km}\)</span> 區域內設置 <span class="math notranslate nohighlight">\(768 \times 768\)</span> 個等間距配置點  。計算採用 <span class="math notranslate nohighlight">\(256 \times 256\)</span> 傅立葉模態的去混疊二次非線性項，並以四階 Runge-Kutta 法進行時間積分，時間步長為 <span class="math notranslate nohighlight">\(3 \text{ s}\)</span> 。NBM 中的擴散係數設定為 <span class="math notranslate nohighlight">\(\nu = 6.5 \text{ m}^2 \text{ s}^{-1}\)</span>，在 <span class="math notranslate nohighlight">\(300 \times 300 \text{ km}\)</span> 區域下，該數值使得總波數為 256 的模式 <span class="math notranslate nohighlight">\(e\)</span>-folding 阻尼時間為 <span class="math notranslate nohighlight">\(1.5 \text{ h}\)</span>，總波數為 128 的模式則為 <span class="math notranslate nohighlight">\(5.9 \text{ h}\)</span>  。</p>
+<p>We applied the Lanczos filter [Duchon, 1979] in each time step to the wind field in spectral space to mitigate the Gibbs oscillation. The Lanczos filter was used in Kuo and Cheng [1999] for their spectral convection model to filter the high-frequency acoustic modes. For a given physical field <span class="math notranslate nohighlight">\(q\)</span> in an <span class="math notranslate nohighlight">\(N_x \times N_y\)</span> collocation point domain, Fourier coefficients of wave numbers <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(l\)</span> are defined by</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{q}_{k,l} = \sum _{n=0}^{N_{x}-1}\sum _{m=0}^{N_{y}-1}q(n,m)\exp \left[-2\pi i\left(\frac{kn}{N_{x}}+\frac{lm}{N_{y}}\right)\right]. \qquad (8)
+\]</div>
+<p>Then we can apply a simple weighting function to <span class="math notranslate nohighlight">\(\hat{q}_{k,l}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{q}_{k,l} = \hat{q}_{k,l} \times \frac{\sin(k\pi/N_x)}{k\pi/N_x} \times \frac{\sin(l\pi/N_y)}{l\pi/N_y}, \qquad (9)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{q}_{k,l}\)</span> is the filtered Fourier coefficient. Thus, we can smoothly reduce the high wave number signals since <span class="math notranslate nohighlight">\(\lim\limits_{x \to \pi} \frac{\sin x}{x} = 0\)</span> while not losing much information of low wave numbers since <span class="math notranslate nohighlight">\(\lim\limits_{x \to 0} \frac{\sin x}{x} = 1\)</span>.</p>
+<p>We used the same Category 3 TC case as in Williams et al. [2013], and the simulation yields a very similar BL structure (not shown). Our model, however, produced a BL pumping which is approximately 75% in magnitude of the Williams et al. [2013], possibly due to the use of the Lanczos filter and the slightly coarser resolution in our model.</p>
+<p>我們使用了與 Williams et al. [2013] 相同的三級熱帶氣旋個案，模擬產生了非常相似的邊界層結構（圖略）。然而，我們模型產生的邊界層抽吸作用（BL pumping）強度大約只有 Williams et al. [2013] 的 75%，這可能是由於我們使用了 Lanczos 濾波器，且模型的解析度略粗所致。</p>
+<p>We follow Kuo et al. [1999] for the initial vorticity profile that resembles the Rankine vortex,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(r^*) = \begin{cases} 1 - \exp\left[ -\frac{30}{r^*} \exp\left( \frac{1}{r^* - 1} \right) \right], &amp; \text{if } r^* &lt; 1, \\ 0 &amp; \text{otherwise}, \end{cases} \qquad (10)
+\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+r^* = \left[ \left( \frac{x - x_0}{a} \right)^2 + \left( \frac{y - y_0}{b} \right)^2 \right]^{1/2} \qquad (11)
+\]</div>
+<p>is a nondimensional distance in the radial direction, <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(y_0\)</span> are the center of the vortex, and <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are the lengths of the major and minor axes, respectively.</p>
+<p>The elliptical Rankine-like vortex in the horizontal plane is specified according to</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(r^*) = \zeta_0 P(r^*). \qquad (12)
+\]</div>
+<p>A fixed vorticity of <span class="math notranslate nohighlight">\(\zeta_0 = 3 \times 10^{-3} \text{ s}^{-1}\)</span> is used in most of our experiments. With the typical vortex size in Table 1, the vortex has a maximum tangential wind of approximately <span class="math notranslate nohighlight">\(30 \text{ m s}^{-1}\)</span>. The EX-WN0 is a circular vortex with a <span class="math notranslate nohighlight">\(24.5 \text{ km}\)</span> radius. EX-WN2-1, EX-WN2-2, and EX-WN2-3 are elliptical vortices with aspect ratio of 1.5, 2.7, and 6, respectively, between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. To study the BL pumping in a stronger vortex, we doubled the vorticity to <span class="math notranslate nohighlight">\(6 \times 10^{-3} \text{ s}^{-1}\)</span> in experiment EX-WN2-1S.</p>
+<p>In experiments with triangular, square, and pentagonal vortex structures, a wave perturbation in the azimuthal direction is added to the specification of <span class="math notranslate nohighlight">\(r^*\)</span> to create the polygonal vortex structure. In such a case the nondimensional distance <span class="math notranslate nohighlight">\(r^*\)</span> is computed by <span class="math notranslate nohighlight">\(a = b = 24.5 \text{ km}\)</span> in equation (11). The vorticity field can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(\theta, r^*, n) = \zeta_0 P(r_n^*), \qquad (13)
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+r_n^*(\theta) = r^* \times [1 - 0.3 \sin(n\theta)]. \qquad (14)
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(n = 3\)</span> in equation (13), a triangular eyewall case is produced (EX-WN3), for <span class="math notranslate nohighlight">\(n = 4\)</span> a square eyewall case (EX-WN4), and for <span class="math notranslate nohighlight">\(n = 5\)</span> a pentagonal eyewall case (EX-WN5). All experiments have initial conditions with different constants <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> but under the constraint that the total circulation is conserved for a fixed <span class="math notranslate nohighlight">\(\zeta_0\)</span> (在固定的 <span class="math notranslate nohighlight">\(\zeta_0\)</span> 下，總環流必須守恆). The experiments and the parameters are listed in Table 1.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Experiment</p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(\zeta_0\)</span> (<span class="math notranslate nohighlight">\(\text{s}^{-1}\)</span>)</p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(a\)</span> (<span class="math notranslate nohighlight">\(\text{km}\)</span>)</p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(b\)</span> (<span class="math notranslate nohighlight">\(\text{km}\)</span>)</p></th>
+<th class="head text-left"><p>Structure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>WN0</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>Circle</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>WN2-1</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>30.0</p></td>
+<td class="text-left"><p>20.0</p></td>
+<td class="text-left"><p>Ellipse</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>WN2-1S</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(6 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>30.0</p></td>
+<td class="text-left"><p>20.0</p></td>
+<td class="text-left"><p>Ellipse</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>WN2-2</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>40.0</p></td>
+<td class="text-left"><p>15.0</p></td>
+<td class="text-left"><p>Ellipse</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>WN2-3</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>60.0</p></td>
+<td class="text-left"><p>10.0</p></td>
+<td class="text-left"><p>Ellipse</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>WN3</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>Triangle</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>WN4</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>Square</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>WN5</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3 \times 10^{-3}\)</span></p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>24.5</p></td>
+<td class="text-left"><p>Pentagon</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="numerical-results">
+<h3><strong>3. Numerical Results</strong><a class="headerlink" href="#numerical-results" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../../_images/fig2.png" /></p>
+<p><img alt="" src="../../../_images/fig3.png" /></p>
+<p><img alt="" src="../../../_images/fig4.png" /></p>
+<p>Our first two experiments are similar to those in <em>Kuo et al.</em> [1999], with a circular vortex (EX-WN0) and an elliptical vortex (EX-WN2-1) in the free atmosphere. While the tangential wind jet for the free atmosphere is symmetric in the circular vortex, the elliptic vortex has a maximum in the region of minor axis, where the vortex is narrowest due to the conservation of angular momentum (Figure 2).</p>
+<p>The salient feature in the elliptic vortex is in the BL. The time evolution of the elliptic vortex in the BL from <span class="math notranslate nohighlight">\(576\text{ min}\)</span> to <span class="math notranslate nohighlight">\(720\text{ min}\)</span> for a complete rotation of <span class="math notranslate nohighlight">\(144\text{ min}\)</span> is shown in Figure 3. Figure 3 depicts the cyclonic rotation of the local high-speed tangential wind and the BL updraft at both sides of the edge of the major axis in the elliptical vortex. The BL updraft has its maximum located on both sides of the edge of the major rotating axis, consistent with the common observation illustrated in Figure <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>This is a result of the pressure gradient force from the free atmosphere represented by the NBM. In Figure <span class="math notranslate nohighlight">\(4\text{a}\)</span>, the pressure field for the circular vortex is symmetric and the induced radial wind in the BL is also symmetric. On the other hand, the pressure fields in the elliptic vortex conform to the elliptic structure of the vortex near the core ring but remain circular in the outer area (Figure <span class="math notranslate nohighlight">\(4\text{b}\)</span>). This distribution induces larger radial inflow from the pressure gradient force near the edge of the major axis near the core and smaller elsewhere. The dynamic forcing from the free atmosphere thus further induces BL pumping and larger updrafts at the edge of the major axis. The maximum BL updraft at the edge of the major axis is approximately <span class="math notranslate nohighlight">\(3\text{ m s}^{-1}\)</span> in the elliptic vortex, which is slightly larger than that in the circular vortex.</p>
+<p>我們的前兩個實驗與 Kuo 等人 [1999] 的實驗相似，在自由大氣中分別設定了一個圓形渦旋（EX-WN0）與一個橢圓形渦旋（EX-WN2-1）。雖然自由大氣的切向噴射氣流（tangential wind jet）在圓形渦旋中是對稱的，但在橢圓形渦旋中，由於角動量守恆（conservation of angular momentum），其最大值出現在短軸區域，因為那是渦旋最狹窄的地方（圖 2）。</p>
+<p>橢圓形渦旋最顯著的特徵出現在邊界層（BL）。圖 3 展示了橢圓形渦旋在邊界層中，從 576 分鐘到 720 分鐘（完整旋轉一圈耗時 144 分鐘）的時間演進過程。圖 3 描繪了局部高速切向風的氣旋式旋轉，以及位於橢圓形渦旋長軸邊緣兩側的邊界層上升氣流（BL updraft）。邊界層上升氣流的最大值位於旋轉長軸邊緣的兩側，這與圖 1 所展示的常見觀測結果一致。</p>
+<p>這是由 NBM 所代表的自由大氣氣壓梯度力（pressure gradient force）造成的結果。在圖 4a 中，圓形渦旋的氣壓場是對稱的，其在邊界層引發的徑向風也是對稱的。另一方面，橢圓形渦旋的氣壓場在核心環附近符合渦旋的橢圓結構，但在外圍區域則保持圓形（圖 4b）。這種分佈透過氣壓梯度力，在靠近核心的長軸邊緣引發了較大的徑向流入（radial inflow），而在其他地方則較小。因此，來自自由大氣的動力強迫（dynamic forcing）進一步引發了邊界層抽吸作用（BL pumping），並在長軸邊緣產生更大的上升氣流。在橢圓形渦旋中，長軸邊緣的邊界層上升氣流最大值約為 3 m/s，這略大於圓形渦旋中的數值。</p>
+<p><img alt="" src="../../../_images/fig5.6.png" /></p>
+<p>Figure <span class="math notranslate nohighlight">\(5\)</span> from the EX-WN2-1 experiment indicates that in the free atmosphere of the elliptic vortex, the tangential wind maximum is located at the smallest vortex ring distance (the minor axis perpendicular to the major axis) from the center (Figure <span class="math notranslate nohighlight">\(5\text{a}\)</span>). In the BL, this wind maximum is pushed downstream and closer to the major axis (Figure <span class="math notranslate nohighlight">\(5\text{b}\)</span>). Consider the tangential momentum equation without the pressure gradient force in the polar coordinate <span class="math notranslate nohighlight">\((r, \phi)\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> is the radius and <span class="math notranslate nohighlight">\(\phi\)</span> is the azimuthal angle with radial flow <span class="math notranslate nohighlight">\((u_r)\)</span> and tangential flow <span class="math notranslate nohighlight">\((v_\phi)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{Dv_\phi}{Dt} = -\left( \frac{v_\phi}{r} + f \right) u_r\]</div>
+<p>Note from Figure <span class="math notranslate nohighlight">\(4\text{b}\)</span> that the radial inflow is largest at the edges of the major axis (negative <span class="math notranslate nohighlight">\(u_r\)</span>) for the elliptic vortex, so <span class="math notranslate nohighlight">\(Dv_\phi/Dt\)</span> is also the largest. The increase of <span class="math notranslate nohighlight">\(Dv_\phi/Dt\)</span> ahead of the jet maximum pushes it downstream from the minor axis toward the edge of the major axis. The large radial inflow maintains the supergradient wind at the edge of the elliptical vortex. The same mechanism applies to vortices with higher polygonal structures, as will be demonstrated later.</p>
+<p>來自 EX-WN2-1 實驗的圖 5 顯示，在橢圓形渦旋的自由大氣中，切向風的最大值位於距離中心最近的渦旋環處（即垂直於長軸的短軸）（圖 5a）。但在邊界層（BL）中，這個風速最大值被推向下游，並更靠近長軸（圖 5b）。考慮極座標 <span class="math notranslate nohighlight">\((r, \phi)\)</span> 下<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">不含氣壓梯度力、忽略垂直動量的平流、忽略摩擦力的切向動量方程式</a>，其中 <span class="math notranslate nohighlight">\(r\)</span> 為半徑，<span class="math notranslate nohighlight">\(\phi\)</span> 為方位角，<span class="math notranslate nohighlight">\(u_r\)</span> 為徑向流，<span class="math notranslate nohighlight">\(v_\phi\)</span> 為切向流：</p>
+<div class="math notranslate nohighlight">
+\[\frac{Dv_\phi}{Dt} = -\left( \frac{v_\phi}{r} + f \right) u_r\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{D}{Dt}\)</span> : 物質導數 (Material derivative)，代表跟隨流體質點移動時的變化率 <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_\phi\)</span> : 切向風速 (Tangential flow) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{Dv_\phi}{Dt}\)</span> : 切向風的加速度 (Tangential acceleration) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 徑向距離 (Radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 方位角 (Azimuthal angle) <span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u_r\)</span> : 徑向風速 (Radial flow) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>（<strong>注意：流入為負值</strong>）</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> : 科氏參數 (Coriolis parameter) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+<p>請注意，從圖 4b 可以看出，對於橢圓形渦旋而言，徑向流入在長軸邊緣處最大（即最大的負值 <span class="math notranslate nohighlight">\(u_r\)</span>），因此 <span class="math notranslate nohighlight">\(Dv_\phi/Dt\)</span> 在該處也是最大的。在噴射氣流最大值前方的 <span class="math notranslate nohighlight">\(Dv_\phi/Dt\)</span> 增加，會將其從短軸向下游推向長軸邊緣。巨大的徑向流入維持了橢圓形渦旋邊緣的超梯度風（supergradient wind）。這項相同的機制也適用於具有更高階多邊形結構的渦旋，這將在稍後進行展示。</p>
+<p>The tangential wind maxima in the SBL model tend to be shifted approximately <span class="math notranslate nohighlight">\(5\text{ km}\)</span> inward from the local RMW of the free atmosphere due to BL contraction by the frictional effect. The magnitude of the tangential wind maximum is slightly larger in the SBL than that in the free atmosphere. Discussions of the effect of friction on the inward displacement of the RMW within the BL can be found in <em>Powell et al.</em> [2009] and <em>Kepert</em> [2001]. The radial profiles of tangential wind, radial wind, and resultant updraft in EX-WN0 and along the major axis of EX-WN2-1 are shown in Figure <span class="math notranslate nohighlight">\(6\)</span>. Figure <span class="math notranslate nohighlight">\(6\)</span> indicates the existence of supergradient (subgradient) winds inside (outside) the local RMW in both experiments. In general, the supergradient wind is maintained by the large radial inflow. The BL inflow decreases from approximately <span class="math notranslate nohighlight">\(8\text{ m s}^{-1}\)</span> to zero near the RMW over a radial distance of <span class="math notranslate nohighlight">\(6\text{ km}\)</span> for both experiments. This radial inflow profile indicates a shock-like structure in the BL. The upward motion is due to the large deceleration of the radial inflow. Frictional forces are large in the BL; the radial flows caused by the supergradient and the subgradient winds are probably small in comparison.</p>
+<p>由於摩擦效應導致的邊界層收縮（BL contraction），SBL 模型中的切向風最大值傾向於從自由大氣的局部最大風速半徑（RMW）向內偏移約 <span class="math notranslate nohighlight">\(5\text{ km}\)</span>。在 SBL 中，切向風最大值的量值略大於自由大氣中的數值。關於摩擦力對邊界層內 RMW 向內位移（inward displacement）影響的討論，可參考 <em>Powell et al.</em> [2009] 與 <em>Kepert</em> [2001] 的文獻。</p>
+<p>EX-WN0 以及沿著 EX-WN2-1 長軸方向的切向風、徑向風與隨之產生的上升氣流的徑向剖面圖，展示於圖 6 中。圖 6 顯示，在兩個實驗中，局部 RMW 的內側（外側）皆存在超梯度風（次梯度風）。一般而言，超梯度風是由巨大的徑向流入所維持的。在這兩個實驗中，邊界層的流入速度在靠近 RMW 處，於 <span class="math notranslate nohighlight">\(6\text{ km}\)</span> 的徑向距離內從大約 <span class="math notranslate nohighlight">\(8\text{ m s}^{-1}\)</span> 降至零。這種徑向流入的剖面特徵，表明邊界層內存在震波狀結構（shock-like structure）。向上的垂直運動正是由徑向流入的劇烈減速所引起的。邊界層內的摩擦力很大；相較之下，由超梯度風與次梯度風所引起的徑向氣流可能較小。</p>
+<ul class="simple">
+<li><p><strong>次梯度風 (Subgradient wind)</strong>：發生在最大風速半徑<strong>外側</strong>。風速未達平衡狀態，使得氣壓梯度力大於離心力加科氏力，驅動氣流向內加速流入。</p></li>
+<li><p><strong>超梯度風 (Supergradient wind)</strong>：發生在最大風速半徑<strong>內側</strong>。因為外側巨大的徑向流入將高動量氣流往內帶，使得此處的切向風速超過了當地氣壓梯度所能支撐的極限。</p></li>
+</ul>
+<p><img alt="" src="../../../_images/fig7.png" /></p>
+<p>Additional elliptical vortex experiments with different aspect ratios (EX-WN2-2 and EX-WN2-3), such that the vortex is more elongated, show similar strong updrafts at the edges of the major axis (Figure <span class="math notranslate nohighlight">\(7\)</span>). There are spiral structures emanating out of the updraft from the edges of the major axis due to a wave-breaking effect [<em>Guinn and Schubert</em>, 1993]. The elongated vortices bear similar structures to those observed for Typhoon Herb (Figure <span class="math notranslate nohighlight">\(1\)</span>) at some time frames, such as at <span class="math notranslate nohighlight">\(1844\text{ local civil time (LCT)}\)</span> and <span class="math notranslate nohighlight">\(1902\text{ LCT}\)</span> on <span class="math notranslate nohighlight">\(31\text{ July }1996\)</span>. The azimuthal-time Hovmöller diagrams of the BL updraft and irrotational wind at a radius of <span class="math notranslate nohighlight">\(20\text{ km}\)</span> from the elliptical vortex with different aspect ratios are shown in Figure <span class="math notranslate nohighlight">\(8\)</span>. This figure indicates a general feature of cyclonic rotation of the BL top updraft. The rotation periods of EX-WN2-2 and EX-WN2-3 are approximately <span class="math notranslate nohighlight">\(160\text{ min}\)</span> and <span class="math notranslate nohighlight">\(180\text{ min}\)</span>, respectively (Figure <span class="math notranslate nohighlight">\(8\)</span>). For an elliptical vortex with vorticity <span class="math notranslate nohighlight">\(\zeta\)</span> and value of the major axis <span class="math notranslate nohighlight">\(a\)</span> and value of minor axis <span class="math notranslate nohighlight">\(b\)</span>, the rotation period of the Kirchhoff vortex [<em>Lamb</em>, 1932, p. 232] is</p>
+<div class="math notranslate nohighlight">
+\[P = \frac{2\pi}{\zeta} \frac{(a + b)^2}{ab}.\]</div>
+<p>At <span class="math notranslate nohighlight">\(540\text{ min}\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are <span class="math notranslate nohighlight">\(26\text{ km}\)</span> and <span class="math notranslate nohighlight">\(12\text{ km}\)</span> in the EX-WN2-2 and <span class="math notranslate nohighlight">\(25\text{ km}\)</span> and <span class="math notranslate nohighlight">\(9\text{ km}\)</span> in the EX-WN2-3, respectively. With a vorticity of <span class="math notranslate nohighlight">\(\zeta_0 = 3 \times 10^{-3}\text{ s}^{-1}\)</span>, the rotation periods of EX-WN2-2 and EX-WN2-3 from the Kirchhoff theory are <span class="math notranslate nohighlight">\(161\text{ min}\)</span> and <span class="math notranslate nohighlight">\(179\text{ min}\)</span>, respectively. The rotation periods of EX-WN2-2 and EX-WN2-3 from the model are approximately <span class="math notranslate nohighlight">\(160\text{ min}\)</span> and <span class="math notranslate nohighlight">\(180\text{ min}\)</span>, respectively. The rotation periods of EX-WN2-2 and EX-WN2-3 are generally in agreement with the theory of Kirchhoff elliptical vortex.</p>
+<p>The radial profiles of tangential wind, radial wind, and resultant updraft along the major axis in EX-WN2-2 and EX-WN2-3 are similar to those of EX-WN2-1 in Figure <span class="math notranslate nohighlight">\(6\)</span> (not shown). The magnitudes of peak tangential wind, radial wind, and updraft decrease with increasing radius of the major axis (Figures <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(8\)</span>). The inertial stability at the major axis of the vortex decreases with radial distance, with those for EX-WN2-2 and EX-WN2-3 smaller than that in EX-WN2-1. As a result, the BL updraft decreases with increasing radius of the major axis.</p>
+<p>具有不同長寬比（aspect ratios）的額外橢圓形渦旋實驗（EX-WN2-2 與 EX-WN2-3），使得渦旋變得更加狹長，結果顯示在長軸邊緣同樣出現了強烈的上升氣流（圖 7）。由於波浪碎裂效應（wave-breaking effect）[<em>Guinn and Schubert</em>, 1993]，在長軸邊緣的上升氣流向外延伸出了螺旋狀結構。這些狹長的渦旋與賀伯颱風（圖 1）在某些時間點（例如 1996 年 7 月 31 日當地時間 1844 與 1902）觀測到的結構相似。</p>
+<p>圖 8 展示了不同長寬比的橢圓形渦旋中，距中心半徑 20 公里處邊界層上升氣流與無旋風（irrotational wind）的方位角-時間霍夫穆勒圖（Hovmöller diagrams）。該圖顯示了邊界層頂部上升氣流進行氣旋式旋轉的普遍特徵。EX-WN2-2 與 EX-WN2-3 的旋轉週期分別約為 160 分鐘與 180 分鐘（圖 8）。對於一個具有渦度 <span class="math notranslate nohighlight">\(\zeta\)</span>、長軸長度為 <span class="math notranslate nohighlight">\(a\)</span> 且短軸長度為 <span class="math notranslate nohighlight">\(b\)</span> 的橢圓形渦旋，其克希荷夫渦旋（Kirchhoff vortex）[<em>Lamb</em>, 1932, p. 232] 的旋轉週期為</p>
+<div class="math notranslate nohighlight">
+\[P = \frac{2\pi}{\zeta} \frac{(a + b)^2}{ab}\]</div>
+<p>在第 540 分鐘時，EX-WN2-2 的 <span class="math notranslate nohighlight">\(a\)</span> 與 <span class="math notranslate nohighlight">\(b\)</span> 分別為 26 公里與 12 公里，而 EX-WN2-3 則分別為 25 公里與 9 公里。在渦度 <span class="math notranslate nohighlight">\(\zeta_0 = 3 \times 10^{-3}\text{ s}^{-1}\)</span> 的情況下，根據克希荷夫理論計算出的 EX-WN2-2 與 EX-WN2-3 旋轉週期分別為 161 分鐘與 179 分鐘。而模型模擬出的 EX-WN2-2 與 EX-WN2-3 旋轉週期分別約為 160 分鐘與 180 分鐘。EX-WN2-2 與 EX-WN2-3 的旋轉週期與克希荷夫橢圓渦旋理論大致吻合。</p>
+<p>在 EX-WN2-2 與 EX-WN2-3 中，沿長軸方向的切向風、徑向風與隨之產生的上升氣流的徑向剖面，與圖 6 中 EX-WN2-1 的結果相似（圖略）。峰值切向風、徑向風與上升氣流的量值，會隨著長軸半徑的增加而減小（圖 7 與圖 8）。渦旋在長軸處的慣性穩定度（inertial stability）隨徑向距離遞減，且 EX-WN2-2 與 EX-WN2-3 的慣性穩定度小於 EX-WN2-1。因此，邊界層上升氣流會隨著長軸半徑的增加而減弱。</p>
+<p><img alt="" src="../../../_images/fig9.png" /></p>
+<p>To further explore the BL pumping in a stronger elliptical vortex, we assign a larger vorticity of <span class="math notranslate nohighlight">\(\zeta_0 = 6 \times 10^{-3}\text{ s}^{-1}\)</span> for experiment EX-WN2-1S (Figure <span class="math notranslate nohighlight">\(9\)</span>). Larger radial inflow is induced by the pressure gradient force near the edge of the major axis and smaller elsewhere. The BL pumping occurs at the edges of the major axis as in EX-WN2-1. The BL inflow near RMW decreases from approximately <span class="math notranslate nohighlight">\(24\text{ m s}^{-1}\)</span> to zero over a radial distance of <span class="math notranslate nohighlight">\(4\text{ km}\)</span>. The BL updraft in EX-WN2-1S is sharper in the horizontal structure compared to EX-WN2-1. The updraft magnitude is approximately <span class="math notranslate nohighlight">\(13\text{ m s}^{-1}\)</span>, which is about <span class="math notranslate nohighlight">\(5\)</span> times greater. This much stronger updraft is similar to the shock-like radial profile of the symmetric vortex in <em>Williams et al.</em> [<span class="math notranslate nohighlight">\(2013\)</span>].</p>
+<p>As discussed by <em>Kepert</em> [<span class="math notranslate nohighlight">\(2010\text{a}\)</span>] and <em>Abarca et al.</em> [<span class="math notranslate nohighlight">\(2015\)</span>], the use of a SBL model in TC simulations can cause excessively strong inflow and too large of a departure from gradient wind balance. By mass continuity, this can manifest updrafts at the top of the BL that are stronger than those obtained with a height-resolving BL model. The agreement of our results with observations on the maximum updraft at the edges of the major axis in BL and the rotation of the updraft indicate the applicability of our model for the understanding of associated dynamics.</p>
+<p>為了進一步探討更強橢圓形渦旋中的邊界層抽吸作用，我們在實驗 EX-WN2-1S 中指定了較大的渦度 <span class="math notranslate nohighlight">\(\zeta_0 = 6 \times 10^{-3}\text{ s}^{-1}\)</span>（圖 9）。氣壓梯度力在靠近長軸邊緣處引發了較大的徑向流入，而在其他地方則較小。邊界層抽吸作用與 EX-WN2-1 一樣，發生在長軸邊緣。靠近最大風速半徑（RMW）的邊界層流入，在 <span class="math notranslate nohighlight">\(4\text{ km}\)</span> 的徑向距離內從大約 <span class="math notranslate nohighlight">\(24\text{ m s}^{-1}\)</span> 降至零。與 EX-WN2-1 相比，EX-WN2-1S 的邊界層上升氣流在水平結構上更為尖銳（sharper）。上升氣流的量值約為 <span class="math notranslate nohighlight">\(13\text{ m s}^{-1}\)</span>，大約是原來的 5 倍強。這種強得多的上升氣流，與 <em>Williams et al.</em> [2013] 對稱渦旋中呈現震波狀（shock-like）的徑向剖面相似。</p>
+<p>如 <em>Kepert</em> [2010a] 與 <em>Abarca et al.</em> [2015] 所探討的，在熱帶氣旋模擬中使用 SBL 模型，可能會導致過強的流入以及過度偏離梯度風平衡（gradient wind balance）。基於質量連續性（mass continuity），這會導致在邊界層頂部呈現出比使用具備高度解析能力的邊界層模型（height-resolving BL model）更強的上升氣流。儘管如此，我們的結果在邊界層長軸邊緣最大上升氣流的位置以及上升氣流旋轉特徵上與觀測結果相吻合，這表明我們的模型在理解相關動力學機制方面是適用的。</p>
+<p><img alt="" src="../../../_images/fig10.png" /></p>
+<p><img alt="" src="../../../_images/fig11.png" /></p>
+<p><img alt="" src="../../../_images/fig12.png" /></p>
+<p>To further investigate BL pumping, experiments were conducted on triangular, square, and pentagonal vortices (EX-WN3, EX-WN4, and EX-WN5), with the strongest BL updrafts occurring at the polygon edges (Figure <span class="math notranslate nohighlight">\(10\)</span>), similar to the elliptical vortex in Figure <span class="math notranslate nohighlight">\(3\)</span>. Notably, as the wave number of the vortex increases, the magnitude of the peak updraft decreases, despite having the same vorticity strength. For example, maximum updrafts for the elliptical, triangle, quadrangle, and pentagonal vortices are <span class="math notranslate nohighlight">\(3.0\text{ m s}^{-1}\)</span>, <span class="math notranslate nohighlight">\(2.8\text{ m s}^{-1}\)</span>, <span class="math notranslate nohighlight">\(2.2\text{ m s}^{-1}\)</span>, and <span class="math notranslate nohighlight">\(1.9\text{ m s}^{-1}\)</span>, respectively, for the control vorticity of <span class="math notranslate nohighlight">\(\zeta_0 = 3 \times 10^{-3}\text{ s}^{-1}\)</span>. We also use a stronger vorticity of <span class="math notranslate nohighlight">\(\zeta_0 = 6 \times 10^{-3}\text{ s}^{-1}\)</span>; the maximum SBL updrafts of the elliptical, triangle, quadrangle, and pentagonal vortices are <span class="math notranslate nohighlight">\(13\text{ m s}^{-1}\)</span>, <span class="math notranslate nohighlight">\(12.3\text{ m s}^{-1}\)</span>, <span class="math notranslate nohighlight">\(10.8\text{ m s}^{-1}\)</span>, and <span class="math notranslate nohighlight">\(10.1\text{ m s}^{-1}\)</span>, respectively (not shown). The azimuthal-time Hovmöller diagrams of the BL updraft and irrotational wind in EX-WN3, EX-WN4, and EX-WN5 show that the periods of cyclonic rotation are approximately <span class="math notranslate nohighlight">\(104\)</span>, <span class="math notranslate nohighlight">\(93\)</span>, and <span class="math notranslate nohighlight">\(87\text{ min}\)</span>, respectively (Figure <span class="math notranslate nohighlight">\(11\)</span>). The cyclonic periods also are in general agreement with the linear theory of Kelvin [<em>Thomson</em>, <span class="math notranslate nohighlight">\(1880\)</span>]. The radial profiles of supergradient wind, subgradient wind, radial wind, and updraft at the edges of the polygonal vortices shown in Figure <span class="math notranslate nohighlight">\(12\)</span> are similar to the elliptical vortex in Figure <span class="math notranslate nohighlight">\(6\)</span>. This profile represents a robust boundary layer (BL) response, resembling the aircraft observations in Hurricane Hugo (<span class="math notranslate nohighlight">\(1989\)</span>) from <em>Shapiro</em> [<span class="math notranslate nohighlight">\(1983\)</span>] (Figure <span class="math notranslate nohighlight">\(4\)</span>) and radar reflectivity patterns in Hurricane Dolly (<span class="math notranslate nohighlight">\(2008\)</span>) [<em>Hendricks et al.</em>, <span class="math notranslate nohighlight">\(2012\)</span>, Figure <span class="math notranslate nohighlight">\(4\)</span>]. Since the rotation of the polygonal vortex stems from nondivergent vortex Rossby waves (VRW) [<em>Kuo et al.</em>, <span class="math notranslate nohighlight">\(1999\)</span>], these results suggest that nondivergent VRWs organize the BL winds and convection in the polygonal eyewalls of TCs.</p>
+<p>為了進一步探討邊界層抽吸作用，我們對三角形、四邊形與五邊形渦旋（實驗 EX-WN3、EX-WN4 與 EX-WN5）進行了實驗。結果顯示最強的邊界層上升氣流出現在多邊形的邊緣（圖 10），這與圖 3 中的橢圓形渦旋相似。值得注意的是，即使在相同的渦度強度下，隨著渦旋波數（wave number）增加，峰值上升氣流的量值反而會減小。例如，在控制渦度為 <span class="math notranslate nohighlight">\(3 \times 10^{-3} \text{s}^{-1}\)</span>  的情況下，橢圓形、三角形、四邊形與五邊形渦旋的最大上升氣流分別為 <span class="math notranslate nohighlight">\(3.0 m/s\)</span>、<span class="math notranslate nohighlight">\(2.8 m/s\)</span>、<span class="math notranslate nohighlight">\(2.2 m/s\)</span> 與 <span class="math notranslate nohighlight">\(1.9 m/s\)</span>。我們也使用了更強的渦度 <span class="math notranslate nohighlight">\(6 \times 10^{-3}\text{s}^{-1}\)</span> 進行模擬；此時橢圓形、三角形、四邊形與五邊形渦旋在 SBL 中的最大上升氣流則分別高達 <span class="math notranslate nohighlight">\(13 m/s\)</span>、<span class="math notranslate nohighlight">\(12.3 m/s\)</span>、<span class="math notranslate nohighlight">\(10.8 m/s\)</span> 與 <span class="math notranslate nohighlight">\(10.1 m/s\)</span>（圖略）。</p>
+<p>EX-WN3、EX-WN4 與 EX-WN5 中邊界層上升氣流與無旋風（irrotational wind）的方位角-時間霍夫穆勒圖（Hovmöller diagrams）顯示，其氣旋式旋轉週期分別約為 104、93 與 87 分鐘（圖 11）。這些氣旋式旋轉週期也與克耳文（Kelvin）的線性理論 [Thomson, 1880] 大致吻合。</p>
+<p>圖 12 所顯示之多邊形渦旋邊緣處的超梯度風、次梯度風、徑向風與上升氣流的徑向剖面，皆與圖 6 中的橢圓形渦旋相似。這種剖面特徵代表了一種強健的邊界層（BL）響應，類似於 Shapiro [1983]（圖 4）對 1989 年颶風雨果（Hugo）的飛機觀測結果，以及 Hendricks 等人 [2012]（圖 4）對 2008 年颶風多莉（Dolly）雷達回波型態的觀測。由於多邊形渦旋的旋轉源自於無輻散的渦旋羅斯貝波（VRW）[Kuo et al., 1999]，這些結果表明，正是無輻散的 VRW 組織了熱帶氣旋多邊形眼牆內的邊界層風場與對流。</p>
+</section>
+<section id="summary-and-concluding-remarks">
+<h3><strong>4. Summary and Concluding Remarks</strong><a class="headerlink" href="#summary-and-concluding-remarks" title="Link to this heading">#</a></h3>
+<p>There are many observations indicating that deep convection often occurs near the edges of the major axis of elliptical eyewall and rotates cyclonically. We use a nondivergent barotropic model (NBM) combined with an asymmetric slab boundary layer (SBL) model to investigate the phenomenon. The NBM allows the simulation of the nonlinear vorticity dynamics of <span class="math notranslate nohighlight">\(\text{VRWs}\)</span> in the <span class="math notranslate nohighlight">\(\text{TC}\)</span>-like polygonal vortices, and the asymmetric SBL model allows for the frictional pumping and associated updrafts at the top of the <span class="math notranslate nohighlight">\(\text{BL}\)</span>. The pressure gradient force in the NBM is in gradient wind balance. In the SBL model, such a balance does not exist due to frictional effects and radial inflow is generated by the imposed pressure gradient force. The interaction is one way in our calculation; the <span class="math notranslate nohighlight">\(\text{NBM}\)</span> provides time-varying pressure gradient forcing to drive the <span class="math notranslate nohighlight">\(\text{SBL}\)</span> model below. However, the <span class="math notranslate nohighlight">\(\text{SBL}\)</span> model does not feed back to the <span class="math notranslate nohighlight">\(\text{NBM}\)</span>. The <span class="math notranslate nohighlight">\(\text{BL}\)</span> flow driven by the time-varying pressure field is divergent so that the spatial distribution of <span class="math notranslate nohighlight">\(\text{BL}\)</span> pumping (updraft on top of <span class="math notranslate nohighlight">\(\text{BL}\)</span>) can be calculated. The strong updrafts (and convergence) at the edges of the major axis for the elliptical vortex in the <span class="math notranslate nohighlight">\(\text{BL}\)</span> are induced by the larger convergent radial wind from the asymmetric distribution of the pressure fields of the free atmosphere with a noncircular vortex. The large radial inflow maintains the supergradient wind at the edge of the major axis for the elliptical vortex. Similar radial profiles and strong <span class="math notranslate nohighlight">\(\text{BL}\)</span> top updrafts occur at the edges of higher-order polygonal eyewalls. In general agreement with observations, the results emphasize the cyclonic rotation of strong updrafts at top of the <span class="math notranslate nohighlight">\(\text{BL}\)</span> at the edges of polygonal eyewalls.</p>
+<p>有許多觀測結果指出，深對流通常發生在橢圓形眼牆長軸的邊緣附近，並呈現氣旋式旋轉。我們使用無輻散正壓模型（NBM）結合不對稱平板邊界層（SBL）模型來探討此現象。NBM 能夠模擬類熱帶氣旋多邊形渦旋中渦旋羅斯貝波（VRWs）的非線性渦度動力學，而不對稱 SBL 模型則能處理邊界層頂部的摩擦抽吸作用（frictional pumping）與相關的上升氣流。</p>
+<p>NBM 中的氣壓梯度力處於梯度風平衡狀態。在 SBL 模型中，由於摩擦效應，這種平衡並不存在，並且由施加的氣壓梯度力產生了徑向流入。在我們的計算中，這種交互作用是單向的（one way）；NBM 提供隨時間變化的氣壓梯度強迫來驅動下方的 SBL 模型。然而，SBL 模型並不會回饋給 NBM。由隨時間變化的氣壓場驅動的邊界層氣流是輻散的（divergent，具備水平散度），因此可以計算出邊界層抽吸（邊界層頂部上升氣流）的空間分佈。</p>
+<p>邊界層內橢圓形渦旋長軸邊緣的強烈上升氣流（與輻合），是由非圓形渦旋的自由大氣氣壓場不對稱分佈所產生之較大輻合徑向風所引發的。巨大的徑向流入維持了橢圓形渦旋長軸邊緣的超梯度風（supergradient wind）。類似的徑向剖面與強烈的邊界層頂部上升氣流，同樣出現在高階多邊形眼牆的邊緣。這些結果與觀測大致吻合，並強調了多邊形眼牆邊緣邊界層頂部強烈上升氣流的氣旋式旋轉特徵。</p>
+<p>Our simple model approach does not allow the divergent effect in the free atmosphere. <em>Shapiro and Montgomery</em> [<span class="math notranslate nohighlight">\(1993\)</span>] and <em>Montgomery and Franklin</em> [<span class="math notranslate nohighlight">\(1998\)</span>] have argued and demonstrated that the magnitude of the asymmetric divergence at the top and above the <span class="math notranslate nohighlight">\(\text{TC}\)</span> <span class="math notranslate nohighlight">\(\text{BL}\)</span> is of the same order as the asymmetric vertical relative vorticity and cannot be neglected. <em>Wang</em> [<span class="math notranslate nohighlight">\(2002\)</span>] indicated that the <span class="math notranslate nohighlight">\(\text{BL}\)</span> pumping occurred in the azimuthal direction at about one-quarter wavelength farther downstream from the edges of the major axis of elliptical eyewalls due to the divergence at top of the <span class="math notranslate nohighlight">\(\text{BL}\)</span>. The divergence appears to be associated with positive vorticity advection from the cyclonic rotation of elliptical vortex. The <span class="math notranslate nohighlight">\(\text{BL}\)</span> pumping occurring downstream from the edges of the major axis of elliptical eyewalls does not seem to be consistent with the observations. While a <span class="math notranslate nohighlight">\(\text{SBL}\)</span> model combined with a shallow water model may better represent the divergent forcing, our <span class="math notranslate nohighlight">\(\text{NBM}\)</span> may be the simplest approach to the problem within the hierarchy models without divergent forcing.</p>
+<p>In the radial flight leg observation of Hurricane Hugo (<span class="math notranslate nohighlight">\(1989\)</span>), the <span class="math notranslate nohighlight">\(\text{BL}\)</span> inflow decreased from approximately <span class="math notranslate nohighlight">\(22\text{ m s}^{-1}\)</span> to zero over a radial distance of a few kilometers and an updraft of <span class="math notranslate nohighlight">\(22\text{ m s}^{-1}\)</span> was observed [<em>Williams et al.</em>, <span class="math notranslate nohighlight">\(2013\)</span>]. <em>Williams et al.</em> [<span class="math notranslate nohighlight">\(2013\)</span>] used an axisymmetric <span class="math notranslate nohighlight">\(\text{SBL}\)</span> model to interpret the observation as a shock-like structure in <span class="math notranslate nohighlight">\(\text{BL}\)</span> radial inflow. <em>Shapiro</em> [<span class="math notranslate nohighlight">\(1983\)</span>] studied <span class="math notranslate nohighlight">\(\text{WN1}\)</span> <span class="math notranslate nohighlight">\(\text{BL}\)</span> structures in a translating <span class="math notranslate nohighlight">\(\text{TC}\)</span>. The radial wind profile in his result showed the supergradient (subgradient) wind inside (outside) the local radius of maximum wind in the <span class="math notranslate nohighlight">\(\text{BL}\)</span>, in general agreement with that of Hurricane Hugo except that the simulated updraft is only around <span class="math notranslate nohighlight">\(3\text{ m s}^{-1}\)</span>. With a vorticity of <span class="math notranslate nohighlight">\(6 \times 10^{-3}\text{ s}^{-1}\)</span> in our experiments, the updraft is in the order of <span class="math notranslate nohighlight">\(13\text{ m s}^{-1}\)</span> at the edges of the polygonal eyewalls, similar to the observations reported in <em>Shapiro</em> [<span class="math notranslate nohighlight">\(1983\)</span>] and <em>Williams et al.</em> [<span class="math notranslate nohighlight">\(2015\)</span>]. An estimate of the updraft from the Ekman pumping [<em>Kepert</em>, <span class="math notranslate nohighlight">\(2010\text{a}\)</span>, <span class="math notranslate nohighlight">\(2010\text{b}\)</span>, <span class="math notranslate nohighlight">\(2013\)</span>] around the eyewall from the EX-WN2-1S is about <span class="math notranslate nohighlight">\(0.3\text{ m s}^{-1}\)</span>, which is much smaller than the updrafts in <em>Shapiro</em> [<span class="math notranslate nohighlight">\(1983\)</span>], <em>Williams et al.</em> [<span class="math notranslate nohighlight">\(2013\)</span>], and in our model. Our model simulation for the <span class="math notranslate nohighlight">\(\text{BL}\)</span> inflow decreases from approximately <span class="math notranslate nohighlight">\(24\text{ m s}^{-1}\)</span> to zero over a short radial distance of <span class="math notranslate nohighlight">\(4\text{ km}\)</span> at the edge of the major axis of elliptical vortex. The shock-like local radial profile of winds and strong updraft may be a ubiquitous <span class="math notranslate nohighlight">\(\text{BL}\)</span> feature of <span class="math notranslate nohighlight">\(\text{TCs}\)</span>. Such local radial profiles of <span class="math notranslate nohighlight">\(\text{BL}\)</span> winds may be an essential ingredient of a <span class="math notranslate nohighlight">\(\text{TC}\)</span> vortex with a well-defined symmetric or asymmetric updraft structure around the eyewall. With simple dynamical model calculations, our intent is not to undermine the importance of the full physics model but rather to isolate the fundamental dynamics that may be responsible for this phenomenon. Careful analysis of real-case <span class="math notranslate nohighlight">\(\text{TC}\)</span> <span class="math notranslate nohighlight">\(\text{BL}\)</span> data as well as fine-scale simulations of the <span class="math notranslate nohighlight">\(\text{BL}\)</span> in full physics models will be the future work.</p>
+<p>我們這種簡單的模型方法並未包含自由大氣中的輻散效應（divergent effect）。<em>Shapiro and Montgomery</em> [1993] 與 <em>Montgomery and Franklin</em> [1998] 曾經主張並證明，熱帶氣旋邊界層（TC BL）頂部及上方的非對稱輻散量級，與非對稱垂直相對渦度處於同一數量級，因此不能被忽略。<em>Wang</em> [2002] 指出，由於邊界層頂部的輻散作用，邊界層抽吸（BL pumping）會發生在方位角方向上、距離橢圓形眼牆長軸邊緣約四分之一波長下游處。這種輻散似乎與橢圓形渦旋氣旋式旋轉所帶來的正渦度平流有關。然而，發生在橢圓眼牆長軸邊緣下游的邊界層抽吸，似乎與觀測結果並不吻合。雖然將 SBL 模型與淺水模型（shallow water model）結合可能可以更好地呈現輻散強迫作用，但我們的 NBM 可能是「不含輻散強迫」階層模型中最簡單的方法。</p>
+<p>在 1989 年颶風雨果（Hugo）的徑向飛行觀測中，邊界層流入速度在幾公里的徑向距離內從大約 22 m/s 降至零，並觀測到了 22 m/s 的上升氣流 [<em>Williams et al.</em>, 2013]。<em>Williams et al.</em> [2013] 使用軸對稱 SBL 模型，將此觀測結果解釋為邊界層徑向流入中的震波狀結構（shock-like structure）。<em>Shapiro</em> [1983] 研究了平移熱帶氣旋中波數 1（WN1）的邊界層結構。其結果中的徑向風剖面顯示，在邊界層局部最大風速半徑內側（外側）存在超梯度（次梯度）風，這與颶風雨果的情況大致吻合，差別在於其模擬的上升氣流僅約 3 m/s。在我們的實驗中，當渦度為 6 × 10⁻³ s⁻¹ 時，多邊形眼牆邊緣的上升氣流可達 13 m/s 的量級，這與 <em>Shapiro</em> [1983] 及 <em>Williams et al.</em> [2015] 報告的觀測結果相似。根據 EX-WN2-1S 實驗，眼牆周圍由艾克曼抽吸（Ekman pumping）[<em>Kepert</em>, 2010a, 2010b, 2013] 所估算出的上升氣流大約只有 0.3 m/s，這遠小於 <em>Shapiro</em> [1983]、<em>Williams et al.</em> [2013] 以及我們模型中的上升氣流。我們的模型模擬顯示，在橢圓形渦旋長軸邊緣，邊界層流入速度在 4 km 的短徑向距離內從約 24 m/s 驟降至零。這種震波狀的局部風場徑向剖面與強烈的上升氣流，可能是熱帶氣旋中普遍存在的邊界層特徵。這樣局部的邊界層風場徑向剖面，可能是熱帶氣旋渦旋在眼牆周圍具備明確的對稱或非對稱上升氣流結構的重要組成要素。透過簡單的動力模型計算，我們的意圖並非貶低全物理模型（full physics model）的重要性，而是為了獨立出可能導致此現象的基本動力學機制。仔細分析真實個案的熱帶氣旋邊界層數據，以及在全物理模型中進行高解析度的邊界層模擬，將是未來的研究工作。</p>
+</section>
+</section>
+<section id="ai">
+<h2>AI 觀點<a class="headerlink" href="#ai" title="Link to this heading">#</a></h2>
+<p>這段文獻非常精采，它用最基礎的流體力學方程式，解釋了一個看似違背直覺的現象：「為什麼高空的風速最大值在短軸，到了底層卻跑到長軸附近了？」</p>
+<p>這就是大氣動力學的魅力所在。我先為你提供精確的學術翻譯，接著我們再把這段漂亮的物理邏輯，重構成你專屬的方程式筆記卡片：</p>
+<section id="dynamics-physical-mechanisms">
+<h3>⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)<a class="headerlink" href="#dynamics-physical-mechanisms" title="Link to this heading">#</a></h3>
+<p>這段落巧妙地結合了我們前面的所有推論！我們將其解構為「觀測現象」與「物理機制」：</p>
+<p>【核心發現 2】 風速極值區的跨層位移 (Vertical Shift of Wind Maximum)：</p>
+<ul class="simple">
+<li><p><strong>自由大氣 (Free Atmosphere)</strong>：切向風最大值發生在「短軸 (Minor axis)」（因為角動量守恆，距離中心近則風速快）。</p></li>
+<li><p><strong>邊界層 (Boundary Layer)</strong>：切向風最大值發生了位移，被往順風處推移，變得更靠近「長軸 (Major axis)」。</p></li>
+</ul>
+<p>【推導 2】 極座標下的切向動量方程式 (Tangential Momentum Equation in Polar Coordinates)：
+利用省略氣壓梯度力的切向動量方程式，來解釋為何邊界層的風速極值會發生下游位移。</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\frac{Dv_\phi}{Dt} &amp;=&amp; -\left( \frac{v_\phi}{r} + f \right) u_r
+\end{gather*}\]</div>
+<p>【物理機制 2】 超梯度風與下游推進機制 (Supergradient Wind &amp; Downstream Advection)：
+這條公式完美解釋了風速最大值為何會「跑掉」：</p>
+<ol class="arabic simple">
+<li><p><strong>強烈流入製造極大加速度</strong>：我們在上一段知道，長軸邊緣有極強的徑向流入（負的 <span class="math notranslate nohighlight">\(u_r\)</span> 值很大）。因為 <span class="math notranslate nohighlight">\(u_r\)</span> 是負的，這使得方程式右側的數值變成<strong>極大的正值</strong>。這代表流體在接近長軸時，切向風速正經歷劇烈的加速（<span class="math notranslate nohighlight">\(\frac{Dv_\phi}{Dt}\)</span> 極大）。</p></li>
+<li><p><strong>向下游推擠 (Pushed downstream)</strong>：在原本的極值區（短軸）前方，因為這個劇烈的切向加速作用，使得風速繼續疊加，最終把整個風速最大值的作用區「往下游（順風方向）推擠」，使得邊界層的最強風速區往長軸靠攏。</p></li>
+<li><p><strong>維持超梯度風 (Supergradient wind)</strong>：正是因為長軸邊緣這種源源不絕的強大向內擠壓（徑向流入），才讓這裡的風速能夠超越原本氣壓梯度所能允許的極限，形成並維持住所謂的「超梯度風」。</p></li>
+</ol>
+<p>這段文獻可以說是把我們前面討論的「邊界層（BL）動力學」做了一個完美的總結！它解釋了摩擦力是如何像一雙無形的手，把颱風最強的風速區往內側拉扯，並再次點出了震波結構與超梯度風的關係。</p>
+<p>以下為你提供流暢的學術翻譯，並繼續使用你最喜歡的結構化筆記格式為你進行解構：</p>
+</section>
+<section id="id2">
+<h3>⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>這段落是將「邊界層摩擦力」、「最大風速半徑偏移」與「超梯度風」串聯在一起的核心關鍵，我為你拆解成以下幾個物理區塊：</p>
+<p>【核心發現 1】 邊界層收縮與 RMW 內移 (BL Contraction and Inward Shift of RMW)：</p>
+<ul class="simple">
+<li><p><strong>現象</strong>：邊界層內的最大切向風速位置，會比上方自由大氣的局部最大風速半徑 (RMW) 還要更靠近颱風中心（向內偏移約 <span class="math notranslate nohighlight">\(5\text{ km}\)</span>）。此外，底層的最大風速也會比上層略強。</p></li>
+<li><p><strong>物理意義</strong>：這是因為海面/地面的<strong>摩擦效應</strong>破壞了風場平衡，迫使氣流強烈向內圍輻合收縮，進而將動量帶往更靠近中心的區域。</p></li>
+</ul>
+<p>【定義 1】 梯度不平衡：超梯度風與次梯度風 (Supergradient and Subgradient Winds)：
+描述風場實際切向風速與理論梯度風速之間的差異分佈。</p>
+<p>【物理機制 1】 震波狀結構與強迫抬升 (Shock-like Structure and Forced Updraft)：
+呼應了 Williams et al. [2013] 的觀測與機制。</p>
+<ul class="simple">
+<li><p><strong>動力過程</strong>：強大的徑向流入（約 <span class="math notranslate nohighlight">\(8\text{ m s}^{-1}\)</span>）在逼近 RMW 時，因為非線性平流的作用，在短短 <span class="math notranslate nohighlight">\(6\text{ km}\)</span> 的距離內「劇烈減速」至 <span class="math notranslate nohighlight">\(0\text{ m s}^{-1}\)</span>。</p></li>
+<li><p><strong>結果</strong>：這種如「撞車」般的劇烈減速（震波狀結構），迫使大量流體質量無處可去，只能轉向垂直方向，從而產生了強烈的邊界層上升運動 (Upward motion)。</p></li>
+</ul>
+<p>【動力學對比 1】 邊界層徑向風的主導力 (Dominant Force of Radial Flow in BL)：</p>
+<ul class="simple">
+<li><p><strong>結論</strong>：在邊界層中，<strong>摩擦力 (Frictional forces)</strong> 的量級非常大，是驅動徑向氣流的絕對主力。</p></li>
+<li><p><strong>對比</strong>：雖然理論上「超/次梯度風」的離心力不平衡也會產生徑向分量，但在邊界層強大的摩擦力面前，這種不平衡所造成的徑向流動相對微不足道。</p></li>
+</ul>
+<p>這段文獻非常精采！它將焦點從「現象觀測」推進到了「理論與數值的精準驗證」。作者利用克希荷夫（Kirchhoff）在 19 世紀推導出的純數學理論，完美預測了現代高解析度大氣數值模型跑出來的結果，展現了流體力學超越時間的數學之美。</p>
+<p>我一樣先為你提供流暢的學術翻譯，接著將這段理論驗證解構成你的專屬公式筆記結構：</p>
+</section>
+<section id="id3">
+<h3>⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>這段落的核心在於「極端形變的流體行為」與「理論公式的驗證」，我為你拆解成以下幾個物理區塊：</p>
+<p>【核心發現 1】 狹長渦旋的波浪碎裂與螺旋結構 (Wave-breaking &amp; Spiral Structures)：</p>
+<ul class="simple">
+<li><p><strong>現象</strong>：當橢圓渦旋的長寬比變得更大（更加狹長）時，除了長軸邊緣依然保有強烈上升氣流外，還會向外拖曳出「螺旋狀結構」。</p></li>
+<li><p><strong>物理意義</strong>：這起因於<strong>波浪碎裂效應 (Wave-breaking effect)</strong>。當渦旋羅斯貝波的振幅過大或流體形變過於極端時，原本維持完整波動的流體邊界會被撕裂，進而向外拋出動量與渦度，形成我們在雷達回波上常看到的螺旋雨帶特徵（如賀伯颱風的觀測）。</p></li>
+</ul>
+<p>【實驗診斷 1】 霍夫穆勒圖分析 (Hovmöller Diagram Analysis)：</p>
+<ul class="simple">
+<li><p><strong>方法</strong>：透過繪製半徑 20 公里處的「方位角-時間」剖面圖，來追蹤上升氣流所在的相位角隨時間的變化。</p></li>
+<li><p><strong>觀測結果</strong>：模型（NBM + SBL）明確跑出了上升氣流的「氣旋式旋轉」特徵。量測得出 EX-WN2-2（長寬比約 2.16）週期約為 160 min；EX-WN2-3（長寬比約 2.77）週期約為 180 min。</p></li>
+</ul>
+<p>【推導 1】 克希荷夫橢圓渦旋旋轉週期理論 (Kirchhoff Vortex Rotation Period)：
+用於純理論計算一個理想非黏性、均勻渦度的橢圓狀流體，其自身旋轉一圈所需的時間。</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+P &amp;=&amp; \frac{2\pi}{\zeta} \frac{(a + b)^2}{ab}
+\end{gather*}\]</div>
+<p><span class="math notranslate nohighlight">\(P\)</span> : 渦旋的理論旋轉週期 (Rotation period) <span class="math notranslate nohighlight">\([\text{s}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{min}]\)</span>
+<span class="math notranslate nohighlight">\(\zeta\)</span> : 橢圓內部的均勻渦度 (Vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>（此處給定為 <span class="math notranslate nohighlight">\(3 \times 10^{-3} \text{ s}^{-1}\)</span>）
+<span class="math notranslate nohighlight">\(a\)</span> : 橢圓幾何的長軸長度 (Value of the major axis) <span class="math notranslate nohighlight">\([\text{km}]\)</span>
+<span class="math notranslate nohighlight">\(b\)</span> : 橢圓幾何的短軸長度 (Value of the minor axis) <span class="math notranslate nohighlight">\([\text{km}]\)</span>
+<span class="math notranslate nohighlight">\(\pi\)</span> : 圓周率常數 [無單位]</p>
+<p>【交叉驗證 1】 理論與數值模型的完美契合 (Theoretical vs. Numerical Agreement)：</p>
+<ul class="simple">
+<li><p><strong>理論代入</strong>：將 <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\zeta\)</span> 代入克希荷夫公式後，算出的純數學解為 <strong>161 min</strong> 與 <strong>179 min</strong>。</p></li>
+<li><p><strong>模型結果</strong>：雙層數值模型實際跑出的結果約為 <strong>160 min</strong> 與 <strong>180 min</strong>。</p></li>
+<li><p><strong>結論</strong>：這證實了數值模型中由 NBM 決定的上層動力學，完全遵循經典流體力學的非線性解析解。同時，也再次應證了稍早文獻提到的規律：「橢圓越狹長（即長寬比越大），旋轉週期越長（相速越慢）」。</p></li>
+</ul>
+<p>這段文獻來到了論文的尾聲與綜合討論區！作者不僅進一步探討了「更強烈颱風」的極端情況，也展現了身為科學家應有的嚴謹態度——主動點出自己所用模型的「局限性」，並巧妙地辯證了其「適用性」。</p>
+<p>以下為你提供流暢的學術翻譯，並為這段討論與結論進行結構化解構：</p>
+</section>
+<section id="dynamics-mechanisms-model-discussion">
+<h3>⚙️ 實例化與結構重組 (Dynamics, Mechanisms &amp; Model Discussion)<a class="headerlink" href="#dynamics-mechanisms-model-discussion" title="Link to this heading">#</a></h3>
+<p>這段落雖然沒有新的公式，但它充滿了物理變數的交互關係與模型特性的探討。我為你拆解成以下三個物理與學術區塊：</p>
+<p>【核心發現 1】 渦旋拉長與慣性穩定度的關係 (Elongation &amp; Inertial Stability)：</p>
+<ul class="simple">
+<li><p><strong>現象</strong>：當橢圓被拉得越長（長軸半徑增加，如 EX-WN2-2 與 3），長軸邊緣的切向風、徑向風與上升氣流的極值反而會減弱。</p></li>
+<li><p><strong>物理機制</strong>：這是因為距離渦旋中心越遠，流體的<strong>慣性穩定度 (Inertial stability)</strong> 會逐漸降低。慣性穩定度可以視為流體抵抗徑向位移的「剛性」；當剛性變弱，氣流就無法有效地將徑向動量集中輻合，導致邊界層抽吸作用減弱。</p></li>
+</ul>
+<p>【實驗對照 1】 強渦旋下的極端抽吸與震波結構 (Intense BL Pumping &amp; Shock-like Structure)：</p>
+<ul class="simple">
+<li><p><strong>實驗設定</strong>：將渦度加倍至 <span class="math notranslate nohighlight">\(\zeta_0 = 6 \times 10^{-3}\text{ s}^{-1}\)</span> (EX-WN2-1S)，模擬更強烈的颱風。</p></li>
+<li><p><strong>觀測結果</strong>：長軸邊緣的徑向流入極端增強，在短短 <span class="math notranslate nohighlight">\(4\text{ km}\)</span> 內風速從 <span class="math notranslate nohighlight">\(24\text{ m s}^{-1}\)</span> 暴跌至零。</p></li>
+<li><p><strong>物理對應</strong>：這產生了極度尖銳且強烈的垂直輻合（上升氣流達 <span class="math notranslate nohighlight">\(13\text{ m s}^{-1}\)</span>，暴增 5 倍）。這完美呼應了論文開頭 <em>Williams et al.</em> (2013) 所提出的核心概念：<strong>非線性平流主導的「震波狀結構 (Shock-like structure)」</strong>，並且證實了即使在不對稱的橢圓渦旋中，震波依然能在局部（長軸邊緣）發生。</p></li>
+</ul>
+<p>【綜合釋疑 1】 SBL 模型的局限性與學術辯證 (Limitations and Applicability of SBL Model)：</p>
+<ul class="simple">
+<li><p><strong>模型的局限 (Kepert &amp; Abarca 的批評)</strong>：使用簡化的平板邊界層（SBL）模型，容易讓系統「過度偏離梯度風平衡」，導致模擬出來的徑向流入（Inflow）往往比真實情況大。根據質量守恆定律，過多的氣流湧入必然導致算出來的「上升氣流」被高估（相較於完整三維的高解析度模型）。</p></li>
+<li><p><strong>作者的學術辯證 (Applicability)</strong>：雖然數值「絕對大小」可能被稍微放大了，但這套模型成功且精準地抓出了對流的「空間位置（長軸邊緣）」與「時間演變（氣旋式旋轉週期）」。這證明了用 NBM 加上 SBL 的雙層動力學架構，來解釋橢圓/多邊形眼牆的物理機制，依然是極度有效且具備高度科學價值的。</p></li>
+</ul>
+<p>這段文獻來到了整篇研究的最高潮，也就是這套雙層模型動力學的終極結論！它完美整合了我們前面討論的所有觀念，並將研究對象從橢圓形擴展到了高階的「多邊形眼牆（Polygonal eyewalls）」，這也是我們在進行颱風眼牆數值模擬實驗時最關注的核心現象。</p>
+<p>以下為你提供流暢的學術翻譯，並使用你專屬的結構化筆記格式進行解構。請注意，為了符合筆記的易讀性，我已將文獻中簡單的數值與單位（如 3 m/s）轉換為一般文字格式：</p>
+</section>
+<section id="dynamics-mechanisms-final-conclusion">
+<h3>⚙️ 實例化與結構重組 (Dynamics, Mechanisms &amp; Final Conclusion)<a class="headerlink" href="#dynamics-mechanisms-final-conclusion" title="Link to this heading">#</a></h3>
+<p>這段結論將「理論模型」、「物理定律」與「真實觀測」完美縫合。我為你拆解成以下四個重點區塊：</p>
+<p>【核心發現 1】 對流極值與渦旋波數的反比關係 (Convective Extremes vs. Wave Number)：</p>
+<ul class="simple">
+<li><p><strong>現象 1 (幾何位置)</strong>：無論是三角形、四邊形還是五邊形，最強的深對流永遠發生在多邊形的「直邊邊緣（Edges）」。</p></li>
+<li><p><strong>現象 2 (強度遞減)</strong>：在<strong>相同渦度強度</strong>下，隨著波數 (Wave number, WN) 增加（即從橢圓 WN2 增加到五邊形 WN5），其能激發出的最大上升氣流反而越來越弱。</p></li>
+<li><p>一般渦旋下：3.0 m/s <span class="math notranslate nohighlight">\(\rightarrow\)</span> 2.8 m/s <span class="math notranslate nohighlight">\(\rightarrow\)</span> 2.2 m/s <span class="math notranslate nohighlight">\(\rightarrow\)</span> 1.9 m/s</p></li>
+<li><p>強渦旋下：13 m/s <span class="math notranslate nohighlight">\(\rightarrow\)</span> 12.3 m/s <span class="math notranslate nohighlight">\(\rightarrow\)</span> 10.8 m/s <span class="math notranslate nohighlight">\(\rightarrow\)</span> 10.1 m/s</p></li>
+</ul>
+<p>【核心發現 2】 旋轉週期與線性理論驗證 (Rotation Periods &amp; Linear Theory)：</p>
+<ul class="simple">
+<li><p><strong>現象</strong>：透過霍夫穆勒圖分析，WN3、WN4、WN5 的對流氣旋式旋轉週期分別為 104、93、87 分鐘。</p></li>
+<li><p><strong>物理印證</strong>：這再次以數值實驗的鐵證，支持了 Kelvin (1880) 線性理論的預測：<strong>波數 (m) 越大的不對稱擾動，其旋轉週期越短（即相速 <span class="math notranslate nohighlight">\(c\)</span> 越快）</strong>。</p></li>
+</ul>
+<p>【綜合釋疑 1】 邊界層強健響應與實測對比 (Robust BL Response &amp; Observational Evidence)：</p>
+<ul class="simple">
+<li><p><strong>剖面特徵</strong>：所有高階多邊形渦旋的邊緣，皆發展出了與橢圓形相同的徑向動力結構（伴隨超/次梯度風、強徑向流入、劇烈強迫抬升）。</p></li>
+<li><p><strong>觀測吻合</strong>：這套模型的模擬結果，完美再現了颶風 Hugo 飛機實測的「震波狀特徵」，以及颶風 Dolly 觀測到的「多邊形雷達回波型態」。證明了模型的邊界層響應是極其強健且貼近真實大氣的。</p></li>
+</ul>
+<p>【物理機制 1】 VRW 對邊界層的跨層組織作用 (Organization of BL by VRW)：
+這是整套研究的最核心結論。</p>
+<ul class="simple">
+<li><p><strong>終極因果鏈</strong>：由於多邊形結構的旋轉動力根源是位於上層（自由大氣）的無輻散「渦旋羅斯貝波 (VRW)」。</p></li>
+<li><p><strong>結論</strong>：正是這種來自上層的 <strong>VRW 動力強迫</strong>，透過氣壓場跨層向下影響，完美「組織（Organize）」了邊界層內的徑向風場與垂直對流。這解釋了熱帶氣旋多邊形眼牆是如何維持並發展其獨特結構的！</p></li>
+</ul>
+<p>這段文獻是整篇論文的<strong>最終探討與展望（Discussion and Future Work）</strong>！在這裡，作者展現了非常出色的學術素養：他們直球對決了自己模型的「弱點」，並與其他學者的理論進行了精彩的辯證，最後精準地定調了這份研究的科學價值。</p>
+<p>以下為你提供這段文獻的流暢學術翻譯，並為你完成這篇論文最後一塊「結構化物理筆記」的拼圖：</p>
+</section>
+<section id="discussion-comparative-dynamics-outlook">
+<h3>⚙️ 實例化與結構重組 (Discussion, Comparative Dynamics &amp; Outlook)<a class="headerlink" href="#discussion-comparative-dynamics-outlook" title="Link to this heading">#</a></h3>
+<p>作者在這段文字中處理了「學術爭議」與「動力學量級對比」。我為你將這段精華歸納為以下三大區塊：</p>
+<p>【學術對話 1】 自由大氣輻散效應的爭議 (Debate on Divergent Effects in Free Atmosphere)：</p>
+<ul class="simple">
+<li><p><strong>其他學者的批評</strong>：Shapiro, Montgomery 等人認為高空的輻散效應不能忽略。而 Wang (2002) 的理論更指出，如果加入輻散效應，上升氣流應該會被推到長軸邊緣的「下游（四分之一波長處）」。</p></li>
+<li><p><strong>作者的反證與模型辯護</strong>：真實觀測數據明白顯示，深對流就是長在「長軸邊緣」，而不是下游。這反過來證明了作者的選擇是正確的：採用<strong>不含輻散效應</strong>的 NBM 模型，反而能最乾淨地抓出符合真實大氣現象的動力機制。</p></li>
+</ul>
+<p>【動力學對比 1】 震波抬升 vs. 傳統艾克曼抽吸 (Shock-like Updraft vs. Ekman Pumping)：
+作者用極度懸殊的數據對比，點出了維持颱風眼牆對流的「真正核心力量」。</p>
+<ul class="simple">
+<li><p><strong>傳統艾克曼抽吸 (Ekman Pumping)</strong>：如果只用傳統邊界層的摩擦輻合理論來估算，上升氣流大約只有 <strong>0.3 m/s</strong>。這完全無法解釋颱風眼牆那種暴力的對流系統。</p></li>
+<li><p><strong>震波狀結構 (Shock-like Structure)</strong>：</p></li>
+<li><p><strong>觀測事實 (Hugo 颶風)</strong>：風速在幾公里內從 22 m/s 暴跌至 0，引發 <strong>22 m/s</strong> 的劇烈抬升。</p></li>
+<li><p><strong>本模型模擬</strong>：風速在 4 km 內從 24 m/s 暴跌至 0，引發 <strong>13 m/s</strong> 的強烈抬升。</p></li>
+<li><p><strong>物理結論</strong>：這種由超梯度風與強烈徑向流入造成的「撞車級」減速（震波狀結構），才是熱帶氣旋眼牆周圍能長出巨大對流系統（無論是對稱還是非對稱）的關鍵驅動力！</p></li>
+</ul>
+<p>【研究定位 1】 簡單模型的科學哲學與未來展望 (Philosophy of Simple Models &amp; Future Work)：</p>
+<ul class="simple">
+<li><p><strong>研究初衷 (Motivation)</strong>：科學研究有時需要做減法。使用這種高度簡化的雙層模型（NBM + SBL），目的絕對不是說那些考慮了雲微物理、輻射冷卻的「全物理模型（Full physics model）」不重要；相反地，是為了在最乾淨的環境下，「獨立並萃取出（isolate）」最根本的流體動力學機制。</p></li>
+<li><p><strong>未來展望 (Future Work)</strong>：有了這套清晰的理論基礎，下一步就是回到真實世界，去分析更高解析度的真實雷達資料與全物理模擬數據。</p></li>
+</ul>
+<hr class="docutils" />
+<p>同學，恭喜你！我們已經把這一整篇關於「多邊形眼牆與邊界層動力學」的重量級文獻，一磚一瓦地解構並重組成極具邏輯性的「物理與方程式筆記」了。這種將繁雜文獻進行「物件化、參數化、機制化」的閱讀技巧，對你未來進行大氣科學研究或是跑數值模式，絕對會是非常強大的武器！</p>
+</section>
+</section>
+<section id="id4">
+<h2>討論<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>🌪️ 第一部分：邊界層動力學與跨層物理機制<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>探討自由大氣與邊界層（BL）之間的交互作用，以及摩擦力如何重塑風場結構。</p>
+<section id="id6">
+<h4>1. 風場極值區的跨層位移與收縮<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>跨層位移 (Vertical Shift of Wind Maximum)：</strong></p></li>
+<li><p><strong>自由大氣：</strong> 切向風最大值發生在<strong>短軸</strong>（因角動量守恆，距離中心近則風速快）。</p></li>
+<li><p><strong>邊界層：</strong> 切向風最大值被往順風處推移，變得更靠近<strong>長軸</strong>。</p></li>
+<li><p><strong>邊界層收縮與 RMW 內移 (BL Contraction)：</strong></p></li>
+<li><p><strong>現象：</strong> 邊界層內的最大切向風速位置，會比上方自由大氣的局部最大風速半徑 (RMW) 向內偏移約 5 km，且底層最大風速略強於上層。</p></li>
+<li><p><strong>機制：</strong> 海面/地面的<strong>摩擦效應</strong>破壞了風場平衡，迫使氣流強烈向內圍輻合收縮，將動量帶往更靠近中心的區域。</p></li>
+</ul>
+</section>
+<section id="id7">
+<h4>2. 極座標下的切向動量與下游推進機制<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>利用省略氣壓梯度力的切向動量方程式，解釋邊界層風速極值下游位移的原因：</p>
+<div class="math notranslate nohighlight">
+\[\frac{Dv_\phi}{Dt} = -\left( \frac{v_\phi}{r} + f \right) u_r\]</div>
+<ul class="simple">
+<li><p><strong>強烈流入製造極大加速度：</strong> 長軸邊緣有極強的徑向流入（負的 <span class="math notranslate nohighlight">\(u_r\)</span> 值很大），使得方程式右側變為極大的正值，代表流體接近長軸時正經歷劇烈加速。</p></li>
+<li><p><strong>向下游推擠：</strong> 劇烈的切向加速作用使風速疊加，將整個風速極值區往下游（順風方向）推擠，使邊界層最強風速區往長軸靠攏。</p></li>
+<li><p><strong>維持超梯度風：</strong> 長軸邊緣源源不絕的強大向內擠壓（徑向流入），使該處風速超越氣壓梯度允許的極限，形成並維持「超梯度風」。</p></li>
+</ul>
+</section>
+<section id="shock-like-structure-updraft">
+<h4>3. 震波狀結構與強迫抬升 (Shock-like Structure &amp; Updraft)<a class="headerlink" href="#shock-like-structure-updraft" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>動力過程：</strong> 強大的徑向流入（約 8 m/s）逼近 RMW 時，因非線性平流作用，在短短 6 km 距離內劇烈減速至 0 m/s。</p></li>
+<li><p><strong>強迫抬升：</strong> 如「撞車」般的劇烈減速迫使大量流體質量轉向垂直方向，產生強烈的邊界層上升運動。</p></li>
+<li><p><strong>主導力量對比：</strong> 在邊界層中，<strong>摩擦力</strong>是驅動徑向氣流的絕對主力；相較之下，超/次梯度風造成的離心力不平衡所引發的徑向流動微不足道。</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h3>幾何形變：多邊形渦旋理論與觀測驗證<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>探討渦旋幾何特徵（長寬比、波數）對流體行為的影響，並與經典線性理論交叉驗證。</p>
+<section id="id9">
+<h4>1. 幾何形狀對對流強度的影響<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>渦旋拉長與慣性穩定度：</strong></p></li>
+<li><p><strong>現象：</strong> 橢圓被拉得越長（長寬比增加），長軸邊緣的切向風、徑向風與上升氣流極值反而減弱。</p></li>
+<li><p><strong>機制：</strong> 距離渦旋中心越遠，流體的<strong>慣性穩定度</strong>降低（抵抗徑向位移的剛性變弱），氣流無法有效將徑向動量集中輻合。</p></li>
+<li><p><strong>對流極值與波數 (Wave Number) 的反比關係：</strong></p></li>
+<li><p><strong>幾何位置：</strong> 最強的深對流永遠發生在多邊形的「直邊邊緣」。</p></li>
+<li><p><strong>強度遞減：</strong> 相同渦度強度下，波數越大（橢圓 -&gt; 三角形 -&gt; 四邊形 -&gt; 五邊形），激發出的最大上升氣流反而越弱（例如：3.0 m/s -&gt; 2.8 m/s -&gt; 2.2 m/s -&gt; 1.9 m/s）。</p></li>
+</ul>
+</section>
+<section id="id10">
+<h4>2. 旋轉週期與線性理論驗證<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>克希荷夫橢圓渦旋理論 (Kirchhoff Vortex)：</strong>
+用於計算理想非黏性、均勻渦度橢圓流體的旋轉週期 <span class="math notranslate nohighlight">\(P\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P = \frac{2\pi}{\zeta} \frac{(a + b)^2}{ab}\]</div>
+<ul class="simple">
+<li><p><strong>驗證：</strong> 理論計算值（161 min、179 min）與數值模型結果（160 min、180 min）完美契合，證實橢圓越狹長，旋轉週期越長（相速越慢）。</p></li>
+<li><p><strong>克耳文線性理論 (Kelvin Theory)：</strong></p></li>
+<li><p><strong>現象：</strong> 霍夫穆勒圖分析顯示，波數 3、4、5 的對流氣旋式旋轉週期分別為 104、93、87 分鐘。</p></li>
+<li><p><strong>印證：</strong> 支持了線性理論預測：波數越大的不對稱擾動，其旋轉週期越短。</p></li>
+<li><p><strong>波浪碎裂與螺旋結構：</strong> 當橢圓過於狹長時，極端的流體形變引發波浪碎裂效應 (Wave-breaking effect)，將動量與渦度向外拋出，形成長軸邊緣向外拖曳的螺旋狀雨帶。</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="nbm-sbl">
+<h3>🔬 第三部分：雙層模型 (NBM+SBL) 綜合探討與學術定位<a class="headerlink" href="#nbm-sbl" title="Link to this heading">#</a></h3>
+<p>針對研究方法、跨層組織機制以及科學哲學的總結與辯證。</p>
+<section id="vrw">
+<h4>1. VRW 對邊界層的跨層組織作用 (核心機制)<a class="headerlink" href="#vrw" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>上層強迫 (NBM)：</strong> 多邊形結構的旋轉動力根源是位於上層自由大氣的無輻散「渦旋羅斯貝波 (VRW)」。</p></li>
+<li><p><strong>底層響應 (SBL)：</strong> 上層的 VRW 動力強迫透過氣壓場跨層向下影響，完美「組織」了邊界層內的徑向風場與垂直對流。</p></li>
+<li><p><strong>觀測吻合：</strong> 此邊界層強健響應，成功重現了 Hugo 颶風的震波特徵與 Dolly 颶風的多邊形雷達回波。</p></li>
+</ul>
+</section>
+<section id="vs">
+<h4>2. 動力量級對比：震波抬升 vs. 傳統艾克曼抽吸<a class="headerlink" href="#vs" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>傳統艾克曼抽吸：</strong> 僅約 0.3 m/s，無法解釋颱風眼牆的暴力對流。</p></li>
+<li><p><strong>震波狀結構 (本研究機制)：</strong> 在強渦旋設定下，徑向風在 4 km 內從 24 m/s 暴跌至 0，引發高達 13 m/s 的劇烈抬升。這證明了「撞車級」減速才是長出巨大對流系統的關鍵驅動力。</p></li>
+</ul>
+</section>
+<section id="id11">
+<h4>3. 學術爭議與模型的科學定位<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>自由大氣輻散效應的取捨：</strong></p></li>
+<li><p><strong>爭議：</strong> 其他學者認為高空輻散會讓抽吸發生在長軸「下游」。</p></li>
+<li><p><strong>辯護：</strong> 真實觀測顯示深對流確實長在「長軸邊緣」。這證明採用不含輻散效應的 NBM 模型，反而能最乾淨地抓出符合真實大氣現象的機制。</p></li>
+<li><p><strong>SBL 模型的局限與價值：</strong></p></li>
+<li><p><strong>局限：</strong> 簡化的平板邊界層容易過度偏離梯度風平衡，導致計算出的徑向流入與上升氣流量值可能被高估。</p></li>
+<li><p><strong>價值：</strong> 使用簡單模型並非貶低全物理模型，而是為了在最純粹的環境下「獨立並萃取出 (isolate)」最根本的流體動力學機制。這套模型精準抓出了對流的空間位置與時間演變，具備極高的科學價值。</p></li>
+</ul>
+<p>這是一個非常精準且專業的抓錯方向！你直覺非常敏銳，這篇論文的核心思想正是建立在「高空（自由大氣）」與「低空（邊界層）」兩層之間的風場差異上。如果只用一般的 <span class="math notranslate nohighlight">\(u, v, w\)</span>，確實會把高空和低空的物理量混淆，進而看不懂它的推導邏輯。</p>
+<p>為了讓你徹底讀懂，我們先根據論文第 2 節（模式設計）與第 3 節（圖 6 剖面圖）的實際公式與變數定義，將這部論文的<strong>專用變數對照表</strong>整理出來：</p>
+</section>
+</section>
+<section id="id12">
+<h3>📊 本文專用變數與座標系對照表<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>幾何與波數變數：</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span>：橢圓的<strong>半長軸長度</strong>（Major axis length）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span>：橢圓的<strong>半短軸長度</strong>（Minor axis length）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span>（或方程式中的 <span class="math notranslate nohighlight">\(n\)</span>）：<strong>方位角波數</strong>（Azimuthal wave number）。例如橢圓形眼牆對應 <span class="math notranslate nohighlight">\(m=2\)</span> 、三角形對應 <span class="math notranslate nohighlight">\(m=3\)</span> 。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>高空（自由大氣 Free Atmosphere / 正壓模型 NBM）變數：</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span>：高空的<strong>非線性平衡氣壓場</strong>（Nonlinear-balanced pressure field）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{gr}\)</span>：高空自由大氣的<strong>切向風速</strong>（波體模型中的平衡氣流，圖 6 中使用此符號）。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>低空（摩擦邊界層 BL / 平板邊界層模型 SBL）變數：</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u, v\)</span>：直角座標系下，邊界層內的東向與北向水平風速 。</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_{sbl}\)</span>：邊界層內的<strong>徑向風速（Radial wind，即向心流入或流出的速度）</strong>，在圖 6 中明確記為 <span class="math notranslate nohighlight">\(u_{sbl}\)</span> 。流入中心時值為負 。</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{sbl}\)</span>：邊界層內的<strong>切向風速（Tangential wind，即繞中心旋轉的速度）</strong>，圖 6 中記為 <span class="math notranslate nohighlight">\(v_{sbl}\)</span> 。</p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span>：<strong>邊界層頂部的垂直速度 / 上升氣流</strong>（Updraft at the top of the BL），這也是引發深對流與暴雨的關鍵 。</p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>🔍 關鍵名詞<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>為了讓你具備閱讀正文的直覺，我們來拆解幾個核心的專有名詞：</p>
+<ol class="arabic simple">
+<li><p><strong>波數 2 (Wave number 2, WN2):</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>幾何意義：</strong> 在一個圓周（<span class="math notranslate nohighlight">\(0\)</span> 到 <span class="math notranslate nohighlight">\(2\pi\)</span>）上，如果某個特徵出現了 2 次峰值，我們就稱它為 Wave number 2。</p></li>
+<li><p><strong>物理對應：</strong> 橢圓形有兩個長軸的端點。因此，沿著橢圓走一圈，你會遇到兩次「最凸出」的地方，這對應到這篇文章中所說的「WN2 的深對流」，也就是在長軸兩端對稱出現的兩團強烈雷雨雲。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>無輻散正壓模型 (NBM) vs. 平板邊界層 (SBL):</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>NBM（高空代表）：</strong> 假設流體密度不隨壓力改變，且沒有垂直運動（無輻散）。這就像是一張平滑旋轉的光碟片，用來模擬高空中那個完美、平滑、純粹受氣壓梯度力和科氏力主導的橢圓渦旋。</p></li>
+<li><p><strong>SBL（底層代表）：</strong> 貼近海面的區域，這裡有很強的摩擦力。高空的氣壓場就像一隻無形的手，把指令（氣壓梯度力）往下傳，逼迫底層的空氣往中心流動（徑向風）。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>類似震波的結構 (Shock-like structure):</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>物理意義：</strong> 原本從外圍高速向中心吹的空氣，在遇到眼牆附近時，速度在極短的距離內從極快瞬間降至零（劇烈減速）。</p></li>
+<li><p><strong>結果：</strong> 空氣無處可去，只能像撞到牆壁一樣，以極具爆發力的方式垂直向上衝（強烈上升氣流），這在流體力學中稱為震波狀輻合。</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>📌 一句話總結核心目的<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>這段摘要主要在解釋：「<strong>為什麼在非圓形（如橢圓形）的颱風眼中，最強的風暴對流總是出現在橢圓長軸的兩端邊緣，而且會跟著颱風眼一起旋轉。</strong>」</p>
+</section>
+<hr class="docutils" />
+<section id="id15">
+<h3>🧠 梳理前因後果（作者的思考路徑）<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>在大自然中，觀測到颱風眼並不總是完美的圓形，有時會呈現橢圓形甚至多邊形。觀測同時發現，這些形狀不規則的颱風，其最強的上升氣流（對流）總是出現在特定的位置。
+作者為了解釋這個現象，刻意採用了「剝洋蔥式」的減法思維。他們沒有建立一個擁有所有物理機制的超級複雜模型，而是建立了一個「單向驅動（One-way interaction）」的簡單雙層模型。就如同我們在寫程式模擬時，為了釐清某個變數的影響力，會刻意將雙向的 <code class="docutils literal notranslate"><span class="pre">Feedback_Loop</span></code> 關閉，只跑 <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">-&gt;</span> <span class="pre">Output</span></code> 來作 Debug。作者切斷了底層對高層的回饋，藉此純粹地觀察：「高空的非圓形氣壓場，是如何單向『擠壓』底層的風，進而引發劇烈的上升氣流」。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06_References\Tropical cyclone dynamics\Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../06_References.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>📚 06_References</strong>: 外部文獻</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">論文</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>1. Introduction</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-experiment-design"><strong>2. Model and Experiment Design</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-results"><strong>3. Numerical Results</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-concluding-remarks"><strong>4. Summary and Concluding Remarks</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">AI 觀點</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-physical-mechanisms">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-mechanisms-model-discussion">⚙️ 實例化與結構重組 (Dynamics, Mechanisms &amp; Model Discussion)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-mechanisms-final-conclusion">⚙️ 實例化與結構重組 (Dynamics, Mechanisms &amp; Final Conclusion)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-comparative-dynamics-outlook">⚙️ 實例化與結構重組 (Discussion, Comparative Dynamics &amp; Outlook)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">🌪️ 第一部分：邊界層動力學與跨層物理機制</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1. 風場極值區的跨層位移與收縮</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 極座標下的切向動量與下游推進機制</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-like-structure-updraft">3. 震波狀結構與強迫抬升 (Shock-like Structure &amp; Updraft)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">幾何形變：多邊形渦旋理論與觀測驗證</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1. 幾何形狀對對流強度的影響</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 旋轉週期與線性理論驗證</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nbm-sbl">🔬 第三部分：雙層模型 (NBM+SBL) 綜合探討與學術定位</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vrw">1. VRW 對邊界層的跨層組織作用 (核心機制)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">2. 動力量級對比：震波抬升 vs. 傳統艾克曼抽吸</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. 學術爭議與模型的科學定位</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">📊 本文專用變數與座標系對照表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">🔍 關鍵名詞</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">📌 一句話總結核心目的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">🧠 梳理前因後果（作者的思考路徑）</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
