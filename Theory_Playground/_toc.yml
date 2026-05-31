@@ -66,9 +66,8 @@ chapters:
         title: "[待分類] X Typhoon Dynamics"
 
   - file: 06_References/06_References.md
-    sections:      
+    sections:  
       - file: 06_References/Tropical cyclone dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.ipynb
-        title: "[熱帶氣旋動力學] Kuo2016-Deep convection in elliptical and polygonal eyewalls of tropical cyclones"
-
-
-
+        title: "[熱帶氣旋動力學] Kuo2016"
+      - file: 06_References/Tropical cyclone dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.ipynb
+        title: "[熱帶氣旋動力學] Cha2020"
