@@ -101,6 +101,18 @@
             min-height: 1.6em;
             transition: opacity 0.4s;
         }
+
+        /* 文句內的連結：與周圍文字同大小，維持行內排版 */
+        blockquote.quote a {
+            display: inline;
+            font-size: inherit;
+            font-style: inherit;
+        }
+
+        blockquote.quote a:hover {
+            padding-left: 0;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
