@@ -12,7 +12,7 @@
             line-height: 1.6;
             
             /* --- 背景圖片設定開始 --- */
-            background-image: url('./item/Cat_and_Dog_pic.png');
+            background-image: url('./item/Cat_and_Dog_pic.jpg');
             background-repeat: no-repeat;
             background-position: center center;
             background-attachment: fixed;
@@ -82,15 +82,32 @@
             transition: color 0.3s, padding-left 0.3s; /* 將 padding-left 也加入過渡效果，會更滑順 */
         }
 
-        a:hover { 
-            color: #0056b3; 
-            padding-left: 10px; 
+        a:hover {
+            color: #0056b3;
+            padding-left: 10px;
+        }
+
+        /* 隨機經典文句 */
+        blockquote.quote {
+            margin: 0 0 30px 0;
+            padding: 15px 20px;
+            border-left: 4px solid #007bff;
+            background-color: rgba(0, 123, 255, 0.06);
+            border-radius: 0 8px 8px 0;
+            color: #333;
+            font-size: 1.15em;
+            font-style: italic;
+            text-align: center;
+            min-height: 1.6em;
+            transition: opacity 0.4s;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>我的筆記總覽</h1>
+
+        <blockquote class="quote" id="randomQuote"></blockquote>
 
         <h2>貓探長 🐈🕵️</h2>
         <p class="description">旺旺 筆記整理：</p>
@@ -111,5 +128,28 @@
             
         </ul>
     </div>
+
+    <script>
+        // 載入時隨機挑選一句 "---" 之前的經典文句
+        fetch('./item/Kaleidoscopic_Remembrance.txt')
+            .then(function (res) { return res.text(); })
+            .then(function (text) {
+                var quotes = text
+                    .split('---')[0]            // 只取 --- 之前的部分
+                    .split(/\r?\n/)             // 逐行拆分
+                    .map(function (line) { return line.trim(); })
+                    .filter(function (line) { return line.length > 0; });
+
+                var el = document.getElementById('randomQuote');
+                if (quotes.length === 0) {
+                    el.style.display = 'none';
+                    return;
+                }
+                el.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+            })
+            .catch(function () {
+                document.getElementById('randomQuote').style.display = 'none';
+            });
+    </script>
 </body>
 </html>
