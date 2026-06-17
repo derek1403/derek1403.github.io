@@ -145,11 +145,27 @@
                     el.style.display = 'none';
                     return;
                 }
-                el.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+                var quote = quotes[Math.floor(Math.random() * quotes.length)];
+                el.innerHTML = renderMarkdown(quote);
             })
             .catch(function () {
                 document.getElementById('randomQuote').style.display = 'none';
             });
+
+        // 簡易 Markdown 渲染：支援超連結 [文字](網址) 與粗體 **文字**
+        function renderMarkdown(text) {
+            // 先做 HTML 轉義，避免內容中的特殊字元造成問題
+            var html = text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+            // 連結：[文字](網址)
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g,
+                '<a href="$2" target="_blank">$1</a>');
+            // 粗體：**文字**
+            html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            return html;
+        }
     </script>
 </body>
 </html>
