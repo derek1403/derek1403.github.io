@@ -1,0 +1,48 @@
+{
+  "research_objective": "釐清長/短生命期同心眼牆(CE)是否調控熱帶氣旋在LMI之後的發展路徑(以K-V/IKE-Vmax圖呈現)，並區分長短CE對內核、外圍、總IKE的不同影響。",
+  "background_premises": [
+    "強度Vmax不足以描述TC的空間結構與破壞潛勢，需改用IKE(結合強度與大小)。",
+    "K-V圖(Musgrave 2012)可摘要TC結構的時間演化:初生→深化→成熟。",
+    "理想化軸對稱模式中IKE在進入不利環境前持續成長，真實TC則會進入不利環境而衰退。",
+    "AI(DSAT)反演的軸對稱風剖面可信(IKE vs飛機R=0.996)才拿來做統計。"
+  ],
+  "methodology_key": [
+    "延伸WNP CE資料集到2020:PMW亮溫85-92GHz、八個45度扇區判定雙眼牆+moat、門檻(>=5/8扇區, TB_outer_min<=230K, 外眼牆距離<50km)。",
+    "DSAT(GAN-CNN)把多頻道衛星影像轉成0-750km軸對稱地面風剖面(1981-2020)。",
+    "IKE = ∫ 1/2 ρU^2 dV (ρ=1 kg/m^3, 1m深, 0-750km)。",
+    "以27筆飛機、465筆ASCAT觀測驗證IKE/V500/K200-750。",
+    "合成分析:對齊CE形成時間與LMI兩基準，比較long/short/no-CE三組。"
+  ],
+  "key_findings": [
+    "AI反演IKE vs飛機R=0.996(R^2=0.992);V500 R=0.83、K200-750 R=0.88。",
+    "STY從LMI到LME平均延遲20h;no-CE無延遲、short~24h、long更長。",
+    "48%強烈颱風一生至少一次CE;long-lived CE(~25-26%)促進IKE成長。",
+    "CE個案在LMI後衰退較慢、外圍IKE維持或增加;no-CE結構緊緻(K750/K200-750較小,約為long-lived形成時的70%)。",
+    "long-lived CE在t≈30h後強度與IKE衰退較快(次生眼牆大且常不完整)。"
+  ],
+  "theoretical_conclusion": "長生命期CE的K-V關係大致印證Musgrave/Ooyama的理想化增長路徑，但在衰退階段修正之(理想化不會進入不利環境)。CE補上理論恆增長與真實會衰退的落差:約一半無CE強烈颱風IKE與Vmax同步衰退，另一半有CE者被調控為強壯侏儒→超級巨人→虛弱巨人。並把Smith et al(2021)的外圍對流持續驅動增長連結到真實TC頻繁出現的CE。動力上推測長CE寬moat/廣外眼牆→更高動力效率(Kuo et al 2019)，未證實。",
+  "logic_structure": "問題(CE是否調控TC發展路徑?)→方法(延伸CE資料集+AI風剖面+K-V合成)→結論(long-lived CE促進IKE成長、調控生命週期)，中間以先驗證AI資料(R=0.996)作為信任承重牆。",
+  "key_terms": [
+    "同心眼牆CE(inner eyewall/moat/outer eyewall)",
+    "整層動能IKE",
+    "強度Vmax/LMI/LME",
+    "K-V圖(IKE-Vmax)",
+    "DSAT(GAN-CNN風剖面反演)",
+    "動力效率dynamical efficiency(Kuo et al 2019)",
+    "眼牆置換循環ERC"
+  ],
+  "key_numbers": [
+    "R=0.996(IKE vs飛機)",
+    "20h(long vs short CE門檻)",
+    "0-750km風剖面;TB_outer_min<=230K",
+    "STY平均延遲20h;short~24h",
+    "long-lived CE約25%;48%強烈颱風至少一次CE",
+    "no-CE在LMI的K750/K200-750約為long-lived形成時的70%"
+  ],
+  "open_questions": [
+    "CE增強IKE的動力機制(動力效率假說)需理想化數值模擬與理論診斷驗證。",
+    "DSAT無雙風速峰、僅地球同步衛星→如何精準刻畫ERC期間IKE演變?",
+    "用NumPy/Xarray自行重現:讀風剖面U(r)→徑向積分IKE→分別算K0-200/K200-750→畫K-V路徑。",
+    "暖化下有利長CE的環境若改變，CE主導的巨型颱風會變多或變少?"
+  ]
+}

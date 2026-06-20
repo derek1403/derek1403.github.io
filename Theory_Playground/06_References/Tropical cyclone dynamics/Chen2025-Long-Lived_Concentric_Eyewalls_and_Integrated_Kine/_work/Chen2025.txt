@@ -1,0 +1,549 @@
+
+
+========== PAGE 1 ==========
+Long‐Lived Concentric Eyewalls and Integrated Kinetic
+Energy in Tropical Cyclones
+Buo‐Fu Chen1
+, Chia‐Le Chen2, and Hung‐Chi Kuo2
+1Center for Weather and Climate Disaster Research, National Taiwan University, Taipei, Taiwan, 2Department of
+Atmospheric Sciences, National Taiwan University, Taipei, Taiwan
+Abstract Long‐lived concentric eyewalls (CEs) and short‐lived CEs are accompanied by diverse structural
+parameters such as intensity (Vmax) and integrated kinetic energy (IKE). This study used a CE data set and an AI‐
+based tropical cyclone (TC) wind profile reanalysis to examine the impact of CEs on TC evolution revealed by
+IKE‐Vmax diagrams. AI‐based wind profiles are a fusion of multichannel satellite imagery and ERA5 data,
+representing 0–750 km profiles of axisymmetric surface winds. The AI‐derived IKE has an R = 0.996 against
+aircraft observations. Composite results show that short‐lived CEs (duration <20 h) tend to maintain IKE, while
+long‐lived CEs (25% of all CEs) favor further IKE growth, contributing to TCs with an enormous circulation. It
+is suggested that CEs may modulate the TC life cycle, evolving from small, intense storms to large, mature
+storms to large, weak‐intensity storms before their ultimate demise.
+Plain Language Summary Concentric eyewalls (CEs) occur in TCs when two rings of intense winds
+form around the center, influencing TC evolution. This study examines how CEs affect IKE, a measure of
+overall TC circulation. Using AI‐based data, we analyzed TC IKEs derived from satellite imagery. These IKEs
+match aircraft observations with high accuracy (R = 0.996). Subsequently, we examine the CEs' impact, and
+results reveal that long‐lived CEs (25% of cases) promote IKE growth, leading to larger storms with extensive
+circulation. By mapping these changes on intensity‐energy diagrams, we show that CEs substantially influence
+the TC life cycle.
+1. Introduction
+Theoretical modeling (Hack & Schubert, 1986; Musgrave et al., 2012; Ooyama, 1969; Smith et al., 2021) of
+idealized, axisymmetric tropical cyclones (TCs) has significantly advanced our understanding of TC life cycles.
+Despite their simplifications, these models effectively capture the structural evolution of TCs, including intensity
+(Vmax), radius of maximum wind, minimum surface pressure, radius of gale‐force winds, and integrated kinetic
+energy (IKE). Intensity, often represented by maximum sustained winds, is a limited metric for understanding the
+full spatial structure and destructive potential of TCs, including their impact on storm surge and feedback to
+systems of larger scales. To address this, IKE has been proposed, combining both a storm's intensity and size
+(Irish, 2008; Klotzbach et al., 2022; Lavender & McBride, 2021; Maclay et al., 2008; Powell & Reinhold, 2007).
+Powell and Reinhold (2007) and Maclay et al. (2008) suggested a two‐parameter storm classification system
+based on Vmax and IKE due to the significant variability of IKE at a given Vmax.
+Musgrave et al. (2012) employed K‐V diagrams to summarize TC structural evolutions, depicting the relationship
+between Vmax and the IKE within a 1,000‐km radius and surface to 10 km height based on Ooyama's model
+simulation. Musgrave et al. (2012) outlined a typical TC life cycle, beginning with an incipient stage where IKE
+and Vmax slowly increase until Vmax reaches 25 m s−1. This is followed by a deepening stage with a more rapid
+increase in both IKE and Vmax until Vmax exceeds 60 m s−1. Finally, in the mature stage, IKE steadily grows while
+Vmax stabilizes or decreases.
+A notable source of the variability in a K‐V diagram is the occurrence of concentric eyewalls (CE), where storm
+intensification is interrupted by the formation of an outer eyewall, the decay of the inner eyewall, and the
+contraction of the outer eyewall (Didlake & Houze, 2011; Houze et al., 2007; Rozoff et al., 2008; Terwey &
+Montgomery, 2008; Willoughby et al., 1982; Yang et al., 2013). Sitkowski et al. (2011) indicated that CEs could
+increase TC size as the inner‐core structure undergoes dramatic changes, resulting in intensity oscillations and
+rapid wind field broadening.
+RESEARCH LETTER
+10.1029/2024GL114429
+Key Points:
+•
+AI‐based integrated kinetic energy
+(IKE) estimates for tropical cyclones
+(TCs) have an R = 0.996 against
+aircraft observation
+•
+Concentric eyewalls (CEs) affect TC
+development pathways in IKE‐Vmax
+diagrams
+•
+Short‐lived CEs maintain TC IKE,
+while long‐lived CEs favor IKE growth
+Supporting Information:
+Supporting Information may be found in
+the online version of this article.
+Correspondence to:
+H.‐C. Kuo,
+kuo@as.ntu.edu.tw
+Citation:
+Chen, B.‐F., Chen, C.‐L., & Kuo, H.‐C.
+(2025). Long‐lived concentric eyewalls
+and integrated kinetic energy in tropical
+cyclones. Geophysical Research Letters,
+52, e2024GL114429. https://doi.org/10.
+1029/2024GL114429
+Received 4 FEB 2025
+Accepted 6 SEP 2025
+Author Contributions:
+Conceptualization: Buo‐Fu Chen, Hung‐
+Chi Kuo
+Formal analysis: Buo‐Fu Chen, Chia‐
+Le Chen
+Funding acquisition: Buo‐Fu Chen,
+Hung‐Chi Kuo
+Investigation: Buo‐Fu Chen
+Methodology: Buo‐Fu Chen, Chia‐
+Le Chen
+Project administration: Buo‐Fu Chen,
+Hung‐Chi Kuo
+Resources: Buo‐Fu Chen
+Software: Buo‐Fu Chen
+Supervision: Buo‐Fu Chen, Hung‐
+Chi Kuo
+Validation: Buo‐Fu Chen, Chia‐Le Chen
+Visualization: Chia‐Le Chen
+Writing – original draft: Buo‐Fu Chen
+Writing – review & editing: Buo‐
+Fu Chen, Hung‐Chi Kuo
+© 2025. The Author(s).
+This is an open access article under the
+terms of the Creative Commons
+Attribution License, which permits use,
+distribution and reproduction in any
+medium, provided the original work is
+properly cited.
+CHEN ET AL.
+1 of 10
+
+
+========== PAGE 2 ==========
+Yang et al. (2013, 2021) identified CEs from 1997 to 2014, examining their duration and structural parameters,
+including inner eyewall size, moat width, and outer eyewall width. Differences in these parameters can be best
+distinguished by short‐lived and long‐lived CEs, with long‐lived CEs exhibiting larger moat and outer eyewall
+widths while maintaining similar inner eyewall sizes compared to short‐lived CEs. However, the impact of short‐
+lived and long‐lived CEs on TC circulation, particularly inner‐core and outer‐region IKE, remains unclear due to
+the limited observation of TC IKEs.
+An opportunity at this moment to further explore the relationships between CEs and TC development pathways,
+as revealed by K‐V diagrams, is the emergence of AI or deep learning techniques for TC analysis and forecasting.
+Deep learning techniques have presented opportunities to advance TC forecasting by learning from extensive
+historical satellite images; they have been successfully applied to TC formation and center positioning (Matsuoka
+et al., 2018), TC intensity estimation (Chen et al., 2019; Chen et al., 2020; Higa et al., 2021; Wimmers
+et al., 2019), TC size and structure estimation (Chen, Chen, & Chen, 2021; Chen et al., 2023; Wang & Li, 2023;
+Zhuo & Tan, 2021, 2023), and TC intensity forecasting (Chen et al., 2023). Notably, Chen et al. (2025) used Deep
+Learning for the Structure Analysis of Typhoons (DSAT) model to construct an objective global TC wind profile
+data set spanning 1981 to 2020. This model converts multichannel satellite imagery into a 0–750 km wind profile
+of axisymmetric surface winds concerning the TC center. Of note, although AI‐based approaches can be widely
+applied in TC research, many studies rely on TC best‐tracks as labeled data. However, the reliability of best‐track
+data varies across situations, making verification essential before using it to study scientific questions.
+This study examines the effects of long‐lived and short‐lived CEs on the TC development pathways based on
+observational data, as revealed by K‐V diagrams, particularly after the lifetime maximum intensity (LMI). Do
+CEs play a critical role in modulating the pathway of the TC lifecycle? We first extend the western North Pacific
+(WNP) CE data set to 2020, following the methods of Yang et al. (2013, 2021). Then, we combine these CE
+records with DSAT TC wind profiles (Chen et al., 2025) to investigate the relationship among CEs, Vmax,
+and IKE.
+2. Extension of the Concentric Eyewall Data Set (2007–2020)
+Yang et al. (2013, 2021) utilized satellite passive microwave (PMW) brightness temperature (TB) data from ice‐
+scattering channels (i.e., 85–92 GHz) to identify CEs from 1997 to 2014. This study extends the WNP CE data set
+to 2020.
+Following their method, PMW observations from the Special Sensor Microwave Imager (SSM/I), the Global
+Precipitation Measurement (GPM) Microwave Imager (GMI), the Special Sensor Microwave Imager/Sounder
+(SSM/IS), and the Advanced Microwave Scanning Radiometer 2 (AMSR‐2) were utilized to identify CE cases.
+These satellite images were obtained from the Naval Research Laboratory (NRL), Monterey, California (Hawkins
+et al., 2001, 2006) and downloaded from the NRL TC webpage. As shown in Figure 1a, the PMW TB observation
+can effectively capture the inner eyewall, moat, and outer eyewall of Typhoon Mangkhut (2018).
+This study objectively examines the TB radial profile across eight 45° azimuthal sectors to the TC center
+(Figure 1b) to identify CE cases.
+1. Locate the moat in each profile (Figure 1b) associated with a local maximum TB (indicative of weak con-
+vection) between two TB local minima (indicative of strong convection).
+2. Verify that the two eyewalls exhibit well‐identified convection and satisfy the criteria:
+TB max ≧σouter min + TB outer min and TB max ≧σinner min + TB inner min,
+where the TB_inner_min, TB_max, and TB_outer_min represent the minimum TB of the inner convection, the local
+maximum TB within the possible moat, and the minimum TB of the possible outer eyewall. Furthermore, σinner_min
+and σouter_min represent the standard deviation of the minimum TB accompanied by the possible inner and outer
+eyewalls.
+3. Confirm that TB_outer_min ≤230 K to ensure strong outer convection.
+4. Ensure that at least five out of eight sectors meet the above criteria (1–3) to confirm a symmetric CE structure.
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+2 of 10
+
+
+========== PAGE 3 ==========
+5. Verify that the radial distance between two outer eyewalls of any two sectors is smaller than 50 km to
+distinguish the outer convection from a spiral rainband.
+After identifying the presence of CEs in each PMW image, the CE duration is defined as the period from the first
+to the last CE image. In addition, to avoid misclassifying multiple CEs as a single long‐lived CE due to inadequate
+temporal resolution, the CE must maintain a consistent inner core size.
+We used the above method to identify 30 CEs from 23 Typhoons during 2015–2020. As a result, during 1997–
+2020, there were 78 short‐lived CEs and 26 long‐lived CEs, classified by the 20‐hr CE duration criterion (Yang
+et al., 2021). Table S1 in Supporting Information S1 provides the list of all CEs from 1997 to 2020.
+Consistent results are found for CEs using both the old (Yang et al., 2021) and new datasets. Differences in CE
+structural parameters are clearly distinguished by CE duration. Long‐lived CEs (duration ≥20 h) exhibit wider
+moats and larger outer eyewall widths compared to short‐lived CEs. Furthermore, TC tracks with long‐lived CEs
+are typically located south of 25°N and west of the basins, exhibiting a lower northward translation speed
+(Figure 1c, red tracks). Long‐lived CEs rarely move northeast into the mid‐latitude westerlies, characterized by
+large and detrimental vertical shear. Conversely, TC tracks with CE durations < 20 h tend to have more significant
+northward components (Figure 1c, light blue tracks). This highlights the importance of environmental factors in
+the development of long‐lived CEs. Finally, no significant trends or statistical differences in CE characteristics
+are found between the periods 1997–2008 and 2009–2020.
+Figure 1. Long‐lived and short‐lived concentric eyewalls (CEs) are detected based on PMW TB profiles. (a) The 92‐GHz
+PMW TB for Typhoon Mangkut (2018) at 14:09 UTC 14 SEP 2018. (b) The corresponding PMW TB profiles for the eight 45°
+sectors show inner‐eyewall convection, a predominant moat, and outer‐eyewall convection. (c) Typhoon tracks during the
+48‐h period centered at the CE formation time (diamonds). Red and blue represent long‐lived and short‐lived CE cases
+separated by the criterion of 20 h. Dots indicate 3‐h intervals.
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+3 of 10
+
+
+========== PAGE 4 ==========
+3. Deep Learning DSAT IKE Estimates
+This study used the DSAT TC structure reanalysis (Chen et al., 2025) to examine the effect of a CE on the IKE
+evolution of the TC. The deep learning DSAT model converts multichannel satellite imagery into a 0–750‐km
+wind profile of axisymmetric surface winds for global TCs. Their effort yielded a 40‐year (1981–2020) ho-
+mogenized data set, offering an opportunity to explore the structural development, alongside intensification, of
+historical TCs. Notably, a unique labeling procedure is adopted to enable DSAT to end‐to‐end transform satellite
+imagery into wind profiles. The labeled data are generated using a parametric model, which integrates the best
+track intensity, radius of 34‐kt winds, and radius of maximum winds. Furthermore, outer (>∼300 km) surface
+wind labeled data are from the numerical model reanalysis.
+The DSAT model features a hybrid GAN‐CNN architecture (Chen, Chen, & Hsiao, 2021), incorporating a
+generative adversarial network (GAN, Goodfellow et al., 2020) module and a polar convolutional neural network
+(CNN, Chen, Chen, & Hsiao, 2021; Krizhevsky et al., 2012) regressor. The DSAT GAN module is trained to
+generate synthetic VIS images (VIS*) based on all‐time available infrared (IR) and water vapor (WV) images,
+enabling the indirect use of original VIS images to train the CNN regressor and achieve better accuracy. On the
+other hand, the CNN regressor employs a “polar‐convolution filter” design accounting for TCs' rotational nature
+(Chen, Chen, & Hsiao, 2021) to regress to labeled wind profiles of azimuthally averaged winds.
+Statistical verification of the DSAT performance and comparisons to operational baselines (Chen et al., 2025,
+their Figure 10) indicate that the DSAT Vmax estimates exhibit comparable accuracy to SATCON (Velden &
+Herndon, 2014) and outperform MTCSWA (Knaff et al., 2011) for R34 (radius of 34‐kt winds) estimates.
+Although MTCSWA is recognized as the primary operational tool for estimating R34, it has deficiencies when
+polar‐orbiting satellite observations, such as Advanced Scatterometer (ASCAT) winds, are unavailable. In
+contrast, DSAT provides stable estimates, resulting in better overall performance.
+This study further examines the feasibility of using DSAT data for IKE analysis. First, we calculate 0–750‐km
+IKE representing the overall TC energy/circulation:
+IKE = ∫
+v
+1
+2ρU2dV,
+which is computed from the surface wind speeds (U) by integrating the kinetic energy per unit volume (V) over
+the 0–750‐km storm domain volume within a 1‐m depth, assuming an air density (ρ) of 1 kg m−3. Verification
+against flight‐level observations was implemented before examining the impact of CEs on TC development
+pathways. This study validated DSAT IKE against 27 flight‐level IKE measurements from aircraft reconnais-
+sance documented in MacClay et al. (2008, their Table 3), calculated between 0 and 200 km and within a 1‐km
+depth. Figure 2a illustrates that utilizing DSAT IKE (within a 0–200 km radius and 1 km depth) and best‐track
+Vmax produces results highly consistent with MacClay et al. (2008, their Figure 3). Furthermore, the DSAT IKE
+explains 99% of the variance (R = 0.996 and R2 = 0.992) in inner‐core IKE relative to aircraft observations
+(Figure 2b, blue). Of note, in Figure 2b, the DSAT flight‐level IKE (blue) is derived from surface IKE (red) by the
+reduction factors described in Knaff et al. (2011).
+As depicted in Figure 2c, DSAT data offer an efficient way to monitor Vmax and IKE simultaneously. For instance,
+Hurricane Patricia (2015) rapidly intensified to record‐breaking intensity but did not substantially grow in IKE. In
+contrast, Hurricane Katrina (2005) and Typhoon Hagibis (2020) exhibited extremely high IKE. This study also
+verifies the DSAT estimates of IKE over the 200–750 km annulus (K200–750) and the DSAT surface wind speed at
+the 500‐km radius (V500), a key parameter for describing TC outer winds (Knaff et al., 2014), using 465 ASCAT
+TC observations provided by Chen et al. (2025). Results show that DSAT achieves strong correlations of R = 0.83
+for V500 and R = 0.88 for K200–750 (Figures 2d and 2e). These results suggest that DSAT data are also valid for
+examining the evolution of IKE in the TC outer‐core region. Note, however, that the DSAT model is limited to
+geostationary satellite images, which may hinder its ability to detect CEs. Additionally, it is trained on wind
+profiles lacking double wind peaks, thus necessitating further investigation into IKE evolution during the eyewall
+replacement cycle. Nevertheless, despite these limitations, the DSAT data could be utilized to examine TC IKE
+before and after the occurrence of CEs using statistical approaches.
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+4 of 10
+
+
+========== PAGE 5 ==========
+4. TC Development Pathways in K‐V Diagrams and CEs' Impact
+In an idealized simulation with a constant favorable environment (e.g., Musgrave et al., 2012), it has been
+observed that a TC usually reaches its lifetime maximum intensity (LMI) before attaining its lifetime maximum
+size or lifetime maximum IKE (LME). However, it is not the case for real TCs, which could be affected by an
+unfavorable environment for development.
+Figure 2. (a) The estimated flight‐level 0–200‐km integrated kinetic energy (IKE) (Y‐axis, 1016 J) from DSAT (red diamond)
+and best‐track Vmax (X‐axis, m s−1) are superimposed on Figure 3 from Maclay et al. (2008, black diamond), in which
+0–200‐km IKE of 27 Hurricanes were calculated based on the aircraft reconnaissance observation. (b) Scatter plots of the
+original DSAT IKE at the surface level (blue) and those converted to the flight‐level IKE (red) against the 27 aircraft
+observations. (c) Density plot of 0–750‐km surface IKE (Y‐axis, TJ) and Vmax (X‐axis, m s−1) for tropical cyclones (TCs)
+from 1981 to 2020. The K‐V pathways of the four selected TCs are shown in different colors. In their maturity, Hurricane
+Katrina (2005) and Typhoon Hagibis (2019) are strong‐intensity storms with large IKE. Hurricane Patricia (2015) is a strong‐
+intensity storm with a small IKE. Typhoon Abe (1990) is a weak‐intensity storm with a large IKE. (d, e) Scatter plots of the
+DSAT surface wind speed at the 500‐km radius (V500, kt) and the IKE over the 200–750 km annulus (K200–750, TJ) compared
+with 465 ASCAT observations (Chen et al., 2025) for TCs during 2018–2019.
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+5 of 10
+
+
+========== PAGE 6 ==========
+In Figure 3a, we examine the probability density function (PDF) of the delay
+duration from LMI to LME by stratifying the data into three categories:
+tropical storm (TS, Vmax = (35,65] kt), typhoon (TY, Vmax = (65,96] kt), and
+severe typhoon (STY, Vmax > 96 kt). For all WNP TCs during 1997–2020,
+there is no significant delay between LMI and LME for TSs and TYs, pre-
+sumably because a TC typically enters an unfavorable environment (lower
+SST and higher VWS) and decays in both Vmax and IKE. However, there is a
+mean delay of 20 h for the STY (Figure 3a, green vertical line).
+Subsequently, we further examine the role of CEs that may contribute to the
+delay for the STY group in Figure 3a The data are stratified into three subsets
+based on the CE types (Figure 3b): long‐lived CE cases (n = 24), short‐lived
+CE cases (n = 62), and no‐CE cases (n = 113). Note that a TC is classified as
+“long‐lived” if it has at least one long‐lived CE case, even if it also has short‐
+lived CEs. In contrast, a TC is classified as “short‐lived” only if all its CE
+cases are short‐lived. Results show that, for no‐CE cases, there is no delay
+between LMI and LME. In contrast, short‐lived CE cases exhibit an average
+delay of ∼24 hr, while long‐lived CE cases show a more significant delay.
+This indicates that CEs may contribute to the delay between LME and LMI.
+Thus, it is suggested that CE formation could be a critical process contributing
+to the large counter‐clockwise developmental pathways of TCs, with which a
+TC evolves from a “strong dwarf” to a “super giant,” then to a “weak giant,”
+before their ultimate demise in the K‐V diagram shown in Musgrave
+et al. (2012).
+Although Figure 3b shows that CEs clearly contribute to longer LME delays,
+the intense no‐CE cases still exhibit a slight delay. Results from Smith
+et al. (2021) may explain this behavior. Using idealized cloud‐resolving
+simulations, they demonstrated that a TC can continue expanding in size
+even after reaching peak intensity, without undergoing an eyewall replace-
+ment cycle. Their findings suggest that when eyewall convection becomes
+inefficient at ventilating inward mass upward, frictional effects induce a spin‐
+down process just above the boundary layer. This halts further intensification
+while allowing outer convection to continue driving storm growth. A key
+contribution of our study is linking this type of “outer convection” behavior to
+the frequent occurrence of CEs in real‐world TCs.
+Composite analysis is used to investigate the impact of CEs on TC devel-
+opment pathways. We collected data from three subsets described in the
+previous section: long‐lived CE cases, short‐lived CE cases, and a subset of
+TCs without CEs. Figure 4 presents composites aligned with both the CE
+formation time (Figures 4a–4d) and TC LMI (Figures 4e–4h). For the WNP
+TCs, note that 48% of severe typhoons (Vmax > 96 kt) experience at least one
+CE during their lifetime. Moreover, long‐lived CEs, comprising approxi-
+mately 26% of all CE cases, promote the growth of TC IKE.
+This study suggests that long‐lived CEs tend to maintain TC intensity after the CE formation time (Figure 4a) and
+predominantly promote the growth of TC IKE (Figures 4c and 4d). Comparing the intensity evolution between
+CE and no‐CE cases (Figure 4e), both groups exhibit similar intensification rates prior to LMI. However, TCs
+with CEs tend to decay more slowly during the 0–36 h period. The faster decay for no‐CE cases likely results from
+unfavorable environmental conditions, while CE cases generally occur in more favorable environments (e.g.,
+Yang et al., 2021). Moreover, TCs with CEs generally maintain or even increase their outer‐region IKE
+(Figures 4g and 4h). On the other hand, cases without CEs show a tendency for TCs to have a compact structure
+with a smaller initial K750 and K200–750. The mean of K750 and K200–750 of the no‐CE group at the LMI are
+approximately 70% of that of the long‐lived CE group at the CE formation time. Lastly, although long‐lived CEs
+are more favorable for TC IKE growth than short‐lived CEs, TCs with long‐lived CEs tend to decay more rapidly
+Figure 3. (a) The PDFs of the delayed duration from the time of lifetime
+maximum intensity to the time of lifetime maximum integrated kinetic
+energy (LME) for all WNP tropical storms (red), typhoons (blue), and severe
+typhoons (green) during 1997–2020. Panel (b) As in panel (a), except for
+long‐lived concentric eyewall (CE) (red), short‐lived CE (green), and no‐CE
+(blue) cases. The vertical dotted lines indicate mean values for each
+probability density function.
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+6 of 10
+
+
+========== PAGE 7 ==========
+in both intensity and IKE after t ≈30 h (Figures 4a–4d). This is presumably because long‐lived CEs often result in
+a larger and sometimes incomplete secondary (new) eyewall following the eyewall replacement cycle (Yang
+et al., 2013).
+Figure 5a illustrates the composite results on the K‐V diagram and compare these to the idealized TC simulation
+of Ooyama (1968) as presented by Musgrave et al. (2012). Ooyama's calculation of the IKE is from surface to
+10 km high, while the IKE in our analysis is only at the surface level, thus, Ooyama's calculation is rescaled by
+×10−4 and shifted by +50 TJ in the figure to serve as a reference for TC evolution in the K–V diagram. Notably,
+after this rescaling, the idealized TC development pathway exhibits a comparable intensification pathway prior to
+the LMI. Our results indicate that a no‐CE TC tends to decrease in both Vmax and KE after reaching its LMI
+(Figure 5a, blue line). However, CE occurrence can help maintain the TC intensity after their LMI (green and red
+Figure 4. The left panels show composite evolutions of (a) tropical cyclone (TC) intensity, (b) inner integrated kinetic energy
+(IKE) (0–200 km), (c) total IKE (0–750 km), and (d) outer IKE (200–750 km) concerning the concentric eyewall (CE)
+formation time (t0, the black vertical dashed lines) for long‐lived CEs (red) and short‐lived CEs (green). The error bar
+indicates the one standard deviation. (e–h) On the right are the corresponding composites with respect to the TC lifetime
+maximum intensity (LMI). Thus, the no‐CE group can also be shown (blue). Furthermore, the box‐and‐whisker plots above
+panel (e) show the distribution of CE formation time with respect to the LMI for long‐lived CEs (red) and short‐lived CEs
+(green).
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+7 of 10
+
+
+========== PAGE 8 ==========
+lines). Moreover, long‐lived CEs promote further growth of IKE associated
+with TCs after reaching their LMIs (Figure 5a, red line).
+Figure 5b plots some selected cases, including Winnie (1997), Bolaven
+(2012), and Soudelor (2015) on the K‐V phase diagram. Note that Typhoon
+Winnie and Typhoon Bolaven experienced rapid IKE growth after the period
+with long‐lived CEs, even though their intensity slightly decreased. The delay
+duration from the LMI to the time of LME of these three cases is supposed to
+be significant due to the distances between LME and LMI points in the
+diagram.
+5. Summary and Discussion
+Concentric eyewalls are a significant source of variability in TC structure, and
+this paper first extends observational CE data up to 2020. Subsequently, we
+leveraged the comprehensive CE data set and AI‐based TC wind profile
+reanalysis to examine how CEs impact TC development pathways. This paper
+employs K‐V diagrams to analyze TC development with CE TCs. The K‐V
+diagram summarizes the time evolution of TC structure, providing a
+comprehensive view of TC dynamics. This study explores the impact of long‐
+lived and short‐lived CEs on TC development pathways compared to the no‐
+CE TCs.
+We assessed the effects of CEs on TC intensity, inner‐core IKE, outer‐region
+IKE, and total IKE. This study reveals that short‐lived CEs (lasting less than
+20 hr) help maintain TC IKE. In contrast, long‐lived CEs (comprising 25% of
+all CEs) contribute to significant IKE growth, resulting in TCs with huge
+circulations. Our analysis of long‐lived CE K‐V relationships generally aligns
+with theoretical calculations, except during the decaying stage. In idealized
+simulations (Musgrave et al., 2012; Ooyama, 1969), a TC never enters an
+environment unfavorable to its development, so the IKE keeps growing after
+the LMI. On the contrary, about half of real‐world severe typhoons not asso-
+ciated with CEs exhibit decreasing IKE and Vmax simultaneously after entering
+an unfavorable environment. For the rest half of the severe typhoons with CEs,
+CEs may modulate the TC life cycle, evolving from a “strong dwarf” to a
+“super giant,” and then to a “weak giant,” before their ultimate demise.
+While we identify clear differences in IKE behavior, further investigation into
+the underlying dynamical mechanisms is essential. Here, we propose a
+conjecture: since long‐lived CEs tend to feature a larger moat and a broader
+outer eyewall (Yang et al., 2021), this structure may enable stronger
+dynamical efficiency (Kuo et al., 2019), leading to enhanced IKE generation
+associated with outer eyewall convection. This increased efficiency may be
+linked to heating within a relatively inertially stable region, where the broader
+secondary eyewall contributes more effectively to IKE growth than typical
+rainband‐related heating. Future work will incorporate idealized numerical
+modeling and theoretical diagnostics to better understand how CE duration
+influences outer‐core winds and IKE evolution.
+Integrating observational CE data with AI‐based TC wind profiles, IKE en-
+hances our understanding of how CEs affect TC development pathways,
+elucidating the mechanisms behind K‐V relationships. Future work could also
+benefit from expanding the CE database by incorporating more cases or
+additional basins, as well as leveraging high‐resolution reanalysis and satellite
+Figure 5. (a) The schematic K‐V diagrams illustrate the composite pathways
+for long‐lived concentric eyewall (CE) (red), short‐lived CE (green), and no‐
+CE (blue) cases. The pathways are 6 days in time length. The no‐CE is
+composited with respect to the lifetime maximum intensity, and the CE
+pathways are composited to the CE formation time (black dots). The cross
+symbol with different lengths indicates the standard deviation of integrated
+kinetic energy (IKE) and Vmax; the time between the cross symbol is 24 h.
+The black dashed line shows the development pathway of Ooyama (1968),
+as used in Musgrave et al. (2012). Note that the IKE of the black dashed line
+is rescaled by 10,000 and then added 50 TJ from that of Musgrave
+et al. (2012) to account for the difference of the up to 10 km IKE in Ooyama's
+calculation versus the surface IKE in our analysis. Panel (b) As in panel (a),
+except for the pathways of Typhoon Winnie (1997), Typhoon Bolaven
+(2012), and Typhoon Soudelor (2015). The time between the fixed‐size cross
+symbol is 24 h. The dotted lines in each typhoon case indicate the time of
+long‐lived CE durations. The blue transparent hatches for Typhoon Soudelor
+(2015) indicate a time of the CE duration smaller than 20 h.
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+8 of 10
+
+
+========== PAGE 9 ==========
+data sets to improve CE detection and classification. Such efforts would help strengthen the statistical foundation
+for composite analyses of TC structural evolution. This short research letter highlights the utility of AI‐driven data
+in understanding CEs and TC structure.
+Conflict of Interest
+The authors declare no conflicts of interest relevant to this study.
+Data Availability Statement
+JTWC best‐track data set are available at their website (https://www.metoc.navy.mil/jtwc/jtwc.html?best‐tracks).
+The microwave images utilized in this study were provided by the Tropical Cyclone Pages in the Naval Research
+Laboratory (https://science.nrlmry.navy.mil/geoips/tcweb_nrl). The Table S1 in Supporting Information S1 lists
+all CEs from 1997 to 2020. The DSAT structure analysis data set for 1981−2020 global TCs is available at
+Chen (2025).
+References
+Chen, B., Chen, B. F., & Chen, Y. N. (2021). Real‐time tropical cyclone intensity estimation by handling temporally heterogeneous satellite data.
+Proceedings of the AAAI Conference on Artificial Intelligence, 35(17), 14721–14728. https://doi.org/10.1609/aaai.v35i17.17729
+Chen, B., Chen, B. F., & Hsiao, C. M. (2021). CNN profiler on polar coordinate images for tropical cyclone structure analysis. Proceedings of the
+AAAI Conference on Artificial Intelligence, 35(2), 991–998. https://doi.org/10.1609/aaai.v35i2.16183
+Chen, B. F. (2025). The DSAT structure analysis dataset for 1981−2020 global TCs.(Version 1) [Dataset]. Figshare. https://doi.org/10.6084/m9.
+figshare.28342439.v1
+Chen, B. F., Chen, B., Hsiao, C. M., Teng, H. F., Lee, C. S., & Kuo, H. C. (2025). Constructing deep learning datasets to reveal climate trends of
+tropical cyclone intensity and structure extremes. Artificial Intelligence for the Earth Systems, 4(3), e240064. https://doi.org/10.1175/AIES‐D‐
+24‐0064.1
+Chen, B. F., Chen, B., Lin, H. T., & Elsberry, R. L. (2019). Estimating tropical cyclone intensity by satellite imagery utilizing convolutional neural
+networks. Weather and Forecasting, 34(2), 447–465. https://doi.org/10.1175/waf‐d‐18‐0136.1
+Chen, B. F., Kuo, Y. T., & Huang, T. S. (2023). A deep learning ensemble approach for predicting tropical cyclone rapid intensification. At-
+mospheric Science Letters, 24(5), e1151. https://doi.org/10.1002/asl.1151
+Chen, R., Zhang, W., & Wang, X. (2020). Machine learning in tropical cyclone forecast modeling: A review. Atmosphere, 11(7), 676. https://doi.
+org/10.3390/atmos11070676
+Didlake, A. C., & Houze, R. A. (2011). Kinematics of the secondary eyewall observed in Hurricane Rita (2005). Journal of the Atmospheric
+Sciences, 68(8), 1620–1636. https://doi.org/10.1175/2011jas3715.1
+Goodfellow, I., Pouget‐Abadie, J., Mirza, M., Xu, B., Warde‐Farley, D., Ozair, S., & Bengio, Y. (2020). Generative adversarial networks.
+Communications of the ACM, 63(11), 139–144.
+Hack, J. J., & Schubert, W. H. (1986). Nonlinear response of atmospheric vortices to heating by organized cumulus convection. Journal of the
+Atmospheric Sciences, 43(15), 1559–1573. https://doi.org/10.1175/1520‐0469(1986)043<1559:nroavt>2.0.co;2
+Hawkins, J. D., Lee, T. F., Turk, F. J., Richardson, K., Sampson, C., Kent, J., & Wade, R. (2006). Tropical cyclone multiple eyewall charac-
+teristics. Preprints, 27th conf. On Hurricane and tropical meteorology (Vol. 6B.1). Amer. Meteor. Soc. Retrieved from http://ams.confex.com/
+ams/27Hurricanes/techprogram/paper_108864.htm
+Hawkins, J. D., Lee, T. F., Turk, J., Sampson, C., Kent, J., & Richardson, K. (2001). Real‐time Internet distribution of satellite products for tropical
+cyclone reconnaissance. Bulletin of the American Meteorological Society, 82(4), 567–578. https://doi.org/10.1175/1520‐0477(2001)
+082<0567:ridosp>2.3.co;2
+Higa, M., Tanahara, S., Adachi, Y., Ishiki, N., Nakama, S., Yamada, H., et al. (2021). Domain knowledge integration into deep learning for
+typhoon intensity classification. Scientific Reports, 11(1), 12972. https://doi.org/10.1038/s41598‐021‐92286‐w
+Houze Jr, R. A., Chen, S. S., Smull, B. F., Lee, W. C., & Bell, M. M. (2007). Hurricane intensity and eyewall replacement. Science, 315(5816),
+1235–1239. https://doi.org/10.1126/science.1135650
+Irish, J. L., Resio, D. T., & Ratcliff, J. J. (2008). The influence of storm size on hurricane surge. Journal of Physical Oceanography, 38(9), 2003–
+2013. https://doi.org/10.1175/2008jpo3727.1
+Klotzbach, P. J., Wood, K. M., Schreck III, C. J., Bowen, S. G., Patricola, C. M., & Bell, M. M. (2022). Trends in global tropical cyclone activity:
+1990–2021. Geophysical Research Letters, 49(6), e2021GL095774. https://doi.org/10.1029/2021gl095774
+Knaff, J. A., DeMaria, M., Molenar, D. A., Sampson, C. R., & Seybold, M. G. (2011). An automated, objective, multiple‐satellite‐platform
+tropical cyclone surface wind analysis. Journal of Applied Meteorology and Climatology, 50(10), 2149–2166. https://doi.org/10.1175/
+2011jamc2673.1
+Knaff, J. A., Longmore, S. P., & Molenar, D. A. (2014). An objective satellite‐based tropical cyclone size climatology. Journal of Climate, 27(1),
+455–476. https://doi.org/10.1175/jcli‐d‐13‐00096.1
+Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). Imagenet classification with deep convolutional neural networks. Advances in Neural
+Information Processing Systems, 25.
+Kuo, H., Tsujino, S., Huang, C., Wang, C., & Tsuboki, K. (2019). Diagnosis of the dynamic efficiency of latent heat release and the rapid
+intensification of super typhoon Haiyan (2013). Monthly Weather Review, 147(4), 1127–1147. https://doi.org/10.1175/MWR‐D‐18‐0149.1
+Lavender, S. L., & McBride, J. L. (2021). Global climatology of rainfall rates and lifetime accumulated rainfall in tropical cyclones: Influence of
+cyclone basin, cyclone intensity and cyclone size. International Journal of Climatology, 41(S1), E1217–E1235. https://doi.org/10.1002/joc.
+6763
+Maclay, K. S., DeMaria, M., & Haar, T. H. V. (2008). Tropical cyclone inner‐core kinetic energy evolution. Monthly Weather Review, 136(12),
+4882–4898. https://doi.org/10.1175/2008mwr2268.1
+Acknowledgments
+The authors appreciate the feedback from
+reviewers and Central Weather
+Administration forecasters to help improve
+this manuscript. This work was funded by
+Grant NSTC 113‐2124‐M‐002‐015 and
+NSTC 114‐2111‐M‐002‐004 of the
+Ministry of Science and Technology,
+Taiwan, and Project 113038D of the
+Central Weather Administration, Taiwan.
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+9 of 10
+
+
+========== PAGE 10 ==========
+Matsuoka, D., Nakano, M., Sugiyama, D., & Uchida, S. (2018). Deep learning approach for detecting tropical cyclones and their precursors in the
+simulation by a cloud‐resolving global nonhydrostatic atmospheric model. Progress in Earth and Planetary Science, 5(1), 1–16. https://doi.org/
+10.1186/s40645‐018‐0245‐y
+Musgrave, K. D., Taft, R. K., Vigh, J. L., McNoldy, B. D., & Schubert, W. H. (2012). Time evolution of the intensity and size of tropical cyclones.
+Journal of Advances in Modeling Earth Systems, 4(3). https://doi.org/10.1029/2011ms000104
+Ooyama, K. (1969). Numerical simulation of the life cycle of tropical cyclones. Journal of the Atmospheric Sciences, 26(1), 3–40. https://doi.org/
+10.1175/1520‐0469(1969)026<0003:nsotlc>2.0.co;2
+Powell, M. D., & Reinhold, T. A. (2007). Tropical cyclone destructive potential by integrated kinetic energy. Bulletin of the American Meteo-
+rological Society, 88(4), 513–526. https://doi.org/10.1175/bams‐88‐4‐513
+Rozoff, C. M., Schubert, W. H., & Kossin, J. P. (2008). Some dynamical aspects of tropical cyclone concentric eyewalls. Quarterly Journal of the
+Royal Meteorological Society: A journal of the atmospheric sciences, applied meteorology and physical oceanography, 134(632), 583–593.
+https://doi.org/10.1002/qj.237
+Sitkowski, M., Kossin, J. P., & Rozoff, C. M. (2011). Intensity and structure changes during Hurricane eyewall replacement cycles. Monthly
+Weather Review, 139(12), 3829–3847. https://doi.org/10.1175/mwr‐d‐11‐00034.1
+Smith, R. K., Kilroy, G., & Montgomery, M. T. (2021). Tropical cyclone life cycle in a three‐dimensional numerical simulation. Quarterly
+Journal of the Royal Meteorological Society, 147(739), 3373–3393. https://doi.org/10.1002/qj.4133
+Terwey, W. D., & Montgomery, M. T. (2008). Secondary eyewall formation in two idealized, full‐physics modeled hurricanes. Journal of
+Geophysical Research, 113(D12). https://doi.org/10.1029/2007jd008897
+Velden, C. S., & Herndon, D. (2014). Update on the SATellite CONsensus (SATCON) algorithm for estimating TC intensity. Poster session I.
+Wang, C., & Li, X. (2023). Deep learning in extracting tropical cyclone intensity and wind radius information from satellite infrared images—A
+review. Atmospheric and Oceanic Science Letters, 16(4), 100373. https://doi.org/10.1016/j.aosl.2023.100373
+Willoughby, H. E., Clos, J. A., & Shoreibah, M. G. (1982). Concentric eye walls, secondary wind maxima, and the evolution of the hurricane
+vortex. Journal of the Atmospheric Sciences, 39(2), 395–411. https://doi.org/10.1175/1520‐0469(1982)039<0395:cewswm>2.0.co;2
+Wimmers, A., Velden, C., & Cossuth, J. H. (2019). Using deep learning to estimate tropical cyclone intensity from satellite passive microwave
+imagery. Monthly Weather Review, 147(6), 2261–2282. https://doi.org/10.1175/mwr‐d‐18‐0391.1
+Yang, Y. T., Kuo, H. C., Hendricks, E. A., & Peng, M. S. (2013). Structural and intensity changes of concentric eyewall typhoons in the western
+North Pacific basin. Monthly Weather Review, 141(8), 2632–2648. https://doi.org/10.1175/mwr‐d‐12‐00251.1
+Yang, Y. T., Kuo, H. C., Tsujino, S., Chen, B. F., & Peng, M. S. (2021). Characteristics of the long‐lived concentric eyewalls in tropical cyclones.
+Journal of Geophysical Research: Atmospheres, 126(11), e2020JD033703. https://doi.org/10.1029/2020jd033703
+Zhuo, J. Y., & Tan, Z. M. (2021). Physics‐augmented deep learning to improve tropical cyclone intensity and size estimation from satellite
+imagery. Monthly Weather Review, 149(7), 2097–2113. https://doi.org/10.1175/mwr‐d‐20‐0333.1
+Zhuo, J. Y., & Tan, Z. M. (2023). A deep‐learning reconstruction of tropical cyclone size metrics 1981–2017: Examining trends. Journal of
+Climate, 36(15), 5103–5123. https://doi.org/10.1175/jcli‐d‐22‐0714.1
+Geophysical Research Letters
+10.1029/2024GL114429
+CHEN ET AL.
+10 of 10
