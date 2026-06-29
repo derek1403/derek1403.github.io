@@ -1,0 +1,741 @@
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.19.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+<style>
+div.output_area [class*="MathJax"] {
+    overflow-x: auto !important;
+    display: block !important;
+}
+</style>
+
+<style>
+    /* 針對 Jupyter Lab / Notebook 的主容器 */
+    .container, .jp-Notebook, .container-fluid {
+        width: 95% !important; /* 使用螢幕寬度的 95% */
+        max-width: none !important; /* 取消最大寬度限制 */
+    }
+</style>
+
++++
+
+# Levi-Civita Symbol in 3D 
+
++++
+
+## 1. 核心定義：指標與置換
+
+簡單來說在 $n$ 維空間中 **交換任何兩個指標時都會變號** ，且分量值為 $\pm 1$ 或 $0$ 的張量。 
+
+Levi-Civita symbol 是一個用來描述指標置換關係與空間方向性的符號，Levi-Civita symbol 是 **符號** 而非 **張量** 但其本質類似於「完全反對稱張量 (Totally Antisymmetric Tensor)」描述了 **空間中的方向與體積。** 而在三維笛卡兒座標系中其定義如下：
+
+$$\varepsilon_{ijk} \overset{\text{def}}{=} 
+\begin{cases} 
++1 & \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的偶置換（與右手座標系同向）} \\
+-1 & \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的奇置換} \\
+0 & \text{若任何兩個指標重複} 
+\end{cases}$$
+
+或者只看**非零**的 6 個分量（其餘只要有任兩個指標相同就是 $0$）：
+
+* **偶置換（與 $(1,2,3)$ 同向，值 $+1$）**：$\varepsilon_{123} = \varepsilon_{231} = \varepsilon_{312} = +1$
+* **奇置換（與 $(1,2,3)$ 反向，值 $-1$）**：$\varepsilon_{321} = \varepsilon_{213} = \varepsilon_{132} = -1$
+* **其餘（任兩指標相同）**：例如 $\varepsilon_{iij} = \varepsilon_{iji} = \varepsilon_{kkk} = \cdots = 0$
+
+> 口訣：指標依 $1 \to 2 \to 3 \to 1$ 循環排列為 $+1$，逆循環為 $-1$。
+
+>~~嚴格來說，$\varepsilon_{ijk}$ 在這裡是一個「符號 (Symbol)」。在曲線座標或廣義相對論中真正的 Levi-Civita Tensor 需要額外考慮度量張量的行列式 ($\sqrt{g}$)，但在標準流體力學運算中我們通常在笛卡兒座標下將其視為張量使用。~~
+
+
+## 2. 數學本質：將 **張量** 代數化
+
+Levi-Civita symbol將幾何上的有向體積轉化為可運算的指標形式，所以涉及 **旋轉** 與 **垂直** 的物理量像是涉及外積的推導中容易看到Levi-Civita symbol， **能夠讓方程式更簡單地去推導證明** ：
+
+$$\det(\mathbf{A}) \overset{\text{LC}}{=} \sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk} A_{1i} A_{2j} A_{3k}$$
+
+$$(\mathbf{A} \times \mathbf{B}) \overset{\text{LC}}{=} (\sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{1jk} A_j B_k , \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{2jk} A_j B_k , \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{3jk} A_j B_k)$$
+
+## 3. 天作之合：愛因斯坦求和約定(Einstein summation convention)
+
+是簡化 **Levi-Civita symbol** 的好工具。
+
+### 約定:
+
+1. Index出現 1 次：自由指標 (Free Index)
+
+    一個Index在方程式的某一項中只出現一次，它被稱為 **自由指標**。
+    * 含義： 它代表方程式的一個 **分量**。
+    * 規則： 方程式等號兩邊出現的自由指標必須完全一致。
+    * 範例： $\mathbf{F} = m\mathbf{a}$ 牛頓第二運動定律 $F_i = ma_i$ ，這裡 $i$ 只出現一次，表示這是一個向量方程式，它實際上代表了三個獨立的等式：$\left\{\begin{aligned}F_1 &= ma_1, \\F_2 &= ma_2, \\F_3 &= ma_3\end{aligned}\right.$
+
+2. Index出現 2 次：啞指標 (Dummy Index)
+
+    一個Index出現兩次，它被稱為 **啞指標**。
+    * 含義： 它代表對整個範圍求和。
+    * 規則： 既然是求和 index 的符號就不重要了，可以把 $i$全部換成 $k$ 而結果不變。
+    * 範例： 向量內積 $\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{3} u_iv_i \overset{\text{Esc}}{=} u_iv_i = u_kv_k$ 
+    
+3. Index出現 3 次或更多：語法錯誤 (Syntax Error)
+
+
++++
+
+## 假設與已知 (Assumptions & Preliminaries)
+
+> 以下【已知】都是愛因斯坦求和約定與 Levi-Civita 符號最基礎、本來就該先講清楚的工具；先把它們編號攤開，後面的證明只做「引用」。
+> 另外提醒初學者：在 $\delta_{ij}$ 收縮下 $C_i = C_j$，這裡的 $i,j$ 只是**啞指標 (dummy index)**、可以互換，不必被不同字母嚇到。
+
+* **【假設 1】 在 3D 空間 (3D space)** ： 只處理 3 維空間的情況。
+
+  * 假設 **愛因斯坦求和約定** 的定義域空間只有 3 維度。
+
+* **【定義 1】 Levi-Civita（排列符號 Permutation Symbol）** ：
+
+  $$\varepsilon_{ijk} \overset{\text{def}}{=}
+  \begin{cases}
+  +1 & \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的偶置換（與右手座標系同向）} \\
+  -1 & \text{若 } (i,j,k) \text{ 為 } (1,2,3) \text{ 的奇置換} \\
+  0 & \text{若任何兩個指標重複}
+  \end{cases}$$
+
+  * $i,j,k$ : 指標 (index)，取值 $1,2,3$
+  * $\varepsilon_{ijk}$ : 三階全反對稱符號分量 (totally antisymmetric symbol)，值為 $\pm 1$ 或 $0$
+  * **循環與反對稱性質**（後文標 `定義 1` 的引用即指此）：循環不變號 $\varepsilon_{ijk} = \varepsilon_{jki} = \varepsilon_{kij}$；交換任兩指標則變號，如 $\varepsilon_{ijk} = -\varepsilon_{ikj}$。
+
+* **【定義 2】 Kronecker delta** ：
+
+  $$\delta_{ij} \overset{\text{def}}{=}\begin{cases}1 & (i = j) \\0 & (i \ne j)\end{cases}$$
+
+  * $\delta_{ij}$ : Kronecker delta 分量 (component)，二元函數，值為 $1$ 或 $0$
+  * $i,j$ : 指標 (index)，取值 $1,2,3$
+
+* **【已知 1】 愛因斯坦求和約定 (Einstein summation convention)** ：根據 **假設 1** 只處理 3 維，重複（啞）指標的求和範圍為 $1$ 到 $3$；以下對於向量 $\mathbf{A}$、向量 $\mathbf{B}$、純量 $f$、向量 $\mathbf{V}$、矩陣 $\mathbf{A}\mathbf{B}\mathbf{C}$。
+
+  * (a-1) 純量求和
+
+    $$\begin{gather*}
+    \delta_{ii} &\overset{\text{Esc}^{-1}}{=}& \sum_{i=1}^{3} \delta_{ii} \\
+    &=& \delta_{11} + \delta_{22} + \delta_{33} \\
+    &=& 1+1+1 \\
+    &=& 3
+    \end{gather*}$$
+
+  * (a-2) Levi-Civita 平方和
+
+    $$\begin{gather*}
+    \varepsilon_{ijk}\varepsilon_{ijk} &\overset{\text{Esc}^{-1}}{=}&& \sum_{i=1}^{3} \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk}\varepsilon_{ijk} \\
+    &=&& (\varepsilon_{111}\varepsilon_{111} + \varepsilon_{112}\varepsilon_{112} + \varepsilon_{113}\varepsilon_{113} + \varepsilon_{121}\varepsilon_{121} + \varepsilon_{122}\varepsilon_{122} + \varepsilon_{123}\varepsilon_{123} + \varepsilon_{131}\varepsilon_{131} + \varepsilon_{132}\varepsilon_{132} + \varepsilon_{133}\varepsilon_{133}) \\
+    && +& (\varepsilon_{211}\varepsilon_{211} + \varepsilon_{212}\varepsilon_{212} + \varepsilon_{213}\varepsilon_{213} + \varepsilon_{221}\varepsilon_{221} + \varepsilon_{222}\varepsilon_{222} + \varepsilon_{223}\varepsilon_{223} + \varepsilon_{231}\varepsilon_{231} + \varepsilon_{232}\varepsilon_{232} + \varepsilon_{233}\varepsilon_{233}) \\
+    &&+& (\varepsilon_{311}\varepsilon_{311} + \varepsilon_{312}\varepsilon_{312} + \varepsilon_{313}\varepsilon_{313} + \varepsilon_{321}\varepsilon_{321} + \varepsilon_{322}\varepsilon_{322} + \varepsilon_{323}\varepsilon_{323} + \varepsilon_{331}\varepsilon_{331} + \varepsilon_{332}\varepsilon_{332} + \varepsilon_{333}\varepsilon_{333}) \\
+    &\overset{\text{定義 1}}{=}&& (0 \times 0 + 0 \times 0 + 0 \times 0 + 0 \times 0 + 0 \times 0 + \varepsilon_{123}\varepsilon_{123} + 0 \times 0 + \varepsilon_{132}\varepsilon_{132} + 0 \times 0) \\
+    && +& (0 \times 0 + 0 \times 0 + \varepsilon_{213}\varepsilon_{213} + 0 \times 0 + 0 \times 0 + 0 \times 0 + \varepsilon_{231}\varepsilon_{231} + 0 \times 0 + 0 \times 0) \\
+    &&+& (0 \times 0 + \varepsilon_{312}\varepsilon_{312} + 0 \times 0 + \varepsilon_{321}\varepsilon_{321} + 0 \times 0 + 0 \times 0 + 0 \times 0 + 0 \times 0 + 0 \times 0) \\
+    &=&& \varepsilon_{123}\varepsilon_{123} + \varepsilon_{132}\varepsilon_{132} + \varepsilon_{213}\varepsilon_{213} + \varepsilon_{231}\varepsilon_{231} + \varepsilon_{312}\varepsilon_{312} + \varepsilon_{321}\varepsilon_{321} \\
+    &=&& (1 \times 1) + (-1 \times -1) + (-1 \times -1) + (1 \times 1) + (1 \times 1) + (-1 \times -1)  \\
+    &=&& 6
+    \end{gather*}$$
+
+
+  * (b-1) 內積 (dot product)
+
+    $$\begin{gather*}
+    \mathbf{A} \cdot \mathbf{B} &\overset{\text{假設 1}}{=}& A_1 B_1 + A_2 B_2 + A_3 B_3 \\
+    &=& \sum_{i=1}^{3} A_i B_i  \\
+    &\overset{\text{Esc}}{=}& A_i B_i \\
+    \end{gather*}$$
+
+ 
+  * (b-2) 外積 (cross product)
+
+    $$\begin{gather*}
+    \mathbf{A} \times \mathbf{B} &=& (A_2 B_3 - A_3 B_2)\mathbf{e}_1 + (A_3 B_1 - A_1 B_3)\mathbf{e}_2 + (A_1 B_2 - A_2 B_1)\mathbf{e}_3 \\
+    &=& \sum_{i=1}^{3} (\mathbf{A} \times \mathbf{B})_i \mathbf{e}_i \\
+    &\overset{\text{Esc}}{=}& (\mathbf{A} \times \mathbf{B})_i  \\
+    &\overset{\text{LC}}{=}& \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk} A_j B_k   \\
+    &\overset{\text{Esc}}{=}& \varepsilon_{ijk} A_j B_k 
+    \end{gather*}$$
+
+
+  * (b-3) Kronecker delta 縮並
+
+    $$\begin{gather*}
+    \delta_{ij} A_j &\overset{\text{Esc}^{-1}}{=}& \sum_{j=1}^{3} \delta_{ij} A_j \\
+    &\overset{j^* \ne i}{=}& \delta_{ij^*} A_{j^*} +\delta_{ii} A_i + \delta_{ij^*} A_{j^*} \\
+    &\overset{\text{定義 2}}{=}&  0 + A_i + 0\\
+    &=&  A_i \\
+    \end{gather*}$$
+
+  * (b-4) 梯度 (gradient)
+
+    $$\begin{gather*}
+    \nabla f &=& (\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}) \\
+    &=& \sum_{i=1}^{3} (\nabla f)_i  \mathbf{e}_i \\
+    &\overset{\text{Esc}}{=}& (\nabla f)_i  \\
+    &=& \partial_i f
+    \end{gather*}$$
+
+  * (b-5) 散度 (divergence)
+
+    $$\begin{gather*}
+    \nabla \cdot \mathbf{V} &=& \partial_1 V_1 + \partial_2 V_2 + \partial_3 V_3 \\
+    &=& \sum_{i=1}^{3} \partial_i V_i \\
+    &\overset{\text{Esc}}{=}& \partial_i V_i
+    \end{gather*}$$
+
+  * (b-6) 旋度 (curl)
+
+    $$\begin{gather*}
+    \nabla \times \mathbf{V} &=& (\partial_2 V_3 - \partial_3 V_2)\mathbf{e}_1 + (\partial_3 V_1 - \partial_1 V_3)\mathbf{e}_2 + (\partial_1 V_2 - \partial_2 V_1)\mathbf{e}_3 \\
+    &=& \sum_{i=1}^{3} (\nabla \times \mathbf{V})_i \mathbf{e}_i \\
+    &\overset{\text{Esc}}{=}& (\nabla \times \mathbf{V})_i \\
+    &\overset{\text{LC}}{=}& \sum_{j=1}^{3} \sum_{k=1}^{3} \varepsilon_{ijk} \partial_j V_k \\
+    &\overset{\text{Esc}}{=}& \varepsilon_{ijk} \partial_j V_k
+    \end{gather*}$$
+
+  * (b-7) 純量拉普拉斯 (scalar Laplacian)
+
+    $$\begin{gather*}
+    \nabla^2 f &=& \nabla \cdot (\nabla f) \\
+    &=& \frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}+\frac{\partial^2 f}{\partial z^2} \\
+    &=& \sum_{i=1}^{3} \partial_i \partial_i f \\
+    &\overset{\text{Esc}}{=}& \partial_i \partial_i f
+    \end{gather*}$$
+
+  * (b-8) 向量拉普拉斯 (vector Laplacian)
+
+    $$\begin{gather*}
+    \nabla^2 \mathbf{V} &=& (\nabla \cdot \nabla )\mathbf{V} \\
+    &=& (\nabla^2 V_1)\mathbf{e}_1 + (\nabla^2 V_2)\mathbf{e}_2 + (\nabla^2 V_3)\mathbf{e}_3 \\
+    &=& \sum_{i=1}^{3} (\nabla^2 \mathbf{V})_i \mathbf{e}_i \\
+    &\overset{\text{Esc}}{=}& (\nabla^2 \mathbf{V})_i \\
+    &=& \sum_{j=1}^{3} \partial_j \partial_j V_i \\
+    &\overset{\text{Esc}}{=}& \partial_j \partial_j V_i
+    \end{gather*}$$
+
+  * (c) 矩陣運算 (matrix product)
+
+    $$\begin{gather*}
+    \mathbf{A} \mathbf{B} &=& \sum_{j=1}^{3} A_{ij} B_{jk} \\
+    &\overset{\text{Esc}}{=}& A_{ij} B_{jk} \\
+    &=& C_{ik} \\
+    &\overset{\text{Esc}^{-1}}{=}& \mathbf{C}
+    \end{gather*}$$
+
+  * 本檔約定的等號上方**簡寫標籤**：$\overset{\text{Esc}}{=}$ 表「套用愛因斯坦求和約定」、$\overset{\text{LC}}{=}$ 表「套用 Levi-Civita 外積／旋度公式（見 (b-2)、(b-6)）」；反向還原記為 $\overset{\text{Esc}^{-1}}{=}$、$\overset{\text{LC}^{-1}}{=}$。其餘 $\overset{\text{def}}{=}$（定義）、$\overset{\text{chain rule}}{=}$、$\overset{\text{let}}{=}$、$\overset{\text{pf}}{=}$ 為操作性標籤。
+  * $\mathbf{A},\mathbf{B},\mathbf{V}$ : $n$ 維向量 (n-dim vector)
+  * $A_{ij}$ : $n\times m$ 矩陣分量 (matrix component)
+  * $f$ : 純量 (scalar)
+  * $\partial_i$ : 對第 $i$ 個座標的偏微分 (partial derivative)
+
+* **【已知 2】 $\varepsilon\text{-}\delta$ 恆等式 (epsilon-delta identity)** ：把 **旋轉（外積）** 變成 **內積（投影）** 的翻譯器。
+
+  $$\varepsilon_{ijk} \varepsilon_{imn} = \delta_{jm} \delta_{kn} - \delta_{jn} \delta_{km}$$
+
+  * $\varepsilon_{ijk}$ : Levi-Civita 符號分量（見【定義 1】）
+  * $\delta_{jm}$ : Kronecker delta 分量（見【定義 2】）
+  * 被收縮的共同指標 $i$ 為啞指標（對 $1,2,3$ 求和）。
+
+* **【推導 1】 Kronecker delta 收縮 (contraction)** ：示範 $\delta$ 如何消去指標——這是後文做 $\delta$ 收縮（標 `推導 1`）的計算依據。因為起手即用 $\overset{\text{Esc}^{-1}}{=}$ 展開求和，故置於【已知 1】之後。
+
+  $$\begin{gather*}
+  \delta_{il} \delta_{jm} A_j B_l C_m &\overset{\text{Esc}^{-1}}{=}& \sum_{l=1}^{3} \sum_{j=1}^{3} \sum_{m=1}^{3} \delta_{il} \delta_{jm} A_j B_l C_m \\
+  &\overset{\text{定義 2}}{=}& \sum_{j=1}^{3} A_j B_i C_j \\
+  &\overset{\text{Esc}}{=}& A_j B_i C_j
+  \end{gather*}$$
+
+* **【推導 2】 反對稱歸零 (antisymmetry $\Rightarrow$ zero)** ：一個量若等於自身的相反數，則它必為零。常用於旋度的旋度、二階交叉偏微分對稱性等「整串變號後等於自己」的場合。
+
+  $$\begin{gather*}
+  X &=& -X \\
+  X + X &=& 0 \\
+  2X &=& 0 \\
+  X &=& 0
+  \end{gather*}$$
+
+  * $X$ : 任意純量或分量 (any scalar or component)
+
++++
+
+## 小試身手 1
+
+對於向量 $\mathbf{A}$ 向量 $\mathbf{B}$ 向量 $\mathbf{C}$ 向量 $\mathbf{D}$ 我們可以證明以下幾點。
+
+
+### 1. $\mathbf{A} \cdot (\mathbf{B} \times \mathbf{C}) = \mathbf{B} \cdot (\mathbf{C} \times \mathbf{A}) = \mathbf{C} \cdot (\mathbf{A} \times \mathbf{B})$
+
+$$ 
+\begin{gather*}
+\mathbf{A}\cdot (\mathbf{B} \times \mathbf{C}) &\overset{\text{Esc}}{=} & A_i (\mathbf{B} \times \mathbf{C})_i \\
+&\overset{\text{LC}}{=} & A_i \varepsilon_{ijk} B_j C_k \\
+&\overset{\text{定義 1}}{=} & B_j \varepsilon_{jki} C_k A_i   &\overset{\text{定義 1}}{=}&  C_k \varepsilon_{kij} A_i B_j\\
+&\overset{\text{LC}^{-1}}{=}&B_j (\mathbf{C} \times \mathbf{A})_j &\overset{\text{LC}^{-1}}{=}&  C_k (\mathbf{A} \times \mathbf{B})_k\\
+&\overset{\text{Esc}^{-1}}{=}&\mathbf{B}\cdot (\mathbf{C} \times \mathbf{A})  &\overset{\text{Esc}^{-1}}{=}&  \mathbf{C}\cdot (\mathbf{A} \times \mathbf{B})
+\end{gather*}
+$$
+
+
+
++++
+
+### 2. $\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}$
+
+$$
+\begin{gather*}
+\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) &\overset{\text{Esc}}{=}& (\mathbf{A}  (\mathbf{B} \times \mathbf{C}))_i \\
+&\overset{\text{LC}}{=}& \varepsilon_{ijk} A_j  (\mathbf{B} \times \mathbf{C})_k \\
+&\overset{\text{LC}}{=}& \varepsilon_{ijk} A_j \varepsilon_{klm} B_l C_m \\
+&=& \varepsilon_{ijk} \varepsilon_{klm} A_j B_l C_m \\  
+&\overset{\text{定義 1}}{=}&\varepsilon_{kij} \varepsilon_{klm} A_j B_l C_m \\
+&\overset{\text{已知 2}}{=}&  (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) A_j B_l C_m \\
+&\overset{\text{推導 1}}{=}& A_j B_i C_j - A_j B_j C_i \\
+&=& A_j C_j B_i - A_j B_j C_i \\
+&\overset{\text{Esc}^{-1}}{=}& (\mathbf{A} \cdot \mathbf{C}) \mathbf{B} - (\mathbf{A} \cdot \mathbf{B}) \mathbf{C}
+\end{gather*}
+$$
+
++++
+
+### 3. $(\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D})  = (\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C})$
+
+$$
+\begin{gather*}
+(\mathbf{A} \times \mathbf{B}) \cdot (\mathbf{C} \times \mathbf{D}) &\overset{\text{Esc}}{=}& (\mathbf{A} \times \mathbf{B})_i \cdot (\mathbf{C} \times \mathbf{D})_i \\
+&\overset{\text{LC}}{=}& \varepsilon_{ijk} A_j B_k  \varepsilon_{ilm} C_l D_m \\
+&=&  \varepsilon_{ijk} \varepsilon_{ilm} A_j B_k C_l D_m \\
+&\overset{\text{已知 2}}{=}& (\delta_{jl} \delta_{km} - \delta_{jm} \delta_{kl})  A_j B_k C_l D_m \\
+&\overset{\text{推導 1}}{=}& A_j B_k C_j D_k - A_j B_k C_k D_j \\
+&\overset{\text{Esc}^{-1}}{=}&(\mathbf{A} \cdot \mathbf{C}) (\mathbf{B} \cdot \mathbf{D}) - (\mathbf{A} \cdot \mathbf{D}) (\mathbf{B} \cdot \mathbf{C}) \\
+\end{gather*}
+$$
+
++++
+
+### 4. $\begin{aligned} &(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})  \\ =& ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D} \\ =& ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A} \end{aligned}$
+
+* $(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D})= ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D}$
+
+  $$
+  \begin{gather*}
+  (\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}) &\overset{\text{Esc}}{=}& ((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}))_i \\
+  &\overset{\text{LC}}{=}& \varepsilon_{ijk} (\mathbf{A} \times \mathbf{B})_j  (\mathbf{C} \times \mathbf{D})_k \\
+  &\overset{\text{LC}}{=}& \varepsilon_{ijk} \varepsilon_{jlm} A_l B_m  \varepsilon_{kqp} C_q D_p \\
+  &\overset{\text{定義 1:}k}{=}& \varepsilon_{kij} \varepsilon_{kqp} \varepsilon_{jlm} A_l B_m C_q D_p \\
+  &\overset{\text{已知 2}}{=}& (\delta_{iq} \delta_{jp} - \delta_{ip} \delta_{jq})  \varepsilon_{jlm} A_l B_m C_q D_p \\
+  &\overset{\text{推導 1}}{=}& \varepsilon_{jlm} A_l B_m C_i D_j - \varepsilon_{jlm} A_l B_m C_j D_i \\
+  &\overset{\text{LC}^{-1}}{=}& (\mathbf{A} \times \mathbf{B})_j C_i D_j - (\mathbf{A} \times \mathbf{B})_j C_j D_i \\ 
+  &\overset{\text{Esc}^{-1}}{=}& ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{D})\mathbf{C} - ((\mathbf{A} \times \mathbf{B}) \cdot \mathbf{C})\mathbf{D}  \\
+  \end{gather*}
+  $$
+
+* $(\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}) = ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A}$
+
+  $$
+  \begin{gather*}
+  (\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}) &\overset{\text{Esc}}{=}& ((\mathbf{A} \times \mathbf{B}) \times (\mathbf{C} \times \mathbf{D}))_i \\
+  &\overset{\text{LC}}{=}& \varepsilon_{ijk} (\mathbf{A} \times \mathbf{B})_j  (\mathbf{C} \times \mathbf{D})_k \\
+  &\overset{\text{LC}}{=}& \varepsilon_{ijk} \varepsilon_{jlm} A_l B_m  \varepsilon_{kqp} C_q D_p \\
+  &\overset{\text{定義 1:}j}{=}& \varepsilon_{jki} \varepsilon_{jlm} \varepsilon_{kqp}  A_l B_m C_q D_p \\
+  &\overset{\text{已知 2}}{=}& (\delta_{kl} \delta_{im} - \delta_{km} \delta_{il})  \varepsilon_{kqp} A_l B_m C_q D_p \\
+  &\overset{\text{推導 1}}{=}& \varepsilon_{kqp} A_k B_i C_q D_p - \varepsilon_{kqp} A_i B_k C_q D_p \\
+  &\overset{\text{LC}^{-1}}{=}& (\mathbf{C} \times \mathbf{D})_k A_k B_i - (\mathbf{C} \times \mathbf{D})_k A_i B_k \\ 
+  &\overset{\text{Esc}^{-1}}{=}& ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{A})\mathbf{B} - ((\mathbf{C} \times \mathbf{D}) \cdot \mathbf{B})\mathbf{A}  \\
+  \end{gather*}
+  $$
+
++++
+
+## 小試身手 2
+
+對於向量 $\mathbf{A}$ 向量 $\mathbf{B}$ 向量 $\mathbf{V}$ 純量 $f$ 純量 $g$ 我們可以證明以下幾點。
+
+
+### 1. $\nabla \times (\nabla f) = 0$
+
+$$ 
+\begin{gather*}
+\nabla \times (\nabla f) &\overset{\text{Esc}}{=} & (\nabla \times (\nabla f))_i \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} \partial_j \partial_k f \\
+&\overset{\text{定義 1}}{=} & -\varepsilon_{ikj} \partial_j \partial_k f \\
+&= & -\varepsilon_{ikj} \partial_k \partial_j f \\
+&\overset{\text{Esc}^{-1}}{=} & -(\nabla \times (\nabla f))_i \\
+&\overset{\text{LC}^{-1}}{=}& - \nabla \times (\nabla f)\\
+&\overset{\text{推導 2}}{=}&0
+\end{gather*}
+$$
+
+#### 物理意義：
+
+**只由「高低差」（純量場 $f$）所驅動的系統，永遠無法自己產生「旋轉」。** 下表以四個領域佐證（量綱鏈為 $f \to \nabla f \to \nabla \times \nabla f$，最後一欄恆為零）：
+
+| 領域 | 純量場 $f$ | 量綱鏈 $f \to \nabla f \to \nabla\times\nabla f$ | 物理結論 |
+|---|---|---|---|
+| 力學 | 位能 $U$ | $[\text{J}] \to [\text{N}] \to [\frac{\text{N}}{\text{m}}]$ | 保守力場 $\mathbf{F}=-\nabla U$ 無旋；無循環力/渦旋，保證能量守恆（繞一圈做功為 $0$） |
+| 電磁學 | 電位 $V$ | $[\frac{\text{J}}{\text{C}}] \to [\frac{\text{N}}{\text{C}}] \to [\frac{\text{N}}{\text{C}}\frac{1}{\text{m}}]$ | 靜電場 $\mathbf{E}=-\nabla V$ 無旋；無局部旋轉或環流（$\nabla\times\mathbf{E}=0$） |
+| 流體力學 | 速度位勢 $\phi$ | $[\frac{\text{m}^2}{\text{s}}] \to [\frac{\text{m}}{\text{s}}] \to [\frac{1}{\text{s}}]$ | 速度場 $\mathbf{v}=\nabla\phi$ 無旋；無渦度 |
+| 流體力學 | 壓力位勢 $\frac{P}{\rho}$ | $[\frac{\text{m}^2}{\text{s}^2}] \to [\frac{\text{m}}{\text{s}^2}] \to [\frac{1}{\text{s}^2}]$ | 正壓假設下純壓力位勢給出的加速度場無旋，無法產生渦度 |
+
+補充說明（表格放不下的細節）：
+
+* **力學**：循環力（非保守力）指繞一圈能量改變的力 $\oint_C \mathbf{F} \cdot d\mathbf{r} \neq 0$；渦旋指力場在局部微觀上的旋轉 $\nabla \times \mathbf{F} \neq 0$。
+* **電磁學**：靜電 $\nabla \times \mathbf{E} = 0$，但動態電磁場 $\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \neq 0$。
+* **流體（速度位勢存在性）**：渦度 $\boldsymbol{\omega} = \nabla \times \mathbf{v} : [\frac{1}{\text{s}}]$。「若一向量場無旋（$\nabla \times \mathbf{v} = 0$），它必可寫成某純量函數的梯度」——故無旋流動可造一個虛擬純量 $\phi(x,y,z)$ 使 $\mathbf{v} = \nabla \phi$，不必直接處理向量 $\mathbf{v}=(u,v,w)$。
+* **流體（正壓 vs 斜壓）**：Navier-Stokes 的壓力項常寫 $-\frac{1}{\rho}\nabla P$ 而非 $-\nabla(\frac{P}{\rho})$；因為
+
+  $$\nabla \left(\frac{P}{\rho}\right) = \frac{1}{\rho}\nabla P + P \nabla \left(\frac{1}{\rho}\right)$$
+
+  只有當 $\rho$ 為常數（不可壓縮流）或 $\rho$ 僅為 $P$ 的函數（正壓 Barotropic）時，壓力項才是純量場的梯度、不產生渦度；斜壓流體中密度與壓力的交錯分佈會破壞此恆等式而產生渦度。
+
++++
+
+
+### 2. $\nabla \cdot (\nabla \times \mathbf{V}) = 0$
+
+$$ 
+\begin{gather*}
+\nabla \cdot (\nabla \times \mathbf{V}) &\overset{\text{Esc}}{=} & \partial_i (\nabla \times \mathbf{V})_i \\
+&\overset{\text{LC}}{=} & \partial_i \varepsilon_{ijk} \partial_j V_k  \\
+&\overset{\text{定義 1}}{=} & \partial_i (-\varepsilon_{jik}) \partial_j V_k \\
+&= & \partial_j (-\varepsilon_{jik}) \partial_i V_k \\
+&\overset{\text{LC}^{-1}}{=} & -\partial_j (\nabla \times \mathbf{V})_j \\
+&\overset{\text{Esc}^{-1}}{=}& - \nabla \cdot (\nabla \times \mathbf{V})\\
+&\overset{\text{推導 2}}{=}&0
+\end{gather*}
+$$
+
+
+#### 物理意義：
+
+**任何純旋轉場（旋度場）都不可能是源或匯——旋轉本身不會產生淨流出或淨流入。** 下表以兩個領域佐證（凡可寫成某向量場旋度者，其散度恆為零）：
+
+| 領域 | 旋度場（來自向量位勢） | 物理結論（$\nabla\cdot(\nabla\times\,\cdot\,)=0$） |
+|---|---|---|
+| 磁學 | 磁場 $\mathbf{B}=\nabla\times\mathbf{A}$ | $\nabla\cdot\mathbf{B}=0$（磁高斯定律）：宇宙無磁單極子，磁力線恆為閉合迴路（N → S） |
+| 流體力學 | 渦度 $\boldsymbol{\omega}=\nabla\times\mathbf{v}$ | $\nabla\cdot\boldsymbol{\omega}=0$：渦管不能在流體內部中斷 |
+
+補充說明（表格放不下的細節）：
+
+* **磁學（為什麼找不到磁單極子）**：找不到單一 **北極 (N)** 讓磁力線射出而不閉合；磁力線永遠從 N 出發回到 S，形成閉合迴路，這正是「旋度的散度為零」的直接證據。
+* **流體（Helmholtz 渦管定理：渦管不能在流體內部中斷）**：渦管在數學幾何上連續，無法憑空形成斷頭或起點，只有三種存在形態：
+  - **延伸至邊界 (Boundary Termination)**：兩端錨定在邊界。例：龍捲風（上接雲層、下接地面）、水槽漩渦（上接水面、下接排水口）。
+  - **形成閉合迴路 (Closed Loop)**：頭尾相接成環。例：煙圈、海豚吐的氣泡環。
+  - **擴散或重連 (Diffusion / Reconnection)**：若在流體內部強行切斷，斷點會重連（尋找彼此或新邊界接合），或因黏滯使渦度擴散為零——是「消散」而非幾何「中斷」。
+
++++
+
+### 3. $\nabla \times (\nabla \times \mathbf{V}) = \nabla (\nabla \cdot \mathbf{V}) - \nabla^2 \mathbf{V}$
+
+$$ 
+\begin{gather*}
+\nabla \times (\nabla \times \mathbf{V}) &\overset{\text{Esc}}{=} & (\nabla \times (\nabla \times \mathbf{V}))_i \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} \partial_j (\nabla \times \mathbf{V})_k  \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} \partial_j \varepsilon_{klm} \partial_l V_m  \\
+&\overset{\text{定義 1}}{=} & \varepsilon_{kij} \varepsilon_{klm} \partial_j \partial_l V_m\\
+&\overset{\text{已知 2}}{=} & (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) \partial_j \partial_l V_m \\
+&\overset{\text{推導 1}}{=} & \partial_j \partial_i V_j  - \partial_j \partial_j V_i \\
+&\overset{\text{Esc}^{-1}}{=} & \partial_i (\nabla \cdot \mathbf{V} )  - (\nabla \cdot \nabla)  V_i \\ 
+&\overset{\text{Esc}^{-1}}{=} & \nabla (\nabla \cdot \mathbf{V} )  - \nabla^2  \mathbf{V} \\
+\end{gather*}
+$$
+
+#### Helmholtz 分解定理 (Helmholtz Decomposition Theorem)
+
+任何在無窮遠處衰減夠快的向量場 $\mathbf{V}$，都可拆成「無旋」與「無散」兩部分：
+
+$$\mathbf{V} = \underbrace{-\nabla f}_{\text{無旋 (Irrotational)}} + \underbrace{\nabla \times \mathbf{A}}_{\text{無散 (Solenoidal)}}$$
+
+| 成分 | 形式 | 性質（恆成立） | 依據 |
+|---|---|---|---|
+| 無旋部分 (Irrotational) | $-\nabla f$ | $\nabla\times(-\nabla f)=0$ | 小試身手 2-1 |
+| 無散部分 (Solenoidal) | $\nabla\times\mathbf{A}$ | $\nabla\cdot(\nabla\times\mathbf{A})=0$ | 小試身手 2-2 |
+
+* 速度場 $\mathbf{V}$、電場 $\mathbf{E}$、磁場 $\mathbf{B}$ 都適用。
+* 本題恆等式把黏滯力場 $\nabla^2\mathbf{V}$ 拆成兩塊，作用是把速度差異抹平：
+
+  $$\underbrace{\nabla^2 \mathbf{V}}_{\text{複雜物理作用}} = \underbrace{\nabla (\nabla \cdot \mathbf{V})}_{\text{Irrotational}} - \underbrace{\nabla \times (\nabla \times \mathbf{V})}_{\text{Solenoidal}}$$
+
+  - 無旋驗證：$\nabla \times (\nabla (\nabla \cdot \mathbf{V})) = \nabla \times (\nabla f) \overset{\text{小試身手2-1}}{=} 0$
+  - 無散驗證：$\nabla \cdot (\nabla \times (\nabla \times \mathbf{V})) = \nabla \cdot (\nabla \times \mathbf{A}) \overset{\text{小試身手2-2}}{=} 0$
+
++++
+
+### 4. $\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot  (\nabla \times \mathbf{A}) - \mathbf{A} \cdot  (\nabla \times \mathbf{B})$
+
+$$ 
+\begin{gather*}
+\nabla \cdot (\mathbf{A} \times \mathbf{B}) &\overset{\text{Esc}}{=} & \partial_i (\mathbf{A} \times \mathbf{B})_i \\
+&\overset{\text{LC}}{=} & \partial_i \Bigl[ \varepsilon_{ijk} A_j B_k \Bigr]  \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} (\partial_i A_j ) B_k  + \varepsilon_{ijk} A_j  (\partial_i B_k) \\
+&\overset{\text{定義 1}}{=} & B_k \varepsilon_{kij} (\partial_i A_j ) + A_j (-\varepsilon_{jik}) (\partial_i B_k) \\
+&\overset{\text{LC}^{-1}}{=} & B_k (\nabla \times \mathbf{A})_k  + A_j (-\nabla \times \mathbf{B})_j \\
+&\overset{\text{Esc}^{-1}}{=} & \mathbf{B} \cdot  (\nabla \times \mathbf{A}) - \mathbf{A} \cdot  (\nabla \times \mathbf{B}) \\
+\end{gather*}
+$$
+
+
+#### 核心恆等式：交互作用的散度
+
+$$\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})$$
+
+* **一句話靈魂：**「兩個場的『糾纏旋轉』，製造了『交互作用流』的源頭與匯聚。」
+
+下表從兩個視角理解它：
+
+| 視角 | 代換／圖像 | 重點 |
+|---|---|---|
+| 物理實例（能量守恆） | 設 $\mathbf{A}=\mathbf{E}$、$\mathbf{B}=\mathbf{H}$，叉積 $\mathbf{E}\times\mathbf{H}=\mathbf{S}$（波印廷向量） | 左邊 $\nabla\cdot\mathbf{S}$ = 某點流出的總能量；能量不會憑空噴出，必等於右邊「磁場與電場旋轉交織」帶來的能量轉換與作功損耗 |
+| 幾何圖像（旋度投影） | 左邊算「發散／壓縮」、右邊算「旋轉」；$\mathbf{A}$ 氣流與 $\mathbf{B}$ 側風交會擠出側向流 $\mathbf{A}\times\mathbf{B}$ | 側向流要產生散度，需 $\mathbf{A}$ 的旋轉軸順著 $\mathbf{B}$（即 $\mathbf{B}\cdot(\nabla\times\mathbf{A})\neq 0$），像抽水馬達把流體捲入／擠出 |
+
+💡 **實戰使用指南**
+
+* **何時用**：推導流體力學或電磁學時，只要看到「叉積的散度」$\nabla\cdot(\text{叉積})$，就立刻寫下這條公式。
+* **強在哪**：把未知的「複雜交互流發散量」換成兩個已知場的「旋度點積」相減，通常其中一項在物理上剛好為 $0$（某場無旋），式子瞬間大幅簡化。
+* [或者做一點實作](./new_project.ipynb#test)
+
++++
+
+### 5. $\nabla \times (\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}$
+
+$$ 
+\begin{gather*}
+\nabla \times (\mathbf{A} \times \mathbf{B}) &\overset{\text{Esc}}{=} & (\nabla \times (\mathbf{A} \times \mathbf{B}))_i \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} \partial_j (\mathbf{A} \times \mathbf{B})_k  \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} \partial_j (\varepsilon_{klm} A_l B_m ) \\
+&\overset{\text{定義 1}}{=} & \varepsilon_{kij} \varepsilon_{klm} \partial_j (A_l B_m)\\
+&\overset{\text{已知 2}}{=} & (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) \partial_j (A_l B_m)\\
+&\overset{\text{推導 1}}{=} & \partial_j (A_i B_j) - \partial_j (A_j B_i) \\
+&\overset{\text{chain rule}}{=} & (\partial_j A_i ) B_j + A_i(\partial_j B_j) - (\partial_j A_j )B_i- A_j(\partial_j B_i)\\
+& = & B_j (\partial_j A_i ) +  (\partial_j B_j) A_i- (\partial_j A_j )B_i- A_j(\partial_j B_i) \\
+&\overset{\text{Esc}^{-1}}{=} & (\mathbf{B} \cdot \nabla) A_i + (\nabla \cdot \mathbf{B}) A_i -  (\nabla \cdot \mathbf{A}) B_i - (\mathbf{A} \cdot \nabla) B_i \\
+&\overset{\text{Esc}^{-1}}{=} & (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} -  (\nabla \cdot \mathbf{A}) \mathbf{B}- (\mathbf{A} \cdot \nabla) \mathbf{B}   \\
+&=& (\mathbf{B} \cdot \nabla) \mathbf{A} + (\nabla \cdot \mathbf{B}) \mathbf{A} - (\mathbf{A} \cdot \nabla) \mathbf{B} - (\nabla \cdot \mathbf{A}) \mathbf{B}
+\end{gather*}
+$$
+
+* 注意
+
+  $$
+  (\mathbf{B} \cdot \nabla) = B_x \frac{\partial}{\partial x} + B_y \frac{\partial}{\partial y} + B_z \frac{\partial}{\partial z}
+  $$
+
+  當它作用在 $\mathbf{A}$ 上時： 
+
+  $$
+  (\mathbf{B} \cdot \nabla) \mathbf{A} = \left( B_x \frac{\partial \mathbf{A}}{\partial x} + B_y \frac{\partial \mathbf{A}}{\partial y} + B_z \frac{\partial \mathbf{A}}{\partial z} \right)
+  $$
+
++++
+
+### 6. $\mathbf{A} \times (\nabla \times \mathbf{B}) = \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B}$
+
+$$ 
+\begin{gather*}
+\mathbf{A} \times (\nabla \times \mathbf{B}) &\overset{\text{Esc}}{=} & (\mathbf{A} \times (\nabla \times \mathbf{B}))_i \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} A_j (\nabla \times \mathbf{B})_k  \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} A_j \varepsilon_{klm} \partial_l B_m \\
+&\overset{\text{定義 1}}{=} & \varepsilon_{kij} \varepsilon_{klm} A_j \partial_l B_m\\
+&\overset{\text{已知 2}}{=} & (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) A_j \partial_l B_m\\
+&\overset{\text{推導 1}}{=} & A_j \partial_i B_j - A_j \partial_j B_i \\
+&\overset{\text{Esc}^{-1}}{=} & \mathbf{A}_{(1\times 3)} (\nabla_{(3\times 1)} \mathbf{B}_{( 1\times 3)} )^{\top} - (\mathbf{A} \cdot \nabla) B_i\\
+&\overset{\text{Esc}^{-1}}{=} & \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B} \\
+&=& \mathbf{A}( \nabla \mathbf{B})^{\top} - (\mathbf{A} \cdot \nabla) \mathbf{B}
+\end{gather*}
+$$
+
+
+#### 數學定義
+
+由於碰到了不知道怎麼處理的 $A_j \partial_i B_j$ ，我們只能派出矩陣來解決這個數學表達，想像 $j$ 和 $j$ 必須再一起，所以要用轉置 $\top$ 將$( \nabla \mathbf{B})$ 的index $j$ 和 $i$ 的位置交換。這道題目用Levi-Civita來證明是一件挺尷尬的事情，所以我用國小二年級的方法證明 $A_j \partial_i B_j$ 在 $\text{Esc}^{-1}$ 的情況下可以寫成 $\mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top}$
+
+計算 $\mathbf{A} \times (\nabla \times \mathbf{B})$ 和  $(\mathbf{A} \cdot \nabla) \mathbf{B}$ ， $\mathbf{A} = (A_x,A_y,A_z) , \mathbf{B} = (B_x,B_y,B_z) ,\nabla = (\partial_x,\partial_y,\partial_z) $
+
+
+$$\begin{gather*}
+\mathbf{C} = \nabla \times \mathbf{B} \\
+C_x = \partial_y B_z - \partial_z B_y \\
+C_y = \partial_z B_x - \partial_x B_z \\
+C_z = \partial_x B_y - \partial_y B_x
+\end{gather*}$$
+
+
+* (a)
+
+  $$
+  \begin{gather*}
+  \mathbf{A} \times (\nabla \times \mathbf{B}) &=&
+  \mathbf{A} \times (\partial_y B_z - \partial_z B_y,\partial_z B_x - \partial_x B_z,\partial_x B_y - \partial_y B_x) \\
+  &=& (A_y \partial_x B_y - A_y \partial_y B_x - A_z \partial_z B_x + A_z \partial_x B_z,\\
+  &&A_z \partial_y B_z - A_z \partial_z B_y - A_x \partial_x B_y + A_x \partial_y B_x,\\
+  &&A_x \partial_z B_x - A_x \partial_x B_z - A_y \partial_y B_z + A_y \partial_z B_y) 
+  \end{gather*}
+  $$
+
+* (b)
+
+$$
+\begin{gather*}
+(\mathbf{A} \cdot \nabla) \mathbf{B} &=& (A_x \partial_x +A_y \partial_y  +A_z \partial_z ) \mathbf{B} \\
+&=&(A_x \partial_x B_x +A_y \partial_y B_x +A_z \partial_z B_x,\\
+&&A_x \partial_x B_y +A_y \partial_y B_y +A_z \partial_z B_y,\\
+&&A_x \partial_x B_z +A_y \partial_y B_z +A_z \partial_z B_z)
+\end{gather*}
+$$
+
+* (c)
+
+$$
+\begin{gather*}
+\mathbf{A} \times (\nabla \times \mathbf{B}) + (\mathbf{A} \cdot \nabla) \mathbf{B} &=& ( 
+A_x \partial_x B_x + A_y \partial_x B_y + A_z \partial_x B_z,\\ 
+&&A_y \partial_y B_y + A_z \partial_y B_z + A_x \partial_y B_x,\\
+&&A_z \partial_z B_z + A_x \partial_z B_x + A_y \partial_z B_y)\\
+&\overset{\text{pf}}{=}& \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} \\
+&\underset{\text{let}}{\overset{\text{Esc}}{=}}& A_j \partial_i B_j
+\end{gather*}
+$$
+
+* 其中 
+  * $\nabla \mathbf{B} = \begin{bmatrix} \partial_x \\ \partial_y \\ \partial_z  \end{bmatrix} \begin{bmatrix} B_x  B_y B_z  \end{bmatrix} = \begin{bmatrix} \partial_x B_x & \partial_x B_y & \partial_x B_z \\ \partial_y B_x & \partial_y B_y & \partial_y B_z  \\ \partial_z B_x & \partial_z B_y & \partial_z B_z \end{bmatrix}$
+
+  * $\begin{aligned}\mathbf{A} (\nabla \mathbf{B})^{\top} &= \begin{bmatrix} A_x & A_y & A_z \end{bmatrix} \begin{bmatrix}\partial_x B_x & \partial_y B_x & \partial_z B_x\\ \partial_x B_y & \partial_y B_y & \partial_z B_y\\ \partial_x B_z & \partial_y B_z & \partial_z B_z \end{bmatrix} \\&= \begin{bmatrix} A_x\partial_x B_x+ A_y\partial_x B_y+A_z\partial_x B_z & A_x\partial_y B_x+ A_y\partial_y B_y+A_z\partial_y B_z & A_x\partial_z B_x+ A_y\partial_z B_z+A_z\partial_z B_z \end{bmatrix}\end{aligned}$ 
+
++++
+
+### 7. $\nabla (\mathbf{A} \cdot \mathbf{B}) = \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top}$
+
+$$ 
+\begin{gather*}
+\nabla (\mathbf{A} \cdot \mathbf{B}) &\overset{\text{Esc}}{=} & \partial_i ( A_j B_j) \\
+&\overset{\text{chain rule}}{=} & (\partial_i  A_j) B_j + A_j (\partial_i B_j) \\
+&= &  B_j (\partial_i  A_j) + A_j (\partial_i B_j) \\
+&\underset{\text{小試身手2-6}}{\overset{\text{Esc}^{-1}}{=}}& \mathbf{B}_{( 1\times 3)} ( \nabla \mathbf{A})_{( 3\times 3)}^{\top} + \mathbf{A}_{( 1\times 3)} ( \nabla \mathbf{B})_{( 3\times 3)}^{\top} \\
+&=& \mathbf{B}( \nabla \mathbf{A})^{\top} + \mathbf{A}( \nabla \mathbf{B})^{\top} \\
+&\underset{\text{小試身手2-6}}{=}&  \mathbf{B} \times (\nabla \times \mathbf{A}) + (\mathbf{B} \cdot \nabla) \mathbf{A} + \mathbf{A} \times (\nabla \times \mathbf{B}) + (\mathbf{A} \cdot \nabla) \mathbf{B} 
+\end{gather*}
+$$
+
++++
+
+### 8. $\nabla (f g) = g\nabla(f) + f\nabla(g)$
+
+$$ 
+\begin{gather*}
+\nabla (f g) &\overset{\text{Esc}}{=} & \partial_i ( f g) \\
+&\overset{\text{chain rule}}{=} & (\partial_i  f) g + f (\partial_i g) \\
+&= &  g(\partial_i  f)  + f (\partial_i g) \\
+&\overset{\text{Esc}^{-1}}{=}& g\nabla(f) + f\nabla(g)
+\end{gather*}
+$$
+
++++
+
+### 9. $\nabla \cdot (f \mathbf{V}) = (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f$
+
+$$ 
+\begin{gather*}
+\nabla \cdot (f \mathbf{V}) &\overset{\text{Esc}}{=} & \partial_i ( f V_i) \\
+&\overset{\text{chain rule}}{=} & (\partial_i  f) V_i + f (\partial_i V_i) \\
+&= &  V_i (\partial_i  f)  + f (\partial_i V_i) \\
+&\overset{\text{Esc}^{-1}}{=}& (\mathbf{V} \cdot \nabla )f + ( \nabla \cdot \mathbf{V})f
+\end{gather*}
+$$
+
++++
+
+### 10. $\nabla \times (f \mathbf{V}) = (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f$
+
+$$ 
+\begin{gather*}
+\nabla \times (f \mathbf{V}) &\overset{\text{Esc}}{=} &  (\nabla \times (f \mathbf{V}))_i \\
+&\overset{\text{LC}}{=} & \varepsilon_{ijk} \partial_j ( f V_k) \\
+&\overset{\text{chain rule}}{=} & \varepsilon_{ijk} ((\partial_j  f) V_k + f (\partial_j V_k)) \\
+&= &  \varepsilon_{ijk}  (\partial_j  f) V_k  + \varepsilon_{ijk} f (\partial_j V_k) \\
+&\overset{\text{LC}^{-1}}{=}& ((\nabla f) \times \mathbf{V})_i + ( \nabla \times \mathbf{V})_i f\\
+&\overset{\text{Esc}^{-1}}{=}& (\nabla f) \times \mathbf{V} + ( \nabla \times \mathbf{V})f
+\end{gather*}
+$$
+
++++
+
+### 11. $\nabla \cdot (\nabla f \times \nabla g) = (\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) = 0$
+
+$$ 
+\begin{gather*}
+\nabla \cdot (\nabla f \times \nabla g) &\overset{\text{Esc}}{=} &  \partial_i (\nabla f \times \nabla g)_i \\
+&\overset{\text{LC}}{=} & \partial_i (\varepsilon_{ijk} \partial_j (f)  \partial_k (g)  )\\
+&\overset{\text{chain rule}}{=} & \varepsilon_{ijk} (\partial_i\partial_j (f)  \partial_k (g)  + \partial_j (f)  \partial_i\partial_k (g) ) \\
+&= & \partial_k (g) \varepsilon_{ijk} \partial_i\partial_j (f)    + \partial_j (f)  \varepsilon_{ijk} \partial_i\partial_k (g)  \\
+&\overset{\text{定義 1}}{=} & \partial_k (g) \varepsilon_{kij} \partial_i\partial_j (f)    + \partial_j (f)  (-\varepsilon_{jik}) \partial_i\partial_k (g) \\
+&\overset{\text{LC}^{-1}}{=}&  \partial_k (g)  (\nabla \times \nabla f )_k - \partial_j (f)  (\nabla \times \nabla g )_j\\
+&\overset{\text{Esc}^{-1}}{=}&(\nabla g) \cdot (\nabla \times \nabla f) - (\nabla f) \cdot (\nabla \times \nabla g) \\
+&\underset{\text{小試身手2-1}}{=}&(\nabla g) \cdot (0) - (\nabla f) \cdot (0) \\
+&=&0
+\end{gather*}
+$$
+
++++
+
+### 12. $\nabla \cdot ( f \nabla g) = (\nabla f) \cdot (\nabla g) + f \nabla^2 g$
+
+$$ 
+\begin{gather*}
+\nabla \cdot ( f \nabla g) &\overset{\text{Esc}}{=} &  \partial_i ( f \partial_i (g)) \\
+&\overset{\text{chain rule}}{=} & \partial_i (f) \partial_i (g) + f \partial_i \partial_i (g)\\
+&\overset{\text{Esc}^{-1}}{=} & (\nabla f) \cdot (\nabla g) + f \nabla^2 g\\
+\end{gather*}
+$$
+
++++
+
+### 13. $\nabla^2 ( f g) = g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g$
+
+$$ 
+\begin{gather*}
+\nabla^2 ( f g) &\overset{\text{Esc}}{=} &  \partial_i \partial_i ( f g) \\
+&\overset{\text{chain rule}}{=} & \partial_i (g \partial_i (f) + f \partial_i (g))\\
+&\overset{\text{chain rule}}{=} & g \partial_i\partial_i (f) + \partial_i (g)\partial_i (f) + \partial_i (f) \partial_i (g) +  f \partial_i \partial_i (g)\\
+&\overset{\text{Esc}^{-1}}{=} & g \nabla^2 f + 2 (\nabla f) \cdot (\nabla g) + f \nabla^2 g\\
+\end{gather*}
+$$
+
++++
+
+### 14. $\nabla^2 ( f \mathbf{V}) = ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}$
+
+$$ 
+\begin{gather*}
+\nabla^2 ( f \mathbf{V}) &\overset{\text{Esc}}{=} &  \partial_i \partial_i ( f V_j) \\
+&\overset{\text{chain rule}}{=} & \partial_i ( \partial_i (f) V_j + f \partial_i (V_j))\\
+&\overset{\text{chain rule}}{=} & \partial_i\partial_i (f) V_j+ \partial_i (f)\partial_i (V_j) + \partial_i (f) \partial_i (V_j) +  f \partial_i \partial_i (V_j)\\
+&\overset{\text{Esc}^{-1}}{=} & ( \nabla^2 f) \mathbf{V} + 2 (\nabla f \cdot \nabla ) \mathbf{V} + f \nabla^2 \mathbf{V}\\
+\end{gather*}
+$$
+
++++
+
+
+
+## 方程式推導實戰：　TKE equation
+
++++
+
+
+
++++
+
+## 參考資料
+
+* [工數筆記-愛因斯坦求和約定（Einstein summation convention）](https://medium.com/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%9A%84%E8%B5%B7%E9%BB%9E-%E9%82%81%E5%90%91%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%85%89%E9%87%91%E8%A1%93%E5%B8%AB%E4%B9%8B%E8%B7%AF/%E5%B7%A5%E6%95%B8%E7%AD%86%E8%A8%98-%E6%84%9B%E5%9B%A0%E6%96%AF%E5%9D%A6%E6%B1%82%E5%92%8C%E7%B4%84%E5%AE%9A-einstein-summation-convention-ae5b786de439)
+
+* [Vector Calculus for Engineers ,YT@Jeffrey Chasnov](https://www.youtube.com/watch?v=CWIaPrwLyjM&list=PLkZjai-2JcxnYmkg6fpzz4WFumGVl7MOa&index=8)
+
++++
