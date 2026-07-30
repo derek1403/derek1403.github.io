@@ -87,6 +87,36 @@
             padding-left: 10px;
         }
 
+        /* 帶 GitHub 原始碼連結的項目：主連結靠左、圖示靠右 */
+        li.with-repo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        li.with-repo > a {
+            flex: 1 1 auto;
+        }
+
+        a.repo-link {
+            flex: 0 0 auto;
+            display: inline-flex;
+            opacity: 0.6;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        a.repo-link:hover {
+            padding-left: 0; /* 覆蓋通用 a:hover 的位移，圖示原地放大就好 */
+            opacity: 1;
+            transform: scale(1.15);
+        }
+
+        a.repo-link img {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+
         /* 隨機經典文句 */
         blockquote.quote {
             margin: 0 0 30px 0;
@@ -144,6 +174,14 @@
         <p class="description">研究論文：</p>
         <ul>
             <li><a href="https://derek1403.github.io/itcz-breakdown-ai/paper/_build/html/00_abstract.html" target="_blank">ITCZ Breakdown &amp; AI (間熱帶輻合帶崩解與人工智慧)</a></li>
+        </ul>
+
+        <p class="description">研究遊樂園 🔭：</p>
+        <ul>
+            <li class="with-repo">
+                <a href="https://derek1403.github.io/TC_manifold/web/" target="_blank">TC Manifold (颱風結構狀態流形)</a>
+                <a class="repo-link" href="https://github.com/derek1403/TC_manifold" target="_blank" title="在 GitHub 上檢視原始碼" aria-label="TC_manifold GitHub 儲存庫"><img src="./item/github-mark.svg" alt="GitHub"></a>
+            </li>
         </ul>
     </div>
 
