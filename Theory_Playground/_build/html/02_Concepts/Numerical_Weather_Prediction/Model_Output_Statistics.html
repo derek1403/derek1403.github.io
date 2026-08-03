@@ -1,0 +1,1524 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>模式輸出統計 Model Output Statistics (MOS) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="垂直模態分解 Normal Mode Decomposition" href="../Atmospheric_Dynamics/Normal_Mode_Decomposition.html" />
+    <link rel="prev" title="Conditional Instability of the Second Kind (CISK, 第二類條件不穩定性)" href="../Tropical_Cyclone/CISK_Theorem.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_Derivations/01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>模式輸出統計 Model Output Statistics (MOS)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">定義</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mos">為什麼需要 MOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">① 系統性 bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">② 解析度不夠</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">③ 參數化的先天限制</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">示範一：先看見系統性偏差長什麼樣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">示範二：bias 不是一個常數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">示範三：一步步把它校掉</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">工業界常見的手法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emos">示範四：EMOS —— 不只修中心值，也要修離散度</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">產業應用</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mw">風力發電：把氣象變數變成 MW</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">航空：把相對濕度變成起降決策</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">三個容易搞混的東西</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#era5-mos">ERA5 是怎麼來的，跟 MOS 什麼關係</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">跨領域類比：半導體製程控制</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">實務上的坑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">參考資料</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="model-output-statistics-mos">
+<h1>模式輸出統計 Model Output Statistics (MOS)<a class="headerlink" href="#model-output-statistics-mos" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>用「過去模式錯在哪」的統計規律，把今天模式的原始輸出，修正成更接近實際觀測的預報。</strong></p>
+</div></blockquote>
+<p>MOS 是數值天氣預報（Numerical Weather Prediction, NWP）最經典的**後處理（post-processing）**框架：模式已經跑完了，我們不重跑物理，只用歷史上「模式預報 <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> 實際觀測」的配對樣本學一組統計關係，把模式輸出翻譯成更貼近真實的答案。</p>
+<p>這篇筆記除了講概念，也用一組<strong>現場生成</strong>的合成資料，把「系統性偏差長什麼樣 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 怎麼一步步校掉」整個實際做一遍。</p>
+<section id="id1">
+<h2>定義<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\boxed{
+\text{NWP Forecast}
+\;+\;
+\text{Historical Observations}
+\;\longrightarrow\;
+\text{Statistical Model}
+\;\longrightarrow\;
+\text{Corrected Forecast}
+}
+\]</div>
+<p>最經典的形式就是一條多元線性迴歸：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{Y} &amp;=&amp; \beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_nX_n \\
+\beta &amp;=&amp; \arg\min_{\beta}\sum_{t=1}^{N}\left(Y_t-\hat{Y}_t\right)^2
+\end{gather*}\end{split}\]</div>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> 是 <strong>predictand（預報目標量）</strong>，你真正想知道的那個數字</p>
+<p>通常是<strong>局地的實際觀測</strong>，例如某測站的 <span class="math notranslate nohighlight">\(T_{2m}\)</span>、某跑道的能見度、某風場的發電量。</p>
+<p>這裡有一句要記住的話：<strong>predictand 決定你校到哪裡去</strong>。校到測站、校到 ERA5、校到雷達，得到的是三種不同的東西。</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span> 是 <strong>predictor（預報因子）</strong>，模式與背景資訊提供的一堆數字</p>
+<ul class="simple">
+<li><p>模式輸出：<span class="math notranslate nohighlight">\(T_{2m}^{NWP},\ T_{850},\ Z_{500},\ U_{10},\ V_{10},\ RH_{850},\ SLP,\ \cdots\)</span></p></li>
+<li><p>氣候與幾何背景：地形高度、經緯度、day of year、一天中的時刻</p></li>
+<li><p><strong>lead time</strong>：Day 1 的誤差結構和 Day 5 完全不一樣</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\{X_t,Y_t\}_{t=1}^{N}\)</span> 是歷史配對樣本</p>
+<p><span class="math notranslate nohighlight">\(N\)</span> 越長越好，但<strong>必須統計性質一致</strong>（後面 ERA5 那節會回到這一點）。</p>
+</li>
+</ul>
+<p>舉一個最小的例子：模式今天報 <span class="math notranslate nohighlight">\(T_{2m}=20^\circ\text{C}\)</span>，而過去在「同樣的 <span class="math notranslate nohighlight">\(T_{850}\)</span>、同樣的地面風速、同樣的地形」條件下，實際觀測平均是 <span class="math notranslate nohighlight">\(22^\circ\text{C}\)</span>，那 MOS 學到的就是這條映射，今天它會告訴你答案是 <span class="math notranslate nohighlight">\(22^\circ\text{C}\)</span>。</p>
+<blockquote>
+<div><p>MOS <strong>不重跑物理模式</strong>。它甚至不需要知道「物理上為什麼錯」，只需要知道「在歷史上，什麼樣的模式狀態通常對應什麼樣的誤差」。</p>
+</div></blockquote>
+</section>
+<section id="mos">
+<h2>為什麼需要 MOS<a class="headerlink" href="#mos" title="Link to this heading">#</a></h2>
+<section id="bias">
+<h3>① 系統性 bias<a class="headerlink" href="#bias" title="Link to this heading">#</a></h3>
+<p>模式長期偏向同一邊，例如</p>
+<div class="math notranslate nohighlight">
+\[\overline{T^{mod}-T^{obs}}=+1.5\ \text{K}\]</div>
+<p>這種誤差不是隨機的，是可以被學起來的。</p>
+</section>
+<section id="id2">
+<h3>② 解析度不夠<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>全球模式 <span class="math notranslate nohighlight">\(\Delta x \approx 30\ \text{km}\)</span>，但你要預報的是<strong>台北的某一個測站</strong>。這個網格解析不出：</p>
+<ul class="simple">
+<li><p>山谷與地形抬升</p></li>
+<li><p>海陸風</p></li>
+<li><p>都市熱島</p></li>
+<li><p>局地輻合、Lee vortex</p></li>
+</ul>
+<p>所以本質上</p>
+<div class="math notranslate nohighlight">
+\[\text{NWP Grid}\ \neq\ \text{Local Observation}\]</div>
+<p>這個落差不是把模式多跑幾次就會消失的。</p>
+</section>
+<section id="id3">
+<h3>③ 參數化的先天限制<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>邊界層、陣風、能見度、低雲這些量，模式裡本來就是用簡化公式估算的，誤差幾乎是結構性的。</p>
+</section>
+</section>
+<section id="id4">
+<h2>示範一：先看見系統性偏差長什麼樣<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>底下所有資料都是<strong>每次執行時即時生成</strong>的（固定亂數種子），沒有任何檔案被存下來。</p>
+<p>我們造一組「某測站 2 m 氣溫」的觀測（3 年、逐時），再造一組模式輸出，並刻意種進四種真實世界裡真的會有的病：</p>
+<ol class="arabic simple">
+<li><p><strong>常數暖偏差</strong> <span class="math notranslate nohighlight">\(+1.5\ \text{K}\)</span></p></li>
+<li><p><strong>日夜溫差被壓平</strong>（日循環振幅只剩觀測的 65%）—— 對應解析度不足與邊界層參數化</p></li>
+<li><p><strong>季節相依的 bias</strong>（夏天偏更多）</p></li>
+<li><p><strong>條件相依的 bias</strong>：<strong>靜風的夜晚</strong>模式偏暖特別多 —— 模式抓不到晴空輻射冷卻</p></li>
+</ol>
+<p>同時輸出兩個之後要拿來當 predictor 的模式變數：風速與相對濕度。</p>
+<p><strong>訓練期與驗證期一定要切開</strong>：前 2 年配係數，第 3 年驗證。不切開的話，你看到的「改善」有一部分只是模型把訓練期的噪音也背起來了。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_station_data</span><span class="p">(</span><span class="n">n_year</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;生成一組測站 2m 氣溫的「觀測」與「模式預報」，並種進四種系統性誤差。&quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n_year</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span>              <span class="c1"># 逐時</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">doy</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">)</span> <span class="o">%</span> <span class="mf">365.0</span>           <span class="c1"># day of year</span>
+    <span class="n">hour</span> <span class="o">=</span> <span class="n">t</span> <span class="o">%</span> <span class="mi">24</span>
+
+    <span class="c1"># ---------- 真實觀測 ----------</span>
+    <span class="n">seasonal</span> <span class="o">=</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">doy</span> <span class="o">-</span> <span class="mi">105</span><span class="p">)</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">)</span>   <span class="c1"># 季節循環，振幅 8 K</span>
+    <span class="n">diurnal</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">hour</span> <span class="o">-</span> <span class="mi">9</span><span class="p">)</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">)</span>      <span class="c1"># 日循環，振幅 5 K</span>
+
+    <span class="n">synoptic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>                                     <span class="c1"># 天氣尺度擾動 AR(1)</span>
+    <span class="n">eps</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">synoptic</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.98</span> <span class="o">*</span> <span class="n">synoptic</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">eps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">synoptic</span> <span class="o">*=</span> <span class="mf">3.0</span> <span class="o">/</span> <span class="n">synoptic</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+    <span class="n">T_obs</span> <span class="o">=</span> <span class="mf">22.0</span> <span class="o">+</span> <span class="n">seasonal</span> <span class="o">+</span> <span class="n">diurnal</span> <span class="o">+</span> <span class="n">synoptic</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># ---------- 模式輸出的兩個 predictor ----------</span>
+    <span class="n">wind</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">+</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">doy</span> <span class="o">-</span> <span class="mi">15</span><span class="p">)</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">)</span>
+    <span class="n">wind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">wind</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">rh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mf">70.0</span> <span class="o">+</span> <span class="mf">12.0</span> <span class="o">*</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">synoptic</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">)</span>
+
+    <span class="c1"># 夜間權重：黎明前輻射冷卻最強</span>
+    <span class="n">noct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">hour</span> <span class="o">-</span> <span class="mi">9</span><span class="p">)</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># ---------- 模式輸出：刻意種進四種病 ----------</span>
+    <span class="n">T_mod</span> <span class="o">=</span> <span class="p">(</span><span class="mf">22.0</span> <span class="o">+</span> <span class="n">seasonal</span>
+             <span class="o">+</span> <span class="mf">0.65</span> <span class="o">*</span> <span class="n">diurnal</span>                                    <span class="c1"># 病 2：日夜溫差被壓平</span>
+             <span class="o">+</span> <span class="n">synoptic</span>
+             <span class="o">+</span> <span class="mf">1.5</span>                                               <span class="c1"># 病 1：常數暖偏差</span>
+             <span class="o">+</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">doy</span> <span class="o">-</span> <span class="mi">105</span><span class="p">)</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">)</span>     <span class="c1"># 病 3：夏天偏更多</span>
+             <span class="o">+</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">wind</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">noct</span>                  <span class="c1"># 病 4：靜風夜晚偏暖更多</span>
+             <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">doy</span><span class="o">=</span><span class="n">doy</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="n">hour</span><span class="p">,</span> <span class="n">noct</span><span class="o">=</span><span class="n">noct</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span>
+                <span class="n">T_obs</span><span class="o">=</span><span class="n">T_obs</span><span class="p">,</span> <span class="n">T_mod</span><span class="o">=</span><span class="n">T_mod</span><span class="p">,</span> <span class="n">wind</span><span class="o">=</span><span class="n">wind</span><span class="p">,</span> <span class="n">rh</span><span class="o">=</span><span class="n">rh</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scores</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;回傳 (bias, RMSE)。&quot;&quot;&quot;</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">pred</span> <span class="o">-</span> <span class="n">obs</span>
+    <span class="k">return</span> <span class="n">diff</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">diff</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">make_station_data</span><span class="p">()</span>
+<span class="n">err</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">]</span>
+
+<span class="c1"># 前 2 年訓練、第 3 年驗證</span>
+<span class="n">i_tr</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span>
+<span class="n">i_te</span> <span class="o">=</span> <span class="o">~</span><span class="n">i_tr</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;樣本數 = </span><span class="si">%d</span><span class="s2">  (train </span><span class="si">%d</span><span class="s2"> / test </span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">],</span> <span class="n">i_tr</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">i_te</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;原始模式 test:  bias = </span><span class="si">%+.2f</span><span class="s2"> K,  RMSE = </span><span class="si">%.2f</span><span class="s2"> K&quot;</span> <span class="o">%</span> <span class="n">scores</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">]))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">230</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">][</span><span class="n">s</span><span class="p">]</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">s</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Observation&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">][</span><span class="n">s</span><span class="p">]</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">][</span><span class="n">s</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Raw model&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;day&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;T2m [$^</span><span class="se">\\</span><span class="s2">circ$C]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(a) a 30-day sample&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">lim</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lim</span><span class="p">,</span> <span class="n">lim</span><span class="p">,</span> <span class="s2">&quot;k--&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1:1&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">lim</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">lim</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Observation [$^</span><span class="se">\\</span><span class="s2">circ$C]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Raw model [$^</span><span class="se">\\</span><span class="s2">circ$C]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(b) model vs obs&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">b_te</span> <span class="o">=</span> <span class="n">err</span><span class="p">[</span><span class="n">i_te</span><span class="p">]</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">b_te</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">b_te</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="s2">&quot;mean bias = </span><span class="si">%+.2f</span><span class="s2"> K</span><span class="se">\n</span><span class="s2">RMSE = </span><span class="si">%.2f</span><span class="s2"> K&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">b_te</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">b_te</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;model - obs [K]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(c) error distribution&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>樣本數 = 26280  (train 17520 / test 8760)
+原始模式 test:  bias = +1.82 K,  RMSE = 2.71 K
+</pre></div>
+</div>
+<img alt="../../_images/ca4d987cbc60b7952795cfe704ccf3d4a2d559b1aae8cb720339062282b71969.png" src="../../_images/ca4d987cbc60b7952795cfe704ccf3d4a2d559b1aae8cb720339062282b71969.png" />
+</div>
+</div>
+<p>三張圖各講一件事：</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> 模式（橘）整體高於觀測（藍），而且<strong>日夜擺盪的幅度明顯比觀測小</strong> —— 這就是被壓平的日循環</p></li>
+<li><p><strong>(b)</strong> 散布圖的點群整體壓在 1:1 線的上方。如果誤差是純隨機的，點應該對稱地散在線的兩側</p></li>
+<li><p><strong>(c)</strong> 誤差分布的中心明顯不在 0，mean bias <span class="math notranslate nohighlight">\(\approx +1.8\ \text{K}\)</span></p></li>
+</ul>
+<p>只要看到 (b) 或 (c) 這種「整團偏一邊」的樣子，就代表這裡有東西<strong>可以被統計方法學起來</strong>。</p>
+</section>
+<section id="id5">
+<h2>示範二：bias 不是一個常數<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>最直覺的修法是「算出平均偏差、然後扣掉」。在動手之前，先把誤差<strong>分層</strong>看一下。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bias_by_group</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;依照 edges 把 values 分箱，回傳每箱的中心與平均誤差。&quot;&quot;&quot;</span>
+    <span class="n">centers</span><span class="p">,</span> <span class="n">means</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">values</span> <span class="o">&gt;=</span> <span class="n">edges</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">values</span> <span class="o">&lt;</span> <span class="n">edges</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">centers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]))</span>
+            <span class="n">means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">centers</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">means</span><span class="p">)</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">overall</span> <span class="o">=</span> <span class="n">err</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">month</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;doy&quot;</span><span class="p">]</span> <span class="o">//</span> <span class="mf">30.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">m_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">err</span><span class="p">[</span><span class="n">month</span> <span class="o">==</span> <span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="n">m_bias</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">overall</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;overall mean = </span><span class="si">%+.2f</span><span class="s2"> K&quot;</span> <span class="o">%</span> <span class="n">overall</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;month&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;mean bias [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(a) bias vs season&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">h_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">err</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span> <span class="n">h_bias</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:green&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">overall</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;hour of day&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;mean bias [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(b) bias vs time of day&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">wc</span><span class="p">,</span> <span class="n">wb</span> <span class="o">=</span> <span class="n">bias_by_group</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span> <span class="n">err</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">]))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wc</span><span class="p">,</span> <span class="n">wb</span><span class="p">,</span> <span class="s2">&quot;o-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:purple&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">overall</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;model wind speed [m/s]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;mean bias [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(c) bias vs weather regime&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;夏(7月) </span><span class="si">%+.2f</span><span class="s2"> K   冬(1月) </span><span class="si">%+.2f</span><span class="s2"> K&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">m_bias</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">m_bias</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;凌晨3時 </span><span class="si">%+.2f</span><span class="s2"> K   下午3時 </span><span class="si">%+.2f</span><span class="s2"> K&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">h_bias</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">h_bias</span><span class="p">[</span><span class="mi">15</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;風速&lt;1 m/s </span><span class="si">%+.2f</span><span class="s2"> K   風速&gt;6 m/s </span><span class="si">%+.2f</span><span class="s2"> K&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">wb</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/29f947f7ccb84a5aa3041366f36b69ac1493514e06393c222e82c58702eb2524.png" src="../../_images/29f947f7ccb84a5aa3041366f36b69ac1493514e06393c222e82c58702eb2524.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>夏(7月) +2.61 K   冬(1月) +1.00 K
+凌晨3時 +4.24 K   下午3時 -0.24 K
+風速&lt;1 m/s +2.52 K   風速&gt;6 m/s +1.59 K
+</pre></div>
+</div>
+</div>
+</div>
+<p>這張圖是整篇的樞紐：</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> 夏天偏暖約 <span class="math notranslate nohighlight">\(+2.6\ \text{K}\)</span>，冬天只有 <span class="math notranslate nohighlight">\(+1.0\ \text{K}\)</span></p></li>
+<li><p><strong>(b)</strong> 半夜偏暖超過 <span class="math notranslate nohighlight">\(+4\ \text{K}\)</span>，下午幾乎沒有偏差</p></li>
+<li><p><strong>(c)</strong> 風速越小、偏差越大 —— 靜風的情況模式錯得最兇</p></li>
+</ul>
+<p>也就是說：</p>
+<div class="math notranslate nohighlight">
+\[Bias=f(\text{season},\ \text{time of day},\ \text{lead time},\ \text{weather regime},\ \text{location})\]</div>
+<blockquote>
+<div><p>這正是為什麼實務上<strong>不會用一個 MOS 模型吃下全部地區、全部 lead time、全部季節</strong>：</p>
+<div class="math notranslate nohighlight">
+\[MOS=f(\text{Location},\ \text{LeadTime},\ \text{Season},\ \text{Variable},\ \text{Regime})\]</div>
+<p><span class="math notranslate nohighlight">\(MOS_{\text{台北, Day1, 冬}}\)</span> 和 <span class="math notranslate nohighlight">\(MOS_{\text{台北, Day5, 夏}}\)</span> 本來就該是兩個不同的模型。</p>
+<p>反過來看，(a)(b)(c) 也直接告訴你 <strong>predictor 該去哪裡找</strong>：誤差對什麼變數有結構，那個變數就該進設計矩陣。</p>
+</div></blockquote>
+</section>
+<section id="id6">
+<h2>示範三：一步步把它校掉<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>三個階段，全部<strong>只在前 2 年配係數，在第 3 年評分</strong>：</p>
+<p><strong>Step 1 — Mean Bias Correction</strong></p>
+<div class="math notranslate nohighlight">
+\[Y^{corr}=Y^{mod}-B,\qquad B=\left.\overline{Y^{mod}-Y^{obs}}\right|_{\text{train}}\]</div>
+<p><strong>Step 2 — Linear MOS</strong>（經典 MOS）</p>
+<div class="math notranslate nohighlight">
+\[\hat{Y}=\beta^{T}\left[\,1,\ T^{mod},\ U,\ RH,\ \sin\tfrac{2\pi\,doy}{365},\ \cos\tfrac{2\pi\,doy}{365},\ \sin\tfrac{2\pi\,hr}{24},\ \cos\tfrac{2\pi\,hr}{24}\,\right]\]</div>
+<p><strong>Step 3 — 加上 regime-dependent 項</strong></p>
+<p>補一個「靜風 <span class="math notranslate nohighlight">\(\times\)</span> 夜間」的交互作用項 <span class="math notranslate nohighlight">\(e^{-U/1.5}\cdot noct\)</span>，去對付示範二 (c) 看到的那個結構。</p>
+<p>解法就是最小平方，<code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code> 一行 —— MOS 的數學核心真的就只有這樣。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">design_matrix</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;建立 MOS 的設計矩陣。level=1 只有模式本身，2 加氣候循環，3 再加 regime 交互作用。&quot;&quot;&quot;</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">]),</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="n">level</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">cols</span> <span class="o">+=</span> <span class="p">[</span><span class="n">dd</span><span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;rh&quot;</span><span class="p">],</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;doy&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;doy&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">level</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">cols</span> <span class="o">+=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dd</span><span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;noct&quot;</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fit_mos</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">i_train</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;只用訓練期解最小平方，再套用到全部樣本。&quot;&quot;&quot;</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">design_matrix</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+    <span class="n">beta</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i_train</span><span class="p">],</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_train</span><span class="p">],</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X</span> <span class="o">@</span> <span class="n">beta</span><span class="p">,</span> <span class="n">beta</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Raw&quot;</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">]}</span>
+<span class="n">preds</span><span class="p">[</span><span class="s2">&quot;Step1 mean-BC&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">err</span><span class="p">[</span><span class="n">i_tr</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>          <span class="c1"># 只用訓練期的平均偏差</span>
+<span class="n">preds</span><span class="p">[</span><span class="s2">&quot;Step2 linear MOS&quot;</span><span class="p">],</span> <span class="n">beta2</span> <span class="o">=</span> <span class="n">fit_mos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i_tr</span><span class="p">)</span>
+<span class="n">preds</span><span class="p">[</span><span class="s2">&quot;Step3 +regime&quot;</span><span class="p">],</span> <span class="n">beta3</span> <span class="o">=</span> <span class="n">fit_mos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i_tr</span><span class="p">)</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">preds</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">(</span><span class="n">scores</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i_tr</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_tr</span><span class="p">]),</span> <span class="n">scores</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i_te</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">]))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">preds</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%-18s</span><span class="s2"> </span><span class="si">%-22s</span><span class="s2"> </span><span class="si">%-22s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;train  bias / RMSE&quot;</span><span class="p">,</span> <span class="s2">&quot;test  bias / RMSE&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%-18s</span><span class="s2"> </span><span class="si">%+6.2f</span><span class="s2"> / </span><span class="si">%5.2f</span><span class="s2">          </span><span class="si">%+6.2f</span><span class="s2"> / </span><span class="si">%5.2f</span><span class="s2">&quot;</span>
+          <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Step2 係數 beta =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">beta2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Step3 係數 beta =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">beta3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;Raw&quot;</span><span class="p">,</span> <span class="s2">&quot;Step1 mean-BC&quot;</span><span class="p">,</span> <span class="s2">&quot;Step3 +regime&quot;</span><span class="p">]):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">],</span> <span class="n">preds</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i_te</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.15</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lim</span><span class="p">,</span> <span class="n">lim</span><span class="p">,</span> <span class="s2">&quot;k--&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">lim</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">lim</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Observation [$^</span><span class="se">\\</span><span class="s2">circ$C]&quot;</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">   (test RMSE </span><span class="si">%.2f</span><span class="s2"> K)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Forecast [$^</span><span class="se">\\</span><span class="s2">circ$C]&quot;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i_te</span><span class="p">]</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;forecast - obs [K]&quot;</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;residual distribution (test)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">,</span> <span class="s2">&quot;step1&quot;</span><span class="p">,</span> <span class="s2">&quot;step2&quot;</span><span class="p">,</span> <span class="s2">&quot;step3&quot;</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">.2</span><span class="p">,</span> <span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="mf">.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">.2</span><span class="p">,</span> <span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="mf">.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;RMSE [K]&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;RMSE&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">a</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">.2</span><span class="p">,</span> <span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="mf">.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">.2</span><span class="p">,</span> <span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="mf">.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;bias [K]&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;bias&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">a</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                   train  bias / RMSE     test  bias / RMSE     
+Raw                 +1.83 /  2.70           +1.82 /  2.71
+Step1 mean-BC       +0.00 /  1.99           -0.00 /  2.00
+Step2 linear MOS    -0.00 /  0.98           -0.10 /  0.98
+Step3 +regime       -0.00 /  0.87           -0.08 /  0.87
+
+Step2 係數 beta = [ 0.82   0.897  0.13  -0.008 -0.055 -0.118 -1.787 -1.791]
+Step3 係數 beta = [ 7.360e-01  9.230e-01 -3.000e-03 -6.000e-03 -3.000e-03  1.100e-01
+ -1.405e+00 -1.413e+00 -3.711e+00]
+</pre></div>
+</div>
+<img alt="../../_images/89e073e82509583db0fafc3fe67f22259a221120f5a70d6d792c88aeb7014415.png" src="../../_images/89e073e82509583db0fafc3fe67f22259a221120f5a70d6d792c88aeb7014415.png" />
+</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head text-right"><p>train bias / RMSE</p></th>
+<th class="head text-right"><p>test bias / RMSE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Raw</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(+1.83\)</span> / <span class="math notranslate nohighlight">\(2.70\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(+1.82\)</span> / <span class="math notranslate nohighlight">\(2.71\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Step 1 mean-BC</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(+0.00\)</span> / <span class="math notranslate nohighlight">\(1.99\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-0.00\)</span> / <span class="math notranslate nohighlight">\(2.00\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Step 2 linear MOS</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-0.00\)</span> / <span class="math notranslate nohighlight">\(0.98\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-0.10\)</span> / <span class="math notranslate nohighlight">\(0.98\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Step 3 <span class="math notranslate nohighlight">\(+\)</span> regime</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-0.00\)</span> / <span class="math notranslate nohighlight">\(0.87\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-0.08\)</span> / <span class="math notranslate nohighlight">\(0.87\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>幾個值得注意的地方：</p>
+<ul class="simple">
+<li><p><strong>Step 1 把 bias 修成 0，但 RMSE 只從 2.71 降到 2.00。</strong> 平均偏差消失 <span class="math notranslate nohighlight">\(\neq\)</span> 預報變準 —— 示範二看到的那些結構原封不動還在裡面</p></li>
+<li><p><strong>Step 2 才是真正的躍進</strong>（<span class="math notranslate nohighlight">\(2.00 \rightarrow 0.98\)</span>）。差別在於它讓校正量<strong>隨季節與時刻改變</strong>，而不是全年扣同一個數字</p></li>
+<li><p><strong>Step 3 再降到 0.87</strong>，逼近我們埋進去的噪音下限</p></li>
+<li><p><strong>train 和 test 的分數幾乎一樣</strong> —— 沒有過擬合。這個檢查一定要做</p></li>
+</ul>
+<blockquote>
+<div><p>要誠實講一句：這裡 Step 2 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 3 之所以這麼漂亮，是因為<strong>我們自己知道病是怎麼種進去的</strong>。真實世界沒有這種特權，你只能靠示範二那種分層診斷去猜 predictor —— 而這正是傳統 MOS 裡 <strong>screening regression</strong> 在做的事。</p>
+</div></blockquote>
+</section>
+<section id="id7">
+<h2>工業界常見的手法<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Mean Bias Correction</strong> —— <span class="math notranslate nohighlight">\(Y^{corr}=Y^{mod}-B\)</span></p>
+<p>最簡單、最穩、最容易上線。但它假設了 <span class="math notranslate nohighlight">\(Bias=\text{const}\)</span>，而我們剛剛已經看到這個假設不成立。</p>
+</li>
+<li><p><strong>Linear Regression MOS</strong> —— 經典 MOS，就是示範三的 Step 2。</p></li>
+<li><p><strong>Screening Regression</strong> —— 傳統 MOS 的靈魂。候選 predictor 可能有幾百個，先用相關係數 / forward selection 篩，再丟進迴歸：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Predictor</p></th>
+<th class="head text-right"><p>correlation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(T_{2m}^{NWP}\)</span></p></td>
+<td class="text-right"><p>0.92</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(T_{850}\)</span></p></td>
+<td class="text-right"><p>0.88</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(RH_{850}\)</span></p></td>
+<td class="text-right"><p>0.60</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(Z_{500}\)</span></p></td>
+<td class="text-right"><p>0.55</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(U_{10}\)</span></p></td>
+<td class="text-right"><p>0.48</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(T_{500}\)</span></p></td>
+<td class="text-right"><p>0.20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>精神是：<strong>不是把所有東西都丟進模型，而是挑出真正有預報價值的模式資訊。</strong></p>
+</li>
+<li><p><strong>Logistic MOS</strong> —— 目標不是數值、而是「事件有沒有發生」時用：</p>
+<div class="math notranslate nohighlight">
+\[P(Y=1)=\frac{1}{1+\exp\left[-\left(\beta_0+\beta_1X_1+\cdots+\beta_nX_n\right)\right]}\]</div>
+<p>典型輸出是降雨機率（PoP）、起霧機率、結冰機率。</p>
+</li>
+<li><p><strong>Quantile Mapping</strong> —— 把模式的 CDF 映射到觀測的 CDF 上，對極端降水／極端風速特別有效，但不保證保留變數之間的物理關係。</p></li>
+<li><p><strong>EMOS</strong> —— 校正的不是一個數字，而是整個機率分布（下一節示範）。</p></li>
+<li><p><strong>ML / DL</strong> —— Random Forest、XGBoost、LightGBM、LSTM、CNN。強在自動抓非線性交互作用，例如「只有在吹東北風<strong>且</strong>低層濕度大於 80% 時才會出現的地形降溫效應」。</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>用途</p></th>
+<th class="head"><p>優點</p></th>
+<th class="head"><p>缺點</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mean Bias Correction</p></td>
+<td><p>operational 標配</p></td>
+<td><p>極簡單、穩定</p></td>
+<td><p>只能修平均</p></td>
+</tr>
+<tr class="row-odd"><td><p>Linear MOS</p></td>
+<td><p>溫度、氣壓等連續量</p></td>
+<td><p>可解釋、成熟</p></td>
+<td><p>非線性能力有限</p></td>
+</tr>
+<tr class="row-even"><td><p>Screening Regression</p></td>
+<td><p>predictor 太多時</p></td>
+<td><p>自動選變數</p></td>
+<td><p>依賴統計假設</p></td>
+</tr>
+<tr class="row-odd"><td><p>Logistic MOS</p></td>
+<td><p>降雨 / 起霧 / 結冰機率</p></td>
+<td><p>直接給機率</p></td>
+<td><p>對事件定義敏感</p></td>
+</tr>
+<tr class="row-even"><td><p>Quantile Mapping</p></td>
+<td><p>極端值、水文、風能</p></td>
+<td><p>分布校正強</p></td>
+<td><p>不一定保留物理關係</p></td>
+</tr>
+<tr class="row-odd"><td><p>EMOS</p></td>
+<td><p>ensemble 預報</p></td>
+<td><p>校正整個分布</p></td>
+<td><p>分布假設較多</p></td>
+</tr>
+<tr class="row-even"><td><p>RF / XGBoost</p></td>
+<td><p>現代業界主流</p></td>
+<td><p>非線性、實用</p></td>
+<td><p>解釋性較低</p></td>
+</tr>
+<tr class="row-odd"><td><p>NN / CNN / LSTM</p></td>
+<td><p>高維、空間場、時序</p></td>
+<td><p>表達能力強</p></td>
+<td><p>需要大量資料</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>傳統 regression MOS 到今天仍然在 operational 系統裡跑。它的優勢不是「先進」，而是 <strong>穩定、可解釋、算得快，而且壞掉的時候你知道為什麼</strong>。</p>
+</div></blockquote>
+</section>
+<section id="emos">
+<h2>示範四：EMOS —— 不只修中心值，也要修離散度<a class="headerlink" href="#emos" title="Link to this heading">#</a></h2>
+<p>Ensemble 預報給的不是一個數字，而是一群 members。它可能同時有兩個病：<strong>中心偏掉</strong>，以及 <strong>spread 太小（under-dispersive，過度自信）</strong>。</p>
+<p><strong>EMOS（Ensemble Model Output Statistics）</strong> 同時校正這兩件事：</p>
+<div class="math notranslate nohighlight">
+\[Y\ \sim\ \mathcal{N}\left(\mu,\ \sigma^{2}\right),\qquad
+\mu=\beta^{T}X,\qquad
+\sigma^{2}=c+d\,S^{2}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(S^{2}\)</span> 是 ensemble 自己的變異數。<span class="math notranslate nohighlight">\(\mu\)</span> 一樣用最小平方配；<span class="math notranslate nohighlight">\(\sigma^{2}\)</span> 則用「殘差平方對 ensemble 變異數迴歸」來配 —— 也就是讓模型學會：<strong>ensemble 散得開的時候，我確實比較不確定</strong>。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_ensemble</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;由模式預報生成一個刻意 under-dispersive 的 ensemble。&quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">shared</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">])</span>                       <span class="c1"># 共同擾動</span>
+    <span class="k">return</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">][:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">shared</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">],</span> <span class="n">m</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rank_of_obs</span><span class="p">(</span><span class="n">members</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;觀測值在 ensemble members 中的排名，用來畫 rank histogram。&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">members</span> <span class="o">&lt;</span> <span class="n">obs</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="n">ens</span> <span class="o">=</span> <span class="n">make_ensemble</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">ens_mean</span><span class="p">,</span> <span class="n">ens_std</span> <span class="o">=</span> <span class="n">ens</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ens</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ensemble 宣稱的 spread = </span><span class="si">%.2f</span><span class="s2"> K，但它實際的誤差 std = </span><span class="si">%.2f</span><span class="s2"> K  -&gt; 過度自信&quot;</span>
+      <span class="o">%</span> <span class="p">(</span><span class="n">ens_std</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="p">(</span><span class="n">ens_mean</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+
+<span class="c1"># --- 校正中心值 mu ---</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]),</span> <span class="n">ens_mean</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;rh&quot;</span><span class="p">],</span>
+                     <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;doy&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;doy&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">),</span>
+                     <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">24.0</span><span class="p">),</span>
+                     <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;noct&quot;</span><span class="p">]])</span>
+<span class="n">beta_mu</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i_tr</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_tr</span><span class="p">],</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">beta_mu</span>
+
+<span class="c1"># --- 校正離散度 sigma：殘差平方 對 ensemble 變異數迴歸 ---</span>
+<span class="n">Xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]),</span> <span class="n">ens_std</span> <span class="o">**</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">beta_s</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xs</span><span class="p">[</span><span class="n">i_tr</span><span class="p">],</span> <span class="p">((</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)[</span><span class="n">i_tr</span><span class="p">],</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Xs</span> <span class="o">@</span> <span class="n">beta_s</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sigma^2 = </span><span class="si">%.3f</span><span class="s2"> + </span><span class="si">%.3f</span><span class="s2"> * S^2   -&gt;  平均 sigma = </span><span class="si">%.2f</span><span class="s2"> K&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">beta_s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">beta_s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sigma</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ens_cal</span> <span class="o">=</span> <span class="n">mu</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">],</span> <span class="mi">20</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">flat</span> <span class="o">=</span> <span class="n">i_te</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mf">21.0</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rank_of_obs</span><span class="p">(</span><span class="n">ens</span><span class="p">[</span><span class="n">i_te</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">]),</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span> <span class="o">-</span> <span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">flat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;flat = perfectly calibrated&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;rank of observation&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(a) raw ensemble&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rank_of_obs</span><span class="p">(</span><span class="n">ens_cal</span><span class="p">[</span><span class="n">i_te</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_te</span><span class="p">]),</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span> <span class="o">-</span> <span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:green&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">flat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;rank of observation&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(b) after EMOS&quot;</span><span class="p">)</span>
+
+<span class="c1"># 挑一個靜風夜晚的個案</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">i_te</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;noct&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)))</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="mi">12</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">gauss</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">m_</span><span class="p">,</span> <span class="n">s_</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">m_</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">s_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">s_</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">gauss</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">ens_mean</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">ens_std</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;raw ens  N(</span><span class="si">%.1f</span><span class="s2">, </span><span class="si">%.1f</span><span class="s2">$^2$)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ens_mean</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">ens_std</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">gauss</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">mu</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">sigma</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;EMOS     N(</span><span class="si">%.1f</span><span class="s2">, </span><span class="si">%.1f</span><span class="s2">$^2$)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mu</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">sigma</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">k</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;observation = </span><span class="si">%.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">k</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;T2m [$^</span><span class="se">\\</span><span class="s2">circ$C]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;density&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(c) one calm-night case&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ensemble 宣稱的 spread = 0.54 K，但它實際的誤差 std = 2.03 K  -&gt; 過度自信
+sigma^2 = 0.827 + 0.172 * S^2   -&gt;  平均 sigma = 0.94 K
+</pre></div>
+</div>
+<img alt="../../_images/48d5821a84eec78ee48692cb00bfa4093950eaaa36590436c602dd1b8609524e.png" src="../../_images/48d5821a84eec78ee48692cb00bfa4093950eaaa36590436c602dd1b8609524e.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>(a)</strong> 原始 ensemble 的 rank histogram 幾乎全部堆在最左邊 —— 觀測值比<strong>所有</strong> members 都低。這代表它同時「又暖、又過度自信」</p></li>
+<li><p><strong>(b)</strong> EMOS 之後接近平坦，代表「它宣稱的機率」和「實際發生的頻率」對得上了</p></li>
+<li><p><strong>(c)</strong> 單一個案：原始 ensemble 給了一個又偏又窄的分布，觀測值落在它幾乎為零的尾巴上；EMOS 把中心移正，同時<strong>把分布加寬</strong></p></li>
+</ul>
+<p>這一句很關鍵：</p>
+<blockquote>
+<div><p>原始 ensemble 宣稱自己的 spread 只有 <span class="math notranslate nohighlight">\(0.5\ \text{K}\)</span>，但它的實際誤差是 <span class="math notranslate nohighlight">\(2.0\ \text{K}\)</span>。一個宣稱準到 <span class="math notranslate nohighlight">\(\pm0.5\)</span>、實際上會錯 <span class="math notranslate nohighlight">\(2.0\)</span> 的預報，比一個老實說「我大概會錯 2 度」的預報<strong>更危險</strong> —— 因為下游的人會照著它去做決策。</p>
+</div></blockquote>
+<p>對電力調度、風力／太陽能、航空、水庫操作這些要<strong>算風險</strong>的產業，校正離散度往往比校正中心值更值錢。</p>
+</section>
+<section id="id8">
+<h2>產業應用<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="mw">
+<h3>風力發電：把氣象變數變成 MW<a class="headerlink" href="#mw" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>情境</strong>：陸域風場位在複雜地形的山脊上。模式因為地形被平滑化，<span class="math notranslate nohighlight">\(100\ \text{m}\)</span> 高度的風速長期比實際觀測低約 <span class="math notranslate nohighlight">\(2\ \text{m/s}\)</span></p></li>
+<li><p><strong>做法</strong>：拿測風塔兩年的實際風速與發電量當 predictand，模式的各層風場、風向、溫度遞減率（大氣穩定度）當 predictor，訓練 Gradient Boosting</p></li>
+<li><p><strong>結果</strong>：不只補回那 <span class="math notranslate nohighlight">\(2\ \text{m/s}\)</span>，還學到了「特定風向下的尾流效應」；而且輸出的直接是 <strong>MW 發電功率</strong>，用來避免電網調度不準的違約罰款</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>航空：把相對濕度變成起降決策<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>情境</strong>：模式報不出「某一條跑道」的能見度，塔台拿到相對濕度也無法決策</p></li>
+<li><p><strong>做法</strong>：用近地面溫濕度、邊界層風場、液態水含量，加上當地氣候特性（例如平流霧的好發季節），做 logistic MOS</p></li>
+<li><p><strong>結果</strong>：輸出變成「<strong>明晨 6 點跑道能見度低於 800 m 的機率為 75%</strong>」，直接對應到要不要多帶油、要不要規劃備降</p></li>
+</ul>
+<blockquote>
+<div><p>兩個案例的共同點：MOS 真正的產業價值，是把<strong>氣象變數轉換成決策指標</strong>。使用者要的從來不是溫度，是「我今天到底該不該做這件事」。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id10">
+<h2>三個容易搞混的東西<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>映射</p></th>
+<th class="head"><p>目的</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Bias Correction</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(X_{model}\rightarrow X_{corrected}\)</span></p></td>
+<td><p>讓模式的統計分布靠近參考資料</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MOS</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(X_{model}\rightarrow Y_{observation}\)</span></p></td>
+<td><p>用模式資訊去預測實際觀測</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Downscaling</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(X_{coarse}\rightarrow Y_{fine}\)</span></p></td>
+<td><p>從大尺度資訊產生小尺度細節</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>三者常常一起出現，但問的問題不一樣：bias correction 修的是<strong>模式自己</strong>，MOS 跨到<strong>另一個變數（觀測）</strong>，downscaling 跨的則是<strong>尺度</strong>。</p>
+</section>
+<section id="era5-mos">
+<h2>ERA5 是怎麼來的，跟 MOS 什麼關係<a class="headerlink" href="#era5-mos" title="Link to this heading">#</a></h2>
+<p>ERA5 是 <strong>reanalysis（再分析）</strong>。ECMWF 用<strong>一個固定版本</strong>的預報系統，搭配 <strong>4D-Var 資料同化</strong>，把 1940 年至今累積的歷史觀測 —— 衛星、地面站、探空、飛機 —— 從頭到尾<strong>重跑了一次</strong>：</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{
+\text{歷史觀測}
+\;+\;
+\text{NWP Model}
+\;\xrightarrow{\ \text{4D-Var Data Assimilation}\ }\;
+\text{ERA5}
+}
+\]</div>
+<p>「重跑」這件事帶來兩個關鍵性質：</p>
+<ol class="arabic">
+<li><p><strong>每一步都有觀測把模式拉回來。</strong></p>
+<p>它不是放著自由積分的預報，而是 <code class="docutils literal notranslate"><span class="pre">模式短期預報</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">比對觀測</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">同化修正</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">再往前積分</span></code> 的反覆循環。所以它用得到「事後才拿得到」的觀測資訊。</p>
+</li>
+<li><p><strong>系統版本固定，所以時間上是一致的。</strong></p>
+<p>不會發生「1980 年用 1980 年的模式、2010 年用 2010 年的模式」，也就不會有因為系統換版而生出來的假趨勢。</p>
+</li>
+</ol>
+<p>第 2 點正是它跟 MOS 的接點。回頭看定義那一節：MOS 需要一批夠長、而且<strong>統計性質一致</strong>的歷史配對樣本。這種樣本不會從天上掉下來 —— 它正是靠 reanalysis 以及對應的 <strong>reforecast / hindcast</strong> 重跑出來的。</p>
+<p>所以兩者的關係是<strong>接力，不是替代</strong>：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>作用時機</p></th>
+<th class="head"><p>在做什麼</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Data Assimilation（ERA5）</strong></p></td>
+<td><p>模式積分的<strong>過程中</strong></p></td>
+<td><p>把觀測吃進模式狀態，得到最佳估計</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MOS</strong></p></td>
+<td><p>模式跑完<strong>之後</strong></p></td>
+<td><p>用統計關係修正模式輸出</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>最後一個必須講清楚的限制：ERA5 的水平解析度約 <span class="math notranslate nohighlight">\(31\ \text{km}\)</span>，仍然有模式誤差，在觀測稀疏的地區也會有偏差。所以拿它當 predictand 的時候，你校正的目標是「<strong>ERA5 所描述的大氣</strong>」，而不是真值 —— 這正好呼應前面那一句：<strong>predictand 決定你校到哪裡去</strong>。</p>
+</section>
+<section id="id11">
+<h2>跨領域類比：半導體製程控制<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>「模型／設備再好，實際輸出仍然存在系統性偏差，而真正的能力來自長期資料累積出來的診斷與校正」—— 這個結構不只出現在氣象。</p>
+<p>先講一個直覺：<strong>有 EUV 光刻機 <span class="math notranslate nohighlight">\(\neq\)</span> 做得出高良率晶片</strong>。光刻只是整條 process chain 的一環，蝕刻、沉積、清洗、量測、缺陷管理、設備匹配都要一起配合。良率是整條鏈的乘積，不是單一設備的函數。</p>
+<p>把兩邊的角色對起來看：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>氣象</p></th>
+<th class="head"><p>半導體</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NWP Model</p></td>
+<td><p>製程設備 / 製程模型</p></td>
+</tr>
+<tr class="row-odd"><td><p>模式預報值</p></td>
+<td><p>製程結果（實際做出來的）</p></td>
+</tr>
+<tr class="row-even"><td><p>Observation</p></td>
+<td><p>wafer measurement（量測值）</p></td>
+</tr>
+<tr class="row-odd"><td><p>Model Bias</p></td>
+<td><p>製程偏差</p></td>
+</tr>
+<tr class="row-even"><td><p>MOS</p></td>
+<td><p>製程 correction model</p></td>
+</tr>
+<tr class="row-odd"><td><p>Historical Forecast</p></td>
+<td><p>historical wafer data</p></td>
+</tr>
+<tr class="row-even"><td><p>Forecast Error</p></td>
+<td><p>defect / yield loss</p></td>
+</tr>
+<tr class="row-odd"><td><p>Statistical Post-processing</p></td>
+<td><p>Statistical Process Control</p></td>
+</tr>
+<tr class="row-even"><td><p>Ensemble Spread</p></td>
+<td><p>製程不確定性</p></td>
+</tr>
+<tr class="row-odd"><td><p>Calibration</p></td>
+<td><p>equipment matching</p></td>
+</tr>
+<tr class="row-even"><td><p>Downscaling</p></td>
+<td><p>特定產品的製程最佳化</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>下面用<strong>跟示範一完全相同的骨架</strong>，把資料換成 wafer 的 CD（critical dimension，關鍵尺寸）量測：目標 <span class="math notranslate nohighlight">\(20\ \text{nm}\)</span>、規格 <span class="math notranslate nohighlight">\(\pm0.4\ \text{nm}\)</span>，三台機台各有固定 offset，再加上腔體效應與隨批次緩慢累積的 drift。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TARGET</span><span class="p">,</span> <span class="n">SPEC_LO</span><span class="p">,</span> <span class="n">SPEC_HI</span> <span class="o">=</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">19.6</span><span class="p">,</span> <span class="mf">20.4</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_wafer_data</span><span class="p">(</span><span class="n">n_wafer</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;生成 wafer 的 CD 量測：tool offset + chamber offset + 緩慢 drift + 隨機變異。&quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_wafer</span><span class="p">)</span>
+    <span class="n">chamber</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_wafer</span><span class="p">)</span>
+    <span class="n">tool_off</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">+</span><span class="mf">0.50</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.30</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.10</span><span class="p">])</span>      <span class="c1"># 三台機台各自的系統性偏差 [nm]</span>
+    <span class="n">cham_off</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">+</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">])</span>
+    <span class="n">drift</span> <span class="o">=</span> <span class="mf">0.0012</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_wafer</span><span class="p">)</span>             <span class="c1"># 隨批次緩慢漂移</span>
+    <span class="n">cd</span> <span class="o">=</span> <span class="n">TARGET</span> <span class="o">+</span> <span class="n">tool_off</span><span class="p">[</span><span class="n">tool</span><span class="p">]</span> <span class="o">+</span> <span class="n">cham_off</span><span class="p">[</span><span class="n">chamber</span><span class="p">]</span> <span class="o">+</span> <span class="n">drift</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="n">n_wafer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tool</span><span class="p">,</span> <span class="n">chamber</span><span class="p">,</span> <span class="n">cd</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_group_offset</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">i_train</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;用訓練期的組平均估計各組 offset 並扣掉 —— 和 Step1 mean-BC 是同一件事。&quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">cd</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">group</span> <span class="o">==</span> <span class="n">k</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">-=</span> <span class="n">cd</span><span class="p">[</span><span class="n">m</span> <span class="o">&amp;</span> <span class="n">i_train</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">TARGET</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="n">tool</span><span class="p">,</span> <span class="n">chamber</span><span class="p">,</span> <span class="n">cd</span> <span class="o">=</span> <span class="n">make_wafer_data</span><span class="p">()</span>
+<span class="n">n_w</span> <span class="o">=</span> <span class="n">cd</span><span class="o">.</span><span class="n">size</span>
+<span class="n">i_w_tr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">300</span>                       <span class="c1"># 前 300 片當「歷史資料」</span>
+
+<span class="n">cd_adj</span> <span class="o">=</span> <span class="n">remove_group_offset</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">i_w_tr</span><span class="p">)</span>
+<span class="n">cd_adj</span> <span class="o">=</span> <span class="n">remove_group_offset</span><span class="p">(</span><span class="n">cd_adj</span><span class="p">,</span> <span class="n">chamber</span><span class="p">,</span> <span class="n">i_w_tr</span><span class="p">)</span>
+<span class="n">in_spec</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="p">((</span><span class="n">v</span> <span class="o">&gt;</span> <span class="n">SPEC_LO</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;</span> <span class="n">SPEC_HI</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;落在規格內：raw = </span><span class="si">%.1f%%</span><span class="s2">  -&gt;  corrected = </span><span class="si">%.1f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">in_spec</span><span class="p">(</span><span class="n">cd</span><span class="p">),</span> <span class="n">in_spec</span><span class="p">(</span><span class="n">cd_adj</span><span class="p">)))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span> <span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span> <span class="s2">&quot;tab:green&quot;</span><span class="p">]):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">tool</span> <span class="o">==</span> <span class="n">k</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_w</span><span class="p">)[</span><span class="n">m</span><span class="p">],</span> <span class="n">cd</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tool </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">[:</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">TARGET</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">SPEC_LO</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">SPEC_HI</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;wafer index&quot;</span><span class="p">);</span> <span class="n">a</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;measured CD [nm]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(a) raw CD: a systematic offset per tool&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_w</span><span class="p">),</span> <span class="n">cd_adj</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:purple&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;corrected CD [nm]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(b) after tool / chamber correction&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;raw (</span><span class="si">%.0f%%</span><span class="s2"> in spec)&quot;</span> <span class="o">%</span> <span class="n">in_spec</span><span class="p">(</span><span class="n">cd</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">cd_adj</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;corrected (</span><span class="si">%.0f%%</span><span class="s2"> in spec)&quot;</span> <span class="o">%</span> <span class="n">in_spec</span><span class="p">(</span><span class="n">cd_adj</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">SPEC_LO</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">SPEC_HI</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;CD [nm]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(c) distribution&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>落在規格內：raw = 39.5%  -&gt;  corrected = 74.5%
+</pre></div>
+</div>
+<img alt="../../_images/fc538ed4366705943129ba63b2ca15d2e2a3ca52f8b0dd1d73208d102260225a.png" src="../../_images/fc538ed4366705943129ba63b2ca15d2e2a3ca52f8b0dd1d73208d102260225a.png" />
+</div>
+</div>
+<p>(a) 長得跟示範一的圖幾乎一樣：三台機台各自有固定的 offset，整群資料被系統性地推離目標值。把 tool 與 chamber 的效應扣掉之後，落在規格內的比例從 <span class="math notranslate nohighlight">\(39.5\%\)</span> 拉到 <span class="math notranslate nohighlight">\(74.5\%\)</span>。</p>
+<p>到這裡為止，<strong>它跟 MOS 是同一件事</strong>：用歷史資料估出系統性偏差，然後扣掉。</p>
+<p>但 (b) 也留下一條尾巴 —— <strong>還有一個隨批次緩慢上升的 drift 沒有被處理掉</strong>。而這正好帶出兩個領域最關鍵的差別。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run_process</span><span class="p">(</span><span class="n">n_lot</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">drift</span><span class="o">=</span><span class="mf">0.010</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;比較三種策略：什麼都不做 / 事後修報告(open-loop) / 回饋控制製程(closed-loop)。&quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">n_lot</span><span class="p">)</span>
+
+    <span class="c1"># (1) 什麼都不做：實際 CD 一路漂走</span>
+    <span class="n">no_ctrl</span> <span class="o">=</span> <span class="n">TARGET</span> <span class="o">+</span> <span class="n">drift</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_lot</span><span class="p">)</span> <span class="o">+</span> <span class="n">e</span>
+
+    <span class="c1"># (2) open-loop post-correction：製程沒動，只把「報告上的數字」扣掉估計偏差</span>
+    <span class="n">est</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">no_ctrl</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">20</span><span class="p">):</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">TARGET</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_lot</span><span class="p">)])</span>
+    <span class="n">reported</span> <span class="o">=</span> <span class="n">no_ctrl</span> <span class="o">-</span> <span class="n">est</span>
+
+    <span class="c1"># (3) closed-loop feedback：每批量測後用 EWMA 回饋調整製程 setpoint</span>
+    <span class="n">closed</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">ewma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_lot</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_lot</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">TARGET</span> <span class="o">+</span> <span class="n">drift</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">u</span> <span class="o">+</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>     <span class="c1"># u 是被控制器調整過的 setpoint 偏移</span>
+        <span class="n">closed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+        <span class="n">ewma</span> <span class="o">=</span> <span class="n">lam</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">TARGET</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">lam</span><span class="p">)</span> <span class="o">*</span> <span class="n">ewma</span>
+        <span class="n">u</span> <span class="o">-=</span> <span class="n">gain</span> <span class="o">*</span> <span class="n">ewma</span>
+    <span class="k">return</span> <span class="n">no_ctrl</span><span class="p">,</span> <span class="n">reported</span><span class="p">,</span> <span class="n">closed</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="n">no_ctrl</span><span class="p">,</span> <span class="n">reported</span><span class="p">,</span> <span class="n">closed</span> <span class="o">=</span> <span class="n">run_process</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">no_ctrl</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;(1) no correction : the real wafer drifts out of spec&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reported</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;(2) open-loop post-correction : only the REPORT looks fine&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">closed</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:green&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;(3) closed-loop feedback : the real wafer stays on target&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">TARGET</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">SPEC_LO</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">SPEC_HI</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;lot index&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;CD [nm]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;post-processing corrects the number; feedback control corrects the process&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;實際做出來的晶片落在規格內：不控制 = </span><span class="si">%.1f%%</span><span class="s2">,  閉迴路控制 = </span><span class="si">%.1f%%</span><span class="s2">&quot;</span>
+      <span class="o">%</span> <span class="p">(</span><span class="n">in_spec</span><span class="p">(</span><span class="n">no_ctrl</span><span class="p">),</span> <span class="n">in_spec</span><span class="p">(</span><span class="n">closed</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/49d524bb61f52700a83f994587c0b7e744cb47cd9dcc4b7d534f5698989260ff.png" src="../../_images/49d524bb61f52700a83f994587c0b7e744cb47cd9dcc4b7d534f5698989260ff.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>實際做出來的晶片落在規格內：不控制 = 21.5%,  閉迴路控制 = 100.0%
+</pre></div>
+</div>
+</div>
+</div>
+<p>三條線的意思完全不同：</p>
+<ul class="simple">
+<li><p><strong>紅線</strong>：什麼都不做，實際做出來的晶片一路漂出規格</p></li>
+<li><p><strong>藍虛線</strong>：事後把數字修對了 —— <strong>報告很漂亮，但實體晶片還是紅線那一條</strong></p></li>
+<li><p><strong>綠線</strong>：每批量測完就回饋去調整製程 setpoint，<strong>真正做出來的晶片被拉回目標</strong></p></li>
+</ul>
+<blockquote>
+<div><p><strong>MOS <span class="math notranslate nohighlight">\(\approx\)</span> open-loop post-processing</strong></p>
+<div class="math notranslate nohighlight">
+\[\text{Model}\ \rightarrow\ \text{Error}\ \rightarrow\ \text{Correction}\]</div>
+<p>修的是<strong>報告</strong>。</p>
+<p><strong>製程控制 <span class="math notranslate nohighlight">\(\approx\)</span> closed-loop control</strong></p>
+<div class="math notranslate nohighlight">
+\[\text{Process}\rightarrow\text{Measurement}\rightarrow\text{Detect}\rightarrow\text{Diagnose}\rightarrow\text{Adjust}\rightarrow\text{Prevent}\]</div>
+<p>修的是<strong>現實</strong>。</p>
+</div></blockquote>
+<p>這個差別不是誰比較高級，而是兩個領域的物理條件不同：<strong>氣象沒得選</strong>。你改不了大氣，只能改你對它的描述 —— 所以預報的產品本來就是「那個數字」，把數字修對就等於把產品做對。半導體則可以真的回頭去動製程，所以只停在 open-loop 是浪費。</p>
+<p>也因此，把「某家公司靠一張 bias correction table 贏過對手」當成解釋，是<strong>過度簡化</strong>了。比較合理的說法是：長期累積的製程資料、設備匹配、缺陷分析與良率學習，共同形成了一套<strong>持續更新的高維校正 + 回饋控制系統</strong>，而不是一張查得到的表。</p>
+<p>抽象成兩個式子：</p>
+<div class="math notranslate nohighlight">
+\[\boxed{\text{硬體 / 模型本身的性能}\ \neq\ \text{最終系統性能}}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{\text{最終性能}=\text{Base System}+\text{Historical Data}+\text{Error Diagnosis}+\text{Correction}+\text{Feedback}}\]</div>
+</section>
+<section id="id12">
+<h2>實務上的坑<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Data drift / 模式改版</strong></p>
+<p>NWP 一升級（解析度、參數化），舊的 <span class="math notranslate nohighlight">\(\beta\)</span> 就部分失效。業界的解法是維持一套 reforecast / hindcast 來重建訓練樣本，或用 online learning、transfer learning 讓 MOS 快速跟上新版模式的誤差特徵。</p>
+</li>
+<li><p><strong>樣本長度 vs 一致性的取捨</strong></p>
+<p>訓練期拉長樣本就變多，但一旦跨過模式改版，樣本就不同質了。這兩件事永遠在打架。</p>
+</li>
+<li><p><strong>predictand 決定校正目標</strong></p>
+<p>校到測站、校到 ERA5、校到雷達，做出來的是三個不同的產品。</p>
+</li>
+<li><p><strong>不要用訓練期的分數說服自己</strong></p>
+<p>示範三如果只看 train 那一欄，你會得到一樣好看的數字，但那不代表明天有用。</p>
+</li>
+</ul>
+</section>
+<section id="id13">
+<h2>參考資料<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>[1]<a class="reference external" href="https://journals.ametsoc.org/view/journals/apme/11/8/1520-0450_1972_011_1203_tuomos_2_0_co_2.xml">Glahn &amp; Lowry (1972), The Use of Model Output Statistics (MOS) in Objective Weather Forecasting, <em>J. Appl. Meteor.</em> 11(8), 1203-1211</a> — MOS 的奠基文獻</p></li>
+<li><p>[2]<a class="reference external" href="https://vlab.noaa.gov/web/mdl/mos">NOAA MDL — Model Output Statistics</a> — operational MOS 的官方說明</p></li>
+<li><p>[3] Wilks (2011), <em>Statistical Methods in the Atmospheric Sciences</em> (3rd ed.), Academic Press — 大氣統計方法的權威教科書</p></li>
+<li><p>[4]<a class="reference external" href="https://journals.ametsoc.org/view/journals/bams/102/3/BAMS-D-19-0308.1.xml">Vannitsem et al. (2021), Statistical Postprocessing for Weather Forecasts: Review, Challenges, and Avenues in a Big Data World, <em>BAMS</em> 102(3), E681-E699</a> — 現代後處理的全面回顧</p></li>
+<li><p>[5]<a class="reference external" href="https://journals.ametsoc.org/view/journals/mwre/133/5/mwr2904.1.xml">Gneiting et al. (2005), Calibrated Probabilistic Forecasting Using Ensemble Model Output Statistics and Minimum CRPS Estimation, <em>Mon. Wea. Rev.</em> 133, 1098-1118</a> — EMOS 的原始文獻</p></li>
+<li><p>[6]<a class="reference external" href="https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.3803">Hersbach et al. (2020), The ERA5 global reanalysis, <em>QJRMS</em> 146, 1999-2049</a></p></li>
+<li><p>[7]<a class="reference external" href="https://www.ecmwf.int/en/research/climate-reanalysis">ECMWF — Climate reanalysis</a></p></li>
+<li><p>[8]<a class="reference external" href="https://semiconductor.samsung.com/support/tools-resources/dictionary/semiconductor-glossary-yield/">Samsung Semiconductor — Yield</a> — 良率受設備精度、潔淨室、製程條件等多重因素影響</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02_Concepts\Numerical_Weather_Prediction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Tropical_Cyclone/CISK_Theorem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Conditional Instability of the Second Kind (CISK, 第二類條件不穩定性)</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Atmospheric_Dynamics/Normal_Mode_Decomposition.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">垂直模態分解 Normal Mode Decomposition</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">定義</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mos">為什麼需要 MOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">① 系統性 bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">② 解析度不夠</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">③ 參數化的先天限制</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">示範一：先看見系統性偏差長什麼樣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">示範二：bias 不是一個常數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">示範三：一步步把它校掉</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">工業界常見的手法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emos">示範四：EMOS —— 不只修中心值，也要修離散度</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">產業應用</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mw">風力發電：把氣象變數變成 MW</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">航空：把相對濕度變成起降決策</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">三個容易搞混的東西</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#era5-mos">ERA5 是怎麼來的，跟 MOS 什麼關係</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">跨領域類比：半導體製程控制</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">實務上的坑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">參考資料</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

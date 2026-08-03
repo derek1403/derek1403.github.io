@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sturm–Liouville Orthogonality (Sturm–Liouville 本徵函數的正交性與展開係數) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Vertical Structure Equation (垂直結構方程式與加熱的模態投影)" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html" />
+    <link rel="prev" title="位渦 \(PV\) 與浮力位渦 \(PV_b\) 的關係 (Relationship between Ertel Potential Vorticity and Buoyancy Potential Vorticity)" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sturm–Liouville Orthogonality (Sturm–Liouville 本徵函數的正交性與展開係數)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-orthogonality">(a) proof 本徵函數的正交性 (Orthogonality)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-expansion-coefficient">(b) proof 展開係數（投影公式）(Expansion coefficient)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">幾何解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">一切都只是「向量在正交基底上取分量」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#w-z"><span class="math notranslate nohighlight">\(w(z)\)</span> 是內積的「度規」，不是可有可無的裝飾</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">為什麼需要「本徵值相異」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">邊界條件不是配角，是主角</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sturmliouville-orthogonality-sturmliouville">
+<h1>Sturm–Liouville Orthogonality (Sturm–Liouville 本徵函數的正交性與展開係數)<a class="headerlink" href="#sturmliouville-orthogonality-sturmliouville" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>(a) 相異本徵值所對應的本徵函數，在權重 <span class="math notranslate nohighlight">\(w(z)\)</span> 之下互相正交：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{z_b}^{z_t} \Psi_m(z)\,\Psi_n(z)\,w(z)\,dz = 0 \qquad \left(\lambda_m \neq \lambda_n\right)\]</div>
+<ul class="simple">
+<li><p>(b) 任一可展開的函數 <span class="math notranslate nohighlight">\(F(z)\)</span>，其第 <span class="math notranslate nohighlight">\(m\)</span> 個展開係數（即「投影」）為：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q_m = \frac{\displaystyle\int_{z_b}^{z_t} F(z)\,\Psi_m(z)\,w(z)\,dz}{\displaystyle\int_{z_b}^{z_t} \Psi_m^2(z)\,w(z)\,dz}\]</div>
+<ul class="simple">
+<li><p>註：這是「把一個函數拆解到一組正交基底上」的通用機制。Fourier series 是它在 <span class="math notranslate nohighlight">\(p = 1,\ q = 0,\ w = 1\)</span> 與週期邊界下的特例；大氣的垂直模態分解則是它在 <span class="math notranslate nohighlight">\(p = 1/N^2,\ q = 0,\ w = 1\)</span> 與剛蓋邊界下的特例，見 <a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html"><span class="std std-doc">垂直結構方程式 (Vertical Structure Equation)</span></a>。</p></li>
+<li><p>註：本檔是純數學結果，<span class="math notranslate nohighlight">\(p,\ q,\ w,\ \lambda,\ \Psi\)</span> 的因次由套用的物理問題決定，故單位欄一律標記為 <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span>。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【定義 1】 Sturm–Liouville 算符 (Sturm–Liouville operator)：</strong> 把二階線性常微分算符寫成「自伴形式 (self-adjoint form)」，也就是讓最高階項整個被包進一個全微分裡</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}\left[\Psi\right] \overset{\text{def}}{=} \frac{d}{dz}\left[p(z)\frac{d\Psi}{dz}\right] + q(z)\,\Psi\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> : Sturm–Liouville 算符 (Sturm–Liouville operator) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Psi(z)\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(z)\)</span> : 主係數函數 (Leading coefficient function) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q(z)\)</span> : 零階係數函數 (Zeroth-order coefficient function) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 自變數，此處取為垂直座標 (Independent variable) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 Sturm–Liouville 本徵值問題 (Sturm–Liouville eigenvalue problem)：</strong> 帶權重的二階線性常微分本徵值問題</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}\left[\Psi_m\right] + \lambda_m\,w(z)\,\Psi_m = 0\]</div>
+<p>把【定義 1】代入即為展開形式</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dz}\left[p(z)\frac{d\Psi_m}{dz}\right] + q(z)\,\Psi_m + \lambda_m\,w(z)\,\Psi_m = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Psi_m(z)\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個本徵函數 (The <span class="math notranslate nohighlight">\(m\)</span>-th eigenfunction) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個本徵值 (The <span class="math notranslate nohighlight">\(m\)</span>-th eigenvalue) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w(z)\)</span> : 權重函數 (Weight function) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 模態指標 (Mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 本徵函數的完備性 (Completeness of the eigenfunctions)：</strong> 正則 Sturm–Liouville 問題的本徵函數集 <span class="math notranslate nohighlight">\(\left\{\Psi_n\right\}_{n=0}^{\infty}\)</span> 在加權平方可積空間 <span class="math notranslate nohighlight">\(L_w^2\left(\left[z_b, z_t\right]\right)\)</span> 中完備，因此任一該空間中的函數 <span class="math notranslate nohighlight">\(F(z)\)</span> 皆可展開為</p>
+<div class="math notranslate nohighlight">
+\[F(z) = \sum_{n=0}^{\infty} q_n\,\Psi_n(z)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F(z)\)</span> : 待展開的函數 (Function to be expanded) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 個展開係數 (The <span class="math notranslate nohighlight">\(n\)</span>-th expansion coefficient) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 模態指標 (Mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：完備性本身是 Sturm–Liouville 展開定理的結論，屬於泛函分析範疇，本檔只引用不重證。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 正則性 (Regularity)：</strong> 本徵值問題定義在有限閉區間 <span class="math notranslate nohighlight">\(\left[z_b, z_t\right]\)</span> 上，且係數函數行為良好</p>
+<ul>
+<li><p>(a) 係數函數連續：</p>
+<div class="math notranslate nohighlight">
+\[p,\ \frac{dp}{dz},\ q,\ w \in C\left(\left[z_b, z_t\right]\right)\]</div>
+</li>
+<li><p>(b) 主係數恆正：</p>
+<div class="math notranslate nohighlight">
+\[p(z) &gt; 0\]</div>
+</li>
+<li><p>(c) 權重恆正：</p>
+<div class="math notranslate nohighlight">
+\[w(z) &gt; 0\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(z_b\)</span> : 下邊界座標 (Bottom boundary) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_t\)</span> : 上邊界座標 (Top boundary) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p>註：(a) 是【證明 (a)】把全微分項還原成邊界值（微積分基本定理）的前提；(b)(c) 則是【已知 2】完備性定理與「本徵值為單重」這件事的前提。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 齊次邊界條件 (Homogeneous boundary conditions)：</strong> 上下邊界各給一條齊次條件，三種常見型式擇一即可</p>
+<ul>
+<li><p>(a) 第一類（Dirichlet）：</p>
+<div class="math notranslate nohighlight">
+\[\Psi_m(z_b) = \Psi_m(z_t) = 0\]</div>
+</li>
+<li><p>(b) 第二類（Neumann）：</p>
+<div class="math notranslate nohighlight">
+\[\left.\frac{d\Psi_m}{dz}\right|_{z_b} = \left.\frac{d\Psi_m}{dz}\right|_{z_t} = 0\]</div>
+</li>
+<li><p>(c) 第三類（Robin），其中 <span class="math notranslate nohighlight">\(\beta_b,\ \beta_t \neq 0\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\alpha_b\,\Psi_m(z_b) + \beta_b\left.\frac{d\Psi_m}{dz}\right|_{z_b} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\alpha_t\,\Psi_m(z_t) + \beta_t\left.\frac{d\Psi_m}{dz}\right|_{z_t} = 0\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\alpha_b,\ \alpha_t\)</span> : 下、上邊界的函數值權重 (Robin coefficients on the value) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_b,\ \beta_t\)</span> : 下、上邊界的斜率權重 (Robin coefficients on the derivative) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p>註：同一個邊界上，<strong>所有</strong>本徵函數共用同一條邊界條件（<span class="math notranslate nohighlight">\(\alpha,\ \beta\)</span> 不隨 <span class="math notranslate nohighlight">\(m\)</span> 改變），這是【推導 2】能成立的關鍵。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 本徵值相異 (Distinct eigenvalues)：</strong> 只比較兩個對應到不同本徵值的本徵函數</p>
+<div class="math notranslate nohighlight">
+\[\lambda_m \neq \lambda_n\]</div>
+<ul class="simple">
+<li><p>註：正則 Sturm–Liouville 問題（【假設 1】）的本徵值必為單重（simple），因此 <span class="math notranslate nohighlight">\(m \neq n\)</span> 就足以保證本條成立；若遇到簡併，見【幾何解釋】。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 Lagrange 恆等式 (Lagrange’s identity)：</strong> 把兩個本徵函數交叉相乘再相減的組合，整理成一個全微分</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d}{dz}\left[p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right]
+  &amp;=&amp; \frac{d}{dz}\left[p\,\Psi_n\frac{d\Psi_m}{dz}\right] - \frac{d}{dz}\left[p\,\Psi_m\frac{d\Psi_n}{dz}\right] \\
+  &amp;=&amp; \Psi_n\frac{d}{dz}\left[p\frac{d\Psi_m}{dz}\right] + p\frac{d\Psi_n}{dz}\frac{d\Psi_m}{dz} - \Psi_m\frac{d}{dz}\left[p\frac{d\Psi_n}{dz}\right] - p\frac{d\Psi_m}{dz}\frac{d\Psi_n}{dz} \\
+  &amp;=&amp; \Psi_n\frac{d}{dz}\left[p\frac{d\Psi_m}{dz}\right] - \Psi_m\frac{d}{dz}\left[p\frac{d\Psi_n}{dz}\right]
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【推導 2】 邊界項的消失 (Vanishing of the boundary term)：</strong> 【假設 2】的三種型式，任何一種都能讓下面這個 Wronskian 型的組合在該邊界上為零。以下以下邊界 <span class="math notranslate nohighlight">\(z_b\)</span> 為例，上邊界 <span class="math notranslate nohighlight">\(z_t\)</span> 完全同理</p>
+<ul>
+<li><p>(a) 第一類邊界條件</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \left.p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right|_{z_b}
+    &amp;\overset{\text{假設 2(a)}}{=}&amp; p(z_b)\left(0 \cdot \left.\frac{d\Psi_m}{dz}\right|_{z_b} - 0 \cdot \left.\frac{d\Psi_n}{dz}\right|_{z_b}\right) \\
+    &amp;=&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 第二類邊界條件</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \left.p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right|_{z_b}
+    &amp;\overset{\text{假設 2(b)}}{=}&amp; p(z_b)\left(\Psi_n(z_b) \cdot 0 - \Psi_m(z_b) \cdot 0\right) \\
+    &amp;=&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 第三類邊界條件</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \left.p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right|_{z_b}
+    &amp;\overset{\text{假設 2(c)}}{=}&amp; p(z_b)\left(\Psi_n(z_b)\left(-\frac{\alpha_b}{\beta_b}\Psi_m(z_b)\right) - \Psi_m(z_b)\left(-\frac{\alpha_b}{\beta_b}\Psi_n(z_b)\right)\right) \\
+    &amp;=&amp; -p(z_b)\frac{\alpha_b}{\beta_b}\left(\Psi_n(z_b)\Psi_m(z_b) - \Psi_m(z_b)\Psi_n(z_b)\right) \\
+    &amp;=&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(d) 因此上下邊界相減後的總邊界項亦為零</p>
+<div class="math notranslate nohighlight">
+\[\left[p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right]_{z_b}^{z_t} = 0\]</div>
+</li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 兩條本徵方程式的交叉相減 (Cross-subtraction of the two eigen-equations)：</strong> 用 <span class="math notranslate nohighlight">\(\Psi_n\)</span> 乘第 <span class="math notranslate nohighlight">\(m\)</span> 條、用 <span class="math notranslate nohighlight">\(\Psi_m\)</span> 乘第 <span class="math notranslate nohighlight">\(n\)</span> 條，再相減，把 <span class="math notranslate nohighlight">\(q(z)\)</span> 項消掉</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  0 &amp;\overset{\text{已知 1}}{=}&amp; \Psi_n\left(\mathcal{L}\left[\Psi_m\right] + \lambda_m w\Psi_m\right) - \Psi_m\left(\mathcal{L}\left[\Psi_n\right] + \lambda_n w\Psi_n\right) \\
+  &amp;\overset{\text{定義 1}}{=}&amp; \Psi_n\frac{d}{dz}\left[p\frac{d\Psi_m}{dz}\right] + q\,\Psi_n\Psi_m + \lambda_m w\,\Psi_n\Psi_m - \Psi_m\frac{d}{dz}\left[p\frac{d\Psi_n}{dz}\right] - q\,\Psi_m\Psi_n - \lambda_n w\,\Psi_m\Psi_n \\
+  &amp;=&amp; \Psi_n\frac{d}{dz}\left[p\frac{d\Psi_m}{dz}\right] - \Psi_m\frac{d}{dz}\left[p\frac{d\Psi_n}{dz}\right] + \left(\lambda_m - \lambda_n\right)w\,\Psi_m\Psi_n \\
+  &amp;\overset{\text{推導 1}}{=}&amp; \frac{d}{dz}\left[p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right] + \left(\lambda_m - \lambda_n\right)w\,\Psi_m\Psi_n
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-orthogonality">
+<h3>(a) proof 本徵函數的正交性 (Orthogonality)<a class="headerlink" href="#a-proof-orthogonality" title="Link to this heading">#</a></h3>
+<p>把【推導 3】的結果對整個區間積分，全微分項退化成邊界項，再用【推導 2】把它殺掉。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{推導 3}}{=}&amp; \int_{z_b}^{z_t}\left(\frac{d}{dz}\left[p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right] + \left(\lambda_m - \lambda_n\right)w\,\Psi_m\Psi_n\right)dz \\
+0 &amp;\overset{\text{假設 1(a)}}{=}&amp; \left[p\left(\Psi_n\frac{d\Psi_m}{dz} - \Psi_m\frac{d\Psi_n}{dz}\right)\right]_{z_b}^{z_t} + \left(\lambda_m - \lambda_n\right)\int_{z_b}^{z_t} w\,\Psi_m\Psi_n\,dz \\
+0 &amp;\overset{\text{推導 2(d)}}{=}&amp; \left(\lambda_m - \lambda_n\right)\int_{z_b}^{z_t} w\,\Psi_m\Psi_n\,dz \\
+0 &amp;\overset{\text{假設 3}}{=}&amp; \int_{z_b}^{z_t} \Psi_m(z)\,\Psi_n(z)\,w(z)\,dz
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-expansion-coefficient">
+<h3>(b) proof 展開係數（投影公式）(Expansion coefficient)<a class="headerlink" href="#b-proof-expansion-coefficient" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{z_b}^{z_t} F\,\Psi_m\,w\,dz &amp;\overset{\text{已知 2}}{=}&amp; \int_{z_b}^{z_t}\left(\sum_{n=0}^{\infty} q_n\Psi_n\right)\Psi_m\,w\,dz \\
+\int_{z_b}^{z_t} F\,\Psi_m\,w\,dz &amp;=&amp; \sum_{n=0}^{\infty} q_n\int_{z_b}^{z_t} \Psi_n\Psi_m\,w\,dz \\
+\int_{z_b}^{z_t} F\,\Psi_m\,w\,dz &amp;\overset{\text{證明 (a)}}{=}&amp; q_m\int_{z_b}^{z_t} \Psi_m^2\,w\,dz \\
+q_m &amp;=&amp; \frac{\displaystyle\int_{z_b}^{z_t} F(z)\,\Psi_m(z)\,w(z)\,dz}{\displaystyle\int_{z_b}^{z_t} \Psi_m^2(z)\,w(z)\,dz}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>幾何解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>一切都只是「向量在正交基底上取分量」<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>定義加權內積</p>
+<div class="math notranslate nohighlight">
+\[\left\langle f,\ g\right\rangle_w \overset{\text{def}}{=} \int_{z_b}^{z_t} f(z)\,g(z)\,w(z)\,dz\]</div>
+<p>那麼 (a) 就是 <span class="math notranslate nohighlight">\(\left\langle \Psi_m,\ \Psi_n\right\rangle_w = 0\)</span>，(b) 就是</p>
+<div class="math notranslate nohighlight">
+\[q_m = \frac{\left\langle F,\ \Psi_m\right\rangle_w}{\left\langle \Psi_m,\ \Psi_m\right\rangle_w}\]</div>
+<p>這跟三維空間裡把向量 <span class="math notranslate nohighlight">\(\vec{F}\)</span> 拆成 <span class="math notranslate nohighlight">\(\hat{e}_x,\ \hat{e}_y,\ \hat{e}_z\)</span> 的分量 <span class="math notranslate nohighlight">\(F_x = \vec{F}\cdot\hat{e}_x\)</span> 是<strong>同一件事</strong>，只是把「三個分量的求和」換成「對 <span class="math notranslate nohighlight">\(z\)</span> 的積分」。若把本徵函數正規化成 <span class="math notranslate nohighlight">\(\left\langle \Psi_m, \Psi_m\right\rangle_w = 1\)</span>，分母就消失，投影公式退化成最乾淨的 <span class="math notranslate nohighlight">\(q_m = \left\langle F, \Psi_m\right\rangle_w\)</span>。</p>
+</section>
+<section id="w-z">
+<h3><span class="math notranslate nohighlight">\(w(z)\)</span> 是內積的「度規」，不是可有可無的裝飾<a class="headerlink" href="#w-z" title="Link to this heading">#</a></h3>
+<p>正交性<strong>只在 <span class="math notranslate nohighlight">\(w(z)\)</span> 這個權重下成立</strong>。換一個權重去積分，<span class="math notranslate nohighlight">\(\int \Psi_m\Psi_n\,dz\)</span> 一般不會是零，投影就會「洩漏」到別的模態上。所以每次做模態分解，第一件事是先問清楚：<strong>這個問題的 <span class="math notranslate nohighlight">\(p\)</span>、<span class="math notranslate nohighlight">\(w\)</span> 分別是誰？</strong> 在大氣的垂直模態問題裡，<span class="math notranslate nohighlight">\(p = 1/N^2\)</span>、<span class="math notranslate nohighlight">\(w = 1\)</span>，因此正交關係恰好是最單純的 <span class="math notranslate nohighlight">\(\int \Psi_m\Psi_n\,dz = 0\)</span>。</p>
+</section>
+<section id="id5">
+<h3>為什麼需要「本徵值相異」<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>(a) 的最後一步是把 <span class="math notranslate nohighlight">\(\left(\lambda_m - \lambda_n\right)\)</span> 除掉，這一步在 <span class="math notranslate nohighlight">\(\lambda_m = \lambda_n\)</span>（簡併，degeneracy）時是非法的。簡併時本徵函數所張的是一個多維子空間，子空間<strong>內部</strong>的基底並不自動正交，必須另外用 Gram–Schmidt 正交化。所幸正則 Sturm–Liouville 問題（【假設 1】）的本徵值必定是單重的（simple），所以這裡不會遇到這個麻煩。</p>
+</section>
+<section id="id6">
+<h3>邊界條件不是配角，是主角<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>(a) 真正的力學來源是【推導 2】：<strong>邊界項必須為零</strong>。這就是為什麼「同一組邊界條件」是模態分解能成立的前提 —— 換了邊界條件，就是換了一整套 <span class="math notranslate nohighlight">\(\Psi_m\)</span> 與 <span class="math notranslate nohighlight">\(\lambda_m\)</span>，先前算出來的投影全部作廢。這一點在物理問題上特別容易被忽略：<span class="math notranslate nohighlight">\(\Psi_0\)</span> 到底長什麼樣、<span class="math notranslate nohighlight">\(\lambda_0\)</span> 是多少，答案完全被上下邊界綁死。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Differential_Equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">位渦 <span class="math notranslate nohighlight">\(PV\)</span> 與浮力位渦 <span class="math notranslate nohighlight">\(PV_b\)</span> 的關係 (Relationship between Ertel Potential Vorticity and Buoyancy Potential Vorticity)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vertical Structure Equation (垂直結構方程式與加熱的模態投影)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-orthogonality">(a) proof 本徵函數的正交性 (Orthogonality)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-expansion-coefficient">(b) proof 展開係數（投影公式）(Expansion coefficient)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">幾何解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">一切都只是「向量在正交基底上取分量」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#w-z"><span class="math notranslate nohighlight">\(w(z)\)</span> 是內積的「度規」，不是可有可無的裝飾</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">為什麼需要「本徵值相異」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">邊界條件不是配角，是主角</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

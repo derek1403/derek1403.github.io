@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>垂直模態分解 Normal Mode Decomposition &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="💡 03_Intuitions: 物理心法區" href="../../03_Intuitions/03_Intuitions.html" />
+    <link rel="prev" title="模式輸出統計 Model Output Statistics (MOS)" href="../Numerical_Weather_Prediction/Model_Output_Statistics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_Derivations/01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>垂直模態分解 Normal Mode Decomposition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">一、先把三個層次分開</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">二、公式是怎麼來的</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-q-partial-z">為什麼強迫項長成 <span class="math notranslate nohighlight">\(-\partial Q/\partial z\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psi-0-external-mode">三、<span class="math notranslate nohighlight">\(\Psi_0\)</span> 為什麼叫 external mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">四、核心結論：內部加熱幾乎打不動正壓模態</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">五、數值驗證</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">六、三個容易犯的錯</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q">① 不知道 <span class="math notranslate nohighlight">\(Q\)</span> 是什麼，就開始講物理故事</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q-psi-0-0-q-0">② 邊界項為零的條件是 <span class="math notranslate nohighlight">\(Q\Psi_0 = 0\)</span>，不是 <span class="math notranslate nohighlight">\(Q = 0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-internal">③ external / internal 的命名依賴問題設定</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">參考資料</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="normal-mode-decomposition">
+<h1>垂直模態分解 Normal Mode Decomposition<a class="headerlink" href="#normal-mode-decomposition" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>把一個三維大氣場，沿垂直方向拆解到一組「由大氣自己的層結與上下邊界條件所決定」的正交基底上。</strong></p>
+</div></blockquote>
+<p>文獻裡常常會冒出這樣一條式子：</p>
+<div class="math notranslate nohighlight">
+\[\boxed{\ \text{external-mode projection} = \int -\frac{\partial Q}{\partial z}\,\Psi_0(z)\,dz\ }\]</div>
+<p>第一次看到它，通常會有三個問號：<span class="math notranslate nohighlight">\(\Psi_0\)</span> 到底是誰決定的？為什麼被投影的是 <span class="math notranslate nohighlight">\(\partial Q/\partial z\)</span> 而不是 <span class="math notranslate nohighlight">\(Q\)</span> 本身？還有，這條式子真的能從 Navier–Stokes 推出來嗎？這篇筆記把這三件事講清楚。</p>
+<section id="id1">
+<h2>一、先把三個層次分開<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>垂直模態分解常被當成一整團東西記憶，但它其實是三個<strong>完全不同層次</strong>的操作：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>操作</p></th>
+<th class="head"><p>在做什麼</p></th>
+<th class="head"><p>由誰決定</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>垂直本徵模態</strong> <span class="math notranslate nohighlight">\(\Psi_m(z)\)</span></p></td>
+<td><p>找出「這個大氣容許哪些垂直形狀」</p></td>
+<td><p>線性化方程 <span class="math notranslate nohighlight">\(+\)</span> 基本態 <span class="math notranslate nohighlight">\(N^2(z)\)</span> <span class="math notranslate nohighlight">\(+\)</span> 上下邊界條件</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>投影</strong> <span class="math notranslate nohighlight">\(\displaystyle\int (\cdot)\,\Psi_m\,w\,dz\)</span></p></td>
+<td><p>量「某個場有多少落在這個形狀上」</p></td>
+<td><p>純線性代數（正交性）</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>被投影的對象</strong> <span class="math notranslate nohighlight">\(-\dfrac{\partial Q}{\partial z}\)</span></p></td>
+<td><p>取決於控制方程式把什麼擺在強迫項</p></td>
+<td><p>你從哪一組方程式出發</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>這也直接回答了「請你從 Navier–Stokes 推出這條式子」這個問題：<strong>光憑這一行是推不出來的</strong>。至少還缺三個資訊 —— <span class="math notranslate nohighlight">\(Q\)</span> 在原文中是什麼、<span class="math notranslate nohighlight">\(\Psi_0\)</span> 是哪一個本徵值問題的解、積分範圍與邊界條件是什麼。Navier–Stokes 裡面根本沒有 <span class="math notranslate nohighlight">\(\Psi_0\)</span>：它是「控制方程式 <span class="math notranslate nohighlight">\(+\)</span> 基本態 <span class="math notranslate nohighlight">\(+\)</span> 邊界條件」三者一起造出來的產物，而不是流體方程式本身自帶的東西。</p>
+</section>
+<section id="id2">
+<h2>二、公式是怎麼來的<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>整條理論鏈長這樣：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>              Navier–Stokes
+                    │   尺度分析 H/L ≪ 1，垂直加速度不是主導平衡
+                    ▼
+        Hydrostatic Primitive Equations
+                    │   Boussinesq 近似 + 對靜止基本態線性化
+                    ▼
+          線性化 Boussinesq 方程組
+                    │   用靜力平衡消去浮力 b、用熱力學方程式把 w 診斷掉
+                    ▼
+    D − ∂ₜ[ ∂_z( N⁻² ∂_z Φ ) ] = − ∂Q/∂z
+                    │   分離變數：Φ = Σ Φ̂ₘ(x,y,t) Ψₘ(z)
+                    ▼
+   垂直結構方程式（Sturm–Liouville 本徵值問題）
+                    │   本徵函數正交
+                    ▼
+                模態投影
+</pre></div>
+</div>
+<p>逐步、每一個等號都可追溯的完整推導，依屬性拆成兩份獨立檔案：</p>
+<ul class="simple">
+<li><p><strong>數學骨架</strong>（正交性、展開係數，與大氣無關）：<a class="reference internal" href="../../01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html"><span class="std std-doc">Sturm–Liouville Orthogonality</span></a></p></li>
+<li><p><strong>大氣部分</strong>（垂直結構方程式、模態投影、external mode 的性質）：<a class="reference internal" href="../../01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html"><span class="std std-doc">Vertical Structure Equation</span></a></p></li>
+</ul>
+<section id="partial-q-partial-z">
+<h3>為什麼強迫項長成 <span class="math notranslate nohighlight">\(-\partial Q/\partial z\)</span><a class="headerlink" href="#partial-q-partial-z" title="Link to this heading">#</a></h3>
+<p>這是全篇最容易被誤解的一步。關鍵在 Boussinesq 的連續方程式：</p>
+<div class="math notranslate nohighlight">
+\[D + \frac{\partial w}{\partial z} = 0\]</div>
+<p>加熱本身做的事是製造浮力、驅動<strong>垂直速度</strong> <span class="math notranslate nohighlight">\(w\)</span>。但水平方向的波動感受不到 <span class="math notranslate nohighlight">\(w\)</span>，只感受得到 <span class="math notranslate nohighlight">\(\partial w/\partial z\)</span> —— 是<strong>垂直伸縮</strong>把訊號交給水平輻散的。而靜力平衡把浮力鎖死在 <span class="math notranslate nohighlight">\(\Phi\)</span> 上之後，熱力學方程式就從「<span class="math notranslate nohighlight">\(b\)</span> 的預報式」變成「<span class="math notranslate nohighlight">\(w\)</span> 的診斷式」：</p>
+<div class="math notranslate nohighlight">
+\[w = \frac{1}{N^2}\left(Q_b - \frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right)\]</div>
+<p>把它代回連續方程式，<span class="math notranslate nohighlight">\(\partial/\partial z\)</span> 就落到了加熱項頭上。所以：</p>
+<blockquote>
+<div><p><strong>強迫項之所以是 <span class="math notranslate nohighlight">\(-\partial Q/\partial z\)</span>，不是因為誰規定的，而是因為「加熱 → 垂直速度 → 垂直伸縮 → 水平輻散」這條因果鏈上，多做了一次 <span class="math notranslate nohighlight">\(\partial/\partial z\)</span>。</strong></p>
+</div></blockquote>
+<p>一個推論：<strong>垂直方向均勻的加熱（<span class="math notranslate nohighlight">\(\partial Q/\partial z = 0\)</span>），不管多強，都激發不出任何水平運動。</strong></p>
+<p>另外要留意，這裡的 <span class="math notranslate nohighlight">\(Q\)</span> 已經<strong>不是</strong>原始加熱率，而是被層結縮放過的 <span class="math notranslate nohighlight">\(Q \equiv Q_b/N^2\)</span>。看到 <span class="math notranslate nohighlight">\(\int -\partial_z Q\,\Psi_0\,dz\)</span> 時，先確認手上的 <span class="math notranslate nohighlight">\(Q\)</span> 是哪一個。</p>
+</section>
+</section>
+<section id="psi-0-external-mode">
+<h2>三、<span class="math notranslate nohighlight">\(\Psi_0\)</span> 為什麼叫 external mode<a class="headerlink" href="#psi-0-external-mode" title="Link to this heading">#</a></h2>
+<p>垂直結構方程式是一個 Sturm–Liouville 問題：</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dz}\left[\frac{1}{N^2}\frac{d\Psi_m}{dz}\right] + \frac{1}{c_m^2}\Psi_m = 0\]</div>
+<p>分離常數 <span class="math notranslate nohighlight">\(c_m\)</span> 就是該模態的重力波相速，對應的<strong>等效深度</strong>為 <span class="math notranslate nohighlight">\(h_m = c_m^2/g\)</span>。也就是說，每一個垂直模態都自成一個「淺水世界」，只是水深不同 —— 這正是熱帶波動理論（Kelvin 波、Rossby 波、混合 Rossby–重力波）可以用淺水方程式來做的原因。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m = 0\)</span>：<strong>external mode（外部模態）</strong>。在剛蓋邊界下 <span class="math notranslate nohighlight">\(\Psi_0\)</span> 是<strong>嚴格的常數</strong>，<span class="math notranslate nohighlight">\(1/c_0^2 = 0\)</span>，等效深度 <span class="math notranslate nohighlight">\(h_0 \to \infty\)</span>。整層大氣同相位地動，也就是「正壓（barotropic）」。</p></li>
+<li><p><span class="math notranslate nohighlight">\(m \geq 1\)</span>：<strong>internal modes（內部模態）</strong>。<span class="math notranslate nohighlight">\(\Psi_m\)</span> 隨高度變號，流場上下反轉，也就是「斜壓（baroclinic）」。</p></li>
+</ul>
+<p>命名的由來要小心。常見說法是「<span class="math notranslate nohighlight">\(n = 0\)</span> 沒有節點所以叫 external」，但更貼近本質的講法是看<strong>恢復力</strong>：external mode 的恢復力來自 <span class="math notranslate nohighlight">\(g\)</span> 與流體的<strong>外部邊界</strong>，若上邊界是自由表面，<span class="math notranslate nohighlight">\(c_0 \sim \sqrt{gH} \approx 280\ \text{m}\cdot\text{s}^{-1}\)</span>（<span class="math notranslate nohighlight">\(H\)</span> 取標高約 <span class="math notranslate nohighlight">\(8\ \text{km}\)</span>）；換成剛蓋，等於把等效深度推到無限大，<span class="math notranslate nohighlight">\(c_0 \to \infty\)</span> 就是這個極限。internal mode 則由<strong>內部</strong>層結 <span class="math notranslate nohighlight">\(N^2\)</span> 提供恢復力，<span class="math notranslate nohighlight">\(c_m \sim N H/(m\pi)\)</span>，量級只有幾十 <span class="math notranslate nohighlight">\(\text{m}\cdot\text{s}^{-1}\)</span>。<strong>節點數與 <span class="math notranslate nohighlight">\(m\)</span> 的對應關係、以及 <span class="math notranslate nohighlight">\(m = 0\)</span> 到底是不是 external，都取決於你採用的本徵值問題與邊界條件</strong>，不能一概而論。</p>
+</section>
+<section id="id3">
+<h2>四、核心結論：內部加熱幾乎打不動正壓模態<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>把 external-mode projection 做一次分部積分：</p>
+<div class="math notranslate nohighlight">
+\[\int_{z_b}^{z_t} \left(-\frac{\partial Q}{\partial z}\right)\Psi_0\,dz = -\Big[Q\,\Psi_0\Big]_{z_b}^{z_t} + \int_{z_b}^{z_t} Q\,\frac{d\Psi_0}{dz}\,dz\]</div>
+<p>因為 <span class="math notranslate nohighlight">\(\Psi_0\)</span> 是常數，<span class="math notranslate nohighlight">\(d\Psi_0/dz = 0\)</span>，右邊第二項整個消失，只剩邊界項：</p>
+<div class="math notranslate nohighlight">
+\[\int_{z_b}^{z_t}\left(-\frac{\partial Q}{\partial z}\right)\Psi_0\,dz = -\Psi_0\Big(Q(z_t) - Q(z_b)\Big)\]</div>
+<p>於是只要加熱在上下邊界歸零，這個投影<strong>嚴格是零</strong>：</p>
+<blockquote>
+<div><p><strong>深對流不管多猛，投影到正壓模態上的量都是零。</strong></p>
+</div></blockquote>
+<p>物理上的意思是：熱帶深對流之所以能影響中高緯，靠的<strong>不是</strong>直接激發正壓波列，而是先把能量打進斜壓模態（<span class="math notranslate nohighlight">\(m = 1, 2, \cdots\)</span>），再透過背景風切或非線性過程轉換過去。這也解釋了為什麼熱帶對流的直接響應是高度斜壓的（低層輻合、高層輻散），也就是華克環流的結構。</p>
+</section>
+<section id="id4">
+<h2>五、數值驗證<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>用常數 <span class="math notranslate nohighlight">\(N = 10^{-2}\ \text{s}^{-1}\)</span>、厚度 <span class="math notranslate nohighlight">\(16\ \text{km}\)</span> 的剛蓋大氣，直接把垂直結構方程式離散成矩陣本徵值問題解出來，再把兩種加熱剖面投影上去。資料每次執行時即時生成，沒有任何檔案被存下來。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">G</span><span class="p">,</span> <span class="n">THETA0</span> <span class="o">=</span> <span class="mf">9.81</span><span class="p">,</span> <span class="mf">300.0</span>     <span class="c1"># 重力加速度 [m/s^2]、參考位溫 [K]</span>
+<span class="n">N2</span> <span class="o">=</span> <span class="mf">1.0e-4</span>                 <span class="c1"># 浮力頻率平方 N^2 [s^-2]</span>
+<span class="n">ZT</span> <span class="o">=</span> <span class="mf">16000.0</span>                <span class="c1"># 剛蓋高度 [m]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vertical_modes</span><span class="p">(</span><span class="n">n_mode</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">nz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">zt</span><span class="o">=</span><span class="n">ZT</span><span class="p">,</span> <span class="n">N2</span><span class="o">=</span><span class="n">N2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;數值解垂直結構方程式 d/dz[(1/N^2) dPsi/dz] = -(1/c^2) Psi，剛蓋(Neumann)邊界。&quot;&quot;&quot;</span>
+    <span class="n">dz</span> <span class="o">=</span> <span class="n">zt</span> <span class="o">/</span> <span class="n">nz</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nz</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dz</span>                       <span class="c1"># cell-centered 網格</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nz</span><span class="p">,</span> <span class="n">nz</span><span class="p">))</span>                               <span class="c1"># A = -d/dz[(1/N^2) d/dz]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nz</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">1.0</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nz</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">1.0</span>
+    <span class="n">A</span> <span class="o">/=</span> <span class="p">(</span><span class="n">N2</span> <span class="o">*</span> <span class="n">dz</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">lam</span><span class="p">,</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>                         <span class="c1"># 對稱矩陣 -&gt; 本徵值必為實數</span>
+    <span class="n">lam</span><span class="p">,</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">lam</span><span class="p">[:</span><span class="n">n_mode</span><span class="p">],</span> <span class="n">vec</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_mode</span><span class="p">]</span>
+    <span class="n">vec</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">vec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">dz</span><span class="p">)</span>               <span class="c1"># 正規化：int Psi^2 dz = 1</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_mode</span><span class="p">):</span>                              <span class="c1"># 固定正負號，方便比對</span>
+        <span class="n">ref</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[:,</span> <span class="n">m</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">ref</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">vec</span><span class="p">[:,</span> <span class="n">m</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">lam</span> <span class="o">&gt;</span> <span class="mf">1e-14</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lam</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span><span class="p">,</span> <span class="n">dz</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">vec</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">heating</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">deep_K_day</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">z_peak</span><span class="o">=</span><span class="mf">6500.0</span><span class="p">,</span> <span class="n">z_wid</span><span class="o">=</span><span class="mf">12000.0</span><span class="p">,</span>
+            <span class="n">surf_K_day</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">h_s</span><span class="o">=</span><span class="mf">1500.0</span><span class="p">,</span> <span class="n">zt</span><span class="o">=</span><span class="n">ZT</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;深對流加熱（上下邊界嚴格歸零）＋ 可選的地表感熱（下邊界不歸零）。&quot;&quot;&quot;</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="n">zt</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">z</span> <span class="o">-</span> <span class="n">z_peak</span><span class="p">)</span> <span class="o">/</span> <span class="n">z_wid</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">deep_K_day</span> <span class="o">/</span> <span class="mf">86400.0</span> <span class="o">*</span> <span class="n">shape</span> <span class="o">/</span> <span class="n">shape</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>       <span class="c1"># 位溫變化率 [K/s]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">surf_K_day</span> <span class="o">/</span> <span class="mf">86400.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span> <span class="o">/</span> <span class="n">h_s</span><span class="p">)</span>
+    <span class="n">q_b</span> <span class="o">=</span> <span class="n">G</span> <span class="o">/</span> <span class="n">THETA0</span> <span class="o">*</span> <span class="n">s</span>                                 <span class="c1"># 浮力型式加熱 Q_b [m/s^3]</span>
+    <span class="k">return</span> <span class="n">q_b</span><span class="p">,</span> <span class="n">q_b</span> <span class="o">/</span> <span class="n">N2</span>                                 <span class="c1"># 層結縮放後的 Q [m/s]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">projection</span><span class="p">(</span><span class="n">dz</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">modes</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;模態投影 P_m = int (-dQ/dz) Psi_m dz。&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">dz</span><span class="p">))</span> <span class="o">@</span> <span class="n">modes</span> <span class="o">*</span> <span class="n">dz</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="n">z</span><span class="p">,</span> <span class="n">dz</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">PSI</span> <span class="o">=</span> <span class="n">vertical_modes</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;數值解 c_m [m/s] :&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;解析解 N*H/(m*pi):&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N2</span><span class="p">)</span> <span class="o">*</span> <span class="n">ZT</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]),</span> <span class="n">precision</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Psi_0 的起伏 / 平均值 = </span><span class="si">%.1e</span><span class="s2">  -&gt;  數值上確實是常數&quot;</span> <span class="o">%</span>
+      <span class="p">((</span><span class="n">PSI</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">PSI</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="n">PSI</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+
+<span class="n">qb_int</span><span class="p">,</span> <span class="n">Q_int</span> <span class="o">=</span> <span class="n">heating</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">surf_K_day</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>               <span class="c1"># 只有內部加熱</span>
+<span class="n">qb_sfc</span><span class="p">,</span> <span class="n">Q_sfc</span> <span class="o">=</span> <span class="n">heating</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">surf_K_day</span><span class="o">=</span><span class="mf">4.0</span><span class="p">)</span>               <span class="c1"># 內部加熱 + 地表感熱</span>
+<span class="n">P_int</span><span class="p">,</span> <span class="n">P_sfc</span> <span class="o">=</span> <span class="n">projection</span><span class="p">(</span><span class="n">dz</span><span class="p">,</span> <span class="n">Q_int</span><span class="p">,</span> <span class="n">PSI</span><span class="p">),</span> <span class="n">projection</span><span class="p">(</span><span class="n">dz</span><span class="p">,</span> <span class="n">Q_sfc</span><span class="p">,</span> <span class="n">PSI</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">純內部加熱  ：|P_0| / max|P_m| = </span><span class="si">%.1e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">P_int</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P_int</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;含地表加熱  ：|P_0| / max|P_m| = </span><span class="si">%.1e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">P_sfc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P_sfc</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;邊界項理論值 -Psi_0*[Q(z_t)-Q(z_b)] = </span><span class="si">%.3e</span><span class="s2">，數值投影 P_0 = </span><span class="si">%.3e</span><span class="s2">&quot;</span>
+      <span class="o">%</span> <span class="p">(</span><span class="n">PSI</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">Q_sfc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">P_sfc</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">lab</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\Psi_</span><span class="si">%d</span><span class="s2">$  ($c_</span><span class="si">%d</span><span class="s2">$ = </span><span class="si">%s</span><span class="s2"> m/s)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\infty$&quot;</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="k">else</span> <span class="s2">&quot;</span><span class="si">%.0f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">c</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">PSI</span><span class="p">[:,</span> <span class="n">m</span><span class="p">],</span> <span class="n">z</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lab</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\Psi_m(z)$  [m$^{-1/2}$]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;height [km]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(a) vertical eigenfunctions (rigid lid)&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qb_int</span> <span class="o">*</span> <span class="mi">86400</span> <span class="o">*</span> <span class="n">THETA0</span> <span class="o">/</span> <span class="n">G</span><span class="p">,</span> <span class="n">z</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;internal heating only&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qb_sfc</span> <span class="o">*</span> <span class="mi">86400</span> <span class="o">*</span> <span class="n">THETA0</span> <span class="o">/</span> <span class="n">G</span><span class="p">,</span> <span class="n">z</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;+ surface sensible heat&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;heating rate [K/day]&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;height [km]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(b) two heating profiles&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P_int</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P_int</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mf">.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;internal heating only&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P_sfc</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P_sfc</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mf">.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;+ surface sensible heat&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e-8</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;vertical mode $m$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$|P_m| \, / \, \max_m |P_m|$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(c) projection onto each mode&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>數值解 c_m [m/s] : [ inf 50.9 25.5 17.  12.7 10.2]
+解析解 N*H/(m*pi): [ inf 50.9 25.5 17.  12.7 10.2]
+Psi_0 的起伏 / 平均值 = 2.8e-12  -&gt;  數值上確實是常數
+
+純內部加熱  ：|P_0| / max|P_m| = 4.0e-07
+含地表加熱  ：|P_0| / max|P_m| = 3.5e-01
+邊界項理論值 -Psi_0*[Q(z_t)-Q(z_b)] = 1.188e-04，數值投影 P_0 = 1.196e-04
+</pre></div>
+</div>
+<img alt="../../_images/6dd19719e829e83caeefb9ea13c705b74a175f620a4fd5a334fcf827b44b3b6d.png" src="../../_images/6dd19719e829e83caeefb9ea13c705b74a175f620a4fd5a334fcf827b44b3b6d.png" />
+</div>
+</div>
+<p>三件事被驗證了：</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> 數值解出來的相速 <span class="math notranslate nohighlight">\(c_m\)</span> 與解析解 <span class="math notranslate nohighlight">\(N H/(m\pi)\)</span> 完全吻合：<span class="math notranslate nohighlight">\(c_0 = \infty\)</span>、<span class="math notranslate nohighlight">\(c_1 \approx 51\ \text{m}\cdot\text{s}^{-1}\)</span>、<span class="math notranslate nohighlight">\(c_2 \approx 25\ \text{m}\cdot\text{s}^{-1}\)</span>。<span class="math notranslate nohighlight">\(c_1\)</span> 這個值正是熱帶 Kelvin 波觀測到的典型速度量級。而 <span class="math notranslate nohighlight">\(\Psi_0\)</span> 的起伏只有平均值的 <span class="math notranslate nohighlight">\(10^{-12}\)</span> 倍 —— 它在數值上就是一條直線。</p></li>
+<li><p><strong>(c) 藍色</strong>：純內部加熱時，<span class="math notranslate nohighlight">\(m = 0\)</span> 的投影比最大值小了<strong>六個數量級</strong>，剩下的只是離散化殘差。能量幾乎全部進了 <span class="math notranslate nohighlight">\(m = 1\)</span> 的第一斜壓模態。</p></li>
+<li><p><strong>(c) 橘色</strong>：一旦加上地表感熱（<span class="math notranslate nohighlight">\(Q(z_b) \neq 0\)</span>），<span class="math notranslate nohighlight">\(m = 0\)</span> 的投影立刻跳到與其他模態同一個量級，而且數值與邊界項 <span class="math notranslate nohighlight">\(-\Psi_0\left(Q(z_t) - Q(z_b)\right)\)</span> 的理論值相符（差不到 <span class="math notranslate nohighlight">\(1\%\)</span>，來自邊界處的一階單側差分）。</p></li>
+</ul>
+<p>換句話說：<strong>正壓模態不是打不動，而是「內部」加熱打不動它 —— 要動它得從邊界下手。</strong></p>
+</section>
+<section id="id5">
+<h2>六、三個容易犯的錯<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="q">
+<h3>① 不知道 <span class="math notranslate nohighlight">\(Q\)</span> 是什麼，就開始講物理故事<a class="headerlink" href="#q" title="Link to this heading">#</a></h3>
+<p>看到 <span class="math notranslate nohighlight">\(\int -\partial_z Q\,\Psi_0\,dz\)</span> 就斷定「<span class="math notranslate nohighlight">\(Q\)</span> 是加熱率、所以這是加熱激發波動的強迫」，是最常見的過度詮釋。<span class="math notranslate nohighlight">\(Q\)</span> 也可能是 geopotential、位溫、某個通量、甚至只是模式裡的一個 state variable。<strong>先問清楚 <span class="math notranslate nohighlight">\(Q\)</span> 的定義，再談物理。</strong> 本篇推導裡它是 <span class="math notranslate nohighlight">\(Q_b/N^2\)</span>，那是因為我們自己從那組方程式出發。</p>
+</section>
+<section id="q-psi-0-0-q-0">
+<h3>② 邊界項為零的條件是 <span class="math notranslate nohighlight">\(Q\Psi_0 = 0\)</span>，不是 <span class="math notranslate nohighlight">\(Q = 0\)</span><a class="headerlink" href="#q-psi-0-0-q-0" title="Link to this heading">#</a></h3>
+<p>要讓 <span class="math notranslate nohighlight">\(\big[Q\Psi_0\big]_{z_b}^{z_t} = 0\)</span>，有三種可能：<span class="math notranslate nohighlight">\(Q = 0\)</span>、<span class="math notranslate nohighlight">\(\Psi_0 = 0\)</span>、或兩者乘積為零。直接宣稱「加熱率在邊界必須為零」是<strong>過強</strong>的條件。</p>
+<p>反過來說，邊界項不為零也<strong>不代表投影失效</strong>。<span class="math notranslate nohighlight">\(\int -\partial_z Q\,\Psi_0\,dz\)</span> 本身永遠是一個合法的模態投影；邊界項只是告訴你：做完分部積分之後，不能把邊界貢獻丟掉。</p>
+</section>
+<section id="external-internal">
+<h3>③ external / internal 的命名依賴問題設定<a class="headerlink" href="#external-internal" title="Link to this heading">#</a></h3>
+<p>把「<span class="math notranslate nohighlight">\(m = 0\)</span>、無節點、正壓、external」四件事畫上等號很方便，但這只在特定的本徵值問題與邊界條件下成立。換成自由表面，<span class="math notranslate nohighlight">\(\Psi_0\)</span> 就不再是嚴格常數（只是「幾乎」常數），<span class="math notranslate nohighlight">\(c_0\)</span> 也從 <span class="math notranslate nohighlight">\(\infty\)</span> 掉回有限的 <span class="math notranslate nohighlight">\(\sqrt{gH}\)</span>；換成有背景風的基本態，垂直結構方程式甚至不再是這個乾淨的 Sturm–Liouville 形式，模態之間也不再正交。</p>
+</section>
+</section>
+<section id="id6">
+<h2>參考資料<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>[1]<a class="reference internal" href="../../01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html"><span class="std std-doc">Sturm–Liouville Orthogonality（本知識庫）</span></a> —— 正交性與展開係數的完整證明</p></li>
+<li><p>[2]<a class="reference internal" href="../../01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html"><span class="std std-doc">Vertical Structure Equation（本知識庫）</span></a> —— 從線性化 Boussinesq 到模態投影的完整證明</p></li>
+<li><p>[3]<a class="reference internal" href="../Fluid_Dynamics/Boussinesq_approximation.html"><span class="std std-doc">Boussinesq Approximation（本知識庫）</span></a> —— 本篇線性化所依據的近似</p></li>
+<li><p>[4]<a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html"><span class="std std-doc">Hydrostatic Balance for Perturbations（本知識庫）</span></a> —— <span class="math notranslate nohighlight">\(\partial \Phi/\partial z = b\)</span> 的來源</p></li>
+<li><p>[5]<a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#continuity-equation">Advanced Atmospheric Dynamics — 連續方程式與原始方程式</a> —— 推導鏈起點的控制方程式</p></li>
+<li><p>[6]<a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project2/project2.html">Advanced Atmospheric Dynamics — project2（赤道波色散關係）</a> —— 拿到等效深度之後，每個模態的淺水系統怎麼解</p></li>
+<li><p>[7] Gill, A. E. (1980), <em>Some simple solutions for heat-induced tropical circulation</em>, Quart. J. Roy. Meteor. Soc., 106, 447-462 —— 熱帶加熱響應的經典模態解</p></li>
+<li><p>[8] Fulton, S. R. &amp; Schubert, W. H. (1985), <em>Vertical normal mode transforms: Theory and application</em>, Mon. Wea. Rev., 113, 647-658 —— 垂直模態轉換的系統性整理</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02_Concepts\Atmospheric_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Numerical_Weather_Prediction/Model_Output_Statistics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">模式輸出統計 Model Output Statistics (MOS)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../03_Intuitions/03_Intuitions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>💡 03_Intuitions</strong>: 物理心法區</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">一、先把三個層次分開</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">二、公式是怎麼來的</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-q-partial-z">為什麼強迫項長成 <span class="math notranslate nohighlight">\(-\partial Q/\partial z\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psi-0-external-mode">三、<span class="math notranslate nohighlight">\(\Psi_0\)</span> 為什麼叫 external mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">四、核心結論：內部加熱幾乎打不動正壓模態</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">五、數值驗證</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">六、三個容易犯的錯</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q">① 不知道 <span class="math notranslate nohighlight">\(Q\)</span> 是什麼，就開始講物理故事</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q-psi-0-0-q-0">② 邊界項為零的條件是 <span class="math notranslate nohighlight">\(Q\Psi_0 = 0\)</span>，不是 <span class="math notranslate nohighlight">\(Q = 0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-internal">③ external / internal 的命名依賴問題設定</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">參考資料</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

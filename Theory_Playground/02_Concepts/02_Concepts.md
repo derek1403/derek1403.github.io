@@ -5,7 +5,7 @@
 
 ## 想要回答的
 
-* MOS
+* [MOS](./Numerical_Weather_Prediction/Model_Output_Statistics.ipynb) ✅
 * STEM
 * Beta rossby number
 * Beta driver

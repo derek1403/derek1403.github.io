@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tropical cyclone asymmetric eyewall evolution and intensification in a two-layer model &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_References/Tropical cyclone dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../01_Derivations/01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F06_References/Tropical cyclone dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/06_References/Tropical cyclone dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tropical cyclone asymmetric eyewall evolution and intensification in a two-layer model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">論文</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>1. Introduction</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-experimental-design"><strong>2. Model and experimental design</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-one-way-model"><strong>2.1 The one-way model</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-way-model"><strong>2.2 The two-way model</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-model-design"><strong>2.3 Numerical model design</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions"><strong>2.4 Initial conditions</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results"><strong>3. Results</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions"><strong>4. Conclusions</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">AI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-physical-mechanisms">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-framework-configurations">⚙️ 實例化與結構重組 (Modeling Framework &amp; Configurations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-structure-parameterization">⚙️ 實例化與結構重組 (Mathematical Structure &amp; Parameterization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">⚙️ 實例化與結構重組 (Mathematical Structure &amp; Parameterization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-model-design-algorithms">⚙️ 實例化與結構重組 (Numerical Model Design &amp; Algorithms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions-perturbation-setup">⚙️ 實例化與結構重組 (Initial Conditions &amp; Perturbation Setup)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-vortex-evolution">⚙️ 實例化與結構重組 (Time Series &amp; Vortex Evolution)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vortex-evolution-wave-mean-flow-interaction">⚙️ 實例化與結構重組 (Vortex Evolution &amp; Wave-Mean Flow Interaction)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">討論</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tropical-cyclone-asymmetric-eyewall-evolution-and-intensification-in-a-two-layer-model">
+<h1>Tropical cyclone asymmetric eyewall evolution and intensification in a two-layer model<a class="headerlink" href="#tropical-cyclone-asymmetric-eyewall-evolution-and-intensification-in-a-two-layer-model" title="Link to this heading">#</a></h1>
+<p>Ting-Yu Cha , Michael M. Bell</p>
+<section id="id1">
+<h2>論文<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="abstract">
+<h3>Abstract<a class="headerlink" href="#abstract" title="Link to this heading">#</a></h3>
+<p>Radar and satellite imagery of numerous intensifying tropical cyclones (TCs) depict an appearance of a polygonal eyewall structure where deep convection is often located near the polygonal vertices. A recent observational study of Hurricane Michael’s (2018) polygonal eyewall evolution suggests that <strong>the vorticity asymmetries are coupled with the reflectivity asymmetries during rapid intensification. Conceptual theory of a polygonal eyewall structure has been linked to vortex Rossby waves (VRWs) and the breakdown of an enhanced potential vorticity (<span class="math notranslate nohighlight">\(\text{PV}\)</span>) ring, but how the asymmetries affect TC intensification remains unclear</strong>. Non-divergent barotropic models have previously been employed to study polygonal eyewall dynamics, but this approach has limitations due to the importance of diabatic heating to <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation and the intensification process. Results from prior studies motivate us to explore the nature of the relationship between asymmetric vorticity and vertical velocity in the free atmosphere and the boundary layer and their compound impacts on the TC intensification process.</p>
+<p>Here we use a simple two-layer model framework with <strong>a shallow-water model on top of a slab boundary layer (SBL) model to simulate a frictional boundary layer underneath the free atmosphere. Results from simulating a wavenumber 2 elliptical asymmetry suggest the VRW in the free atmosphere can organize the updrafts in the SBL, which is consistent with radar observations of enhanced reflectivity at the polygonal vertices</strong>. Free atmospheric divergence in the shallow-water layer does not explain the coupling between vorticity and reflectivity. <strong>The coupling can be explained to first order by the one-way boundary layer response to the pressure gradient associated with the free atmospheric vorticity asymmetries</strong>, consistent with prior studies.</p>
+<p>Further simulations that <strong>allow two-way interaction between the layers show that the organization of the updrafts out of the SBL plays a critical role in the growth of a <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring and intensification of the mean vortex</strong>. In this framework, <strong>diabatic heating in the shallow-water layer parameterized by a mass sink driven by the free atmosphere–SBL interaction leads to rapid intensification of the vortex, thinning of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring, and eventual barotropic instability and <span class="math notranslate nohighlight">\(\text{PV}\)</span> mixing</strong>. The simplified modeling framework with two-way interactions captures many of the essential dynamics of rapid intensification in the presence of evolving asymmetries, similar to those seen in the observations from Hurricane Michael (2018), which provides new insight into the complex interactions between dynamics and convection during hurricane intensification.</p>
+<p><strong>摘要 (Abstract)</strong></p>
+<p>許多正在增強的熱帶氣旋（TCs）的雷達與衛星影像，描繪出多邊形眼牆結構的外觀，其中深對流通常位於多邊形的頂點附近。最近一項關於 2018 年颶風麥可（Hurricane Michael）多邊形眼牆演變的觀測研究指出，<strong>在快速增強（rapid intensification）期間，渦度不對稱性與雷達回波不對稱性是相互耦合的。多邊形眼牆結構的概念理論已被連結到渦旋羅斯貝波（VRWs）以及增強的位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span>）環的崩潰，但這些不對稱性如何影響熱帶氣旋的增強仍然未知</strong>。過去曾使用無輻散正壓模型來研究多邊形眼牆動力學，但由於非絕熱加熱（diabatic heating）對 <span class="math notranslate nohighlight">\(\text{PV}\)</span> 生成與氣旋增強過程極為重要，這種方法有其局限性。過去研究的結果促使我們探索自由大氣與邊界層中，不對稱渦度與垂直速度之間關係的本質，以及它們對熱帶氣旋增強過程的複合影響。</p>
+<p>在此，我們使用一個簡單的雙層模型架構：<strong>上層為淺水模型（shallow-water model），疊加於底層的平板邊界層（SBL）模型之上，以模擬自由大氣下方帶有摩擦力的邊界層。模擬波數 2（wavenumber 2）橢圓不對稱性的結果指出，自由大氣中的 VRW 能夠組織 SBL 中的上升氣流，這與雷達觀測到多邊形頂點回波增強的現象一致</strong>。淺水層中的自由大氣輻散無法解釋渦度與回波之間的耦合。<strong>這種耦合可以主要（to first order）由邊界層對自由大氣渦度不對稱性所伴隨之氣壓梯度的「單向（one-way）」響應來解釋</strong>，這與過去的研究一致。</p>
+<p>進一步允許 <strong>兩層之間進行雙向交互作用（two-way interaction）的模擬顯示，SBL 組織並激發出的上升氣流，對於 <span class="math notranslate nohighlight">\(\text{PV}\)</span> 環的增長與平均渦旋的增強扮演著關鍵角色</strong>。在此架構下，<strong>由自由大氣與底層交互作用驅動的質量匯（mass sink）所參數化的非絕熱加熱，會導致渦旋的快速增強、<span class="math notranslate nohighlight">\(\text{PV}\)</span> 環變薄，最終引發正壓不穩定性（barotropic instability）與 <span class="math notranslate nohighlight">\(\text{PV}\)</span> 混合</strong>。這個具備雙向交互作用的簡化模型架構，捕捉到了在不對稱性演變下快速增強的許多基本動力學特徵，類似於颶風麥可（2018）中觀測到的現象，這為颶風增強期間動力學與對流之間複雜的交互作用提供了新的見解。</p>
+</section>
+<section id="introduction">
+<h3><strong>1. Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
+<p>Radar and satellite imagery have captured polygonal eyewall structures in numerous intensifying tropical cyclones (TCs), such as Typhoon Herb (1996) (Kuo et al., 1999), Hurricane Isabel (2003) (Kossin and Schubert, 2004), Hurricane Dolly (2008) (Hendricks et al., 2012), Hurricane Karal (2010) (Guimond et al., 2016), and Hurricane Michael (2018) (Cha et al., 2020). Since the precipitation structure can be organized by the underlying dynamics, numerous theoretical studies have conceptually described the dynamics behind the observed polygonal shape in reflectivity or satellite brightness temperatures as a result of barotropic or combined barotropic–baroclinic instability of a potential vorticity (<span class="math notranslate nohighlight">\(\text{PV}\)</span>) ring through counter-propagating vortex Rossby waves (VRWs). The instability can further lead to the breakdown of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring and eye–eyewall mixing (Kuo et al., 1999; Schubert et al., 1999; Hendricks et al., 2010). In Cha et al. (2020), it was demonstrated through analysis of observed reflectivity and retrieved tangential wind asymmetries of Hurricane Michael during rapid intensification that barotropic linear VRW theory provided a good quantitative explanation of the azimuthal propagation speed of the polygonal eyewall structure, suggesting a close coupling of the vorticity asymmetries and deep convection. Observations are able to resolve some of the convective, dynamic, and thermodynamic characteristics but are difficult to use alone to fully understand the key physical processes due to limited high-resolution temporal and spatial observations of a complex atmospheric structure. The mechanisms that force deep convection at the polygonal vertices and how those convective asymmetries play a role in TC intensification were unable to be addressed with the observational dataset in Cha et al. (2020).</p>
+<ul class="simple">
+<li><p><strong>Kuo et al. (1999); Kossin &amp; Schubert (2004); Hendricks et al. (2012); Guimond et al. (2016); Cha et al. (2020)</strong></p>
+<ul>
+<li><p><strong>觀測發現 (Observational Finding)：</strong> 雷達與衛星影像已經在許多增強中的熱帶氣旋（TCs）中捕捉到了<strong>多邊形眼牆結構（Polygonal eyewall structures）</strong>，這些真實案例包含了 1996 年的賀伯颱風（Typhoon Herb）、2003 年的伊莎貝爾颶風（Hurricane Isabel）、2008 年的朵莉颶風（Hurricane Dolly）、2010 年的卡爾颶風（Hurricane Karl）以及 2018 年的麥可颶風（Hurricane Michael）。</p></li>
+</ul>
+</li>
+<li><p><strong>Kuo et al. (1999); Schubert et al. (1999); Hendricks et al. (2010)</strong></p>
+<ul>
+<li><p><strong>理論機制 (Theoretical Mechanism)：</strong> 由於降水結構可以受到底層流體動力學的組織與引導，許多理論研究在概念上將雷達回波或衛星亮度溫度中所看到的多邊形狀，解釋為：位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span>）環透過反向傳播的<strong>渦旋羅斯貝波（VRWs）</strong>，所引發的正壓或正壓-斜壓混合不穩定性（Barotropic or combined barotropic–baroclinic instability）的結果。</p></li>
+<li><p><strong>動力學影響 (Dynamical Impact)：</strong> 這種流體不穩定性會進一步導致位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span>）環的崩潰，並引發風眼與眼牆之間的混合（Eye–eyewall mixing）。</p></li>
+</ul>
+</li>
+<li><p><strong>Cha et al. (2020)</strong></p>
+<ul>
+<li><p><strong>研究發現 (Finding)：</strong> 透過分析麥可颶風在快速增強期間觀測到的雷達回波與反演出的切向風不對稱性，該研究證實<strong>正壓線性 VRW 理論（Barotropic linear VRW theory）<strong>能夠對多邊形眼牆結構的方位角傳播速度提供良好的定量解釋。這項證據表明，渦度不對稱性與深對流（Deep convection）之間存在著緊密的</strong>耦合關係（Coupling）</strong>。</p></li>
+<li><p><strong>研究限制 (Limitation)：</strong></p>
+<ul>
+<li><p><strong>觀測本質的侷限</strong>：雖然觀測資料能解析出部分對流、動力與熱力學特徵，但面對複雜的大氣結構，受限於「缺乏極高時空解析度」的觀測資料，單靠純觀測手段是很難完全理解關鍵物理過程的。</p></li>
+<li><p><strong>未解之謎</strong>：具體而言，基於 Cha 等人 (2020) 的觀測資料集，仍然無法解答兩個核心問題：一是「<strong>是什麼機制在多邊形頂點（Vertices）迫使深對流發生</strong>」，二是「<strong>這些對流不對稱性在熱帶氣旋增強過程中究竟扮演了什麼角色</strong>」。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>As an alternative to the complexity of real observations, many studies employ full-physics modeling to provide four-dimensional dynamical and thermodynamical fields to study the relationships between dynamics and convective processes. However, the results of such studies can depend on the design, initial conditions, and physics of the model, and the dynamics in full-physics models can be hard to interpret due to complex interactions among many different processes. A simpler approach to understanding the dynamics involves models with less complexity. A balanced vortex framework has frequently been employed to understand TC intensification, which assumes that an axisymmetric vortex continuously evolves in a state of gradient wind and hydrostatic balance (Eliassen, 1951; Schubert and Hack, 1982; Willoughby, 1979; Smith et al., 2018). While an axisymmetric balanced vortex framework can offer many insights into TC intensification (Ooyama, 1969), it is unable to fully represent asymmetric mechanisms and boundary layer processes due to the inherent assumptions. In this study, we investigate the relationships between asymmetric convection and vortex dynamics by using an intermediate-complexity asymmetric framework, which lies between full-physics and balanced models.</p>
+<ul class="simple">
+<li><p><strong>全物理模型 (Full-Physics Modeling)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 作為真實觀測資料複雜性的一種替代方案，許多研究採用了全物理模型（Full-physics modeling）來提供四維的動力與熱力場，以探討動力學與對流過程之間的關係。</p></li>
+<li><p><strong>研究限制 (Limitation)：</strong> 然而，這類研究的結果往往高度依賴於模型的設計、初始條件以及物理參數化（Physics of the model）。此外，由於許多不同物理過程之間存在著複雜的交互作用，全物理模型中的動力學機制往往<strong>難以直接解釋（Hard to interpret）</strong>。</p></li>
+</ul>
+</li>
+<li><p><strong>平衡渦旋架構 (Balanced Vortex Framework)</strong> —— <em>Eliassen (1951); Schubert and Hack (1982); Willoughby (1979); Smith et al. (2018); Ooyama (1969)</em></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 為了更單純地理解動力學，另一種方法是使用較低複雜度的模型。平衡渦旋架構（Balanced vortex framework）**經常被用來理解熱帶氣旋（TC）的增強機制，該架構假設一個軸對稱渦旋（Axisymmetric vortex）會持續在梯度風（Gradient wind）<strong>與</strong>流體靜力平衡（Hydrostatic balance）**的狀態下進行演變。</p></li>
+<li><p><strong>研究限制 (Limitation)：</strong> 雖然軸對稱平衡渦旋架構能為熱帶氣旋的增強提供許多深刻的見解 [<em>Ooyama</em>, 1969]，但受限於其先天的物理假設，它<strong>無法完全呈現不對稱機制（Asymmetric mechanisms）與邊界層過程（Boundary layer processes）</strong>。</p></li>
+</ul>
+</li>
+<li><p><strong>本研究 (Current Study)</strong></p>
+<ul>
+<li><p><strong>綜合釋疑與研究方法 (Synthesis &amp; Approach)：</strong> 為了解決上述兩種極端模型的侷限，本研究採用了一種介於全物理模型與平衡模型之間的中等複雜度不對稱架構（Intermediate-complexity asymmetric framework）<strong>，藉此來深入探討不對稱對流（Asymmetric convection）<strong>與</strong>渦旋動力學（Vortex dynamics）</strong> 之間的關係。</p></li>
+</ul>
+</li>
+</ul>
+<p>Previous studies using unforced non-divergent barotropic models have provided a basic understanding that an annular ring of high <span class="math notranslate nohighlight">\(\text{PV}\)</span> is barotropically unstable. The mixing of <span class="math notranslate nohighlight">\(\text{PV}\)</span> leads to a stable configuration, resulting in weakened maximum winds. However, while unforced models can explain the axisymmetrization of asymmetries observed in nature, they are unable to explain why TCs can still undergo intensification in the presence of asymmetries. By necessity, intensification of the vortex requires some kind of forcing, which has often been through prescribed friction and diabatic heating in prior studies. Rozoff et al. (2009) developed a forced barotropic model by parameterizing diabatic heating as a vorticity generation term in an annular region representative of an eyewall. They demonstrated that the barotropic instability and vorticity mixing act as a temporary intensification brake, but continued forcing can lead to further intensification. Their results suggest that forced vorticity generation in the eyewall allows for the rebuilding of an annular vorticity ring and intensification.</p>
+<ul class="simple">
+<li><p><strong>過往的無強迫模型研究 (Previous Unforced Model Studies)</strong></p>
+<ul>
+<li><p><strong>研究發現 (Finding)：</strong> 過去使用<strong>無外力強迫之無輻散正壓模型（Unforced non-divergent barotropic models）<strong>的研究提供了一個基本認識：高位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span>）的環狀結構在正壓條件下是</strong>不穩定的（Barotropically unstable）</strong>。位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span>）的混合會引導系統走向穩定的配置，但其代價是導致最大風速的<strong>減弱</strong>。</p></li>
+<li><p><strong>研究限制 (Limitation)：</strong> 雖然無強迫模型能夠解釋自然界中觀測到的不對稱性如何走向<strong>軸對稱化（Axisymmetrization）</strong>，但它們<strong>無法解釋</strong>為何熱帶氣旋在存在不對稱性的情況下，<strong>仍然能夠經歷增強過程</strong>。必然地，渦旋的增強需要某種「<strong>外力強迫（Forcing）</strong>」，在先前的研究中，這通常是透過給定的人為摩擦力與非絕熱加熱來實現。</p></li>
+</ul>
+</li>
+<li><p><strong>Rozoff et al. (2009)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 開發了一個<strong>受強迫的正壓模型（Forced barotropic model）</strong>。他們的做法是將非絕熱加熱（Diabatic heating）參數化為一個「渦度生成項（Vorticity generation term）」，並將其放置在代表眼牆的環狀區域內。</p></li>
+<li><p><strong>研究發現 (Finding)：</strong> 證實了正壓不穩定性與渦度混合，在系統中扮演著「<strong>暫時的增強煞車（Temporary intensification brake）</strong>」的作用；然而，持續的外力強迫將能突破此限制，引發進一步的增強。</p></li>
+<li><p><strong>綜合釋疑 (Synthesis)：</strong> 他們的研究結果表明，在眼牆中由外力強迫所驅動的渦度生成，使得熱帶氣旋得以重建其環狀渦度環（Annular vorticity ring）並實現強度的增強。</p></li>
+</ul>
+</li>
+</ul>
+<p>Building upon the Rozoff et al. (2009) study, Hendricks et al. (2014) advanced the approach by using a forced shallow-water model that incorporates divergent effects and a parameterization of convective diabatic heating as a timedependent annular mass sink with various widths. Their results demonstrate that a constant net heating prescribed in the region of high inertial stability inside the radius of maximum wind can lead to intensification. Hendricks et al. (2014) note that “when the heating is prescribed to be proportional to the relative vorticity, the maximum velocity increased and the minimum pressure decreased during barotropic instability”. Both Rozoff et al. (2009) and Hendricks et al. (2014) demonstrate that intensification can occur with sufficient forcing even in the presence of barotropic instability.</p>
+<ul class="simple">
+<li><p><strong>Hendricks et al. (2014)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 建構在 Rozoff 等人 (2009) 的研究基礎上，進一步改良了分析方法。他們採用了一個<strong>受強迫的淺水模型（Forced shallow-water model）</strong>，該模型納入了<strong>輻散效應（Divergent effects）</strong>，並將對流的非絕熱加熱參數化為一個具有不同寬度、隨時間變化的<strong>環狀質量匯（Annular mass sink）</strong>。</p></li>
+<li><p><strong>研究發現 (Finding)：</strong> * <strong>穩定度與增強的關係</strong>：結果表明，如果在最大風速半徑（<span class="math notranslate nohighlight">\(\text{RMW}\)</span>）內側的高慣性穩定度區域（Region of high inertial stability）給定一個恆定的淨加熱，將能導致氣旋的增強。</p>
+<ul>
+<li><p><strong>渦度與強度的動態變化</strong>：作者特別指出：「當設定的加熱與相對渦度（Relative vorticity）<strong>成正比時，即使在</strong>正壓不穩定性（Barotropic instability）期間，最大風速依然會增加，且最低氣壓會下降。」</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Rozoff et al. (2009) 與 Hendricks et al. (2014)</strong></p>
+<ul>
+<li><p><strong>綜合結論 (Synthesis)：</strong> 這兩項研究共同證實了一個關鍵觀點：只要存在<strong>足夠的外力強迫（Sufficient forcing，如非絕熱加熱）</strong>，即使系統中伴隨著正壓不穩定性，熱帶氣旋的增強過程仍然可以發生。</p></li>
+</ul>
+</li>
+</ul>
+<p>Schubert et al. (2016) presented another approach to parameterize diabatic heating in an axisymmetric shallow-water framework. Their approach involves parameterizing diabatic heating as a mass sink that is proportional to the fluid depth, resulting in a non-conservative contribution to the <span class="math notranslate nohighlight">\(\text{PV}\)</span> equation. They developed an analytic solution for TC intensification based on the wave–vortex approximation by Salmon (2014) and prescribed heating. In subsequent work, Schubert and Taft (2022) showed that vortex intensification in the shallow-water framework is proportional to the volume of mass removed from the vortex interior. In our current study, we employ a similar approach to parameterize diabatic heating as a mass sink. However, we introduce a key modification by allowing the forcing to be dynamically determined by the atmospheric flow. This modification enables us to incorporate the influence of the evolving atmospheric conditions into our analysis.</p>
+<ul class="simple">
+<li><p><strong>Schubert et al. (2016)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 在軸對稱淺水架構（Axisymmetric shallow-water framework）中提出了另一種參數化<strong>非絕熱加熱（Diabatic heating）<strong>的方法。他們將非絕熱加熱參數化為一個與流體深度成正比的</strong>質量匯（Mass sink）</strong>，這會對位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span>）方程式產生非守恆（Non-conservative）的貢獻。</p></li>
+<li><p><strong>研究發現 (Finding)：</strong> 基於 Salmon (2014) 提出的波-渦旋近似（Wave–vortex approximation）以及給定的加熱條件，他們成功開發出了熱帶氣旋增強的解析解（Analytic solution）。</p></li>
+</ul>
+</li>
+<li><p><strong>Schubert and Taft (2022)</strong></p>
+<ul>
+<li><p><strong>研究發現 (Finding)：</strong> 在後續的研究中進一步證明，在淺水架構下，渦旋增強的程度與從渦旋內部移除的質量體積（Volume of mass removed）成正比。</p></li>
+</ul>
+</li>
+<li><p><strong>本研究 (Current Study)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 採用了類似上述的方法，同樣將非絕熱加熱參數化為一個質量匯。然而，本研究引入了一項<strong>關鍵的修改</strong>：允許這種外力強迫（Forcing）由<strong>大氣流場動態決定（Dynamically determined by the atmospheric flow）</strong>，而非人為給定固定值。</p></li>
+<li><p><strong>綜合釋疑 (Synthesis)：</strong> 這項創新性的修改，使得本研究的分析架構能夠真正將不斷演變的大氣條件（Evolving atmospheric conditions）對系統的影響納入考量之中，從而更貼近真實大氣的動態交互作用。</p></li>
+</ul>
+</li>
+</ul>
+<p>Organized moist deep convection originates from the TC boundary layer (TCBL) where the surface heat fluxes and radial inflow provide fuel for intensification and maintenance (Ooyama, 1969). Williams et al. (2013) used an axisymmetric slab TCBL model to show that nonlinear advection produces a shock-like structure with a sharp radial gradient of inflow just inside the radius of maximum wind (<span class="math notranslate nohighlight">\(\text{RMW}\)</span>), which leads to strong updrafts to initiate convection in TC. These results, along with Kepert and Wang (2001), Kepert (2017), and others, have demonstrated that the location of strong updrafts is closely coupled to the boundary layer processes. A cloud-resolving model simulation of Super Typhoon Haiyan (2013) conducted by Tsujino and Kuo (2020) shows that the coupling of a TCBL strong updraft and large vorticity could build a <span class="math notranslate nohighlight">\(\text{PV}\)</span> tower, which suggests that TCBL processes can play an important role in determining the location of heating, generating <span class="math notranslate nohighlight">\(\text{PV}\)</span>, and intensifying the TC.</p>
+<ul class="simple">
+<li><p><strong>Ooyama (1969)</strong></p>
+<ul>
+<li><p><strong>研究發現 (Finding)：</strong> 指出有組織的濕深對流（Moist deep convection）源自於熱帶氣旋邊界層（TCBL），在該區域中，地表熱通量（Surface heat fluxes）與徑向流入（Radial inflow）為氣旋的增強與維持提供了必要的能量。</p></li>
+</ul>
+</li>
+<li><p><strong>Williams et al. (2013)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 使用了軸對稱平板熱帶氣旋邊界層（Axisymmetric slab TCBL）模型進行研究。</p></li>
+<li><p><strong>研究發現 (Finding)：</strong> 證明了<strong>非線性平流（Nonlinear advection）<strong>會在緊鄰最大風速半徑（<span class="math notranslate nohighlight">\(\text{RMW}\)</span>）的內側，產生一個具有陡峭徑向流入梯度的</strong>震波狀結構（Shock-like structure）</strong>。這種結構會引發強烈的上升氣流，進而啟動熱帶氣旋內部的對流過程。</p></li>
+</ul>
+</li>
+<li><p><strong>Kepert and Wang (2001); Kepert (2017) 等人</strong></p>
+<ul>
+<li><p><strong>綜合釋疑 (Synthesis)：</strong> 結合 Williams 等人的研究成果，這些文獻共同證實了一個關鍵現象：<strong>強烈上升氣流發生的位置</strong>，與<strong>邊界層過程（Boundary layer processes）<strong>之間存在著緊密的</strong>耦合關係（Closely coupled）</strong>。</p></li>
+</ul>
+</li>
+<li><p><strong>Tsujino and Kuo (2020)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 針對 2013 年超級颱風海燕（Super Typhoon Haiyan）進行了<strong>解析雲模型模擬（Cloud-resolving model simulation）</strong>。</p></li>
+<li><p><strong>研究發現 (Finding)：</strong> 模擬結果顯示，熱帶氣旋邊界層（TCBL）的強烈上升氣流與巨大渦度發生耦合時，能夠建立起一座<strong>位勢渦度塔（<span class="math notranslate nohighlight">\(\text{PV}\)</span> tower）</strong>。</p></li>
+<li><p><strong>綜合結論 (Conclusion)：</strong> 這項結果表明，TCBL 過程在<strong>決定加熱位置、生成位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span>），以及推動熱帶氣旋增強</strong>的機制中，扮演著極其重要的角色。</p></li>
+</ul>
+</li>
+</ul>
+<p>To study how the asymmetric boundary layer impacts the organization of convection and wind distribution of a TC, Shapiro (1983) was the first to use a depth-averaged, asymmetric slab boundary layer (SBL) model to investigate the role of the translation speed. The simplified model can qualitatively capture the features observed in nature; therefore Kuo et al. (2016) used a simple framework with a two-layer non-divergent barotropic model coupled with a slab boundary layer (SBL) to investigate why deep convection preferentially locates at the vertices of a polygonal eyewall. They used a time-varying pressure gradient forcing derived from the barotropic model to drive the winds in the SBL model. Their results show that pressure gradients associated with VRWs in the free atmosphere can organize the updrafts in the SBL, indicating that deep convection should be located close to the vertices, and rotate in concert with the VRWs. Although Kepert (2010) demonstrates that the SBL can produce overly strong inflow and too large a departure from the gradient balance, the findings of Kuo et al. (2016) shed new light on the dynamics of polygonal eyewalls we see in nature by reproducing quantitatively reasonable responses to the free atmospheric forcing with the simplified boundary layer model. However, the two-layer model they employed still has some limitations in studying the effects of free atmospheric divergence and intensification. Their modeling setup allows for one-way interaction only such that the TCBL cannot influence the free atmosphere. Furthermore, the barotropic model is unforced and has no vorticity source term, so the framework cannot be used to study TC intensification.</p>
+<ul class="simple">
+<li><p><strong>Shapiro (1983)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 為了研究不對稱邊界層如何影響熱帶氣旋（TC）的對流組織與風場分佈，Shapiro 是首位使用<strong>深度平均、不對稱的平板邊界層（Slab boundary layer, SBL）模型</strong>，來探討平移速度（Translation speed）所扮演之角色的學者。</p></li>
+<li><p><strong>研究發現 (Finding)：</strong> 這個簡化的模型能夠定性地捕捉到自然界中觀察到的特徵。</p></li>
+</ul>
+</li>
+<li><p><strong>Kuo et al. (2016)</strong></p>
+<ul>
+<li><p><strong>研究方法 (Approach)：</strong> 基於前述簡化模型的成功，Kuo 等人採用了一個簡單的架構：將<strong>雙層無輻散正壓模型（Two-layer non-divergent barotropic model）<strong>與</strong>平板邊界層（SBL）<strong>耦合，藉此探討為何深對流會優先落在多邊形眼牆的</strong>頂點（Vertices）<strong>上。他們利用從正壓模型推導出之</strong>隨時間變化的氣壓梯度強迫力（Time-varying pressure gradient forcing）</strong>，來驅動 SBL 模型中的風場。</p></li>
+<li><p><strong>研究發現 (Finding)：</strong> 結果顯示，自由大氣中與渦旋羅斯貝波（VRWs）相關的氣壓梯度，能夠有效地組織 SBL 中的上升氣流。這表明深對流應該會位於<strong>靠近多邊形頂點</strong>的位置，並且會與 VRWs <strong>同步旋轉（Rotate in concert）</strong>。</p></li>
+</ul>
+</li>
+<li><p><strong>Kepert (2010) 與 Kuo et al. (2016)</strong></p>
+<ul>
+<li><p><strong>綜合釋疑 (Synthesis)：</strong> 儘管 Kepert (2010) 曾指出，SBL 模型可能會產生過強的流入（Overly strong inflow）以及過度偏離梯度風平衡（Departure from the gradient balance）的現象；然而，Kuo 等人 (2016) 透過這個簡化的邊界層模型，重現了對自由大氣強迫力在定量上相當合理的響應，從而為我們在自然界中所見的多邊形眼牆動力學提供了全新的見解。</p></li>
+</ul>
+</li>
+<li><p><strong>Kuo et al. (2016) 的模型限制</strong></p>
+<ul>
+<li><p><strong>研究限制 (Limitation)：</strong> 他們所採用的雙層模型在研究「自由大氣輻散效應」與「氣旋增強」方面仍存在一些侷限性：</p></li>
+<li><p><strong>單向交互作用（One-way interaction）</strong>：其模型設定僅允許單向的交互作用，這意味著熱帶氣旋邊界層（TCBL）無法反過來影響自由大氣。</p></li>
+<li><p><strong>缺乏外力強迫與渦度源（Unforced and no vorticity source）</strong>：該正壓模型是無強迫的，且沒有渦度生成項（Vorticity source term），因此這個架構<strong>無法被用來研究熱帶氣旋的增強過程（TC intensification）</strong>。</p></li>
+</ul>
+</li>
+</ul>
+<p>In this study, we develop a novel framework believed to capture the essential dynamics of polygonal eyewalls in an intensifying TC with a divergent shallow-water model (<span class="math notranslate nohighlight">\(\text{SWM}\)</span>) on top of an SBL model to emulate a frictional boundary layer underneath a free atmospheric troposphere. We seek to investigate both how the deep convection is organized at the vertices and how the heating from the convection impacts TC intensification. The two-layer model maintains an approximate gradient wind balance in the free atmospheric layer and parameterizes the diabatic heating produced by convection from the vertical motion out of the boundary layer. Our approach avoids prescribing the location and strength of the heating as has been done in previous studies. In our framework, the evolution of the free atmosphere and the heating from the TCBL are closely coupled. Section 2 describes the model and experiment design. Section 3 presents the results from the numerical experiments, and a discussion and summary are given in Sect. 4.</p>
+<ul class="simple">
+<li><p><strong>本研究 (Current Study)</strong></p>
+<ul>
+<li><p><strong>模型架構 (Model Framework)：</strong> 開發了一個新型的雙層架構，將<strong>輻散淺水模型（Shallow-water model, <span class="math notranslate nohighlight">\(\text{SWM}\)</span>）<strong>置於</strong>平板邊界層（Slab boundary layer, SBL）模型</strong>之上，藉此模擬自由對流層底下的摩擦邊界層。此架構被認為能夠捕捉到增強中熱帶氣旋（TC）多邊形眼牆的<strong>核心動力學（Essential dynamics）</strong>。</p></li>
+<li><p><strong>研究目標 (Research Objectives)：</strong></p>
+<ul>
+<li><p>探討深對流（Deep convection）<strong>是如何在多邊形眼牆的</strong>頂點（Vertices）被組織起來的。</p></li>
+<li><p>探討對流所產生的<strong>加熱（Heating）<strong>如何影響熱帶氣旋的</strong>增強（TC intensification）</strong>。</p></li>
+</ul>
+</li>
+<li><p><strong>動力學與參數化機制 (Dynamics &amp; Parameterization)：</strong></p>
+<ul>
+<li><p><strong>上層（自由大氣）</strong>：維持近似的<strong>梯度風平衡（Gradient wind balance）</strong>。</p></li>
+<li><p><strong>層際交互作用</strong>：透過邊界層頂部向外輸出的垂直運動，將對流所產生的非絕熱加熱（Diabatic heating）進行參數化。</p></li>
+<li><p><strong>動態耦合（Dynamic Coupling）</strong>：在這個架構中，自由大氣的演變與來自熱帶氣旋邊界層（TCBL）的加熱呈現緊密耦合（Closely coupled）的狀態。</p></li>
+</ul>
+</li>
+<li><p><strong>研究優勢 (Advantage)：</strong> 成功避免了過去研究中必須「人為預先給定（Prescribing）」加熱位置與強度的缺陷，讓外力強迫完全交由流場動態決定。</p></li>
+</ul>
+</li>
+<li><p><strong>論文架構 (Paper Structure)</strong></p>
+<ul>
+<li><p><strong>第 2 節</strong>：描述模型與實驗設計。</p></li>
+<li><p><strong>第 3 節</strong>：呈現數值實驗的結果。</p></li>
+<li><p><strong>第 4 節</strong>：進行討論與總結。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="model-and-experimental-design">
+<h3><strong>2. Model and experimental design</strong><a class="headerlink" href="#model-and-experimental-design" title="Link to this heading">#</a></h3>
+<p>A simple modeling framework of a shallow-water model on top of an asymmetric slab boundary layer model is used in the study. The two-layer model is used in two different configurations denoted one way and two way. The one-way model allows the pressure gradient force (PGF) from the shallow-water layer to modulate the wind field in the slab boundary layer, but the boundary layer’s flow cannot feed back to the upper layer. <strong>The two-way model allows for the two-way interaction such that the SBL can influence the free atmosphere through a parameterized mass sink</strong>. Details of the model design and the two configurations are shown below.</p>
+<p>本研究採用了一個簡單的模型架構：在不對稱平板邊界層（slab boundary layer, SBL）模型之上疊加一個淺水模型（shallow-water model）。此雙層模型被應用於兩種不同的配置中，分別稱為「單向（one way）」與「雙向（two way）」。單向模型允許來自淺水層的氣壓梯度力（pressure gradient force, PGF）去調節平板邊界層內的風場，但邊界層的氣流無法回饋到上層。<strong>雙向模型則允許雙向的交互作用，使得 SBL 能夠透過參數化的質量匯（parameterized mass sink）來影響自由大氣</strong>。模型設計與這兩種配置的詳細資訊將於下文說明。</p>
+<p><img alt="" src="../../../_images/Cha2024_fig1.png" /></p>
+<section id="the-one-way-model">
+<h4><strong>2.1 The one-way model</strong><a class="headerlink" href="#the-one-way-model" title="Link to this heading">#</a></h4>
+<p>The <span class="math notranslate nohighlight">\(\text{SWM}\)</span> on a constant-<span class="math notranslate nohighlight">\(f\)</span> plane solves the nonlinear shallow-water equations of inviscid flow with no diffusion and no friction in a polar coordinate system:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial u}{\partial t} &amp;=&amp; -u \frac{\partial u}{\partial r} - v \frac{\partial v}{r \partial \lambda} + f v + \frac{v^2}{r} - \frac{\partial(gh)}{\partial r} &amp;,  \text{(1)}\\
+\frac{\partial v}{\partial t} &amp;=&amp; -u \frac{\partial v}{\partial r} - v \frac{\partial v}{r \partial \lambda} - f u - \frac{uv}{r} - \frac{\partial(gh)}{r \partial \lambda} &amp;, \text{(2)} \\
+\frac{\partial h}{\partial t} + \frac{\partial(ruh)}{r \partial r} + \frac{\partial(vh)}{r \partial \lambda} &amp;=&amp; 0 &amp;, \text{(3)}
+\end{gather*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u\)</span> is the radial velocity, <span class="math notranslate nohighlight">\(v\)</span> is the tangential wind, <span class="math notranslate nohighlight">\(f\)</span> is the constant Coriolis parameter set to <span class="math notranslate nohighlight">\(5.0 \times 10^{-5}\text{ s}^{-1}\)</span>, and <span class="math notranslate nohighlight">\(h\)</span> is the deviation of the fluid height from the mean depth <span class="math notranslate nohighlight">\(H\)</span> in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> (which is set to a constant <span class="math notranslate nohighlight">\(2000.0\text{ m}\)</span> to represent a lower-tropospheric layer of the atmosphere). For the one-way model, the SBL cannot provide feedback to the <span class="math notranslate nohighlight">\(\text{SWM}\)</span>, ensuring the material conservation of potential vorticity, denoted as <span class="math notranslate nohighlight">\(P = (f + \zeta)/h\)</span>. Here, relative vorticity <span class="math notranslate nohighlight">\(\zeta\)</span> is defined as <span class="math notranslate nohighlight">\(\zeta = \partial(rv)/r\partial r - \partial u/r\partial \lambda\)</span>, and the material derivative is given by <span class="math notranslate nohighlight">\(\text{D}/\text{D}t = \partial/\partial t + u(\partial/\partial r) + v(\partial/r\partial \lambda)\)</span>.</p>
+<p>The governing equations for the symmetric dynamics in the boundary layer in polar coordinates, following <em>Batchelor</em> (1967), <em>Kepert</em> (2001), <em>Shapiro</em> (1983), <em>Williams et al.</em> (2013), and <em>Williams</em> (2015), are as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial u_{\text{b}}}{\partial t} &amp;=&amp; -u_{\text{b}} \frac{\partial u_{\text{b}}}{\partial r} - v_{\text{b}} \frac{\partial u_{\text{b}}}{r \partial \lambda} + w^{-} \left( \frac{u - u_{\text{b}}}{h_{\text{b}}} \right) + \left( f v_{\text{b}} + \frac{v_{\text{b}}^2}{r} \right) - g \frac{\partial h}{\partial r} - C_{\text{D}} U \frac{u_{\text{b}}}{h} + K \left( \nabla^2 u_{\text{b}} - \frac{u_{\text{b}}}{r^2} - \frac{2}{r^2} \frac{\partial v_{\text{b}}}{\partial \lambda} \right)&amp;, \text{(4)} \\
+\frac{\partial v_{\text{b}}}{\partial t} &amp;=&amp; -u_{\text{b}} \frac{\partial v_{\text{b}}}{\partial r} - v_{\text{b}} \frac{\partial v_{\text{b}}}{r \partial \lambda} + w^{-} \left( \frac{v - v_{\text{b}}}{h_{\text{b}}} \right) - \left( f u_{\text{b}} + \frac{u_{\text{b}} v_{\text{b}}}{r} \right) + g \frac{\partial h}{r \partial \lambda} - C_{\text{D}} U \frac{v_{\text{b}}}{h} + K \left( \nabla^2 v_{\text{b}} - \frac{v_{\text{b}}}{r^2} + \frac{2}{r^2} \frac{\partial u_{\text{b}}}{\partial \lambda} \right)&amp;, \text{(5)} \\
+w_{\text{b}} &amp;=&amp; -h \left( \frac{u_{\text{b}}}{r} + \frac{\partial u_{\text{b}}}{\partial r} + \frac{\partial v_{\text{b}}}{r \partial \lambda} \right)&amp;. \text{(6)}
+\end{gather*}\end{split}\]</div>
+<p>The radial wind is denoted by <span class="math notranslate nohighlight">\(u_{\text{b}}\)</span>, where the subscript “b” indicates the boundary layer; <span class="math notranslate nohighlight">\(v_{\text{b}}\)</span> is the tangential wind in the boundary layer; <span class="math notranslate nohighlight">\(w_{\text{b}}\)</span> is the diagnostic vertical wind at the top of the boundary layer; and <span class="math notranslate nohighlight">\(\nabla^2 = \partial^2/\partial r^2 + (1/r)(\partial/\partial r) + (1/r^2)(\partial^2/\partial \lambda^2)\)</span>. The <span class="math notranslate nohighlight">\(10\text{ m}\)</span> wind speed used to calculate surface fluxes is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+U &amp;=&amp; 0.78 \left( u_{\text{b}}^2 + v_{\text{b}}^2 \right)^{\frac{1}{2}}&amp;, \text{(7)} \\
+w^{-} &amp;=&amp; \frac{1}{2} \left( |w_{\text{b}}| - w_{\text{b}} \right) &amp;, \text{(8)}
+\end{gather*}\end{split}\]</div>
+<p>is the rectified Ekman suction, which results in a source term for the horizontal momentum in the boundary layer from downdrafts aloft. We opted to include both the Ekman suction term used in <em>Williams et al.</em> (2013) and <em>Williams</em> (2015) and the full diffusion terms used in <em>Kepert</em> (2001) and <em>Shapiro</em> (1983) in this study, but sensitivity tests without these extra terms produced very similar results and are not shown here. A constant-<span class="math notranslate nohighlight">\(C_{\text{D}}\)</span> drag coefficient is set to <span class="math notranslate nohighlight">\(2.4 \times 10^{-3}\)</span> following <em>Bell et al.</em> (2012a), the horizontal diffusion <span class="math notranslate nohighlight">\(K\)</span> is set to <span class="math notranslate nohighlight">\(5000.0\text{ m}^2\text{ s}^{-1}\)</span>, and the height of the slab layer <span class="math notranslate nohighlight">\(h_{\text{b}}\)</span> is set to a constant <span class="math notranslate nohighlight">\(1000.0\text{ m}\)</span>. Due to the presence of inertial oscillations in vertical motion that arise from the use of a slab boundary layer (<em>Kepert</em>, 2010), we used a stronger value of horizontal diffusion compared with previous studies rather than applying any special numerical filters. Smaller values of <span class="math notranslate nohighlight">\(K\)</span> produced stable numerical integrations and qualitatively similar results in the axisymmetric and low wavenumber structure but had apparent high wavenumber oscillations in <span class="math notranslate nohighlight">\(w_{\text{b}}\)</span>. Increasing the <span class="math notranslate nohighlight">\(K\)</span> value to <span class="math notranslate nohighlight">\(5000.0\text{ m}^2\text{ s}^{-1}\)</span> largely removed the inertial oscillations and did not change the overall conclusions of the study.</p>
+<p>In the one-way configuration, the two layers are coupled together via the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> pressure gradient associated with gradients in the fluid depth, which remains close to gradient balance with the rotational wind in the shallow-water layer in the absence of friction. The pressure gradient drives the SBL model and leads to sub- and supergradient winds, radial inflow, and vertical motion due to the force imbalance from the surface drag and diffusion terms. The SBL model is therefore entirely driven by the free atmosphere dynamics from the pressure gradient terms and the nonlinear interactions of the boundary layer flow. The schematic of the one-way model configuration is shown in Fig. 1a.</p>
+<p>在常數 <span class="math notranslate nohighlight">\(f\)</span> 平面上，淺水模型（<span class="math notranslate nohighlight">\(\text{SWM}\)</span>）在極座標系中求解無黏性、無擴散且無摩擦的非線性淺水方程式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial u}{\partial t} &amp;=&amp; -u \frac{\partial u}{\partial r} - v \frac{\partial v}{r \partial \lambda} + f v + \frac{v^2}{r} - \frac{\partial(gh)}{\partial r} &amp;,  \text{(1)}\\
+\frac{\partial v}{\partial t} &amp;=&amp; -u \frac{\partial v}{\partial r} - v \frac{\partial v}{r \partial \lambda} - f u - \frac{uv}{r} - \frac{\partial(gh)}{r \partial \lambda} &amp;, \text{(2)} \\
+\frac{\partial h}{\partial t} + \frac{\partial(ruh)}{r \partial r} + \frac{\partial(vh)}{r \partial \lambda} &amp;=&amp; 0 &amp;, \text{(3)}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> 為徑向速度</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> 為切向風速</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> 為常數科氏參數，設定為 <span class="math notranslate nohighlight">\(f = 5.0 \times 10^{-5}\text{ s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> 為 <span class="math notranslate nohighlight">\(\text{SWM}\)</span> 中流體高度偏離平均深度 <span class="math notranslate nohighlight">\(H\)</span> 的偏差值（<span class="math notranslate nohighlight">\(H\)</span> 設定為常數 <span class="math notranslate nohighlight">\(2000.0\text{ m}\)</span>，用以代表大氣的對流層低層）。對於單向模型，<span class="math notranslate nohighlight">\(\text{SBL}\)</span> 無法提供回饋給 <span class="math notranslate nohighlight">\(\text{SWM}\)</span>，這確保了位勢渦度（potential vorticity, 記為 <span class="math notranslate nohighlight">\(P = (f + \zeta)/h\)</span>）的物質守恆</p></li>
+<li><p>相對渦度 <span class="math notranslate nohighlight">\(\zeta\)</span> 定義為 <span class="math notranslate nohighlight">\(\zeta = \partial(rv)/r\partial r - \partial u/r\partial \lambda\)</span></p></li>
+<li><p>物質導數（material derivative）給定為 <span class="math notranslate nohighlight">\(\text{D}/\text{D}t = \partial/\partial t + u(\partial/\partial r) + v(\partial/r\partial \lambda)\)</span>。</p></li>
+</ul>
+<p>遵循 <em>Batchelor</em> (1967)、<em>Kepert</em> (2001)、<em>Shapiro</em> (1983)、<em>Williams et al.</em> (2013) 以及 <em>Williams</em> (2015) 的研究，極座標下邊界層內對稱動力學的控制方程式如下：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial u_{\text{b}}}{\partial t} &amp;=&amp; -u_{\text{b}} \frac{\partial u_{\text{b}}}{\partial r} - v_{\text{b}} \frac{\partial u_{\text{b}}}{r \partial \lambda} + w^{-} \left( \frac{u - u_{\text{b}}}{h_{\text{b}}} \right) + \left( f v_{\text{b}} + \frac{v_{\text{b}}^2}{r} \right) - g \frac{\partial h}{\partial r} - C_{\text{D}} U \frac{u_{\text{b}}}{h} + K \left( \nabla^2 u_{\text{b}} - \frac{u_{\text{b}}}{r^2} - \frac{2}{r^2} \frac{\partial v_{\text{b}}}{\partial \lambda} \right)&amp;, \text{(4)} \\
+\frac{\partial v_{\text{b}}}{\partial t} &amp;=&amp; -u_{\text{b}} \frac{\partial v_{\text{b}}}{\partial r} - v_{\text{b}} \frac{\partial v_{\text{b}}}{r \partial \lambda} + w^{-} \left( \frac{v - v_{\text{b}}}{h_{\text{b}}} \right) - \left( f u_{\text{b}} + \frac{u_{\text{b}} v_{\text{b}}}{r} \right) + g \frac{\partial h}{r \partial \lambda} - C_{\text{D}} U \frac{v_{\text{b}}}{h} + K \left( \nabla^2 v_{\text{b}} - \frac{v_{\text{b}}}{r^2} + \frac{2}{r^2} \frac{\partial u_{\text{b}}}{\partial \lambda} \right)&amp;, \text{(5)} \\
+w_{\text{b}} &amp;=&amp; -h \left( \frac{u_{\text{b}}}{r} + \frac{\partial u_{\text{b}}}{\partial r} + \frac{\partial v_{\text{b}}}{r \partial \lambda} \right)&amp;. \text{(6)}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>徑向風以 <span class="math notranslate nohighlight">\(u_{\text{b}}\)</span> 表示，其中下標「b」代表邊界層（boundary layer）</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{\text{b}}\)</span> 為邊界層內的切向風</p></li>
+<li><p><span class="math notranslate nohighlight">\(w_{\text{b}}\)</span> 為邊界層頂部的診斷垂直風速</p></li>
+<li><p>拉普拉斯算子 <span class="math notranslate nohighlight">\(\nabla^2 = \partial^2/\partial r^2 + (1/r)(\partial/\partial r) + (1/r^2)(\partial^2/\partial \lambda^2)\)</span>。</p></li>
+</ul>
+<p>用於計算地表通量的 <span class="math notranslate nohighlight">\(10\text{ m}\)</span> 風速為：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+U &amp;=&amp; 0.78 \left( u_{\text{b}}^2 + v_{\text{b}}^2 \right)^{\frac{1}{2}}&amp;, \text{(7)} \\
+w^{-} &amp;=&amp; \frac{1}{2} \left( |w_{\text{b}}| - w_{\text{b}} \right) &amp;, \text{(8)}
+\end{gather*}\end{split}\]</div>
+<p>為整流後的艾克曼抽吸（rectified Ekman suction），它構成了來自高空下沉氣流對邊界層水平動量的源項（source term）。在本研究中，我們選擇同時納入 <em>Williams et al.</em> (2013) 與 <em>Williams</em> (2015) 所使用的艾克曼抽吸項，以及 <em>Kepert</em> (2001) 與 <em>Shapiro</em> (1983) 所使用的完整擴散項，但排除這些額外項目的敏感度測試產生了非常相似的結果，因此此處未予展示。遵循 <em>Bell et al.</em> (2012a) 的設定</p>
+<ul class="simple">
+<li><p>等值表面阻力係數 <span class="math notranslate nohighlight">\(C_{\text{D}} =2.4 \times 10^{-3}\)</span></p></li>
+<li><p>水平擴散係數 <span class="math notranslate nohighlight">\(K=5000.0\text{ m}^2\text{ s}^{-1}\)</span></p></li>
+<li><p>且平板邊界層厚度 <span class="math notranslate nohighlight">\(h_{\text{b}}=1000.0\text{ m}\)</span></p></li>
+</ul>
+<p>由於使用平板邊界層會產生垂直運動上的慣性振盪（<em>Kepert</em>, 2010），相較於過去的研究，我們使用了較強的水平擴散值，而不是應用任何特殊的數值濾波器。較小的 <span class="math notranslate nohighlight">\(K\)</span> 值在軸對稱與低波數結構中能產生穩定的數值積分與定性上相似的結果，但在 <span class="math notranslate nohighlight">\(w_{\text{b}}\)</span> 中會出現明顯的高波數振盪。將 <span class="math notranslate nohighlight">\(K\)</span> 值增加至 <span class="math notranslate nohighlight">\(5000.0\text{ m}^2\text{ s}^{-1}\)</span> 在很大程度上消除了慣性振盪，且並未改變本研究的整體結論。</p>
+<p>在單向配置中，這兩個層透過與流體深度梯度相關的淺水模型（<span class="math notranslate nohighlight">\(\text{SWM}\)</span>）氣壓梯度耦合在一起。在沒有摩擦力的情況下，該氣壓梯度與淺水層中的旋轉風保持接近梯度平衡。此氣壓梯度驅動了表面邊界層（SBL）模型，並由於地表阻力和擴散項帶來的受力不平衡，進而導致次梯度與超梯度風、徑向流入以及垂直運動。因此，SBL 模型完全由氣壓梯度項帶來的自由大氣動力學，以及邊界層流的非線性交互作用所驅動。單向模型配置的示意圖如圖 1a 所示。</p>
+</section>
+<section id="the-two-way-model">
+<h4><strong>2.2 The two-way model</strong><a class="headerlink" href="#the-two-way-model" title="Link to this heading">#</a></h4>
+<p>For the two-way model, we add a forcing term <span class="math notranslate nohighlight">\(S(r, \lambda, t)\)</span> with units of seconds (<span class="math notranslate nohighlight">\(\text{s}^{-1}\)</span>), which simulates the effects of diabatic heating in a continuously stratified, compressible fluid. Unlike previous models that parameterized the effects of eyewall diabatic heating from a prescribed set of functions, here we allow the vertical motion to freely develop in response to the atmospheric and SBL forcing.</p>
+<p>We assume that the forcing is proportional to the vertical motion produced by convergence and divergence in the boundary layer:</p>
+<div class="math notranslate nohighlight">
+\[S(r, \lambda, t) = w_{\text{b}} S_1 \quad , \text{(9)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S_1\)</span> is a constant and set to <span class="math notranslate nohighlight">\(10^{-5}\text{ m}^{-1}\)</span>. A larger value of <span class="math notranslate nohighlight">\(S_1\)</span> corresponds to more intense heating for a given <span class="math notranslate nohighlight">\(w\)</span>. Equation (3) now becomes</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial h}{\partial t} + \frac{\partial(ruh)}{r \partial r} + \frac{\partial(vh)}{r \partial \lambda} = -hS \quad. \text{(10)}\]</div>
+<p>Because of the mass sink term <span class="math notranslate nohighlight">\(-hS\)</span>, the potential vorticity is no longer materially conserved such that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\text{D}P}{\text{D}t} = SP \quad .  \text{(11)}\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(P\)</span> in the free atmosphere can be generated by the updraft coming out of the boundary layer in a similar manner to vertical gradients of heating in the Rossby–Ertel formulation in a stratified fluid. The relationship between the mass sink and vertical gradient of heating can be understood through analogous forms of the mass continuity and potential density equations in the shallow-water equations and isentropic coordinates (<em>Schubert and Taft</em>, 2022). In effect, the parameterization can be thought of as convective mass flux out of a lower-tropospheric isentropic layer into the upper troposphere. We note that parameterizing heating as a mass sink in a single layer is a simplification that treats the upper-tropospheric layer implicitly and therefore neglects entrainment and does not allow for any vertical structure in the heating profile. However, the simple parameterization acts similarly to deep convection in a <span class="math notranslate nohighlight">\(\text{TC}\)</span>, serving as a <span class="math notranslate nohighlight">\(\text{PV}\)</span> source in the lower troposphere that can lead to changes in intensity and structure. The schematic of the two-way model configuration is shown in Fig. 1b.</p>
+<p>對於雙向模型，我們加入了一個單位為秒分之一（<span class="math notranslate nohighlight">\(\text{s}^{-1}\)</span>）的強迫項 <span class="math notranslate nohighlight">\(S(r, \lambda, t)\)</span>，用以模擬在連續分層、可壓縮流體中非絕熱加熱（diabatic heating）的效應。不同於以往的模型是透過一組預設函數來參數化眼牆的非絕熱加熱效應，在此我們允許垂直運動根據大氣與平板邊界層（SBL）的強迫作用自由發展。</p>
+<p>我們假設此強迫項與邊界層內由輻合及輻散所產生的垂直運動成正比：</p>
+<div class="math notranslate nohighlight">
+\[S(r, \lambda, t) = w_{\text{b}} S_1 \quad , \text{(9)}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(S_1\)</span> 為常數，設定為 <span class="math notranslate nohighlight">\(10^{-5}\text{ m}^{-1}\)</span>。對於給定的 <span class="math notranslate nohighlight">\(w\)</span>，較大的 <span class="math notranslate nohighlight">\(S_1\)</span> 值對應著更強烈的加熱。方程式 (3) 現在變為：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial h}{\partial t} + \frac{\partial(ruh)}{r \partial r} + \frac{\partial(vh)}{r \partial \lambda} = -hS \quad. \text{(10)}\]</div>
+<p>由於質量匯（mass sink）項 <span class="math notranslate nohighlight">\(-hS\)</span> 的存在，位勢渦度（potential vorticity）不再維持物質守恆，其關係式變為：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\text{D}P}{\text{D}t} = SP \quad .  \text{(11)}\]</div>
+<p>因此，自由大氣中的 <span class="math notranslate nohighlight">\(P\)</span>（位勢渦度）可以由邊界層向上的上升氣流所生成，這與分層流體中 Rossby-Ertel 公式裡垂直加熱梯度的作用方式相似。質量匯與垂直加熱梯度之間的關係，可以透過淺水方程式與等位溫座標（isentropic coordinates）中質量連續方程式與位勢密度方程式的類比形式來理解（Schubert and Taft, 2022）。實際上，這種參數化可以被視為是對流質量通量（convective mass flux）從對流層低層的等位溫層流出，進入對流層高層的過程。我們需注意，在單一層模型中將加熱參數化為質量匯是一種簡化作法，它隱式地處理了對流層高層，因此忽略了夾帶作用（entrainment），也不允許加熱剖面具有任何垂直結構。然而，這個簡單的參數化作用起來類似於熱帶氣旋（TC）中的深對流，作為對流層低層的 PV（位勢渦度）源，它能導致系統強度與結構的改變。雙向模型配置的示意圖如圖 1b 所示。</p>
+</section>
+<section id="numerical-model-design">
+<h4><strong>2.3 Numerical model design</strong><a class="headerlink" href="#numerical-model-design" title="Link to this heading">#</a></h4>
+<p>A new semi-spectral numerical weather prediction model called the Scythe model was used in this study (<em>Bell and Cha</em>, 2024a). The model is formulated in polar coordinates using the spectral transform method (<em>Orszag</em>, 1970) to integrate the coupled shallow-water and boundary layer equations forward in time. The spatial fields are discretized using finite elements in the radial direction and Fourier series in the azimuthal direction on a reduced Gaussian grid. The finite elements are cubic b-splines (<em>Ooyama</em>, 2002) similar to the numerical representation in the <span class="math notranslate nohighlight">\(\text{SAMURAI}\)</span> variational analysis package (<em>Bell et al.</em>, 2012b; <em>Cha and Bell</em>, 2023). The radial nodal spacing of the b-spline amplitude points is <span class="math notranslate nohighlight">\(3\text{ km}\)</span>, with three Gaussian quadrature points in between each node that are spaced <span class="math notranslate nohighlight">\(\sim 1\text{ km}\)</span> apart. One advantage of the finite elements over periodic basis functions is the ease of imposing boundary conditions. The boundary conditions are a Dirichlet zero wind condition at the origin and a Neumann zero first derivative at the outer boundary for <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>. A Neumann condition is set for <span class="math notranslate nohighlight">\(h\)</span> at the inner boundary, and no boundary condition is enforced for the variables at the outer boundary. Furthermore, <span class="math notranslate nohighlight">\(w\)</span> is diagnostically calculated throughout the model integration over time.</p>
+<p>In the azimuthal direction, an evenly spaced grid is employed starting with eight points around the circle at the radius closest to the origin. Four points are added at each successive radius and are offset from the previous ring to form approximate triangles in physical space. The grid arrangement is similar to that used in the “octahedral” grid employed by the European Centre for Medium-Range Weather Forecasts (<span class="math notranslate nohighlight">\(\text{ECMWF}\)</span>) global model where the spherical Earth is approximately projected onto an octahedron. In the current polar geometry, the grid is essentially a triangular tessellation with <span class="math notranslate nohighlight">\(\sim 1\text{ km}\)</span> spacing between grid points throughout most of the domain, with slightly smaller spacing near the origin.</p>
+<p>The time integration is similar to that described by <em>Ooyama</em> (2002). Here we use a third-order Adams–Bashforth time integrator, which provides better numerical stability and accuracy than the second-order method (<em>Durran and Blossey</em>, 2012), and the time tendencies are added in physical space rather than in spectral space due to the mix of b-spline and Fourier coefficients. At each time step, the spectral amplitudes of the Fourier modes and cubic b-spline elements are used to calculate the wind and fluid depth at each grid point in physical space in both layers. The spectral method allows for high accuracy in the calculation of the spatial derivatives in both the radial and the azimuthal directions. Nonlinear advection terms and all other forcings are calculated in physical space and applied as time tendencies. The updated physical terms are then converted back into spectral space with filtering and boundary conditions applied. The Fourier amplitudes are filtered according to the “cubic representation” such that the shortest wave on the grid is represented by four points. The b-spline amplitudes are filtered with the so-called “spline-cutoff” filter, which enforces a third derivative constraint on the spline function (<em>Ooyama</em>, 2002). The filtering and the spectral transform method eliminate spectral aliasing in the nonlinear terms.</p>
+<p>The so-called “pole problem” associated with converging radials near the origin is handled through the combination of the reduced Gaussian grid and the Fourier filtering. At the ring closest to the origin, only azimuthal wavenumber 1 is retained after Fourier filtering. Increasing wavenumbers are allowed at each ring as the number of points is increased radially. The model shows good numerical stability and accuracy in a wide variety of test cases and in the scientific results presented herein. The model code used in this study is open source and available for researchers interested in reproducing the results of this study.</p>
+<p>本研究使用了一個名為 Scythe 模型的新型半譜數值天氣預報模型（<em>Bell and Cha</em>, 2024a）。該模型在極座標系下建立，利用譜轉換方法（<em>Orszag</em>, 1970）將耦合的淺水與邊界層方程式在時間上向前積分。空間場的離散化，在徑向上使用有限元素法（finite elements），在方位角方向上則於簡化高斯網格（reduced Gaussian grid）上使用傅立葉級數（Fourier series）。有限元素採用三次 B 樣條（cubic b-splines；<em>Ooyama</em>, 2002），類似於 <span class="math notranslate nohighlight">\(\text{SAMURAI}\)</span> 變分分析套件中的數值表示法（<em>Bell et al.</em>, 2012b；<em>Cha and Bell</em>, 2023）。B 樣條振幅點的徑向節點間距為 <span class="math notranslate nohighlight">\(3\text{ km}\)</span>，每個節點之間有三個高斯求積點（Gaussian quadrature points），間距約為 <span class="math notranslate nohighlight">\(1\text{ km}\)</span>。有限元素相較於週期性基底函數（periodic basis functions）的一個優點在於容易施加邊界條件。邊界條件設定如下：<span class="math notranslate nohighlight">\(u\)</span> 與 <span class="math notranslate nohighlight">\(v\)</span> 在原點處為狄利克雷（Dirichlet）零風速條件，在外邊界為紐曼（Neumann）零一階導數條件。<span class="math notranslate nohighlight">\(h\)</span> 在內邊界設定為紐曼條件，而在外邊界對各變數則不強制設定任何邊界條件。此外，<span class="math notranslate nohighlight">\(w\)</span> 在模型隨時間積分的過程中是透過診斷計算得出的。</p>
+<p>在方位角方向上，採用了均勻分佈的網格，從最靠近原點的半徑圓周上 8 個點開始。每個相鄰的半徑都會增加 4 個點，並與前一個圓環產生偏移，從而在物理空間中形成近似的三角形。這種網格排列類似於歐洲中期天氣預報中心（<span class="math notranslate nohighlight">\(\text{ECMWF}\)</span>）全球模型所使用的「八面體（octahedral）」網格，即將球形地球近似投影至八面體上。在目前的極座標幾何中，該網格本質上是一種三角形鑲嵌（triangular tessellation），在大部分網域中網格點間距約為 <span class="math notranslate nohighlight">\(1\text{ km}\)</span>，而靠近原點處的間距則稍小。</p>
+<p>時間積分方法類似於 <em>Ooyama</em> (2002) 所描述的方法。此處我們使用三階 Adams–Bashforth 時間積分器，它比二階方法提供了更好的數值穩定性與精確度（<em>Durran and Blossey</em>, 2012），並且由於混合了 B 樣條與傅立葉係數，時間趨勢（time tendencies）是在物理空間而非譜空間中加入的。在每個時間步長中，傅立葉模態與三次 B 樣條元素的譜振幅被用來計算兩層模型中物理空間各網格點的風速與流體深度。譜方法允許在計算徑向與方位角方向的空間導數時具有很高的精確度。非線性平流項與所有其他強迫力都是在物理空間中計算，並作為時間趨勢施加。更新後的物理項接著被轉換回譜空間，並應用濾波與邊界條件。傅立葉振幅根據「三次表示法（cubic representation）」進行濾波，使得網格上最短的波由四個點來表示。B 樣條振幅則使用所謂的「樣條截斷（spline-cutoff）」濾波器進行濾波，該濾波器對樣條函數強制施加三階導數約束（<em>Ooyama</em>, 2002）。濾波與譜轉換方法消除了非線性項中的譜混疊（spectral aliasing）。</p>
+<p>靠近原點處徑向匯聚所產生的所謂「極點問題（pole problem）」，是透過簡化高斯網格與傅立葉濾波的結合來處理的。在最靠近原點的圓環處，傅立葉濾波後僅保留方位角波數 1。隨著徑向點數的增加，各圓環允許的波數也隨之增加。該模型在各種測試案例以及本文所呈現的科學結果中，皆展現了良好的數值穩定性與準確度。本研究中使用的模型程式碼是開源的，可供有興趣重現本研究結果的研究人員使用。</p>
+</section>
+<section id="initial-conditions">
+<h4><strong>2.4 Initial conditions</strong><a class="headerlink" href="#initial-conditions" title="Link to this heading">#</a></h4>
+<p><img alt="" src="../../../_images/Cha2024_fig2.png" /></p>
+<p>We use an initial vorticity profile that resembles an axisymmetric Rankine vortex and integrate the model for <span class="math notranslate nohighlight">\(3\text{ h}\)</span> to develop an approximately steady-state boundary layer flow. The initial profile is</p>
+<div class="math notranslate nohighlight">
+\[V_{\text{T}} = V_{\text{max}} \left( \frac{R}{R_{\text{max}}} \right), \quad R \leq R_{\text{max}}, \text{(12)} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{\text{T}} = V_{\text{max}} \left( \frac{R_{\text{max}}}{R} \right), \quad R &gt; R_{\text{max}}, \text{(13)} \]</div>
+<p>This idealized Rankine vortex possesses a circular rotation under the gradient wind balance with no transverse circulation. <span class="math notranslate nohighlight">\(V_{\text{max}}\)</span> is set to <span class="math notranslate nohighlight">\(50\text{ m s}^{-1}\)</span>, and <span class="math notranslate nohighlight">\(R_{\text{max}}\)</span> is set to <span class="math notranslate nohighlight">\(50\text{ km}\)</span>, which are designed to be representative of a relatively intense vortex. The mass field is initialized in gradient wind balance:</p>
+<div class="math notranslate nohighlight">
+\[\frac{V^2}{r} + fV = g \frac{\partial h}{\partial r}, \text{(14)} \]</div>
+<p>We initialize this idealized profile for the two-layer model but allow one-way coupling only in the spin-up period. The pressure gradient force in the shallow-water model can therefore organize and develop the flow in the boundary layer, but the flow in the boundary layer is not allowed to feed back into the shallow water during the spin-up phase. We then take the output at <span class="math notranslate nohighlight">\(3\text{ h}\)</span>, when the boundary layer flow is fully developed, as the initial conditions for subsequent experiments with asymmetries and two-way forcing. Figure 1 shows that a shock-like structure of the tangential wind develops in the boundary layer, accompanied by an updraft up to <span class="math notranslate nohighlight">\(5\text{ m s}^{-1}\)</span> and radial inflow up to <span class="math notranslate nohighlight">\(-24\text{ m s}^{-1}\)</span>. Supergradient boundary layer winds are located inside the <span class="math notranslate nohighlight">\(\text{RMW}\)</span> of the flow aloft, and a sharp radial gradient of radial flow transitioning from inflow to outflow around <span class="math notranslate nohighlight">\(R_{\text{max}}\)</span> suggests a convergence of radial momentum and an induced updraft that is consistent with the vertical velocity profile. The vorticity in the shallow-water model (Fig. 1b) still closely resembles a Rankine profile, and the wind field is in approximate gradient wind balance. In this simple initial condition, the mean vorticity is mainly <span class="math notranslate nohighlight">\(0.002\text{ s}^{-1}\)</span> inside <span class="math notranslate nohighlight">\(R_{\text{max}}\)</span> with small deviations due to the numerical integration. The mean vorticity radial gradient is near zero inside <span class="math notranslate nohighlight">\(R_{\text{max}}\)</span> and exhibits a sharp negative radial vorticity gradient between <span class="math notranslate nohighlight">\(40\)</span> and <span class="math notranslate nohighlight">\(60\text{ km}\)</span>, supporting the propagation of stable vortex Rossby wave perturbations near the <span class="math notranslate nohighlight">\(\text{RMW}\)</span>. The flow does not have a vortex “skirt” but rather a near-zero radial gradient that damps outward radial propagation of <span class="math notranslate nohighlight">\(\text{VRWs}\)</span>. The fluid depth field shows the effective pressure gradient that drives the flow in the boundary layer.</p>
+<p>After the initial spin-up of the model and <span class="math notranslate nohighlight">\(\text{SBL}\)</span> response, we then add a wavenumber <span class="math notranslate nohighlight">\(2\)</span> vortex Rossby wave (<span class="math notranslate nohighlight">\(\text{VRW}\)</span>) perturbation to the vortex following <em>Lamb</em> (1932) and <em>Lee et al.</em> (2006):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+V_{\text{T}} &amp;=&amp; \frac{1}{2} \zeta R \left( \frac{\epsilon}{R_{\text{max}}} \cos(2\lambda) \right)&amp;, \quad R \leq R_{\text{eli}}, &amp;, \text{(15)} \\
+V_{\text{T}} &amp;=&amp; -\frac{1}{2} \zeta \frac{R_{\text{max}}^2}{R} \left( \epsilon \frac{R_{\text{max}}}{R^2} \cos(2\lambda) \right)&amp;, \quad R &gt; R_{\text{eli}}&amp;, \text{(16)} \\
+V_{\text{R}} &amp;=&amp; \frac{1}{2} \zeta R \left( \frac{\epsilon}{R_{\text{max}}} \sin(2\lambda) \right)&amp;, \quad R \leq R_{\text{max}}&amp;, \text{(17)} \\
+V_{\text{R}} &amp;=&amp; \frac{1}{2} \zeta \frac{R_{\text{max}}^2}{R} \left( \epsilon \frac{R_{\text{max}}}{R^2} \sin(2\lambda) \right)&amp;, \quad R &gt; R_{\text{eli}}&amp;, \text{(18)} \\
+\end{gather*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a amplitude factor set to <span class="math notranslate nohighlight">\(5\text{ km}\)</span>, and <span class="math notranslate nohighlight">\(R_{\text{eli}} = R_{\text{max}} + \epsilon \cos(2\lambda)\)</span> is the elliptical boundary of maximum winds. This perturbation superimposes a wavenumber <span class="math notranslate nohighlight">\(2\)</span> disturbance onto the Rankine vortex.</p>
+<p>The magnitude of the tangential and radial wind of this wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{VRW}\)</span> is the same but with a <span class="math notranslate nohighlight">\(\pi/4\)</span> (<span class="math notranslate nohighlight">\(45^\circ\)</span>) difference across all radii. The wavenumber <span class="math notranslate nohighlight">\(2\)</span> disturbance manifests itself as two pairs of counter-rotating vortices. The total circulation becomes an ellipse with the added wavenumber <span class="math notranslate nohighlight">\(2\)</span> disturbance. This profile with a balanced Rankine vortex and added wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{VRW}\)</span> is used as the initial condition for running subsequent one-way and two-way experiments. The initial condition of a relatively intense <span class="math notranslate nohighlight">\(\text{TC}\)</span> and elliptical eyewall is designed to approximate the vortex structure observed during the landfalls of Hurricane Michael (2018) (<em>Cha et al.</em>, 2020) or Typhoon Herb (1996) (<em>Kuo et al.</em>, 1999). After initialization, the model is integrated forward for <span class="math notranslate nohighlight">\(24\text{ h}\)</span> to examine the vortex evolution.</p>
+<p>我們使用類似於軸對稱蘭金渦旋（Rankine vortex）的初始渦度剖面，並將模型積分 <span class="math notranslate nohighlight">\(3\text{ h}\)</span>，以發展出近似穩定狀態的 <strong>邊界層氣流</strong>。初始剖面為：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}V_{\text{T}}=
+\left\{\begin{matrix}
+V_{\text{max}} \left( \frac{R}{R_{\text{max}}} \right),&amp; \quad R &amp;\leq&amp; R_{\text{max}}, &amp;\text{(12)} \\
+V_{\text{max}} \left( \frac{R_{\text{max}}}{R} \right),&amp; \quad R &amp;&gt;&amp; R_{\text{max}}, &amp;\text{(13)}\\
+\end{matrix}\right.\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V_{\text{max}}= 50\text{ m s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{\text{max}}= 50\text{ km}\)</span></p></li>
+</ul>
+<p>這個理想化的蘭金渦旋在梯度風平衡（gradient wind balance）下具有圓形旋轉，且沒有橫向環流（transverse circulation）。其設計旨在代表一個相對強烈的渦旋。上層質量場被初始化為處於梯度風平衡狀態：</p>
+<div class="math notranslate nohighlight">
+\[\frac{V^2}{r} + fV = g \frac{\partial h}{\partial r}, \text{(14)}\]</div>
+<p>我們為雙層模型初始化這個理想化剖面，但在初始旋轉加速（spin-up）期間僅允許單向耦合。因此，淺水模型中的氣壓梯度力可以組織並發展邊界層內的氣流，但在 spin-up 階段，邊界層的氣流不被允許回饋到淺水層中。接著，我們將邊界層氣流充分發展後的 3 小時輸出結果，作為後續包含不對稱性與雙向強迫實驗的初始條件。圖 1 顯示，邊界層內發展出了切向風的震波狀結構（shock-like structure），並伴隨著高達 <span class="math notranslate nohighlight">\(5\text{ m s}^{-1}\)</span> 的上升氣流與深達  <span class="math notranslate nohighlight">\(-24\text{ m s}^{-1}\)</span> 的徑向流入。超梯度（Supergradient）邊界層風位於高空流場的最大風速半徑（RMW）內側，而在 <span class="math notranslate nohighlight">\(R_{\text{max}}\)</span> 附近徑向氣流從流入轉為流出的陡峭徑向梯度，表明了徑向動量的輻合以及隨之引發的上升氣流，這與垂直速度剖面是一致的。淺水模型中的渦度（圖 1b）仍然非常類似於蘭金剖面，且風場處於近似的梯度風平衡狀態。在這個簡單的初始條件下，<span class="math notranslate nohighlight">\(R_{\text{max}}\)</span> 內部的平均渦度主要為 <span class="math notranslate nohighlight">\(0.002\text{ s}^{-1}\)</span>，僅有因數值積分造成的微小偏差。平均渦度的徑向梯度在 <span class="math notranslate nohighlight">\(R_{\text{max}}\)</span> 內部接近於零，並在 <span class="math notranslate nohighlight">\(40\text{ km}\)</span> 到 <span class="math notranslate nohighlight">\(60\text{ km}\)</span> 之間表現出陡峭的負徑向渦度梯度，這支持了穩定的渦旋羅斯貝波（VRW）擾動在 RMW 附近的傳播。該流場並沒有渦旋「裙襬（skirt）」，而是一個接近於零的徑向梯度，用以阻尼 VRW 向外的徑向傳播。流體深度場顯示了驅動邊界層內氣流的有效氣壓梯度。</p>
+<p>在模型初始 spin-up 與 SBL 響應之後，我們接著遵循 <em>Lamb</em> (1932) 與 <em>Lee et al.</em> (2006) 的方法，在渦旋中加入波數 2（wavenumber 2）的渦旋羅斯貝波（VRW）擾動：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}V_{\text{T}}=
+\left\{\begin{matrix}
+\frac{1}{2} \zeta R \left( \frac{\epsilon}{R_{\text{max}}} \cos(2\lambda) \right)&amp;, \quad R &amp;\leq&amp; R_{\text{eli}} &amp;, \text{(15)} \\
+-\frac{1}{2} \zeta \frac{R_{\text{max}}^2}{R} \left( \epsilon \frac{R_{\text{max}}}{R^2} \cos(2\lambda) \right)&amp;, \quad R &amp;&gt;&amp; R_{\text{eli}} &amp;, \text{(16)} \\
+\end{matrix}\right.\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}V_{\text{R}}=
+\left\{\begin{matrix}
+\frac{1}{2} \zeta R \left( \frac{\epsilon}{R_{\text{max}}} \sin(2\lambda) \right)&amp;, \quad R &amp;\leq&amp; R_{\text{max}} &amp;, \text{(17)} \\
+\frac{1}{2} \zeta \frac{R_{\text{max}}^2}{R} \left( \epsilon \frac{R_{\text{max}}}{R^2} \sin(2\lambda) \right)&amp;, \quad R &amp;&gt;&amp; R_{\text{eli}} &amp;, \text{(18)}
+\end{matrix}\right.\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> 為振幅因子， <span class="math notranslate nohighlight">\(\epsilon = 5\text{ km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{\text{eli}} = R_{\text{max}} + \epsilon \cos(2\lambda)\)</span> 是最大風速的橢圓形邊界。</p></li>
+</ul>
+<p>此擾動將一個波數 2 的干擾疊加到了蘭金渦旋之上。</p>
+<p>這個波數 2 VRW 的切向風與徑向風的量值相同，但在所有半徑上皆有 <span class="math notranslate nohighlight">\(\pi/4\)</span> (<span class="math notranslate nohighlight">\(45^\circ\)</span>) 的相位差。此波數 2 擾動表現為兩對反向旋轉的渦旋。在加入波數 2 擾動後，總環流變成了一個橢圓形。這個具備平衡蘭金渦旋並加上波數 2 VRW 的剖面，被用作執行後續單向與雙向實驗的初始條件。這個相對強烈熱帶氣旋與橢圓形眼牆的初始條件，是為了近似於在 2018 年颶風麥可（Michael） (<em>Cha et al.</em>, 2020) 或 1996 年颱風賀伯（Herb） (<em>Kuo et al.</em>, 1999) 登陸期間所觀測到的渦旋結構而設計的。在初始化之後，模型向前積分 24 小時，以檢驗渦旋的演化。</p>
+</section>
+</section>
+<section id="results">
+<h3><strong>3. Results</strong><a class="headerlink" href="#results" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../../_images/Cha2024_fig3.png" /></p>
+<p>Time series of the one-way and two-way simulations of the maximum wavenumber <span class="math notranslate nohighlight">\(0\)</span> (axisymmetric) tangential velocity and the radius of maximum wind in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> are shown in Fig. 3. Since the <span class="math notranslate nohighlight">\(\text{SBL}\)</span> is not allowed to transport momentum upward in the one-way model, and there are no other forcings, the maximum wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> remains mostly unchanged, with a magnitude oscillating between <span class="math notranslate nohighlight">\(43\)</span> and <span class="math notranslate nohighlight">\(47\text{ m s}^{-1}\)</span> due to the model’s numerical integration and the rotating elliptical asymmetry. The results suggest that the simulation reaches an approximate steady state in the axisymmetric structure and intensity. The radius of maximum wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind mostly remains around <span class="math notranslate nohighlight">\(51\text{ km}\)</span>, consistent with our initial condition setup.</p>
+<p>The two-way interaction simulation allows for the parameterized mass sink that is a proxy for diabatic heating and <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation to freely develop and influence the free atmospheric layer. The maximum wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind intensifies throughout the simulation but at a different intensification rate. The first time period bracketed by the dashed black lines has an intensification rate of <span class="math notranslate nohighlight">\(0.9\text{ m s}^{-1}\text{ h}^{-1}\)</span> after applying a <span class="math notranslate nohighlight">\(1\text{--}2\text{--}1\)</span> filter to reduce noise. The second time period bracketed by the dashed red lines has a faster intensification rate of <span class="math notranslate nohighlight">\(1.5\text{ m s}^{-1}\text{ h}^{-1}\)</span>. Overall, the intensification from <span class="math notranslate nohighlight">\(50\)</span> to <span class="math notranslate nohighlight">\(\sim 80\text{ m s}^{-1}\)</span> is nearly double the rapid intensification (<span class="math notranslate nohighlight">\(\text{RI}\)</span>) definition of the National Hurricane Center (<span class="math notranslate nohighlight">\(\text{NHC}\)</span>) of <span class="math notranslate nohighlight">\(30\text{ kn}\)</span> (<span class="math notranslate nohighlight">\(15.4\text{ m s}^{-1}\)</span>) increase in a tropical cyclone’s maximum sustained winds within a <span class="math notranslate nohighlight">\(24\text{ h}\)</span> period (<em>Kaplan and DeMaria</em>, 2003). While we acknowledge the physical discrepancy between the idealized tangential wind in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> compared to the <span class="math notranslate nohighlight">\(1\text{ min}\)</span> sustained wind used in the <span class="math notranslate nohighlight">\(\text{NHC}\)</span> definition, it is clear that the simplified vortex has rapidly intensified over the <span class="math notranslate nohighlight">\(24\text{ h}\)</span> of the simulation period. Higher-frequency oscillations in the wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind intensity can be seen in the time series between <span class="math notranslate nohighlight">\(400\)</span> and <span class="math notranslate nohighlight">\(800\text{ min}\)</span>, suggesting the presence of asymmetries. After <span class="math notranslate nohighlight">\(800\text{ min}\)</span>, there are less oscillations, and the wind speed intensifies steadily. The dashed purple line denotes the time when the intensification rate slows down with a reappearance of an intensity oscillation, suggesting that the structure becomes dynamically unstable again near the end of the simulation. Figure 3b shows the evolution of the radius of maximum wind for the two simulations. The one-way simulation shows no change in the <span class="math notranslate nohighlight">\(\text{RMW}\)</span>, consistent with the steady-state intensity. In the two-way simulation, the <span class="math notranslate nohighlight">\(\text{RMW}\)</span> contracts slowly with a value around <span class="math notranslate nohighlight">\(42\text{ km}\)</span>. When the intensification rate increases (period 2), the <span class="math notranslate nohighlight">\(\text{RMW}\)</span> contracts from <span class="math notranslate nohighlight">\(42\)</span> to <span class="math notranslate nohighlight">\(30\text{ km}\)</span> within <span class="math notranslate nohighlight">\(6.4\text{ h}\)</span>. The contraction rate becomes slower after <span class="math notranslate nohighlight">\(1100\text{ min}\)</span>, and the <span class="math notranslate nohighlight">\(\text{RMW}\)</span> stays around <span class="math notranslate nohighlight">\(30\text{ km}\)</span>, while the tangential wind continues to intensify.</p>
+<p>圖 3 顯示了淺水模型（<span class="math notranslate nohighlight">\(\text{SWM}\)</span>）中單向與雙向模擬的最大波數 0（軸對稱）切向風速以及最大風速半徑（<span class="math notranslate nohighlight">\(\text{RMW}\)</span>）的時間序列。由於單向模型不允許平板邊界層（<span class="math notranslate nohighlight">\(\text{SBL}\)</span>）將動量向上傳輸，且沒有其他強迫力，<span class="math notranslate nohighlight">\(\text{SWM}\)</span> 中的最大波數 0 切向風幾乎保持不變，其量值在 <span class="math notranslate nohighlight">\(43\)</span> 至 <span class="math notranslate nohighlight">\(47\text{ m s}^{-1}\)</span> 之間振盪，這是由於模型的數值積分與旋轉的橢圓不對稱性所致。結果表明，模擬在軸對稱結構與強度上達到了近似的穩定狀態（steady state）。最大波數 0 切向風的半徑大部分維持在 <span class="math notranslate nohighlight">\(51\text{ km}\)</span> 左右，與我們的初始條件設定一致。</p>
+<p>雙向交互作用模擬允許參數化的質量匯（作為非絕熱加熱與位勢渦度 (<span class="math notranslate nohighlight">\(\text{PV}\)</span>) 生成的替代指標）自由發展並影響自由大氣層。最大波數 0 切向風在整個模擬過程中不斷增強，但具有不同的增強速率。在應用 <span class="math notranslate nohighlight">\(1\text{--}2\text{--}1\)</span> 濾波器以減少雜訊後，由黑色虛線括起的第一個時間區段具有 <span class="math notranslate nohighlight">\(0.9\text{ m s}^{-1}\text{ h}^{-1}\)</span> 的增強速率。由紅色虛線括起的第二個時間區段則具有更快的增強速率，為 <span class="math notranslate nohighlight">\(1.5\text{ m s}^{-1}\text{ h}^{-1}\)</span>。整體而言，風速從 <span class="math notranslate nohighlight">\(50\text{ m s}^{-1}\)</span> 增強至約 <span class="math notranslate nohighlight">\(80\text{ m s}^{-1}\)</span> 的幅度，幾乎是國家颶風中心（<span class="math notranslate nohighlight">\(\text{NHC}\)</span>）對快速增強（<span class="math notranslate nohighlight">\(\text{RI}\)</span>）定義的兩倍，該定義為熱帶氣旋的最大持續風速在 24 小時內增加 30 節（<span class="math notranslate nohighlight">\(15.4\text{ m s}^{-1}\)</span>）（<em>Kaplan and DeMaria</em>, 2003）。儘管我們承認 <span class="math notranslate nohighlight">\(\text{SWM}\)</span> 中理想化的切向風與 <span class="math notranslate nohighlight">\(\text{NHC}\)</span> 定義中使用的 1 分鐘持續風速之間存在物理上的差異，但很明顯地，這個簡化的渦旋在 24 小時的模擬期間內已經經歷了快速增強。在時間序列中 400 至 800 分鐘之間，可以觀察到波數 0 切向風強度出現較高頻的振盪，這暗示了不對稱性的存在。在 800 分鐘之後，振盪變少，風速穩定增強。紫色虛線標示了增強速率減緩且強度振盪再次出現的時間點，這表明結構在模擬接近尾聲時再次變得動力不穩定。</p>
+<p>圖 3b 顯示了兩種模擬中最大風速半徑的演化。單向模擬顯示 <span class="math notranslate nohighlight">\(\text{RMW}\)</span> 沒有變化，這與穩定狀態的強度一致。在雙向模擬中，<span class="math notranslate nohighlight">\(\text{RMW}\)</span> 緩慢收縮至約 <span class="math notranslate nohighlight">\(42\text{ km}\)</span> 左右。當增強速率增加（第二階段）時，<span class="math notranslate nohighlight">\(\text{RMW}\)</span> 在 6.4 小時內從 42 收縮至 <span class="math notranslate nohighlight">\(30\text{ km}\)</span>。在 1100 分鐘之後，收縮速率變慢，<span class="math notranslate nohighlight">\(\text{RMW}\)</span> 停留在 <span class="math notranslate nohighlight">\(30\text{ km}\)</span> 左右，而切向風則持續增強。</p>
+<p>Figure 4 shows a time–radius diagram of the wavenumber <span class="math notranslate nohighlight">\(0\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> and the wavenumber <span class="math notranslate nohighlight">\(0\)</span> vertical motion in the <span class="math notranslate nohighlight">\(\text{SBL}\)</span>. The wavenumber <span class="math notranslate nohighlight">\(0\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> in the one-way model stays mostly unchanged with a monopole structure, and the wavenumber <span class="math notranslate nohighlight">\(0\)</span> updraft is located about <span class="math notranslate nohighlight">\(10\text{ km}\)</span> inward of the <span class="math notranslate nohighlight">\(\text{RMW}\)</span>, consistent with <em>Kepert</em> (2017). The wavenumber <span class="math notranslate nohighlight">\(0\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> in the two-way model starts from a monopole structure, and an enhanced <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring appears between <span class="math notranslate nohighlight">\(25\)</span> and <span class="math notranslate nohighlight">\(35\text{ km}\)</span> radius after <span class="math notranslate nohighlight">\(200\text{ min}\)</span>. The <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring is collocated with the updraft in the <span class="math notranslate nohighlight">\(\text{SBL}\)</span> and continues to intensify and contract. The <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring breaks down and evolves into a monopole after <span class="math notranslate nohighlight">\(800\text{ min}\)</span>, and an enhanced <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring starts to reappear around <span class="math notranslate nohighlight">\(950\text{ min}\)</span> and continues to intensify. The transient slowdown of the intensification and subsequent reintensification are similar to the results of <em>Rozoff et al.</em> (2009).</p>
+<p>Figure 5 illustrates a time–radius diagram of wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential and wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> amplitude. In the one-way experiment, the evolution of wavenumber <span class="math notranslate nohighlight">\(0\)</span> and wavenumber <span class="math notranslate nohighlight">\(2\)</span> amplitude is out of phase, with the asymmetry weakening as the wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind intensifies. For example, around <span class="math notranslate nohighlight">\(800\text{ min}\)</span>, when the tangential wind weakens, an enhanced wavenumber <span class="math notranslate nohighlight">\(2\)</span> asymmetry appears. These reverse pulses of symmetric and asymmetric vortex amplification suggest that the growth of the symmetric vortex may come at the expense of the decaying asymmetry and vice versa. However, the growth and decay are a stable oscillation, and neither amplitude departs far from the initial condition.</p>
+<p>In contrast, during the two-way experiment the wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind begins intensifying at <span class="math notranslate nohighlight">\(200\text{ min}\)</span>, whereas in the one-way experiment, the vortex remains below <span class="math notranslate nohighlight">\(47.5\text{ m s}^{-1}\)</span>. Despite both experiments being initialized with the same wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{VRW}\)</span> perturbation, an enhanced wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> anomaly continues to grow and radially expand in the two-way simulation until around <span class="math notranslate nohighlight">\(900\text{ min}\)</span> before it begins to decay. During this time frame, the wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind continues to intensify with some fluctuations in intensity, accompanied by the contraction of <span class="math notranslate nohighlight">\(\text{RMW}\)</span>. Unlike the one-way simulation, the asymmetric and axisymmetric amplitudes increase together in phase rather than out of phase.</p>
+<p>After the denoted <span class="math notranslate nohighlight">\(7.5 \times 10^{-7}\text{ m}^{-1}\text{ s}^{-1}\)</span> wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> contour disappears, a second phase occurs where the mean tangential wind intensifies even more rapidly, reaching over <span class="math notranslate nohighlight">\(80\text{ m s}^{-1}\)</span> before the wavenumber <span class="math notranslate nohighlight">\(2\)</span> amplitude starts to increase again. The results suggest a close coupling between the intensifying mean tangential wind and <span class="math notranslate nohighlight">\(\text{PV}\)</span>, indicating that the parameterized <span class="math notranslate nohighlight">\(\text{PV}\)</span> forcing sustained by the boundary layer updraft can continuously generate <span class="math notranslate nohighlight">\(\text{PV}\)</span> in the free atmospheric layer over the entire simulation period (Figs. 4 and 5).</p>
+<p>圖 4 顯示了淺水模型（SWM）中波數 0 位勢渦度（PV）與平板邊界層（SBL）中波數 0 垂直運動的時間-半徑圖。在單向模型中，波數 0 的 PV 幾乎保持不變，呈現單極（monopole）結構，且波數 0 的上升氣流位於最大風速半徑（RMW）內側約 10 km 處，這與 Kepert (2017) 的結果一致。雙向模型中的波數 0 PV 從單極結構開始，並在 200 分鐘後於半徑 25 至 35 km 之間出現一個增強的 PV 環（PV ring）。該 PV 環與 SBL 中的上升氣流在空間上重疊，並持續增強與收縮。在 800 分鐘後，PV 環崩解並演變為單極結構，大約在 950 分鐘時，一個增強的 PV 環開始重新出現並持續增強。這種增強過程的短暫減緩以及隨後的重新增強，與 Rozoff 等人 (2009) 的研究結果相似。</p>
+<p>圖 5 展示了波數 0 切向風與波數 2 PV 振幅的時間-半徑圖。在單向實驗中，波數 0 與波數 2 振幅的演化呈現反相（out of phase），當波數 0 切向風增強時，不對稱性便會減弱。例如，在大約 800 分鐘時，當切向風減弱，一個增強的波數 2 不對稱性便會出現。對稱與不對稱渦旋放大的這種反向脈衝（reverse pulses）現象表明，對稱渦旋的成長可能是以不對稱性的衰減為代價，反之亦然。然而，這種成長與衰減是一種穩定的振盪，且兩者的振幅都沒有大幅偏離初始條件。</p>
+<p>相對地，在雙向實驗中，波數 0 切向風在 200 分鐘時開始增強，而在單向實驗中，渦旋風速則始終保持在 47.5 m/s 以下。儘管兩個實驗都是以相同的波數 2 渦旋羅斯貝波（VRW）擾動進行初始化，但在雙向模擬中，一個增強的波數 2 PV 異常持續成長並沿徑向擴張，直到大約 900 分鐘左右才開始衰減。在這段時間內，波數 0 切向風伴隨著一些強度上的波動持續增強，同時伴隨著 RMW 的收縮。與單向模擬不同的是，不對稱與軸對稱振幅是同相（in phase）一起增加，而非反相。</p>
+<p>在圖中標示的 <span class="math notranslate nohighlight">\(7.5 \times 10^{-7}\text{ m}^{-1}\text{ s}^{-1}\)</span> 波數 2 PV 等值線消失後，進入了第二階段，此時平均切向風以更快的速度增強，在波數 2 振幅再次開始增加之前，風速達到了 80 m/s 以上。這些結果顯示，不斷增強的平均切向風與 PV 之間存在著密切的耦合關係，這表明由邊界層上升氣流所維持的參數化 PV 強迫作用，能在整個模擬期間持續於自由大氣層中生成 PV（圖 4 與圖 5）。</p>
+<p>The radial vorticity gradient from the one-way simulation (Fig. 6a) indicates that the vorticity exhibits a monopole-like pattern throughout the entire analysis period. In contrast, the two-way experiment reveals the emergence of a dipole pattern around <span class="math notranslate nohighlight">\(400\text{ min}\)</span>, with positive radial gradient primarily located inside the <span class="math notranslate nohighlight">\(30\text{ km}\)</span> radius and negative radial gradient occurring around <span class="math notranslate nohighlight">\(40\text{ km}\)</span>. The change in sign of the radial vorticity gradient provides a necessary condition for barotropic instability. During the first period between <span class="math notranslate nohighlight">\(400\)</span> and <span class="math notranslate nohighlight">\(800\text{ min}\)</span>, there is a noticeable enhancement in the dipole radial vorticity gradient, which continues to around <span class="math notranslate nohighlight">\(900\text{ min}\)</span>. The positive gradient becomes weaker at that time, and then the dipole gradient reintensifies around <span class="math notranslate nohighlight">\(1200\text{ min}\)</span>, with the negative radial reaching an amplitude exceeding <span class="math notranslate nohighlight">\(4 \times 10^{-7}\text{ m}^{-1}\text{ s}^{-1}\)</span>. The growth of the wavenumber <span class="math notranslate nohighlight">\(2\)</span> asymmetry closely follows the amplitude of the radial vorticity gradient (cf. Figs. 5 and 6). The correspondence between the two is consistent with the idea that the asymmetry grows through barotropic instability associated with counter-propagating <span class="math notranslate nohighlight">\(\text{VRWs}\)</span> and can also influence the axisymmetric vorticity gradient through vorticity mixing processes.</p>
+<p>Figure 7 shows the time evolution of the asymmetric vertical motion and tangential wind in the <span class="math notranslate nohighlight">\(\text{SBL}\)</span> from <span class="math notranslate nohighlight">\(400\)</span> to <span class="math notranslate nohighlight">\(592\text{ min}\)</span> from the one-way model simulation. Similar to the finding of <em>Kuo et al.</em> (2016), strong updrafts are found at the major axes of the ellipse, collocated with enhanced boundary layer supergradient tangential winds. By performing a spectral analysis similar to the approach of <em>Cha et al.</em> (2020), the cyclonic rotation speed of the wavenumber <span class="math notranslate nohighlight">\(2\)</span> boundary layer updraft, tangential flow, and <span class="math notranslate nohighlight">\(\text{PV}\)</span> in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> are all <span class="math notranslate nohighlight">\(24.5\text{ m s}^{-1}\)</span>, which takes <span class="math notranslate nohighlight">\(218\text{ min}\)</span> for a complete rotation. The harmonic rotation between the boundary layer flow and the wavenumber <span class="math notranslate nohighlight">\(2\)</span> asymmetry in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> (not shown) suggests a close coupling between the location of the updrafts and the <span class="math notranslate nohighlight">\(\text{PV}\)</span> structure aloft.</p>
+<p>Figure 8 shows the two-way model evolution during the first period, which is qualitatively similar to the one-way evolution. The upward motion in the boundary layer depicts an elliptical shape with a maximum at the major axis, but the wavenumber <span class="math notranslate nohighlight">\(2\)</span> asymmetry is more pronounced, and the eyewall is more compact compared to the one-way results. The boundary layer tangential wind collocates with the upward motion and rotates together cyclonically. The propagation speed of wavenumber <span class="math notranslate nohighlight">\(2\)</span> tangential and vertical motion in the boundary layer are both <span class="math notranslate nohighlight">\(30.72\text{ m s}^{-1}\)</span>, and the mean radius of maximum wind is at <span class="math notranslate nohighlight">\(\approx 42.6\text{ km}\)</span>, which results in <span class="math notranslate nohighlight">\(145\text{ min}\)</span> to complete a rotation. The rotation speed is faster than the one-way model results, potentially attributed to a storm of higher intensity and a smaller <span class="math notranslate nohighlight">\(\text{RMW}\)</span>.</p>
+<p>To investigate the relationship between the reflectivity and updraft in the free atmosphere, Fig. 9 shows the dynamic structure evolution, and the <span class="math notranslate nohighlight">\(h\)</span> field refers to the pressure field. Firstly, the one-way model results show an elliptical eyewall shape that is similar to the boundary layer upward motion pattern shown in Fig. 7 as the boundary layer flow is organized by the pressure gradient force. The <span class="math notranslate nohighlight">\(47\text{ m s}^{-1}\)</span> tangential wind is denoted by a blue contour and has an opposite pattern compared to the boundary layer tangential wind. <em>Kuo et al.</em> (2016) also found a similar characteristic for the different tangential wind patterns between the boundary layer and the free atmosphere. They interpret the enhanced tangential wind at the minor axis of the ellipse through the tangential momentum equation, neglecting the pressure gradient force term,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\text{D}v}{\text{D}t} = -\left( \frac{v}{r} + f \right) u. \eqno(19)\]</div>
+<p>The radial inflow is the largest at the major axis, which results in the strongest <span class="math notranslate nohighlight">\(\text{D}v/\text{D}t\)</span> located at the major axis. Tangential advection downstream yields a maximum at the minor axis in the free atmosphere.</p>
+<p>The amplitude of diagnostic vertical velocity in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> is much less than <span class="math notranslate nohighlight">\(0.5\text{ m s}^{-1}\)</span>, which is an order of magnitude weaker than the maximum boundary layer vertical motion. We note that the updraft from the <span class="math notranslate nohighlight">\(\text{SBL}\)</span> does not provide any momentum to the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> in either the one-way or the two-way configuration. The <span class="math notranslate nohighlight">\(\text{SBL}\)</span> updraft effect on the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> in the two-way configuration is solely through the mass sink term, and there is no upward interaction at all in the one-way case.</p>
+<p>The vertical velocity in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> has a dipole pattern but is not generally located at the edge of the elliptical vortex. The pattern is not consistent with the observed location of maximum reflectivity in elliptical eyewalls but instead would be associated with a broad pattern of ascent and descent within the eye. Differences in the vertical velocity pattern between the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> and <span class="math notranslate nohighlight">\(\text{SBL}\)</span> suggest that the boundary layer dynamics are primarily responsible for the enhanced reflectivity at the vertices, rather than the divergence field above the boundary layer.</p>
+<p>Figure 9b shows the upward motion, <span class="math notranslate nohighlight">\(h\)</span>, and <span class="math notranslate nohighlight">\(54\)</span> and <span class="math notranslate nohighlight">\(57\text{ m s}^{-1}\)</span> tangential wind speed contours in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> from the two-layer model results. The upward motion is not at the major axis, but instead, there is a <span class="math notranslate nohighlight">\(\pi/4\)</span> phase behind the upward motion in the boundary layer at <span class="math notranslate nohighlight">\(400\text{ min}\)</span>. In the <span class="math notranslate nohighlight">\(\text{SWM}\)</span>, the vertical motion is directly linked to the divergence field and has an approximately <span class="math notranslate nohighlight">\(0.8\text{ m s}^{-1}\)</span> amplitude. While the pattern is more elliptical than the one-way case, the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> vertical motion is still an order of magnitude smaller than the motion in the <span class="math notranslate nohighlight">\(\text{SBL}\)</span>, similar to the one-way case.</p>
+<p>Comparing the upward motion and the tangential wind pattern in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> (Fig. 9b) to the <span class="math notranslate nohighlight">\(\text{SBL}\)</span> (Fig. 8), the enhanced tangential signal does not collocate with the strongest upward motion. During the beginning of the period, the dipole secondary circulation is similar to the one-way results and is maximized at the minor axis of the ellipse. The pattern becomes more complex as both the jet locations and the secondary circulations rotate at different speeds, resulting in the tangential wind maxima near the major axis at <span class="math notranslate nohighlight">\(592\text{ min}\)</span>, which is different from the one-way model result.</p>
+<p>The dynamical evolution in the boundary layer and the shallow water during the first period is accompanied by the development of a <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring, an increasing wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> signal, and enhanced radial vorticity gradients. Figure 10 shows the evolution of the vertical velocity and tangential wind in the boundary layer during the second period. The vortex becomes more compact, and the elliptical eyewall contracts to a smaller <span class="math notranslate nohighlight">\(\text{RMW}\)</span> compared to the first period. At <span class="math notranslate nohighlight">\(736\text{ min}\)</span>, the maximum updraft and tangential wind are mainly at the major axis. The elliptical shape evolves into more of a wavenumber <span class="math notranslate nohighlight">\(4\)</span> pattern at <span class="math notranslate nohighlight">\(784\text{ min}\)</span> and becomes more circular at <span class="math notranslate nohighlight">\(1072\text{ min}\)</span> with a ring of strong upward motion over <span class="math notranslate nohighlight">\(10\text{ m s}^{-1}\)</span>.</p>
+<p>Figure 11 shows the <span class="math notranslate nohighlight">\(\text{PV}\)</span> evolution in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> overlaid with the boundary layer updraft during the second period. At <span class="math notranslate nohighlight">\(736\text{ min}\)</span>, the elliptical shape has four <span class="math notranslate nohighlight">\(\text{PV}\)</span> patches with a magnitude of <span class="math notranslate nohighlight">\(3.5 \times 10^{-6}\text{ m}^{-1}\text{ s}^{-1}\)</span> downstream of the major axis and a hollow <span class="math notranslate nohighlight">\(\text{PV}\)</span> inside the eye. Some of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> rotates around the vortex, while some is mixed into the vortex center and outside the <span class="math notranslate nohighlight">\(\text{RMW}\)</span>. At <span class="math notranslate nohighlight">\(1120\text{ min}\)</span>, the nearly circular <span class="math notranslate nohighlight">\(\text{PV}\)</span> at the vortex center has a maximum over <span class="math notranslate nohighlight">\(3.6 \times 10^{-6}\text{ m}^{-1}\text{ s}^{-1}\)</span>. Because the boundary layer updraft continues to produce the mass sink and associated <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation, the total <span class="math notranslate nohighlight">\(\text{PV}\)</span> after mixing is larger than the total <span class="math notranslate nohighlight">\(\text{PV}\)</span> before mixing (at <span class="math notranslate nohighlight">\(736\text{ min}\)</span>, Eq. 11). Meanwhile, the mean vortex continues to intensify. The vorticity mixing process has been suggested to be a detrimental process in previous barotropic models, but with the aid of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> forcing, the vortex was able to sustain itself and intensify after the mixing process, suggesting that the <span class="math notranslate nohighlight">\(\text{PV}\)</span> forcing outweighs the negative impacts of mixing in this case.</p>
+<p>The evolution of growth and axisymmetrization of the asymmetries seen in Fig. 11 is consistent with the wavenumber <span class="math notranslate nohighlight">\(0\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> structure and the radial vorticity gradient during this period described earlier. After <span class="math notranslate nohighlight">\(1120\text{ min}\)</span>, the wavenumber <span class="math notranslate nohighlight">\(0\)</span> tangential wind continues to steadily intensify with minimal asymmetries (Fig. 5). The wavenumber <span class="math notranslate nohighlight">\(2\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> signal reappears around <span class="math notranslate nohighlight">\(1250\text{ min}\)</span>, and the intensification rate starts to slow down. Figure 12 shows two snapshots of the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> <span class="math notranslate nohighlight">\(\text{PV}\)</span> and boundary layer updraft at <span class="math notranslate nohighlight">\(240\text{ min}\)</span> (<span class="math notranslate nohighlight">\(4\text{ h}\)</span>) and <span class="math notranslate nohighlight">\(1320\text{ min}\)</span> (<span class="math notranslate nohighlight">\(22\text{ h}\)</span>) respectively. The vortex has evolved into an elliptical shape again at <span class="math notranslate nohighlight">\(1320\text{ min}\)</span>, but now the <span class="math notranslate nohighlight">\(\text{PV}\)</span> is stronger in the eye, and there are two <span class="math notranslate nohighlight">\(\text{PV}\)</span> maximum patches over <span class="math notranslate nohighlight">\(4 \times 10^{-6}\text{ m}^{-1}\text{ s}^{-1}\)</span> that are collocated with the strong updraft ring. Evidence of high-wavenumber weak inertial oscillations in the <span class="math notranslate nohighlight">\(w\)</span> field is apparent at this time due to the slab boundary layer equations. By comparing the two-way model <span class="math notranslate nohighlight">\(\text{PV}\)</span> fields at <span class="math notranslate nohighlight">\(240\)</span> and <span class="math notranslate nohighlight">\(1320\text{ min}\)</span>, it is evident that <span class="math notranslate nohighlight">\(\text{PV}\)</span> has undergone significant evolution, with a substantial increase observed in both the eye and the eyewall regions. On the other hand, the <span class="math notranslate nohighlight">\(\text{PV}\)</span> field in the one-way model stays almost the same for the entire evolution (Fig. 4).</p>
+<p>The simulated evolution of the growth and decay of asymmetries during the intensification of the mean vortex and the growth of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring suggests that the nonlinear, two-way interaction between the <span class="math notranslate nohighlight">\(\text{PV}\)</span> field aloft and the boundary layer is a critical aspect of TC intensification. A calculation of the fluid depth removed from the shallow-water layer indicates that the amount is very small at any single time step or grid point (generally less than <span class="math notranslate nohighlight">\(0.1\text{ mm}\)</span>) but that the cumulative ef- fect is substantial and the total mass is reduced by <span class="math notranslate nohighlight">\(\sim 27\%\)</span> of its original value. Our results are consistent with the con- clusion of Schubert et al. (2016) that vortex intensification in the shallow-water framework is proportional to the volume of mass removed from the vortex interior. We have effec- tively assumed that the updraft erupting from the boundary layer accelerates through the shallow-water layer such that the vertical motion at the top of the layer is larger than at the bottom and mass is removed. This assumption is consistent with a bottom-heavy convective mass flux profile in the lower troposphere. If the top of the layer is considered to be an isentrope, then this mass removal is equivalent to a positive vertical gradient of diabatic heating across the layer. Implicitly then, the mass removed from the layer is being deposited into an unresolved upper-tropospheric layer where it must either accumulate or be removed through radial outflow.
+In the simulated boundary layer the mass can be considered to be constantly replaced through the radial inflow associated with the inward movement of the angular momentum surfaces. Mass continuity is prescribed precisely due to the diagnostic <span class="math notranslate nohighlight">\(w\)</span> and the fixed height of the slab boundary layer. Any air that leaves the boundary layer is implicitly replaced by radial inflow. We can make such an implicit assumption in the unresolved upper-tropospheric layer as well such that the mass deposited from the lower layer is exactly ventilated by the radial outflow. Under that assumption, the upper layer is entirely passive but maintains mass continuity in the full atmosphere. Interestingly, it does not appear to be essential to explicitly simulate this layer to achieve rapid intensification, but addition of those effects could result in a change in the intensification rate. An additional third layer could allow for the development of an upper-level anti-cyclone and permit the inclusion of vertical wind shear and top-heavy stratiform mass flux profiles. A third layer would also allow for the effects of entrainment by considering the fraction of mass passed through the lower layer as in the axisymmetric simulations by <em>Ooyama</em> (1969). We leave such additions to the modeling framework to future work but acknowledge that the specific intensification rate simulated here depends on the assumptions made about the mass flux profile and the passive role of the implicit upper layer.</p>
+<p>We reiterate that the only forcing in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> is through the mass sink term, which is driven by the boundary layer updraft. The location of the boundary layer updraft in turn is primarily controlled by the pressure gradient force aloft, which is associated with the structure of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> field. Our simplified modeling framework is specifically designed to distill the impacts on the vortex intensification process from diabatic heating forced by boundary layer convergence. However, such a simplification neglects other processes, such as vertical advection of momentum out of the boundary layer, entrainment, vortex alignment and vertical growth, and other factors which impact the intensification process in the real atmosphere. We have identified one pathway to rapid intensification of a vortex in a highly simplified framework, but our results do not preclude the possibility of other mechanisms being important or even essential in the real atmosphere. For example, the advection of the boundary layer momentum and the adjustment of the supergradient winds in the boundary layer to gradient flow aloft are essential to prevent an eventual shock and frontal collapse in the shallow-water layer. There is not a sufficiently strong supergradient flow to prevent the inward contraction of the <span class="math notranslate nohighlight">\(\text{RMW}\)</span> in the absence of that forcing such that in the current framework, we must simply end the simulation before such effects become too strong to ignore. The slab boundary layer is in itself a simplification and likely overestimates the strength of the updraft in some areas, so additional momentum effects would need to be considered and modeled carefully. The current modeling framework provides an avenue for such additions of selective processes to design experiments with other intermediate levels of complexity. Such additions and experiments would enable a better assessment of which factors are indeed critical for intensification in the real atmosphere and are recommended for future work.</p>
+</section>
+<section id="conclusions">
+<h3><strong>4. Conclusions</strong><a class="headerlink" href="#conclusions" title="Link to this heading">#</a></h3>
+<p>In this study, the relationships between vortex asymmetries, polygonal precipitation structure, and tropical cyclone (TC) intensification are explored through a simplified modeling framework. A two-layer model consisting of a shallow-water model (<span class="math notranslate nohighlight">\(\text{SWM}\)</span>) representing the free atmosphere on top of a slab boundary layer (SBL) is used to understand the dynamical relationships. We conduct two experiments with a oneway and two-way configuration. These two experiments both use an approximate Rankine vortex with an added wavenumber 2 perturbation as the initial condition designed to mimic observed intense TCs with elliptical eyewalls. In the oneway configuration, the pressure gradient in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> layer drives the SBL, but no feedbacks are allowed into the free atmosphere. For the two-way interaction, we parameterize the effects of diabatic heating in the lower troposphere forced by boundary layer vertical motion as a mass sink, similar to the framework described in Schubert et al. (2016) and Schubert and Taft (2022). In the one-way configuration potential vorticity (<span class="math notranslate nohighlight">\(\text{PV}\)</span>) is materially conserved in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span>, but in the two-way experiment the mass sink serves as a source of <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation. Unlike previous studies with a prescribed heating profile (Rozoff et al., 2009; Hendricks et al., 2014; Schubert et al., 2016), the vertical motion in the boundary layer develops freely in these simulations, so the location and intensity of parameterized heating are determined by the flow field and changes at each time step, which is a more realistic yet still highly simplified heating distribution.
+Results from the one-way experiment show that the boundary layer updraft locates at the major axis of the ellipse, whereas the vertical velocity in the shallow-water layer does not possess any elliptical shape. The vertical velocity in the boundary layer rotates cyclonically and propagates in tandem with the <span class="math notranslate nohighlight">\(\text{PV}\)</span> signal in the free atmosphere. This result confirms the hypothesis and findings of Kuo et al. (2016) that the VRW in the free atmosphere can organize the updrafts in the SBL such that the deep convection and enhanced radar reflectivity we see in nature are likely to be maximized at the polygonal vertices through this interaction.</p>
+<p>Our one-way and two-way experiments further show that the vertical velocity derived from the shallow-water layer is 1 order of magnitude smaller than the vertical velocity out of the boundary layer. The <span class="math notranslate nohighlight">\(\text{SWM}\)</span> has a maximum amplitude only up to 0.8 m s −1 and does not have a pattern that is consistent with the observed maxima at the major axis, whereas the vertical motion in the SBL can be over 10 m s −1 and is associated with the elliptical eyewall shape. A much weaker vertical motion in the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> suggests that the convergence induced by the non-gradient flow aloft is weak compared to the convergence produced by frictional imbalance in the TCBL. The finding builds on the results of Kuo et al. (2016), which only had a barotropic layer aloft, and provides new evidence that the non-gradient forcing of convergence in the free atmosphere likely has little direct impact to produce the observed polygonal precipitation structure. While the vertical motion in the SBL may be overestimated due to the use of a slab equation set instead of a height-resolved boundary layer, both the spatial pattern and the difference in magnitude from the <span class="math notranslate nohighlight">\(\text{SWM}\)</span> support the conclusion that the polygonal reflectivity pattern seen in radar observations is primarily due to the force imbalance between the pressure gradient force associated with vorticity asymmetries aloft and Coriolis, centrifugal, and frictional forces in the boundary layer. Our results also show that linear VRW theory is reasonable for describing the wavenumber 2 propagation in the one-way model simulation, similar to previous work. Similar results obtained from our one-way model and the barotropic free atmosphere layer of Kuo et al. (2016) suggest that a free atmospheric divergence is not required to capture the essential dynamics of the observed coupling between vorticity and polygonal eyewall reflectivity (Kuo et al., 1999; Cha et al., 2020). However, further intensification of the mean vortex cannot occur in the
+experiment of Kuo et al. (2016) or the one-way experiments conducted here.</p>
+<p>Results from the two-way experiment show that the parameterized <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation driven by the boundary layer updraft can contribute to the growth of a <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring and the mean vortex intensification. The <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation term mimics the effects of diabatic heating from deep convection through a mass sink in the shallow-water layer. The results are consistent with the findings of <em>Rozoff et al.</em> (2009) and <em>Hendricks et al.</em> (2014) that parameterized diabatic heating can produce a strengthening <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring and that intensification can occur even in the presence of barotropic instability and eye-eyewall mixing. The sensitivity experiment of <em>Hendricks et al.</em> (2014) suggests the prescribed heating should be close to the center of the storm in order to intensify rapidly. Our model does not prescribe the heating location and intensity, but the free atmospheric flow organizes the heat source close to the radius of maximum wind (<span class="math notranslate nohighlight">\(\text{RMW}\)</span>) through boundary layer processes. The location of the boundary layer updraft and associated mass sink is closely coupled with the contraction of the <span class="math notranslate nohighlight">\(\text{RMW}\)</span> and the building of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring. The boundary layer updraft can develop freely in the model, but the flow itself determines the location to be near the <span class="math notranslate nohighlight">\(\text{PV}\)</span> maximum, so the <span class="math notranslate nohighlight">\(\text{PV}\)</span> grows nonlinearly, and the vortex keeps contracting and intensifying. The cycling of the building of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring and its breakdown are qualitatively similar to aircraft observations of intensifying storms (Kossin and Eastin, 2001). The evolution of the heating, <span class="math notranslate nohighlight">\(\text{RMW}\)</span>, and <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring are also broadly consistent with observational studies of Hurricane Patricia’s (2016) rapid intensification (Martinez et al., 2019) and Hurricane Michael’s (2018) rapid intensification (Cha et al., 2020).</p>
+<p>The two-way experiment further shows that nonlinear interactions modulate the intensification rate, the growth and decay of asymmetries, and the growth and the breakdown of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring throughout different stages of vortex evolution. Our result confirms the finding of Cha et al. (2020) that intensification of the mean vortex can occur even during barotropic instability and shows a similar evolution to Hurricane Michael’s observations and analyses, including (1) growing low-wavenumber asymmetries accompanying by a reverse sign of the mean radial vorticity gradient, (2) axisymmetrization of asymmetries and a weakening mean radial vorticity gradient, and (3) a close coupling between the convection and polygonal vertices. The similarity between our model results and the observations suggests that the present modeling framework with two-way interactions captures many of the essential dynamics of TC rapid intensification and asymmetric structure. Given its simplicity, the framework holds promise to provide further insight into the key processes that control TC intensification with evolving asymmetries in the real atmosphere. We note that the current model does not have any latent heat fluxes or moisture, which are known to be important in the real atmosphere, but the approximation of the dynamical effects of moist convection through <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation is sufficient to intensify the vortex. Frictional imbalance in the boundary layer is essential to placing the <span class="math notranslate nohighlight">\(\text{PV}\)</span> generation at the right spot for this intensification to occur.</p>
+<p>Future work should include sensitivity experiments to investigate a fuller exploration of the parameter space within this modeling framework and how those choices either inhibit or facilitate intensification. Conducting sensitivity tests involving different initial conditions with varied radial wind profiles and perturbations to further explore the sensitivity to vortex structure is recommended. Additional experiments initializing the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring with varying initial conditions to assess the impact of different <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring sizes on intensification and asymmetry evolution and modifying factors such as the heating rate, Rossby deformation length, boundary layer depth, and free atmosphere depth are expected to lead to further insight into TC intensification. The addition of a third layer could enable simulation of additional phenomena, such as entrainment and vertical wind shear. A three-layer asymmetric model would recall seminal work by <em>Ooyama</em> (1969) using an axisymmetric model but with the added simulation of asymmetric structure and barotropic and baroclinic instabilities. Despite the simplicity of such models, they continue to yield new insights into the complexities of the real atmosphere.</p>
+</section>
+</section>
+<section id="ai">
+<h2>AI<a class="headerlink" href="#ai" title="Link to this heading">#</a></h2>
+<p>同學你好！很高興能繼續和你一起讀大氣動力學的文獻。</p>
+<p>這篇文獻的摘要非常精彩，它延續了我們之前探討的「雙層模型」概念，但做了一個極為重要的升級：<strong>將上層的無輻散正壓模型換成了「淺水模型（Shallow-water model）」，並且加入了「雙向交互作用（Two-way interaction）」與「非絕熱加熱（Diabatic heating）」的考量。</strong> 這是為了解釋熱帶氣旋「快速增強（Rapid Intensification, RI）」現象的關鍵！</p>
+<section id="dynamics-physical-mechanisms">
+<h3>⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)<a class="headerlink" href="#dynamics-physical-mechanisms" title="Link to this heading">#</a></h3>
+<p>這篇摘要是整篇論文的縮影，我為你將其中的邏輯與物理機制拆解成以下幾個核心區塊：</p>
+<p>【研究背景與動機】 從單向強迫到熱力學的需求</p>
+<ul class="simple">
+<li><p><strong>觀測現象：</strong> 歷史觀測（如 2018 颶風麥可）發現在熱帶氣旋快速增強（RI）期間，眼牆多邊形頂點的深對流（雷達回波不對稱性）<strong>與</strong>流場旋轉（渦度不對稱性）高度耦合。</p></li>
+<li><p><strong>過去模型的局限：</strong> 之前的「無輻散正壓模型 (NBM)」無法處理垂直運動帶來的熱量釋放。但在真實大氣中，<strong>非絕熱加熱 (Diabatic heating)</strong>（水氣凝結釋放的潛熱）對於生成<strong>位勢渦度 (Potential Vorticity, <span class="math notranslate nohighlight">\(\text{PV}\)</span>)</strong> 及推動氣旋增強是不可或缺的。</p></li>
+</ul>
+<p>【研究方法】 升級版的雙層耦合模型 (Upgraded Two-layer Model)</p>
+<ul class="simple">
+<li><p><strong>上層 (自由大氣)：</strong> 改用<strong>淺水模型 (Shallow-water model)</strong>。這允許流體具備輻散/輻合特性，更能反映真實大氣的厚度變化與熱力效應。</p></li>
+<li><p><strong>下層 (摩擦邊界層)：</strong> 維持<strong>平板邊界層模型 (SBL)</strong>，負責處理表面摩擦力與產生邊界層抽吸 (BL pumping)。</p></li>
+</ul>
+<p>【核心發現 1】 單向響應的確立 (Validation of One-way Response)</p>
+<ul class="simple">
+<li><p><strong>機制重申：</strong> 在波數 2 (WN2) 的橢圓模擬中，上層自由大氣的淺水層輻散作用，<strong>並不能</strong>解釋渦度與回波的耦合現象。</p></li>
+<li><p><strong>結論：</strong> 真正組織邊界層上升氣流的，依然是自由大氣渦度不對稱所產生的「氣壓梯度力」，驅使 SBL 產生輻合（單向響應）。這印證了我們先前文獻（純動力學）的推論。</p></li>
+</ul>
+<p>【核心發現 2】 雙向交互作用與 <span class="math notranslate nohighlight">\(\text{PV}\)</span> 環動力學 (Two-way Interaction &amp; <span class="math notranslate nohighlight">\(\text{PV}\)</span> Dynamics)</p>
+<ul class="simple">
+<li><p><strong>機制：</strong> 當模型允許底層的上升氣流回饋給上層時，SBL 頂部被組織起來的上升氣流，成為了上層位勢渦度（<span class="math notranslate nohighlight">\(\text{PV}\)</span> 環）生長的關鍵燃料。</p></li>
+<li><p><strong>物理過程：</strong> 邊界層對流引發的<strong>非絕熱加熱</strong>（在模型中以質量匯 mass sink 參數化）會啟動以下連鎖反應：</p>
+<ol class="arabic simple">
+<li><p><strong>快速增強 (Rapid Intensification)：</strong> 渦旋中心風速急遽上升。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\text{PV}\)</span> 環變薄 (Thinning of the <span class="math notranslate nohighlight">\(\text{PV}\)</span> ring)：</strong> 動量與渦度被極度壓縮與集中。</p></li>
+<li><p><strong>正壓不穩定與混合 (Barotropic instability and <span class="math notranslate nohighlight">\(\text{PV}\)</span> mixing)：</strong> 變薄到極限後，環狀結構崩潰，引發渦旋羅斯貝波 (VRW) 碎裂，將高渦度空氣混入風眼，重塑颱風核心結構。</p></li>
+</ol>
+</li>
+</ul>
+<p>【綜合結論】</p>
+<ul class="simple">
+<li><p><strong>科學價值：</strong> 這個加入了「雙向交互作用」與「參數化潛熱」的簡化模型，成功用最乾淨的物理語言，重現了自然界中（如颶風麥可）複雜的動力與對流耦合現象，為熱帶氣旋的快速增強機制提供了全新的理論視角。</p></li>
+</ul>
+</section>
+<section id="modeling-framework-configurations">
+<h3>⚙️ 實例化與結構重組 (Modeling Framework &amp; Configurations)<a class="headerlink" href="#modeling-framework-configurations" title="Link to this heading">#</a></h3>
+<p>這段文字是整篇研究核心實驗設計的總起，我們將其解構為「基礎模型架構」與「兩種交互作用配置」：</p>
+<p>【核心架構 1】 雙層數值模型 (Two-layer Modeling Framework)：</p>
+<ul class="simple">
+<li><p><strong>上層 (Upper Layer)</strong>：淺水模型 (Shallow-water model, <span class="math notranslate nohighlight">\(\text{SWM}\)</span>)，用來模擬自由大氣 (Free atmosphere) 的流體動力學。</p></li>
+<li><p><strong>下層 (Bottom Layer)</strong>：不對稱平板邊界層模型 (Asymmetric slab boundary layer, SBL)，用來模擬接近地表或海面、受摩擦力影響的邊界層流場。</p></li>
+</ul>
+<p>【實驗配置 1】 單向交互作用模型 (One-way Model)：</p>
+<ul class="simple">
+<li><p><strong>動力驅動 (Downward Forcing)</strong>：上層（淺水層）的氣壓梯度力 (Pressure gradient force, PGF) 會向下作用，調節並驅動下層（平板邊界層）的風場變化。</p></li>
+<li><p><strong>限制 (Limitation)</strong>：這是一種「由上而下」的單行道，邊界層內的任何氣流變化都<strong>無法</strong>回饋 (feed back) 或影響上層的自由大氣。</p></li>
+</ul>
+<p>【實驗配置 2】 雙向交互作用模型 (Two-way Model)：</p>
+<ul class="simple">
+<li><p><strong>雙向耦合 (Two-way Interaction)</strong>：打破了單向的限制，上下兩層的動力學可以互相影響。</p></li>
+<li><p><strong>參數化橋樑 (Parameterization)</strong>：底層 (SBL) 的流場動態，能夠透過一個<strong>參數化的質量匯 (Parameterized mass sink)</strong> 向上傳遞，進而實質地改變與影響上層的自由大氣。這種作法通常被大氣學者用來模擬對流所造成的質量抽吸與垂直發展。</p></li>
+</ul>
+<p>同學你好！這段文獻進入了模型設定最硬核但也最核心的數學推導與參數化階段。它非常清楚地列出了上層淺水模型（SWM）與底層平板邊界層（SBL）的完整方程式，並詳細交代了為了維持數值穩定性所做的參數選擇。</p>
+</section>
+<section id="mathematical-structure-parameterization">
+<h3>⚙️ 實例化與結構重組 (Mathematical Structure &amp; Parameterization)<a class="headerlink" href="#mathematical-structure-parameterization" title="Link to this heading">#</a></h3>
+<p>這段落將兩層模型的內部數學引擎完全攤開，我們將其解構為「上層動力學」、「下層動力學」與「參數化設定」：</p>
+<p>【定義 1】 淺水模型控制方程式 (SWM Governing Equations)：
+描述自由大氣中不受摩擦力干擾的理想流體運動，主導了整個熱帶氣旋的「藍圖」。</p>
+<ul class="simple">
+<li><p><strong>動量方程式 (Eq 1 &amp; 2)：</strong> 包含了平流項、科氏力、離心力以及氣壓梯度力（透過高度場偏誤 <span class="math notranslate nohighlight">\(h\)</span> 來呈現）。</p></li>
+<li><p><strong>連續方程式 (Eq 3)：</strong> 質量守恆定律在淺水系統中的表達方式。</p></li>
+<li><p><strong>守恆特性：</strong> 在單向模型設定下，由於缺乏下層的回饋，流體的<strong>位勢渦度 (PV)</strong> <span class="math notranslate nohighlight">\(P = (f + \zeta)/h\)</span> 會維持物質守恆。</p></li>
+</ul>
+<p>【定義 2】 平板邊界層動量方程式 (SBL Momentum Equations)：
+描述了包含摩擦力與跨層動量交換的邊界層流場 (Eq 4 &amp; 5)。每一項都有具體的物理意義：</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(-u_{\text{b}} \dots - v_{\text{b}} \dots\)</span></strong>：非線性平流項 (Advection term)。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(+ w^{-} \left( \frac{u - u_{\text{b}}}{h_{\text{b}}} \right)\)</span></strong>：下沉氣流帶來的動量夾帶效應 (Entrainment/Ekman suction)。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(+ \left( f v_{\text{b}} + \frac{v_{\text{b}}^2}{r} \right) - g \frac{\partial h}{\partial r}\)</span></strong>：科氏力、離心力與氣壓梯度力共同作用的不平衡項（打破梯度風平衡）。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(- C_{\text{D}} U \frac{u_{\text{b}}}{h}\)</span></strong>：地表/海面摩擦阻力 (Surface drag)，這是導致邊界層氣流向內輻合的元凶。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(+ K (\dots)\)</span></strong>：水平擴散項 (Horizontal diffusion)。</p></li>
+</ul>
+<p>【推導 1】 參數設定與數值穩定性 (Parameterization &amp; Numerical Stability)：</p>
+<ul class="simple">
+<li><p><strong>近地面風速推估 (Eq 7)：</strong> 模型假設邊界層底部的 <span class="math notranslate nohighlight">\(10\text{ m}\)</span> 風速約為整個邊界層平均風速的 <span class="math notranslate nohighlight">\(0.78\)</span> 倍，用來計算摩擦力。</p></li>
+<li><p><strong>整流艾克曼抽吸 (Eq 8)：</strong> 利用 <span class="math notranslate nohighlight">\(w^-\)</span> 公式過濾出「向下的垂直運動」，藉此計算上層高動量空氣被吸入邊界層的影響。</p></li>
+<li><p><strong>數值穩定的巧思 (Diffusion vs. Filter)：</strong> 平板模型天生容易產生高頻的「慣性振盪 (Inertial oscillations)」。作者選擇不使用人工濾波器，而是將水平擴散係數 <span class="math notranslate nohighlight">\(K\)</span> 刻意調高至 <span class="math notranslate nohighlight">\(5000.0\text{ m}^2\text{ s}^{-1}\)</span>。這種作法不僅成功壓制了不合理的數值振盪，同時也保留了流體原本的物理行為特徵。</p></li>
+</ul>
+<p>同學，這段文獻非常關鍵！它正式引入了「雙向交互作用」的核心機制，解釋了底層的垂直運動是如何成為上層系統增強的「燃料」。作者利用了一個非常優雅的數學技巧，將複雜的「非絕熱加熱」簡化為淺水模型中的「質量匯（Mass sink）」。</p>
+</section>
+<section id="id2">
+<h3>⚙️ 實例化與結構重組 (Mathematical Structure &amp; Parameterization)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>這段文獻展示了如何讓原本「各自為政」的兩層模型產生真正的雙向互動，我們將其解構為以下三個物理區塊：</p>
+<p>【定義 1】 動態非絕熱加熱參數化 (Dynamic Diabatic Heating Parameterization)：</p>
+<ul class="simple">
+<li><p><strong>機制設計 (Eq 9)</strong>：有別於過去模型「人為給定」加熱位置，本研究將加熱項 <span class="math notranslate nohighlight">\(S(r, \lambda, t)\)</span> 直接與邊界層頂部的垂直運動 <span class="math notranslate nohighlight">\(w_{\text{b}}\)</span> 掛鉤。</p></li>
+<li><p><strong>物理意義</strong>：只要邊界層發生輻合引發上升氣流，系統就會自動在該處產生加熱效應。常數 <span class="math notranslate nohighlight">\(S_1\)</span> (10⁻⁵ m⁻¹) 則控制了「一點點上升氣流能換取多少加熱」的轉換效率。</p></li>
+</ul>
+<p>【推導 1】 具備質量匯的連續方程式 (Continuity Equation with Mass Sink)：</p>
+<ul class="simple">
+<li><p><strong>公式改變 (Eq 10)</strong>：原本右側為 0 的淺水連續方程式，現在多了一個 <span class="math notranslate nohighlight">\(-hS\)</span> 項。</p></li>
+<li><p><strong>流體類比</strong>：在淺水模型中，這代表流體質量實質上被「抽走（Sink）」了。</p></li>
+<li><p><strong>大氣對應</strong>：這隱含了從對流層低層（淺水層）往對流層高層輸送的對流質量通量。大量空氣向上衝，帶走了低層的質量。</p></li>
+</ul>
+<p>【物理機制 1】 位勢渦度生成與熱帶氣旋增強 (PV Generation and TC Intensification)：
+這是整篇雙向模型能讓熱帶氣旋「增強」的最核心引擎！</p>
+<ul class="simple">
+<li><p><strong>打破守恆 (Eq 11)</strong>：因為質量被抽走，自由大氣中的位勢渦度 (PV) 不再守恆，物質導數不再等於 0，而是 <span class="math notranslate nohighlight">\(\frac{\text{D}P}{\text{D}t} = SP\)</span>。</p></li>
+<li><p><strong>源項 (Source Term)</strong>：這代表邊界層擠出的上升氣流，直接成為了上層自由大氣產生 PV 的「來源」。</p></li>
+<li><p><strong>限制與適用性</strong>：雖然這種做法忽略了夾帶作用與高空垂直結構，但它精準且簡潔地模擬了熱帶氣旋中「深對流」作為低層 PV 產生器的關鍵角色，進而推動整個風暴系統強度與結構的演化。</p></li>
+</ul>
+<p>同學你好！這段文獻進入了非常硬核的「數值模型設計（Numerical Model Design）」階段。作者詳細交代了他們所開發的「Scythe 模型」是如何利用各種數學演算法（如 B 樣條、傅立葉級數、譜轉換）來克服極座標下的運算難題。</p>
+</section>
+<section id="numerical-model-design-algorithms">
+<h3>⚙️ 實例化與結構重組 (Numerical Model Design &amp; Algorithms)<a class="headerlink" href="#numerical-model-design-algorithms" title="Link to this heading">#</a></h3>
+<p>這段落將電腦是如何解算那些複雜大氣方程式的「底層邏輯」完全攤開。我們將其解構為三個主要技術區塊：</p>
+<p>【技術設定 1】 空間離散化與網格幾何 (Spatial Discretization &amp; Grid Geometry)</p>
+<ul class="simple">
+<li><p><strong>徑向解析 (Radial Direction)：</strong> 採用有限元素法中的「三次 B 樣條 (Cubic b-splines)」，節點間距設定為 <span class="math notranslate nohighlight">\(3\text{ km}\)</span>，並穿插高斯求積點，使得實際解析度達到精密的 <span class="math notranslate nohighlight">\(1\text{ km}\)</span>。</p></li>
+<li><p><strong>方位角解析 (Azimuthal Direction)：</strong> 於簡化高斯網格上使用「傅立葉級數 (Fourier series)」。</p></li>
+<li><p><strong>網格排列特性：</strong> 類似 <span class="math notranslate nohighlight">\(\text{ECMWF}\)</span> 的八面體網格，內圈 8 個點，往外每圈增加 4 個點並交錯偏移，在物理空間中形成間距約 <span class="math notranslate nohighlight">\(1\text{ km}\)</span> 的「三角形鑲嵌 (Triangular tessellation)」。</p></li>
+</ul>
+<p>【技術設定 2】 邊界條件與極點問題處理 (Boundary Conditions &amp; Pole Problem)
+在極座標模型中，原點（中心）的計算很容易因為分母趨近於零而崩潰，Scythe 模型巧妙地處理了這個問題：</p>
+<ul class="simple">
+<li><p><strong>原點設定 (Origin)：</strong> 對水平風速 <span class="math notranslate nohighlight">\(u, v\)</span> 採用「狄利克雷零風速條件 (Dirichlet zero wind)」。</p></li>
+<li><p><strong>外邊界設定 (Outer Boundary)：</strong> 對風速採用「紐曼零一階導數條件 (Neumann zero first derivative)」，讓邊界平滑過渡。</p></li>
+<li><p><strong>極點問題解法 (Pole Problem Solution)：</strong> 在最靠近原點的內圈，經過濾波後「強制只保留波數 1 (Wavenumber 1)」，隨著半徑向外增加才允許更高波數存在，從而解決了徑向過度匯聚的數學奇異點問題。</p></li>
+</ul>
+<p>【技術設定 3】 時間積分與譜濾波技術 (Time Integration &amp; Spectral Filtering)</p>
+<ul class="simple">
+<li><p><strong>時間推進：</strong> 使用高穩定度與高精度的「三階 Adams-Bashforth 積分器」。</p></li>
+<li><p><strong>運算空間轉換 (Spectral Transform Method)：</strong></p>
+<ul>
+<li><p>空間導數（如氣壓梯度）在精準的<strong>譜空間 (Spectral space)</strong> 進行計算。</p></li>
+<li><p>非線性平流與其他強迫力則轉換到<strong>物理空間 (Physical space)</strong> 進行時間步長的更新計算。</p></li>
+</ul>
+</li>
+<li><p><strong>雙重濾波消除混疊 (Anti-aliasing Filtering)：</strong></p>
+<ul>
+<li><p>對傅立葉振幅採用「三次表示法 (Cubic representation)」濾波。</p></li>
+<li><p>對 B 樣條振幅採用強制施加三階導數約束的「樣條截斷 (Spline-cutoff)」濾波器。</p></li>
+<li><p>這兩者的結合，完美消除了非線性運算過程中最容易產生的譜混疊 (Spectral aliasing) 雜訊。</p></li>
+</ul>
+</li>
+</ul>
+<p>同學你好！這段文獻交代了數值實驗最關鍵的「初始條件（Initial Conditions）」設定。作者非常巧妙地利用了兩步策略：先讓對稱的渦旋「暖機（Spin-up）」發展出真實的邊界層結構，再人為疊加「波數 2（WN2）」的擾動來製造橢圓形的風眼。</p>
+</section>
+<section id="initial-conditions-perturbation-setup">
+<h3>⚙️ 實例化與結構重組 (Initial Conditions &amp; Perturbation Setup)<a class="headerlink" href="#initial-conditions-perturbation-setup" title="Link to this heading">#</a></h3>
+<p>這段落交代了實驗的「起手式」。為了讓數值模型中的熱帶氣旋盡可能貼近真實物理現象，作者將初始化過程拆解為以下三個區塊：</p>
+<p>【設定 1】 基礎場：軸對稱蘭金渦旋與邊界層暖機 (Axisymmetric Rankine Vortex &amp; Spin-up)：</p>
+<ul class="simple">
+<li><p><strong>初始狀態 (Eq 12, 13, 14)</strong>：在上層淺水模型建立一個最大風速高達 50 m/s、最大風速半徑 50 km 的「圓形、無橫向環流」強烈渦旋，並設定其處於完美的梯度風平衡。</p></li>
+<li><p><strong>單向暖機 (Spin-up)</strong>：給予模型 3 小時的時間，讓上層的氣壓梯度力單向「往下壓」。</p></li>
+<li><p><strong>邊界層響應</strong>：3 小時後，邊界層成功長出了真實颱風該有的物理特徵，包括：</p>
+<ul>
+<li><p><strong>震波狀結構</strong>：徑向氣流在短距離內產生劇烈減速，出現高達 -24 m/s 的強烈向內輻合。</p></li>
+<li><p><strong>超梯度風</strong>：在最大風速半徑 (RMW) 內側出現流速超越氣壓梯度的切向風。</p></li>
+<li><p><strong>強迫抬升</strong>：因為徑向動量劇烈輻合，激發出了高達 5 m/s 的邊界層上升氣流。</p></li>
+</ul>
+</li>
+</ul>
+<p>【設定 2】 擾動疊加：波數 2 渦旋羅斯貝波 (WN2 VRW Perturbation)：</p>
+<ul class="simple">
+<li><p><strong>方程式引入 (Eq 15-18)</strong>：在暖機完成的圓形渦旋上，人為疊加一組波數 2 的擾動。振幅參數 <span class="math notranslate nohighlight">\(\epsilon\)</span> 設為 5 km。</p></li>
+<li><p><strong>流場特徵</strong>：這個擾動本質上是兩對反向旋轉的渦旋，其切向與徑向風速大小相同，但相位相差了 45 度 (<span class="math notranslate nohighlight">\(\pi/4\)</span>)。</p></li>
+<li><p><strong>幾何形變</strong>：這組擾動成功將原本圓形的「最大風速邊界」扭曲成了橢圓形，作為後續雙向互動實驗的真正起點。</p></li>
+</ul>
+<p>【實驗對照 1】 初始條件的真實物理意義 (Real-world Analogy)：</p>
+<ul class="simple">
+<li><p><strong>歷史對應</strong>：這個「強烈中心風速」+「橢圓形眼牆」的初始設定並非憑空想像，而是為了精準還原如 1996 年賀伯颱風與 2018 年麥可颶風在登陸前夕所展現的真實極端結構。</p></li>
+<li><p><strong>邊界條件支持</strong>：模型中 40 到 60 km 處陡峭的負徑向渦度梯度，正是維持這類橢圓形渦旋羅斯貝波 (VRW) 能穩定傳播的關鍵物理條件。</p></li>
+</ul>
+<p>同學你好！這段文獻進入了實驗結果的精華部分：<strong>時間序列分析</strong>。作者透過圖表對比了「單向」與「雙向」模型在風暴強度（最大切向風速）與結構（最大風速半徑）上的戲劇性差異，藉此證明底層的回饋是熱帶氣旋快速增強（RI）的關鍵。</p>
+</section>
+<section id="time-series-vortex-evolution">
+<h3>⚙️ 實例化與結構重組 (Time Series &amp; Vortex Evolution)<a class="headerlink" href="#time-series-vortex-evolution" title="Link to this heading">#</a></h3>
+<p>這段落是模型驗證的關鍵，作者證明了他們設計的「質量匯」能完美模擬真實世界中颱風的快速增強。我們將這段對比解構為「單向對照組」與「雙向實驗組」的物理演化：</p>
+<p>【對照組】 單向模型演化 (One-way Simulation)：缺乏底層燃料</p>
+<ul class="simple">
+<li><p><strong>強度 (Intensity)：</strong> 停滯於穩定狀態。因為邊界層的動量無法回傳給上層自由大氣，最大切向風速只能在 43~47 m/s 之間小幅振盪（因數值計算和初始橢圓形狀所致）。</p></li>
+<li><p><strong>結構 (Structure)：</strong> 最大風速半徑 (<span class="math notranslate nohighlight">\(\text{RMW}\)</span>) 死寂。完美維持在初始設定的 51 km，沒有發生任何收縮現象。</p></li>
+</ul>
+<p>【實驗組】 雙向模型演化 (Two-way Simulation)：啟動快速增強 (<span class="math notranslate nohighlight">\(\text{RI}\)</span>)
+引入質量匯（即非絕熱加熱的參數化）後，渦旋經歷了戲劇性的成長，整個過程可分為三個階段：</p>
+<ul class="simple">
+<li><p><strong>階段一：不對稱震盪期 (0 - 800 分鐘)</strong></p></li>
+<li><p><strong>特徵：</strong> 強度以 0.9 m/s/h 的速率溫和增強；<span class="math notranslate nohighlight">\(\text{RMW}\)</span> 從 51 km 緩慢收縮至 42 km。</p></li>
+<li><p><strong>物理意義：</strong> 強度曲線上出現了「高頻振盪」，這代表系統內部正處於強烈的不對稱狀態（例如多邊形眼牆的旋轉與混合正在發生）。</p></li>
+<li><p><strong>階段二：爆發增強期 (800 - 1100 分鐘)</strong></p></li>
+<li><p><strong>特徵：</strong> 振盪減少，增強速率飆升至 1.5 m/s/h；<span class="math notranslate nohighlight">\(\text{RMW}\)</span> 發生急遽收縮（6.4 小時內從 42 km 縮減至 30 km）。</p></li>
+<li><p><strong>物理驗證：</strong> 24 小時內風速從 50 m/s 狂飆至約 80 m/s。這個增強幅度達到了美國國家颶風中心 (<span class="math notranslate nohighlight">\(\text{NHC}\)</span>) 定義的「快速增強 (Rapid Intensification, <span class="math notranslate nohighlight">\(\text{RI}\)</span>)」標準（24小時內增加 15.4 m/s）的<strong>將近兩倍</strong>，證明模型具備模擬極端天氣的潛力。</p></li>
+<li><p><strong>階段三：動態不穩定重現 (1100 分鐘之後)</strong></p></li>
+<li><p><strong>特徵：</strong> <span class="math notranslate nohighlight">\(\text{RMW}\)</span> 停止收縮並卡在 30 km 左右，但切向風仍在增強。到了模擬尾聲（紫色虛線處），增強速率開始放緩，且高頻振盪再次出現。</p></li>
+<li><p><strong>物理意義：</strong> 這暗示了渦旋在收縮到極限後，結構再次變得「動力學不穩定 (Dynamically unstable)」，可能即將發生新一輪的不對稱重整或是眼牆置換。</p></li>
+</ul>
+<p>同學你好！這段文獻非常精彩，作者透過圖表的分析，生動地描繪了颱風在增強過程中，內部結構（位勢渦度 PV）是如何經歷「成環、崩解、再成環」的生命週期，並深刻探討了對稱與不對稱結構之間的能量拉扯。</p>
+</section>
+<section id="vortex-evolution-wave-mean-flow-interaction">
+<h3>⚙️ 實例化與結構重組 (Vortex Evolution &amp; Wave-Mean Flow Interaction)<a class="headerlink" href="#vortex-evolution-wave-mean-flow-interaction" title="Link to this heading">#</a></h3>
+<p>這段落是觀察模型內在動力機制的絕佳視角，作者證明了邊界層的回饋不僅能讓颱風增強，還會改變系統內部能量的分配方式。我們將這段演化解構為三大物理特徵：</p>
+<p>【結構演化 1】 PV 環的生命週期 (Life Cycle of the PV Ring)：</p>
+<ul class="simple">
+<li><p><strong>單向模型 (無底層回饋)：</strong> 始終保持單極 (Monopole) 結構，上升氣流穩定在 RMW 內側，缺乏結構上的動態變化。</p></li>
+<li><p><strong>雙向模型 (具備質量匯)：</strong> 經歷了「單極結構 <span class="math notranslate nohighlight">\(\rightarrow\)</span> PV 環形成與收縮 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 崩解混合為單極 <span class="math notranslate nohighlight">\(\rightarrow\)</span> PV 環再次生成」的完整生命週期。這完美對應了真實熱帶氣旋快速增強過程中，眼牆重整與動力不穩定交替發生的現象。</p></li>
+</ul>
+<p>【交互作用 1】 波動與平均流的能量轉換 (Wave-Mean Flow Interaction)：</p>
+<ul class="simple">
+<li><p><strong>反相振盪 (Out of phase)：</strong> 在單向模型中，軸對稱（波數 0，主渦旋）與不對稱（波數 2，擾動）結構的發展是互相拉扯的。一方增強，另一方就衰減，整體能量處於穩定的封閉振盪。</p></li>
+<li><p><strong>同相成長 (In phase)：</strong> 在雙向模型中，打破了這種零和遊戲。兩者能夠「同時增強」，這證明了底層質量匯（即非絕熱加熱）提供了額外的能量，讓擾動與主渦旋能攜手成長。</p></li>
+</ul>
+<p>【核心結論 1】 跨層 PV 耦合與暴發性增強 (Cross-layer PV Coupling &amp; Rapid Intensification)：</p>
+<ul class="simple">
+<li><p><strong>階段轉換現象：</strong> 當波數 2 的不對稱擾動衰減後（<span class="math notranslate nohighlight">\(7.5 \times 10^{-7}\text{ m}^{-1}\text{ s}^{-1}\)</span> 等值線消失），系統進入了平均切向風速「暴發性增強」的第二階段，風速突破 80 m/s。</p></li>
+<li><p><strong>驅動機制：</strong> 這種不斷增強的過程，歸功於底層邊界層上升氣流所提供的參數化 PV 強迫作用。這種源源不絕在自由大氣中製造 PV 的跨層耦合機制，正是推動風暴強度不斷突破極限的核心引擎。</p></li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<h2>討論<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06_References\Tropical cyclone dynamics\Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">論文</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>1. Introduction</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-experimental-design"><strong>2. Model and experimental design</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-one-way-model"><strong>2.1 The one-way model</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-way-model"><strong>2.2 The two-way model</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-model-design"><strong>2.3 Numerical model design</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions"><strong>2.4 Initial conditions</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results"><strong>3. Results</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions"><strong>4. Conclusions</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">AI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-physical-mechanisms">⚙️ 實例化與結構重組 (Dynamics &amp; Physical Mechanisms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-framework-configurations">⚙️ 實例化與結構重組 (Modeling Framework &amp; Configurations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-structure-parameterization">⚙️ 實例化與結構重組 (Mathematical Structure &amp; Parameterization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">⚙️ 實例化與結構重組 (Mathematical Structure &amp; Parameterization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-model-design-algorithms">⚙️ 實例化與結構重組 (Numerical Model Design &amp; Algorithms)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions-perturbation-setup">⚙️ 實例化與結構重組 (Initial Conditions &amp; Perturbation Setup)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-vortex-evolution">⚙️ 實例化與結構重組 (Time Series &amp; Vortex Evolution)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vortex-evolution-wave-mean-flow-interaction">⚙️ 實例化與結構重組 (Vortex Evolution &amp; Wave-Mean Flow Interaction)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">討論</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

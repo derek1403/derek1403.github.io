@@ -1,0 +1,984 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vertical Structure Equation (垂直結構方程式與加熱的模態投影) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="🧩 02_Concepts: 核心觀念區" href="../../02_Concepts/02_Concepts.html" />
+    <link rel="prev" title="Sturm–Liouville Orthogonality (Sturm–Liouville 本徵函數的正交性與展開係數)" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical%20cyclone%20dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vertical Structure Equation (垂直結構方程式與加熱的模態投影)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof">(a) proof 加熱強迫下的「壓力–輻散」方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-m">(b) proof 第 <span class="math notranslate nohighlight">\(m\)</span> 個模態的投影關係</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-external-mode">(c) proof external mode 的垂直結構是常數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-external-mode">(d) proof 純內部加熱對 external mode 的投影恆為零</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)：加熱不是直接推波，是靠「加熱的垂直梯度」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)：三維問題被拆成無窮多個二維淺水問題</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-d">(c)(d)：正壓模態對內部加熱免疫</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這個結論什麼時候會失效</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vertical-structure-equation">
+<h1>Vertical Structure Equation (垂直結構方程式與加熱的模態投影)<a class="headerlink" href="#vertical-structure-equation" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>(a) 把線性化 Boussinesq 系統壓成一條只含「擾動氣壓 <span class="math notranslate nohighlight">\(\Phi\)</span>」與「水平輻散 <span class="math notranslate nohighlight">\(D\)</span>」的方程式，而非絕熱加熱以<strong>垂直梯度</strong>的形式出現在強迫項上：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[D - \frac{\partial}{\partial t}\left[\frac{\partial}{\partial z}\left[\frac{1}{N^2}\frac{\partial \Phi}{\partial z}\right]\right] = -\frac{\partial Q}{\partial z}\]</div>
+<ul class="simple">
+<li><p>(b) 選定垂直結構方程式的本徵函數 <span class="math notranslate nohighlight">\(\Psi_m\)</span> 之後，第 <span class="math notranslate nohighlight">\(m\)</span> 個模態滿足</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{D}_m + \frac{1}{c_m^2}\frac{\partial \hat{\Phi}_m}{\partial t} = \int_{z_b}^{z_t}\left(-\frac{\partial Q}{\partial z}\right)\Psi_m(z)\,dz\]</div>
+<p>等號右側就是所謂的 <strong>modal projection（模態投影）</strong>；取 <span class="math notranslate nohighlight">\(m = 0\)</span> 即為 external-mode projection。</p>
+<ul class="simple">
+<li><p>(c) 剛蓋邊界條件下，<span class="math notranslate nohighlight">\(m = 0\)</span> 的本徵函數是常數，且其本徵值為零：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\Psi_0 = \text{const},\qquad \frac{1}{c_0^2} = 0\]</div>
+<ul class="simple">
+<li><p>(d) 因此<strong>純內部加熱對 external mode 的投影恆為零</strong>，也就是不產生正壓輻散：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{D}_0 = \int_{z_b}^{z_t}\left(-\frac{\partial Q}{\partial z}\right)\Psi_0(z)\,dz = 0\]</div>
+<ul class="simple">
+<li><p>註：這條推導鏈的概念導覽、物理意涵與數值驗證，見 <a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html"><span class="std std-doc">垂直模態分解 (Normal Mode Decomposition)</span></a>。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#continuity-equation">連續方程式 (Continuity Equation)</a>：</strong> 此式已於 Advanced Atmospheric Dynamics 課程 week1 由雷諾傳輸定理完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t} + \nabla\cdot\left(\rho\,\mathbf{u}\right) = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 密度 (Density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span> : 三維速度向量 <span class="math notranslate nohighlight">\(\left(u, v, w\right)\)</span> (Three-dimensional velocity vector) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 <a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html"><span class="std std-doc">Boussinesq 近似 (Boussinesq Approximation)</span></a>：</strong> 除了浮力項之外，密度一律取為常數 <span class="math notranslate nohighlight">\(\rho_0\)</span></p>
+<ul>
+<li><p>(a) 慣性項與質量守恆中的密度取常數：</p>
+<div class="math notranslate nohighlight">
+\[\rho \approx \rho_0 = \text{const}\]</div>
+</li>
+<li><p>(b) 因此連續方程式退化為不可壓縮形式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    0 &amp;\overset{\text{已知 1}}{=}&amp; \frac{\partial \rho}{\partial t} + \nabla\cdot\left(\rho\,\mathbf{u}\right) \\
+    0 &amp;\overset{\text{假設 1(a)}}{=}&amp; \rho_0\,\nabla\cdot\mathbf{u} \\
+    0 &amp;=&amp; \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\rho_0\)</span> : 常數參考密度 (Constant reference density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v,\ w\)</span> : <span class="math notranslate nohighlight">\(x,\ y,\ z\)</span> 三方向的速度分量 (Velocity components) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 靜止基本態的線性化 (Linearization about a state of rest)：</strong> 把場拆成「只隨高度變化的基本態」與「微小擾動」，並只保留擾動的一階項</p>
+<ul>
+<li><p>(a) 基本態無風，因此速度場本身就是一階擾動量：</p>
+<div class="math notranslate nohighlight">
+\[\bar{u} = \bar{v} = \bar{w} = 0\]</div>
+</li>
+<li><p>(b) 基本態只是高度的函數，與時間及水平位置無關：</p>
+<div class="math notranslate nohighlight">
+\[\bar{\theta} = \bar{\theta}(z)\]</div>
+</li>
+<li><p>(c) 二階擾動項相對一階項可捨棄，此處以位溫平流為例：</p>
+<div class="math notranslate nohighlight">
+\[\left|u\frac{\partial \theta'}{\partial x}\right| \ll \left|\frac{\partial \theta'}{\partial t}\right|\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\bar{u},\ \bar{v},\ \bar{w}\)</span> : 基本態的速度分量 (Basic-state velocity components) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{\theta}(z)\)</span> : 基本態位溫 (Basic-state potential temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta'\)</span> : 位溫擾動 (Potential temperature perturbation) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 垂直座標 (Vertical coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 唯一熱源 (Single heat source)：</strong> 除了明確寫出的非絕熱加熱 <span class="math notranslate nohighlight">\(S\)</span> 之外，位溫沒有其他源項或匯項</p>
+<div class="math notranslate nohighlight">
+\[\dot{\Theta}_{\text{other}} = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\dot{\Theta}_{\text{other}}\)</span> : <span class="math notranslate nohighlight">\(S\)</span> 以外的位溫源匯項 (Potential-temperature sources other than <span class="math notranslate nohighlight">\(S\)</span>) <span class="math notranslate nohighlight">\([\text{K}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 質量標準化擾動氣壓 (Mass-normalized pressure perturbation)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\Phi \overset{\text{def}}{=} \frac{p'}{\rho_0}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 質量標準化擾動氣壓 (Mass-normalized pressure perturbation) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p'\)</span> : 氣壓擾動 (Pressure perturbation) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_0\)</span> : 常數參考密度 (Constant reference density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 浮力擾動 (Buoyancy perturbation)：</strong></p>
+<div class="math notranslate nohighlight">
+\[b \overset{\text{def}}{=} g\frac{\theta'}{\bar{\theta}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(b\)</span> : 浮力擾動 (Buoyancy perturbation) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 重力加速度 (Gravitational acceleration) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-2}]\)</span>，<span class="math notranslate nohighlight">\(g \approx 9.81 \ \text{m}\cdot\text{s}^{-2}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 浮力頻率平方 (Brunt–Väisälä frequency squared)：</strong></p>
+<div class="math notranslate nohighlight">
+\[N^2 \overset{\text{def}}{=} \frac{g}{\bar{\theta}}\frac{d\bar{\theta}}{dz}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N^2\)</span> : 浮力頻率平方，代表大氣的靜力穩定度 (Brunt–Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 4】 靜力穩定層結 (Statically stable stratification)：</strong> 基本態位溫隨高度遞增，因此浮力頻率平方恆正、可以拿來當除數</p>
+<div class="math notranslate nohighlight">
+\[N^2(z) &gt; 0\]</div>
+</li>
+<li><p><strong>【定義 4】 水平輻散 (Horizontal divergence)：</strong></p>
+<div class="math notranslate nohighlight">
+\[D \overset{\text{def}}{=} \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(D\)</span> : 水平輻散 (Horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html"><span class="std std-doc">擾動場的靜力平衡 (Hydrostatic Balance for Perturbations)</span></a>：</strong> 此式已於該檔由垂直動量方程式完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial z}\left[\frac{p'}{\rho_0}\right] = \frac{g}{\bar{\theta}}\theta'\]</div>
+<ul class="simple">
+<li><p>註：該檔以 <span class="math notranslate nohighlight">\(\phi\)</span> 表示 <span class="math notranslate nohighlight">\(P'/\rho_0\)</span>、以 <span class="math notranslate nohighlight">\(\theta_0\)</span> 表示基本態位溫；本檔依【定義 1】改記為 <span class="math notranslate nohighlight">\(\Phi\)</span>、依 R4.4 的慣例改記為 <span class="math notranslate nohighlight">\(\bar{\theta}\)</span>，兩者所指相同。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 位溫的守恆方程式 (Potential temperature equation)：</strong> 非絕熱加熱是位溫沿流線改變的唯一原因</p>
+<div class="math notranslate nohighlight">
+\[\frac{D\Theta}{Dt} \overset{\text{假設 3}}{=} S\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Theta\)</span> : 總位溫場 (Total potential temperature field) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Theta = \bar{\theta}(z) + \theta'\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> : 非絕熱加熱造成的位溫變化率 (Diabatic heating rate in potential temperature) <span class="math notranslate nohighlight">\([\text{K}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{D}{Dt}\)</span> : 全微分算符 (Material derivative) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\dfrac{D}{Dt} = \dfrac{\partial}{\partial t} + u\dfrac{\partial}{\partial x} + v\dfrac{\partial}{\partial y} + w\dfrac{\partial}{\partial z}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 5】 浮力型式的非絕熱加熱 (Diabatic heating in buoyancy form)：</strong></p>
+<div class="math notranslate nohighlight">
+\[Q_b \overset{\text{def}}{=} \frac{g}{\bar{\theta}}S\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q_b\)</span> : 浮力型式的非絕熱加熱 (Diabatic heating in buoyancy form) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-3}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 6】 以層結縮放的加熱 (Stratification-scaled heating)：</strong></p>
+<div class="math notranslate nohighlight">
+\[Q \overset{\text{def}}{=} \frac{Q_b}{N^2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 以層結縮放的加熱 (Stratification-scaled heating) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p>註：<strong>這個 <span class="math notranslate nohighlight">\(Q\)</span> 才是最終公式裡被微分的那一個</strong>，它並不是原始的加熱率，而是加熱率除以 <span class="math notranslate nohighlight">\(N^2\)</span>。這一點在解讀 <span class="math notranslate nohighlight">\(\int -\partial_z Q\,\Psi_0\,dz\)</span> 時極易被誤讀。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 線性化浮力方程式 (Linearized buoyancy equation)：</strong> 把位溫方程式線性化，再乘上 <span class="math notranslate nohighlight">\(g/\bar{\theta}\)</span> 換成浮力的語言</p>
+<ul>
+<li><p>(a) 線性化位溫方程式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    S &amp;\overset{\text{已知 3}}{=}&amp; \frac{\partial \Theta}{\partial t} + u\frac{\partial \Theta}{\partial x} + v\frac{\partial \Theta}{\partial y} + w\frac{\partial \Theta}{\partial z} \\
+    &amp;\overset{\text{假設 2(b)}}{=}&amp; \frac{\partial \theta'}{\partial t} + u\frac{\partial \theta'}{\partial x} + v\frac{\partial \theta'}{\partial y} + w\frac{d\bar{\theta}}{dz} + w\frac{\partial \theta'}{\partial z} \\
+    &amp;\overset{\text{假設 2(a)(c)}}{=}&amp; \frac{\partial \theta'}{\partial t} + w\frac{d\bar{\theta}}{dz}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 改寫成浮力形式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{g}{\bar{\theta}}S &amp;\overset{\text{推導 1(a)}}{=}&amp; \frac{g}{\bar{\theta}}\frac{\partial \theta'}{\partial t} + \frac{g}{\bar{\theta}}\frac{d\bar{\theta}}{dz}w \\
+    Q_b &amp;\overset{\text{定義 5}}{=}&amp; \frac{g}{\bar{\theta}}\frac{\partial \theta'}{\partial t} + \frac{g}{\bar{\theta}}\frac{d\bar{\theta}}{dz}w \\
+    Q_b &amp;\overset{\text{假設 2(b)}}{=}&amp; \frac{\partial}{\partial t}\left[\frac{g\theta'}{\bar{\theta}}\right] + \frac{g}{\bar{\theta}}\frac{d\bar{\theta}}{dz}w \\
+    Q_b &amp;\overset{\text{定義 2,定義 3}}{=}&amp; \frac{\partial b}{\partial t} + N^2 w
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 擾動靜力平衡的浮力形式 (Perturbation hydrostatic balance in buoyancy form)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial \Phi}{\partial z} &amp;\overset{\text{定義 1}}{=}&amp; \frac{\partial}{\partial z}\left[\frac{p'}{\rho_0}\right] \\
+  &amp;\overset{\text{已知 2}}{=}&amp; \frac{g}{\bar{\theta}}\theta' \\
+  &amp;\overset{\text{定義 2}}{=}&amp; b
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【推導 3】 用擾動氣壓與加熱表示垂直速度 (Vertical velocity in terms of <span class="math notranslate nohighlight">\(\Phi\)</span> and <span class="math notranslate nohighlight">\(Q_b\)</span>)：</strong> 靜力平衡把浮力綁死在 <span class="math notranslate nohighlight">\(\Phi\)</span> 上，於是熱力學方程式就變成了 <span class="math notranslate nohighlight">\(w\)</span> 的診斷式</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  Q_b &amp;\overset{\text{推導 1(b)}}{=}&amp; \frac{\partial b}{\partial t} + N^2 w \\
+  Q_b &amp;\overset{\text{推導 2}}{=}&amp; \frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right] + N^2 w \\
+  N^2 w &amp;=&amp; Q_b - \frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right] \\
+  w &amp;\overset{\text{假設 4}}{=}&amp; \frac{1}{N^2}\left(Q_b - \frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right)
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【假設 5】 剛蓋邊界條件 (Rigid-lid boundary conditions)：</strong> 上下邊界都是不可穿透的水平剛性面；並且垂直模態是由<strong>無強迫</strong>的齊次問題所定義</p>
+<ul>
+<li><p>(a) 上下邊界的垂直速度為零：</p>
+<div class="math notranslate nohighlight">
+\[\left.w\right|_{z = z_b} = \left.w\right|_{z = z_t} = 0\]</div>
+</li>
+<li><p>(b) 定義模態時不含強迫：</p>
+<div class="math notranslate nohighlight">
+\[Q_b = 0\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(z_b\)</span> : 下邊界（地表）高度 (Bottom boundary) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_t\)</span> : 上邊界（剛蓋）高度 (Top boundary) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 6】 模態展開 (Modal expansion)：</strong> 把水平結構與垂直結構分離，並把垂直本徵函數正規化</p>
+<ul>
+<li><p>(a) 擾動氣壓的展開：</p>
+<div class="math notranslate nohighlight">
+\[\Phi(x, y, z, t) = \sum_{m=0}^{\infty}\hat{\Phi}_m(x, y, t)\,\Psi_m(z)\]</div>
+</li>
+<li><p>(b) 水平輻散的展開：</p>
+<div class="math notranslate nohighlight">
+\[D(x, y, z, t) = \sum_{m=0}^{\infty}\hat{D}_m(x, y, t)\,\Psi_m(z)\]</div>
+</li>
+<li><p>(c) 垂直本徵函數的正規化：</p>
+<div class="math notranslate nohighlight">
+\[\int_{z_b}^{z_t}\Psi_m^2(z)\,dz = 1\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\Psi_m(z)\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個垂直本徵函數 (The <span class="math notranslate nohighlight">\(m\)</span>-th vertical eigenfunction) <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\Phi}_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個模態的擾動氣壓振幅 (Modal pressure amplitude) <span class="math notranslate nohighlight">\([\text{m}^{5/2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{D}_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個模態的水平輻散振幅 (Modal divergence amplitude) <span class="math notranslate nohighlight">\([\text{m}^{1/2}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 垂直模態指標 (Vertical mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 剛蓋邊界條件的模態形式 (Rigid-lid condition in modal form)：</strong> 邊界上垂直速度為零，等價於本徵函數的斜率為零（Neumann 型邊界條件）</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  0 &amp;\overset{\text{假設 5(a)}}{=}&amp; \left.w\right|_{z = z_b,\ z_t} \\
+  0 &amp;\overset{\text{推導 3}}{=}&amp; \left.\frac{1}{N^2}\left(Q_b - \frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right)\right|_{z = z_b,\ z_t} \\
+  0 &amp;\overset{\text{假設 5(b)}}{=}&amp; \left.-\frac{1}{N^2}\frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right|_{z = z_b,\ z_t} \\
+  0 &amp;\overset{\text{假設 4}}{=}&amp; \left.\frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right|_{z = z_b,\ z_t} \\
+  0 &amp;\overset{\text{假設 6(a)}}{=}&amp; \sum_{m=0}^{\infty}\frac{\partial \hat{\Phi}_m}{\partial t}\left.\frac{d\Psi_m}{dz}\right|_{z = z_b,\ z_t} \\
+  0 &amp;\overset{\text{對任意 }\hat{\Phi}_m}{=}&amp; \left.\frac{d\Psi_m}{dz}\right|_{z = z_b,\ z_t}
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【定義 7】 垂直結構方程式與等效深度 (Vertical structure equation &amp; equivalent depth)：</strong> 要讓【假設 6】的展開式中每個模態各自封閉成一條只含 <span class="math notranslate nohighlight">\(\hat{\Phi}_m,\ \hat{D}_m\)</span> 的方程式，<span class="math notranslate nohighlight">\(z\)</span> 相依的部分就只能滿足一個本徵值問題；這條要求同時<strong>定義</strong>了垂直本徵函數 <span class="math notranslate nohighlight">\(\Psi_m\)</span> 與分離常數 <span class="math notranslate nohighlight">\(c_m\)</span></p>
+<ul>
+<li><p>(a) 垂直結構方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dz}\left[\frac{1}{N^2}\frac{d\Psi_m}{dz}\right] \overset{\text{def}}{=} -\frac{1}{c_m^2}\Psi_m\]</div>
+</li>
+<li><p>(b) 等效深度：</p>
+<div class="math notranslate nohighlight">
+\[h_m \overset{\text{def}}{=} \frac{c_m^2}{g}\]</div>
+</li>
+<li><p>(c) 對照 Sturm–Liouville 標準式 <span class="math notranslate nohighlight">\(\dfrac{d}{dz}\left[p\dfrac{d\Psi_m}{dz}\right] + q\,\Psi_m + \lambda_m w\,\Psi_m = 0\)</span>，本問題的係數對應為</p>
+<ul>
+<li><p>(c-1) 主係數函數：</p>
+<div class="math notranslate nohighlight">
+\[p(z) = \frac{1}{N^2}\]</div>
+</li>
+<li><p>(c-2) 零階係數函數：</p>
+<div class="math notranslate nohighlight">
+\[q(z) = 0\]</div>
+</li>
+<li><p>(c-3) 權重函數：</p>
+<div class="math notranslate nohighlight">
+\[w(z) = 1\]</div>
+</li>
+<li><p>(c-4) 本徵值：</p>
+<div class="math notranslate nohighlight">
+\[\lambda_m = \frac{1}{c_m^2}\]</div>
+</li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(c_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個模態的分離常數，物理上是該模態的重力波相速 (Separation constant / gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個模態的等效深度 (Equivalent depth) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html"><span class="std std-doc">Sturm–Liouville 本徵函數的正交性</span></a>：</strong> 此式已於該檔完整證明，此處直接引用不再重證。【推導 4】給出的正是該檔【假設 2(b)】的第二類（Neumann）邊界條件，故其結論可直接套用</p>
+<div class="math notranslate nohighlight">
+\[\int_{z_b}^{z_t}\Psi_m(z)\,\Psi_n(z)\,w(z)\,dz = 0 \qquad \left(\lambda_m \neq \lambda_n\right)\]</div>
+<ul class="simple">
+<li><p>註：正則 Sturm–Liouville 問題的本徵值為單重（simple），因此 <span class="math notranslate nohighlight">\(m \neq n\)</span> 就保證 <span class="math notranslate nohighlight">\(\lambda_m \neq \lambda_n\)</span>，該檔【假設 3】自動滿足。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 垂直模態的正規正交關係 (Orthonormality of the vertical modes)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{z_b}^{z_t}\Psi_m(z)\,\Psi_n(z)\,dz &amp;\overset{\text{定義 7(c-3)}}{=}&amp; \int_{z_b}^{z_t}\Psi_m(z)\,\Psi_n(z)\,w(z)\,dz \\
+  &amp;\overset{\text{已知 4,假設 6(c)}}{=}&amp; \delta_{mn}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\delta_{mn}\)</span> : Kronecker delta <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 7】 純內部加熱 (Purely internal heating)：</strong> 非絕熱加熱只發生在大氣內部，上下邊界不加熱</p>
+<div class="math notranslate nohighlight">
+\[Q(z_b) = Q(z_t) = 0\]</div>
+<ul class="simple">
+<li><p>註：這是一個<strong>可以被打破</strong>的假設。地表感熱通量、或大氣頂輻射冷卻不歸零，都會讓邊界項復活，結論 (d) 就不再成立，詳見【物理解釋】。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof">
+<h3>(a) proof 加熱強迫下的「壓力–輻散」方程式<a class="headerlink" href="#a-proof" title="Link to this heading">#</a></h3>
+<p>從不可壓縮連續方程式起手，把 <span class="math notranslate nohighlight">\(w\)</span> 換成【推導 3】的診斷形式。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{假設 1(b)}}{=}&amp; \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} \\
+0 &amp;\overset{\text{定義 4}}{=}&amp; D + \frac{\partial w}{\partial z} \\
+0 &amp;\overset{\text{推導 3}}{=}&amp; D + \frac{\partial}{\partial z}\left[\frac{1}{N^2}\left(Q_b - \frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right)\right] \\
+0 &amp;=&amp; D + \frac{\partial}{\partial z}\left[\frac{Q_b}{N^2}\right] - \frac{\partial}{\partial z}\left[\frac{1}{N^2}\frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right] \\
+0 &amp;\overset{\text{定義 6}}{=}&amp; D + \frac{\partial Q}{\partial z} - \frac{\partial}{\partial z}\left[\frac{1}{N^2}\frac{\partial}{\partial t}\left[\frac{\partial \Phi}{\partial z}\right]\right] \\
+0 &amp;\overset{\text{假設 2(b)}}{=}&amp; D + \frac{\partial Q}{\partial z} - \frac{\partial}{\partial t}\left[\frac{\partial}{\partial z}\left[\frac{1}{N^2}\frac{\partial \Phi}{\partial z}\right]\right] \\
+D - \frac{\partial}{\partial t}\left[\frac{\partial}{\partial z}\left[\frac{1}{N^2}\frac{\partial \Phi}{\partial z}\right]\right] &amp;=&amp; -\frac{\partial Q}{\partial z}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-m">
+<h3>(b) proof 第 <span class="math notranslate nohighlight">\(m\)</span> 個模態的投影關係<a class="headerlink" href="#b-proof-m" title="Link to this heading">#</a></h3>
+<p>把 (a) 兩側同乘 <span class="math notranslate nohighlight">\(\Psi_n(z)\)</span> 並對整層積分，正規正交性只留下 <span class="math notranslate nohighlight">\(m = n\)</span> 這一項。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{z_b}^{z_t}\left(-\frac{\partial Q}{\partial z}\right)\Psi_n\,dz
+&amp;\overset{\text{證明 (a)}}{=}&amp; \int_{z_b}^{z_t}\left(D - \frac{\partial}{\partial t}\left[\frac{\partial}{\partial z}\left[\frac{1}{N^2}\frac{\partial \Phi}{\partial z}\right]\right]\right)\Psi_n\,dz \\
+&amp;\overset{\text{假設 6(a)(b)}}{=}&amp; \int_{z_b}^{z_t}\left(\sum_{m=0}^{\infty}\hat{D}_m\Psi_m - \frac{\partial}{\partial t}\left[\sum_{m=0}^{\infty}\hat{\Phi}_m\frac{d}{dz}\left[\frac{1}{N^2}\frac{d\Psi_m}{dz}\right]\right]\right)\Psi_n\,dz \\
+&amp;\overset{\text{定義 7(a)}}{=}&amp; \int_{z_b}^{z_t}\left(\sum_{m=0}^{\infty}\hat{D}_m\Psi_m + \frac{\partial}{\partial t}\left[\sum_{m=0}^{\infty}\frac{1}{c_m^2}\hat{\Phi}_m\Psi_m\right]\right)\Psi_n\,dz \\
+&amp;\overset{\text{假設 6(a)}}{=}&amp; \int_{z_b}^{z_t}\sum_{m=0}^{\infty}\left(\hat{D}_m + \frac{1}{c_m^2}\frac{\partial \hat{\Phi}_m}{\partial t}\right)\Psi_m\Psi_n\,dz \\
+&amp;=&amp; \sum_{m=0}^{\infty}\left(\hat{D}_m + \frac{1}{c_m^2}\frac{\partial \hat{\Phi}_m}{\partial t}\right)\int_{z_b}^{z_t}\Psi_m\Psi_n\,dz \\
+&amp;\overset{\text{推導 5}}{=}&amp; \hat{D}_n + \frac{1}{c_n^2}\frac{\partial \hat{\Phi}_n}{\partial t}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c-proof-external-mode">
+<h3>(c) proof external mode 的垂直結構是常數<a class="headerlink" href="#c-proof-external-mode" title="Link to this heading">#</a></h3>
+<p>先驗證常數解確實滿足【推導 4】的邊界條件，再代回【定義 7(a)】讀出它的本徵值。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Psi_0 &amp;\overset{\text{let}}{=}&amp; \text{const} \\
+\frac{d\Psi_0}{dz} &amp;=&amp; 0 \\
+\left.\frac{d\Psi_0}{dz}\right|_{z = z_b,\ z_t} &amp;\overset{\text{推導 4}}{=}&amp; 0 \\
+\frac{d}{dz}\left[\frac{1}{N^2}\frac{d\Psi_0}{dz}\right] &amp;=&amp; 0 \\
+-\frac{1}{c_0^2}\Psi_0 &amp;\overset{\text{定義 7(a)}}{=}&amp; 0 \\
+\frac{1}{c_0^2} &amp;\overset{\text{假設 6(c)}}{=}&amp; 0
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="d-proof-external-mode">
+<h3>(d) proof 純內部加熱對 external mode 的投影恆為零<a class="headerlink" href="#d-proof-external-mode" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{D}_0 + \frac{1}{c_0^2}\frac{\partial \hat{\Phi}_0}{\partial t} &amp;\overset{\text{證明 (b)}}{=}&amp; \int_{z_b}^{z_t}\left(-\frac{\partial Q}{\partial z}\right)\Psi_0\,dz \\
+\hat{D}_0 &amp;\overset{\text{證明 (c)}}{=}&amp; \int_{z_b}^{z_t}\left(-\frac{\partial Q}{\partial z}\right)\Psi_0\,dz \\
+\hat{D}_0 &amp;\overset{\text{證明 (c)}}{=}&amp; -\Psi_0\int_{z_b}^{z_t}\frac{\partial Q}{\partial z}\,dz \\
+\hat{D}_0 &amp;=&amp; -\Psi_0\left(Q(z_t) - Q(z_b)\right) \\
+\hat{D}_0 &amp;\overset{\text{假設 7}}{=}&amp; 0
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>物理解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>本節三張圖由本資料夾下的 <code class="docutils literal notranslate"><span class="pre">src/make_figures.py</span></code> 產生（<code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">make_figures.py</span></code>），重跑該腳本即可更新 <code class="docutils literal notranslate"><span class="pre">pic/</span></code> 底下的圖檔。</p>
+</div></blockquote>
+<section id="a">
+<h3>(a)：加熱不是直接推波，是靠「加熱的垂直梯度」<a class="headerlink" href="#a" title="Link to this heading">#</a></h3>
+<p>原始的加熱 <span class="math notranslate nohighlight">\(Q_b\)</span> 出現在熱力學方程式裡，它做的事是製造浮力、驅動垂直速度 <span class="math notranslate nohighlight">\(w\)</span>。但水平方向的波動感受不到 <span class="math notranslate nohighlight">\(w\)</span> 本身，只感受得到 <span class="math notranslate nohighlight">\(\partial w/\partial z\)</span> —— 因為不可壓縮連續方程式 <span class="math notranslate nohighlight">\(D + \partial w/\partial z = 0\)</span> 說得很清楚：<strong>是垂直伸縮把訊號交給水平輻散的</strong>。</p>
+<p>推導 (a) 的第三步就是這件事的數學版本：<span class="math notranslate nohighlight">\(w\)</span> 被換掉之後，<span class="math notranslate nohighlight">\(\partial/\partial z\)</span> 就落到了加熱項頭上，強迫項於是長成 <span class="math notranslate nohighlight">\(-\partial Q/\partial z\)</span> 而不是 <span class="math notranslate nohighlight">\(Q\)</span>。</p>
+<p><img alt="加熱本身與加熱的垂直梯度" src="../../_images/heating_gradient_forcing.png" /></p>
+<p>左圖是加熱剖面 <span class="math notranslate nohighlight">\(Q\)</span> 本身，右圖才是動力方程式真正感受到的 <span class="math notranslate nohighlight">\(-\partial Q/\partial z\)</span>。紅色虛線那條<strong>垂直均勻的加熱</strong>在左圖有相當可觀的量值，但它的垂直梯度恆為零 —— 也就是說，<strong>一個垂直方向上均勻的加熱，無論多強，都不會激發任何水平運動</strong>。藍色的深對流加熱則在右圖形成一組上下反號的偶極：低層輻合、高層輻散，這正是熱帶對流的典型動力響應。</p>
+</section>
+<section id="b">
+<h3>(b)：三維問題被拆成無窮多個二維淺水問題<a class="headerlink" href="#b" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\left(\hat{\Phi}_m,\ \hat{D}_m\right)\)</span> 這一組式子，配上線性化的水平動量方程式，就是一組標準的<strong>淺水方程式</strong>，其「水深」是【定義 7(b)】的等效深度 <span class="math notranslate nohighlight">\(h_m = c_m^2/g\)</span>。這正是為什麼熱帶波動理論（Kelvin 波、Rossby 波、混合 Rossby–重力波）可以用淺水系統來做 —— 每一個垂直模態都自成一個淺水世界，只是各自的重力波速 <span class="math notranslate nohighlight">\(c_m\)</span> 不同。相關的色散關係求解可參考 Advanced Atmospheric Dynamics 的 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project2/project2.html">project2（赤道波色散關係）</a>。</p>
+<p>以中性大氣 <span class="math notranslate nohighlight">\(N \approx 10^{-2}\ \text{s}^{-1}\)</span>、對流層厚度 <span class="math notranslate nohighlight">\(z_t - z_b \approx 16\ \text{km}\)</span> 估計，第一斜壓模態的相速約為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+c_1 &amp;\approx&amp; \frac{N\left(z_t - z_b\right)}{\pi} \\
+&amp;\approx&amp; \frac{\left(10^{-2} \ \text{s}^{-1}\right)\left(1.6 \times 10^{4} \ \text{m}\right)}{3.14} \\
+&amp;\approx&amp; 51 \ \text{m}\cdot\text{s}^{-1}
+\end{gather*}\end{split}\]</div>
+<p>這正是熱帶 Kelvin 波觀測到的典型速度量級。</p>
+<p><img alt="垂直本徵函數與等效深度" src="../../_images/vertical_modes_equivalent_depth.png" /></p>
+<p>左圖是解出來的垂直本徵函數：<span class="math notranslate nohighlight">\(\Psi_0\)</span> 是一條垂直線（整層同號），<span class="math notranslate nohighlight">\(\Psi_m\)</span> 在區間內有 <span class="math notranslate nohighlight">\(m\)</span> 個變號點。右圖是各模態的等效深度 <span class="math notranslate nohighlight">\(h_m = c_m^2/g\)</span> —— <strong>每一根長條就是一個獨立的淺水世界</strong>，水深從 <span class="math notranslate nohighlight">\(m = 0\)</span> 的無限大，一路掉到 <span class="math notranslate nohighlight">\(m = 3\)</span> 的三十公尺左右。同一個三維大氣，被拆成了一整排水深不同的淺水系統。</p>
+</section>
+<section id="c-d">
+<h3>(c)(d)：正壓模態對內部加熱免疫<a class="headerlink" href="#c-d" title="Link to this heading">#</a></h3>
+<p>(c) 說 <span class="math notranslate nohighlight">\(\Psi_0\)</span> 是常數 —— 整層大氣同相位地動，這就是「正壓（barotropic）」的意思；而 <span class="math notranslate nohighlight">\(1/c_0^2 = 0\)</span> 表示 <span class="math notranslate nohighlight">\(c_0 \to \infty\)</span>、等效深度 <span class="math notranslate nohighlight">\(h_0 \to \infty\)</span>，物理上對應剛蓋所強加的「訊號瞬間傳遍整層」。</p>
+<p>(d) 則是這條理論鏈最漂亮的結論：因為 <span class="math notranslate nohighlight">\(\Psi_0\)</span> 是常數，它可以整個被拉出積分外，剩下的 <span class="math notranslate nohighlight">\(\int \partial_z Q\,dz\)</span> 只認邊界值。於是<strong>只要加熱在上下邊界歸零，深對流不管多猛，投影到正壓模態上的量嚴格是零</strong>。</p>
+<p><img alt="external mode 投影的正負面積相消" src="../../_images/external_mode_cancellation.png" /></p>
+<p>這張圖把 (d) 的積分直接畫出來。被積函數就是 <span class="math notranslate nohighlight">\(-\dfrac{\partial Q}{\partial z}\Psi_0\)</span>，紅色是正貢獻、藍色是負貢獻，而投影值就是兩塊面積的代數和。</p>
+<ul class="simple">
+<li><p><strong>左圖（純內部加熱）</strong>：低層的負面積與高層的正面積<strong>大小完全相等</strong>，加起來嚴格為零。這不是巧合，而是【證明 (d)】的圖形版本 —— <span class="math notranslate nohighlight">\(\Psi_0\)</span> 是常數，所以積分只剩 <span class="math notranslate nohighlight">\(-\Psi_0\left(Q(z_t) - Q(z_b)\right)\)</span>，而兩端的 <span class="math notranslate nohighlight">\(Q\)</span> 都是零。</p></li>
+<li><p><strong>右圖（多了地表感熱）</strong>：低層冒出一塊額外的正面積，相消被破壞，投影跳到 <span class="math notranslate nohighlight">\(\Psi_0\,Q(z_b) \neq 0\)</span>。</p></li>
+</ul>
+<p>換句話說，<strong>正壓模態不是打不動，而是「內部」加熱打不動它 —— 要動它得從邊界下手</strong>。熱帶的深對流之所以能影響中高緯，靠的不是直接激發正壓波列，而是先打進斜壓模態、再透過背景風切或非線性過程轉換過去。</p>
+</section>
+<section id="id4">
+<h3>這個結論什麼時候會失效<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>邊界加熱</strong>：地表感熱通量讓 <span class="math notranslate nohighlight">\(Q(z_b) \neq 0\)</span>，【假設 7】就破了，<span class="math notranslate nohighlight">\(\hat{D}_0 = \Psi_0\,Q(z_b) \neq 0\)</span>。這是<strong>邊界強迫</strong>，跟內部加熱是兩回事。</p></li>
+<li><p><strong>自由表面取代剛蓋</strong>：換掉【假設 5】，<span class="math notranslate nohighlight">\(\Psi_0\)</span> 就不再是嚴格常數（只是「幾乎」常數），<span class="math notranslate nohighlight">\(c_0\)</span> 變成有限的 <span class="math notranslate nohighlight">\(\sqrt{g H} \approx 280\ \text{m}\cdot\text{s}^{-1}\)</span>，投影變成很小但非零。</p></li>
+<li><p><strong>有背景風的基本態</strong>：【假設 2(a)】破掉之後，垂直結構方程式不再是這個乾淨的 Sturm–Liouville 形式，模態之間也不再正交。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Atmospheric_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Differential_Equations/Sturm_Liouville_Orthogonality.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sturm–Liouville Orthogonality (Sturm–Liouville 本徵函數的正交性與展開係數)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../02_Concepts/02_Concepts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>🧩 02_Concepts</strong>: 核心觀念區</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof">(a) proof 加熱強迫下的「壓力–輻散」方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-m">(b) proof 第 <span class="math notranslate nohighlight">\(m\)</span> 個模態的投影關係</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-external-mode">(c) proof external mode 的垂直結構是常數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-external-mode">(d) proof 純內部加熱對 external mode 的投影恆為零</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)：加熱不是直接推波，是靠「加熱的垂直梯度」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)：三維問題被拆成無窮多個二維淺水問題</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-d">(c)(d)：正壓模態對內部加熱免疫</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這個結論什麼時候會失效</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

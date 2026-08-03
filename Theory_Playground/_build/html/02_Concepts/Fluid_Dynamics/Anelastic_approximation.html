@@ -28,9 +28,9 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,13 +50,15 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '02_Concepts/Fluid_Dynamics/Anelastic_approximation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -199,6 +201,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -208,6 +212,8 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">[流體力學] Anelastic近似</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -392,7 +398,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -408,6 +416,30 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boussinesq">一、Boussinesq 在颱風上撞牆</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-0-to-bar-rho-z">二、只放寬一件事：<span class="math notranslate nohighlight">\(\rho_0 \to \bar{\rho}(z)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-rho-z">為什麼 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 只能是 <span class="math notranslate nohighlight">\(z\)</span> 的函數</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-elastic">三、名字的由來：an-elastic = 沒有彈性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">四、最直接的後果：上升氣流被迫隨高度加速</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">五、數值驗證</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">六、三個容易犯的錯</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anelastic">① 以為 anelastic 是「可壓縮」的版本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-left-bar-rho-mathbf-u-right-0-nabla-cdot-mathbf-u-0">② 把 <span class="math notranslate nohighlight">\(\nabla\cdot\left(\bar{\rho}\mathbf{u}\right) = 0\)</span> 讀成 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = 0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-rho">③ 把 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 換成當地密度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">七、適用邊界與變體</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">應用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">參考資料</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -419,6 +451,286 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="anelastic-approximation">
 <h1>Anelastic Approximation<a class="headerlink" href="#anelastic-approximation" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>放行密度隨「高度」變化，但絕不放行密度隨「時間」變化 —— 深對流進得來，聲波照樣被關在門外。</strong></p>
+</div></blockquote>
+<p>滯彈近似是深對流、颱風與雲解析模式的標準配備。它比 <a class="reference internal" href="Boussinesq_approximation.html"><span class="std std-doc">Boussinesq 近似</span></a> 只多鬆綁了一件事，但那一件事讓適用範圍從「<span class="math notranslate nohighlight">\(1\ \text{km}\)</span> 以下」一路撐到「整層對流層」。</p>
+<p>這篇筆記要講清楚：<strong>它鬆綁了什麼、為什麼鬆綁之後聲波還是進不來、以及這個鬆綁換來了什麼新的物理。</strong></p>
+<section id="boussinesq">
+<h2>一、Boussinesq 在颱風上撞牆<a class="headerlink" href="#boussinesq" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="Boussinesq_approximation.html"><span class="std std-doc">Boussinesq 近似</span></a> 把密度整個換成一個常數 <span class="math notranslate nohighlight">\(\rho_0\)</span>，只在浮力項留下擾動 <span class="math notranslate nohighlight">\(\rho'\)</span>。它乾淨、好用，但有一條硬性的適用條件：</p>
+<div class="math notranslate nohighlight">
+\[D \ll H_\rho,\qquad H_\rho = \frac{R_d T}{g} \approx 7.3\ \text{km}\]</div>
+<p>系統的厚度要遠小於密度標高。那颱風長什麼樣子？從海面一路長到 <span class="math notranslate nohighlight">\(15\ \text{km}\)</span> 高的對流層頂。這時候背景密度是</p>
+<div class="math notranslate nohighlight">
+\[\frac{\bar{\rho}\left(15\ \text{km}\right)}{\rho_s} = e^{-15/7.3} \approx 0.13\]</div>
+<p><strong>頂層的空氣只剩地面的 <span class="math notranslate nohighlight">\(13\%\)</span>。</strong> 這時候還堅持「密度到處都是 <span class="math notranslate nohighlight">\(1.2\ \text{kg}\cdot\text{m}^{-3}\)</span>」，那就不是近似而是錯誤了 —— Boussinesq 那篇的數值驗證算出這個誤差高達 <span class="math notranslate nohighlight">\(146\%\)</span>。</p>
+<p><strong>怎麼辦呢？</strong> 直覺的第一個念頭是「那就把完整的 <span class="math notranslate nohighlight">\(\rho\left(x,y,z,t\right)\)</span> 放回去」。但這樣前功盡棄 —— 聲波會跟著一起回來，<span class="math notranslate nohighlight">\(\Delta t\)</span> 又被綁死在 <span class="math notranslate nohighlight">\(340\ \text{m}\cdot\text{s}^{-1}\)</span> 上。</p>
+<p>我們要的是一個<strong>只鬆綁必要的那一點點</strong>的做法。</p>
+</section>
+<section id="rho-0-to-bar-rho-z">
+<h2>二、只放寬一件事：<span class="math notranslate nohighlight">\(\rho_0 \to \bar{\rho}(z)\)</span><a class="headerlink" href="#rho-0-to-bar-rho-z" title="Link to this heading">#</a></h2>
+<p>先問一個關鍵問題：<strong>上面那 <span class="math notranslate nohighlight">\(87\%\)</span> 的密度差異，到底是誰造成的？</strong></p>
+<p>不是溫度擾動、不是對流、也不是颱風 —— 是<strong>重力</strong>。是背景大氣的靜力平衡把底層的空氣壓實了。這個結構跟天氣完全無關：颱風來之前它就在那裡，颱風走了以後它還在那裡。</p>
+<p>既然如此，就把它<strong>當成已知的背景</strong>，而不是要預報的未知數：</p>
+<div class="math notranslate nohighlight">
+\[\rho\left(x,y,z,t\right) = \bar{\rho}(z) + \rho'\left(x,y,z,t\right),\qquad \left|\frac{\rho'}{\bar{\rho}}\right| \ll 1\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span>：<strong>只隨高度變化</strong>的背景密度，由靜力平衡決定，與 <span class="math notranslate nohighlight">\(t\)</span> 和水平位置無關 —— 像是畫布的底色。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho'\)</span>：冷暖造成的微小擾動，跟 Boussinesq 一樣，只在浮力項出場。</p></li>
+</ul>
+<p>連續方程式於是變成</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;=&amp; \frac{\partial \rho}{\partial t} + \nabla\cdot\left(\rho\mathbf{u}\right) \\
+0 &amp;\approx&amp; \underbrace{\frac{\partial \bar{\rho}(z)}{\partial t}}_{=\,0\ \text{（與 }t\text{ 無關）}} + \nabla\cdot\left(\bar{\rho}\mathbf{u}\right) \\
+\nabla\cdot\left(\bar{\rho}\mathbf{u}\right) &amp;=&amp; 0
+\end{gather*}\end{split}\]</div>
+<p>跟 Boussinesq 的 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = 0\)</span> 相比，差別只在於 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 被<strong>關在散度符號裡面</strong>。因為它是 <span class="math notranslate nohighlight">\(z\)</span> 的函數，碰到 <span class="math notranslate nohighlight">\(\partial/\partial z\)</span> 就提不出來：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\left(\bar{\rho}u\right)}{\partial x} + \frac{\partial\left(\bar{\rho}v\right)}{\partial y} + \frac{\partial\left(\bar{\rho}w\right)}{\partial z} = 0
+\quad\Longrightarrow\quad
+\bar{\rho}\left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) + \frac{\partial\left(\bar{\rho}w\right)}{\partial z} = 0\]</div>
+<blockquote>
+<div><p><strong>看到 <span class="math notranslate nohighlight">\(\rho\)</span> 被關在偏微分符號裡面、提不出來也消不掉，那就是滯彈近似的指紋。</strong></p>
+</div></blockquote>
+<section id="bar-rho-z">
+<h3>為什麼 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 只能是 <span class="math notranslate nohighlight">\(z\)</span> 的函數<a class="headerlink" href="#bar-rho-z" title="Link to this heading">#</a></h3>
+<p>這一點不能妥協。如果貪心地想用當地的真實密度 <span class="math notranslate nohighlight">\(\rho\left(x,y,z,t\right)\)</span>，那 <span class="math notranslate nohighlight">\(\partial\rho/\partial t\)</span> 就活過來了，聲波跟著回來，整個近似的目的就消失了。</p>
+<p><strong><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 只依賴 <span class="math notranslate nohighlight">\(z\)</span>，正是「<span class="math notranslate nohighlight">\(\partial\bar{\rho}/\partial t \equiv 0\)</span>」在數學上嚴格成立的理由</strong> —— 不是靠尺度分析硬壓成零，是真的等於零。這一點在 <a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html"><span class="std std-doc">軸對稱連續方程式</span></a> 那篇的【假設 2】可以清楚對照：該檔是用尺度分析（<span class="math notranslate nohighlight">\(3\times10^{-7}\)</span> vs <span class="math notranslate nohighlight">\(5\times10^{-5}\)</span>）把 <span class="math notranslate nohighlight">\(\partial\rho/\partial t\)</span> 壓掉的，而換成 <span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span> 之後，這一步就不再需要任何近似了。</p>
+</section>
+</section>
+<section id="an-elastic">
+<h2>三、名字的由來：an-elastic = 沒有彈性<a class="headerlink" href="#an-elastic" title="Link to this heading">#</a></h2>
+<p>這個名字取得非常誠實，值得拆開來看。</p>
+<p><strong>elastic（彈性）</strong> 指的是空氣像彈簧一樣：被壓縮 → 產生回復力 → 彈回來 → 彈過頭 → 再被壓縮。這個一壓一彈的振盪，就是<strong>聲波</strong>。</p>
+<p><strong>an-elastic（滯彈／無彈性）</strong> 就是把這根彈簧直接拔掉。空氣還是可以被推、被擠、被抬升，但它不會「彈」。</p>
+<p>數學上這件事發生在哪裡？就在上一節那個被劃掉的 <span class="math notranslate nohighlight">\(\partial\bar{\rho}/\partial t\)</span>。密度的<strong>時間</strong>變化率被移除，密度就沒辦法振盪，聲波這個模態在方程式裡<strong>不存在</strong>，而不是「存在但很小」。</p>
+<p>所以在濾波這件事情上，滯彈近似跟 Boussinesq 是<strong>完全一樣的</strong>：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>聲波</p></th>
+<th class="head"><p>重力波</p></th>
+<th class="head"><p>深層密度分層</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>完整可壓縮方程組</p></td>
+<td><p>保留</p></td>
+<td><p>保留</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boussinesq</p></td>
+<td><p><strong>濾掉</strong></p></td>
+<td><p>保留</p></td>
+<td><p><strong>丟掉</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Anelastic</p></td>
+<td><p><strong>濾掉</strong></p></td>
+<td><p>保留</p></td>
+<td><p><strong>保留</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>一言以蔽之：滯彈近似 <span class="math notranslate nohighlight">\(=\)</span> Boussinesq 的濾波能力 <span class="math notranslate nohighlight">\(+\)</span> 深層大氣的密度結構。名字聽起來很玄，其實就是「密度可以隨高度變，但不准隨時間變」而已。</strong></p>
+</div></blockquote>
+<p>代價也跟 Boussinesq 一模一樣：<strong>氣壓從預報變數變成診斷變數</strong>，每個時間步都要解一次橢圓方程式才拿得到，只是這次的橢圓算子帶了 <span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span> 的權重。</p>
+</section>
+<section id="id1">
+<h2>四、最直接的後果：上升氣流被迫隨高度加速<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>這是鬆綁成 <span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span> 之後，最能直接感覺到的物理差別。</p>
+<p>把 <span class="math notranslate nohighlight">\(\nabla\cdot\left(\bar{\rho}\mathbf{u}\right) = 0\)</span> 展開，再除以 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;=&amp; \nabla\cdot\left(\bar{\rho}\mathbf{u}\right) \\
+&amp;=&amp; \bar{\rho}\,\nabla\cdot\mathbf{u} + \mathbf{u}\cdot\nabla\bar{\rho} \\
+&amp;=&amp; \bar{\rho}\,\nabla\cdot\mathbf{u} + w\frac{d\bar{\rho}}{dz} \\
+\nabla\cdot\mathbf{u} &amp;=&amp; -w\frac{d\ln\bar{\rho}}{dz} \\
+&amp;=&amp; \frac{w}{H_\rho} \qquad\left(\text{等溫背景 }\bar{\rho} = \rho_s e^{-z/H_\rho}\right)
+\end{gather*}\end{split}\]</div>
+<p><strong>在滯彈系統裡，速度場的散度不是零。</strong> 一團上升的空氣會持續膨脹，因為它周圍的環境壓力一直在下降。</p>
+<p>反過來用質量守恆看更直觀：一根穩定的上升氣流管，每個高度的質量通量 <span class="math notranslate nohighlight">\(\bar{\rho}w\)</span> 都必須相同。既然 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 一路遞減，<span class="math notranslate nohighlight">\(w\)</span> 就只能一路遞增：</p>
+<div class="math notranslate nohighlight">
+\[\bar{\rho}(z)\,w(z) = \text{const} \quad\Longrightarrow\quad w(z) = w_s\,e^{z/H_\rho}\]</div>
+<blockquote>
+<div><p><strong>這就是為什麼深對流的上升氣流在高層總是特別強、颱風的高層外流總是特別旺 —— 其中有一部分根本不是動力學驅動的，純粹是「空氣變稀薄了，同樣多的質量只好跑得更快」。</strong></p>
+</div></blockquote>
+<p>Boussinesq 因為 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = 0\)</span>，完全看不到這個效應。下一節把它算成數字。</p>
+</section>
+<section id="id2">
+<h2>五、數值驗證<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>我們問兩個很具體的問題：</p>
+<ol class="arabic simple">
+<li><p>同樣一股質量通量的上升氣流，Boussinesq 與滯彈近似算出來的 <span class="math notranslate nohighlight">\(w\)</span> 差幾倍？</p></li>
+<li><p>Boussinesq 硬說等於零的那個 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = w/H_\rho\)</span>，量級到底有多大？值得在意嗎？</p></li>
+</ol>
+<p>第二個問題需要一把尺才有意義，所以我們拿 <a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html"><span class="std std-doc">軸對稱連續方程式</span></a> 裡颱風底層徑向輻散的典型量級（<span class="math notranslate nohighlight">\(\sim 5\times10^{-5}\ \text{s}^{-1}\)</span>）當作比較基準。</p>
+<p>背景一樣取等溫大氣 <span class="math notranslate nohighlight">\(\bar{\rho}(z) = \rho_s e^{-z/H_\rho}\)</span>，地面上升速度取 <span class="math notranslate nohighlight">\(w_s = 1\ \text{m}\cdot\text{s}^{-1}\)</span>（所有數字都跟著它等比例縮放）。資料每次執行時即時生成，沒有任何檔案被存下來。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">G</span><span class="p">,</span> <span class="n">RD</span><span class="p">,</span> <span class="n">T0</span> <span class="o">=</span> <span class="mf">9.81</span><span class="p">,</span> <span class="mf">287.0</span><span class="p">,</span> <span class="mf">250.0</span>      <span class="c1"># 重力加速度 [m/s^2]、乾空氣氣體常數 [J/kg/K]、等溫背景溫度 [K]</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">RD</span> <span class="o">*</span> <span class="n">T0</span> <span class="o">/</span> <span class="n">G</span>                     <span class="c1"># 密度標高 H = R_d T / g [m]</span>
+<span class="n">W_S</span> <span class="o">=</span> <span class="mf">1.0</span>                           <span class="c1"># 地面附近的上升速度 [m/s]</span>
+<span class="n">TC_DIV</span> <span class="o">=</span> <span class="mf">5.0e-5</span>                     <span class="c1"># 颱風底層徑向輻合的典型量級 [1/s]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">w_anelastic</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;固定質量通量 rho_bar * w = const 之下，垂直速度隨高度的解。&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">W_S</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">H</span><span class="p">)</span>      <span class="c1"># rho_bar ~ exp(-z/H)  -&gt;  w ~ exp(+z/H)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">div_u</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;滯彈系統中速度場本身的散度：div(u) = -w dln(rho_bar)/dz = w / H。&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">w_anelastic</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="n">H</span>
+
+
+<span class="c1"># ===== 主程式執行區 =====</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;密度標高 H = R_d T / g = </span><span class="si">%.0f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">H</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;地面上升速度 w_s = </span><span class="si">%.1f</span><span class="s2"> m/s（以下數字都跟著它等比例縮放）&quot;</span> <span class="o">%</span> <span class="n">W_S</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   高度      rho_bar/rho_s     w (anelastic)    w 放大倍率    div(u) = w/H&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">zk</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">]:</span>
+    <span class="n">zz</span> <span class="o">=</span> <span class="n">zk</span> <span class="o">*</span> <span class="mf">1000.0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">%4.1f</span><span class="s2"> km       </span><span class="si">%5.3f</span><span class="s2">           </span><span class="si">%5.2f</span><span class="s2"> m/s       </span><span class="si">%5.2f</span><span class="s2"> x     </span><span class="si">%8.2e</span><span class="s2"> 1/s&quot;</span>
+          <span class="o">%</span> <span class="p">(</span><span class="n">zk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">zz</span> <span class="o">/</span> <span class="n">H</span><span class="p">),</span> <span class="n">w_anelastic</span><span class="p">(</span><span class="n">zz</span><span class="p">),</span> <span class="n">w_anelastic</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_S</span><span class="p">,</span> <span class="n">div_u</span><span class="p">(</span><span class="n">zz</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;颱風底層徑向輻散的典型量級              : </span><span class="si">%8.2e</span><span class="s2"> 1/s&quot;</span> <span class="o">%</span> <span class="n">TC_DIV</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;12 km 處 Boussinesq 硬說等於零的 div(u) : </span><span class="si">%8.2e</span><span class="s2"> 1/s   (</span><span class="si">%.0f</span><span class="s2"> 倍)&quot;</span>
+      <span class="o">%</span> <span class="p">(</span><span class="n">div_u</span><span class="p">(</span><span class="mf">12000.0</span><span class="p">),</span> <span class="n">div_u</span><span class="p">(</span><span class="mf">12000.0</span><span class="p">)</span> <span class="o">/</span> <span class="n">TC_DIV</span><span class="p">))</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16000</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.5</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">W_S</span><span class="p">),</span> <span class="n">z</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Boussinesq:  $w$ = const&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_anelastic</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">z</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;anelastic:  $w = w_s\,e^{z/H}$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;updraft speed $w$ [m/s]   (same mass flux)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;height [km]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(a) same mass flux, two continuity equations&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">div_u</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">z</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;anelastic:  $\nabla\cdot\mathbf</span><span class="si">{u}</span><span class="s2"> = w/H$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">TC_DIV</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">TC_DIV</span> <span class="o">*</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;typical TC low-level</span><span class="se">\n</span><span class="s2">divergence&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
+<span class="c1"># Boussinesq 的 div(u) 嚴格為零，對數軸上畫不出來 —— 用箭頭標在左邊界外</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Boussinesq:  $\nabla\cdot\mathbf</span><span class="si">{u}</span><span class="s2"> \equiv 0$&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(off-scale on a log axis)&quot;</span><span class="p">,</span>
+               <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05e-5</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5e-5</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+               <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.4</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nabla\cdot\mathbf</span><span class="si">{u}</span><span class="s2">$  [s$^{-1}$]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;height [km]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;(b) the term Boussinesq sets to zero&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>密度標高 H = R_d T / g = 7314 m
+地面上升速度 w_s = 1.0 m/s（以下數字都跟著它等比例縮放）
+
+   高度      rho_bar/rho_s     w (anelastic)    w 放大倍率    div(u) = w/H
+   0.0 km       1.000            1.00 m/s        1.00 x     1.37e-04 1/s
+   3.0 km       0.664            1.51 m/s        1.51 x     2.06e-04 1/s
+   6.0 km       0.440            2.27 m/s        2.27 x     3.11e-04 1/s
+   9.0 km       0.292            3.42 m/s        3.42 x     4.68e-04 1/s
+  12.0 km       0.194            5.16 m/s        5.16 x     7.05e-04 1/s
+  15.0 km       0.129            7.77 m/s        7.77 x     1.06e-03 1/s
+
+颱風底層徑向輻散的典型量級              : 5.00e-05 1/s
+12 km 處 Boussinesq 硬說等於零的 div(u) : 7.05e-04 1/s   (14 倍)
+</pre></div>
+</div>
+<img alt="../../_images/d0ad4138de109f5188c8c11412dc17caa00b59f9add31499fcfe13eb93e05fc4.png" src="../../_images/d0ad4138de109f5188c8c11412dc17caa00b59f9add31499fcfe13eb93e05fc4.png" />
+</div>
+</div>
+<p>兩件事被量出來了：</p>
+<p><strong>① 上升氣流的放大倍率</strong>（圖 a）。同一股質量通量，滯彈近似算出來的 <span class="math notranslate nohighlight">\(w\)</span> 在 <span class="math notranslate nohighlight">\(12\ \text{km}\)</span> 是地面的 <span class="math notranslate nohighlight">\(\mathbf{5.2}\)</span> 倍、在 <span class="math notranslate nohighlight">\(15\ \text{km}\)</span> 是 <span class="math notranslate nohighlight">\(\mathbf{7.8}\)</span> 倍。Boussinesq 則從頭到尾都是那條垂直的虛線。<strong>如果你用 Boussinesq 去診斷颱風的高層外流，會系統性地低估好幾倍。</strong></p>
+<p><strong>② 被丟掉的那一項有多大</strong>（圖 b）。<span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = w/H_\rho\)</span> 在 <span class="math notranslate nohighlight">\(12\ \text{km}\)</span> 處是 <span class="math notranslate nohighlight">\(7.1\times10^{-4}\ \text{s}^{-1}\)</span>，而颱風底層徑向輻散的典型量級是 <span class="math notranslate nohighlight">\(5\times10^{-5}\ \text{s}^{-1}\)</span> —— <strong>前者比後者大了 <span class="math notranslate nohighlight">\(14\)</span> 倍。</strong></p>
+<p>第二點值得停下來想一下。Boussinesq 說 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = 0\)</span>，意思是宣稱那個 <span class="math notranslate nohighlight">\(7.1\times10^{-4}\)</span> 可以當成零。但它比我們真正想研究的訊號本身還大一個量級。</p>
+<blockquote>
+<div><p><strong>在深對流裡用 Boussinesq，丟掉的不是一個小的修正項 —— 丟掉的東西比主角還大。</strong></p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>六、三個容易犯的錯<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="anelastic">
+<h3>① 以為 anelastic 是「可壓縮」的版本<a class="headerlink" href="#anelastic" title="Link to this heading">#</a></h3>
+<p>名字裡有 elastic，很容易讓人覺得它把壓縮性處理回來了。<strong>它沒有。</strong> 聲波一樣被濾掉、氣壓一樣是診斷變數、一樣要解橢圓方程式。</p>
+<p>它處理的是<strong>背景密度分層</strong>，不是<strong>壓縮性</strong>。真正保留壓縮性的是完整可壓縮方程組（WRF、CM1 那類 split-explicit 模式）。</p>
+</section>
+<section id="nabla-cdot-left-bar-rho-mathbf-u-right-0-nabla-cdot-mathbf-u-0">
+<h3>② 把 <span class="math notranslate nohighlight">\(\nabla\cdot\left(\bar{\rho}\mathbf{u}\right) = 0\)</span> 讀成 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = 0\)</span><a class="headerlink" href="#nabla-cdot-left-bar-rho-mathbf-u-right-0-nabla-cdot-mathbf-u-0" title="Link to this heading">#</a></h3>
+<p>這是最實務、也最容易在寫程式的時候犯的錯。第四、五節已經算過了：<span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = w/H_\rho \neq 0\)</span>，而且量級不小。</p>
+<p>如果在滯彈模式裡誤用了 Boussinesq 的 Poisson 解算器（內建假設 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = 0\)</span>），質量就不守恆，而且誤差會<strong>隨高度指數放大</strong> —— 症狀通常是模式頂部莫名其妙地累積質量或發散。</p>
+</section>
+<section id="bar-rho">
+<h3>③ 把 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 換成當地密度<a class="headerlink" href="#bar-rho" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 必須是一個<strong>預先給定、只跟 <span class="math notranslate nohighlight">\(z\)</span> 有關</strong>的剖面。一旦讓它隨時間或水平位置變化，<span class="math notranslate nohighlight">\(\partial\bar{\rho}/\partial t = 0\)</span> 就不再嚴格成立，聲波會偷偷溜回來 —— 而且是以一種很難除錯的方式：<span class="math notranslate nohighlight">\(\Delta t\)</span> 開始莫名其妙地不穩定。</p>
+</section>
+</section>
+<section id="id4">
+<h2>七、適用邊界與變體<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>要誠實講一件事：滯彈近似<strong>不是「一個」近似，而是一族近似</strong>，彼此在基本態怎麼取、熱力學方程式怎麼寫上有差異。這個領域到現在都還沒有一個所有人都同意的標準版本，所以讀論文的時候，<strong>先確認作者用的是哪一版</strong>。</p>
+<ul class="simple">
+<li><p><strong>Ogura &amp; Phillips (1962)</strong> —— 最原始的版本。它額外要求基本態接近<strong>等熵</strong>（<span class="math notranslate nohighlight">\(d\bar{\theta}/dz \approx 0\)</span>），因為推導中用上了這個條件。對真實對流層（<span class="math notranslate nohighlight">\(\bar{\theta}\)</span> 從 <span class="math notranslate nohighlight">\(300\ \text{K}\)</span> 升到 <span class="math notranslate nohighlight">\(350\ \text{K}\)</span>）來說，這其實是個蠻強的限制。</p></li>
+<li><p><strong>Lipps &amp; Hemler (1982)</strong> —— 放寬了等熵要求，允許基本態有實際的層結。這是目前雲解析模式最常用的版本。</p></li>
+<li><p><strong>Durran (1989) pseudo-incompressible</strong> —— 更進一步，連續方程式變成 <span class="math notranslate nohighlight">\(\nabla\cdot\left(\bar{\rho}\bar{\theta}\mathbf{u}\right) = \text{加熱項}\)</span>。一樣濾掉聲波，但在強加熱的情況下比滯彈更準。</p></li>
+</ul>
+<p>還有一條所有版本共通的限制：<strong>擾動相對背景必須是小的。</strong> 在極端強的深對流核心裡，浮力大到垂直加速度可以跟 <span class="math notranslate nohighlight">\(g\)</span> 相比，這個前提本身就被挑戰了 —— 那時候該回頭用完整可壓縮方程組。</p>
+<blockquote>
+<div><p><strong>選近似的順序：先量系統有多高（決定 Boussinesq 還是 anelastic），再看加熱有多強（決定 anelastic 還是 pseudo-incompressible / 完整可壓縮）。</strong></p>
+</div></blockquote>
+</section>
+<section id="id5">
+<h2>應用<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html"><span class="std std-doc">颱風的軸對稱質量守恆</span></a></strong> —— <span class="math notranslate nohighlight">\(\frac{1}{r}\frac{\partial\left(\rho r u\right)}{\partial r} + \frac{\partial\left(\rho w\right)}{\partial z} = 0\)</span>，<span class="math notranslate nohighlight">\(\rho\)</span> 被關在微分裡提不出來，這就是滯彈近似最典型的長相。</p>
+<ul class="simple">
+<li><p><em>沒有滯彈近似會怎樣：</em> 該檔【假設 2】得靠尺度分析硬把 <span class="math notranslate nohighlight">\(\partial\rho/\partial t\)</span> 壓成零（<span class="math notranslate nohighlight">\(3\times10^{-7}\)</span> vs <span class="math notranslate nohighlight">\(5\times10^{-5}\)</span>）；換成 <span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span> 之後 <span class="math notranslate nohighlight">\(\partial\bar{\rho}/\partial t\)</span> 在數學上嚴格為零，這個近似步驟就消失了。反過來，若改用 Boussinesq 把 <span class="math notranslate nohighlight">\(\rho\)</span> 提出來消掉，就再也看不到「底層輻合被迫轉換成隨高度加速的上升氣流」這件事。</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html"><span class="std std-doc">用一個流函數同時裝下 <span class="math notranslate nohighlight">\(u\)</span> 和 <span class="math notranslate nohighlight">\(w\)</span></span></a></strong> —— 該檔【定義 1】把流函數定義成 <span class="math notranslate nohighlight">\(\rho u = -\frac{1}{r}\frac{\partial\psi}{\partial z}\)</span>、<span class="math notranslate nohighlight">\(\rho w = \frac{1}{r}\frac{\partial\psi}{\partial r}\)</span>，注意 <span class="math notranslate nohighlight">\(\rho\)</span> 是<strong>跟著 <span class="math notranslate nohighlight">\(\psi\)</span> 一起被定義進去的</strong> —— 它是一個<strong>質量</strong>流函數。</p>
+<ul class="simple">
+<li><p><em>沒有滯彈近似會怎樣：</em> 帶著 <span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span> 才能讓 <span class="math notranslate nohighlight">\(\psi\)</span> 自動滿足質量守恆。若用 Boussinesq 的體積流函數，<span class="math notranslate nohighlight">\(\psi\)</span> 的等值線就不是質量流線，颱風上層外流的強度會被系統性低估 —— 低估的倍率正是第五節圖 (a) 的那條指數曲線。</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html"><span class="std std-doc">把 <span class="math notranslate nohighlight">\(\frac{1}{\rho}\frac{\partial p}{\partial r}\)</span> 換成單一位勢的梯度 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial r}\)</span></span></a></strong> —— 該檔【假設 4】做的正是 <span class="math notranslate nohighlight">\(P = \bar{P}(z) + P'\)</span>、<span class="math notranslate nohighlight">\(\rho = \bar{\rho}(z) + \rho'\)</span> 這組分解。</p>
+<ul class="simple">
+<li><p><em>沒有滯彈近似會怎樣：</em> 氣壓梯度力是 <span class="math notranslate nohighlight">\(\frac{1}{\rho}\frac{\partial p}{\partial r}\)</span> 這個「兩個四維場相乘」的非線性項，收不進單一位勢的梯度，梯度風平衡也就寫不出 <span class="math notranslate nohighlight">\(\frac{v^2}{r} + fv = \frac{\partial\phi}{\partial r}\)</span> 這種乾淨的形式。</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html"><span class="std std-doc">擾動場的靜力平衡</span></a></strong> —— 該檔的參考密度寫成 <span class="math notranslate nohighlight">\(\rho_0(z)\)</span>，是個<strong>隨高度變化</strong>的背景場，這是滯彈式的讀法（嚴格的 Boussinesq 會要求它是純常數）。</p>
+<ul class="simple">
+<li><p><em>正因為 <span class="math notranslate nohighlight">\(\rho_0\)</span> 帶了 <span class="math notranslate nohighlight">\(z\)</span> 相依性：</em> 該檔【定義 1】才必須額外註明「視 <span class="math notranslate nohighlight">\(\rho_0\)</span> 的垂直變化遠小於 <span class="math notranslate nohighlight">\(P'\)</span> 的垂直變化」，才敢寫 <span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z} \approx \frac{1}{\rho_0}\frac{\partial P'}{\partial z}\)</span>。在嚴格的 Boussinesq 下 <span class="math notranslate nohighlight">\(\rho_0\)</span> 是常數，這一步是<strong>恆等式</strong>、根本不需要近似 —— 這個多出來的註腳，正是滯彈近似留下的痕跡。</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h2>參考資料<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>[1]<a class="reference internal" href="Boussinesq_approximation.html"><span class="std std-doc">Boussinesq Approximation（本知識庫）</span></a> —— 淺層版本，以及「什麼時候該換過來」的量化判準</p></li>
+<li><p>[2]<a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html"><span class="std std-doc">軸對稱連續方程式（本知識庫）</span></a> —— 滯彈連續方程式在颱風上的實際樣貌</p></li>
+<li><p>[3]<a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html"><span class="std std-doc">Eliassen 次環流方程式（本知識庫）</span></a> —— 質量流函數怎麼把 <span class="math notranslate nohighlight">\(u\)</span> 與 <span class="math notranslate nohighlight">\(w\)</span> 併成一個變數</p></li>
+<li><p>[4]<a class="reference internal" href="../../01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html"><span class="std std-doc">梯度風平衡（本知識庫）</span></a> —— 位勢 <span class="math notranslate nohighlight">\(\phi\)</span> 取代 <span class="math notranslate nohighlight">\(\frac{1}{\rho}\nabla p\)</span> 的場合</p></li>
+<li><p>[5] Ogura, Y. &amp; Phillips, N. A. (1962), <em>Scale analysis of deep and shallow convection in the atmosphere</em>, J. Atmos. Sci., 19, 173-179 —— 滯彈近似的原始推導</p></li>
+<li><p>[6] Lipps, F. B. &amp; Hemler, R. S. (1982), <em>A scale analysis of deep moist convection and some related numerical calculations</em>, J. Atmos. Sci., 39, 2192-2210 —— 放寬等熵基本態的版本</p></li>
+<li><p>[7] Durran, D. R. (1989), <em>Improving the anelastic approximation</em>, J. Atmos. Sci., 46, 1453-1461 —— pseudo-incompressible 方程組</p></li>
+<li><p>[8] Vallis, G. K. (2017), <em>Atmospheric and Oceanic Fluid Dynamics</em>, 2nd ed., Ch. 2 —— Boussinesq 與 anelastic 的並列推導</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -475,6 +787,37 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boussinesq">一、Boussinesq 在颱風上撞牆</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-0-to-bar-rho-z">二、只放寬一件事：<span class="math notranslate nohighlight">\(\rho_0 \to \bar{\rho}(z)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-rho-z">為什麼 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 只能是 <span class="math notranslate nohighlight">\(z\)</span> 的函數</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-elastic">三、名字的由來：an-elastic = 沒有彈性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">四、最直接的後果：上升氣流被迫隨高度加速</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">五、數值驗證</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">六、三個容易犯的錯</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anelastic">① 以為 anelastic 是「可壓縮」的版本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-cdot-left-bar-rho-mathbf-u-right-0-nabla-cdot-mathbf-u-0">② 把 <span class="math notranslate nohighlight">\(\nabla\cdot\left(\bar{\rho}\mathbf{u}\right) = 0\)</span> 讀成 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u} = 0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-rho">③ 把 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 換成當地密度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">七、適用邊界與變體</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">應用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">參考資料</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

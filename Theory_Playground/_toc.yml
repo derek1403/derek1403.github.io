@@ -43,6 +43,12 @@ chapters:
       # 流體力學-變數變換
       - file: 01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.ipynb
         title: "[流體力學-變數變換] PV 與 PVb 的關係"
+      # 微分方程
+      - file: 01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.ipynb
+        title: "[微分方程] Sturm-Liouville 本徵函數的正交性"
+      # 大氣動力學
+      - file: 01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.ipynb
+        title: "[大氣動力學] 垂直結構方程式與模態投影"
 
   - file: 02_Concepts/02_Concepts.md
     sections:      # 直接將檔案列在這裡，把它們當作 02_Concepts 的子節點
@@ -58,6 +64,10 @@ chapters:
         title: "[流體力學] Boussinesq近似"
       - file: 02_Concepts/Tropical_Cyclone/CISK_Theorem.ipynb
         title: "[熱帶氣旋] CISK 定理"
+      - file: 02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.ipynb
+        title: "[數值預報] MOS 模式輸出統計"
+      - file: 02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.ipynb
+        title: "[大氣動力學] 垂直模態分解"
   - file: 03_Intuitions/03_Intuitions.md
     sections:      
       - file: 03_Intuitions/n_points_coverage_threshold_coverage_ratio

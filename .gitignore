@@ -1,1 +1,27 @@
 *.pdf
+
+# =========================
+# Jupyter Notebook 備份與快取
+# =========================
+# 忽略 Jupyter 的自動存檔與快取資料夾
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+.jupyter_cache/
+**/.jupyter_cache/
+
+# =========================
+# Jupyter Book / Sphinx 網頁編譯相關
+# =========================
+# 忽略編譯過程中的暫存快取檔，但保留生成好的 HTML 網頁
+**/_build/.doctrees/
+**/_build/jupyter_execute/
+*.doctree
+
+
+# =========================
+# Python 相關
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
