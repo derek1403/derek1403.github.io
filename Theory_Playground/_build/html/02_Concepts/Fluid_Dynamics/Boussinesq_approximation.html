@@ -457,6 +457,18 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="boussinesq-approximation">
 <h1>Boussinesq Approximation<a class="headerlink" href="#boussinesq-approximation" title="Link to this heading">#</a></h1>
+<p><strong>這個近似在做的事，一條式子說完 —— 同一個密度，在不同的項裡被當成不同的東西：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\boxed{\;\rho\left(x,y,z,t\right)\;\longrightarrow\;
+\begin{cases}
+\;\rho_0 = \text{const} &amp; \text{慣性項與連續方程式} \\[6pt]
+\;\rho_0 + \rho' &amp; \text{只有浮力項}
+\end{cases}\;}\end{split}\]</div>
+<p>直接的後果是連續方程式整條塌掉：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t} + \nabla\cdot\left(\rho\mathbf{u}\right) = 0
+\qquad\Longrightarrow\qquad
+\nabla\cdot\mathbf{u} = 0\]</div>
 <blockquote>
 <div><p><strong>只有在「乘上 <span class="math notranslate nohighlight">\(g\)</span>」的地方，密度的微小變化才算數；其他所有地方，密度一律當成常數 <span class="math notranslate nohighlight">\(\rho_0\)</span>。</strong></p>
 </div></blockquote>

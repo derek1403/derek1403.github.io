@@ -451,6 +451,18 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="anelastic-approximation">
 <h1>Anelastic Approximation<a class="headerlink" href="#anelastic-approximation" title="Link to this heading">#</a></h1>
+<p><strong>這個近似在做的事，一條式子說完 —— 同一個密度，在不同的項裡被當成不同的東西：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\boxed{\;\rho\left(x,y,z,t\right)\;\longrightarrow\;
+\begin{cases}
+\;\bar{\rho}(z) &amp; \text{慣性項與連續方程式} \\[6pt]
+\;\bar{\rho}(z) + \rho' &amp; \text{只有浮力項}
+\end{cases}\;}\end{split}\]</div>
+<p>跟 <a class="reference internal" href="Boussinesq_approximation.html"><span class="std std-doc">Boussinesq</span></a> 唯一的差別，是那個純常數 <span class="math notranslate nohighlight">\(\rho_0\)</span> 被放寬成<strong>只隨高度變化</strong>的 <span class="math notranslate nohighlight">\(\bar{\rho}(z)\)</span>。連續方程式因此不會整條塌掉，而是把 <span class="math notranslate nohighlight">\(\bar{\rho}\)</span> 留在散度裡面：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t} + \nabla\cdot\left(\rho\mathbf{u}\right) = 0
+\qquad\Longrightarrow\qquad
+\nabla\cdot\left(\bar{\rho}\mathbf{u}\right) = 0\]</div>
 <blockquote>
 <div><p><strong>放行密度隨「高度」變化，但絕不放行密度隨「時間」變化 —— 深對流進得來，聲波照樣被關在門外。</strong></p>
 </div></blockquote>
