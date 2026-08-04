@@ -20,8 +20,6 @@ chapters:
       # 流體力學
       - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.ipynb
         title: "[流體力學] 梯度風平衡"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Angular_Momentum_Equation.ipynb
-        title: "[流體力學] 軸對稱角動量方程"
       - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.ipynb
         title: "[流體力學] 擾動的靜力平衡"
       - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.ipynb
@@ -76,8 +74,14 @@ chapters:
         title: "[待分類] X Typhoon Dynamics"
 
   - file: 06_References/06_References.md
-    sections:  
+    sections:
+      - file: 06_References/Tropical cyclone dynamics/read_paper.md
+        title: "[方法] 如何讀論文"
       - file: 06_References/Tropical cyclone dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.ipynb
         title: "[熱帶氣旋動力學] Kuo2016"
       - file: 06_References/Tropical cyclone dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.ipynb
         title: "[熱帶氣旋動力學] Cha2020"
+      - file: 06_References/Tropical cyclone dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.ipynb
+        title: "[熱帶氣旋動力學] Cha2024"
+      - file: 06_References/Tropical cyclone dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.ipynb
+        title: "[熱帶氣旋動力學] Chen2025"
