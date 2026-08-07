@@ -718,14 +718,14 @@ Z'(z) = \left(1 + \frac{z_T^2}{4\pi^2}\right)^{1/2} e^{(z - z_m)/2}\sin\!\left(\
 <p><strong>Fig. 1.</strong> The curves labeled <span class="math notranslate nohighlight">\(Z(z)\)</span> and <span class="math notranslate nohighlight">\(Z'(z)\)</span> (interpreted using the lower scale) are the vertical structure functions defined by <span class="math notranslate nohighlight">\((3.2)\)</span> and <span class="math notranslate nohighlight">\((3.3)\)</span>. The curve labeled <span class="math notranslate nohighlight">\(Q/c_p\)</span> (interpreted using the upper scale) is the 120-day mean vertical profile of heating rate for the western Pacific warm pool, as determined by [<em>Johnson and Ciesielski</em>, <span class="math notranslate nohighlight">\(2000\)</span>].</p>
 <p>Assuming that <span class="math notranslate nohighlight">\(u, v, \phi, T, w, Q\)</span> have the separable forms</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{pmatrix} u(x,y,z,t) \\ v(x,y,z,t) \\ \phi(x,y,z,t) \end{pmatrix}
-= \begin{pmatrix} \hat{u}(x,y,t) \\ \hat{v}(x,y,t) \\ \hat{\phi}(x,y,t) \end{pmatrix} Z(z),
+\[
+\begin{pmatrix} u(x,y,z,t) \cr v(x,y,z,t) \cr \phi(x,y,z,t) \end{pmatrix}
+= \begin{pmatrix} \hat{u}(x,y,t) \cr \hat{v}(x,y,t) \cr \hat{\phi}(x,y,t) \end{pmatrix} Z(z),
 \qquad
-\begin{pmatrix} T(x,y,z,t) \\ w(x,y,z,t) \\ Q(x,y,z,t) \end{pmatrix}
-= \begin{pmatrix} \hat{T}(x,y,t) \\ \hat{w}(x,y,t) \\ \hat{Q}(x,y,t) \end{pmatrix} Z'(z),
+\begin{pmatrix} T(x,y,z,t) \cr w(x,y,z,t) \cr Q(x,y,z,t) \end{pmatrix}
+= \begin{pmatrix} \hat{T}(x,y,t) \cr \hat{w}(x,y,t) \cr \hat{Q}(x,y,t) \end{pmatrix} Z'(z),
 \tag{3.4}
-\end{split}\]</div>
+\]</div>
 <p>we can convert <span class="math notranslate nohighlight">\((2.1)\)</span> into the following system for the horizontal structure functions <span class="math notranslate nohighlight">\(\hat{u}, \hat{v}, \hat{\phi}, \hat{T}, \hat{w}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -812,14 +812,14 @@ Z'(z) = \left(1 + \frac{z_T^2}{4\pi^2}\right)^{1/2} e^{(z - z_m)/2}\sin\!\left(\
 <h3>4. Solution of the horizontal structure equations<a class="headerlink" href="#solution-of-the-horizontal-structure-equations" title="Link to this heading">#</a></h3>
 <p>We assume that the diabatic forcing is due to an eastward propagating region of deep convection. The exact form of the forcing is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \hat{Q}(x, y, t) = \tfrac{1}{2}Q_0 \exp\!\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]
 \begin{cases}
-1 + \cos\dfrac{\pi\xi}{a_0}, &amp; |\xi| \le a_0, \\[2mm]
+1 + \cos\dfrac{\pi\xi}{a_0}, &amp; |\xi| \le a_0, \cr
 0, &amp; |\xi| \ge a_0,
 \end{cases}
 \tag{4.1}
-\end{split}\]</div>
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(\xi = x - ct\)</span>, <span class="math notranslate nohighlight">\(c\)</span> is the propagation speed of the cloud cluster, <span class="math notranslate nohighlight">\(y_0\)</span> its center, <span class="math notranslate nohighlight">\(a_0\)</span> its half-width in <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(b_0\)</span> its <span class="math notranslate nohighlight">\(e\)</span>-folding width in <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(Q_0\)</span> its peak value. The values chosen for these parameters are listed in Table 1. It is interesting to note that the area integral of <span class="math notranslate nohighlight">\((4.1)\)</span> yields <span class="math notranslate nohighlight">\(\iint \hat{Q}(\xi, y)\,dx\,dy = \pi^{1/2}Q_0 a_0 b_0\)</span>, so that our variation of the parameter <span class="math notranslate nohighlight">\(y_0\)</span> has no effect on the total diabatic heating rate, <span class="math notranslate nohighlight">\(\pi^{1/2}Q_0 a_0 b_0\)</span>.</p>
 <p>Assuming the solutions are steady in a reference frame translating eastward with speed <span class="math notranslate nohighlight">\(c\)</span>, we can simplify <span class="math notranslate nohighlight">\((3.5)\)</span> through the replacements <span class="math notranslate nohighlight">\(\partial/\partial t \to -c(\partial/\partial\xi)\)</span> and <span class="math notranslate nohighlight">\(\partial/\partial x \to \partial/\partial\xi\)</span>. We then take the Fourier <span class="math notranslate nohighlight">\(\xi\)</span>-transform of the resulting system, defining, for example,</p>
 <div class="math notranslate nohighlight">
@@ -877,18 +877,18 @@ Z'(z) = \left(1 + \frac{z_T^2}{4\pi^2}\right)^{1/2} e^{(z - z_m)/2}\sin\!\left(\
 <h4>（承 §4）正規模態轉換與赤道波本徵函數<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>where</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \mathcal{L} = \begin{pmatrix}
-0 &amp; -\beta y &amp; im/a \\
-\beta y &amp; 0 &amp; d/dy \\
+0 &amp; -\beta y &amp; im/a \cr
+\beta y &amp; 0 &amp; d/dy \cr
 \bar{c}^{2}im/a &amp; \bar{c}^{2}d/dy &amp; 0
 \end{pmatrix},
 \qquad
-\hat{\boldsymbol{\eta}}_m(y) = \begin{pmatrix}\hat{u}_m(y) \\ \hat{v}_m(y) \\ \hat{\phi}_m(y)\end{pmatrix},
+\hat{\boldsymbol{\eta}}_m(y) = \begin{pmatrix}\hat{u}_m(y) \cr \hat{v}_m(y) \cr \hat{\phi}_m(y)\end{pmatrix},
 \qquad
-\hat{\mathbf{Q}}_m(y) = \begin{pmatrix}0 \\ 0 \\ \hat{Q}_m(y)\end{pmatrix}.
+\hat{\mathbf{Q}}_m(y) = \begin{pmatrix}0 \cr 0 \cr \hat{Q}_m(y)\end{pmatrix}.
 \tag{4.7}
-\end{split}\]</div>
+\]</div>
 <p>The Fourier transformed Eq. <span class="math notranslate nohighlight">\((4.6)\)</span> can be solved using a normal mode transform in the meridional direction. To accomplish this, first define the inner product</p>
 <div class="math notranslate nohighlight">
 \[
@@ -897,12 +897,12 @@ Z'(z) = \left(1 + \frac{z_T^2}{4\pi^2}\right)^{1/2} e^{(z - z_m)/2}\sin\!\left(\
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{f}(\hat{y})\)</span> and <span class="math notranslate nohighlight">\(\mathbf{g}(\hat{y})\)</span> are complex, three component vector functions of the dimensionless meridional coordinate <span class="math notranslate nohighlight">\(\hat{y} = (\beta/\bar{c})^{1/2}y = \epsilon^{1/4}(y/a)\)</span>, and where the ‘<span class="math notranslate nohighlight">\(*\)</span>’ symbol denotes the complex conjugate and <span class="math notranslate nohighlight">\(\epsilon = 4\Omega^{2}a^{2}/\bar{c}^{2}\)</span> is Lamb’s parameter. With <span class="math notranslate nohighlight">\(\bar{c} = 41.25\text{ m s}^{-1}\)</span> we obtain <span class="math notranslate nohighlight">\(\epsilon = 507.3\)</span>. The inner product <span class="math notranslate nohighlight">\((4.8)\)</span> is suggested by the total energy principle associated with <span class="math notranslate nohighlight">\((4.6)\)</span>. The adjoint of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, denoted by <span class="math notranslate nohighlight">\(\mathcal{L}^{\dagger}\)</span> and defined by <span class="math notranslate nohighlight">\((\mathcal{L}\mathbf{f}, \mathbf{g}) = (\mathbf{f}, \mathcal{L}^{\dagger}\mathbf{g})\)</span>, is related to <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> by <span class="math notranslate nohighlight">\(\mathcal{L}^{\dagger} = -\mathcal{L}\)</span>. In other words, the linear operator <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is skew-Hermitian with respect to the inner product <span class="math notranslate nohighlight">\((4.8)\)</span>. The skew-Hermitian property dictates that the eigenvalues of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> are pure imaginary and that the eigenfunctions form a complete [<em>Wu and Moore</em>, <span class="math notranslate nohighlight">\(2004\)</span>], orthogonal set (as long as degeneracy does not occur). Denoting an eigenvalue by <span class="math notranslate nohighlight">\(i\nu_{mnr}\)</span> and a corresponding eigenfunction by <span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}(\hat{y})\)</span>, we have</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \mathcal{L}\mathbf{K}_{mnr} = i\nu_{mnr}\mathbf{K}_{mnr},
 \qquad\text{with}\qquad
-\mathbf{K}_{mnr}(\hat{y}) = \begin{pmatrix}U_{mnr}(\hat{y}) \\ V_{mnr}(\hat{y}) \\ \Phi_{mnr}(\hat{y})\end{pmatrix}.
+\mathbf{K}_{mnr}(\hat{y}) = \begin{pmatrix}U_{mnr}(\hat{y}) \cr V_{mnr}(\hat{y}) \cr \Phi_{mnr}(\hat{y})\end{pmatrix}.
 \tag{4.9}
-\end{split}\]</div>
+\]</div>
 <p>The eigenvalues of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, which yield the dispersion relation for equatorially trapped waves, satisfy the cubic equation [<em>Matsuno</em>, <span class="math notranslate nohighlight">\(1966\)</span>]</p>
 <div class="math notranslate nohighlight">
 \[
@@ -911,15 +911,15 @@ Z'(z) = \left(1 + \frac{z_T^2}{4\pi^2}\right)^{1/2} e^{(z - z_m)/2}\sin\!\left(\
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(n = 0, 1, 2, \ldots\)</span> is the index for the meridional mode and <span class="math notranslate nohighlight">\(\hat{\nu} = \nu/(2\Omega)\)</span> is the dimensionless frequency. We let <span class="math notranslate nohighlight">\(r = 0, 1, 2\)</span> be the index corresponding to the three roots of the dispersion relation, so that the eigenfunctions and eigenvalues can be characterized by the triple index <span class="math notranslate nohighlight">\(m, n, r\)</span>. Special care is required for the case <span class="math notranslate nohighlight">\(n = 0\)</span>, for which <span class="math notranslate nohighlight">\((4.10)\)</span> can be factored into <span class="math notranslate nohighlight">\((\epsilon^{1/2}\hat{\nu} + m)(\epsilon^{1/2}\hat{\nu}^{2} - m\hat{\nu} - 1) = 0\)</span>. The root <span class="math notranslate nohighlight">\(\epsilon^{1/2}\hat{\nu} = -m\)</span> must be discarded because the corresponding eigenfunction is unbounded in <span class="math notranslate nohighlight">\(\hat{y}\)</span>. Thus, when <span class="math notranslate nohighlight">\(n = 0\)</span>, only the two solutions of <span class="math notranslate nohighlight">\(\epsilon^{1/2}\hat{\nu}^{2} - m\hat{\nu} - 1 = 0\)</span> are retained and are indexed by <span class="math notranslate nohighlight">\(r = 0\)</span> (mixed Rossby-gravity wave) and <span class="math notranslate nohighlight">\(r = 2\)</span> (eastward inertia-gravity wave). The eigenfunctions for Kelvin waves can be found separately by setting <span class="math notranslate nohighlight">\(V_{mnr}\)</span> to zero in <span class="math notranslate nohighlight">\((4.9)\)</span>. The Kelvin wave eigenvalues <span class="math notranslate nohighlight">\(\epsilon^{1/2}\hat{\nu} = m\)</span> can be formally considered as a solution to <span class="math notranslate nohighlight">\((4.10)\)</span> when <span class="math notranslate nohighlight">\(n = -1\)</span>. We index this solution as <span class="math notranslate nohighlight">\(r = 2\)</span>. Then, for given <span class="math notranslate nohighlight">\(n = -1, 0, 1, \ldots\)</span>, <span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}(\hat{y})\)</span> is the eigenfunction corresponding to the eigenvalue <span class="math notranslate nohighlight">\(\nu_{mnr}\)</span>. The eigenfunctions <span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}(\hat{y})\)</span> are given by</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \mathbf{K}_{mnr}(\hat{y}) = A_{mnr}
 \begin{pmatrix}
-\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \\[3mm]
--i\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_{n}(\hat{y}) \\[3mm]
+\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \cr
+-i\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_{n}(\hat{y}) \cr
 \bar{c}\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right]
 \end{pmatrix},
 \tag{4.11}
-\end{split}\]</div>
+\]</div>
 <p>where the meridional structure functions <span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> (<span class="math notranslate nohighlight">\(n = 0, 1, 2, \ldots\)</span>) are related to the Hermite polynomials <span class="math notranslate nohighlight">\(H_n(\hat{y})\)</span> (<span class="math notranslate nohighlight">\(n = 0, 1, 2, \ldots\)</span>) by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -955,24 +955,24 @@ A_{m,-1,2} = 2^{-(1/2)}\pi^{-(1/4)}
 \]</div>
 <p>for <span class="math notranslate nohighlight">\(n = -1\)</span>. These normalization factors result in the orthonormality property</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \left(\mathbf{K}_{mnr}(\hat{y}), \mathbf{K}_{mn'r'}(\hat{y})\right) =
 \begin{cases}
-1, &amp; (n', r') = (n, r) \\
+1, &amp; (n', r') = (n, r) \cr
 0, &amp; (n', r') \ne (n, r).
 \end{cases}
 \tag{4.17}
-\end{split}\]</div>
+\]</div>
 <p>The normality part of <span class="math notranslate nohighlight">\((4.17)\)</span> is easily confirmed by substituting <span class="math notranslate nohighlight">\((4.11)\)</span> into the left hand side and then using</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\mathcal{H}_{n'}(\hat{y})\,d\hat{y} =
 \begin{cases}
-1, &amp; n' = n, \\
+1, &amp; n' = n, \cr
 0, &amp; n' \ne n
 \end{cases}
 \tag{4.18}
-\end{split}\]</div>
+\]</div>
 <p>to evaluate the three resulting integrals.</p>
 <p><img alt="" src="../../../_images/Schubert2006_fig2.png" /></p>
 <p><strong>Fig. 2.</strong> <span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> for <span class="math notranslate nohighlight">\(n = 0, 1, 2, 3, 4\)</span>.</p>
@@ -1021,14 +1021,14 @@ A_{m,-1,2} = 2^{-(1/2)}\pi^{-(1/4)}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{Q}_{mnr} = (\hat{\mathbf{Q}}_m, \mathbf{K}_{mnr})\)</span>. The inner product <span class="math notranslate nohighlight">\((\hat{\mathbf{Q}}_m, \mathbf{K}_{mnr})\)</span> is derived using the integral given in Appendix B. Using the result <span class="math notranslate nohighlight">\((B.1)\)</span> twice, once with <span class="math notranslate nohighlight">\(n\)</span> replaced by <span class="math notranslate nohighlight">\(n + 1\)</span> and once with <span class="math notranslate nohighlight">\(n\)</span> replaced by <span class="math notranslate nohighlight">\(n - 1\)</span>, we can write <span class="math notranslate nohighlight">\(\hat{Q}_{mnr}\)</span> as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \begin{aligned}
-\hat{Q}_{mnr} = &amp;\ \frac{A_{mnr}\epsilon^{1/2}\pi Q_0 a_0 b_0}{2\bar{c}a^{2}[\pi^{2} - (ma_0/a)^{2}]}\frac{\sin(ma_0/a)}{(ma_0/a)}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\!\left(\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right) \\[2mm]
-&amp;\times \left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n+1)/2}\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}\!\left(\frac{2\hat{y}_0}{(4 - \hat{b}_0^{4})^{1/2}}\right)\right. \\[2mm]
+\hat{Q}_{mnr} = &amp;\ \frac{A_{mnr}\epsilon^{1/2}\pi Q_0 a_0 b_0}{2\bar{c}a^{2}[\pi^{2} - (ma_0/a)^{2}]}\frac{\sin(ma_0/a)}{(ma_0/a)}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\!\left(\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right) \cr
+&amp;\times \left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n+1)/2}\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}\!\left(\frac{2\hat{y}_0}{(4 - \hat{b}_0^{4})^{1/2}}\right)\right. \cr
 &amp;\qquad \left. -\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n-1)/2}\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\!\left(\frac{2\hat{y}_0}{(4 - \hat{b}_0^{4})^{1/2}}\right)\right]
 \end{aligned}
 \tag{4.22}
-\end{split}\]</div>
+\]</div>
 <p>for <span class="math notranslate nohighlight">\(n \ge 0\)</span>, and as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1037,12 +1037,12 @@ A_{m,-1,2} = 2^{-(1/2)}\pi^{-(1/4)}
 \]</div>
 <p>for the Kelvin wave (<span class="math notranslate nohighlight">\(n = -1\)</span>, <span class="math notranslate nohighlight">\(r = 2\)</span>). After <span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span> is computed from <span class="math notranslate nohighlight">\((4.21)\)</span>–<span class="math notranslate nohighlight">\((4.23)\)</span>, the physical space fields <span class="math notranslate nohighlight">\(u, v, \phi\)</span> can be recovered by making use of <span class="math notranslate nohighlight">\((4.20)\)</span>, followed by the inverse Fourier transform in <span class="math notranslate nohighlight">\(\xi\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{pmatrix}u(\xi, y, z) \\ v(\xi, y, z) \\ \phi(\xi, y, z)\end{pmatrix}
+\[
+\begin{pmatrix}u(\xi, y, z) \cr v(\xi, y, z) \cr \phi(\xi, y, z)\end{pmatrix}
 = Z(z)\sum_{m=-\infty}^{\infty}\sum_{n=-1}^{\infty}\sum_{r}\hat{\eta}_{mnr}
-\begin{pmatrix}U_{mnr}(\hat{y}) \\ V_{mnr}(\hat{y}) \\ \Phi_{mnr}(\hat{y})\end{pmatrix}e^{im\xi/a}.
+\begin{pmatrix}U_{mnr}(\hat{y}) \cr V_{mnr}(\hat{y}) \cr \Phi_{mnr}(\hat{y})\end{pmatrix}e^{im\xi/a}.
 \tag{4.24}
-\end{split}\]</div>
+\]</div>
 <p>In addition, the potential vorticity field can be recovered from</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1223,24 +1223,24 @@ q \approx -0.15\left(\frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}}\right)\beta y \
 \]</div>
 <p>so that the physical space streamfunction field can be plotted by substituting <span class="math notranslate nohighlight">\((6.6)\)</span> in <span class="math notranslate nohighlight">\((6.7)\)</span> and then numerically evaluating the sums over <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>. However, we would like to examine more than just the <span class="math notranslate nohighlight">\(\psi(\xi, y, z)\)</span> field, in particular the <span class="math notranslate nohighlight">\(u_\psi(\xi, y, z)\)</span>, <span class="math notranslate nohighlight">\(v_\psi(\xi, y, z)\)</span>, and <span class="math notranslate nohighlight">\(\phi(\xi, y, z)\)</span> fields, all of which can be determined from the <span class="math notranslate nohighlight">\(\psi\)</span> field. Noting that <span class="math notranslate nohighlight">\(u_\psi = -\partial\psi/\partial y\)</span>, <span class="math notranslate nohighlight">\(v_\psi = \partial\psi/\partial\xi\)</span>, and <span class="math notranslate nohighlight">\(\phi = \beta y\psi\)</span>, and using the recurrence and derivative relations <span class="math notranslate nohighlight">\((4.13)\)</span> and <span class="math notranslate nohighlight">\((4.14)\)</span>, we have</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{pmatrix}u_\psi(\xi, y, z) \\ v_\psi(\xi, y, z) \\ \phi(\xi, y, z)\end{pmatrix}
+\[
+\begin{pmatrix}u_\psi(\xi, y, z) \cr v_\psi(\xi, y, z) \cr \phi(\xi, y, z)\end{pmatrix}
 = Z(z)\sum_{m=-\infty}^{\infty}\sum_{n=0}^{\infty}\frac{\hat{\psi}_{mn}}{a}
-\begin{pmatrix}U_{mn}(\xi, \hat{y}) \\ V_{mn}(\xi, \hat{y}) \\ \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
+\begin{pmatrix}U_{mn}(\xi, \hat{y}) \cr V_{mn}(\xi, \hat{y}) \cr \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
 \tag{6.8}
-\end{split}\]</div>
+\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{pmatrix}U_{mn}(\xi, \hat{y}) \\ V_{mn}(\xi, \hat{y}) \\ \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
+\[
+\begin{pmatrix}U_{mn}(\xi, \hat{y}) \cr V_{mn}(\xi, \hat{y}) \cr \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
 =
 \begin{pmatrix}
-\epsilon^{1/4}\left[\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \\[3mm]
-im\,\mathcal{H}_n(\hat{y}) \\[3mm]
+\epsilon^{1/4}\left[\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \cr
+im\,\mathcal{H}_n(\hat{y}) \cr
 \bar{c}\epsilon^{1/4}\left[\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right]
 \end{pmatrix} e^{im\xi/a},
 \tag{6.9}
-\end{split}\]</div>
+\]</div>
 <p>which are readily seen to be the Rossby wave approximations of <span class="math notranslate nohighlight">\((4.11)\)</span>. To summarize, once <span class="math notranslate nohighlight">\(\hat{q}_{mn}\)</span> is known, we can compute <span class="math notranslate nohighlight">\(\hat{\psi}_{mn}\)</span> from <span class="math notranslate nohighlight">\((6.6)\)</span>, and then <span class="math notranslate nohighlight">\(u_\psi(\xi, y, z)\)</span>, <span class="math notranslate nohighlight">\(v_\psi(\xi, y, z)\)</span>, <span class="math notranslate nohighlight">\(\phi(\xi, y, z)\)</span> via numerical evaluation of <span class="math notranslate nohighlight">\((6.8)\)</span>. For <span class="math notranslate nohighlight">\(\hat{q}_{mn}\)</span> in <span class="math notranslate nohighlight">\((6.6)\)</span> we use the Rossby wave contribution to the total <span class="math notranslate nohighlight">\(q(\xi, y, z)\)</span> field given in <span class="math notranslate nohighlight">\((4.25)\)</span>, i.e., we set <span class="math notranslate nohighlight">\(\hat{q}_{mn} = \hat{q}_{mn0}\)</span>, the latter of which is defined in <span class="math notranslate nohighlight">\((4.26)\)</span>. This is a reasonable approximation since the total <span class="math notranslate nohighlight">\(q(\xi, y, z)\)</span> field is dominated by the Rossby wave contribution. Plots of <span class="math notranslate nohighlight">\(u_\psi(\xi, y, z)\)</span>, <span class="math notranslate nohighlight">\(v_\psi(\xi, y, z)\)</span>, <span class="math notranslate nohighlight">\(\phi(\xi, y, z)\)</span> and the Rossby wave contribution to <span class="math notranslate nohighlight">\(q(\xi, y, z)\)</span> for <span class="math notranslate nohighlight">\(y_0 = 0\)</span> are shown in Fig. 8, while the same fields for <span class="math notranslate nohighlight">\(y_0 = 450\text{ km}\)</span> are shown in Fig. 9. A comparison of the second panels in Figs. 8 and 9 with the second panels of Figs. 3 and 5 shows that the balanced model mass field and rotational wind field are fairly good approximations of the Rossby wave contributions to the primitive equation results, the most apparent difference being that the zonal pressure gradient force at the equator in the primitive equation model is not reproduced in the solutions of the invertibility principle.</p>
 <p><img alt="" src="../../../_images/Schubert2006_fig8.png" /></p>
 <p><strong>Fig. 8.</strong> The top panel shows the Rossby wave contribution to the <span class="math notranslate nohighlight">\(q(\xi, y, z)\)</span> field, while the second panel shows the <span class="math notranslate nohighlight">\(u_\psi(\xi, y, z)\)</span>, <span class="math notranslate nohighlight">\(v_\psi(\xi, y, z)\)</span>, <span class="math notranslate nohighlight">\(\phi(\xi, y, z)\)</span> fields resulting from the solution of the invertibility principle <span class="math notranslate nohighlight">\((6.2)\)</span> when its right hand side is given by the PV field shown in the top panel. This figure is for <span class="math notranslate nohighlight">\(y_0 = 0\)</span>.</p>
@@ -1326,15 +1326,15 @@ im\,\mathcal{H}_n(\hat{y}) \\[3mm]
 <h3>Appendix A. Eigenfunctions for zonally symmetric Rossby modes<a class="headerlink" href="#appendix-a-eigenfunctions-for-zonally-symmetric-rossby-modes" title="Link to this heading">#</a></h3>
 <p>For the zonally symmetric Rossby modes (i.e., for <span class="math notranslate nohighlight">\(m = 0\)</span>, <span class="math notranslate nohighlight">\(n &gt; 0\)</span>, <span class="math notranslate nohighlight">\(r = 0\)</span>), the eigenfunction formula <span class="math notranslate nohighlight">\((4.11)\)</span> is indeterminant because both <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(\hat{\nu}_{0n0}\)</span> vanish. However, orthonormal eigenfunctions are easily constructed in this case by considering <span class="math notranslate nohighlight">\(m\)</span> as continuous and applying l’Hospital’s rule for the limit <span class="math notranslate nohighlight">\(m \to 0\)</span>. The eigenfunctions for the zonally symmetric Rossby modes are then given by</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \mathbf{K}_{0n0}(\hat{y}) = (2n + 1)^{-(1/2)}
 \begin{pmatrix}
-\left[\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \\[3mm]
-0 \\[3mm]
+\left[\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \cr
+0 \cr
 \bar{c}\left[\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right]
 \end{pmatrix}.
 \tag{A.1}
-\end{split}\]</div>
+\]</div>
 <p>Using <span class="math notranslate nohighlight">\((4.18)\)</span> it can easily be confirmed that the zonally symmetric eigenfunctions <span class="math notranslate nohighlight">\((A.1)\)</span> satisfy the orthonormality condition <span class="math notranslate nohighlight">\((4.17)\)</span>. Using <span class="math notranslate nohighlight">\((4.13)\)</span> and <span class="math notranslate nohighlight">\((4.14)\)</span> it is also easily confirmed that the eigenfunctions <span class="math notranslate nohighlight">\((A.1)\)</span> correspond to geostrophically balanced zonal flows.</p>
 <hr class="docutils" />
 <p>這一小段補的是第 4 節留下的<strong>簡併漏洞</strong>。對<strong>緯向對稱的羅斯貝模態</strong>（<span class="math notranslate nohighlight">\(m = 0\)</span>、<span class="math notranslate nohighlight">\(n &gt; 0\)</span>、<span class="math notranslate nohighlight">\(r = 0\)</span>），<span class="math notranslate nohighlight">\((4.11)\)</span> 的分子與分母同時趨近零（<span class="math notranslate nohighlight">\(m \to 0\)</span> 且 <span class="math notranslate nohighlight">\(\hat{\nu}_{0n0} \to 0\)</span>），公式失效。</p>

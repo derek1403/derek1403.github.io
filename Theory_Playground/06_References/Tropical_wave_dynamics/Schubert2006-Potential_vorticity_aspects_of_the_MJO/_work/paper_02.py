@@ -129,11 +129,11 @@ where $z_m$, the level at which $Z'(z)$ reaches its maximum value, is given by $
 Assuming that $u, v, \phi, T, w, Q$ have the separable forms
 
 $$
-\begin{pmatrix} u(x,y,z,t) \\ v(x,y,z,t) \\ \phi(x,y,z,t) \end{pmatrix}
-= \begin{pmatrix} \hat{u}(x,y,t) \\ \hat{v}(x,y,t) \\ \hat{\phi}(x,y,t) \end{pmatrix} Z(z),
+\begin{pmatrix} u(x,y,z,t) \cr v(x,y,z,t) \cr \phi(x,y,z,t) \end{pmatrix}
+= \begin{pmatrix} \hat{u}(x,y,t) \cr \hat{v}(x,y,t) \cr \hat{\phi}(x,y,t) \end{pmatrix} Z(z),
 \qquad
-\begin{pmatrix} T(x,y,z,t) \\ w(x,y,z,t) \\ Q(x,y,z,t) \end{pmatrix}
-= \begin{pmatrix} \hat{T}(x,y,t) \\ \hat{w}(x,y,t) \\ \hat{Q}(x,y,t) \end{pmatrix} Z'(z),
+\begin{pmatrix} T(x,y,z,t) \cr w(x,y,z,t) \cr Q(x,y,z,t) \end{pmatrix}
+= \begin{pmatrix} \hat{T}(x,y,t) \cr \hat{w}(x,y,t) \cr \hat{Q}(x,y,t) \end{pmatrix} Z'(z),
 \tag{3.4}
 $$
 

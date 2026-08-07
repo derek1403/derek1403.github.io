@@ -133,20 +133,20 @@ $$
 so that the physical space streamfunction field can be plotted by substituting $(6.6)$ in $(6.7)$ and then numerically evaluating the sums over $m$ and $n$. However, we would like to examine more than just the $\psi(\xi, y, z)$ field, in particular the $u_\psi(\xi, y, z)$, $v_\psi(\xi, y, z)$, and $\phi(\xi, y, z)$ fields, all of which can be determined from the $\psi$ field. Noting that $u_\psi = -\partial\psi/\partial y$, $v_\psi = \partial\psi/\partial\xi$, and $\phi = \beta y\psi$, and using the recurrence and derivative relations $(4.13)$ and $(4.14)$, we have
 
 $$
-\begin{pmatrix}u_\psi(\xi, y, z) \\ v_\psi(\xi, y, z) \\ \phi(\xi, y, z)\end{pmatrix}
+\begin{pmatrix}u_\psi(\xi, y, z) \cr v_\psi(\xi, y, z) \cr \phi(\xi, y, z)\end{pmatrix}
 = Z(z)\sum_{m=-\infty}^{\infty}\sum_{n=0}^{\infty}\frac{\hat{\psi}_{mn}}{a}
-\begin{pmatrix}U_{mn}(\xi, \hat{y}) \\ V_{mn}(\xi, \hat{y}) \\ \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
+\begin{pmatrix}U_{mn}(\xi, \hat{y}) \cr V_{mn}(\xi, \hat{y}) \cr \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
 \tag{6.8}
 $$
 
 where
 
 $$
-\begin{pmatrix}U_{mn}(\xi, \hat{y}) \\ V_{mn}(\xi, \hat{y}) \\ \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
+\begin{pmatrix}U_{mn}(\xi, \hat{y}) \cr V_{mn}(\xi, \hat{y}) \cr \Phi_{mn}(\xi, \hat{y})\end{pmatrix}
 =
 \begin{pmatrix}
-\epsilon^{1/4}\left[\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \\[3mm]
-im\,\mathcal{H}_n(\hat{y}) \\[3mm]
+\epsilon^{1/4}\left[\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \cr
+im\,\mathcal{H}_n(\hat{y}) \cr
 \bar{c}\epsilon^{1/4}\left[\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right]
 \end{pmatrix} e^{im\xi/a},
 \tag{6.9}
@@ -270,8 +270,8 @@ For the zonally symmetric Rossby modes (i.e., for $m = 0$, $n > 0$, $r = 0$), th
 $$
 \mathbf{K}_{0n0}(\hat{y}) = (2n + 1)^{-(1/2)}
 \begin{pmatrix}
-\left[\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \\[3mm]
-0 \\[3mm]
+\left[\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \cr
+0 \cr
 \bar{c}\left[\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right]
 \end{pmatrix}.
 \tag{A.1}

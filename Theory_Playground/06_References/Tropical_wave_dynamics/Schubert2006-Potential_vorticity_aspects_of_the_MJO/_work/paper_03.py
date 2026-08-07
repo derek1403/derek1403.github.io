@@ -13,7 +13,7 @@ We assume that the diabatic forcing is due to an eastward propagating region of 
 $$
 \hat{Q}(x, y, t) = \tfrac{1}{2}Q_0 \exp\!\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]
 \begin{cases}
-1 + \cos\dfrac{\pi\xi}{a_0}, & |\xi| \le a_0, \\[2mm]
+1 + \cos\dfrac{\pi\xi}{a_0}, & |\xi| \le a_0, \cr
 0, & |\xi| \ge a_0,
 \end{cases}
 \tag{4.1}
@@ -89,14 +89,14 @@ where
 
 $$
 \mathcal{L} = \begin{pmatrix}
-0 & -\beta y & im/a \\
-\beta y & 0 & d/dy \\
+0 & -\beta y & im/a \cr
+\beta y & 0 & d/dy \cr
 \bar{c}^{2}im/a & \bar{c}^{2}d/dy & 0
 \end{pmatrix},
 \qquad
-\hat{\boldsymbol{\eta}}_m(y) = \begin{pmatrix}\hat{u}_m(y) \\ \hat{v}_m(y) \\ \hat{\phi}_m(y)\end{pmatrix},
+\hat{\boldsymbol{\eta}}_m(y) = \begin{pmatrix}\hat{u}_m(y) \cr \hat{v}_m(y) \cr \hat{\phi}_m(y)\end{pmatrix},
 \qquad
-\hat{\mathbf{Q}}_m(y) = \begin{pmatrix}0 \\ 0 \\ \hat{Q}_m(y)\end{pmatrix}.
+\hat{\mathbf{Q}}_m(y) = \begin{pmatrix}0 \cr 0 \cr \hat{Q}_m(y)\end{pmatrix}.
 \tag{4.7}
 $$
 
@@ -112,7 +112,7 @@ where $\mathbf{f}(\hat{y})$ and $\mathbf{g}(\hat{y})$ are complex, three compone
 $$
 \mathcal{L}\mathbf{K}_{mnr} = i\nu_{mnr}\mathbf{K}_{mnr},
 \qquad\text{with}\qquad
-\mathbf{K}_{mnr}(\hat{y}) = \begin{pmatrix}U_{mnr}(\hat{y}) \\ V_{mnr}(\hat{y}) \\ \Phi_{mnr}(\hat{y})\end{pmatrix}.
+\mathbf{K}_{mnr}(\hat{y}) = \begin{pmatrix}U_{mnr}(\hat{y}) \cr V_{mnr}(\hat{y}) \cr \Phi_{mnr}(\hat{y})\end{pmatrix}.
 \tag{4.9}
 $$
 
@@ -128,8 +128,8 @@ where $n = 0, 1, 2, \ldots$ is the index for the meridional mode and $\hat{\nu} 
 $$
 \mathbf{K}_{mnr}(\hat{y}) = A_{mnr}
 \begin{pmatrix}
-\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \\[3mm]
--i\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_{n}(\hat{y}) \\[3mm]
+\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right] \cr
+-i\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_{n}(\hat{y}) \cr
 \bar{c}\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right]
 \end{pmatrix},
 \tag{4.11}
@@ -177,7 +177,7 @@ for $n = -1$. These normalization factors result in the orthonormality property
 $$
 \left(\mathbf{K}_{mnr}(\hat{y}), \mathbf{K}_{mn'r'}(\hat{y})\right) =
 \begin{cases}
-1, & (n', r') = (n, r) \\
+1, & (n', r') = (n, r) \cr
 0, & (n', r') \ne (n, r).
 \end{cases}
 \tag{4.17}
@@ -188,7 +188,7 @@ The normality part of $(4.17)$ is easily confirmed by substituting $(4.11)$ into
 $$
 \int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\mathcal{H}_{n'}(\hat{y})\,d\hat{y} =
 \begin{cases}
-1, & n' = n, \\
+1, & n' = n, \cr
 0, & n' \ne n
 \end{cases}
 \tag{4.18}
@@ -258,8 +258,8 @@ where $\hat{Q}_{mnr} = (\hat{\mathbf{Q}}_m, \mathbf{K}_{mnr})$. The inner produc
 
 $$
 \begin{aligned}
-\hat{Q}_{mnr} = &\ \frac{A_{mnr}\epsilon^{1/2}\pi Q_0 a_0 b_0}{2\bar{c}a^{2}[\pi^{2} - (ma_0/a)^{2}]}\frac{\sin(ma_0/a)}{(ma_0/a)}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\!\left(\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right) \\[2mm]
-&\times \left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n+1)/2}\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}\!\left(\frac{2\hat{y}_0}{(4 - \hat{b}_0^{4})^{1/2}}\right)\right. \\[2mm]
+\hat{Q}_{mnr} = &\ \frac{A_{mnr}\epsilon^{1/2}\pi Q_0 a_0 b_0}{2\bar{c}a^{2}[\pi^{2} - (ma_0/a)^{2}]}\frac{\sin(ma_0/a)}{(ma_0/a)}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\!\left(\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right) \cr
+&\times \left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n+1)/2}\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}\!\left(\frac{2\hat{y}_0}{(4 - \hat{b}_0^{4})^{1/2}}\right)\right. \cr
 &\qquad \left. -\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n-1)/2}\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\!\left(\frac{2\hat{y}_0}{(4 - \hat{b}_0^{4})^{1/2}}\right)\right]
 \end{aligned}
 \tag{4.22}
@@ -275,9 +275,9 @@ $$
 for the Kelvin wave ($n = -1$, $r = 2$). After $\hat{\eta}_{mnr}$ is computed from $(4.21)$–$(4.23)$, the physical space fields $u, v, \phi$ can be recovered by making use of $(4.20)$, followed by the inverse Fourier transform in $\xi$, i.e.,
 
 $$
-\begin{pmatrix}u(\xi, y, z) \\ v(\xi, y, z) \\ \phi(\xi, y, z)\end{pmatrix}
+\begin{pmatrix}u(\xi, y, z) \cr v(\xi, y, z) \cr \phi(\xi, y, z)\end{pmatrix}
 = Z(z)\sum_{m=-\infty}^{\infty}\sum_{n=-1}^{\infty}\sum_{r}\hat{\eta}_{mnr}
-\begin{pmatrix}U_{mnr}(\hat{y}) \\ V_{mnr}(\hat{y}) \\ \Phi_{mnr}(\hat{y})\end{pmatrix}e^{im\xi/a}.
+\begin{pmatrix}U_{mnr}(\hat{y}) \cr V_{mnr}(\hat{y}) \cr \Phi_{mnr}(\hat{y})\end{pmatrix}e^{im\xi/a}.
 \tag{4.24}
 $$
 
