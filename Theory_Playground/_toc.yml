@@ -75,13 +75,17 @@ chapters:
 
   - file: 06_References/06_References.md
     sections:
-      - file: 06_References/Tropical cyclone dynamics/read_paper.md
+      - file: 06_References/Tropical_cyclone_dynamics/read_paper.md
         title: "[方法] 如何讀論文"
-      - file: 06_References/Tropical cyclone dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.ipynb
+      # 熱帶氣旋動力學
+      - file: 06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.ipynb
         title: "[熱帶氣旋動力學] Kuo2016"
-      - file: 06_References/Tropical cyclone dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.ipynb
+      - file: 06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.ipynb
         title: "[熱帶氣旋動力學] Cha2020"
-      - file: 06_References/Tropical cyclone dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.ipynb
+      - file: 06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.ipynb
         title: "[熱帶氣旋動力學] Cha2024"
-      - file: 06_References/Tropical cyclone dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.ipynb
+      - file: 06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.ipynb
         title: "[熱帶氣旋動力學] Chen2025"
+      # 熱帶波動力學
+      - file: 06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb
+        title: "[熱帶波動力學] Schubert2006"

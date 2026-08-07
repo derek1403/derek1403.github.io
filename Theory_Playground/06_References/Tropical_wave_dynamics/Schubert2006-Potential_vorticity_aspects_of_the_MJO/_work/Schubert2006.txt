@@ -1,0 +1,1592 @@
+===== PAGE 1 =====
+Dynamics of Atmospheres and Oceans
+42 (2006) 127–151
+Potential vorticity aspects of the MJO
+Wayne H. Schubert∗, Matthew T. Masarik
+Department of Atmospheric Science, Colorado State University, Fort Collins, CO 80523, USA
+Available online 7 September 2006
+Abstract
+Considering linearized motion about a resting basic state, we derive analytical solutions of the equatorial
+β-plane primitive equations under the assumption that the ﬂow is steady in a reference frame moving
+eastward with a diabatic forcing resembling a Madden–Julian Oscillation (MJO) convective envelope. The
+solutions are analyzed in terms of potential vorticity (PV) dynamics. Because the diabatic source term for
+PV contains a factor βy, the diabatic heat source is ineffective at generating a PV anomaly at the equator
+but maximizes the PV response near the poleward edges of the heat source. In this way a moving heat
+source can produce two ribbons of lower tropospheric PV anomaly, a positive one off the equator in the
+northern hemisphere and a negative one off the equator in the southern hemisphere, with oppositely signed
+PV anomalies in the upper troposphere. Associated with these PV anomalies are geopotential anomalies
+that are shifted several hundred kilometers poleward. In the lower troposphere these zonally elongated
+geopotential anomalies resemble ITCZ trough zones, which demonstrates the close connection between
+the MJO wake dynamics and the formation of double ITCZs.
+To demonstrate that the MJO wake response can be described by simple PV dynamics, we propose an
+invertibility principle relating the PV to the streamfunction, which in turn is locally related to the geopotential.
+This equatorial invertibility principle accurately recovers the balanced wind and mass ﬁelds found in the
+MJO wake in the primitive equation model. However, while the invertibility principle highlights the ability
+of simple PV dynamics to accurately describe the ﬂow in the wake of an MJO convective envelope, it
+also clearly illustrates the inability of such dynamics to describe the Kelvin-like ﬂow pattern ahead of the
+convection.
+© 2006 Elsevier B.V. All rights reserved.
+Keywords: Madden–Julian oscillation; Equatorial waves; Intraseasonal oscillation
+1. Introduction
+The Madden–Julian oscillation (MJO) is a complex, multiscale phenomenon in which an enve-
+lope of convective clouds propagates eastward along the equator. Embedded within the convective
+∗Corresponding author. Tel.: +1 970 491 8521; fax: +1 970 491 8449.
+E-mail address: waynes@atmos.colostate.edu (W.H. Schubert).
+0377-0265/$ – see front matter © 2006 Elsevier B.V. All rights reserved.
+doi:10.1016/j.dynatmoce.2006.02.003
+
+===== PAGE 2 =====
+128
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+envelope are interacting synoptic-scale, mesoscale, and cumulus-scale motions. The phenomenon
+is made even more complex by the fact that air–sea interactions and radiative processes are also
+playing important roles. In spite of this complexity, signiﬁcant observational and theoretical un-
+derstanding has been acquired. A review of the ﬁrst two decades of research on the observational
+aspects of the MJO was given by Madden and Julian (1994). In the last decade the pace of ob-
+servational research has not slackened, and many interesting new results have appeared, e.g.,
+descriptions of the complete life cycle of the MJO (Hendon and Salby, 1994), organization of
+convection within the MJO (Hendon and Liebmann, 1994), the detailed study of individual cases
+observed during TOGA COARE (Lin and Johnson, 1996a,b; Johnson and Ciesielski, 2000; Yanai
+et al., 2000), a discussion of the role of extratropical forcing (Straub and Kiladis, 2003a), interac-
+tions between the MJO and higher-frequency tropical wave activity (Straub and Kiladis, 2003b),
+and the zonal and vertical structure from the surface to the lower stratosphere (Kiladis et al., 2005).
+On the theoretical and modeling side, a vast literature exists, including studies on the response of
+the tropical atmosphere to speciﬁed forcing (e.g., Gill, 1980; Chao, 1987), on stability analyses
+using wave-CISK arguments (e.g., Chang and Lim, 1988), on air–sea interaction (e.g., Emanuel,
+1987; Neelin et al., 1987; Flatau et al., 1997), and on cloud-radiation feedback (Hu and Randall,
+1994, 1995; Raymond, 2001). More recent work (Majda and Biello, 2004a; Biello and Majda,
+2005) has led to a better theoretical understanding of the multiscale aspects of the problem. Since
+it is impossible to adequately summarize the existing MJO literature in a brief introduction such
+as this, review articles are of great value, and fortunately several have recently appeared. Thus,
+for historical perspectives and critical analyses of the MJO literature the reader is referred to the
+recent review papers by Madden and Julian (2005), Hendon (2005), Wang (2005), Slingo et al.
+(2005) and Zhang (2005).
+The goal of the present paper is to isolate an aspect of the MJO problem that has not been
+sufﬁciently explored—the extent to which the ﬂow in the wake of the convective envelope can
+be interpreted as balanced and derivable from the potential vorticity ﬁeld. The motivation for this
+approach is as follows. Balanced theories, such as quasi-geostrophic theory and semi-geostrophic
+theory, provide a foundation for understanding the dynamics of midlatitude weather systems.
+These theories are more tractable than the primitive equations and can be succinctly expressed
+as two equations—a prognostic equation for the material conservation of potential vorticity, and
+a diagnostic equation (or invertibility principle) relating the potential vorticity to the stream-
+function. In many tropical weather systems, such as the ITCZ and tropical cyclones, the re-
+lease of latent heat plays a crucial role, so that potential vorticity is not materially conserved.
+However, even in these cases, a useful strategy is to formulate a balanced model that predicts
+the potential vorticity and then inverts it to ﬁnd the associated balanced wind and mass ﬁelds.
+This approach has yielded insights into the dynamics of ITCZ breakdown and the formation
+of easterly waves (e.g., Schubert et al., 1991) and into the extreme PV structures that evolve
+in tropical cyclones (e.g., Hausman et al., 2006). What about large-scale weather systems that
+occur on the equator, such as the MJO? Are the concepts of balance and invertibility useful
+in understanding the essential dynamics of the MJO? Here we attempt to answer this question
+in the simplest context, i.e., in the context of a linearized equatorial β-plane model. The gov-
+erning primitive equations are outlined in Section 2 and the separation of the vertical structure
+in Section 3. In Section 4 we present the complete solution of the horizontal structure prob-
+lem, including all wave components. Section 5 identiﬁes the convective forcing parameters that
+are crucial in determining the structure of the PV wake. Section 6 presents an equatorial in-
+vertibility principle from which (knowing the PV ﬁeld) the wake ﬂow can be fairly accurately
+recovered.
+
+===== PAGE 3 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+129
+2. Governing equations
+Consider small amplitude motions about a resting basic state in a stratiﬁed, compressible,
+quasi-static atmosphere on the equatorial β-plane. Using z = ln(p0/p) (where p0 = 1010 mb is
+a constant “surface” pressure) as the vertical coordinate, we can write the linearized governing
+equations as
+∂u
+∂t −βyv + ∂φ
+∂x = −αu,
+∂v
+∂t + βyu + ∂φ
+∂y = −αv,
+∂φ
+∂z = RT,
+∂u
+∂x + ∂v
+∂y + ∂w
+∂z −w = 0,
+∂T
+∂t + Γw = −αT + Q
+cp
+,
+(2.1)
+where u is the eastward component of velocity, v the northward component, w = Dz/Dt the
+“vertical log-pressure velocity”, φ the perturbation geopotential, T the perturbation temperature,
+β = 2Ω/a the equatorial value of the northward gradient of the Coriolis parameter, Ω the Earth’s
+rotation rate, a the Earth’s radius, α the constant coefﬁcient for Rayleigh friction and Newtonian
+cooling, Γ = d ¯T/dz + κ ¯T (κ = R/cp) the basic state static stability computed from the basic state
+temperature proﬁle ¯T(z), and Q(x, y, z, t) the diabatic source term. For simplicity we assume that
+Γ is a constant, and choose the tropical tropospheric mean value Γ = 23.79 K. We seek solutions
+of (2.1) on a domain that is inﬁnite in y, periodic over −πa ≤x ≤πa, and conﬁned between
+z = 0 and z = zT = ln(1010/200) ≈1.619, with the boundary conditions w = 0 at z = 0, zT .
+The total energy principle for the system (2.1) is
+dE
+dt = −2αE + G,
+(2.2)
+where the total energy E and the generation term G are deﬁned by
+E =
+   1
+2
+
+u2 + v2 +
+1
+RΓ
+∂φ
+∂z
+2
+e−z dx dy dz,
+G =
+  
+1
+cpΓ
+∂φ
+∂z Q e−z dx dy dz.
+(2.3)
+In the following analysis we shall assume that the ﬂow is steady in a reference frame moving with
+the heat source Q. Under this assumption the total energy principle (2.2) becomes 2αE = G, i.e.,
+there is a balance between the total energy dissipation 2αE and the diabatic generation G. In the
+examples we explore here, the energy generation is due to a non-zero Q in a localized, eastward
+moving region near the equator, while the dissipation occurs in the much broader area into which
+the energy has propagated via equatorial wave motions.
+To derive the potential vorticity principle associated with (2.1) we ﬁrst cross-differentiate the
+horizontal momentum equations to obtain the vorticity equation
+ ∂
+∂t + α
+ ∂v
+∂x −∂u
+∂y
+
++ βy
+∂u
+∂x + ∂v
+∂y
+
++ βv = 0,
+(2.4)
+and then combine the hydrostatic, continuity, and thermodynamic equations in such a way as to
+eliminate T and w, which results in
+ ∂
+∂t + α
+  ∂
+∂z −1
+ ∂φ
+∂z −RΓ
+∂u
+∂x + ∂v
+∂y
+
+= κ
+ ∂
+∂z −1
+
+Q.
+(2.5)
+
+===== PAGE 4 =====
+130
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+Then, eliminating the horizontal divergence between (2.4) and (2.5), we obtain
+∂q
+∂t + βv = −αq + βy
+cpΓ
+ ∂
+∂z −1
+
+Q,
+(2.6)
+where
+q = ∂v
+∂x −∂u
+∂y + βy
+RΓ
+ ∂
+∂z −1
+ ∂φ
+∂z
+(2.7)
+is the potential vorticity anomaly. We shall concentrate on interpreting the ﬂow patterns associated
+with a moving heat source in terms of a PV wake. For this interpretation the y-factor in the last
+term of (2.6) plays a crucial role. It causes the source term Q to be ineffective at generating
+a PV anomaly at the equator but maximizes the PV response near the poleward edges of the
+heat source. In this manner a moving equatorial heat source can produce two ribbons of lower
+tropospheric PV anomaly, a positive one off the equator in the northern hemisphere and a negative
+one off the equator in the southern hemisphere, with oppositely signed PV anomalies in the upper
+troposphere.
+3. Separation of the vertical and horizontal structure
+Our ﬁrst step in the solution of (2.1) is to separate off the vertical structure, under the assumption
+that the diabatic forcing excites only the ﬁrst vertical internal mode. Thus, it is convenient to
+introduce a vertical structure function Z(z) that satisﬁes the second order equation
+ d
+dz −1
+ dZ
+dz = −
+π2
+z2
+T
++ 1
+4
+
+Z.
+(3.1)
+The solution satisfying the boundary conditions Z′(0) = Z′(zT ) = 0 can be written in the nor-
+malized form
+Z(z) =
+π2
+z2
+T
++ 1
+4
+−(1/2)
+e(z−zm)/2
+ zT
+2π sin
+πz
+zT
+
+−cos
+πz
+zT
+
+,
+(3.2)
+while its derivative takes the form
+Z′(z) =
+	
+1 + z2
+T
+4π2
+
+1/2
+e(z−zm)/2 sin
+πz
+zT
+
+,
+(3.3)
+where zm, the level at which Z′(z) reaches its maximum value, is given by πzm/zT = π +
+tan−1(−2π/zT ), which, for zT ≈1.619, turns out to be zm ≈0.5803zT . For later convenience,
+the normalization chosen in (3.2) and (3.3) yields Z′(zm) = 1. The functions Z(z) and Z′(z) are
+shown in Fig. 1. Also shown in Fig. 1 is the 120-day mean (November 1992–February 1993)
+vertical proﬁle of the heating rate for the western Paciﬁc warm pool (Johnson and Ciesielski,
+2000). The observed mean proﬁle of Q/cp has a peak value of approximately 4 K day−1, and
+its shape is closely approximated by Z′(z), which is the justiﬁcation for considering only the
+ﬁrst vertical internal mode in the following analysis. Over the 120-day observational period there
+were two MJO passages (Lin and Johnson, 1996b; Yanai et al., 2000). During these two periods
+of enhanced convection the shape of the vertical proﬁle of Q/cp was very similar to the shape
+of the time mean proﬁle shown in Fig. 1, but the peak values were considerably larger, 10 K
+day−1 for the ﬁrst MJO and 16 K day−1 for the second. Thus, for the vertical proﬁle of heating
+
+===== PAGE 5 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+131
+Fig. 1. The curves labeled Z(z) and Z′(z) (interpreted using the lower scale) are the vertical structure functions deﬁned
+by (3.2) and (3.3). The curve labeled Q/cp (interpreted using the upper scale) is the 120-day mean vertical proﬁle of
+heating rate for the western Paciﬁc warm pool, as determined by Johnson and Ciesielski (2000).
+at the time of peak convective activity during the passage of an MJO, our model uses the Z′(z)
+proﬁle shown in Fig. 1, but scaled so the peak value is 12 K day−1 (see Table 1) rather than 4 K
+day−1.
+Assuming that u, v, φ, T, w, Q have the separable forms
+⎛
+⎜
+⎝
+u(x, y, z, t)
+v(x, y, z, t)
+φ(x, y, z, t)
+⎞
+⎟
+⎠=
+⎛
+⎜
+⎝
+ˆu(x, y, t)
+ˆv(x, y, t)
+ˆφ(x, y, t)
+⎞
+⎟
+⎠Z(z),
+⎛
+⎜
+⎝
+T(x, y, z, t)
+w(x, y, z, t)
+Q(x, y, z, t)
+⎞
+⎟
+⎠=
+⎛
+⎜
+⎝
+ˆT(x, y, t)
+ˆw(x, y, t)
+ˆQ(x, y, t)
+⎞
+⎟
+⎠Z′(z),
+(3.4)
+we can convert (2.1) into the following system for the horizontal structure functions ˆu, ˆv, ˆφ,
+ˆT, ˆw:
+∂ˆu
+∂t −βyˆv + ∂ˆφ
+∂x = −αˆu,
+∂ˆv
+∂t + βyˆu + ∂ˆφ
+∂y = −αˆv,
+ˆφ = R ˆT,
+∂ˆu
+∂x + ∂ˆv
+∂y −
+π2
+z2
+T
++ 1
+4
+
+ˆw = 0,
+∂ˆT
+∂t + Γ ˆw = −α ˆT +
+ˆQ
+cp
+.
+(3.5)
+In the next section we present an analytical solution of (3.5). The solution can be considered
+as the primitive equation generalization of the simplest MJO model involving the ﬁrst baroclinic
+mode response to a moving planetary scale heat source under the long wave approximation (Chao,
+1987).
+Table 1
+Constants
+cp = 1004 J kg−1 K−1
+β = 2Ω/a
+¯c = 41.25 m s−1
+y0 = 0 or 450 km
+R = 287 J kg−1 K−1
+p0 = 1010 mb
+ϵ = 507.3
+Q0/cp = 12 K day−1
+Ω = 7.292 × 10−5 s−1
+zT = 1.619
+a0 = 1250 km
+c = 5 m s−1
+a = 6370 km
+Γ = 23.79 K
+b0 = 450 km
+α = (4 days)−1
+
+===== PAGE 6 =====
+132
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+4. Solution of the horizontal structure equations
+Weassumethatthediabaticforcingisduetoaneastwardpropagatingregionofdeepconvection.
+The exact form of the forcing is
+ˆQ(x, y, t) = 1
+2Q0 exp
+
+−
+y −y0
+b0
+2 ⎧
+⎨
+⎩
+1 + cos πξ
+a0
+,
+|ξ| ≤a0,
+0,
+|ξ| ≥a0,
+(4.1)
+where ξ = x −ct, c is the propagation speed of the cloud cluster, y0 its center, a0 its half-width
+in x, b0 its e-folding width in y, and Q0 its peak value. The values chosen for these parameters are
+listed in Table 1. It is interesting to note that the area integral of (4.1) yields
+  ˆQ(ξ, y) dx dy =
+π1/2Q0a0b0, so that our variation of the parameter y0 has no effect on the total diabatic heating
+rate, π1/2Q0a0b0.
+Assuming the solutions are steady in a reference frame translating eastward with speed c, we
+can simplify (3.5) through the replacements ∂/∂t →−c(∂/∂ξ) and ∂/∂x →∂/∂ξ. We then take
+the Fourier ξ-transform of the resulting system, deﬁning, for example,
+ˆum(y) =
+1
+2πa
+ πa
+−πa
+ˆu(ξ, y) e−imξ/adξ,
+ˆu(ξ, y) =
+∞
+
+m=−∞
+ˆum(y) eimξ/a,
+(4.2)
+where the integer m denotes the zonal wavenumber. Similar Fourier transform pairs exist for
+ˆvm(y), ˆφm(y), ˆTm(y), ˆwm(y), and ˆQm(y). In this way, the system (3.5) reduces to
+
+α −imc
+a
+
+ˆum −βyˆvm + im
+a
+ˆφm = 0,
+
+α −imc
+a
+
+ˆvm + βyˆum + dˆφm
+dy = 0,
+
+α −imc
+a
+
+ˆφm + ¯c2
+im
+a ˆum + dˆvm
+dy
+
+= κ ˆQm,
+(4.3)
+where ¯c2 = RΓ [(π/zT )2 + (1/4)]−1 ≈(41.25 m s−1)2. Once this “shallow water system” has
+been solved for ˆum, ˆvm, ˆφm, the vertical velocity ˆwm can be recovered from
+ˆwm =
+π2
+z2
+T
++ 1
+4
+−1 im
+a ˆum + dˆvm
+dy
+
+.
+(4.4)
+The
+Fourier
+ξ-transform
+of
+ˆQ(ξ, y),
+deﬁned
+by
+(4.1),
+is
+given
+by
+ˆQm(y) =
+(2πa)−1  πa
+−πa ˆQ(ξ, y) exp(−imξ/a) dξ, which is easily evaluated to yield
+ˆQm(y) =
+πQ0
+2[π2 −(ma0/a)2]
+sin(ma0/a)
+m
+exp
+
+−
+y −y0
+b0
+2
+.
+(4.5)
+We now write the system (4.3) in the convenient vector form1
+
+α −imc
+a
+
+ˆηm + Lˆηm = κ ˆQm,
+(4.6)
+1 The simplicity of the ﬁrst term in (4.6) depends on the assumed equality for the damping rates associated with Rayleigh
+friction and Newtonian cooling. However, the derivation following (4.6) could easily be generalized to allow a 10–20 day
+radiative damping rate and a 3–5 day frictional damping rate (Lin et al., 2005).
+
+===== PAGE 7 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+133
+where
+L =
+⎛
+⎜
+⎝
+0
+−βy
+im/a
+βy
+0
+d/dy
+¯c2im/a
+¯c2d/dy
+0
+⎞
+⎟
+⎠,
+ˆηm(y) =
+⎛
+⎜
+⎝
+ˆum(y)
+ˆvm(y)
+ˆφm(y)
+⎞
+⎟
+⎠,
+ˆQm(y) =
+⎛
+⎜
+⎝
+0
+0
+ˆQm(y)
+⎞
+⎟
+⎠.
+(4.7)
+The Fourier transformed Eq. (4.6) can be solved using a normal mode transform in the meridional
+direction. To accomplish this, ﬁrst deﬁne the inner product
+(f, g) =
+ ∞
+−∞
+
+f1g∗
+1 + f2g∗
+2 + 1
+¯c2 f3g∗
+3
+
+dˆy,
+(4.8)
+where f(ˆy) and g(ˆy) are complex, three component vector functions of the dimensionless merid-
+ional coordinate ˆy = (β/¯c)1/2y = ϵ1/4(y/a), and where the ‘∗’ symbol denotes the complex
+conjugate and ϵ = 4Ω2a2/¯c2 is Lamb’s parameter. With ¯c = 41.25 m s−1 we obtain ϵ = 507.3.
+The inner product (4.8) is suggested by the total energy principle associated with (4.6). The
+adjoint of L, denoted by L† and deﬁned by (Lf, g) = (f, L†g), is related to L by L† = −L. In
+other words, the linear operator L is skew-Hermitian with respect to the inner product (4.8). The
+skew-Hermitian property dictates that the eigenvalues of L are pure imaginary and that the eigen-
+functions form a complete (Wu and Moore, 2004), orthogonal set (as long as degeneracy does not
+occur). Denoting an eigenvalue by iνmnr and a corresponding eigenfunction by Kmnr(ˆy), we have
+LKmnr = iνmnrKmnr,
+with
+Kmnr(ˆy) =
+⎛
+⎜
+⎝
+Umnr(ˆy)
+Vmnr(ˆy)
+Φmnr(ˆy)
+⎞
+⎟
+⎠.
+(4.9)
+The eigenvalues of L, which yield the dispersion relation for equatorially trapped waves, satisfy
+the cubic equation (Matsuno, 1966)
+ϵˆν2 −m2 −m
+ˆν = ϵ1/2(2n + 1),
+(4.10)
+where n = 0, 1, 2, . . . is the index for the meridional mode and ˆν = ν/(2Ω) is the dimensionless
+frequency. We let r = 0, 1, 2 be the index corresponding to the three roots of the dispersion
+relation, so that the eigenfunctions and eigenvalues can be characterized by the triple index
+m, n, r. Special care is required for the case n = 0, for which (4.10) can be factored into (ϵ1/2ˆν +
+m)(ϵ1/2ˆν2 −mˆν −1) = 0. The root ϵ1/2ˆν = −m must be discarded because the corresponding
+eigenfunction is unbounded in ˆy. Thus, when n = 0, only the two solutions of ϵ1/2ˆν2 −mˆν −1 =
+0 are retained and are indexed by r = 0 (mixed Rossby-gravity wave) and r = 2 (eastward inertia-
+gravity wave). The eigenfunctions for Kelvin waves can be found separately by setting Vmnr to
+zero in (4.9). The Kelvin wave eigenvalues ϵ1/2ˆν = m can be formally considered as a solution to
+(4.10) when n = −1. We index this solution as r = 2. Then, for given n = −1, 0, 1, . . ., Kmnr(ˆy) is
+the eigenfunction corresponding to the eigenvalue νmnr. The eigenfunctions Kmnr(ˆy) are given by
+Kmnr(ˆy) = Amnr
+⎛
+⎜
+⎜
+⎜
+⎜
+⎝
+ϵ1/4
+
+ϵ1/2ˆνmnr + m n + 1
+2
+1/2
+Hn+1(ˆy) + 
+ϵ1/2ˆνmnr −m n
+2
+1/2
+Hn−1(ˆy)
+
+−i(ϵˆν2
+mnr −m2)Hn(ˆy)
+¯cϵ1/4
+
+ϵ1/2ˆνmnr + m n + 1
+2
+1/2
+Hn+1(ˆy) −(ϵ1/2ˆνmnr −m)
+ n
+2
+1/2
+Hn−1(ˆy)
+
+⎞
+⎟
+⎟
+⎟
+⎟
+⎠
+,
+(4.11)
+
+===== PAGE 8 =====
+134
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+where the meridional structure functions Hn(ˆy) (n = 0, 1, 2, . . .) are related to the Hermite poly-
+nomials Hn(ˆy) (n = 0, 1, 2, . . .) by2
+Hn(ˆy) =
+
+π1/22nn!
+−(1/2)
+Hn(ˆy)e−(1/2)ˆy2.
+(4.12)
+Since the Hermite polynomials satisfy the recurrence relation ˆyHn(ˆy) = 1/2Hn+1(ˆy) + nHn−1(ˆy)
+and the derivative relation dHn(ˆy)/dˆy = 2nHn−1(ˆy), it is easily shown that the meridional struc-
+ture functions Hn(ˆy) satisfy the recurrence relation
+ˆyHn(ˆy) =
+n + 1
+2
+1/2
+Hn+1(ˆy) +
+n
+2
+1/2
+Hn−1(ˆy),
+(4.13)
+and the derivative relation
+dHn(ˆy)
+dˆy
+= −
+n + 1
+2
+1/2
+Hn+1(ˆy) +
+n
+2
+1/2
+Hn−1(ˆy).
+(4.14)
+The ﬁrst two meridional structure functions are H0(ˆy) = π−(1/4) e−(1/2)ˆy2 and H1(ˆy) =
+21/2π−(1/4)ˆy e−(1/2)ˆy2, from which all succeeding structure functions can be computed using
+the recurrence relation (4.13). Computing Hn(ˆy) via its recurrence relation is much preferable to
+computing Hn(ˆy) via its recurrence relation and then computing Hn(ˆy) by evaluation of the right
+hand side of (4.12), because the former method avoids explicit calculation of the factor 2nn! for
+large n. Plots of Hn(ˆy) for n = 0, 1, 2, 3, 4 are shown in Fig. 2. The normalization factor in (4.11)
+is given by
+Amnr =
+
+ϵ1/2(n + 1)
+
+ϵ1/2ˆνmnr + m
+2
++ ϵ1/2n
+
+ϵ1/2ˆνmnr −m
+2
++
+
+ϵˆν2
+mnr −m22−(1/2)
+(4.15)
+for n ≥0 and by
+Am,−1,2 = 2−(1/2)π−(1/4)
+(4.16)
+for n = −1. These normalization factors result in the orthonormality property
+(Kmnr(ˆy), Kmn′r′(ˆy)) =
+
+1,
+(n′, r′) = (n, r)
+0,
+(n′, r′) ̸= (n, r).
+(4.17)
+The normality part of (4.17) is easily conﬁrmed by substituting (4.11) into the left hand side and
+then using
+ ∞
+−∞
+Hn(ˆy)Hn′(ˆy)dˆy =
+
+1,
+n′ = n,
+0,
+n′ ̸= n
+(4.18)
+2 The meridional structure functions Hn are more convenient for our purposes than the parabolic cylinder functions
+Dn. The two functions are related by Hn(ˆy) = (π1/2n!)−(1/2)Dn(21/2ˆy).
+
+===== PAGE 9 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+135
+Fig. 2. Hn(ˆy) for n = 0, 1, 2, 3, 4.
+to evaluate the three resulting integrals. It should be noted that there is a degeneracy for the
+zonally symmetric Rossby modes (i.e., for m = 0, n > 0, r = 0), in which case (4.11) is in-
+determinant because both m and ˆν0n0 vanish. However, orthonormal eigenfunctions are easily
+constructed in this case, as discussed in Appendix A. Because of the orthonormality and com-
+pleteness of the eigenfunctions Kmnr(ˆy), we can set up the transform pair (Silva Dias et al., 1983,
+DeMaria 1985)
+ˆηmnr =
+ˆηm(ˆy), Kmnr(ˆy)
+
+,
+(4.19)
+ˆηm(ˆy) =
+∞
+
+n=−1
+
+r
+ˆηmnrKmnr(ˆy),
+(4.20)
+where ˆηmnr are the scalar coefﬁcients in the normal mode expansion of the vector ˆηm(ˆy). Note
+that (4.19) can be obtained by taking the inner product of (4.20) with Kmn′r′(ˆy) and using the
+orthonormality property (4.17).
+We now have the tools necessary to solve (4.6). Taking the inner product of (4.6) with the
+eigenfunction Kmnr(ˆy), and then using (Lˆηm, Kmnr) = −(ˆηm, LKmnr) = −(ˆηm, iνmnrKmnr) =
+iνmnr ˆηmnr, we can reduce our ordinary differential Eq. (4.6) to the system of algebraic
+equations
+ˆηmnr =
+κ ˆQmnr
+α + i(νmnr −(cm/a)),
+(4.21)
+where ˆQmnr = ( ˆQm, Kmnr). The inner product ( ˆQm, Kmnr) is derived using the integral given in
+Appendix B. Using the result (B.1) twice, once with n replaced by n + 1 and once with n replaced
+by n −1, we can write ˆQmnr as
+
+===== PAGE 10 =====
+136
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+ˆQmnr =
+Amnrϵ1/2πQ0a0b0
+2¯ca2[π2 −(ma0/a)2]
+sin(ma0/a)
+(ma0/a)
+	
+2π
+2 + ˆb2
+0
+
+1/2
+exp
+	 ˆb2
+0ˆy2
+0
+4 −ˆb4
+0
+
+×
+⎡
+⎣(ϵ1/2ˆνmnr + m)
+	
+2 −ˆb2
+0
+2 + ˆb2
+0
+
+(n+1)/2 n + 1
+2
+1/2
+Hn+1
+	
+2ˆy0
+(4 −ˆb4
+0)1/2
+
+−(ϵ1/2ˆνmnr −m)
+	
+2 −ˆb2
+0
+2 + ˆb2
+0
+
+(n−1)/2 n
+2
+1/2
+Hn−1
+	
+2ˆy0
+(4 −ˆb4
+0)1/2
+
+⎤
+⎦
+(4.22)
+for n ≥0, and as
+ˆQmnr =
+Amnrϵ1/4πQ0a0b0
+2¯ca2[π2 −(ma0/a)2]
+sin(ma0/a)
+(ma0/a)
+	
+2π
+2 + ˆb2
+0
+
+1/2
+exp
+	
+−
+ˆy2
+0
+2 + ˆb2
+0
+
+.
+(4.23)
+for the Kelvin wave (n = −1, r = 2). After ˆηmnr is computed from (4.21)–(4.23), the physical
+space ﬁelds u, v, φ can be recovered by making use of (4.20), followed by the inverse Fourier
+transform in ξ, i.e.,
+⎛
+⎜
+⎝
+u(ξ, y, z)
+v(ξ, y, z)
+φ(ξ, y, z)
+⎞
+⎟
+⎠= Z(z)
+∞
+
+m=−∞
+∞
+
+n=−1
+
+r
+ˆηmnr
+⎛
+⎜
+⎝
+Umnr(ˆy)
+Vmnr(ˆy)
+Φmnr(ˆy)
+⎞
+⎟
+⎠eimξ/a.
+(4.24)
+In addition, the potential vorticity ﬁeld can be recovered from
+q(ξ, y, z) = Z(z)
+∞
+
+m=−∞
+∞
+
+n=−1
+
+r
+ˆqmnrHn(ˆy) eimξ/a.
+(4.25)
+where
+ˆqmnr = Amnr
+m2 −ϵˆν2
+mnr
+aˆνmnr
+
+ˆηmnr.
+(4.26)
+A simple conﬁrmation of (4.25) and (4.26) is obtained by noting that (4.9) implies that
+iνmnr[i(m/a)Vmnr −dUmnr/dy −(β/¯c2)yΦmnr] = βVmnr and then using the second entry in
+(4.11) for Vmnr on the right hand side. According to (4.25) and (4.26), the physical space po-
+tential vorticity ﬁeld is a superposition of the potential vorticity associated with all wave types
+except for the Kelvin wave, which has zero potential vorticity since the m2 −ϵˆν2
+mnr term in (4.26)
+vanishes. Although equatorial β-plane dynamics differs from midlatitude f-plane dynamics in the
+sense that inertia-gravity waves have zero potential vorticity on the midlatitude f-plane but not
+on the equatorial β-plane, the contribution of the equatorial β-plane inertia-gravity waves to the
+potential vorticity tends to be quite small, especially for the higher zonal wavenumbers, because
+for inertia-gravity waves m2 −ϵˆν2
+mnr decreases and |ˆνmnr| increases as m increases.
+Using (4.4), (4.11) and (4.14) the physical space vertical log-pressure velocity can be recovered
+from
+w(ξ, y, z) = Z′(z)
+RΓ
+∞
+
+m=−∞
+∞
+
+n=−1
+
+r
+iνmnr ˆηmnrΦmnr(ˆy) eimξ/a.
+(4.27)
+
+===== PAGE 11 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+137
+For later use we note that the vertical log-pressure velocity w = Dz/Dt is related to the vertical
+p-velocity ω = Dp/Dt by ω = −p0 e−zw.
+All the model results shown in this section have been constructed by numerical evaluation of
+(4.24), (4.25) and (4.27), which involves a superposition of zonal wavenumbers (sum over m),
+meridional wavenumbers (sum over n), and wave types (sum over r). In our examples the spectral
+coefﬁcients ˆηmnr decay exponentially with n for all choices of m, which enables us to truncate
+the spectral solution at n = N with a speciﬁed degree of accuracy. In general, N = 200 gives
+accurate results.
+Using the parameters listed in Table 1, the 850 hPa wind and geopotential ﬁelds computed from
+(4.24) are shown in the top panel of Fig. 3 for y0 = 0 and in the top panel of Fig. 5 for y0 = 450 km.
+The choice of parameters describing the speed, size, and magnitude of the forcing was guided by
+the observational analyses of Hendon and Salby (1994), Lin and Johnson (1996b) and Kiladis et
+al. (2005). The choice of 850 hPa as the display level is arbitrary. According to the proﬁle of Z(z)
+shown in Fig. 1, upper tropospheric ﬁelds have the opposite sign and approximately twice the
+magnitude of the lower tropospheric ﬁelds. An interesting property of these simple linear solutions
+is that the lower tropospheric maximum westerly winds in the wake of the convective envelope are
+stronger than the lower tropospheric maximum easterly winds ahead of the convection. For exam-
+ple, in Fig. 3 the maximum 850 hPa westerly ﬂow is 3.7 m s−1 while the maximum easterly ﬂow is
+1.6 m s−1. In Fig. 5 the corresponding values are 4.2 m s−1 and 1.4 m s−1. These wind speeds, the
+degree of asymmetry between westerlies and easterlies, and the larger zonal extent of the easterlies
+compared to the westerlies all agree well with the observed MJO composite3 presented by (Kiladis
+et al. (2005), their Fig. 3). The remaining panels of Figs. 3 and 5 show the decomposition of the
+total ﬁelds into Rossby modes (r = 0 with n ≥1), inertia-gravity modes (r = 1, 2 with n ≥1 and
+r = 2 with n = 0), and Kelvin modes (r = 2 with n = −1). We have not plotted the contribution
+from mixed Rossby-gravity modes (r = 0 with n = 0) since it vanishes when y0 = 0 and is very
+small when y0 = 450 km. The 850 hPa potential vorticity ﬁeld computed from (4.25) and the 395
+hPa vertical motion ﬁeld computed from (4.27) are shown in the top two panels of Fig. 4 for
+y0 = 0 and in the top two panels of Fig. 6 for y0 = 450 km. The bottom two panels of Figs. 4 and
+6 show the decomposition of the vertical motion ﬁeld into inertia-gravity waves and Kelvin waves
+(contributions from other modes are small). We have not shown the decomposition of the PV ﬁeld
+because it is essentially entirely due to Rossby waves. Several notable features are apparent from
+Figs. 3–6. The total u, v, φ ﬁelds are composed of Rossby waves on the west side of the source,
+Kelvin waves on the east side, with “slaved” inertia-gravity waves providing low-level conver-
+gence near the source. The PV anomaly patterns and the associated equatorial trough shear zones
+are zonally elongated because of the eastward movement of the convective envelope and the equa-
+torward advection of the basic state PV in the wake of the convective envelope. As the center of the
+convective envelope is shifted off the equator there is very little change in the response east of the
+forcing. In contrast, the response west of the forcing becomes biased to the northern hemisphere. In
+particular, the PV anomaly is nearly twice as strong in the northern hemisphere when y0 = 450 km.
+It is interesting to interpret Figs. 3–6 in terms of the ITCZ, a concept that can be associated with
+a variety of observing methods and hence a variety of meteorological ﬁelds, e.g., geopotential
+anomalies, vorticity, divergence, cloudiness, and rainfall. Since the lower tropospheric geopo-
+tential anomalies are negative and the balanced ﬂow is cyclonic, the terms “equatorial trough
+3 There is substantial variability in the cases that make up the MJO composite so that a detailed comparison of model
+results with an individual MJO case probably requires modeling the details of the diabatic forcing associated with that
+case.
+
+===== PAGE 12 =====
+138
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+Fig. 3. The upper panel shows the geopotential height anomaly and winds at 850 mb for y0 = 0 and for the remaining
+parameters listed in Table 1. The remaining three panels show respectively the contributions made by Rossby waves,
+inertia-gravity waves, and Kelvin waves.
+
+===== PAGE 13 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+139
+Fig. 4. The upper panel shows the 850 hPa potential vorticity anomaly q, with a contour interval of 1 × 10−6 s−1. The
+second panel shows the vertical p-velocity, ω, at 395 hPa, with a contour interval of 30 hPa day−1 in the region of rising
+motion (dashed contours), and a contour interval of 0.5 hPa day−1 in the region of sinking motion (solid contours). The
+third and fourth panels show the respective contributions of inertia-gravity waves and Kelvin waves to the vertical motion
+ﬁeld. Results in this ﬁgure are for y0 = 0.
+
+===== PAGE 14 =====
+140
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+Fig. 5. Same as Fig. 3, but with the center of the convective forcing shifted north of the equator (y0 = 450 km).
+
+===== PAGE 15 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+141
+Fig. 6. Same as Fig. 4, but with the center of the convective forcing shifted north of the equator (y0 = 450 km).
+
+===== PAGE 16 =====
+142
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+zone” and “equatorial trough shear zone” are sometimes used. Our model does not explicitly
+describe cloud processes and boundary layer dynamics. However, it does produce equatorial
+trough zones and zonally elongated vorticity strips. We shall take the liberty of calling these
+“ITCZs”, under the assumption that, in a more complete model, low-level cyclonic vorticity
+would produce boundary layer convergence, Ekman pumping, cloudiness, and rain. According
+to this interpretation, a convective envelope centered on the equator produces a symmetric dou-
+ble ITCZ in its wake, while a convective envelope centered several hundred kilometers off the
+equator still produces a double ITCZ but with a bias toward the hemisphere to which the con-
+vection is shifted. In this way convection can be enhanced away from the equator in the MJO
+wake, even when the maximum sea surface temperature is at the equator. This is consistent
+with the observational study of Liebmann et al. (1994), who found that tropical depressions,
+tropical storms, and typhoons preferentially develop in the large-scale low level cyclonic vortic-
+ity anomalies that form westward and poleward of the MJO convective envelope. The general
+tendency for double ITCZs to form even when the maximum sea surface temperature lies on
+the equator probably plays an important role in the Indian and western Paciﬁc Oceans. In con-
+trast, the formation of the ITCZ north of the equator in the Atlantic and eastern Paciﬁc Oceans
+is associated with upwelling patterns, shallow thermocline depths, and cold sea surface tem-
+peratures at the equator (Waliser and Somerville, 1994; Philander et al., 1996; Lietzke et al.,
+2001).
+5. Parameters controlling the PV wake
+Eq. (2.6) states that q changes locally in time due to the Rossby term βv, the damping term
+−αq, and the generation term (cpΓ )−1βy(∂/∂z −1)Q. Insight into the importance of the βv
+term and into the critical parameters governing the PV wake can be obtained by calculating the
+hypothetical PV distribution that would result from forcing and dissipation only, i.e., the PV
+distribution resulting from the neglect of the Rossby term in (2.6). With the βv term neglected,
+and with the replacement ∂/∂t →−c(∂/∂ξ), (2.6) reduces to
+c∂q
+∂ξ = αq −βy
+cpΓ
+ ∂
+∂z −1
+
+Q,
+(5.1)
+where Q is deﬁned in (3.4) and (4.1). The solution of (5.1) is easily obtained and can be written
+in the form
+q(ξ, y, z) = −τp
+τc
+	
+π2
+π2 + α2τ2p
+
+F(ξ) βy exp
+
+−
+y −y0
+b0
+2
+Z(z),
+(5.2)
+where
+F(ξ) = sinh
+
+(α/c)a0
+ 
+(α/c)a0
+exp
+
+(α/c)ξ
+ 
+if
+−∞< ξ ≤−a0,
+(5.3)
+F(ξ) = 1 −exp
+
+−(α/c)(a0 −ξ)
+ 
+2(α/c)a0
++ αa0
+2π2c
+
+1 + cos(πξ/a0)
+ 
+−1
+2π sin(πξ/a0)
+(5.4)
+if −a0 ≤ξ ≤a0, and F(ξ) = 0 if a0 ≤ξ < ∞. In (5.2) the parameter τp = a0/c is a measure of
+the passage time of the convective region and the parameter τc = ¯c2/(κQ0) is a measure of the
+convective overturning time. A plot of (5.2) for y0 = 0, with the remaining parameters listed in
+Table 1, is shown in Fig. 7. This solution illustrates how a propagating convective region leaves
+
+===== PAGE 17 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+143
+Fig. 7. Hypothetical potential vorticity resulting from forcing and dissipation only, as computed from (5.2) with for
+y0 = 0.
+in its wake two trailing PV strips on opposite sides of the equator. However, a comparison of
+Fig. 7 with the top panel of Fig. 4 shows that the neglect of βv results in a q ﬁeld that has only
+68% of the correct strength and does not extend far enough poleward or westward. The lower
+tropospheric meridional ﬂow shown in Fig. 3 extends poleward and westward a considerable
+distance and results in an advection of basic state PV towards the equator. This effect, included
+in Figs. 3 and 4 but excluded from Fig. 7, tends to make the PV anomaly stronger and broader in
+both its westward and north-south extent.
+In spite of this weakness, the solution (5.2) reveals that three important parameters controlling
+the PV wake are the wake decay length c/α, the ratio of time scales τp/τc, and the dimensionless
+offset y0/b0. For the examples shown in Fig. 7 the wake decay length is c/α = 1728 km, i.e., the
+PVanomalytrailingtothewestoftheconvectiveregionhasa1/edecayscaleof1728 km.Theratio
+τp/τc, which controls the strength of the PV anomaly, is a measure of the number of convective
+overturnings during the passage of the convection. The factor τp/τc is large, and the corresponding
+PV anomaly is large, for intensely raining, zonally wide, slowly moving convective regions, while
+it is small, and the corresponding PV anomaly is small, for weakly raining, zonally narrow, fast
+moving convective regions. For the case shown in Fig. 4, a0 = 1250 km and c = 5 ms−1 so that
+τp = 69.4 h, while ¯c = 41.25 ms−1 and Q0/cp = 12 K day−1 so that τc = 11.9 h, resulting in
+τp/τc = 5.8.
+Finally it is worth noting that the solution (5.2) can be used to obtain a rough indication of when
+nonlinear effects are expected to become important. For example, at 850 hPa and x = −a0, and for
+ατp ≈0.72, (5.2) becomes q ≈−0.15(τp/τc)βy exp[−(y −y0)2/b2
+0]. As τp/τc becomes larger
+we expect that the potential vorticity anomaly q (and hence the relative vorticity ∂v/∂x −∂u/∂y)
+will eventually become larger than βy, in which case the factor βy in the last term of (2.6) should
+be replaced by the total potential vorticity and the factor βy in the divergence term of (2.4) should
+be replaced by the absolute vorticity (a nonlinear effect). Although the inclusion of nonlinear
+terms in the case τp/τc = 5.8 should not lead to qualitative changes from the linear solution,
+larger values of τp/τc that cause intense westerly wind bursts (∼15 m s−1) should be expected
+to have signiﬁcant nonlinear effects. For detailed discussions on the role of nonlinear effects the
+reader is referred to Gill and Phlips (1986), Van Tuyl (1987) and Gandu and Silva Dias (1998),
+who have used models similar to ours, and to Majda and Klein (2003), Majda et al. (2004b) and
+Biello and Majda (2005), who have used a systematic multiscale perturbation theory to develop
+simpliﬁed nonlinear (or quasi-linear) model equations for tropical interactions across multiple
+spatial and temporal scales.
+
+===== PAGE 18 =====
+144
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+6. An invertibility principle
+We now show that the wind and mass ﬁelds in the wake of a convective envelope can be
+approximately recovered from the PV through a simple invertibility principle. The argument
+begins by returning to (2.7), written in the form
+∇2ψ + βy
+RΓ
+ ∂
+∂z −1
+ ∂φ
+∂z = q,
+(6.1)
+where ψ is the streamfunction for the rotational part of the ﬂow and ∇2 = ∂2/∂x2 + ∂2/∂y2
+is the horizontal Laplacian operator. Eq. (6.1) can be converted into an invertibility principle
+by introducing an approximate balance relation between the wind and mass ﬁelds, i.e., a relation
+between ψ and φ. The balance approximation used here is derived from the linear balance relation
+∇· (βy∇ψ) = ∇2φ, with the additional assumption that βy can be treated as slowly varying. With
+this additional assumption, the linear balance approximation can be written as ∇2(φ −βyψ) = 0,
+from which, with the condition φ −βyψ →0 as y →±∞, it immediately follows that φ = βyψ.
+Using this in (6.1) we obtain
+∇2ψ + β2y2
+RΓ
+ ∂
+∂z −1
+ ∂ψ
+∂z = q.
+(6.2)
+Concerning the boundary conditions for (6.2), we here use the simple conditions ψ →0 as
+y →±∞and ∂ψ/∂z = 0 at z = 0, zT , noting that the lower condition could easily be generalized
+toallowtemperaturevariationsatz = 0.Eq.(6.2),togetherwithitsboundaryconditions,constitute
+an invertibility principle. From this principle we can recover ψ, and then compute the rotational
+wind ﬁeld from (uψ, vψ) = (−∂ψ/∂y, ∂ψ/∂x) and the mass ﬁeld from φ = βyψ. Although the
+invertibility principle (6.2) can be used in conjunction with an approximate PV equation to form
+a closed balanced theory (see Section 7), our discussion in this section is limited to the use of
+(6.2) as a diagnostic aid for interpretation of the primitive equation model results.
+To solve (6.2) we follow the arguments of Sections 3 and 4 by separating off the vertical
+dependence, assuming the solution is steady in a reference frame moving eastward at speed c,
+and then taking the Fourier transform in the zonal direction. We ﬁnd that (6.2) reduces to
+ϵ1/2
+	
+d2
+dˆy2 −ˆy2
+
+ˆψm −m2 ˆψm = a2ˆqm,
+(6.3)
+where, as before, ˆy = ϵ1/4(y/a) is the dimensionless meridional coordinate.
+We now solve (6.3) by transforming in ˆy. The mathematical apparatus is simpler than in Section
+4, where we introduced the vector inner product (4.8) and the vector transform pair (4.19) and
+(4.20). To solve the scalar Eq. (6.3) we can use the scalar transform pair
+ˆψmn =
+ ∞
+−∞
+ˆψm(ˆy)Hn(ˆy) dˆy,
+(6.4)
+ˆψm(ˆy) =
+∞
+
+n=0
+ˆψmnHn(ˆy).
+(6.5)
+A transform pair similar to (6.4) and (6.5) also exists for ˆqmn, ˆqm(ˆy). Note that (6.4) can be
+obtained through multiplication of (6.5) by Hn′(ˆy), followed by integration over ˆy and use of the
+
+===== PAGE 19 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+145
+orthogonality relation (4.18). Multiplying (6.3) by Hn(ˆy) and integrating over ˆy (i.e., taking the
+Hermite transform of (6.3)) we obtain
+ˆψmn = −
+a2ˆqmn
+m2 + ϵ1/2 (2n + 1).
+(6.6)
+In the derivation of (6.6) we have used two integrations by parts (with vanishing bound-
+ary terms) and the fact that Hn(ˆy) is an eigenfunction of the operator (d2/dˆy2 −ˆy2), i.e.,
+(d2/dˆy2 −ˆy2)Hn(ˆy) = −(2n + 1)Hn(ˆy). The simplicity of the spectral form of the invertibil-
+ity principle (6.6) is in fact due to this eigenfunction property of Hn(ˆy).
+Combining the inverse Hermite transform (6.5), the inverse Fourier transform deﬁned in (4.2),
+and the assumed vertical structure, we obtain
+ψ(ξ, y, z) = Z(z)
+∞
+
+m=−∞
+∞
+
+n=0
+ˆψmnHn(ˆy) eimξ/a,
+(6.7)
+so that the physical space streamfunction ﬁeld can be plotted by substituting (6.6) in (6.7) and
+then numerically evaluating the sums over m and n. However, we would like to examine more than
+just the ψ(ξ, y, z) ﬁeld, in particular the uψ(ξ, y, z), vψ(ξ, y, z), and φ(ξ, y, z) ﬁelds, all of which
+can be determined from the ψ ﬁeld. Noting that uψ = −∂ψ/∂y, vψ = ∂ψ/∂ξ, and φ = βyψ, and
+using the recurrence and derivative relations (4.13) and (4.14), we have
+Fig. 8. The top panel shows the Rossby wave contribution to the q(ξ, y, z) ﬁeld, while the second panel shows the
+uψ(ξ, y, z), vψ(ξ, y, z), φ(ξ, y, z) ﬁelds resulting from the solution of the invertibility principle (6.2) when its right hand
+side is given by the PV ﬁeld shown in the top panel. This ﬁgure is for y0 = 0.
+
+===== PAGE 20 =====
+146
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+⎛
+⎜
+⎝
+uψ(ξ, y, z)
+vψ(ξ, y, z)
+φ(ξ, y, z)
+⎞
+⎟
+⎠= Z(z)
+∞
+
+m=−∞
+∞
+
+n=0
+ˆψmn
+a
+⎛
+⎜
+⎝
+Umn(ξ, ˆy)
+Vmn(ξ, ˆy)
+Φmn(ξ, ˆy)
+⎞
+⎟
+⎠
+(6.8)
+where
+⎛
+⎜
+⎝
+Umn(ξ, ˆy)
+Vmn(ξ, ˆy)
+Φmn(ξ, ˆy)
+⎞
+⎟
+⎠=
+⎛
+⎜
+⎜
+⎜
+⎜
+⎜
+⎜
+⎜
+⎝
+ϵ1/4
+n + 1
+2
+1/2
+Hn+1(ˆy) −
+n
+2
+1/2
+Hn−1(ˆy)
+
+imHn(ˆy)
+¯cϵ1/4
+n + 1
+2
+1/2
+Hn+1(ˆy) +
+n
+2
+1/2
+Hn−1(ˆy)
+
+⎞
+⎟
+⎟
+⎟
+⎟
+⎟
+⎟
+⎟
+⎠
+eimξ/a,
+(6.9)
+which are readily seen to be the Rossby wave approximations of (4.11). To summarize, once
+ˆqmn is known, we can compute ˆψmn from (6.6), and then uψ(ξ, y, z), vψ(ξ, y, z), φ(ξ, y, z) via
+numerical evaluation of (6.8). For ˆqmn in (6.6) we use the Rossby wave contribution to the total
+q(ξ, y, z) ﬁeld given in (4.25), i.e., we set ˆqmn = ˆqmn0, the latter of which is deﬁned in (4.26).
+This is a reasonable approximation since the total q(ξ, y, z) ﬁeld is dominated by the Rossby
+wave contribution. Plots of uψ(ξ, y, z), vψ(ξ, y, z), φ(ξ, y, z) and the Rossby wave contribution
+to q(ξ, y, z) for y0 = 0 are shown in Fig. 8, while the same ﬁelds for y0 = 450 km are shown in
+Fig. 9. A comparison of the second panels in Figs. 8 and 9 with the second panels of Figs. 3 and 5
+shows that the balanced model mass ﬁeld and rotational wind ﬁeld are fairly good approximations
+of the Rossby wave contributions to the primitive equation results, the most apparent difference
+Fig. 9. Same as Fig. 8 but for y0 = 450 km.
+
+===== PAGE 21 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+147
+being that the zonal pressure gradient force at the equator in the primitive equation model is not
+reproduced in the solutions of the invertibility principle.
+7. Concluding remarks
+We have used a linear, equatorial β-plane, primitive equation model as a tool to investigate
+the large-scale wind and mass ﬁelds around a moving heat source near the equator. Within the
+context of the assumed linear dynamics, these ﬁelds have been decomposed into Rossby, mixed
+Rossby-gravity, inertia-gravity, and Kelvin modes. The Rossby modes are responsible for the
+ﬂow pattern west of the moving convective envelope, Kelvin modes for the ﬂow pattern east of
+the convection, and inertia-gravity modes for the divergent ﬂow near the convection, with mixed
+Rossby-gravity modes playing a minor role when the convection is centered near the equator.
+The potential vorticity ﬁeld is almost entirely associated with the Rossby modes and has a form
+crudely analogous to the pair of wing-tip vortices behind a large airplane. The magnitudes of the
+PV anomalies trailing behind the convective region depend on τp/τc, the ratio of the passage time
+to the convective overturning time. The passage time τp is large if the convection moves slowly and
+has large zonal extent, while the overturning time is small if the apparent heat source and surface
+rainfall are large. Such convection produces large PV anomalies and a large equatorial westerly
+wind burst in its wake. With increasing τp/τc nonlinear effects become important. Although
+the patterns produced here by the primitive equation model are qualitatively similar to those
+found using the long wave approximation (e.g., Gill, 1980; Heckley and Gill, 1984; Gill and
+Phlips, 1986; Phlips and Gill, 1987; Chao, 1987), they are more accurate because the long wave
+approximation distorts the dispersion relation for Rossby waves (e.g., Fig. 1 of Stevens et al.,
+1990).
+We have also proposed an equatorial invertibility principle as a method to approximately
+recover the balanced wind and mass ﬁelds from the PV ﬁeld. Solution of this invertibility principle
+conﬁrms that the ﬂow in the wake of an eastward-moving equatorial convective envelope is
+essentially described by balanced dynamics. It is interesting to note that the invertibility principle
+(6.2) can be used as part of a complete balanced theory, i.e., it can be used in conjunction with
+an approximate PV equation. For example, in the context of inviscid, adiabatic ﬂow we could
+consider the system
+∂q
+∂t + β∂ψ
+∂x = 0,
+(7.1)
+∇2ψ + β2y2
+RΓ
+ ∂
+∂z −1
+ ∂ψ
+∂z = q,
+(7.2)
+for the dependent variables q(x, y, z, t) and ψ(x, y, z, t). Using (7.2) in (7.1) we can eas-
+ily obtain a single equation for ψ(x, y, z, t) and then show that solutions proportional to
+Z(z)Hn(ˆy) exp
+
+i(mx/a −νmnt)
+ 
+exist provided that
+νmn
+2Ω = −
+m
+m2 + ϵ1/2(2n + 1).
+(7.3)
+The dimensionless Rossby wave frequencies (7.3) represent an approximation of the low fre-
+quency solutions of the cubic equation (4.10). The approximate Rossby wave frequencies given
+by (7.3) are plotted as the lighter lines in Fig. 10, while the exact primitive equation frequencies
+given by (4.10) are plotted as the darker lines. An inspection of Fig. 10 shows that the balance
+model Rossby wave frequencies (7.3) are very good approximations to the primitive equation
+
+===== PAGE 22 =====
+148
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+Fig. 10. The dark lines show the absolute value of the dimensionless frequencies νmnr/2Ω (n = 0, 1, 2, 3) for the Rossby
+modes (r = 0), as determined from the primitive equation dispersion relation (4.10). The lighter lines show the absolute
+value of the dimensionless frequencies νmn/2Ω (n = 0, 1, 2, 3) as determined from the balanced model dispersion relation
+(7.3).
+frequencies, with the exception of low zonal wavenumber sectoral harmonics, i.e., small |m| for
+n = 0. A simple interpretation of this result is that, in the primitive equation model, the low zonal
+wavenumber sectoral harmonics involve a combination of gravity wave dynamics and potential
+vorticity dynamics, and the balance model is able to accurately capture only the potential vor-
+ticity part of the dynamics. In cases where the n = 0 modes are absent or only weakly forced
+(e.g., when y0 = 0 or y0 ≪b0) one might expect that accurate simulations of the MJO wake
+could be obtained by simply including in (7.1) the same forcing and dissipation terms that ap-
+pear on the right hand side of (2.6). Having constructed solutions of such a model, we found
+that they are not accurate approximations to the primitive equation results discussed in Sec-
+tion 4. The problem is not in the approximation (7.2), but rather in the approximation of βv by
+β∂ψ/∂x in the PV equation. In other words, the problem lies in the neglect of the advection of
+basic state PV by the divergent part of the ﬂow. Examples of such divergent ﬂows are shown in
+the third panels of Figs. 3 and 5. The ﬂows extend poleward of the heated region and result in
+PV anomalies that are stronger and extend farther poleward than in models which approximate
+βv by β∂ψ/∂x.
+In closing we note that it is possible to generalize almost all of these equatorial β-plane results
+to the sphere. In the spherical case the operator analogous to L in (4.7) is more complicated,
+and the corresponding eigenproblem (4.9) is not solvable analytically. Thus, we do not obtain
+
+===== PAGE 23 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+149
+an explicit cubic dispersion relation like (4.10) and a closed form relation for the eigenfunctions
+like (4.11). Rather, the eigenvalues and eigenfunctions must be computed numerically. However,
+excellent software for this purpose has been developed by Swarztrauber and Kasahara (1985).
+Other than the fact that the eigenvalues and eigenfunctions must be numerically tabulated, the basic
+solution procedure is essentially unmodiﬁed. With regard to the invertibility principle, the elliptic
+partial differential equation (6.2) easily generalizes by expressing the Laplacian in spherical
+coordinates and by replacing β2y2 by 4Ω2μ2, where μ = sin( latitude). Then (6.3) generalizes to
+an ordinary differential equation involving the spheroidal wave operator (Abramowitz and Stegun,
+1965, Chapter 21), so that (6.4)–(6.9) need only slight modiﬁcation, with Hn(ˆy) replaced by the
+spheroidal wave functions. In this way we easily obtain a PV invertibility principle valid on the
+whole sphere, a result that is useful for a variety of purposes.
+Acknowledgments
+We are grateful to Paul Ciesielski, Richard Johnson, Brian McNoldy, Mike Montgomery,
+GabrielaMora,ChrisRozoff,RickTaft,JonathanVigh,andTomVonderHaarfortheirhelpandad-
+vice. This research was supported by the National Science Foundation under Grant ATM-0332197
+and by the DoD Center for Geosciences/Atmospheric Research under Cooperative Agreement
+DAAD19-02-2-0005.
+Appendix A. Eigenfunctions for zonally symmetric Rossby modes
+For the zonally symmetric Rossby modes (i.e., for m = 0, n > 0, r = 0), the eigenfunction
+formula (4.11) is indeterminant because both m and ˆν0n0 vanish. However, orthonormal eigenfunc-
+tions are easily constructed in this case by considering m as continuous and applying l’Hospital’s
+rule for the limit m →0. The eigenfunctions for the zonally symmetric Rossby modes are then
+given by
+K0n0(ˆy) = (2n + 1)−(1/2)
+⎛
+⎜
+⎜
+⎜
+⎜
+⎜
+⎜
+⎜
+⎝
+n
+2
+1/2
+Hn+1(ˆy) −
+n + 1
+2
+1/2
+Hn−1(ˆy)
+
+0
+¯c
+n
+2
+1/2
+Hn+1(ˆy) +
+n + 1
+2
+1/2
+Hn−1(ˆy)
+
+⎞
+⎟
+⎟
+⎟
+⎟
+⎟
+⎟
+⎟
+⎠
+.
+(A.1)
+Using (4.18) it can easily be conﬁrmed that the zonally symmetric eigenfunctions (A.1) satisfy
+the orthonormality condition (4.17). Using (4.13) and (4.14) it is also easily conﬁrmed that the
+eigenfunctions (A.1) correspond to geostrophically balanced zonal ﬂows.
+Appendix B. Normal mode transform of the heating function
+Using the deﬁnition of ˆQm(y) given by (4.7) and (4.5), the inner product deﬁnition (4.8), and
+the formula (4.11) for the kernel Kmnr(ˆy), we can write the inner product ˆQmnr = ( ˆQm, Kmnr) as
+integrals of exp[−(ˆy −ˆy0)2/ˆb2
+0]Hn+1(ˆy) and exp[−(ˆy −ˆy0)2/ˆb2
+0]Hn−1(ˆy). These integrals can
+
+===== PAGE 24 =====
+150
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+be evaluated using the following result from (Gradshteyn and Ryzhik (1994), page 843):
+ ∞
+−∞
+exp
+
+−(ˆy −ˆy0)2
+ˆb2
+0
+
+Hn(ˆy)dˆy =
+	
+2πˆb2
+0
+2 + ˆb2
+0
+
+1/2 	
+2 −ˆb2
+0
+2 + ˆb2
+0
+
+n/2
+× exp
+
+ˆb2
+0ˆy2
+0
+(4 −ˆb4
+0)
+
+Hn
+	
+2ˆy0
+(4 −ˆb4
+0)1/2
+
+(B.1)
+for 0 ≤ˆb0 < 21/2.
+References
+Abramowitz, M., Stegun, I.A., 1965. Handbook of Mathematical Functions. Dover Publications, Mineola, New York.
+Biello, J.A., Majda, A.J., 2005. A new multiscale model for the Madden–Julian oscillation. J. Atmos. Sci. 62, 1694–1721.
+Chang, C.-P., Lim, H., 1988. Kelvin wave-CISK: a possible mechanism for the 30–50 day oscillation. J. Atmos. Sci. 45,
+1709–1720.
+Chao, W.C., 1987. On the origin of the tropical intraseasonal oscillation. J. Atmos. Sci. 44, 1940–1949.
+Emanuel, K.A., 1987. An air–sea interaction model of intraseasonal oscillations in the tropics. J. Atmos. Sci. 44, 2324–
+2340.
+Flatau, M., Flatau, P.J., Phoebus, P., Niiler, P.P., 1997. The feedback between equatorial convection and local radiative
+and evaporative processes: the implications for intraseasonal oscillations. J. Atmos. Sci. 54, 2373–2386.
+Gandu, A.W., Silva Dias, P.L., 1998. Impact of tropical heat sources on the South American tropospheric upper circulation
+and subsidence. J. Geophys. Res. 103, 6001–6015.
+Gill, A.E., 1980. Some simple solutions for heat induced tropical circulation. Q. J. R. Meteorol. Soc. 106, 447–462.
+Gill, A.E., Phlips, P.J., 1986. Nonlinear effects on heat induced circulation of the tropical atmosphere. Q. J. R. Meteorol.
+Soc. 112, 69–91.
+Gradshteyn, I.S., Ryzhik, I.M., 1994. Table of Integrals, Series, and Products, ﬁfth ed. Academic Press, New York.
+Hausman, S.A., Ooyama, K.V., Schubert, W.H., 2006. Potential vorticity structure of simulated hurricanes. J. Atmos. Sci.
+62, 87–108.
+Heckley, W.A., Gill, A.E., 1984. Some simple analytic solutions to the problem of forced equatorial long waves. Q. J. R.
+Meteorol. Soc. 110, 203–217.
+Hendon, H.H., 2005. Air–sea interaction. In: Lau, W.K.-M., Waliser, D. (Eds.), Intraseasonal Variability in the
+Atmosphere–Ocean Climate System. Springer-Praxis, Chichester, UK, pp. 223–246.
+Hendon, H.H., Liebmann, B., 1994. Organization of convection within the Madden–Julian oscillation. J. Geophys. Res.
+99, 8073–8083.
+Hendon, H.H., Salby, M.L., 1994. The life cycle of the Madden–Julian oscillation. J. Atmos. Sci. 51, 2225–2237.
+Hu, Q., Randall, D.A., 1994. Low-frequency oscillations in radiative–convective systems. J. Atmos. Sci. 51, 1089–1099.
+Hu, Q., Randall, D.A., 1995. Low-frequency oscillations in radiative–convective systems. Part II: An idealized model. J.
+Atmos. Sci. 52, 478–490.
+Johnson, R.H., Ciesielski, P.E., 2000. Rainfall and radiative heating rates from the TOGA COARE atmospheric budgets.
+J. Atmos. Sci. 57, 1497–1514.
+Kiladis, G., Straub, K.H., Haertel, P.T., 2005. Zonal and vertical structure of the Madden–Julian oscillation. J. Atmos.
+Sci. 62, 2790–2809.
+Liebmann, B., Hendon, H.H., Glick, J.D., 1994. The relationship between tropical cyclones of the western Paciﬁc and
+Indian Oceans and the Madden–Julian oscillation. J. Meteorol. Soc. Japan 72, 401–412.
+Lietzke, C.E., Deser, C., Vonder Haar, T.H., 2001. Evolutionary structure of the eastern Paciﬁc double ITCZ based on
+satellite moisture proﬁle retrievals. J. Clim. 14, 743–751.
+Lin, J.-L., Zhang, M., Mapes, B., 2005. Zonal momentum budget of the Madden–Julian oscillation: the source and strength
+of equivalent linear damping. J. Atmos. Sci. 62, 2172–2188.
+Lin, X., Johnson, R.H., 1996a. Kinematic and thermodynamic characteristics of the ﬂow over the western Paciﬁc warm
+pool during TOGA COARE. J. Atmos. Sci. 53, 695–715.
+Lin, X., Johnson, R.H., 1996b. Heating, moistening, and rainfall over the western Paciﬁc warm pool during TOGA
+COARE. J. Atmos. Sci. 53, 3367–3383.
+
+===== PAGE 25 =====
+W.H. Schubert, M.T. Masarik / Dynamics of Atmospheres and Oceans 42 (2006) 127–151
+151
+Madden, R.A., Julian, P.R., 1994. Observations of the 40–50-day tropical oscillation—A review. Mon. Wea. Rev. 122,
+814–837.
+Madden, R.A., Julian, P.R., 2005. Historical Perspective. In: Lau, W.K.-M., Waliser, D. (Eds.), Intraseasonal Variability
+in the Atmosphere–Ocean Climate System. Springer-Praxis, Chichester, UK, pp. 1–16.
+Majda, A.J., Biello, J.A., 2004a. A multiscale model for tropical intraseasonal oscillations. Proc. Natl. Acad. Sci. 101,
+4736–4741.
+Majda, A.J., Klein, R., 2003. Systematic multiscale models for the tropics. J. Atmos. Sci. 60, 393–408.
+Majda, A.J., Khouider, B., Kiladis, G.N., Straub, K.H., Shefter, M.G., 2004b. A model for convectively coupled tropical
+waves: Nonlinearity, rotation, and comparison with observations. J. Atmos. Sci. 61, 2188–2205.
+Matsuno, T., 1966. Quasi-geostrophic motions in the equatorial area. J. Meteorol. Soc. Jpn. 44, 25–43.
+Neelin, J.D., Held, I.M., Cook, K.H., 1987. Evaporation-wind feedback and low-frequency variability in the tropical
+atmosphere. J. Atmos. Sci. 44, 2341–2348.
+Philander, S.G., Gu, D., Halpern, D., Lambert, G., Lau, N.-C., Li, T., Pacanowski, R.C., 1996. Why the ITCZ is mostly
+north of the equator. J. Clim. 9, 2958–2972.
+Phlips, P.J., Gill, A.E., 1987. An analytic model of the heat-inducedtropical circulation in the presence of a mean wind.
+Q. J. R. Meteorol. Soc. 113, 213–236.
+Raymond, D.J., 2001. A new model of the Madden–Julian oscillation. J. Atmos. Sci. 58, 2807–2819.
+Schubert, W.H., Ciesielski, P.E., Stevens, D.E., Kuo, H.-C., 1991. Potential vorticity modeling of the ITCZ and the Hadley
+circulation. J. Atmos. Sci. 48, 1493–1509.
+Silva Dias, P.L., Schubert, W.H., DeMaria, M., 1983. Large-scale response of the tropical atmosphere to transient con-
+vection. J. Atmos. Sci. 40, 2689–2707.
+Slingo, J.M., Inness, P.M., Sperber, K.R., 2005. Modeling. In: Lau, W.K.-M., Waliser, D. (Eds.), Intraseasonal Variability
+in the Atmosphere–Ocean Climate System. Springer-Praxis, Chichester, UK, pp. 361–388.
+Stevens, D.E., Kuo, H.-C., Schubert, W.H., Ciesielski, P.E., 1990. Quasi-balanced dynamics in the tropics. J. Atmos. Sci.
+47, 2262–2273.
+Straub, K.H., Kiladis, G.N., 2003a. Extratropical forcing of convectively coupled Kelvin waves during austral winter. J.
+Atmos. Sci. 60, 526–543.
+Straub, K.H., Kiladis, G.N., 2003b. Interactions between the boreal summer intraseasonal oscillation and higher-frequency
+tropical wave activity. Mon. Wea. Rev. 131, 945–960.
+Swarztrauber, P.N., Kasahara, A., 1985. The vector harmonic analysis of Laplace’s tidal equations. SIAM J. Sci. Stat.
+Comput. 6, 464–491.
+Van Tuyl, A.H., 1987. Nonlinearities in low-frequency equatorial waves. J. Atmos. Sci. 44, 2478–2492.
+Waliser, D.E., Somerville, R.C.J., 1994. Preferred latitude of the intertropical convergence zone. J. Atmos. Sci. 51,
+1619–1639.
+Wang, B., 2005. Theory. In: Lau, W.K.-M., Waliser, D. (Eds.), Intraseasonal Variability in the Atmosphere–Ocean Climate
+System. Springer-Praxis, Chichester, UK, pp. 307–351.
+Wu, Z., Moore, D.W., 2004. The completeness of eigenfunctions of the tidal equation on an equatorial beta plane. J.
+Atmos. Sci. 61, 769–774.
+Yanai, M., Chen, B., Tung, W.-W., 2000. The Madden–Julian oscillation observed during the TOGA COARE IOP: Global
+view. J. Atmos. Sci. 57, 2374–2396.
+Zhang, C., 2005. Madden–Julian oscillation. Rev. Geophys. 43, doi:10.1029/2004RG000158.
