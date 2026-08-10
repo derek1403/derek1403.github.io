@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Physical Field Recovery and Zero Kelvin PV (物理場的還原與 Kelvin 波的零位渦) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PV Wake of a Moving Heat Source (移動熱源的 PV 尾流與三個控制參數)" href="PV_Wake_of_a_Moving_Heat_Source.html" />
+    <link rel="prev" title="Projection of a Moving Heat Source (東移熱源的緯向傅立葉係數與模態投影)" href="Projection_of_a_Moving_Heat_Source.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Physical Field Recovery and Zero Kelvin PV (物理場的還原與 Kelvin 波的零位渦)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-recovery-of-the-wind-and-mass-fields">(a) proof 風場與質量場的還原 (Recovery of the wind and mass fields)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-recovery-of-the-potential-vorticity-field">(b) proof 位渦場的還原 (Recovery of the potential vorticity field)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-spectral-coefficient-of-the-pv">(c) proof 位渦的譜係數 (Spectral coefficient of the PV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-kelvin-zero-potential-vorticity-of-the-kelvin-wave">(d) proof Kelvin 波的位渦為零 (Zero potential vorticity of the Kelvin wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-recovery-of-the-vertical-velocity">(e) proof 垂直速度的還原 (Recovery of the vertical velocity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pv-mathcal-h-n">為什麼 PV 只剩單一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">那個「精確為零」有多硬</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pv">慣性重力波的 PV：赤道與中緯度的差別</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">端點①到此完成</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="physical-field-recovery-and-zero-kelvin-pv-kelvin">
+<h1>Physical Field Recovery and Zero Kelvin PV (物理場的還原與 Kelvin 波的零位渦)<a class="headerlink" href="#physical-field-recovery-and-zero-kelvin-pv-kelvin" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>端點①的收尾。</strong> 把 <a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a> 的譜係數 <span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span>
+轉回物理空間的 <span class="math notranslate nohighlight">\(u, v, \phi, q, w\)</span>，並證明本文後半段最關鍵的一個事實。</p>
+<ul class="simple">
+<li><p>(a) 風場與質量場的還原：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix}u \cr v \cr \phi\end{pmatrix}\left(\xi, y, z\right) = Z(z)\sum_{m = -\infty}^{\infty}\sum_{n = -1}^{\infty}\sum_{r}\hat{\eta}_{mnr}\begin{pmatrix}U_{mnr}(\hat{y}) \cr V_{mnr}(\hat{y}) \cr \Phi_{mnr}(\hat{y})\end{pmatrix}e^{im\xi/a}\]</div>
+<ul class="simple">
+<li><p>(b) 位渦場的還原 —— 每個模態的 PV <strong>只含單一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q\left(\xi, y, z\right) = Z(z)\sum_{m = -\infty}^{\infty}\sum_{n = -1}^{\infty}\sum_{r}\hat{q}_{mnr}\,\mathcal{H}_n(\hat{y})\,e^{im\xi/a}\]</div>
+<ul class="simple">
+<li><p>(c) 位渦的譜係數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{q}_{mnr} = A_{mnr}\left(\frac{m^{2} - \epsilon\hat{\nu}_{mnr}^{2}}{a\,\hat{\nu}_{mnr}}\right)\hat{\eta}_{mnr}\]</div>
+<ul class="simple">
+<li><p>(d) <strong>★ Kelvin 波的位渦恰好為零：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{q}_{m,-1,2} = 0\]</div>
+<ul class="simple">
+<li><p>(e) 垂直速度的還原：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[w\left(\xi, y, z\right) = \frac{Z'(z)}{R\Gamma}\sum_{m = -\infty}^{\infty}\sum_{n = -1}^{\infty}\sum_{r}i\nu_{mnr}\,\hat{\eta}_{mnr}\,\Phi_{mnr}(\hat{y})\,e^{im\xi/a}\]</div>
+<ul class="simple">
+<li><p>註：(a)–(e) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((4.24)\)</span>–<span class="math notranslate nohighlight">\((4.27)\)</span>。</p></li>
+<li><p>註：<strong>(d) 是全文最重要的一條負面結果。</strong> 它說 Kelvin 波把它所有的資訊都藏在 PV <strong>以外</strong>的地方。這直接導致 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">可逆性原理</span></a>（端點③）救不回對流<strong>東側</strong>的流場 —— 那不是近似不夠好，而是<strong>資訊在 <span class="math notranslate nohighlight">\(q\)</span> 這個變數裡根本不存在</strong>。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.html#a-proof-normal-mode-expansion">正規模態展開與傅立葉逆轉換 (Normal mode expansion and inverse Fourier transform)</a>：</strong> 已於本庫 <a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">Forced Response of Equatorial Modes</span></a>【證明 (a)】與 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (b)】完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 正規模態展開：</p>
+<div class="math notranslate nohighlight">
+\[\hat{\boldsymbol{\eta}}_m(\hat{y}) = \sum_{n = -1}^{\infty}\sum_{r}\hat{\eta}_{mnr}\mathbf{K}_{mnr}(\hat{y})\]</div>
+</li>
+<li><p>(b) 緯向傅立葉逆轉換：</p>
+<div class="math notranslate nohighlight">
+\[\hat{\boldsymbol{\eta}}\left(\xi, y\right) = \sum_{m = -\infty}^{\infty}\hat{\boldsymbol{\eta}}_m(y)\,e^{im\xi/a}\]</div>
+</li>
+<li><p>(c) 垂直分離：</p>
+<div class="math notranslate nohighlight">
+\[\left(u,\ v,\ \phi\right) = \left(\hat{u},\ \hat{v},\ \hat{\phi}\right)Z(z), \qquad \left(T,\ w,\ Q\right) = \left(\hat{T},\ \hat{w},\ \hat{Q}\right)Z'(z)\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span> : 正規模態展開係數 (Expansion coefficient) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr} = \left(U_{mnr},\ V_{mnr},\ \Phi_{mnr}\right)^{\mathsf{T}}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\boldsymbol{\eta}}_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個緯向波數的狀態向量 (State vector) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{T}\)</span> : 溫度的水平結構函數 (Horizontal structure function of the temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 垂直速度的水平結構函數 (Horizontal structure function of the vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#assumptions-preliminaries">位渦距平的定義與垂直結構方程式 (PV anomaly and the vertical structure equation)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【定義 1】與 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">Vertical Structure Equation in Log-Pressure</span></a>【證明 (a)】完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 位渦距平：</p>
+<div class="math notranslate nohighlight">
+\[q = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + \frac{\beta y}{R\Gamma}\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z}\]</div>
+</li>
+<li><p>(b) 垂直結構方程式：</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{d}{dz} - 1\right)\frac{dZ}{dz} = -\lambda Z, \qquad \lambda = \frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\]</div>
+</li>
+<li><p>(c) 等效重力波速：</p>
+<div class="math notranslate nohighlight">
+\[\bar{c}^{2} = \frac{R\Gamma}{\lambda}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">本徵值問題的三條分量式 (The three component equations of the eigenvalue problem)</a>：</strong> 由本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【定義 4】的算符與本徵值方程 <span class="math notranslate nohighlight">\(\mathcal{L}\mathbf{K}_{mnr} = i\nu_{mnr}\mathbf{K}_{mnr}\)</span> 逐列讀出</p>
+<ul>
+<li><p>(a) 第一列：</p>
+<div class="math notranslate nohighlight">
+\[-\beta y\,V_{mnr} + \frac{im}{a}\Phi_{mnr} = i\nu_{mnr}U_{mnr}\]</div>
+</li>
+<li><p>(b) 第二列：</p>
+<div class="math notranslate nohighlight">
+\[\beta y\,U_{mnr} + \frac{d\Phi_{mnr}}{dy} = i\nu_{mnr}V_{mnr}\]</div>
+</li>
+<li><p>(c) 第三列：</p>
+<div class="math notranslate nohighlight">
+\[\bar{c}^{2}\left(\frac{im}{a}U_{mnr} + \frac{dV_{mnr}}{dy}\right) = i\nu_{mnr}\Phi_{mnr}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr} = \left(U_{mnr},\ V_{mnr},\ \Phi_{mnr}\right)^{\mathsf{T}}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U,\ V\)</span> : 本徵函數的速度分量 (Velocity components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#a-proof-explicit-form-of-the-eigenfunctions">本徵函數的第二分量與 Kelvin 波的本徵值 (Second component of the eigenfunction and the Kelvin eigenvalue)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">Equatorial Wave Eigenfunctions</span></a> 與 <a class="reference internal" href="Matsuno_Dispersion_Relation.html"><span class="std std-doc">Matsuno Dispersion Relation</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 第二分量：</p>
+<div class="math notranslate nohighlight">
+\[V_{mnr}(\hat{y}) = -i\,A_{mnr}\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_n(\hat{y})\]</div>
+</li>
+<li><p>(b) Kelvin 波的本徵值：</p>
+<div class="math notranslate nohighlight">
+\[\epsilon^{1/2}\hat{\nu}_{m,-1,2} = m\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(A_{mnr}\)</span> : 歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : 無因次本徵頻率 (Dimensionless eigenfrequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\hat{\nu}_{mnr} = \nu_{mnr}/\left(2\Omega\right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr} = \left(U_{mnr},\ V_{mnr},\ \Phi_{mnr}\right)^{\mathsf{T}}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#d-proof-diagnostic-recovery-of-the-vertical-velocity">垂直速度的診斷關係 (Diagnostic relation for the vertical velocity)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (d)】完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\hat{w}_m = \frac{1}{\lambda}\left(\frac{im}{a}\hat{u}_m + \frac{d\hat{v}_m}{dy}\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 垂直速度的水平結構函數 (Horizontal structure function of the vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 級數可逐項微分 (Term-by-term differentiation of the series)：</strong> 展開式在物理空間收斂夠好，微分算子可與兩層求和交換</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial s}\left[\sum_{m}\sum_{n,r}\left(\cdot\right)\right] = \sum_{m}\sum_{n,r}\frac{\partial}{\partial s}\left(\cdot\right) \qquad \left(s = \xi,\ y,\ z\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s\)</span> : 積分變數 (Integration variable) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 頻率不為零 (Nonzero eigenfrequency)：</strong> 【推導 2】要除以 <span class="math notranslate nohighlight">\(\nu_{mnr}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\nu_{mnr} \neq 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：唯一的例外是緯向對稱的羅斯貝模態（<span class="math notranslate nohighlight">\(m = 0\)</span>、<span class="math notranslate nohighlight">\(n &gt; 0\)</span>、<span class="math notranslate nohighlight">\(r = 0\)</span>）。那些模態由 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">赤道波本徵函數</span></a>【證明 (f)】可知是地轉平衡的定常緯向流，其 PV 需另外由【已知 2】(a) 直接計算。</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 位渦的譜係數 (Spectral coefficient of the PV)：</strong> 位渦場在 <span class="math notranslate nohighlight">\(\left(m, n, r\right)\)</span> 模態上的振幅</p>
+<div class="math notranslate nohighlight">
+\[\hat{q}_{mnr} \overset{\text{def}}{=} \text{位渦場中對應於 } \mathcal{H}_n(\hat{y})e^{im\xi/a}Z(z) \text{ 的係數}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{q}_{mnr}\)</span> : 位渦的譜係數 (Spectral PV coefficient) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 位渦在垂直分離後的形式 (PV after the vertical separation)：</strong> <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} - 1\right)\dfrac{\partial\phi}{\partial z}\)</span> 這一串被垂直結構方程式換成 <span class="math notranslate nohighlight">\(-\lambda\hat{\phi}Z\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  q &amp;\overset{\text{已知 2(a)}}{=}&amp; \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + \frac{\beta y}{R\Gamma}\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z} \\
+  &amp;\overset{\text{已知 1(c)}}{=}&amp; \left[\frac{\partial \hat{v}}{\partial x} - \frac{\partial \hat{u}}{\partial y}\right]Z + \frac{\beta y}{R\Gamma}\hat{\phi}\left(\frac{d}{dz} - 1\right)\frac{dZ}{dz} \\
+  &amp;\overset{\text{已知 2(b)}}{=}&amp; \left[\frac{\partial \hat{v}}{\partial x} - \frac{\partial \hat{u}}{\partial y}\right]Z - \frac{\lambda\,\beta y}{R\Gamma}\hat{\phi}\,Z \\
+  &amp;\overset{\text{已知 2(c)}}{=}&amp; \left[\frac{\partial \hat{v}}{\partial x} - \frac{\partial \hat{u}}{\partial y} - \frac{\beta y}{\bar{c}^{2}}\hat{\phi}\right]Z
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p>註：<strong>位渦與 <span class="math notranslate nohighlight">\(u, v, \phi\)</span> 掛在同一個 <span class="math notranslate nohighlight">\(Z(z)\)</span> 上</strong>（不是 <span class="math notranslate nohighlight">\(Z'\)</span>）。這就是【證明 (b)】的 <span class="math notranslate nohighlight">\(q\)</span> 也帶著 <span class="math notranslate nohighlight">\(Z(z)\)</span> 的原因，也是 <span class="math notranslate nohighlight">\(q\)</span> 在對流層上下層反號的原因。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 單一模態的位渦（關鍵恆等式）(PV of a single mode — the key identity)：</strong> 把三條本徵方程式組合起來，<span class="math notranslate nohighlight">\(\Phi\)</span> 與 <span class="math notranslate nohighlight">\(\dfrac{dV}{dy}\)</span> 全部對消，只剩 <span class="math notranslate nohighlight">\(\beta V\)</span></p>
+<ul>
+<li><p>(a) 令 <span class="math notranslate nohighlight">\(\mathcal{Q}_{mnr}\)</span> 為單一模態的位渦結構函數：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{Q}_{mnr} \overset{\text{let}}{=} \frac{im}{a}V_{mnr} - \frac{dU_{mnr}}{dy} - \frac{\beta y}{\bar{c}^{2}}\Phi_{mnr}\]</div>
+</li>
+<li><p>(b) 三項各自乘上 <span class="math notranslate nohighlight">\(i\nu_{mnr}\)</span> 後用【已知 3】換掉：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    i\nu_{mnr}\,\frac{im}{a}V_{mnr} &amp;\overset{\text{已知 3(b)}}{=}&amp; \frac{im}{a}\left[\beta y\,U_{mnr} + \frac{d\Phi_{mnr}}{dy}\right] \\
+    i\nu_{mnr}\,\frac{dU_{mnr}}{dy} &amp;\overset{\text{已知 3(a)}}{=}&amp; \frac{d}{dy}\left[-\beta y\,V_{mnr} + \frac{im}{a}\Phi_{mnr}\right] \\
+    i\nu_{mnr}\,\frac{dU_{mnr}}{dy} &amp;=&amp; -\beta V_{mnr} - \beta y\frac{dV_{mnr}}{dy} + \frac{im}{a}\frac{d\Phi_{mnr}}{dy} \\
+    i\nu_{mnr}\,\frac{\beta y}{\bar{c}^{2}}\Phi_{mnr} &amp;\overset{\text{已知 3(c)}}{=}&amp; \beta y\left[\frac{im}{a}U_{mnr} + \frac{dV_{mnr}}{dy}\right]
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 三項相減，除了 <span class="math notranslate nohighlight">\(\beta V_{mnr}\)</span> 之外全數對消：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    i\nu_{mnr}\,\mathcal{Q}_{mnr} &amp;\overset{\text{推導 2(a)(b)}}{=}&amp; \frac{im}{a}\beta y\,U_{mnr} + \frac{im}{a}\frac{d\Phi_{mnr}}{dy} + \beta V_{mnr} + \beta y\frac{dV_{mnr}}{dy} - \frac{im}{a}\frac{d\Phi_{mnr}}{dy} - \frac{im}{a}\beta y\,U_{mnr} - \beta y\frac{dV_{mnr}}{dy} \\
+    i\nu_{mnr}\,\mathcal{Q}_{mnr} &amp;=&amp; \beta V_{mnr} \\
+    \mathcal{Q}_{mnr} &amp;\overset{\text{假設 2}}{=}&amp; \frac{\beta V_{mnr}}{i\nu_{mnr}}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{Q}_{mnr}\)</span> : 單一模態的位渦結構函數 (PV structure function of a single mode) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr} = \left(U_{mnr},\ V_{mnr},\ \Phi_{mnr}\right)^{\mathsf{T}}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U,\ V\)</span> : 本徵函數的速度分量 (Velocity components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 位渦結構函數的顯式 (Explicit form of the PV structure function)：</strong> 把【已知 4】(a) 代進【推導 2】(c)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \mathcal{Q}_{mnr} &amp;\overset{\text{推導 2(c)}}{=}&amp; \frac{\beta}{i\nu_{mnr}}V_{mnr} \\
+  &amp;\overset{\text{已知 4(a)}}{=}&amp; \frac{\beta}{i\nu_{mnr}}\left(-i\right)A_{mnr}\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_n \\
+  &amp;=&amp; \frac{\beta}{\nu_{mnr}}A_{mnr}\left(m^{2} - \epsilon\hat{\nu}_{mnr}^{2}\right)\mathcal{H}_n \\
+  &amp;\overset{\text{已知 4}}{=}&amp; \frac{2\Omega/a}{2\Omega\hat{\nu}_{mnr}}A_{mnr}\left(m^{2} - \epsilon\hat{\nu}_{mnr}^{2}\right)\mathcal{H}_n \\
+  &amp;=&amp; A_{mnr}\left(\frac{m^{2} - \epsilon\hat{\nu}_{mnr}^{2}}{a\,\hat{\nu}_{mnr}}\right)\mathcal{H}_n
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{Q}_{mnr}\)</span> : 單一模態的位渦結構函數 (PV structure function of a single mode) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr} = \left(U_{mnr},\ V_{mnr},\ \Phi_{mnr}\right)^{\mathsf{T}}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{mnr}\)</span> : 歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : 無因次本徵頻率 (Dimensionless eigenfrequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\hat{\nu}_{mnr} = \nu_{mnr}/\left(2\Omega\right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-recovery-of-the-wind-and-mass-fields">
+<h3>(a) proof 風場與質量場的還原 (Recovery of the wind and mass fields)<a class="headerlink" href="#a-proof-recovery-of-the-wind-and-mass-fields" title="Link to this heading">#</a></h3>
+<p>三層轉換各自反轉：正規模態、緯向傅立葉、垂直結構。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\begin{pmatrix}u \cr v \cr \phi\end{pmatrix} &amp;\overset{\text{已知 1(c)}}{=}&amp; \hat{\boldsymbol{\eta}}\left(\xi, y\right)Z(z) \\
+&amp;\overset{\text{已知 1(b)}}{=}&amp; Z(z)\sum_{m = -\infty}^{\infty}\hat{\boldsymbol{\eta}}_m(\hat{y})\,e^{im\xi/a} \\
+&amp;\overset{\text{已知 1(a)}}{=}&amp; Z(z)\sum_{m = -\infty}^{\infty}\sum_{n = -1}^{\infty}\sum_{r}\hat{\eta}_{mnr}\begin{pmatrix}U_{mnr}(\hat{y}) \cr V_{mnr}(\hat{y}) \cr \Phi_{mnr}(\hat{y})\end{pmatrix}e^{im\xi/a}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-recovery-of-the-potential-vorticity-field">
+<h3>(b) proof 位渦場的還原 (Recovery of the potential vorticity field)<a class="headerlink" href="#b-proof-recovery-of-the-potential-vorticity-field" title="Link to this heading">#</a></h3>
+<p>把【證明 (a)】代進【推導 1】的括號裡，每個模態的貢獻由【推導 2】(a) 的 <span class="math notranslate nohighlight">\(\mathcal{Q}_{mnr}\)</span> 給出，再由【推導 3】換成 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+q &amp;\overset{\text{推導 1}}{=}&amp; \left[\frac{\partial \hat{v}}{\partial x} - \frac{\partial \hat{u}}{\partial y} - \frac{\beta y}{\bar{c}^{2}}\hat{\phi}\right]Z(z) \\
+&amp;\overset{\text{證明 (a),假設 1}}{=}&amp; Z(z)\sum_{m}\sum_{n, r}\hat{\eta}_{mnr}\left[\frac{im}{a}V_{mnr} - \frac{dU_{mnr}}{dy} - \frac{\beta y}{\bar{c}^{2}}\Phi_{mnr}\right]e^{im\xi/a} \\
+&amp;\overset{\text{推導 2(a)}}{=}&amp; Z(z)\sum_{m}\sum_{n, r}\hat{\eta}_{mnr}\,\mathcal{Q}_{mnr}\,e^{im\xi/a} \\
+&amp;\overset{\text{推導 3}}{=}&amp; Z(z)\sum_{m}\sum_{n, r}\hat{\eta}_{mnr}A_{mnr}\left(\frac{m^{2} - \epsilon\hat{\nu}_{mnr}^{2}}{a\,\hat{\nu}_{mnr}}\right)\mathcal{H}_n(\hat{y})\,e^{im\xi/a}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c-proof-spectral-coefficient-of-the-pv">
+<h3>(c) proof 位渦的譜係數 (Spectral coefficient of the PV)<a class="headerlink" href="#c-proof-spectral-coefficient-of-the-pv" title="Link to this heading">#</a></h3>
+<p>對照【證明 (b)】與【定義 1】即得。</p>
+<div class="math notranslate nohighlight">
+\[\hat{q}_{mnr} \overset{\text{定義 1,證明 (b)}}{=} A_{mnr}\left(\frac{m^{2} - \epsilon\hat{\nu}_{mnr}^{2}}{a\,\hat{\nu}_{mnr}}\right)\hat{\eta}_{mnr}\]</div>
+</section>
+<section id="d-proof-kelvin-zero-potential-vorticity-of-the-kelvin-wave">
+<h3>(d) proof Kelvin 波的位渦為零 (Zero potential vorticity of the Kelvin wave)<a class="headerlink" href="#d-proof-kelvin-zero-potential-vorticity-of-the-kelvin-wave" title="Link to this heading">#</a></h3>
+<p>Kelvin 波的頻散關係讓【證明 (c)】分子的括號<strong>精確</strong>歸零。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+m^{2} - \epsilon\hat{\nu}_{m,-1,2}^{2} &amp;\overset{\text{已知 4(b)}}{=}&amp; m^{2} - \epsilon\left(\frac{m}{\epsilon^{1/2}}\right)^{2} \\
+m^{2} - \epsilon\hat{\nu}_{m,-1,2}^{2} &amp;=&amp; m^{2} - m^{2} \\
+m^{2} - \epsilon\hat{\nu}_{m,-1,2}^{2} &amp;=&amp; 0 \\
+\hat{q}_{m,-1,2} &amp;\overset{\text{證明 (c)}}{=}&amp; A_{m,-1,2}\cdot\frac{0}{a\,\hat{\nu}_{m,-1,2}}\cdot\hat{\eta}_{m,-1,2} \\
+\hat{q}_{m,-1,2} &amp;=&amp; 0
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="e-proof-recovery-of-the-vertical-velocity">
+<h3>(e) proof 垂直速度的還原 (Recovery of the vertical velocity)<a class="headerlink" href="#e-proof-recovery-of-the-vertical-velocity" title="Link to this heading">#</a></h3>
+<p>診斷關係中的括號恰好是【已知 3】(c) 的左端，可直接換成 <span class="math notranslate nohighlight">\(i\nu\Phi/\bar{c}^{2}\)</span>；再用 <span class="math notranslate nohighlight">\(\lambda\bar{c}^{2} = R\Gamma\)</span> 收尾。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+w &amp;\overset{\text{已知 1(c)}}{=}&amp; \hat{w}\left(\xi, y\right)Z'(z) \\
+&amp;\overset{\text{已知 1(b),已知 5}}{=}&amp; Z'(z)\sum_{m}\frac{1}{\lambda}\left[\frac{im}{a}\hat{u}_m + \frac{d\hat{v}_m}{dy}\right]e^{im\xi/a} \\
+&amp;\overset{\text{已知 1(a),假設 1}}{=}&amp; \frac{Z'(z)}{\lambda}\sum_{m}\sum_{n, r}\hat{\eta}_{mnr}\left[\frac{im}{a}U_{mnr} + \frac{dV_{mnr}}{dy}\right]e^{im\xi/a} \\
+&amp;\overset{\text{已知 3(c)}}{=}&amp; \frac{Z'(z)}{\lambda\bar{c}^{2}}\sum_{m}\sum_{n, r}i\nu_{mnr}\hat{\eta}_{mnr}\,\Phi_{mnr}(\hat{y})\,e^{im\xi/a} \\
+&amp;\overset{\text{已知 2(c)}}{=}&amp; \frac{Z'(z)}{R\Gamma}\sum_{m}\sum_{n, r}i\nu_{mnr}\hat{\eta}_{mnr}\,\Phi_{mnr}(\hat{y})\,e^{im\xi/a}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>物理解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="pv-mathcal-h-n">
+<h3>為什麼 PV 只剩單一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span><a class="headerlink" href="#pv-mathcal-h-n" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(u, v, \phi\)</span> 每一個模態都是 <span class="math notranslate nohighlight">\(\mathcal{H}_{n+1}\)</span>、<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span>、<span class="math notranslate nohighlight">\(\mathcal{H}_{n-1}\)</span> 三個函數的混合（見 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">赤道波本徵函數</span></a>【證明 (a)】）。但【證明 (b)】說 <strong>PV 只剩中間那一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></strong>。</p>
+<p>原因藏在【推導 2】：三條本徵方程式組合之後，<span class="math notranslate nohighlight">\(\Phi_{mnr}\)</span> 與 <span class="math notranslate nohighlight">\(\dfrac{dV_{mnr}}{dy}\)</span> 全部對消，只剩 <span class="math notranslate nohighlight">\(\beta V_{mnr}\)</span> —— 而 <span class="math notranslate nohighlight">\(V_{mnr}\)</span> 本來就只含 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span>。</p>
+<p><strong>PV 是一個「乾淨」的變數</strong>：它把每個模態的三重結構壓成單一階。這正是它適合當診斷量、也適合當可逆性原理的輸入的原因。</p>
+</section>
+<section id="id4">
+<h3>那個「精確為零」有多硬<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>【證明 (d)】不是「很小」，是<strong>代數恆等式</strong>。Kelvin 波的頻散關係 <span class="math notranslate nohighlight">\(\epsilon^{1/2}\hat{\nu} = m\)</span> 一代進去，<span class="math notranslate nohighlight">\(m^{2} - \epsilon\hat{\nu}^{2}\)</span> 就是零，沒有任何近似。</p>
+<p>它的物理意義是：<strong>Kelvin 波在赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上是純重力波，不攜帶任何位渦。</strong> 這件事的後果非常嚴重：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>場</p></th>
+<th class="head"><p>Kelvin 波有沒有貢獻？</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(u,\ \phi\)</span>（對流<strong>東側</strong>的主要流型）</p></td>
+<td><p><strong>有</strong>（而且是主導）</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(q\)</span></p></td>
+<td><p><strong>完全沒有</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>於是任何「從 <span class="math notranslate nohighlight">\(q\)</span> 出發反演流場」的方法 —— 也就是 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">可逆性原理</span></a> —— <strong>註定救不回對流東側的流場</strong>。論文在 §6 誠實地記錄了這一點：反演解與原始方程解最明顯的差異，就是「赤道上的緯向氣壓梯度力沒有被重現」。</p>
+<p><strong>這不是近似不夠好，而是資訊在 <span class="math notranslate nohighlight">\(q\)</span> 這個變數裡根本不存在。</strong></p>
+</section>
+<section id="pv">
+<h3>慣性重力波的 PV：赤道與中緯度的差別<a class="headerlink" href="#pv" title="Link to this heading">#</a></h3>
+<p>中緯度 <span class="math notranslate nohighlight">\(f\)</span> 平面上，慣性重力波的 PV <strong>嚴格為零</strong>。赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上<strong>不是</strong> —— 由【證明 (c)】，只要 <span class="math notranslate nohighlight">\(m^{2} \neq \epsilon\hat{\nu}^{2}\)</span>，PV 就不為零。</p>
+<p>但論文指出它的貢獻<strong>很小</strong>，而且理由可以從【證明 (c)】直接讀出來：</p>
+<div class="math notranslate nohighlight">
+\[\hat{q}_{mnr} \propto \frac{m^{2} - \epsilon\hat{\nu}_{mnr}^{2}}{\hat{\nu}_{mnr}}\]</div>
+<p>對慣性重力波而言，<span class="math notranslate nohighlight">\(m\)</span> 增大時 <span class="math notranslate nohighlight">\(\left|m^{2} - \epsilon\hat{\nu}_{mnr}^{2}\right|\)</span> <strong>變小</strong>、<span class="math notranslate nohighlight">\(\left|\hat{\nu}_{mnr}\right|\)</span> <strong>變大</strong> —— <strong>分子小、分母大，兩頭夾殺</strong>。所以 PV 場實際上「幾乎全部由羅斯貝波貢獻」，這也是論文連 PV 的波模分解圖都省了的原因。</p>
+</section>
+<section id="id5">
+<h3>端點①到此完成<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>三個公式合起來，就是完整的解：</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html"><span class="std std-doc">移動熱源的模態投影</span></a>【證明 (c)(d)】給出 <span class="math notranslate nohighlight">\(\hat{Q}_{mnr}\)</span>；</p></li>
+<li><p><a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a>【證明 (c)】一行除法給出 <span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span>；</p></li>
+<li><p>本篇【證明 (a)(b)(e)】把它們轉回 <span class="math notranslate nohighlight">\(u, v, \phi, q, w\)</span>。</p></li>
+</ol>
+<p>論文的數值實作就是照這三步做的：對 <span class="math notranslate nohighlight">\(m\)</span> 求和（緯向波數）、對 <span class="math notranslate nohighlight">\(n\)</span> 求和（經向模態，截斷在 <span class="math notranslate nohighlight">\(N = 200\)</span>）、對 <span class="math notranslate nohighlight">\(r\)</span> 求和（波型）。<span class="math notranslate nohighlight">\(n\)</span> 的截斷之所以安全，理由在 <a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html"><span class="std std-doc">移動熱源的模態投影</span></a> 的 <span class="math notranslate nohighlight">\(\chi^{n/2} \approx 0.894^{n/2}\)</span> 指數衰減。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Equatorial_Beta_Plane_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Projection_of_a_Moving_Heat_Source.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Projection of a Moving Heat Source (東移熱源的緯向傅立葉係數與模態投影)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PV_Wake_of_a_Moving_Heat_Source.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PV Wake of a Moving Heat Source (移動熱源的 PV 尾流與三個控制參數)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-recovery-of-the-wind-and-mass-fields">(a) proof 風場與質量場的還原 (Recovery of the wind and mass fields)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-recovery-of-the-potential-vorticity-field">(b) proof 位渦場的還原 (Recovery of the potential vorticity field)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-spectral-coefficient-of-the-pv">(c) proof 位渦的譜係數 (Spectral coefficient of the PV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-kelvin-zero-potential-vorticity-of-the-kelvin-wave">(d) proof Kelvin 波的位渦為零 (Zero potential vorticity of the Kelvin wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-recovery-of-the-vertical-velocity">(e) proof 垂直速度的還原 (Recovery of the vertical velocity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pv-mathcal-h-n">為什麼 PV 只剩單一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">那個「精確為零」有多硬</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pv">慣性重力波的 PV：赤道與中緯度的差別</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">端點①到此完成</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

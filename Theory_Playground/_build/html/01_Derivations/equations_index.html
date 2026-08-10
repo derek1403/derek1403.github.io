@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>方程式索引表 (Equations Index) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/equations_index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Proof \(\int_{-\infty}^{+\infty} \frac{e^{-x^2} \sin^2(x^2)}{x^2} \mathrm{d}x = \sqrt{\pi} (\sqrt{\phi} - 1)\)" href="Calculus/golden_ratio_gaussian_integral.html" />
+    <link rel="prev" title="📐 01_Derivations: 硬核推導區" href="01_Derivations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/equations_index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01_Derivations/equations_index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>方程式索引表 (Equations Index)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus">Calculus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system">Coordinate_System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">Differential_Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-dynamics-in-cylindrical-coordinates">Fluid_Dynamics_in_Cylindrical_Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-dynamics-variable-coordinate-physics">Fluid_Dynamics_Variable_Coordinate_Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atmospheric-dynamics">Atmospheric_Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equatorial-beta-plane-dynamics">Equatorial_Beta_Plane_Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b1c2-pv">B1–C2 場方程與 PV 原理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d1d2">D1–D2 垂直分離</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e1e4">E1–E4 正規模態轉換</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f1f3-1">F1–F3 端點① 受迫解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g1-2-pv">G1 端點② PV 尾流</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h1i1-34">H1–I1 端點③④ 可逆性原理與平衡頻散關係</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equations-index">
+<h1>方程式索引表 (Equations Index)<a class="headerlink" href="#equations-index" title="Link to this heading">#</a></h1>
+<p>本頁是 <strong>Theory_Playground 自己的</strong>方程式索引，只收錄 <code class="docutils literal notranslate"><span class="pre">01_Derivations/</span></code> 底下<strong>已經逐式證明過</strong>的結論。</p>
+<p><strong>用途</strong>：撰寫新的推導時，凡是<strong>本知識庫已經證明過</strong>的式子，一律用<strong>帶超連結的【已知】卡片</strong>直接引用，
+<strong>不得重證</strong>（見推導風格規範 <code class="docutils literal notranslate"><span class="pre">PC-NTU/.claude/skills/derivation-style-review/SKILL.md</span></code> §10「引用免證」）。
+寫新推導前<strong>先查本表</strong>，不要重讀整個知識庫；證出新的可引用結論後，<strong>回頭補一列</strong>。</p>
+<p><strong>單一職責原則</strong>：本表<strong>只收錄 Theory_Playground 內部已證的方程式</strong>。
+外部知識庫（如 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/intro.html">Advanced Atmospheric Dynamics</a>）
+的推導由該庫自行維護索引（<code class="docutils literal notranslate"><span class="pre">PC-NTU/Advanced-Atmospheric-Dynamics/equations_index.md</span></code>），
+本庫的 notebook 只在【已知】卡片內以超連結引用，這樣外部改動時本表不必跟著改。</p>
+<p>引用卡片寫法：</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">*</span><span class="w"> </span><span class="gs">**【已知 1】 [遞迴關係 (Recurrence relation)](連結)：**</span> 此式已於本庫 ⟨出處⟩ 完整證明，此處直接引用不再重證
+
+  $$\hat{y}\,\mathcal{H}_n = \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}$$
+
+<span class="w">  </span><span class="k">*</span><span class="w"> </span>$\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+</pre></div>
+</div>
+<p><strong>連結慣例</strong>：</p>
+<ul class="simple">
+<li><p>有 proof 小節 anchor 的，連到 anchor（anchor 取自標題中的<strong>英文</strong>；改英文標題＝改 anchor，本表要同步更新）。</p></li>
+<li><p>只有頁面層級 anchor 的，連到 <code class="docutils literal notranslate"><span class="pre">.html</span></code> 頁面本身。</p></li>
+<li><p>連結一律走 <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> 的線上網址，這樣在 notebook 內、GitHub 上、Jupyter Book 內都點得開。</p></li>
+</ul>
+<hr class="docutils" />
+<section id="calculus">
+<h2>Calculus<a class="headerlink" href="#calculus" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>高斯 × Hermite 重疊積分 (Gaussian–Hermite overlap integral)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\int_{-\infty}^{\infty}\exp\left[-\frac{(\hat{y}-\hat{y}_0)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y}</span> <span class="pre">=</span> <span class="pre">\left(\frac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\left(\frac{2-\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4-\hat{b}_0^{4}}\right]\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{(4-\hat{b}_0^{4})^{1/2}}\right)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Calculus/Gaussian_Hermite_Integral.html#a-proof-hermite-gaussian-hermite-overlap-integral">Gaussian_Hermite_Integral #a-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(0 \le \hat{b}_0 &lt; 2^{1/2}\)</span>；<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 為歸一化 Hermite 函數。＝ Schubert (2006) <span class="math notranslate nohighlight">\((B.1)\)</span>。同頁附<strong>積分表 T1–T7</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>窄高斯極限的自洽性 (Narrow-Gaussian limit)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\lim_{\hat{b}_0</span> <span class="pre">\to</span> <span class="pre">0}\frac{1}{\hat{b}_0}\int_{-\infty}^{\infty}\exp\left[-\frac{(\hat{y}-\hat{y}_0)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y}</span> <span class="pre">=</span> <span class="pre">\pi^{1/2}\,\mathcal{H}_n(\hat{y}_0)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Calculus/Gaussian_Hermite_Integral.html#b-verify-consistency-in-the-narrow-gaussian-limit">Gaussian_Hermite_Integral #b-verify</a></p></td>
+<td><p>高斯的 delta 函數表示；上式的一致性檢查</p></td>
+</tr>
+<tr class="row-even"><td><p>黃金比例高斯積分 (Golden-ratio Gaussian integral)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\int_{-\infty}^{+\infty}</span> <span class="pre">\frac{e^{-x^2}\sin^2(x^2)}{x^2}\,dx</span> <span class="pre">=</span> <span class="pre">\sqrt{\pi}\left(\sqrt{\phi}-1\right)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Calculus/golden_ratio_gaussian_integral.html">golden_ratio_gaussian_integral</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\phi\)</span> 為黃金比例；用分部積分＋倍角／半角公式</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="coordinate-system">
+<h2>Coordinate_System<a class="headerlink" href="#coordinate-system" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>球座標動量方程式 (Momentum equation in spherical coordinates)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{Du}{Dt}</span> <span class="pre">+</span> <span class="pre">\left(2\Omega</span> <span class="pre">+</span> <span class="pre">\frac{u}{R\cos\phi}\right)(w\cos\phi</span> <span class="pre">-</span> <span class="pre">v\sin\phi)</span> <span class="pre">=</span> <span class="pre">-\frac{1}{\rho</span> <span class="pre">R\cos\phi}\frac{\partial</span> <span class="pre">P}{\partial</span> <span class="pre">\lambda}</span> <span class="pre">+</span> <span class="pre">\text{RHS}_{\hat{i}}</span></code>（另兩分量同頁）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">spherical_coordinate_transformation_momentum_equation</a></p></td>
+<td><p>由旋轉基底的全質導數導出；含曲率項與科氏項，未做尺度分析</p></td>
+</tr>
+<tr class="row-odd"><td><p>圓柱座標動量方程式 (Momentum equation in cylindrical coordinates)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{Du}{Dt}</span> <span class="pre">-</span> <span class="pre">\frac{v^2}{r}</span> <span class="pre">-</span> <span class="pre">fv</span> <span class="pre">=</span> <span class="pre">-\frac{1}{\rho}\frac{\partial</span> <span class="pre">P}{\partial</span> <span class="pre">r}</span> <span class="pre">+</span> <span class="pre">\text{RHS}_{\hat{r}}</span></code>（另兩分量同頁）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">cylindrical_coordinate_transformation_momentum_equation</a></p></td>
+<td><p>颱風中心座標；<span class="math notranslate nohighlight">\(f\)</span> 平面</p></td>
+</tr>
+<tr class="row-even"><td><p>圓柱座標散度算子 (Divergence operator in cylindrical coordinates)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\nabla</span> <span class="pre">\cdot</span> <span class="pre">\mathbf{A}</span> <span class="pre">=</span> <span class="pre">\frac{1}{r}\frac{\partial</span> <span class="pre">[r</span> <span class="pre">A_r]}{\partial</span> <span class="pre">r}</span> <span class="pre">+</span> <span class="pre">\frac{1}{r}\frac{\partial</span> <span class="pre">A_\lambda}{\partial</span> <span class="pre">\lambda}</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">A_z}{\partial</span> <span class="pre">z}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">Divergence_Operator_in_Cylindrical_Coordinates</a></p></td>
+<td><p>任意向量場 <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>；基底向量隨位置旋轉</p></td>
+</tr>
+<tr class="row-odd"><td><p>圓柱座標相對渦度 (Relative vorticity in cylindrical coordinates)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\vec{\zeta}\cdot\hat{z}</span> <span class="pre">=</span> <span class="pre">\frac{1}{r}\left(\frac{\partial</span> <span class="pre">(rv)}{\partial</span> <span class="pre">r}</span> <span class="pre">-</span> <span class="pre">\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">\lambda}\right)</span></code>（另兩分量同頁）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">cylindrical_coordinate_transformation_Relative_Vorticity</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\vec{\zeta} \overset{\text{def}}{=} \nabla\times\vec{V}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="differential-equations">
+<h2>Differential_Equations<a class="headerlink" href="#differential-equations" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sturm–Liouville 正交性 (Sturm–Liouville orthogonality)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\int_{z_b}^{z_t}\Psi_m(z)\,\Psi_n(z)\,w(z)\,dz</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">\quad</span> <span class="pre">(\lambda_m</span> <span class="pre">\neq</span> <span class="pre">\lambda_n)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html#a-proof-orthogonality">Sturm_Liouville_Orthogonality #a-proof</a></p></td>
+<td><p>正則問題：<strong>有限閉區間</strong>、齊次邊界條件、<span class="math notranslate nohighlight">\(p&gt;0\)</span>、<span class="math notranslate nohighlight">\(w&gt;0\)</span>、本徵值相異</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sturm–Liouville 展開係數 (Expansion coefficient)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">q_m</span> <span class="pre">=</span> <span class="pre">\frac{\int_{z_b}^{z_t}</span> <span class="pre">F(z)\,\Psi_m(z)\,w(z)\,dz}{\int_{z_b}^{z_t}</span> <span class="pre">\Psi_m^2(z)\,w(z)\,dz}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html#b-proof-expansion-coefficient">Sturm_Liouville_Orthogonality #b-proof</a></p></td>
+<td><p>同上，另需本徵函數集完備</p></td>
+</tr>
+<tr class="row-even"><td><p>Hermite 函數遞迴關係 (Recurrence relation of <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{y}\,\mathcal{H}_n(\hat{y})</span> <span class="pre">=</span> <span class="pre">\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y})</span> <span class="pre">+</span> <span class="pre">\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#a-proof-recurrence-relation">Hermite_Functions_and_Recurrence #a-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{H}_n \overset{\text{def}}{=} \left(\pi^{1/2}2^{n}n!\right)^{-1/2}H_n\,e^{-\hat{y}^{2}/2}\)</span>；約定 <span class="math notranslate nohighlight">\(\mathcal{H}_{-1} \equiv 0\)</span>。＝ Schubert (2006) <span class="math notranslate nohighlight">\((4.13)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hermite 函數微分關係 (Derivative relation of <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{d\mathcal{H}_n(\hat{y})}{d\hat{y}}</span> <span class="pre">=</span> <span class="pre">-\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y})</span> <span class="pre">+</span> <span class="pre">\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#b-proof-derivative-relation">Hermite_Functions_and_Recurrence #b-proof</a></p></td>
+<td><p>同上。＝ Schubert (2006) <span class="math notranslate nohighlight">\((4.14)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>最低兩階 Hermite 函數 (Lowest two orders of <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\mathcal{H}_0(\hat{y})</span> <span class="pre">=</span> <span class="pre">\pi^{-1/4}e^{-\hat{y}^{2}/2},</span> <span class="pre">\qquad</span> <span class="pre">\mathcal{H}_1(\hat{y})</span> <span class="pre">=</span> <span class="pre">2^{1/2}\pi^{-1/4}\hat{y}\,e^{-\hat{y}^{2}/2}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#c-proof-lowest-order-explicit-form">Hermite_Functions_and_Recurrence #c-proof</a></p></td>
+<td><p>數值遞迴的起始值；<span class="math notranslate nohighlight">\(\mathcal{H}_1\)</span> 由 <span class="math notranslate nohighlight">\(\mathcal{H}_0\)</span> 與遞迴關係生成</p></td>
+</tr>
+<tr class="row-odd"><td><p>諧振子本徵值 (Harmonic oscillator eigenvalue)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left(\frac{d^{2}}{d\hat{y}^{2}}</span> <span class="pre">-</span> <span class="pre">\hat{y}^{2}\right)\mathcal{H}_n(\hat{y})</span> <span class="pre">=</span> <span class="pre">-(2n+1)\,\mathcal{H}_n(\hat{y})</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html#a-proof-harmonic-oscillator-eigenvalue">Hermite_Orthonormality_and_Oscillator_Eigenvalue #a-proof</a></p></td>
+<td><p>只用遞迴＋微分關係推出，不需 <span class="math notranslate nohighlight">\(H_n\)</span> 的 ODE</p></td>
+</tr>
+<tr class="row-even"><td><p>Hermite 函數正交歸一性 (Orthonormality of <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y}</span> <span class="pre">=</span> <span class="pre">\begin{cases}1,</span> <span class="pre">&amp;</span> <span class="pre">n'=n\\</span> <span class="pre">0,</span> <span class="pre">&amp;</span> <span class="pre">n'\neq</span> <span class="pre">n\end{cases}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html#d-proof-orthonormality">Hermite_Orthonormality_and_Oscillator_Eigenvalue #d-proof</a></p></td>
+<td><p><strong>無窮區間 <span class="math notranslate nohighlight">\((-\infty,\infty)\)</span></strong> ＋高斯衰減使邊界項消失（與 Sturm–Liouville 那篇的有限區間前提不同）。＝ Schubert (2006) <span class="math notranslate nohighlight">\((4.18)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fluid-dynamics-in-cylindrical-coordinates">
+<h2>Fluid_Dynamics_in_Cylindrical_Coordinates<a class="headerlink" href="#fluid-dynamics-in-cylindrical-coordinates" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>梯度風平衡 (Gradient wind balance)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{v^{2}}{r}</span> <span class="pre">+</span> <span class="pre">fv</span> <span class="pre">=</span> <span class="pre">\frac{\partial\phi}{\partial</span> <span class="pre">r}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">Gradient_Wind_Balance</a></p></td>
+<td><p>軸對稱、定常、無徑向加速；anelastic 近似下 <span class="math notranslate nohighlight">\(\frac{1}{\rho}\frac{\partial p}{\partial r} \to \frac{\partial\phi}{\partial r}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>擾動靜力平衡 (Hydrostatic balance for perturbations)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial\phi}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">\frac{g}{\theta_0}\theta</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">Hydrostatic_Balance_for_Perturbations</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\theta\)</span> 為位溫<strong>擾動量</strong>；Boussinesq／anelastic 基本態 <span class="math notranslate nohighlight">\(\theta_0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>軸對稱連續方程式 (Axisymmetric continuity equation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{1}{r}\frac{\partial(\rho</span> <span class="pre">r</span> <span class="pre">u)}{\partial</span> <span class="pre">r}</span> <span class="pre">+</span> <span class="pre">\frac{\partial(\rho</span> <span class="pre">w)}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">Axisymmetric_Continuity_Equation</a></p></td>
+<td><p>軸對稱（<span class="math notranslate nohighlight">\(\partial/\partial\lambda = 0\)</span>）；anelastic（<span class="math notranslate nohighlight">\(\rho = \rho(z)\)</span>）</p></td>
+</tr>
+<tr class="row-odd"><td><p>軸對稱熱力學能量方程式 (Axisymmetric thermodynamic energy equation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial\theta}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">u\frac{\partial\theta}{\partial</span> <span class="pre">r}</span> <span class="pre">+</span> <span class="pre">w\frac{\partial\theta}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">\frac{\theta}{T}\frac{Q}{c_p}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">Axisymmetric_Thermodynamic_Energy_Equation</a></p></td>
+<td><p>軸對稱；<span class="math notranslate nohighlight">\(Q\)</span> 為非絕熱加熱率</p></td>
+</tr>
+<tr class="row-even"><td><p>軸對稱切向動量方程式 (Axisymmetric tangential momentum equation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">u\left(f</span> <span class="pre">+</span> <span class="pre">\zeta\right)</span> <span class="pre">+</span> <span class="pre">w\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">X</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">Axisymmetric_Tangential_Momentum_Equation</a></p></td>
+<td><p>軸對稱；<span class="math notranslate nohighlight">\(\zeta = \frac{1}{r}\frac{\partial(rv)}{\partial r}\)</span>；<span class="math notranslate nohighlight">\(X\)</span> 為摩擦等外力</p></td>
+</tr>
+<tr class="row-odd"><td><p>軸對稱穩定度矩陣行列式 (Determinant of the stability matrix)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\det\left(\mathbf{S}_{\text{cyl}}\right)</span> <span class="pre">=</span> <span class="pre">\rho^{2}\left(AC</span> <span class="pre">-</span> <span class="pre">B^{2}\right)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">Axisymmetric_Stability_Matrix</a></p></td>
+<td><p>軸對稱擾動的線性穩定度分析；<span class="math notranslate nohighlight">\(A,B,C\)</span> 見下一列</p></td>
+</tr>
+<tr class="row-even"><td><p>Eliassen 結構參數 (Eliassen structural parameters)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\rho</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">\frac{g}{\theta_0}\frac{\partial\theta}{\partial</span> <span class="pre">z},</span> <span class="pre">\quad</span> <span class="pre">\rho</span> <span class="pre">C</span> <span class="pre">=</span> <span class="pre">\left(f</span> <span class="pre">+</span> <span class="pre">\frac{2v}{r}\right)\left(f</span> <span class="pre">+</span> <span class="pre">\zeta\right),</span> <span class="pre">\quad</span> <span class="pre">\rho</span> <span class="pre">B</span> <span class="pre">=</span> <span class="pre">-\frac{g}{\theta_0}\frac{\partial\theta}{\partial</span> <span class="pre">r}</span> <span class="pre">=</span> <span class="pre">-\left(f+\frac{2v}{r}\right)\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">z}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">Eliassen_Secondary_Circulation_Coefficients</a></p></td>
+<td><p>靜力穩定度 / 慣性穩定度 / 斜壓度；<span class="math notranslate nohighlight">\(\rho B\)</span> 的第二種寫法需熱力風平衡</p></td>
+</tr>
+<tr class="row-odd"><td><p>穩定度矩陣與 Jacobian 的關係 (Stability matrix vs. Jacobian)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AC</span> <span class="pre">-</span> <span class="pre">B^{2}</span> <span class="pre">=</span> <span class="pre">\frac{1}{\rho^{2}r}\left(f</span> <span class="pre">+</span> <span class="pre">\frac{2v}{r}\right)J(M,</span> <span class="pre">b)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">Axisymmetric_Stability_Matrix_and_Jacobian_Matrix</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(M\)</span> 為絕對角動量、<span class="math notranslate nohighlight">\(b\)</span> 為浮力；<span class="math notranslate nohighlight">\(J\)</span> 為 <span class="math notranslate nohighlight">\((r,z)\)</span> 平面的 Jacobian</p></td>
+</tr>
+<tr class="row-even"><td><p>結構參數與 PV 的關係 (Structural parameters vs. PV)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(\rho</span> <span class="pre">A)(\rho</span> <span class="pre">C)</span> <span class="pre">-</span> <span class="pre">(\rho</span> <span class="pre">B)^{2}</span> <span class="pre">=</span> <span class="pre">\left(f</span> <span class="pre">+</span> <span class="pre">\frac{2v}{r}\right)PV_b</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">Relation_between_Axisymmetric_Structural_Parameters_and_PV</a></p></td>
+<td><p>軸對稱；<span class="math notranslate nohighlight">\(PV_b\)</span> 為浮力型位渦</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eliassen 次環流方程式 (Eliassen transverse circulation equation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial}{\partial</span> <span class="pre">r}\left[\frac{A}{r}\frac{\partial\psi}{\partial</span> <span class="pre">r}</span> <span class="pre">+</span> <span class="pre">\frac{B}{r}\frac{\partial\psi}{\partial</span> <span class="pre">z}\right]</span> <span class="pre">+</span> <span class="pre">\frac{\partial}{\partial</span> <span class="pre">z}\left[\frac{B}{r}\frac{\partial\psi}{\partial</span> <span class="pre">r}</span> <span class="pre">+</span> <span class="pre">\frac{C}{r}\frac{\partial\psi}{\partial</span> <span class="pre">z}\right]</span> <span class="pre">=</span> <span class="pre">\frac{\partial</span> <span class="pre">J}{\partial</span> <span class="pre">r}</span> <span class="pre">-</span> <span class="pre">\frac{\partial</span> <span class="pre">F}{\partial</span> <span class="pre">z}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">Eliassen_Transverse_Equation</a></p></td>
+<td><p>軸對稱、質量連續（流函數 <span class="math notranslate nohighlight">\(\psi\)</span>）；橢圓性需 <span class="math notranslate nohighlight">\(AC - B^{2} &gt; 0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fluid-dynamics-variable-coordinate-physics">
+<h2>Fluid_Dynamics_Variable_Coordinate_Physics<a class="headerlink" href="#fluid-dynamics-variable-coordinate-physics" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ertel PV 與浮力 PV 的關係 (Relation between PV and <span class="math notranslate nohighlight">\(PV_b\)</span>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PV</span> <span class="pre">=</span> <span class="pre">\left(\frac{\theta_0}{\rho_0</span> <span class="pre">g}\right)PV_b</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">Relation_Between_PV_and_PVb</a></p></td>
+<td><p>Boussinesq／anelastic 基本態 <span class="math notranslate nohighlight">\(\rho_0,\ \theta_0\)</span> 為常數</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="atmospheric-dynamics">
+<h2>Atmospheric_Dynamics<a class="headerlink" href="#atmospheric-dynamics" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>壓力–輻散方程式 (Pressure–divergence equation with heating)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">-</span> <span class="pre">\frac{\partial}{\partial</span> <span class="pre">t}\left[\frac{\partial}{\partial</span> <span class="pre">z}\left[\frac{1}{N^{2}}\frac{\partial\Phi}{\partial</span> <span class="pre">z}\right]\right]</span> <span class="pre">=</span> <span class="pre">-\frac{\partial</span> <span class="pre">Q}{\partial</span> <span class="pre">z}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html#a-proof">Vertical_Structure_Equation #a-proof</a></p></td>
+<td><p>線性化 Boussinesq；強迫是加熱的<strong>垂直梯度</strong>，不是加熱本身</p></td>
+</tr>
+<tr class="row-odd"><td><p>模態投影 (Modal projection)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{D}_m</span> <span class="pre">+</span> <span class="pre">\frac{1}{c_m^{2}}\frac{\partial\hat{\Phi}_m}{\partial</span> <span class="pre">t}</span> <span class="pre">=</span> <span class="pre">\int_{z_b}^{z_t}\left(-\frac{\partial</span> <span class="pre">Q}{\partial</span> <span class="pre">z}\right)\Psi_m(z)\,dz</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html#b-proof-m">Vertical_Structure_Equation #b-proof</a></p></td>
+<td><p>垂直結構方程式的本徵函數 <span class="math notranslate nohighlight">\(\Psi_m\)</span>；每個模態即一組淺水系統，等效深度 <span class="math notranslate nohighlight">\(h_m = c_m^{2}/g\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>External mode 的本徵函數與本徵值 (External-mode eigenfunction)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\Psi_0</span> <span class="pre">=</span> <span class="pre">\text{const},</span> <span class="pre">\qquad</span> <span class="pre">\frac{1}{c_0^{2}}</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html#c-proof-external-mode">Vertical_Structure_Equation #c-proof</a></p></td>
+<td><p>剛蓋邊界條件</p></td>
+</tr>
+<tr class="row-odd"><td><p>內部加熱不投影到 external mode</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{D}_0</span> <span class="pre">=</span> <span class="pre">\int_{z_b}^{z_t}\left(-\frac{\partial</span> <span class="pre">Q}{\partial</span> <span class="pre">z}\right)\Psi_0(z)\,dz</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.html#d-proof-external-mode">Vertical_Structure_Equation #d-proof</a></p></td>
+<td><p>剛蓋；純內部加熱（<span class="math notranslate nohighlight">\(Q\)</span> 在上下邊界為零）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="equatorial-beta-plane-dynamics">
+<h2>Equatorial_Beta_Plane_Dynamics<a class="headerlink" href="#equatorial-beta-plane-dynamics" title="Link to this heading">#</a></h2>
+<p>本節收錄 Schubert &amp; Masarik (2006)
+<a class="reference internal" href="../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc"><em>Potential vorticity aspects of the MJO</em></span></a>
+推導鏈的 16 篇。<strong>閱讀順序即依賴順序</strong>（禁止前向引用）：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>B1 → C1 → C2            場方程與 PV 原理（C2 是物理引擎）
+D1 → D2                 垂直分離
+E1 → E2 → E3 → E4       正規模態（E2 是整套展開的合法性來源）
+F1 → F2 → F3            端點① 受迫解
+G1                      端點② PV 尾流
+H1 → H2                 端點③ 可逆性原理
+I1                      端點④ 平衡頻散關係
+</pre></div>
+</div>
+<p>數學工具層（<code class="docutils literal notranslate"><span class="pre">A1</span></code>–<code class="docutils literal notranslate"><span class="pre">A3</span></code>）在上方的 <code class="docutils literal notranslate"><span class="pre">Differential_Equations</span></code> 與 <code class="docutils literal notranslate"><span class="pre">Calculus</span></code> 兩節。
+括號中的 <span class="math notranslate nohighlight">\((x.y)\)</span> 為原論文式號，僅供對照，notebook 內一律走【已知】卡片引用法。</p>
+<section id="b1c2-pv">
+<h3>B1–C2 場方程與 PV 原理<a class="headerlink" href="#b1c2-pv" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>對數氣壓線性化原始方程組 (Log-pressure linearized primitive equations) <span class="math notranslate nohighlight">\((2.1)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">t}</span> <span class="pre">-</span> <span class="pre">\beta</span> <span class="pre">y</span> <span class="pre">v</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">\phi}{\partial</span> <span class="pre">x}</span> <span class="pre">=</span> <span class="pre">-\alpha</span> <span class="pre">u</span></code> ／ <code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\beta</span> <span class="pre">y</span> <span class="pre">u</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">\phi}{\partial</span> <span class="pre">y}</span> <span class="pre">=</span> <span class="pre">-\alpha</span> <span class="pre">v</span></code> ／ <code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">\phi}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">RT</span></code> ／ <code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">x}</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">y}</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">w}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">w</span> <span class="pre">=</span> <span class="pre">0</span></code> ／ <code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">T}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\Gamma</span> <span class="pre">w</span> <span class="pre">=</span> <span class="pre">-\alpha</span> <span class="pre">T</span> <span class="pre">+</span> <span class="pre">\frac{Q}{c_p}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#a-proof-zonal-momentum-equation">B1 #a-proof</a></p></td>
+<td><p>赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面（<span class="math notranslate nohighlight">\(f = \beta y\)</span>）；繞靜止基本態線性化；準靜力；Rayleigh 摩擦與 Newtonian 冷卻共用 <span class="math notranslate nohighlight">\(\alpha\)</span>。<strong><span class="math notranslate nohighlight">\(z\)</span> 無因次故 <span class="math notranslate nohighlight">\(w\)</span> 的單位是 <span class="math notranslate nohighlight">\(\left[\text{s}^{-1}\right]\)</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>對數氣壓連續方程式的 <span class="math notranslate nohighlight">\(-w\)</span> 項 (The extra <span class="math notranslate nohighlight">\(-w\)</span> term)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">\omega}{\partial</span> <span class="pre">P}</span> <span class="pre">=</span> <span class="pre">\frac{\partial</span> <span class="pre">w}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">w</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#d-proof-continuity-equation">B1 #d-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\omega = -Pw\)</span>、<span class="math notranslate nohighlight">\(P = p_0e^{-z}\)</span>；<span class="math notranslate nohighlight">\(-w\)</span> 來自密度指數遞減</p></td>
+</tr>
+<tr class="row-even"><td><p>赤道渦度方程式 (Equatorial vorticity equation) <span class="math notranslate nohighlight">\((2.4)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left(\frac{\partial}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\alpha\right)\left(\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">x}</span> <span class="pre">-</span> <span class="pre">\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">y}\right)</span> <span class="pre">+</span> <span class="pre">\beta</span> <span class="pre">y\left(\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">x}</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">y}\right)</span> <span class="pre">+</span> <span class="pre">\beta</span> <span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#a-proof-vorticity-equation">C1 #a-proof</a></p></td>
+<td><p>由 <span class="math notranslate nohighlight">\((2.1)\)</span> 兩條動量方程交叉微分；<span class="math notranslate nohighlight">\(\beta v\)</span> 來自 <span class="math notranslate nohighlight">\(\partial\left(\beta y\right)/\partial y = \beta\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>位勢–輻散方程式 (Geopotential–divergence equation) <span class="math notranslate nohighlight">\((2.5)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left(\frac{\partial}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\alpha\right)\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)\frac{\partial</span> <span class="pre">\phi}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">R\Gamma\left(\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">x}</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">y}\right)</span> <span class="pre">=</span> <span class="pre">\kappa\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)Q</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#b-proof-geopotentialdivergence-equation">C1 #b-proof</a></p></td>
+<td><p>需 <span class="math notranslate nohighlight">\(\Gamma\)</span> 為常數（才能穿過 <span class="math notranslate nohighlight">\(\partial/\partial z - 1\)</span>）</p></td>
+</tr>
+<tr class="row-even"><td><p>位渦距平 (Potential vorticity anomaly) <span class="math notranslate nohighlight">\((2.7)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">x}</span> <span class="pre">-</span> <span class="pre">\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">y}</span> <span class="pre">+</span> <span class="pre">\frac{\beta</span> <span class="pre">y}{R\Gamma}\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)\frac{\partial</span> <span class="pre">\phi}{\partial</span> <span class="pre">z}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-emergence-of-the-potential-vorticity-anomaly">C2 #a-proof</a></p></td>
+<td><p>消去 <span class="math notranslate nohighlight">\((2.4)(2.5)\)</span> 之間的水平輻散後<strong>自動浮現</strong>的組合</p></td>
+</tr>
+<tr class="row-odd"><td><p>赤道 PV 方程式 (Equatorial PV equation) <span class="math notranslate nohighlight">\((2.6)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">q}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\beta</span> <span class="pre">v</span> <span class="pre">=</span> <span class="pre">-\alpha</span> <span class="pre">q</span> <span class="pre">+</span> <span class="pre">\frac{\beta</span> <span class="pre">y}{c_p\Gamma}\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)Q</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation">C2 #b-proof</a></p></td>
+<td><p>同上</p></td>
+</tr>
+<tr class="row-even"><td><p>★ 源項在赤道恆為零 (Vanishing source at the equator)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left.\frac{\beta</span> <span class="pre">y}{c_p\Gamma}\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)Q\right|_{y</span> <span class="pre">=</span> <span class="pre">0}</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#c-proof-vanishing-of-the-source-at-the-equator">C2 #c-proof</a></p></td>
+<td><p>與加熱強度無關；<strong>全文物理引擎</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>★ 高斯加熱下源項的極值位置 (Source extrema)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">y_{\text{ext}}</span> <span class="pre">=</span> <span class="pre">\pm\frac{b_0}{2^{1/2}}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#e-proof-location-of-the-source-extrema">C2 #e-proof</a></p></td>
+<td><p>加熱經向剖面為中心在赤道的高斯；<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span> 時 <span class="math notranslate nohighlight">\(\approx \pm318 \ \text{km}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="d1d2">
+<h3>D1–D2 垂直分離<a class="headerlink" href="#d1d2" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>垂直結構方程式 (Vertical structure equation) <span class="math notranslate nohighlight">\((3.1)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left(\frac{d}{dz}</span> <span class="pre">-</span> <span class="pre">1\right)\frac{dZ}{dz}</span> <span class="pre">=</span> <span class="pre">-\left(\frac{\pi^{2}}{z_T^{2}}</span> <span class="pre">+</span> <span class="pre">\frac{1}{4}\right)Z</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#a-proof-eigenvalue-of-the-first-vertical-internal-mode">D1 #a-proof</a></p></td>
+<td><p>剛蓋 <span class="math notranslate nohighlight">\(Z'(0) = Z'(z_T) = 0\)</span>；第一垂直內模態；<span class="math notranslate nohighlight">\(z_T \approx 1.619\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\((3.2)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Z(z)</span> <span class="pre">=</span> <span class="pre">\left(\frac{\pi^{2}}{z_T^{2}}</span> <span class="pre">+</span> <span class="pre">\frac{1}{4}\right)^{-1/2}e^{(z-z_m)/2}\left[\frac{z_T}{2\pi}\sin\frac{\pi</span> <span class="pre">z}{z_T}</span> <span class="pre">-</span> <span class="pre">\cos\frac{\pi</span> <span class="pre">z}{z_T}\right]</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#b-proof-normalized-vertical-structure-function">D1 #b-proof</a></p></td>
+<td><p>同上；歸一化取 <span class="math notranslate nohighlight">\(Z'(z_m) = 1\)</span>，<span class="math notranslate nohighlight">\(z_m \approx 0.5803\,z_T\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>垂直結構函數的導數 (Its derivative) <span class="math notranslate nohighlight">\((3.3)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Z'(z)</span> <span class="pre">=</span> <span class="pre">\left(1</span> <span class="pre">+</span> <span class="pre">\frac{z_T^{2}}{4\pi^{2}}\right)^{1/2}e^{(z-z_m)/2}\sin\frac{\pi</span> <span class="pre">z}{z_T}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#c-proof-derivative-of-the-structure-function">D1 #c-proof</a></p></td>
+<td><p>同上；<span class="math notranslate nohighlight">\(T, w, Q\)</span> 掛在此函數上</p></td>
+</tr>
+<tr class="row-odd"><td><p>水平結構方程組 (Horizontal structure system) <span class="math notranslate nohighlight">\((3.5)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">\hat{u}}{\partial</span> <span class="pre">x}</span> <span class="pre">+</span> <span class="pre">\frac{\partial</span> <span class="pre">\hat{v}}{\partial</span> <span class="pre">y}</span> <span class="pre">-</span> <span class="pre">\left(\frac{\pi^{2}}{z_T^{2}}</span> <span class="pre">+</span> <span class="pre">\frac{1}{4}\right)\hat{w}</span> <span class="pre">=</span> <span class="pre">0</span></code>（另四條同頁）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html#d-proof-separation-of-the-continuity-equation">D2 #d-proof</a></p></td>
+<td><p>只激發第一垂直內模態；<strong><span class="math notranslate nohighlight">\(u,v,\phi \propto Z\)</span> 而 <span class="math notranslate nohighlight">\(T,w,Q \propto Z'\)</span> 是被靜力方程與連續方程逼出來的</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="e1e4">
+<h3>E1–E4 正規模態轉換<a class="headerlink" href="#e1e4" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>淺水系統與線性算符 (Shallow water system and the operator) <span class="math notranslate nohighlight">\((4.3)(4.6)(4.7)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left(\alpha</span> <span class="pre">-</span> <span class="pre">\frac{imc}{a}\right)\hat{\boldsymbol{\eta}}_m</span> <span class="pre">+</span> <span class="pre">\mathcal{L}\hat{\boldsymbol{\eta}}_m</span> <span class="pre">=</span> <span class="pre">\kappa\hat{\mathbf{Q}}_m</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">E1 #e-proof</a></p></td>
+<td><p>隨波定常（<span class="math notranslate nohighlight">\(\xi = x - ct\)</span>）；緯向週期 <span class="math notranslate nohighlight">\(2\pi a\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>等效重力波速 (Equivalent gravity wave speed)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\bar{c}^{2}</span> <span class="pre">=</span> <span class="pre">R\Gamma\left[\left(\frac{\pi}{z_T}\right)^{2}</span> <span class="pre">+</span> <span class="pre">\frac{1}{4}\right]^{-1}</span> <span class="pre">\approx</span> <span class="pre">\left(41.25</span> <span class="pre">\</span> <span class="pre">\text{m}\cdot\text{s}^{-1}\right)^{2}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#f-solve-numerical-value-of-the-equivalent-gravity-wave-speed">E1 #f-solve</a></p></td>
+<td><p>等效深度 <span class="math notranslate nohighlight">\(H_{\text{eq}} = \bar{c}^{2}/g \approx 173 \ \text{m}\)</span>；Lamb 參數 <span class="math notranslate nohighlight">\(\epsilon = 4\Omega^{2}a^{2}/\bar{c}^{2} \approx 507.3\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>總能量原理 (Total energy principle) <span class="math notranslate nohighlight">\((2.2)(2.3)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{d\mathcal{E}}{dt}</span> <span class="pre">=</span> <span class="pre">-2\alpha\mathcal{E}</span> <span class="pre">+</span> <span class="pre">\mathcal{G}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#a-proof-total-energy-principle">E2 #a-proof</a></p></td>
+<td><p>緯向週期、經向衰減、剛蓋；科氏力不做功、位勢通量總積分為零</p></td>
+</tr>
+<tr class="row-odd"><td><p>★ 能量內積權重的來源 (Origin of the <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> weight) <span class="math notranslate nohighlight">\((4.8)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\mathcal{E}</span> <span class="pre">=</span> <span class="pre">\frac{I_Z}{2}\iint\left[\hat{u}^{2}</span> <span class="pre">+</span> <span class="pre">\hat{v}^{2}</span> <span class="pre">+</span> <span class="pre">\frac{1}{\bar{c}^{2}}\hat{\phi}^{2}\right]dx\,dy</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#c-proof-1-bar-c-2-origin-of-the-1-bar-c-2-weight">E2 #c-proof</a></p></td>
+<td><p>關鍵是 <span class="math notranslate nohighlight">\(\int Z'^{2}e^{-z}dz = \lambda\int Z^{2}e^{-z}dz\)</span>；<strong>內積不是猜的，是算出來的</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>★ 算符的反厄米性 (Skew-Hermiticity)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\mathcal{L}^{\dagger}</span> <span class="pre">=</span> <span class="pre">-\mathcal{L}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#d-proof-skew-hermiticity-of-the-operator">E2 #d-proof</a></p></td>
+<td><p>相對於能量內積；需本徵函數赤道捕捉。<strong>整套正規模態展開的合法性來源</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Matsuno 頻散關係 (Matsuno dispersion relation) <span class="math notranslate nohighlight">\((4.10)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\epsilon\hat{\nu}^{2}</span> <span class="pre">-</span> <span class="pre">m^{2}</span> <span class="pre">-</span> <span class="pre">\frac{m}{\hat{\nu}}</span> <span class="pre">=</span> <span class="pre">\epsilon^{1/2}\left(2n</span> <span class="pre">+</span> <span class="pre">1\right)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html#a-proof-notation-mapping-and-scale-restoration">E3 #a-proof</a></p></td>
+<td><p>與 AAD project2_1 的 <span class="math notranslate nohighlight">\(\omega^{2}-k^{2}-\frac{k}{\omega}-1=2n\)</span> 等價（<span class="math notranslate nohighlight">\(\omega = \epsilon^{1/4}\hat{\nu}\)</span>、<span class="math notranslate nohighlight">\(k = \epsilon^{-1/4}m\)</span>）</p></td>
+</tr>
+<tr class="row-even"><td><p>Kelvin 波的本徵值 (Kelvin wave eigenvalue)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\epsilon^{1/2}\hat{\nu}_{m,-1,2}</span> <span class="pre">=</span> <span class="pre">m</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html#c-proof-kelvin-kelvin-wave-eigenvalue">E3 #c-proof</a></p></td>
+<td><p>令 <span class="math notranslate nohighlight">\(V = 0\)</span> 單獨求得；有界性淘汰另一根。形式上即 <span class="math notranslate nohighlight">\((4.10)\)</span> 的 <span class="math notranslate nohighlight">\(n = -1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>赤道波本徵函數 (Equatorial wave eigenfunctions) <span class="math notranslate nohighlight">\((4.11)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\mathbf{K}_{mnr}</span> <span class="pre">=</span> <span class="pre">A_{mnr}\left(\epsilon^{1/4}\left[\mathcal{P}\mathcal{H}_{n+1}</span> <span class="pre">+</span> <span class="pre">\mathcal{M}\mathcal{H}_{n-1}\right],\</span> <span class="pre">-i\left(\epsilon\hat{\nu}^{2}-m^{2}\right)\mathcal{H}_n,\</span> <span class="pre">\bar{c}\epsilon^{1/4}\left[\mathcal{P}\mathcal{H}_{n+1}</span> <span class="pre">-</span> <span class="pre">\mathcal{M}\mathcal{H}_{n-1}\right]\right)^{\mathsf{T}}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#a-proof-explicit-form-of-the-eigenfunctions">E4 #a-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(n \ge 0\)</span>；<span class="math notranslate nohighlight">\(\mathcal{P} = \left(\epsilon^{1/2}\hat{\nu}+m\right)\left(\frac{n+1}{2}\right)^{1/2}\)</span>、<span class="math notranslate nohighlight">\(\mathcal{M} = \left(\epsilon^{1/2}\hat{\nu}-m\right)\left(\frac{n}{2}\right)^{1/2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\((4.15)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">A_{mnr}</span> <span class="pre">=</span> <span class="pre">\left[\epsilon^{1/2}(n+1)\left(\epsilon^{1/2}\hat{\nu}+m\right)^{2}</span> <span class="pre">+</span> <span class="pre">\epsilon^{1/2}n\left(\epsilon^{1/2}\hat{\nu}-m\right)^{2}</span> <span class="pre">+</span> <span class="pre">\left(\epsilon\hat{\nu}^{2}-m^{2}\right)^{2}\right]^{-1/2}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#b-proof-n-ge-0-normalization-constant-for-n-ge-0">E4 #b-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(n \ge 0\)</span>；Kelvin 波為 <span class="math notranslate nohighlight">\(A_{m,-1,2} = 2^{-1/2}\pi^{-1/4}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>本徵函數的正交歸一 (Orthonormality) <span class="math notranslate nohighlight">\((4.17)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left(\mathbf{K}_{mnr},\</span> <span class="pre">\mathbf{K}_{mn'r'}\right)</span> <span class="pre">=</span> <span class="pre">\delta_{nn'}\delta_{rr'}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#d-proof-orthonormality">E4 #d-proof</a></p></td>
+<td><p>非簡併；簡併情形（<span class="math notranslate nohighlight">\(m=0,n&gt;0,r=0\)</span>）另由 <span class="math notranslate nohighlight">\((A.1)\)</span> 處理</p></td>
+</tr>
+<tr class="row-even"><td><p>緯向對稱羅斯貝模態 (Zonally symmetric Rossby modes) <span class="math notranslate nohighlight">\((A.1)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\mathbf{K}_{0n0}</span> <span class="pre">=</span> <span class="pre">\left(2n+1\right)^{-1/2}\left(\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}</span> <span class="pre">-</span> <span class="pre">\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1},\</span> <span class="pre">0,\</span> <span class="pre">\bar{c}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1}</span> <span class="pre">+</span> <span class="pre">\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]\right)^{\mathsf{T}}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#e-proof-eigenfunctions-of-the-zonally-symmetric-rossby-modes">E4 #e-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(m \to 0\)</span> 極限；對應<strong>定常的地轉平衡緯向噴流</strong>（<span class="math notranslate nohighlight">\(\beta y U + d\Phi/dy = 0\)</span>）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="f1f3-1">
+<h3>F1–F3 端點① 受迫解<a class="headerlink" href="#f1f3-1" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>★ 受迫解（一行除法）(Forced response) <span class="math notranslate nohighlight">\((4.21)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{\eta}_{mnr}</span> <span class="pre">=</span> <span class="pre">\frac{\kappa\hat{Q}_{mnr}}{\alpha</span> <span class="pre">+</span> <span class="pre">i\left(\nu_{mnr}</span> <span class="pre">-</span> <span class="pre">\frac{cm}{a}\right)}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.html#c-proof-forced-response">F1 #c-proof</a></p></td>
+<td><p>需 <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span>；受迫阻尼振子形式，<span class="math notranslate nohighlight">\(\nu_{mnr} = cm/a\)</span> 時共振</p></td>
+</tr>
+<tr class="row-odd"><td><p>加熱總量與 <span class="math notranslate nohighlight">\(y_0\)</span> 無關 (Total heating)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\iint</span> <span class="pre">\hat{Q}\,d\xi\,dy</span> <span class="pre">=</span> <span class="pre">\pi^{1/2}Q_0a_0b_0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html#a-proof-y-0-the-total-heating-is-independent-of-y-0">F2 #a-proof</a></p></td>
+<td><p>加熱為升餘弦（緯向）<span class="math notranslate nohighlight">\(\times\)</span> 高斯（經向）<span class="math notranslate nohighlight">\((4.1)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>加熱的緯向傅立葉係數 (Zonal Fourier coefficient) <span class="math notranslate nohighlight">\((4.5)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{Q}_m(y)</span> <span class="pre">=</span> <span class="pre">\frac{\pi</span> <span class="pre">Q_0}{2\left[\pi^{2}-\left(ma_0/a\right)^{2}\right]}\frac{\sin\left(ma_0/a\right)}{m}\exp\left[-\left(\frac{y-y_0}{b_0}\right)^{2}\right]</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html#b-proof-zonal-fourier-coefficient">F2 #b-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(a_0 &lt; \pi a\)</span>；<span class="math notranslate nohighlight">\(\sin\mu/\mu\)</span> 的第一零點在 <span class="math notranslate nohighlight">\(m \approx 16\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>加熱的模態投影 (Modal projection of the heating) <span class="math notranslate nohighlight">\((4.22)\)</span></p></td>
+<td><p>見該頁（含 <span class="math notranslate nohighlight">\(\chi^{(n\pm1)/2}\)</span> 與 <span class="math notranslate nohighlight">\(\mathcal{H}_{n\pm1}(\eta)\)</span> 兩個因子）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html#c-proof-n-ge-0-modal-projection-for-n-ge-0">F2 #c-proof</a></p></td>
+<td><p>需 <span class="math notranslate nohighlight">\(\hat{b}_0 = \epsilon^{1/4}b_0/a &lt; 2^{1/2}\)</span>（本文 <span class="math notranslate nohighlight">\(\approx 0.335\)</span>）；用到 <span class="math notranslate nohighlight">\((B.1)\)</span> 兩次</p></td>
+</tr>
+<tr class="row-even"><td><p>★ <span class="math notranslate nohighlight">\(y_0 = 0\)</span> 時偶數 <span class="math notranslate nohighlight">\(n\)</span> 不被激發 (Even modes vanish)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left.\hat{Q}_{mnr}\right|_{\hat{y}_0</span> <span class="pre">=</span> <span class="pre">0}</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">\quad</span> <span class="pre">\left(n</span> <span class="pre">\</span> <span class="pre">\text{even}\right)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html#e-proof-even-modes-are-not-excited-when-the-convection-is-centred-on-the-equator">F2 #e-proof</a></p></td>
+<td><p>宇稱：<span class="math notranslate nohighlight">\(\Phi_{mnr} \propto \mathcal{H}_{n\pm1}\)</span>，<span class="math notranslate nohighlight">\(n\)</span> 偶則為奇函數。含 <span class="math notranslate nohighlight">\(n = 0\)</span> 混合羅斯貝–重力波</p></td>
+</tr>
+<tr class="row-odd"><td><p>位渦的譜係數 (Spectral PV coefficient) <span class="math notranslate nohighlight">\((4.26)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{q}_{mnr}</span> <span class="pre">=</span> <span class="pre">A_{mnr}\left(\frac{m^{2}</span> <span class="pre">-</span> <span class="pre">\epsilon\hat{\nu}_{mnr}^{2}}{a\hat{\nu}_{mnr}}\right)\hat{\eta}_{mnr}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html#c-proof-spectral-coefficient-of-the-pv">F3 #c-proof</a></p></td>
+<td><p>需 <span class="math notranslate nohighlight">\(\nu_{mnr} \neq 0\)</span>；每個模態的 PV <strong>只含單一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>★★ Kelvin 波的位渦為零 (Zero Kelvin PV)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{q}_{m,-1,2}</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html#d-proof-kelvin-zero-potential-vorticity-of-the-kelvin-wave">F3 #d-proof</a></p></td>
+<td><p><strong>代數恆等式，非近似。</strong> 端點③在對流東側失效的根源</p></td>
+</tr>
+<tr class="row-odd"><td><p>垂直速度的還原 (Vertical velocity recovery) <span class="math notranslate nohighlight">\((4.27)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">\frac{Z'(z)}{R\Gamma}\sum_{m}\sum_{n,r}i\nu_{mnr}\hat{\eta}_{mnr}\Phi_{mnr}(\hat{y})e^{im\xi/a}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html#e-proof-recovery-of-the-vertical-velocity">F3 #e-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\omega = -p_0e^{-z}w\)</span> 才是常見的 <span class="math notranslate nohighlight">\(p\)</span> 座標垂直速度</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="g1-2-pv">
+<h3>G1 端點② PV 尾流<a class="headerlink" href="#g1-2-pv" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PV 尾流的解析解 (Analytic PV wake) <span class="math notranslate nohighlight">\((5.2)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">-\frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}}\left(\frac{\pi^{2}}{\pi^{2}+\alpha^{2}\tau_{\mathrm{p}}^{2}}\right)F(\xi)\,\beta</span> <span class="pre">y\exp\left[-\left(\frac{y-y_0}{b_0}\right)^{2}\right]Z(z)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html#b-proof-solution-inside-the-convective-region">G1 #b-proof</a></p></td>
+<td><p><strong>刻意忽略 Rossby 項 <span class="math notranslate nohighlight">\(\beta v\)</span></strong>（只剩正確強度的 <span class="math notranslate nohighlight">\(68\%\)</span>）；<span class="math notranslate nohighlight">\(\tau_{\mathrm{p}} = a_0/c\)</span>、<span class="math notranslate nohighlight">\(\tau_{\mathrm{c}} = \bar{c}^{2}/(\kappa Q_0)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>尾流的緯向結構（後方）(Zonal structure behind) <span class="math notranslate nohighlight">\((5.3)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">F(\xi)</span> <span class="pre">=</span> <span class="pre">\frac{\sinh\left[(\alpha/c)a_0\right]}{(\alpha/c)a_0}\exp\left[\frac{\alpha}{c}\xi\right]</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html#c-proof-solution-behind-the-convective-region">G1 #c-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\xi \le -a_0\)</span>；<span class="math notranslate nohighlight">\(F = 0\)</span> 於 <span class="math notranslate nohighlight">\(\xi \ge a_0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>三個控制參數 (Three control parameters)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{c}{\alpha}</span> <span class="pre">\approx</span> <span class="pre">1728</span> <span class="pre">\</span> <span class="pre">\text{km},</span> <span class="pre">\quad</span> <span class="pre">\frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}}</span> <span class="pre">\approx</span> <span class="pre">5.9,</span> <span class="pre">\quad</span> <span class="pre">\frac{y_0}{b_0}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html#e-solve-numerical-values-of-the-three-control-parameters">G1 #e-solve</a></p></td>
+<td><p>分別控制<strong>衰減長度／強度／南北不對稱</strong>；<span class="math notranslate nohighlight">\(\tau_{\mathrm{p}}/\tau_{\mathrm{c}}\)</span> ＝對流通過期間翻轉幾次</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="h1i1-34">
+<h3>H1–I1 端點③④ 可逆性原理與平衡頻散關係<a class="headerlink" href="#h1i1-34" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>★ 赤道平衡關係 (Equatorial balance relation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\phi</span> <span class="pre">=</span> <span class="pre">\beta</span> <span class="pre">y\,\psi</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html#b-proof-local-balance-relation">H1 #b-proof</a></p></td>
+<td><p>線性平衡 ＋ <strong><span class="math notranslate nohighlight">\(\beta y\)</span> 緩變</strong>；漏掉 <span class="math notranslate nohighlight">\(\beta\partial\psi/\partial y\)</span>，<strong>在赤道最不準</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>赤道 PV 可逆性原理 (Invertibility principle) <span class="math notranslate nohighlight">\((6.2)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\nabla^{2}\psi</span> <span class="pre">+</span> <span class="pre">\frac{\beta^{2}y^{2}}{R\Gamma}\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)\frac{\partial</span> <span class="pre">\psi}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">q</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html#c-proof-invertibility-principle">H1 #c-proof</a></p></td>
+<td><p>橢圓型；邊界條件 <span class="math notranslate nohighlight">\(\psi \to 0\)</span>（<span class="math notranslate nohighlight">\(|y|\to\infty\)</span>）、<span class="math notranslate nohighlight">\(\partial\psi/\partial z = 0\)</span>（<span class="math notranslate nohighlight">\(z = 0, z_T\)</span>）</p></td>
+</tr>
+<tr class="row-even"><td><p>可逆性原理的譜形式 (Spectral form) <span class="math notranslate nohighlight">\((6.3)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}}</span> <span class="pre">-</span> <span class="pre">\hat{y}^{2}\right)\hat{\psi}_m</span> <span class="pre">-</span> <span class="pre">m^{2}\hat{\psi}_m</span> <span class="pre">=</span> <span class="pre">a^{2}\hat{q}_m</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html#d-proof-invertibility-principle-in-spectral-space">H1 #d-proof</a></p></td>
+<td><p>左端算符即量子諧振子算符（<span class="math notranslate nohighlight">\(\beta y\)</span> 用了兩次的結果）</p></td>
+</tr>
+<tr class="row-odd"><td><p>★ 反演的一行除法 (One-line inversion) <span class="math notranslate nohighlight">\((6.6)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\hat{\psi}_{mn}</span> <span class="pre">=</span> <span class="pre">-\frac{a^{2}\hat{q}_{mn}}{m^{2}</span> <span class="pre">+</span> <span class="pre">\epsilon^{1/2}\left(2n</span> <span class="pre">+</span> <span class="pre">1\right)}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html#b-proof-one-line-division-in-spectral-space">H2 #b-proof</a></p></td>
+<td><p>分母恆為正（最小值 <span class="math notranslate nohighlight">\(\epsilon^{1/2} \approx 22.5\)</span>，<strong>無共振</strong>）；反演天生平滑化</p></td>
+</tr>
+<tr class="row-even"><td><p>平衡場的還原 (Balanced field recovery) <span class="math notranslate nohighlight">\((6.8)(6.9)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\begin{pmatrix}U_{mn}\cr</span> <span class="pre">V_{mn}\cr</span> <span class="pre">\Phi_{mn}\end{pmatrix}</span> <span class="pre">=</span> <span class="pre">\begin{pmatrix}\epsilon^{1/4}\left[\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}</span> <span class="pre">-</span> <span class="pre">\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]\cr</span> <span class="pre">im\mathcal{H}_n\cr</span> <span class="pre">\bar{c}\epsilon^{1/4}\left[\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}</span> <span class="pre">+</span> <span class="pre">\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]\end{pmatrix}e^{im\xi/a}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html#d-proof-recovery-of-the-rotational-wind-and-mass-fields">H2 #d-proof</a></p></td>
+<td><p><strong>恰為 <span class="math notranslate nohighlight">\((4.11)\)</span> 的羅斯貝波極限</strong> —— 可逆性原理只看得見羅斯貝波</p></td>
+</tr>
+<tr class="row-odd"><td><p>平衡模式的羅斯貝頻散關係 (Balanced Rossby dispersion relation) <span class="math notranslate nohighlight">\((7.3)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\nu_{mn}}{2\Omega}</span> <span class="pre">=</span> <span class="pre">-\frac{m}{m^{2}</span> <span class="pre">+</span> <span class="pre">\epsilon^{1/2}\left(2n</span> <span class="pre">+</span> <span class="pre">1\right)}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.html#c-proof-dispersion-relation-of-the-balanced-model">I1 #c-proof</a></p></td>
+<td><p>無黏絕熱；<span class="math notranslate nohighlight">\(v \approx \partial\psi/\partial x\)</span>。即 <span class="math notranslate nohighlight">\((4.10)\)</span> 丟掉 <span class="math notranslate nohighlight">\(\epsilon\hat{\nu}^{2}\)</span> 的結果</p></td>
+</tr>
+<tr class="row-even"><td><p>平衡近似的失效區域 (Where it fails)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\left.\frac{\epsilon\hat{\nu}^{2}}{m^{2}}\right|_{n=0,m=1}</span> <span class="pre">\approx</span> <span class="pre">0.92</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.html#e-solve-where-the-approximation-fails">I1 #e-solve</a></p></td>
+<td><p>低波數 <span class="math notranslate nohighlight">\(n = 0\)</span>（sectoral harmonics）重力波項與 PV 項同量級；<span class="math notranslate nohighlight">\(n = 3, m = 1\)</span> 僅 <span class="math notranslate nohighlight">\(0.02\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_Derivations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>📐 01_Derivations</strong>: 硬核推導區</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Calculus/golden_ratio_gaussian_integral.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Proof <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty} \frac{e^{-x^2} \sin^2(x^2)}{x^2} \mathrm{d}x = \sqrt{\pi} (\sqrt{\phi} - 1)\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus">Calculus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system">Coordinate_System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">Differential_Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-dynamics-in-cylindrical-coordinates">Fluid_Dynamics_in_Cylindrical_Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-dynamics-variable-coordinate-physics">Fluid_Dynamics_Variable_Coordinate_Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atmospheric-dynamics">Atmospheric_Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equatorial-beta-plane-dynamics">Equatorial_Beta_Plane_Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b1c2-pv">B1–C2 場方程與 PV 原理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d1d2">D1–D2 垂直分離</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e1e4">E1–E4 正規模態轉換</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f1f3-1">F1–F3 端點① 受迫解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g1-2-pv">G1 端點② PV 尾流</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h1i1-34">H1–I1 端點③④ 可逆性原理與平衡頻散關係</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

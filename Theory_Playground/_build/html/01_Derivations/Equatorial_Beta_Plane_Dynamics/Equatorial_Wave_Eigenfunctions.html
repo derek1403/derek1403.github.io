@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Equatorial Wave Eigenfunctions (赤道波本徵函數、歸一化常數與正交歸一) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Forced Response of Equatorial Modes (赤道模態的受迫解：一行除法)" href="Forced_Response_of_Equatorial_Modes.html" />
+    <link rel="prev" title="Matsuno Dispersion Relation (Matsuno 頻散關係的記法對照與特例)" href="Matsuno_Dispersion_Relation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equatorial Wave Eigenfunctions (赤道波本徵函數、歸一化常數與正交歸一)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-explicit-form-of-the-eigenfunctions">(a) proof 本徵函數的顯式形式 (Explicit form of the eigenfunctions)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-n-ge-0-normalization-constant-for-n-ge-0">(b) proof 歸一化常數（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）(Normalization constant for <span class="math notranslate nohighlight">\(n \ge 0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-kelvin-normalization-constant-for-the-kelvin-wave">(c) proof Kelvin 波的歸一化常數 (Normalization constant for the Kelvin wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-orthonormality">(d) proof 正交歸一性 (Orthonormality)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-eigenfunctions-of-the-zonally-symmetric-rossby-modes">(e) proof 緯向對稱羅斯貝模態的本徵函數 (Eigenfunctions of the zonally symmetric Rossby modes)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-verify-zonally-symmetric-modes-are-geostrophically-balanced-zonal-flows">(f) verify 緯向對稱模態即地轉平衡緯向流 (Zonally symmetric modes are geostrophically balanced zonal flows)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project2-1-frac-1-2-n">為什麼 project2_1 的 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span> 會變成兩個對稱的根號</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">動能與位能為什麼各佔一半</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">簡併特例的物理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">這一組基底之後怎麼用</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equatorial-wave-eigenfunctions">
+<h1>Equatorial Wave Eigenfunctions (赤道波本徵函數、歸一化常數與正交歸一)<a class="headerlink" href="#equatorial-wave-eigenfunctions" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>本徵函數的<strong>形式</strong>已在 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project2/project2_1.html">project2_1</a> 證過，
+本篇補上論文真正需要的三件事：<strong>記法翻譯</strong>、<strong>歸一化常數</strong>、<strong>正交歸一性</strong>，外加簡併特例。</p>
+<ul class="simple">
+<li><p>(a) 本徵函數的顯式形式（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mathbf{K}_{mnr}(\hat{y}) = A_{mnr}
+\begin{pmatrix}
+\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] \cr
+-i\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_{n} \cr
+\bar{c}\,\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+\end{pmatrix}\]</div>
+<ul class="simple">
+<li><p>(b) 使 <span class="math notranslate nohighlight">\(\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mnr}\right) = 1\)</span> 的歸一化常數（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[A_{mnr} = \left[\epsilon^{1/2}\left(n+1\right)\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)^{2} + \epsilon^{1/2}n\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)^{2} + \left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)^{2}\right]^{-1/2}\]</div>
+<ul class="simple">
+<li><p>(c) Kelvin 波（<span class="math notranslate nohighlight">\(n = -1\)</span>、<span class="math notranslate nohighlight">\(r = 2\)</span>）的歸一化常數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[A_{m,-1,2} = 2^{-1/2}\pi^{-1/4}\]</div>
+<ul class="simple">
+<li><p>(d) 正交歸一性：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) =
+\begin{cases}
+1, &amp; \left(n', r'\right) = \left(n, r\right) \\
+0, &amp; \left(n', r'\right) \neq \left(n, r\right)
+\end{cases}\end{split}\]</div>
+<ul class="simple">
+<li><p>(e) 簡併特例 —— 緯向對稱的羅斯貝模態（<span class="math notranslate nohighlight">\(m = 0\)</span>、<span class="math notranslate nohighlight">\(n &gt; 0\)</span>、<span class="math notranslate nohighlight">\(r = 0\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mathbf{K}_{0n0}(\hat{y}) = \left(2n + 1\right)^{-1/2}
+\begin{pmatrix}
+\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1} \cr
+0 \cr
+\bar{c}\left[\left(\dfrac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\dfrac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+\end{pmatrix}\]</div>
+<ul class="simple">
+<li><p>(f) (e) 的本徵函數對應<strong>地轉平衡的緯向流</strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\beta y\,U_{0n0} + \frac{d\Phi_{0n0}}{dy} = 0\]</div>
+<ul class="simple">
+<li><p>註：(a)–(e) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((4.11)\)</span>、<span class="math notranslate nohighlight">\((4.15)\)</span>、<span class="math notranslate nohighlight">\((4.16)\)</span>、<span class="math notranslate nohighlight">\((4.17)\)</span>、<span class="math notranslate nohighlight">\((A.1)\)</span>。</p></li>
+<li><p>註：<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 的所有性質（遞迴、微分、正交歸一）都引用本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 與 <a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"><span class="std std-doc">Hermite Orthonormality and Oscillator Eigenvalue</span></a>，本篇不重證。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project2/project2_1.html">赤道波本徵函數（project2_1 記法）(Equatorial wave eigenfunctions in project2_1 notation)</a>：</strong> 已於 Advanced Atmospheric Dynamics 的 project2_1【證明 2】完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 經向速度：</p>
+<div class="math notranslate nohighlight">
+\[\hat{v} = i\left(\omega^{2} - k^{2}\right)A\,e^{-\hat{y}^{2}/2}H_n(\hat{y})\]</div>
+</li>
+<li><p>(b) 緯向速度：</p>
+<div class="math notranslate nohighlight">
+\[\hat{u} = -A\,e^{-\hat{y}^{2}/2}\left[\frac{1}{2}\left(\omega + k\right)H_{n+1} + n\left(\omega - k\right)H_{n-1}\right]\]</div>
+</li>
+<li><p>(c) 重力位：</p>
+<div class="math notranslate nohighlight">
+\[\hat{\phi} = -A\,e^{-\hat{y}^{2}/2}\left[\frac{1}{2}\left(\omega + k\right)H_{n+1} - n\left(\omega - k\right)H_{n-1}\right]\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\omega,\ k\)</span> : project2_1 記法的無因次頻率與緯向波數 (Dimensionless frequency and wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 未定的整體常數 (Undetermined overall constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html#a-proof-notation-mapping-and-scale-restoration">記法對照與頻散關係 (Notation mapping and dispersion relation)</a>：</strong> 已於本庫 <a class="reference internal" href="Matsuno_Dispersion_Relation.html"><span class="std std-doc">Matsuno Dispersion Relation</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 記法換算：</p>
+<div class="math notranslate nohighlight">
+\[\omega = \epsilon^{1/4}\hat{\nu}_{mnr}, \qquad k = \epsilon^{-1/4}m\]</div>
+</li>
+<li><p>(b) 頻散關係：</p>
+<div class="math notranslate nohighlight">
+\[\epsilon\hat{\nu}_{mnr}^{2} - m^{2} - \frac{m}{\hat{\nu}_{mnr}} = \epsilon^{1/2}\left(2n + 1\right)\]</div>
+</li>
+<li><p>(c) Kelvin 波的本徵值與其解的結構（<span class="math notranslate nohighlight">\(V = 0\)</span>、<span class="math notranslate nohighlight">\(\Phi = \bar{c}U\)</span>、<span class="math notranslate nohighlight">\(U \propto e^{-\hat{y}^{2}/2}\)</span>）：</p>
+<div class="math notranslate nohighlight">
+\[\epsilon^{1/2}\hat{\nu}_{m,-1,2} = m\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega,\ k\)</span> : project2_1 記法的無因次頻率與緯向波數 (Dimensionless frequency and wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#assumptions-preliminaries">歸一化 Hermite 函數及其常數比 (Normalized Hermite functions and the constant ratios)</a>：</strong> 已於本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 定義：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H}_n(\hat{y}) = c_n\,H_n(\hat{y})\,e^{-\hat{y}^{2}/2}, \qquad c_n = \left(\pi^{1/2}2^{n}n!\right)^{-1/2}\]</div>
+</li>
+<li><p>(b) 相鄰常數比：</p>
+<div class="math notranslate nohighlight">
+\[\frac{c_n}{c_{n+1}} = \left[2\left(n+1\right)\right]^{1/2}, \qquad \frac{c_n}{c_{n-1}} = \left[\frac{1}{2n}\right]^{1/2}\]</div>
+</li>
+<li><p>(c) 遞迴關係：</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}\,\mathcal{H}_n = \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\]</div>
+</li>
+<li><p>(d) 微分關係：</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\mathcal{H}_n}{d\hat{y}} = -\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\]</div>
+</li>
+<li><p>(e) 最低階顯式：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H}_0(\hat{y}) = \pi^{-1/4}e^{-\hat{y}^{2}/2}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_n\)</span> : 歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html#d-proof-orthonormality">Hermite 函數的正交歸一性 (Orthonormality of the Hermite functions)</a>：</strong> 已於本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"><span class="std std-doc">Hermite Orthonormality and Oscillator Eigenvalue</span></a>【證明 (d)】完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y} = \begin{cases}1, &amp; n' = n \\ 0, &amp; n' \neq n\end{cases}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#e-proof-pure-imaginary-eigenvalues-and-orthogonal-eigenfunctions">能量內積與本徵函數的正交性 (Energy inner product and orthogonality of the eigenfunctions)</a>：</strong> 已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 內積：</p>
+<div class="math notranslate nohighlight">
+\[\left(\mathbf{f},\ \mathbf{g}\right) = \int_{-\infty}^{\infty}\left(f_1g_1^{*} + f_2g_2^{*} + \frac{1}{\bar{c}^{2}}f_3g_3^{*}\right)d\hat{y}\]</div>
+</li>
+<li><p>(b) 相異本徵值的本徵函數互相正交：</p>
+<div class="math notranslate nohighlight">
+\[\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) = 0 \qquad \left(\nu_{mnr} \neq \nu_{mn'r'}\right)\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_j,\ g_j\)</span> : 內積中的兩個三分量向量函數 (Two three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 第 <span class="math notranslate nohighlight">\((m, n, r)\)</span> 個本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 6】 <a class="reference external" href="https://dlmf.nist.gov/7.4#E1">高斯積分 (Gaussian integral)</a>：</strong> 標準結果，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}e^{-\hat{y}^{2}}\,d\hat{y} = \pi^{1/2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 7】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">本徵值問題與算符 (Eigenvalue problem and the operator)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a> 完整證明，此處只用到第二分量那一條</p>
+<div class="math notranslate nohighlight">
+\[\beta y\,U_{mnr} + \frac{d\Phi_{mnr}}{dy} = i\nu_{mnr}V_{mnr}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U,\ V\)</span> : 本徵函數的速度分量 (Velocity components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 本徵函數的位勢分量 (Geopotential component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 有因次經向座標 (Dimensional meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 第 <span class="math notranslate nohighlight">\((m, n, r)\)</span> 個本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 本徵向量的規範自由度 (Gauge freedom of the eigenvector)：</strong> 本徵函數可乘任意非零常數仍是本徵函數；本篇用這個自由度把 project2_1 的整體常數 <span class="math notranslate nohighlight">\(A\)</span> 換成 Schubert 的 <span class="math notranslate nohighlight">\(A_{mnr}\)</span>，並把第三分量還原因次（乘上 <span class="math notranslate nohighlight">\(\bar{c}\)</span>）</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{K}_{mnr} \to \sigma\,\mathbf{K}_{mnr} \quad \left(\sigma \neq 0\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> : 任意非零常數 (Arbitrary nonzero constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：這個自由度<strong>唯一</strong>被【證明 (b)(c)】的歸一化條件用掉；剩下的只有一個整體相位，不影響任何物理量。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 非簡併 (Non-degeneracy)：</strong> 【證明 (d)】的正交部分要求兩個模態的本徵值相異</p>
+<div class="math notranslate nohighlight">
+\[\nu_{mnr} \neq \nu_{mn'r'} \qquad \left(\left(n', r'\right) \neq \left(n, r\right)\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 第 <span class="math notranslate nohighlight">\((m, n, r)\)</span> 個本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：唯一的例外是緯向對稱的羅斯貝模態（<span class="math notranslate nohighlight">\(m = 0\)</span>、<span class="math notranslate nohighlight">\(n &gt; 0\)</span>、<span class="math notranslate nohighlight">\(r = 0\)</span>），它們全部有 <span class="math notranslate nohighlight">\(\nu_{0n0} = 0\)</span>。該情形由【證明 (e)】另外處理，其正交性直接由【已知 4】驗證。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 <span class="math notranslate nohighlight">\(m\)</span> 暫時視為連續變數 (Treating <span class="math notranslate nohighlight">\(m\)</span> as a continuous variable)：</strong> 【證明 (e)】要取 <span class="math notranslate nohighlight">\(m \to 0\)</span> 的極限，故暫時放寬 <span class="math notranslate nohighlight">\(m\)</span> 的整數限制</p>
+<div class="math notranslate nohighlight">
+\[m \in \mathbb{R}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 上下行振幅 (Upper and lower branch amplitudes)：</strong> 把【證明 (a)】括號裡反覆出現的兩個組合縮寫掉</p>
+<ul>
+<li><p>(a) 上行振幅：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{P}_{mnr} \overset{\text{def}}{=} \left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\]</div>
+</li>
+<li><p>(b) 下行振幅：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{M}_{mnr} \overset{\text{def}}{=} \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}_{mnr},\ \mathcal{M}_{mnr}\)</span> : 上行、下行振幅 (Upper and lower branch amplitudes) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，皆為實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 兩套記法的三個組合 (Three combinations in the two notations)：</strong> 把【已知 2】(a) 代進 project2_1 的三個因子</p>
+<ul>
+<li><p>(a) 和：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \omega + k &amp;\overset{\text{已知 2(a)}}{=}&amp; \epsilon^{1/4}\hat{\nu}_{mnr} + \epsilon^{-1/4}m \\
+    &amp;=&amp; \epsilon^{-1/4}\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 差：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \omega - k &amp;\overset{\text{已知 2(a)}}{=}&amp; \epsilon^{1/4}\hat{\nu}_{mnr} - \epsilon^{-1/4}m \\
+    &amp;=&amp; \epsilon^{-1/4}\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 平方差：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \omega^{2} - k^{2} &amp;\overset{\text{推導 1(a)(b)}}{=}&amp; \epsilon^{-1/4}\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\cdot\epsilon^{-1/4}\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right) \\
+    &amp;=&amp; \epsilon^{-1/2}\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\omega,\ k\)</span> : project2_1 記法的無因次頻率與緯向波數 (Dimensionless frequency and wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 Hermite 多項式換成歸一化 Hermite 函數 (Converting to the normalized Hermite functions)：</strong> 這一步把 project2_1 的係數 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span> 恰好變成 Schubert 的兩個根號</p>
+<ul>
+<li><p>(a) 上行項：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{1}{2}H_{n+1}\,e^{-\hat{y}^{2}/2} &amp;\overset{\text{已知 3(a)}}{=}&amp; \frac{1}{2}\frac{\mathcal{H}_{n+1}}{c_{n+1}} \\
+    &amp;=&amp; \frac{1}{c_n}\cdot\frac{1}{2}\frac{c_n}{c_{n+1}}\,\mathcal{H}_{n+1} \\
+    &amp;\overset{\text{已知 3(b)}}{=}&amp; \frac{1}{c_n}\cdot\frac{1}{2}\left[2\left(n+1\right)\right]^{1/2}\mathcal{H}_{n+1} \\
+    &amp;=&amp; \frac{1}{c_n}\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 下行項：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    n\,H_{n-1}\,e^{-\hat{y}^{2}/2} &amp;\overset{\text{已知 3(a)}}{=}&amp; n\frac{\mathcal{H}_{n-1}}{c_{n-1}} \\
+    &amp;=&amp; \frac{1}{c_n}\cdot n\frac{c_n}{c_{n-1}}\,\mathcal{H}_{n-1} \\
+    &amp;\overset{\text{已知 3(b)}}{=}&amp; \frac{1}{c_n}\cdot n\left[\frac{1}{2n}\right]^{1/2}\mathcal{H}_{n-1} \\
+    &amp;=&amp; \frac{1}{c_n}\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 中央項：</p>
+<div class="math notranslate nohighlight">
+\[H_n\,e^{-\hat{y}^{2}/2} \overset{\text{已知 3(a)}}{=} \frac{1}{c_n}\mathcal{H}_n\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_n\)</span> : 歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 本徵函數三分量的範數 (Norms of the three components)：</strong> 用【已知 4】把三個積分算掉；<span class="math notranslate nohighlight">\(\mathcal{H}_{n+1}\)</span> 與 <span class="math notranslate nohighlight">\(\mathcal{H}_{n-1}\)</span> 的交叉項正交而消失</p>
+<ul>
+<li><p>(a) 第一分量：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-\infty}^{\infty}\left|U_{mnr}\right|^{2}d\hat{y} &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; A_{mnr}^{2}\,\epsilon^{1/2}\int_{-\infty}^{\infty}\left[\mathcal{P}_{mnr}\mathcal{H}_{n+1} + \mathcal{M}_{mnr}\mathcal{H}_{n-1}\right]^{2}d\hat{y} \\
+    &amp;\overset{\text{已知 4}}{=}&amp; A_{mnr}^{2}\,\epsilon^{1/2}\left[\mathcal{P}_{mnr}^{2} + \mathcal{M}_{mnr}^{2}\right]
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 第三分量（帶 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 權重，<span class="math notranslate nohighlight">\(\bar{c}\)</span> 恰好約掉；括號內的減號在平方後不影響交叉項為零的結論）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{1}{\bar{c}^{2}}\int_{-\infty}^{\infty}\left|\Phi_{mnr}\right|^{2}d\hat{y} &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; A_{mnr}^{2}\,\epsilon^{1/2}\int_{-\infty}^{\infty}\left[\mathcal{P}_{mnr}\mathcal{H}_{n+1} - \mathcal{M}_{mnr}\mathcal{H}_{n-1}\right]^{2}d\hat{y} \\
+    &amp;\overset{\text{已知 4}}{=}&amp; A_{mnr}^{2}\,\epsilon^{1/2}\left[\mathcal{P}_{mnr}^{2} + \mathcal{M}_{mnr}^{2}\right]
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 第二分量：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-\infty}^{\infty}\left|V_{mnr}\right|^{2}d\hat{y} &amp;=&amp; A_{mnr}^{2}\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)^{2}\int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} \\
+    &amp;\overset{\text{已知 4}}{=}&amp; A_{mnr}^{2}\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)^{2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(U,\ V\)</span> : 本徵函數的速度分量 (Velocity components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 未定的整體常數 (Undetermined overall constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}_{mnr},\ \mathcal{M}_{mnr}\)</span> : 上行、下行振幅 (Upper and lower branch amplitudes) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，皆為實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 本徵函數的位勢分量 (Geopotential component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{mnr}\)</span> : 歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 上下行振幅平方和的展開 (Expanding the sum of squared amplitudes)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  2\epsilon^{1/2}\left[\mathcal{P}_{mnr}^{2} + \mathcal{M}_{mnr}^{2}\right] &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; 2\epsilon^{1/2}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)^{2}\frac{n+1}{2} + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)^{2}\frac{n}{2}\right] \\
+  &amp;=&amp; \epsilon^{1/2}\left(n+1\right)\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)^{2} + \epsilon^{1/2}n\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)^{2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}_{mnr},\ \mathcal{M}_{mnr}\)</span> : 上行、下行振幅 (Upper and lower branch amplitudes) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，皆為實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 羅斯貝分支在 <span class="math notranslate nohighlight">\(m \to 0\)</span> 的漸近行為 (Asymptotics of the Rossby branch as <span class="math notranslate nohighlight">\(m \to 0\)</span>)：</strong> 這是【證明 (e)】能取極限的前提</p>
+<ul>
+<li><p>(a) 由【已知 2】(b)，<span class="math notranslate nohighlight">\(\hat{\nu} \to 0\)</span> 時 <span class="math notranslate nohighlight">\(\epsilon\hat{\nu}^{2}\)</span> 與 <span class="math notranslate nohighlight">\(m^{2}\)</span> 皆為高階小量，主平衡落在 <span class="math notranslate nohighlight">\(-m/\hat{\nu}\)</span> 這一項：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \epsilon^{1/2}\left(2n + 1\right) &amp;\overset{\text{已知 2(b)}}{=}&amp; \epsilon\hat{\nu}_{0n0}^{2} - m^{2} - \frac{m}{\hat{\nu}_{0n0}} \\
+    \epsilon^{1/2}\left(2n + 1\right) &amp;\approx&amp; -\frac{m}{\hat{\nu}_{0n0}} \\
+    \epsilon^{1/2}\hat{\nu}_{0n0} &amp;\approx&amp; -\frac{m}{2n + 1}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 由 (a) 得上行組合的極限：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \epsilon^{1/2}\hat{\nu}_{0n0} + m &amp;\overset{\text{推導 5(a)}}{\approx}&amp; m\left[1 - \frac{1}{2n+1}\right] \\
+    &amp;=&amp; \frac{2nm}{2n + 1}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 同樣得下行組合的極限：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \epsilon^{1/2}\hat{\nu}_{0n0} - m &amp;\overset{\text{推導 5(a)}}{\approx}&amp; -m\left[1 + \frac{1}{2n+1}\right] \\
+    &amp;=&amp; -\frac{\left(2n + 2\right)m}{2n + 1}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(d) 第二分量的係數是 <span class="math notranslate nohighlight">\(m\)</span> 的二次小量，故相對於 (b)(c) 可捨棄：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \epsilon\hat{\nu}_{0n0}^{2} - m^{2} &amp;\overset{\text{推導 5(a)}}{\approx}&amp; m^{2}\left[\frac{1}{\left(2n+1\right)^{2}} - 1\right] \\
+    &amp;\ll&amp; \frac{2nm}{2n+1} \qquad \left(m \to 0\right)
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 6】 極限下的根號係數重組 (Regrouping the radical coefficients in the limit)：</strong> 【推導 5】(b)(c) 的極限值配上【定義 1】的根號後，可以把共同因子 <span class="math notranslate nohighlight">\(\left[n\left(n+1\right)\right]^{1/2}\)</span> 提出來，兩個根號恰好<strong>互換</strong></p>
+<ul>
+<li><p>(a) 上行項：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{2nm}{2n+1}\left(\frac{n+1}{2}\right)^{1/2} &amp;=&amp; \frac{2m}{2n+1}\cdot n\left(\frac{n+1}{2}\right)^{1/2} \\
+    &amp;=&amp; \frac{2m}{2n+1}\left[n\left(n+1\right)\right]^{1/2}\left(\frac{n}{2}\right)^{1/2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 下行項：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{\left(2n+2\right)m}{2n+1}\left(\frac{n}{2}\right)^{1/2} &amp;=&amp; \frac{2m}{2n+1}\cdot\left(n+1\right)\left(\frac{n}{2}\right)^{1/2} \\
+    &amp;=&amp; \frac{2m}{2n+1}\left[n\left(n+1\right)\right]^{1/2}\left(\frac{n+1}{2}\right)^{1/2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 7】 緯向對稱模態的 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 乘法 (Multiplication by <span class="math notranslate nohighlight">\(\hat{y}\)</span> for the zonally symmetric mode)：</strong> 把【已知 3】(c) 用在【證明 (e)】第一分量的括號上，<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 項對消</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \hat{y}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+  &amp;\overset{\text{已知 3(c)}}{=}&amp; \left(\frac{n}{2}\right)^{1/2}\left[\left(\frac{n+2}{2}\right)^{1/2}\mathcal{H}_{n+2} + \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n}\right] \\
+  &amp;&amp; - \left(\frac{n+1}{2}\right)^{1/2}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n} + \left(\frac{n-1}{2}\right)^{1/2}\mathcal{H}_{n-2}\right] \\
+  &amp;=&amp; \left(\frac{n\left(n+2\right)}{4}\right)^{1/2}\mathcal{H}_{n+2} - \left(\frac{\left(n+1\right)\left(n-1\right)}{4}\right)^{1/2}\mathcal{H}_{n-2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 8】 緯向對稱模態的微分 (Differentiation for the zonally symmetric mode)：</strong> 把【已知 3】(d) 用在【證明 (e)】第三分量的括號上，同樣是 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 項對消</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d}{d\hat{y}}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+  &amp;\overset{\text{已知 3(d)}}{=}&amp; \left(\frac{n}{2}\right)^{1/2}\left[-\left(\frac{n+2}{2}\right)^{1/2}\mathcal{H}_{n+2} + \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n}\right] \\
+  &amp;&amp; + \left(\frac{n+1}{2}\right)^{1/2}\left[-\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n} + \left(\frac{n-1}{2}\right)^{1/2}\mathcal{H}_{n-2}\right] \\
+  &amp;=&amp; -\left(\frac{n\left(n+2\right)}{4}\right)^{1/2}\mathcal{H}_{n+2} + \left(\frac{\left(n+1\right)\left(n-1\right)}{4}\right)^{1/2}\mathcal{H}_{n-2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 9】 有因次地轉關係的無因次形式 (Dimensionless form of the geostrophic relation)：</strong> 把【已知 7】的 <span class="math notranslate nohighlight">\(\beta y\)</span> 與 <span class="math notranslate nohighlight">\(d/dy\)</span> 換成 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 與 <span class="math notranslate nohighlight">\(d/d\hat{y}\)</span>，兩個係數恰好相同</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \beta y &amp;\overset{\text{已知 2}}{=}&amp; \frac{2\Omega}{a}\cdot\frac{a\,\hat{y}}{\epsilon^{1/4}} \\
+  \beta y &amp;=&amp; \frac{2\Omega}{\epsilon^{1/4}}\hat{y} \\
+  \frac{d}{dy} &amp;\overset{\text{已知 2}}{=}&amp; \frac{\epsilon^{1/4}}{a}\frac{d}{d\hat{y}} \\
+  \bar{c}\frac{d}{dy} &amp;\overset{\text{已知 2}}{=}&amp; \frac{2\Omega a}{\epsilon^{1/2}}\cdot\frac{\epsilon^{1/4}}{a}\frac{d}{d\hat{y}} \\
+  \bar{c}\frac{d}{dy} &amp;=&amp; \frac{2\Omega}{\epsilon^{1/4}}\frac{d}{d\hat{y}}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 有因次經向座標 (Dimensional meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 未定的整體常數 (Undetermined overall constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega,\ k\)</span> : project2_1 記法的無因次頻率與緯向波數 (Dimensionless frequency and wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_n\)</span> : 歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U,\ V\)</span> : 本徵函數的速度分量 (Velocity components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 本徵函數的位勢分量 (Geopotential component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}_{mnr},\ \mathcal{M}_{mnr}\)</span> : 上行、下行振幅 (Upper and lower branch amplitudes) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，皆為實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 個緯向對稱羅斯貝模態的整體常數 (Overall constant of the <span class="math notranslate nohighlight">\(n\)</span>-th zonally symmetric Rossby mode) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\boldsymbol{\eta}}_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個緯向波數的狀態向量 (State vector) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span> : 正規模態展開係數 (Normal mode expansion coefficient) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p>註：本卡片用到 <span class="math notranslate nohighlight">\(\bar{c} = \dfrac{2\Omega a}{\epsilon^{1/2}}\)</span>，這是【已知 2】Lamb 參數定義 <span class="math notranslate nohighlight">\(\epsilon = \dfrac{4\Omega^{2}a^{2}}{\bar{c}^{2}}\)</span> 的直接改寫。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-explicit-form-of-the-eigenfunctions">
+<h3>(a) proof 本徵函數的顯式形式 (Explicit form of the eigenfunctions)<a class="headerlink" href="#a-proof-explicit-form-of-the-eigenfunctions" title="Link to this heading">#</a></h3>
+<p>三個分量各自把【推導 1】的記法換算與【推導 2】的函數換算代進【已知 1】，整體常數依【假設 1】重新命名為 <span class="math notranslate nohighlight">\(A_{mnr}\)</span>。</p>
+<ul class="simple">
+<li><p><strong>第一分量：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{u} &amp;\overset{\text{已知 1(b)}}{=}&amp; -A\left[\frac{1}{2}\left(\omega + k\right)H_{n+1}\,e^{-\hat{y}^{2}/2} + n\left(\omega - k\right)H_{n-1}\,e^{-\hat{y}^{2}/2}\right] \\
+\hat{u} &amp;\overset{\text{推導 1(a)(b)}}{=}&amp; -A\,\epsilon^{-1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\frac{1}{2}H_{n+1}\,e^{-\hat{y}^{2}/2} + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)n\,H_{n-1}\,e^{-\hat{y}^{2}/2}\right] \\
+\hat{u} &amp;\overset{\text{推導 2(a)(b)}}{=}&amp; -\frac{A\,\epsilon^{-1/4}}{c_n}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] \\
+U_{mnr} &amp;\overset{\text{假設 1}}{=}&amp; A_{mnr}\,\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>第二分量：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{v} &amp;\overset{\text{已知 1(a)}}{=}&amp; i\left(\omega^{2} - k^{2}\right)A\,H_n\,e^{-\hat{y}^{2}/2} \\
+\hat{v} &amp;\overset{\text{推導 1(c),推導 2(c)}}{=}&amp; \frac{i\,A\,\epsilon^{-1/2}}{c_n}\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_n \\
+V_{mnr} &amp;\overset{\text{假設 1}}{=}&amp; -i\,A_{mnr}\left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)\mathcal{H}_n
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>第三分量：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{\phi} &amp;\overset{\text{已知 1(c)}}{=}&amp; -A\left[\frac{1}{2}\left(\omega + k\right)H_{n+1}\,e^{-\hat{y}^{2}/2} - n\left(\omega - k\right)H_{n-1}\,e^{-\hat{y}^{2}/2}\right] \\
+\hat{\phi} &amp;\overset{\text{推導 1(a)(b),推導 2(a)(b)}}{=}&amp; -\frac{A\,\epsilon^{-1/4}}{c_n}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] \\
+\Phi_{mnr} &amp;\overset{\text{假設 1}}{=}&amp; \bar{c}\,A_{mnr}\,\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-n-ge-0-normalization-constant-for-n-ge-0">
+<h3>(b) proof 歸一化常數（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）(Normalization constant for <span class="math notranslate nohighlight">\(n \ge 0\)</span>)<a class="headerlink" href="#b-proof-n-ge-0-normalization-constant-for-n-ge-0" title="Link to this heading">#</a></h3>
+<p>把【推導 3】的三個範數加起來令其為 <span class="math notranslate nohighlight">\(1\)</span>，再用【推導 4】展開。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+1 &amp;\overset{\text{let}}{=}&amp; \left(\mathbf{K}_{mnr},\ \mathbf{K}_{mnr}\right) \\
+1 &amp;\overset{\text{已知 5(a)}}{=}&amp; \int_{-\infty}^{\infty}\left[\left|U_{mnr}\right|^{2} + \left|V_{mnr}\right|^{2} + \frac{1}{\bar{c}^{2}}\left|\Phi_{mnr}\right|^{2}\right]d\hat{y} \\
+1 &amp;\overset{\text{推導 3(a)(b)(c)}}{=}&amp; A_{mnr}^{2}\left[2\epsilon^{1/2}\left(\mathcal{P}_{mnr}^{2} + \mathcal{M}_{mnr}^{2}\right) + \left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)^{2}\right] \\
+1 &amp;\overset{\text{推導 4}}{=}&amp; A_{mnr}^{2}\left[\epsilon^{1/2}\left(n+1\right)\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)^{2} + \epsilon^{1/2}n\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)^{2} + \left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)^{2}\right] \\
+A_{mnr} &amp;=&amp; \left[\epsilon^{1/2}\left(n+1\right)\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)^{2} + \epsilon^{1/2}n\left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)^{2} + \left(\epsilon\hat{\nu}_{mnr}^{2} - m^{2}\right)^{2}\right]^{-1/2}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c-proof-kelvin-normalization-constant-for-the-kelvin-wave">
+<h3>(c) proof Kelvin 波的歸一化常數 (Normalization constant for the Kelvin wave)<a class="headerlink" href="#c-proof-kelvin-normalization-constant-for-the-kelvin-wave" title="Link to this heading">#</a></h3>
+<p>Kelvin 波只有兩個非零分量，且兩者的貢獻<strong>恰好相等</strong>，故總範數是單一高斯積分的兩倍。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+1 &amp;\overset{\text{let}}{=}&amp; \left(\mathbf{K}_{m,-1,2},\ \mathbf{K}_{m,-1,2}\right) \\
+1 &amp;\overset{\text{已知 2(c),已知 5(a)}}{=}&amp; A_{m,-1,2}^{2}\int_{-\infty}^{\infty}\left[e^{-\hat{y}^{2}} + 0 + \frac{1}{\bar{c}^{2}}\bar{c}^{2}e^{-\hat{y}^{2}}\right]d\hat{y} \\
+1 &amp;=&amp; 2A_{m,-1,2}^{2}\int_{-\infty}^{\infty}e^{-\hat{y}^{2}}\,d\hat{y} \\
+1 &amp;\overset{\text{已知 6}}{=}&amp; 2A_{m,-1,2}^{2}\,\pi^{1/2} \\
+A_{m,-1,2} &amp;=&amp; \left(2\pi^{1/2}\right)^{-1/2} \\
+A_{m,-1,2} &amp;=&amp; 2^{-1/2}\pi^{-1/4}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="d-proof-orthonormality">
+<h3>(d) proof 正交歸一性 (Orthonormality)<a class="headerlink" href="#d-proof-orthonormality" title="Link to this heading">#</a></h3>
+<p>歸一部分由【證明 (b)(c)】給出，正交部分由反厄米性給出。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) \overset{\text{證明 (b)(c),已知 5(b),假設 2}}{=}
+\begin{cases}
+1, &amp; \left(n', r'\right) = \left(n, r\right) \\
+0, &amp; \left(n', r'\right) \neq \left(n, r\right)
+\end{cases}\end{split}\]</div>
+</section>
+<section id="e-proof-eigenfunctions-of-the-zonally-symmetric-rossby-modes">
+<h3>(e) proof 緯向對稱羅斯貝模態的本徵函數 (Eigenfunctions of the zonally symmetric Rossby modes)<a class="headerlink" href="#e-proof-eigenfunctions-of-the-zonally-symmetric-rossby-modes" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(m = 0\)</span>、<span class="math notranslate nohighlight">\(\hat{\nu}_{0n0} = 0\)</span> 時【證明 (a)】變成 <span class="math notranslate nohighlight">\(0/0\)</span> 的不定式。把 <span class="math notranslate nohighlight">\(m\)</span> 當連續變數取極限，共同因子 <span class="math notranslate nohighlight">\(\dfrac{2m\left[n\left(n+1\right)\right]^{1/2}}{2n+1}\)</span> 被【假設 1】的規範自由度吸收掉。</p>
+<ul class="simple">
+<li><p><strong>第一分量：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+U_{0n0} &amp;\overset{\text{證明 (a),假設 3}}{=}&amp; \lim_{m \to 0}A_{0n0}\,\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{0n0} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\epsilon^{1/2}\hat{\nu}_{0n0} - m\right)\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] \\
+&amp;\overset{\text{推導 5(b)(c)}}{=}&amp; \lim_{m \to 0}A_{0n0}\,\epsilon^{1/4}\left[\frac{2nm}{2n+1}\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} - \frac{\left(2n+2\right)m}{2n+1}\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] \\
+&amp;\overset{\text{推導 6(a)(b)}}{=}&amp; \lim_{m \to 0}A_{0n0}\,\epsilon^{1/4}\frac{2m\left[n\left(n+1\right)\right]^{1/2}}{2n+1}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] \\
+&amp;\overset{\text{假設 1}}{=}&amp; C_n\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>第二分量：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+V_{0n0} &amp;\overset{\text{證明 (a),假設 3}}{=}&amp; \lim_{m \to 0}\left(-i\right)A_{0n0}\left(\epsilon\hat{\nu}_{0n0}^{2} - m^{2}\right)\mathcal{H}_n \\
+&amp;\overset{\text{推導 5(d)}}{=}&amp; 0
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>第三分量：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Phi_{0n0} &amp;\overset{\text{證明 (a),推導 5(b)(c),推導 6(a)(b)}}{=}&amp; \lim_{m \to 0}\bar{c}\,A_{0n0}\,\epsilon^{1/4}\frac{2m\left[n\left(n+1\right)\right]^{1/2}}{2n+1}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] \\
+&amp;\overset{\text{假設 1}}{=}&amp; \bar{c}\,C_n\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>歸一化常數：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+1 &amp;\overset{\text{let}}{=}&amp; \left(\mathbf{K}_{0n0},\ \mathbf{K}_{0n0}\right) \\
+1 &amp;\overset{\text{已知 5(a)}}{=}&amp; C_n^{2}\int_{-\infty}^{\infty}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]^{2}d\hat{y} + C_n^{2}\int_{-\infty}^{\infty}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]^{2}d\hat{y} \\
+1 &amp;\overset{\text{已知 4}}{=}&amp; C_n^{2}\left[\frac{n}{2} + \frac{n+1}{2}\right] + C_n^{2}\left[\frac{n}{2} + \frac{n+1}{2}\right] \\
+1 &amp;=&amp; C_n^{2}\left(2n + 1\right) \\
+C_n &amp;=&amp; \left(2n + 1\right)^{-1/2}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="f-verify-zonally-symmetric-modes-are-geostrophically-balanced-zonal-flows">
+<h3>(f) verify 緯向對稱模態即地轉平衡緯向流 (Zonally symmetric modes are geostrophically balanced zonal flows)<a class="headerlink" href="#f-verify-zonally-symmetric-modes-are-geostrophically-balanced-zonal-flows" title="Link to this heading">#</a></h3>
+<p>【已知 7】在 <span class="math notranslate nohighlight">\(\nu_{0n0} = 0\)</span>、<span class="math notranslate nohighlight">\(V_{0n0} = 0\)</span> 時退化成地轉平衡。【推導 7】與【推導 8】的結果<strong>恰好互為相反數</strong>，故兩者相加為零。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\beta y\,U_{0n0} + \frac{d\Phi_{0n0}}{dy}
+&amp;\overset{\text{已知 7,證明 (e),推導 9}}{=}&amp; \frac{2\Omega\,C_n}{\epsilon^{1/4}}\left\{\hat{y}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} - \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right] + \frac{d}{d\hat{y}}\left[\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n-1}\right]\right\} \\
+&amp;\overset{\text{推導 7,推導 8}}{=}&amp; \frac{2\Omega\,C_n}{\epsilon^{1/4}}\cdot 0 \\
+&amp;=&amp; 0
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>結構解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="project2-1-frac-1-2-n">
+<h3>為什麼 project2_1 的 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span> 會變成兩個對稱的根號<a class="headerlink" href="#project2-1-frac-1-2-n" title="Link to this heading">#</a></h3>
+<p>【推導 2】是本篇最精巧的一步。在 <span class="math notranslate nohighlight">\(H_n\)</span> 的世界裡，遞迴係數是<strong>不對稱</strong>的 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span>；換成 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 之後，兩者變成<strong>對稱</strong>的 <span class="math notranslate nohighlight">\(\left(\frac{n+1}{2}\right)^{1/2}\)</span> 與 <span class="math notranslate nohighlight">\(\left(\frac{n}{2}\right)^{1/2}\)</span>。</p>
+<p>這不是巧合。歸一化常數 <span class="math notranslate nohighlight">\(c_n = \left(\pi^{1/2}2^{n}n!\right)^{-1/2}\)</span> 就是<strong>專門為了製造這個對稱性</strong>而挑的（見 <a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 的結構解釋）。而這個對稱性正是【推導 3】(a)(b) 兩個分量的範數<strong>恰好相等</strong>、進而【證明 (b)】的 <span class="math notranslate nohighlight">\(A_{mnr}\)</span> 能寫得這麼緊湊的原因。</p>
+</section>
+<section id="id4">
+<h3>動能與位能為什麼各佔一半<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>【推導 3】(a)(b) 算出來的兩個結果<strong>完全相同</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\int\left|U_{mnr}\right|^{2}d\hat{y} = \frac{1}{\bar{c}^{2}}\int\left|\Phi_{mnr}\right|^{2}d\hat{y} = A_{mnr}^{2}\epsilon^{1/2}\left[\mathcal{P}_{mnr}^{2} + \mathcal{M}_{mnr}^{2}\right]\]</div>
+<p>這是<strong>能量均分</strong>：對每一個赤道波模態，「緯向動能」與「位能」的貢獻嚴格相等。第二分量（經向動能）則另計。</p>
+<p>Kelvin 波是這件事最乾淨的例子 —— 【證明 (c)】裡 <span class="math notranslate nohighlight">\(U\)</span> 與 <span class="math notranslate nohighlight">\(\Phi/\bar{c}\)</span> <strong>逐點相等</strong>，所以總範數就是單一高斯積分的兩倍，<span class="math notranslate nohighlight">\(A_{m,-1,2} = 2^{-1/2}\pi^{-1/4}\)</span> 中的 <span class="math notranslate nohighlight">\(2^{-1/2}\)</span> 正是這「兩倍」的平方根。</p>
+</section>
+<section id="id5">
+<h3>簡併特例的物理<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>【證明 (e)】的 <span class="math notranslate nohighlight">\(\mathbf{K}_{0n0}\)</span> 有兩個特徵：</p>
+<ol class="arabic simple">
+<li><p><strong><span class="math notranslate nohighlight">\(V_{0n0} = 0\)</span></strong> —— 緯向對稱的模態沒有經向風。這符合直覺：<span class="math notranslate nohighlight">\(m = 0\)</span> 表示場不隨經度變化，沒有緯向壓力梯度，也就沒有驅動經向運動的力。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\nu_{0n0} = 0\)</span></strong> —— 頻率為零，<strong>不傳播</strong>。</p></li>
+</ol>
+<p>【證明 (f)】把兩者合起來解釋清楚：這些模態就是<strong>定常的地轉平衡緯向噴流</strong>。<span class="math notranslate nohighlight">\(\beta y\,U + \dfrac{d\Phi}{dy} = 0\)</span> 是赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面版的地轉關係（<span class="math notranslate nohighlight">\(f \to \beta y\)</span>）。既然是地轉平衡的定常態，當然不振盪，頻率自然為零。</p>
+<p><strong>這也解釋了為什麼會簡併</strong>：所有 <span class="math notranslate nohighlight">\(n\)</span> 的緯向對稱羅斯貝模態頻率都是零，因此【已知 5】(b) 的「相異本徵值 ⟹ 正交」用不上。所幸它們的正交性可以由【已知 4】的 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 正交性<strong>直接驗證</strong>（見【證明 (e)】的歸一化計算，交叉項全部落在不同階的 <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> 上）。</p>
+</section>
+<section id="id6">
+<h3>這一組基底之後怎麼用<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>【證明 (d)】的正交歸一性讓下面這件事成為可能：任何一個場 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\eta}}_m(\hat{y})\)</span> 都可以展開成</p>
+<div class="math notranslate nohighlight">
+\[\hat{\boldsymbol{\eta}}_m = \sum_{n = -1}^{\infty}\sum_{r}\hat{\eta}_{mnr}\mathbf{K}_{mnr}, \qquad \hat{\eta}_{mnr} = \left(\hat{\boldsymbol{\eta}}_m,\ \mathbf{K}_{mnr}\right)\]</div>
+<p><strong>取係數只要做一次內積，不必解聯立方程</strong>。這正是 <a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a> 能把常微分方程壓成一行除法的全部本錢。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Equatorial_Beta_Plane_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Matsuno_Dispersion_Relation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matsuno Dispersion Relation (Matsuno 頻散關係的記法對照與特例)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Forced_Response_of_Equatorial_Modes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Forced Response of Equatorial Modes (赤道模態的受迫解：一行除法)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-explicit-form-of-the-eigenfunctions">(a) proof 本徵函數的顯式形式 (Explicit form of the eigenfunctions)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-n-ge-0-normalization-constant-for-n-ge-0">(b) proof 歸一化常數（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）(Normalization constant for <span class="math notranslate nohighlight">\(n \ge 0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-kelvin-normalization-constant-for-the-kelvin-wave">(c) proof Kelvin 波的歸一化常數 (Normalization constant for the Kelvin wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-orthonormality">(d) proof 正交歸一性 (Orthonormality)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-eigenfunctions-of-the-zonally-symmetric-rossby-modes">(e) proof 緯向對稱羅斯貝模態的本徵函數 (Eigenfunctions of the zonally symmetric Rossby modes)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-verify-zonally-symmetric-modes-are-geostrophically-balanced-zonal-flows">(f) verify 緯向對稱模態即地轉平衡緯向流 (Zonally symmetric modes are geostrophically balanced zonal flows)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project2-1-frac-1-2-n">為什麼 project2_1 的 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span> 會變成兩個對稱的根號</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">動能與位能為什麼各佔一半</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">簡併特例的物理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">這一組基底之後怎麼用</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

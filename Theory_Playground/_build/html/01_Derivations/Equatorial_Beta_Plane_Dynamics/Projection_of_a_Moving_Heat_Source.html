@@ -1,0 +1,1043 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Projection of a Moving Heat Source (東移熱源的緯向傅立葉係數與模態投影) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Physical Field Recovery and Zero Kelvin PV (物理場的還原與 Kelvin 波的零位渦)" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html" />
+    <link rel="prev" title="Forced Response of Equatorial Modes (赤道模態的受迫解：一行除法)" href="Forced_Response_of_Equatorial_Modes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Projection of a Moving Heat Source (東移熱源的緯向傅立葉係數與模態投影)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-y-0-the-total-heating-is-independent-of-y-0">(a) proof 加熱總量與 <span class="math notranslate nohighlight">\(y_0\)</span> 無關 (The total heating is independent of <span class="math notranslate nohighlight">\(y_0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-zonal-fourier-coefficient">(b) proof 緯向傅立葉係數 (Zonal Fourier coefficient)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-n-ge-0-modal-projection-for-n-ge-0">(c) proof 模態投影（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）(Modal projection for <span class="math notranslate nohighlight">\(n \ge 0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-kelvin-modal-projection-for-the-kelvin-wave">(d) proof Kelvin 波的模態投影 (Modal projection for the Kelvin wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-even-modes-are-not-excited-when-the-convection-is-centred-on-the-equator">(e) proof 對流正對赤道時偶模態不被激發 (Even modes are not excited when the convection is centred on the equator)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三個因子各自控制什麼被激發</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-0"><span class="math notranslate nohighlight">\(y_0\)</span> 為什麼是本文最乾淨的對照變數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">這一篇填上了端點①的最後一塊</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="projection-of-a-moving-heat-source">
+<h1>Projection of a Moving Heat Source (東移熱源的緯向傅立葉係數與模態投影)<a class="headerlink" href="#projection-of-a-moving-heat-source" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>給定一塊東移深對流的加熱形狀，算出它在 <a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a> 公式中
+唯一還沒填上的那一項 <span class="math notranslate nohighlight">\(\hat{Q}_{mnr}\)</span>。</p>
+<ul class="simple">
+<li><p>(a) 加熱的總量與擺放位置 <span class="math notranslate nohighlight">\(y_0\)</span> <strong>無關</strong> —— 這讓 <span class="math notranslate nohighlight">\(y_0\)</span> 的對照實驗乾淨：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\iint \hat{Q}\left(\xi, y\right)\,d\xi\,dy = \pi^{1/2}Q_0\,a_0\,b_0\]</div>
+<ul class="simple">
+<li><p>(b) 加熱的緯向傅立葉係數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{Q}_m(y) = \frac{\pi Q_0}{2\left[\pi^{2} - \left(ma_0/a\right)^{2}\right]}\frac{\sin\left(ma_0/a\right)}{m}\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]\]</div>
+<ul class="simple">
+<li><p>(c) 加熱在第 <span class="math notranslate nohighlight">\((m, n, r)\)</span> 個赤道波模態上的投影（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\hat{Q}_{mnr} = &amp;\ \frac{A_{mnr}\,\epsilon^{1/2}\,\pi Q_0\,a_0\,b_0}{2\bar{c}\,a^{2}\left[\pi^{2} - \left(ma_0/a\right)^{2}\right]}\frac{\sin\left(ma_0/a\right)}{\left(ma_0/a\right)}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left(\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right) \cr
+&amp;\times \left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n+1)/2}\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right)\right. \cr
+&amp;\qquad \left. - \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{(n-1)/2}\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right)\right]
+\end{aligned}\]</div>
+<ul class="simple">
+<li><p>(d) Kelvin 波（<span class="math notranslate nohighlight">\(n = -1\)</span>、<span class="math notranslate nohighlight">\(r = 2\)</span>）的投影：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{Q}_{m,-1,2} = \frac{A_{m,-1,2}\,\epsilon^{1/4}\,\pi Q_0\,a_0\,b_0}{2\bar{c}\,a^{2}\left[\pi^{2} - \left(ma_0/a\right)^{2}\right]}\frac{\sin\left(ma_0/a\right)}{\left(ma_0/a\right)}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left(-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right)\]</div>
+<ul class="simple">
+<li><p>(e) 對流正對赤道時，<strong>偶數 <span class="math notranslate nohighlight">\(n\)</span> 的模態完全不被激發</strong>（其中 <span class="math notranslate nohighlight">\(n = 0\)</span> 即混合羅斯貝–重力波）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\left.\hat{Q}_{mnr}\right|_{\hat{y}_0 = 0} = 0 \qquad \left(n \ \text{為偶數}\right)\]</div>
+<ul class="simple">
+<li><p>註：(a)–(d) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((4.1)\)</span> 之下的敘述、<span class="math notranslate nohighlight">\((4.5)\)</span>、<span class="math notranslate nohighlight">\((4.22)\)</span>、<span class="math notranslate nohighlight">\((4.23)\)</span>。</p></li>
+<li><p>註：本篇的兩個積分<strong>都不重算</strong>：緯向的升餘弦積分在【推導 2】自證（只是三角恆等式），經向的高斯 <span class="math notranslate nohighlight">\(\times\)</span> Hermite 積分直接引用本庫 <a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html"><span class="std std-doc">Gaussian–Hermite Integral</span></a>（論文的 <span class="math notranslate nohighlight">\((B.1)\)</span>）。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#b-proof-zonal-fourier-transform-pair">緯向傅立葉轉換 (Zonal Fourier transform)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (b)】完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\hat{Q}_m(y) = \frac{1}{2\pi a}\int_{-\pi a}^{\pi a}\hat{Q}\left(\xi, y\right)e^{-im\xi/a}\,d\xi\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的緯向偏移 (Meridional offset of the convection center) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 或 <span class="math notranslate nohighlight">\(450 \ \text{km}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#a-proof-explicit-form-of-the-eigenfunctions">赤道波本徵函數與強迫向量 (Equatorial wave eigenfunctions and the forcing vector)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">Equatorial Wave Eigenfunctions</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 本徵函數的第三分量（<span class="math notranslate nohighlight">\(n \ge 0\)</span>，為實函數）：</p>
+<div class="math notranslate nohighlight">
+\[\Phi_{mnr}(\hat{y}) = \bar{c}\,A_{mnr}\,\epsilon^{1/4}\left[\left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) - \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\right]\]</div>
+</li>
+<li><p>(b) Kelvin 波的第三分量：</p>
+<div class="math notranslate nohighlight">
+\[\Phi_{m,-1,2}(\hat{y}) = \bar{c}\,A_{m,-1,2}\,e^{-\hat{y}^{2}/2} = \bar{c}\,A_{m,-1,2}\,\pi^{1/4}\mathcal{H}_0(\hat{y})\]</div>
+</li>
+<li><p>(c) 強迫向量只有第三分量非零：</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{Q}}_m(y) = \begin{pmatrix}0 \cr 0 \cr \hat{Q}_m(y)\end{pmatrix}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{mnr}\)</span> : 本徵函數的歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : 無因次本徵頻率 (Dimensionless eigenfrequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\hat{y} = \epsilon^{1/4}y/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 本徵函數的位勢分量 (Geopotential component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\mathbf{Q}}_m\)</span> : 強迫向量 (Forcing vector) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的緯向偏移 (Meridional offset of the convection center) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 或 <span class="math notranslate nohighlight">\(450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#assumptions-preliminaries">能量內積 (Energy inner product)</a>：</strong> 已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a>【定義 3】給出，此處直接引用</p>
+<div class="math notranslate nohighlight">
+\[\left(\mathbf{f},\ \mathbf{g}\right) = \int_{-\infty}^{\infty}\left(f_1g_1^{*} + f_2g_2^{*} + \frac{1}{\bar{c}^{2}}f_3g_3^{*}\right)d\hat{y}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_j,\ g_j\)</span> : 內積中的兩個三分量向量函數 (Two three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\hat{y} = \epsilon^{1/4}y/a\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Calculus/Gaussian_Hermite_Integral.html#a-proof-hermite-gaussian-hermite-overlap-integral">高斯 × Hermite 重疊積分 (Gaussian–Hermite overlap integral)</a>：</strong> 已於本庫 <a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html"><span class="std std-doc">Gaussian–Hermite Integral</span></a>【證明 (a)】完整證明（即論文的 <span class="math notranslate nohighlight">\((B.1)\)</span>），此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_k(\hat{y})\,d\hat{y} = \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{k/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_k(\eta)\]</div>
+<p>適用範圍 <span class="math notranslate nohighlight">\(0 \le \hat{b}_0 &lt; 2^{1/2}\)</span>，其中 <span class="math notranslate nohighlight">\(\chi = \dfrac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\)</span>、<span class="math notranslate nohighlight">\(\eta = \dfrac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\)</span>。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : Hermite 函數的階數 (Order of the Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0,\ \hat{y}_0\)</span> : 無因次的加熱寬度與偏移 (Dimensionless width and offset) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span> : 階數壓縮比 (Order-compression ratio) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 生成函數的自變數位置（本檔會代入不同的值）(Argument of the generating function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 <a class="reference external" href="https://dlmf.nist.gov/4.21#E1">積化和差公式 (Product-to-sum formula)</a>：</strong> 標準三角恆等式，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\cos A\,\cos B = \frac{1}{2}\left[\cos\left(A + B\right) + \cos\left(A - B\right)\right]\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{mnr}\)</span> : 本徵函數的歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A,\ B\)</span> : 待定常數 (Undetermined constants) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 6】 <a class="reference external" href="https://dlmf.nist.gov/7.4#E1">高斯積分 (Gaussian integral)</a>：</strong> 標準結果，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}e^{-s^{2}}\,ds = \pi^{1/2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s\)</span> : 積分變數 (Integration variable) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 加熱的形狀 (Shape of the heating)：</strong> 緯向是半寬 <span class="math notranslate nohighlight">\(a_0\)</span> 的升餘弦「帽子」、經向是中心在 <span class="math notranslate nohighlight">\(y_0\)</span>、<span class="math notranslate nohighlight">\(e\)</span>-folding 寬度為 <span class="math notranslate nohighlight">\(b_0\)</span> 的高斯</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{Q}\left(\xi, y\right) = \frac{1}{2}Q_0\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]
+  \begin{cases}
+  1 + \cos\dfrac{\pi\xi}{a_0}, &amp; \left|\xi\right| \le a_0 \\
+  0, &amp; \left|\xi\right| \ge a_0
+  \end{cases}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q_0\)</span> : 加熱率的峰值 (Peak heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(Q_0/c_p = 12 \ \text{K}\cdot\text{day}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的緯向偏移 (Meridional offset of the convection center) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 或 <span class="math notranslate nohighlight">\(450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p>註：緯向形狀在 <span class="math notranslate nohighlight">\(\left|\xi\right| = a_0\)</span> 處<strong>連續且一階可微</strong>（<span class="math notranslate nohighlight">\(1 + \cos\pi = 0\)</span>、<span class="math notranslate nohighlight">\(\sin\pi = 0\)</span>），因此傅立葉係數隨 <span class="math notranslate nohighlight">\(m\)</span> 衰減得夠快。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 對流區小於全球 (The convective region is smaller than the globe)：</strong> 積分範圍可從 <span class="math notranslate nohighlight">\(\left[-\pi a,\ \pi a\right]\)</span> 縮到 <span class="math notranslate nohighlight">\(\left[-a_0,\ a_0\right]\)</span></p>
+<div class="math notranslate nohighlight">
+\[a_0 &lt; \pi a\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 無因次寬度在【已知 4】的適用範圍內 (Dimensionless width within the valid range)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \hat{b}_0 &amp;\overset{\text{已知 2}}{=}&amp; \epsilon^{1/4}\frac{b_0}{a} \\
+  &amp;\approx&amp; 4.746 \times \frac{450}{6370} \\
+  &amp;\approx&amp; 0.335 \\
+  &amp;&lt;&amp; 2^{1/2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0,\ \hat{y}_0\)</span> : 無因次的加熱寬度與偏移 (Dimensionless width and offset) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 無因次的加熱寬度與偏移 (Dimensionless width and offset of the heating)：</strong> 沿用【已知 2】的 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 尺度</p>
+<ul>
+<li><p>(a) 無因次寬度：</p>
+<div class="math notranslate nohighlight">
+\[\hat{b}_0 \overset{\text{def}}{=} \epsilon^{1/4}\frac{b_0}{a}\]</div>
+</li>
+<li><p>(b) 無因次偏移：</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 \overset{\text{def}}{=} \epsilon^{1/4}\frac{y_0}{a}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0,\ \hat{y}_0\)</span> : 無因次的加熱寬度與偏移 (Dimensionless width and offset) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\hat{y} = \epsilon^{1/4}y/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的緯向偏移 (Meridional offset of the convection center) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 或 <span class="math notranslate nohighlight">\(450 \ \text{km}\)</span></p></li>
+<li><p>註：由【已知 2】<span class="math notranslate nohighlight">\(\hat{y} = \epsilon^{1/4}y/a\)</span>，可知 <span class="math notranslate nohighlight">\(\dfrac{y - y_0}{b_0} = \dfrac{\hat{y} - \hat{y}_0}{\hat{b}_0}\)</span> —— <strong>高斯的形狀在無因次座標下完全不變</strong>，這是【證明 (c)】能直接套用【已知 4】的原因。</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 緯向波數的無因次組合 (Dimensionless combination of the zonal wavenumber)：</strong> 對流半寬對應的無因次波數</p>
+<div class="math notranslate nohighlight">
+\[\mu \overset{\text{def}}{=} \frac{m a_0}{a}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 對流半寬對應的無因次波數 (Dimensionless wavenumber scaled by the half-width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 加熱總量 (Total heating)：</strong> 緯向與經向的積分各自獨立</p>
+<ul>
+<li><p>(a) 緯向積分（<span class="math notranslate nohighlight">\(\cos\)</span> 在整週期上積分為零）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-a_0}^{a_0}\frac{1}{2}\left[1 + \cos\frac{\pi\xi}{a_0}\right]d\xi &amp;=&amp; \frac{1}{2}\left[2a_0 + \left.\frac{a_0}{\pi}\sin\frac{\pi\xi}{a_0}\right|_{-a_0}^{a_0}\right] \\
+    &amp;=&amp; \frac{1}{2}\left[2a_0 + 0\right] \\
+    &amp;=&amp; a_0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 經向積分（換元 <span class="math notranslate nohighlight">\(s = \left(y - y_0\right)/b_0\)</span>）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-\infty}^{\infty}\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]dy &amp;=&amp; b_0\int_{-\infty}^{\infty}e^{-s^{2}}\,ds \\
+    &amp;\overset{\text{已知 6}}{=}&amp; \pi^{1/2}b_0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的緯向偏移 (Meridional offset of the convection center) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 或 <span class="math notranslate nohighlight">\(450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> : 積分變數 (Integration variable) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 升餘弦帽子的傅立葉積分 (Fourier integral of the raised-cosine hat)：</strong> 兩段各自算，最後合併時分母恰好湊成 <span class="math notranslate nohighlight">\(\pi^{2} - \mu^{2}\)</span></p>
+<ul>
+<li><p>(a) 常數項那一段：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-a_0}^{a_0}e^{-i\mu\xi/a_0}\,d\xi &amp;=&amp; \left.\frac{a_0}{-i\mu}e^{-i\mu\xi/a_0}\right|_{-a_0}^{a_0} \\
+    &amp;=&amp; \frac{a_0}{-i\mu}\left[e^{-i\mu} - e^{i\mu}\right] \\
+    &amp;=&amp; \frac{2a_0\sin\mu}{\mu}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 餘弦項那一段（被積函數的虛部為奇函數，積分為零，故只留餘弦）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-a_0}^{a_0}\cos\left(\frac{\pi\xi}{a_0}\right)e^{-i\mu\xi/a_0}\,d\xi &amp;=&amp; \int_{-a_0}^{a_0}\cos\left(\frac{\pi\xi}{a_0}\right)\cos\left(\frac{\mu\xi}{a_0}\right)d\xi \\
+    &amp;\overset{\text{已知 5}}{=}&amp; \frac{1}{2}\int_{-a_0}^{a_0}\left[\cos\frac{\left(\pi + \mu\right)\xi}{a_0} + \cos\frac{\left(\pi - \mu\right)\xi}{a_0}\right]d\xi \\
+    &amp;=&amp; \frac{a_0\sin\left(\pi + \mu\right)}{\pi + \mu} + \frac{a_0\sin\left(\pi - \mu\right)}{\pi - \mu} \\
+    &amp;=&amp; -\frac{a_0\sin\mu}{\pi + \mu} + \frac{a_0\sin\mu}{\pi - \mu} \\
+    &amp;=&amp; \frac{2a_0\,\mu\sin\mu}{\pi^{2} - \mu^{2}}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 兩段相加，<span class="math notranslate nohighlight">\(\mu^{2}\)</span> 對消：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-a_0}^{a_0}\left[1 + \cos\frac{\pi\xi}{a_0}\right]e^{-i\mu\xi/a_0}\,d\xi &amp;\overset{\text{推導 2(a)(b)}}{=}&amp; 2a_0\sin\mu\left[\frac{1}{\mu} + \frac{\mu}{\pi^{2} - \mu^{2}}\right] \\
+    &amp;=&amp; 2a_0\sin\mu\cdot\frac{\pi^{2} - \mu^{2} + \mu^{2}}{\mu\left(\pi^{2} - \mu^{2}\right)} \\
+    &amp;=&amp; \frac{2\pi^{2}a_0\sin\mu}{\mu\left(\pi^{2} - \mu^{2}\right)}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 對流半寬對應的無因次波數 (Dimensionless wavenumber scaled by the half-width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 經向積分的兩次套用 (Two applications of the meridional integral)：</strong> 把【已知 4】分別取 <span class="math notranslate nohighlight">\(k = n+1\)</span> 與 <span class="math notranslate nohighlight">\(k = n-1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\left[\mathcal{P}_{mnr}\mathcal{H}_{n+1} - \mathcal{M}_{mnr}\mathcal{H}_{n-1}\right]d\hat{y}
+  &amp;\overset{\text{已知 4,假設 3}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right] \\
+  &amp;&amp; \times\left[\mathcal{P}_{mnr}\,\chi^{(n+1)/2}\mathcal{H}_{n+1}(\eta) - \mathcal{M}_{mnr}\,\chi^{(n-1)/2}\mathcal{H}_{n-1}(\eta)\right]
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}_{mnr},\ \mathcal{M}_{mnr}\)</span> : 上下行振幅 (Upper and lower branch amplitudes) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{P}_{mnr} = \left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\)</span>、<span class="math notranslate nohighlight">\(\mathcal{M}_{mnr} = \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\hat{y} = \epsilon^{1/4}y/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0,\ \hat{y}_0\)</span> : 無因次的加熱寬度與偏移 (Dimensionless width and offset) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span> : 階數壓縮比 (Order-compression ratio) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 生成函數的自變數位置（本檔會代入不同的值）(Argument of the generating function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：這兩個振幅的定義沿用 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">赤道波本徵函數</span></a>【定義 1】。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 前因子的整理 (Tidying up the prefactor)：</strong> 把 <span class="math notranslate nohighlight">\(\dfrac{\sin\mu}{m}\)</span> 與 <span class="math notranslate nohighlight">\(\hat{b}_0\)</span> 換成論文的寫法</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\sin\mu}{m}\,\hat{b}_0 &amp;\overset{\text{定義 2}}{=}&amp; \frac{\sin\mu}{\mu}\cdot\frac{a_0}{a}\cdot\hat{b}_0 \\
+  &amp;\overset{\text{定義 1(a)}}{=}&amp; \frac{\sin\mu}{\mu}\cdot\frac{a_0}{a}\cdot\frac{\epsilon^{1/4}b_0}{a} \\
+  &amp;=&amp; \epsilon^{1/4}\frac{a_0\,b_0}{a^{2}}\cdot\frac{\sin\mu}{\mu}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 對流半寬對應的無因次波數 (Dimensionless wavenumber scaled by the half-width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0,\ \hat{y}_0\)</span> : 無因次的加熱寬度與偏移 (Dimensionless width and offset) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 Hermite 函數在原點的奇偶性 (Parity of the Hermite functions at the origin)：</strong> <span class="math notranslate nohighlight">\(\mathcal{H}_k\)</span> 的宇稱與 <span class="math notranslate nohighlight">\(k\)</span> 相同，故奇階在原點為零</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \mathcal{H}_k(-\hat{y}) &amp;=&amp; \left(-1\right)^{k}\mathcal{H}_k(\hat{y}) \\
+  \mathcal{H}_k(0) &amp;=&amp; \left(-1\right)^{k}\mathcal{H}_k(0) \\
+  \mathcal{H}_k(0) &amp;=&amp; 0 \qquad \left(k \ \text{為奇數}\right)
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : Hermite 函數的階數 (Order of the Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\hat{y} = \epsilon^{1/4}y/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的緯向偏移 (Meridional offset of the convection center) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 或 <span class="math notranslate nohighlight">\(450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_0\)</span> : 加熱率的峰值 (Peak heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(Q_0/c_p = 12 \ \text{K}\cdot\text{day}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 對流半寬對應的無因次波數 (Dimensionless wavenumber scaled by the half-width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 本徵函數的位勢分量 (Geopotential component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{mnr}\)</span> : 本徵函數的歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0,\ \hat{y}_0\)</span> : 無因次的加熱寬度與偏移 (Dimensionless width and offset) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}_{mnr},\ \mathcal{M}_{mnr}\)</span> : 上下行振幅 (Upper and lower branch amplitudes) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{P}_{mnr} = \left(\epsilon^{1/2}\hat{\nu}_{mnr} + m\right)\left(\frac{n+1}{2}\right)^{1/2}\)</span>、<span class="math notranslate nohighlight">\(\mathcal{M}_{mnr} = \left(\epsilon^{1/2}\hat{\nu}_{mnr} - m\right)\left(\frac{n}{2}\right)^{1/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span> : 階數壓縮比 (Order-compression ratio) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 生成函數的自變數位置（本檔會代入不同的值）(Argument of the generating function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span> : 正規模態展開係數 (Normal mode expansion coefficient) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa = R/c_p\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 第 <span class="math notranslate nohighlight">\((m, n, r)\)</span> 個本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p>註：第一列的宇稱性質由 <a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a>【證明 (a)】的遞迴關係對 <span class="math notranslate nohighlight">\(k\)</span> 歸納即得（<span class="math notranslate nohighlight">\(\mathcal{H}_0\)</span> 偶、<span class="math notranslate nohighlight">\(\mathcal{H}_1\)</span> 奇，而 <span class="math notranslate nohighlight">\(\hat{y}\mathcal{H}_k\)</span> 的宇稱與 <span class="math notranslate nohighlight">\(\mathcal{H}_k\)</span> 相反）。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-y-0-the-total-heating-is-independent-of-y-0">
+<h3>(a) proof 加熱總量與 <span class="math notranslate nohighlight">\(y_0\)</span> 無關 (The total heating is independent of <span class="math notranslate nohighlight">\(y_0\)</span>)<a class="headerlink" href="#a-proof-y-0-the-total-heating-is-independent-of-y-0" title="Link to this heading">#</a></h3>
+<p>兩個方向的積分各自算完再相乘；經向積分換元後 <span class="math notranslate nohighlight">\(y_0\)</span> 完全消失。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\iint \hat{Q}\left(\xi, y\right)d\xi\,dy &amp;\overset{\text{假設 1}}{=}&amp; Q_0\left[\int_{-a_0}^{a_0}\frac{1}{2}\left(1 + \cos\frac{\pi\xi}{a_0}\right)d\xi\right]\left[\int_{-\infty}^{\infty}\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]dy\right] \\
+&amp;\overset{\text{推導 1(a)(b)}}{=}&amp; Q_0\cdot a_0\cdot\pi^{1/2}b_0 \\
+&amp;=&amp; \pi^{1/2}Q_0\,a_0\,b_0
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-zonal-fourier-coefficient">
+<h3>(b) proof 緯向傅立葉係數 (Zonal Fourier coefficient)<a class="headerlink" href="#b-proof-zonal-fourier-coefficient" title="Link to this heading">#</a></h3>
+<p>積分範圍由【假設 2】縮到對流區內，緯向部分由【推導 2】算掉，經向部分整個提出來。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{Q}_m(y) &amp;\overset{\text{已知 1,假設 1}}{=}&amp; \frac{1}{2\pi a}\cdot\frac{Q_0}{2}\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]\int_{-\pi a}^{\pi a}\left[1 + \cos\frac{\pi\xi}{a_0}\right]_{\left|\xi\right| \le a_0}e^{-im\xi/a}\,d\xi \\
+&amp;\overset{\text{假設 2,定義 2}}{=}&amp; \frac{Q_0}{4\pi a}\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]\int_{-a_0}^{a_0}\left[1 + \cos\frac{\pi\xi}{a_0}\right]e^{-i\mu\xi/a_0}\,d\xi \\
+&amp;\overset{\text{推導 2(c)}}{=}&amp; \frac{Q_0}{4\pi a}\cdot\frac{2\pi^{2}a_0\sin\mu}{\mu\left(\pi^{2} - \mu^{2}\right)}\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right] \\
+&amp;\overset{\text{定義 2}}{=}&amp; \frac{\pi Q_0}{2\left(\pi^{2} - \mu^{2}\right)}\cdot\frac{a_0}{a\mu}\sin\mu\,\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right] \\
+&amp;\overset{\text{定義 2}}{=}&amp; \frac{\pi Q_0}{2\left[\pi^{2} - \left(ma_0/a\right)^{2}\right]}\frac{\sin\left(ma_0/a\right)}{m}\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c-proof-n-ge-0-modal-projection-for-n-ge-0">
+<h3>(c) proof 模態投影（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）(Modal projection for <span class="math notranslate nohighlight">\(n \ge 0\)</span>)<a class="headerlink" href="#c-proof-n-ge-0-modal-projection-for-n-ge-0" title="Link to this heading">#</a></h3>
+<p>強迫向量只有第三分量，故內積只剩一項；把【證明 (b)】與【已知 2】(a) 代進去，經向積分由【推導 3】算掉，前因子由【推導 4】整理。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{Q}_{mnr} &amp;\overset{\text{已知 3,已知 2(c)}}{=}&amp; \frac{1}{\bar{c}^{2}}\int_{-\infty}^{\infty}\hat{Q}_m\,\Phi_{mnr}^{*}\,d\hat{y} \\
+&amp;\overset{\text{證明 (b),已知 2(a),定義 1}}{=}&amp; \frac{A_{mnr}\,\epsilon^{1/4}}{\bar{c}}\cdot\frac{\pi Q_0}{2\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{m}\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\left[\mathcal{P}_{mnr}\mathcal{H}_{n+1} - \mathcal{M}_{mnr}\mathcal{H}_{n-1}\right]d\hat{y} \\
+&amp;\overset{\text{推導 3}}{=}&amp; \frac{A_{mnr}\,\epsilon^{1/4}\,\pi Q_0}{2\bar{c}\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{m}\,\hat{b}_0\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\left[\mathcal{P}_{mnr}\chi^{(n+1)/2}\mathcal{H}_{n+1}(\eta) - \mathcal{M}_{mnr}\chi^{(n-1)/2}\mathcal{H}_{n-1}(\eta)\right] \\
+&amp;\overset{\text{推導 4}}{=}&amp; \frac{A_{mnr}\,\epsilon^{1/2}\,\pi Q_0\,a_0\,b_0}{2\bar{c}\,a^{2}\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{\mu}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\left[\mathcal{P}_{mnr}\chi^{(n+1)/2}\mathcal{H}_{n+1}(\eta) - \mathcal{M}_{mnr}\chi^{(n-1)/2}\mathcal{H}_{n-1}(\eta)\right]
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="d-proof-kelvin-modal-projection-for-the-kelvin-wave">
+<h3>(d) proof Kelvin 波的模態投影 (Modal projection for the Kelvin wave)<a class="headerlink" href="#d-proof-kelvin-modal-projection-for-the-kelvin-wave" title="Link to this heading">#</a></h3>
+<p>同【證明 (c)】的路線，但本徵函數只剩單一個 <span class="math notranslate nohighlight">\(\mathcal{H}_0\)</span>，<span class="math notranslate nohighlight">\(\pi^{1/4}\)</span> 與 <span class="math notranslate nohighlight">\(\mathcal{H}_0(\eta)\)</span> 裡的 <span class="math notranslate nohighlight">\(\pi^{-1/4}\)</span> 恰好對消。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{Q}_{m,-1,2} &amp;\overset{\text{已知 3,已知 2(b)(c)}}{=}&amp; \frac{A_{m,-1,2}\,\pi^{1/4}}{\bar{c}}\cdot\frac{\pi Q_0}{2\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{m}\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_0(\hat{y})\,d\hat{y} \\
+&amp;\overset{\text{已知 4}}{=}&amp; \frac{A_{m,-1,2}\,\pi^{1/4}\,\pi Q_0}{2\bar{c}\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{m}\,\hat{b}_0\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_0(\eta) \\
+&amp;\overset{\text{已知 2}}{=}&amp; \frac{A_{m,-1,2}\,\pi Q_0}{2\bar{c}\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{m}\,\hat{b}_0\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}} - \frac{\eta^{2}}{2}\right] \\
+&amp;\overset{\text{已知 4}}{=}&amp; \frac{A_{m,-1,2}\,\pi Q_0}{2\bar{c}\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{m}\,\hat{b}_0\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right] \\
+&amp;\overset{\text{推導 4}}{=}&amp; \frac{A_{m,-1,2}\,\epsilon^{1/4}\,\pi Q_0\,a_0\,b_0}{2\bar{c}\,a^{2}\left(\pi^{2} - \mu^{2}\right)}\frac{\sin\mu}{\mu}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="e-proof-even-modes-are-not-excited-when-the-convection-is-centred-on-the-equator">
+<h3>(e) proof 對流正對赤道時偶模態不被激發 (Even modes are not excited when the convection is centred on the equator)<a class="headerlink" href="#e-proof-even-modes-are-not-excited-when-the-convection-is-centred-on-the-equator" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\hat{y}_0 = 0\)</span> 時【已知 4】的自變數 <span class="math notranslate nohighlight">\(\eta\)</span> 歸零，兩個 <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> 都在原點取值。<span class="math notranslate nohighlight">\(n\)</span> 為偶數時 <span class="math notranslate nohighlight">\(n \pm 1\)</span> 皆為<strong>奇數</strong>，兩項同時歸零。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left.\eta\right|_{\hat{y}_0 = 0} &amp;\overset{\text{已知 4}}{=}&amp; \frac{2 \times 0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}} \\
+\left.\eta\right|_{\hat{y}_0 = 0} &amp;=&amp; 0 \\
+\left.\hat{Q}_{mnr}\right|_{\hat{y}_0 = 0} &amp;\overset{\text{證明 (c)}}{\propto}&amp; \mathcal{P}_{mnr}\chi^{(n+1)/2}\mathcal{H}_{n+1}(0) - \mathcal{M}_{mnr}\chi^{(n-1)/2}\mathcal{H}_{n-1}(0) \\
+\left.\hat{Q}_{mnr}\right|_{\hat{y}_0 = 0} &amp;\overset{\text{推導 5}}{=}&amp; \mathcal{P}_{mnr}\chi^{(n+1)/2}\cdot 0 - \mathcal{M}_{mnr}\chi^{(n-1)/2}\cdot 0 \\
+\left.\hat{Q}_{mnr}\right|_{\hat{y}_0 = 0} &amp;=&amp; 0
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>物理解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>三個因子各自控制什麼被激發<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>【證明 (c)】的結果可以拆成三個獨立的「篩子」：</p>
+<div class="math notranslate nohighlight">
+\[\hat{Q}_{mnr} \propto \underbrace{\frac{1}{\pi^{2} - \mu^{2}}\frac{\sin\mu}{\mu}}_{\text{緯向篩子：}a_0\text{ 決定}}\times\underbrace{\chi^{(n\pm1)/2}}_{\text{經向篩子：}b_0\text{ 決定}}\times\underbrace{\mathcal{H}_{n\pm1}(\eta)}_{\text{對稱性篩子：}y_0\text{ 決定}}\]</div>
+<ul class="simple">
+<li><p><strong>緯向篩子</strong> —— <span class="math notranslate nohighlight">\(\dfrac{\sin\mu}{\mu}\)</span> 是「有限寬度帽子」在波數空間的指紋。<span class="math notranslate nohighlight">\(\mu = \dfrac{ma_0}{a}\)</span>，代入 <span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span>、<span class="math notranslate nohighlight">\(a = 6370 \ \text{km}\)</span> 得 <span class="math notranslate nohighlight">\(\mu \approx 0.196\,m\)</span>。第一個零點在 <span class="math notranslate nohighlight">\(\mu = \pi\)</span>，即 <span class="math notranslate nohighlight">\(m \approx 16\)</span> —— <strong>緯向波數 <span class="math notranslate nohighlight">\(16\)</span> 以上的模態幾乎不被激發</strong>。<span class="math notranslate nohighlight">\(a_0\)</span> 愈寬，被激發的波數愈少愈長。</p></li>
+<li><p><strong>經向篩子</strong> —— <span class="math notranslate nohighlight">\(\chi = \dfrac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\)</span>，代入【假設 3】的 <span class="math notranslate nohighlight">\(\hat{b}_0 \approx 0.335\)</span> 得 <span class="math notranslate nohighlight">\(\chi \approx 0.894\)</span>。所以係數隨 <span class="math notranslate nohighlight">\(n\)</span> 按 <span class="math notranslate nohighlight">\(0.894^{n/2}\)</span> 衰減，<span class="math notranslate nohighlight">\(n = 200\)</span> 時已降到 <span class="math notranslate nohighlight">\(\sim 10^{-5}\)</span> —— <strong>這就是論文說「<span class="math notranslate nohighlight">\(N = 200\)</span> 截斷已足夠準確」的數學根據</strong>。</p></li>
+<li><p><strong>對稱性篩子</strong> —— 見下一節。</p></li>
+</ul>
+</section>
+<section id="y-0">
+<h3><span class="math notranslate nohighlight">\(y_0\)</span> 為什麼是本文最乾淨的對照變數<a class="headerlink" href="#y-0" title="Link to this heading">#</a></h3>
+<p>【證明 (a)】說：<strong>總加熱量 <span class="math notranslate nohighlight">\(\pi^{1/2}Q_0a_0b_0\)</span> 完全不隨 <span class="math notranslate nohighlight">\(y_0\)</span> 改變</strong>。</p>
+<p>於是比較 <span class="math notranslate nohighlight">\(y_0 = 0\)</span> 與 <span class="math notranslate nohighlight">\(y_0 = 450 \ \text{km}\)</span> 兩組實驗時，兩者「加了多少熱」一模一樣，差別<strong>純粹來自「熱加在哪裡」</strong>。這是一個設計得很好的對照實驗。</p>
+<p>而【證明 (e)】給出差別的機制：<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 時 <span class="math notranslate nohighlight">\(\eta = 0\)</span>，<strong>所有偶數 <span class="math notranslate nohighlight">\(n\)</span> 的模態係數嚴格為零</strong>。</p>
+<p>用宇稱把它讀一遍會更清楚。加熱在 <span class="math notranslate nohighlight">\(y_0 = 0\)</span> 時是 <span class="math notranslate nohighlight">\(y\)</span> 的<strong>偶函數</strong>，而由【已知 2】(a)，本徵函數的位勢分量 <span class="math notranslate nohighlight">\(\Phi_{mnr} \propto \mathcal{H}_{n\pm1}\)</span>：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\Phi_{mnr}\)</span> 的宇稱</p></th>
+<th class="head"><p>與偶函數加熱的重疊</p></th>
+<th class="head"><p>結果</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>偶（含 <span class="math notranslate nohighlight">\(n = 0\)</span> 混合羅斯貝–重力波）</p></td>
+<td><p><strong>奇</strong></p></td>
+<td><p>偶 <span class="math notranslate nohighlight">\(\times\)</span> 奇 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> 積分為零</p></td>
+<td><p><strong>不被激發</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>奇（含 <span class="math notranslate nohighlight">\(n = -1\)</span> Kelvin 波、<span class="math notranslate nohighlight">\(n = 1\)</span> 起的羅斯貝波）</p></td>
+<td><p><strong>偶</strong></p></td>
+<td><p>偶 <span class="math notranslate nohighlight">\(\times\)</span> 偶</p></td>
+<td><p>被激發</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>這正是論文所述「<span class="math notranslate nohighlight">\(y_0 = 0\)</span> 時混合羅斯貝–重力波（<span class="math notranslate nohighlight">\(r = 0\)</span>、<span class="math notranslate nohighlight">\(n = 0\)</span>）的貢獻恰好消失」的數學原因，也解釋了為什麼 Kelvin 波（<span class="math notranslate nohighlight">\(n = -1\)</span>）不受影響 —— 它落在「奇」那一列。</p>
+<p><span class="math notranslate nohighlight">\(y_0 = 450 \ \text{km}\)</span> 時開關被打開，但打開得不多：<span class="math notranslate nohighlight">\(\hat{y}_0 = \epsilon^{1/4}\times\dfrac{450}{6370} \approx 0.335\)</span> 仍然很小，故論文說混合羅斯貝–重力波的貢獻「很小」而非「顯著」。</p>
+<p><strong>一句話：把對流從赤道移開，等於打開了「反對稱響應」這個開關。</strong> 尾流的南北不對稱、北半球 PV 距平強了近一倍，全部從這裡來。</p>
+</section>
+<section id="id5">
+<h3>這一篇填上了端點①的最後一塊<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>到此為止，<a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a>【證明 (c)】的右端已經完全顯式：</p>
+<div class="math notranslate nohighlight">
+\[\hat{\eta}_{mnr} = \frac{\kappa\hat{Q}_{mnr}}{\alpha + i\left(\nu_{mnr} - cm/a\right)}\]</div>
+<p>分子由本篇【證明 (c)(d)】給出、分母由 <a class="reference internal" href="Matsuno_Dispersion_Relation.html"><span class="std std-doc">頻散關係</span></a> 給出。<strong>所有譜係數都算得出來了。</strong></p>
+<p>剩下的只有「把譜係數轉回物理空間」，那是 <a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"><span class="std std-doc">場還原與 Kelvin 波零 PV</span></a> 的事。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Equatorial_Beta_Plane_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Forced_Response_of_Equatorial_Modes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Forced Response of Equatorial Modes (赤道模態的受迫解：一行除法)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Physical Field Recovery and Zero Kelvin PV (物理場的還原與 Kelvin 波的零位渦)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-y-0-the-total-heating-is-independent-of-y-0">(a) proof 加熱總量與 <span class="math notranslate nohighlight">\(y_0\)</span> 無關 (The total heating is independent of <span class="math notranslate nohighlight">\(y_0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-zonal-fourier-coefficient">(b) proof 緯向傅立葉係數 (Zonal Fourier coefficient)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-n-ge-0-modal-projection-for-n-ge-0">(c) proof 模態投影（<span class="math notranslate nohighlight">\(n \ge 0\)</span>）(Modal projection for <span class="math notranslate nohighlight">\(n \ge 0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-kelvin-modal-projection-for-the-kelvin-wave">(d) proof Kelvin 波的模態投影 (Modal projection for the Kelvin wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-even-modes-are-not-excited-when-the-convection-is-centred-on-the-equator">(e) proof 對流正對赤道時偶模態不被激發 (Even modes are not excited when the convection is centred on the equator)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三個因子各自控制什麼被激發</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-0"><span class="math notranslate nohighlight">\(y_0\)</span> 為什麼是本文最乾淨的對照變數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">這一篇填上了端點①的最後一塊</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

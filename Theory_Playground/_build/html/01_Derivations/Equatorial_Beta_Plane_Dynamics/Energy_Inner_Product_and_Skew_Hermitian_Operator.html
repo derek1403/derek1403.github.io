@@ -1,0 +1,1177 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Energy Inner Product and the Skew-Hermitian Operator (能量內積與算符的反厄米性) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Matsuno Dispersion Relation (Matsuno 頻散關係的記法對照與特例)" href="Matsuno_Dispersion_Relation.html" />
+    <link rel="prev" title="Fourier Transform to the Shallow Water System (隨波座標、緯向傅立葉轉換與淺水系統的算符形式)" href="Fourier_Transform_to_Shallow_Water_System.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Energy Inner Product and the Skew-Hermitian Operator (能量內積與算符的反厄米性)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-total-energy-principle">(a) proof 總能量原理 (Total energy principle)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-energy-balance-in-the-steady-state">(b) proof 定常時的能量平衡 (Energy balance in the steady state)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-1-bar-c-2-origin-of-the-1-bar-c-2-weight">(c) proof 內積權重 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 的來源 (Origin of the <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> weight)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-skew-hermiticity-of-the-operator">(d) proof 算符的反厄米性 (Skew-Hermiticity of the operator)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-pure-imaginary-eigenvalues-and-orthogonal-eigenfunctions">(e) proof 本徵值為純虛數且本徵函數正交 (Pure-imaginary eigenvalues and orthogonal eigenfunctions)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這一篇為什麼一定要獨立成篇</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">內積的第三個權重是「算」出來的，不是「猜」出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">兩個「剛好對消」各自對應什麼物理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">反厄米 vs. 厄米：為什麼是「反」</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="energy-inner-product-and-the-skew-hermitian-operator">
+<h1>Energy Inner Product and the Skew-Hermitian Operator (能量內積與算符的反厄米性)<a class="headerlink" href="#energy-inner-product-and-the-skew-hermitian-operator" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>整套正規模態展開的<strong>合法性</strong>都押在這一篇。要證的是：算符 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 相對於一個
+「由總能量原理定出來的」內積是<strong>反厄米</strong>的，因此它的本徵函數構成完備正交基底。</p>
+<ul class="simple">
+<li><p>(a) 線性系統的總能量原理：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{d\mathcal{E}}{dt} = -2\alpha\mathcal{E} + \mathcal{G}\]</div>
+<p>其中</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{E} = \iiint\frac{1}{2}\left[u^{2} + v^{2} + \frac{1}{R\Gamma}\left(\frac{\partial \phi}{\partial z}\right)^{2}\right]e^{-z}\,dx\,dy\,dz,
+\qquad
+\mathcal{G} = \iiint\frac{1}{c_p\Gamma}\frac{\partial \phi}{\partial z}\,Q\,e^{-z}\,dx\,dy\,dz\]</div>
+<ul class="simple">
+<li><p>(b) 隨波定常時，總能量原理退化為「耗散＝生成」的平衡：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[2\alpha\mathcal{E} = \mathcal{G}\]</div>
+<ul class="simple">
+<li><p>(c) <strong>★ 內積 <span class="math notranslate nohighlight">\((4.8)\)</span> 第三分量的權重 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 不是隨手挑的</strong> —— 把 (a) 的 <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> 做垂直分離，該權重會<strong>自動</strong>掉出來：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mathcal{E} = \frac{I_Z}{2}\iint\left[\hat{u}^{2} + \hat{v}^{2} + \frac{1}{\bar{c}^{2}}\hat{\phi}^{2}\right]dx\,dy,
+\qquad I_Z \overset{\text{def}}{=} \int_0^{z_T}Z^{2}e^{-z}\,dz\]</div>
+<ul class="simple">
+<li><p>(d) <strong>★ 相對於該內積，算符 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 是反厄米的：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}^{\dagger} = -\mathcal{L}\]</div>
+<ul class="simple">
+<li><p>(e) 由 (d) 推出的兩個紅利 —— 本徵值為<strong>純虛數</strong>、相異本徵值的本徵函數<strong>互相正交</strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\nu_{mnr} \in \mathbb{R}, \qquad \left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) = 0 \quad \left(\nu_{mnr} \neq \nu_{mn'r'}\right)\]</div>
+<ul class="simple">
+<li><p>註：(a)(b) 是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((2.2)\)</span>–<span class="math notranslate nohighlight">\((2.3)\)</span>，(c)(d) 對應 <span class="math notranslate nohighlight">\((4.8)\)</span> 與其後的敘述。</p></li>
+<li><p>註：論文只說內積 <span class="math notranslate nohighlight">\((4.8)\)</span> 是「由總能量原理<strong>暗示 (suggested)</strong>」出來的。本篇的【證明 (c)】把這句話<strong>升級成嚴格推導</strong> —— 權重 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 是垂直積分恆等式 <span class="math notranslate nohighlight">\(\int Z'^{2}e^{-z}dz = \lambda\int Z^{2}e^{-z}dz\)</span>（【推導 5】）的必然結果。</p></li>
+<li><p>註：反厄米性的證明手法已在 Advanced Atmospheric Dynamics 的 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project1_3.html">project1_3</a> 對另一個算符完整示範過，內積的正定性見 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project1_4.html">project1_4</a>。本篇只是把同一套手法套在 Schubert 的 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 上。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 已於本庫 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">Log-Pressure Linearized Primitive Equations</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 緯向動量方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial t} - \beta y\,v + \frac{\partial \phi}{\partial x} = -\alpha u\]</div>
+</li>
+<li><p>(b) 經向動量方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v}{\partial t} + \beta y\,u + \frac{\partial \phi}{\partial y} = -\alpha v\]</div>
+</li>
+<li><p>(c) 靜力方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \phi}{\partial z} = RT\]</div>
+</li>
+<li><p>(d) 連續方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = w\]</div>
+</li>
+<li><p>(e) 熱力學方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html#assumptions-preliminaries">垂直結構方程式與分離形式 (Vertical structure equation and the separable forms)</a>：</strong> 已於本庫 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">Vertical Structure Equation in Log-Pressure</span></a> 與 <a class="reference internal" href="Separation_into_Horizontal_Structure_System.html"><span class="std std-doc">Separation into the Horizontal Structure System</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 垂直結構方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^{2}Z}{dz^{2}} - \frac{dZ}{dz} = -\lambda Z\]</div>
+</li>
+<li><p>(b) 邊界條件：</p>
+<div class="math notranslate nohighlight">
+\[\left.\frac{dZ}{dz}\right|_{z = 0} = \left.\frac{dZ}{dz}\right|_{z = z_T} = 0\]</div>
+</li>
+<li><p>(c) 分離形式：</p>
+<div class="math notranslate nohighlight">
+\[\left(u,\ v,\ \phi\right) = \left(\hat{u},\ \hat{v},\ \hat{\phi}\right)Z(z), \qquad \left(T,\ w,\ Q\right) = \left(\hat{T},\ \hat{w},\ \hat{Q}\right)Z'(z)\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda = \dfrac{\pi^{2}}{z_T^{2}} + \dfrac{1}{4}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{T}\)</span> : 溫度的水平結構函數 (Horizontal structure function of the temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 垂直速度的水平結構函數 (Horizontal structure function of the vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">線性算符 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> (Linear operator <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (e)】完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L} = \begin{pmatrix} 0 &amp; -\beta y &amp; \dfrac{im}{a} \cr \beta y &amp; 0 &amp; \dfrac{d}{dy} \cr \bar{c}^{2}\dfrac{im}{a} &amp; \bar{c}^{2}\dfrac{d}{dy} &amp; 0 \end{pmatrix}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> : 水平結構的線性算符 (Linear operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://dlmf.nist.gov/1.4#E33">分部積分 (Integration by parts)</a>：</strong> 標準結果，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\int_{p}^{q} F\,\frac{dG}{ds}\,ds = \left[F\,G\right]_{p}^{q} - \int_{p}^{q} G\,\frac{dF}{ds}\,ds\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F,\ G\)</span> : 任意可微函數 (Arbitrary differentiable functions) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> : 積分變數 (Integration variable) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 求解區域與邊界條件 (Domain and boundary conditions)：</strong> 三個方向各自的邊界處理，本篇所有「邊界項為零」都出自這一張卡片</p>
+<ul>
+<li><p>(a) 緯向週期，週期為 <span class="math notranslate nohighlight">\(2\pi a\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\left.\left(\cdot\right)\right|_{x = -\pi a} = \left.\left(\cdot\right)\right|_{x = \pi a}\]</div>
+</li>
+<li><p>(b) 經向無限，場在無窮遠處歸零（赤道捕捉）：</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\left|y\right| \to \infty}\left(u,\ v,\ \phi\right) = 0\]</div>
+</li>
+<li><p>(c) 垂直方向剛蓋：</p>
+<div class="math notranslate nohighlight">
+\[\left.w\right|_{z = 0} = \left.w\right|_{z = z_T} = 0\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 隨波定常 (Steadiness in the translating frame)：</strong> 在以速度 <span class="math notranslate nohighlight">\(c\)</span> 東移的參考系中，總能量不隨時間變化</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\mathcal{E}}{dt} = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{E}\)</span> : 總能量 (Total energy) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 本徵函數的赤道捕捉性 (Equatorial trapping of the eigenfunctions)：</strong> 內積中出現的所有分量在 <span class="math notranslate nohighlight">\(\hat{y} \to \pm\infty\)</span> 時歸零，因此【證明 (d)】的分部積分不留邊界項</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\left|\hat{y}\right| \to \infty}\left(f_1,\ f_2,\ f_3\right) = \lim_{\left|\hat{y}\right| \to \infty}\left(g_1,\ g_2,\ g_3\right) = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f_j,\ g_j\)</span> : 內積中的兩個三分量向量函數 (Two three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 總能量與生成項 (Total energy and generation term)：</strong> 動能加上以 <span class="math notranslate nohighlight">\(e^{-z}\)</span> 加權的可用位能</p>
+<ul>
+<li><p>(a) 總能量：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{E} \overset{\text{def}}{=} \iiint\frac{1}{2}\left[u^{2} + v^{2} + \frac{1}{R\Gamma}\left(\frac{\partial \phi}{\partial z}\right)^{2}\right]e^{-z}\,dx\,dy\,dz\]</div>
+</li>
+<li><p>(b) 生成項：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{G} \overset{\text{def}}{=} \iiint\frac{1}{c_p\Gamma}\frac{\partial \phi}{\partial z}\,Q\,e^{-z}\,dx\,dy\,dz\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{E}\)</span> : 總能量 (Total energy) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{G}\)</span> : 非絕熱生成項 (Diabatic generation term) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p>註：權重 <span class="math notranslate nohighlight">\(e^{-z}\)</span> 就是密度 —— 由 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">線性化原始方程組</span></a>【推導 1】，<span class="math notranslate nohighlight">\(P = p_0e^{-z}\)</span>，而等溫近似下 <span class="math notranslate nohighlight">\(\rho \propto P\)</span>。所以 <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> 是「質量加權」的能量。</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 無因次經向座標與 Lamb 參數 (Dimensionless meridional coordinate and Lamb’s parameter)：</strong></p>
+<ul>
+<li><p>(a) Lamb 參數：</p>
+<div class="math notranslate nohighlight">
+\[\epsilon \overset{\text{def}}{=} \frac{4\Omega^{2}a^{2}}{\bar{c}^{2}}\]</div>
+</li>
+<li><p>(b) 無因次經向座標：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \hat{y} &amp;\overset{\text{def}}{=}&amp; \left(\frac{\beta}{\bar{c}}\right)^{1/2}y \\
+    &amp;\overset{\text{已知 1}}{=}&amp; \left(\frac{2\Omega}{a\bar{c}}\right)^{1/2}y \\
+    &amp;\overset{\text{定義 2(a)}}{=}&amp; \epsilon^{1/4}\frac{y}{a}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 能量內積 (Energy inner product)：</strong> 三分量向量函數的內積，第三分量帶著 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 的權重</p>
+<div class="math notranslate nohighlight">
+\[\left(\mathbf{f},\ \mathbf{g}\right) \overset{\text{def}}{=} \int_{-\infty}^{\infty}\left(f_1g_1^{*} + f_2g_2^{*} + \frac{1}{\bar{c}^{2}}f_3g_3^{*}\right)d\hat{y}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\left(\cdot\right)^{*}\)</span> : 複數共軛 (Complex conjugate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_j,\ g_j\)</span> : 內積中的兩個三分量向量函數 (Two three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：這張卡片是<strong>定義</strong>，不是宣稱。它為什麼該長這樣（尤其那個 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span>），由【證明 (c)】回答。</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 4】 伴隨算符 (Adjoint operator)：</strong> 相對於【定義 3】的內積所定義的伴隨</p>
+<div class="math notranslate nohighlight">
+\[\left(\mathcal{L}\mathbf{f},\ \mathbf{g}\right) \overset{\text{def}}{=} \left(\mathbf{f},\ \mathcal{L}^{\dagger}\mathbf{g}\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}^{\dagger}\)</span> : <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 的伴隨算符 (Adjoint of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 5】 位勢通量積分 (Geopotential flux integral)：</strong> 壓力（位勢）對流場作功的總積分，先取個名字讓【證明 (a)】不被它撐爆</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{F} \overset{\text{def}}{=} \iiint\left[u\frac{\partial \phi}{\partial x} + v\frac{\partial \phi}{\partial y} + w\frac{\partial \phi}{\partial z}\right]e^{-z}\,dx\,dy\,dz\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{F}\)</span> : 位勢通量積分 (Geopotential flux integral) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 動能方程式 (Kinetic energy equation)：</strong> 用 <span class="math notranslate nohighlight">\(u\)</span> 乘【已知 1】(a)、用 <span class="math notranslate nohighlight">\(v\)</span> 乘【已知 1】(b) 再相加，科氏項對消</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  -\alpha u^{2} - \alpha v^{2} &amp;\overset{\text{已知 1(a)(b)}}{=}&amp; u\left[\frac{\partial u}{\partial t} - \beta y\,v + \frac{\partial \phi}{\partial x}\right] + v\left[\frac{\partial v}{\partial t} + \beta y\,u + \frac{\partial \phi}{\partial y}\right] \\
+  &amp;=&amp; u\frac{\partial u}{\partial t} + v\frac{\partial v}{\partial t} - \beta y\,uv + \beta y\,uv + u\frac{\partial \phi}{\partial x} + v\frac{\partial \phi}{\partial y} \\
+  &amp;=&amp; \frac{\partial}{\partial t}\left[\frac{u^{2} + v^{2}}{2}\right] + u\frac{\partial \phi}{\partial x} + v\frac{\partial \phi}{\partial y}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p>註：科氏項 <span class="math notranslate nohighlight">\(\mp\beta y\,uv\)</span> 精確對消 —— 科氏力<strong>不做功</strong>，這是能量原理成立的第一個關鍵。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 位能方程式 (Available potential energy equation)：</strong> 用 <span class="math notranslate nohighlight">\(\dfrac{R}{\Gamma}T\)</span> 乘【已知 1】(e)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{R}{\Gamma}T\left[-\alpha T + \frac{Q}{c_p}\right] &amp;\overset{\text{已知 1(e)}}{=}&amp; \frac{R}{\Gamma}T\left[\frac{\partial T}{\partial t} + \Gamma w\right] \\
+  -\alpha\frac{R}{\Gamma}T^{2} + \frac{R\,T\,Q}{\Gamma c_p} &amp;=&amp; \frac{\partial}{\partial t}\left[\frac{R\,T^{2}}{2\Gamma}\right] + R\,T\,w
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 位能密度的兩種寫法 (Two forms of the potential energy density)：</strong> 靜力方程式讓 <span class="math notranslate nohighlight">\(T\)</span> 與 <span class="math notranslate nohighlight">\(\partial\phi/\partial z\)</span> 可以互換</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{R\,T^{2}}{\Gamma} &amp;\overset{\text{已知 1(c)}}{=}&amp; \frac{R}{\Gamma}\left[\frac{1}{R}\frac{\partial \phi}{\partial z}\right]^{2} \\
+  \frac{R\,T^{2}}{\Gamma} &amp;=&amp; \frac{1}{R\Gamma}\left(\frac{\partial \phi}{\partial z}\right)^{2} \\
+  R\,T\,w &amp;\overset{\text{已知 1(c)}}{=}&amp; w\frac{\partial \phi}{\partial z}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 位勢通量項的總積分為零 (Vanishing of the total geopotential flux)：</strong> 這是能量原理成立的第二個關鍵 —— 壓力作功只是在系統內部搬運能量，總量不變</p>
+<ul>
+<li><p>(a) 用乘積律拆成散度減去輻散項，再用連續方程式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    u\frac{\partial \phi}{\partial x} + v\frac{\partial \phi}{\partial y} + w\frac{\partial \phi}{\partial z}
+    &amp;=&amp; \frac{\partial \left(\phi u\right)}{\partial x} + \frac{\partial \left(\phi v\right)}{\partial y} + \frac{\partial \left(\phi w\right)}{\partial z} - \phi\left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z}\right] \\
+    &amp;\overset{\text{已知 1(d)}}{=}&amp; \frac{\partial \left(\phi u\right)}{\partial x} + \frac{\partial \left(\phi v\right)}{\partial y} + \frac{\partial \left(\phi w\right)}{\partial z} - \phi\,w
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 水平兩項的積分為零（緯向週期、經向衰減）：</p>
+<div class="math notranslate nohighlight">
+\[\iiint\left[\frac{\partial \left(\phi u\right)}{\partial x} + \frac{\partial \left(\phi v\right)}{\partial y}\right]e^{-z}\,dx\,dy\,dz \overset{\text{假設 1(a)(b)}}{=} 0\]</div>
+</li>
+<li><p>(c) 垂直項用分部積分，邊界項被剛蓋殺掉，剩下的恰好抵掉 (a) 的 <span class="math notranslate nohighlight">\(-\phi w\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \iiint \frac{\partial \left(\phi w\right)}{\partial z}e^{-z}\,dx\,dy\,dz &amp;\overset{\text{已知 4}}{=}&amp; \iint\left\{\left[e^{-z}\phi w\right]_{0}^{z_T} + \int_{0}^{z_T}\phi\,w\,e^{-z}\,dz\right\}dx\,dy \\
+    &amp;\overset{\text{假設 1(c)}}{=}&amp; \iiint \phi\,w\,e^{-z}\,dx\,dy\,dz
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(d) 三項合起來：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \mathcal{F} &amp;\overset{\text{定義 5,推導 4(a)(b)(c)}}{=}&amp; \iiint \phi\,w\,e^{-z}\,dV - \iiint \phi\,w\,e^{-z}\,dV \\
+    &amp;=&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(dV\)</span> : 體積元 <span class="math notranslate nohighlight">\(dx\,dy\,dz\)</span> 的簡寫 (Volume element) <span class="math notranslate nohighlight">\([\text{m}^{2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{F}\)</span> : 位勢通量積分 (Geopotential flux integral) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-3}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 垂直積分恆等式 (Vertical integral identity)：</strong> <span class="math notranslate nohighlight">\(Z'\)</span> 的加權平方積分恰為 <span class="math notranslate nohighlight">\(Z\)</span> 的 <span class="math notranslate nohighlight">\(\lambda\)</span> 倍 —— 這是【證明 (c)】的全部關鍵</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  -\lambda\int_{0}^{z_T}Z^{2}e^{-z}\,dz &amp;\overset{\text{已知 2(a)}}{=}&amp; \int_{0}^{z_T}Z\left[\frac{d^{2}Z}{dz^{2}} - \frac{dZ}{dz}\right]e^{-z}\,dz \\
+  -\lambda\int_{0}^{z_T}Z^{2}e^{-z}\,dz &amp;=&amp; \int_{0}^{z_T}Z\,\frac{d}{dz}\left[e^{-z}\frac{dZ}{dz}\right]dz \\
+  -\lambda\int_{0}^{z_T}Z^{2}e^{-z}\,dz &amp;\overset{\text{已知 4}}{=}&amp; \left[Z\,e^{-z}\frac{dZ}{dz}\right]_{0}^{z_T} - \int_{0}^{z_T}\left(\frac{dZ}{dz}\right)^{2}e^{-z}\,dz \\
+  -\lambda\int_{0}^{z_T}Z^{2}e^{-z}\,dz &amp;\overset{\text{已知 2(b)}}{=}&amp; -\int_{0}^{z_T}\left(\frac{dZ}{dz}\right)^{2}e^{-z}\,dz \\
+  \int_{0}^{z_T}\left(\frac{dZ}{dz}\right)^{2}e^{-z}\,dz &amp;=&amp; \lambda\int_{0}^{z_T}Z^{2}e^{-z}\,dz
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda = \dfrac{\pi^{2}}{z_T^{2}} + \dfrac{1}{4}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：第一列到第二列用到 <span class="math notranslate nohighlight">\(\dfrac{d}{dz}\left[e^{-z}\dfrac{dZ}{dz}\right] = e^{-z}\left[\dfrac{d^{2}Z}{dz^{2}} - \dfrac{dZ}{dz}\right]\)</span> —— 也就是說，<strong><span class="math notranslate nohighlight">\(e^{-z}\)</span> 正是讓垂直算子變成自伴形式的積分因子</strong>。這與本庫 <a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html"><span class="std std-doc">Sturm–Liouville 正交性</span></a>【定義 1】的 <span class="math notranslate nohighlight">\(p(z)\)</span> 是同一件事。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 6】 <span class="math notranslate nohighlight">\(\mathcal{L}\mathbf{f}\)</span> 與 <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> 的內積展開 (Expansion of the inner product)：</strong> 把【已知 3】代進【定義 3】，逐項寫開</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \left(\mathcal{L}\mathbf{f},\ \mathbf{g}\right) &amp;\overset{\text{定義 3,已知 3}}{=}&amp; \int_{-\infty}^{\infty}\left[\left(-\beta y f_2 + \frac{im}{a}f_3\right)g_1^{*} + \left(\beta y f_1 + \frac{df_3}{dy}\right)g_2^{*} + \frac{1}{\bar{c}^{2}}\left(\bar{c}^{2}\frac{im}{a}f_1 + \bar{c}^{2}\frac{df_2}{dy}\right)g_3^{*}\right]d\hat{y} \\
+  &amp;=&amp; \int_{-\infty}^{\infty}\left[-\beta y f_2g_1^{*} + \beta y f_1g_2^{*} + \frac{im}{a}f_3g_1^{*} + \frac{im}{a}f_1g_3^{*} + \frac{df_3}{dy}g_2^{*} + \frac{df_2}{dy}g_3^{*}\right]d\hat{y}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> : 水平結構的線性算符 (Linear operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_j,\ g_j\)</span> : 內積中的兩個三分量向量函數 (Two three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 7】 <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> 與 <span class="math notranslate nohighlight">\(\mathcal{L}\mathbf{g}\)</span> 的內積展開 (Expansion of the conjugate inner product)：</strong> 同樣代入，但注意 <span class="math notranslate nohighlight">\(\left(\mathcal{L}\mathbf{g}\right)^{*}\)</span> 會把 <span class="math notranslate nohighlight">\(im/a\)</span> 變號</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  -\left(\mathbf{f},\ \mathcal{L}\mathbf{g}\right) &amp;\overset{\text{定義 3,已知 3}}{=}&amp; -\int_{-\infty}^{\infty}\left[f_1\left(-\beta y g_2^{*} - \frac{im}{a}g_3^{*}\right) + f_2\left(\beta y g_1^{*} + \frac{dg_3^{*}}{dy}\right) + \frac{1}{\bar{c}^{2}}f_3\left(-\bar{c}^{2}\frac{im}{a}g_1^{*} + \bar{c}^{2}\frac{dg_2^{*}}{dy}\right)\right]d\hat{y} \\
+  &amp;=&amp; \int_{-\infty}^{\infty}\left[\beta y f_1g_2^{*} - \beta y f_2g_1^{*} + \frac{im}{a}f_1g_3^{*} + \frac{im}{a}f_3g_1^{*} - f_2\frac{dg_3^{*}}{dy} - f_3\frac{dg_2^{*}}{dy}\right]d\hat{y}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> : 水平結構的線性算符 (Linear operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_j,\ g_j\)</span> : 內積中的兩個三分量向量函數 (Two three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 8】 微分項的差為全微分 (The derivative terms differ by a total derivative)：</strong> 【推導 6】與【推導 7】只差在微分項，兩者相減後恰好整成全微分</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty}\left[\frac{df_3}{dy}g_2^{*} + f_3\frac{dg_2^{*}}{dy} + \frac{df_2}{dy}g_3^{*} + f_2\frac{dg_3^{*}}{dy}\right]d\hat{y}
+  &amp;=&amp; \int_{-\infty}^{\infty}\frac{d}{dy}\left[f_3g_2^{*} + f_2g_3^{*}\right]d\hat{y} \\
+  &amp;=&amp; \left(\frac{\beta}{\bar{c}}\right)^{1/2}\left[f_3g_2^{*} + f_2g_3^{*}\right]_{-\infty}^{\infty} \\
+  &amp;\overset{\text{假設 3}}{=}&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f_j,\ g_j\)</span> : 內積中的兩個三分量向量函數 (Two three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{E}\)</span> : 總能量 (Total energy) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(dV\)</span> : 體積元 <span class="math notranslate nohighlight">\(dx\,dy\,dz\)</span> 的簡寫 (Volume element) <span class="math notranslate nohighlight">\([\text{m}^{2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{F}\)</span> : 位勢通量積分 (Geopotential flux integral) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{G}\)</span> : 非絕熱生成項 (Diabatic generation term) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda = \dfrac{\pi^{2}}{z_T^{2}} + \dfrac{1}{4}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> : 水平結構的線性算符 (Linear operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 第 <span class="math notranslate nohighlight">\((m, n, r)\)</span> 個本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：第二列用到【定義 2】(b) 的 <span class="math notranslate nohighlight">\(\hat{y} = \left(\beta/\bar{c}\right)^{1/2}y\)</span>，故 <span class="math notranslate nohighlight">\(\dfrac{d}{dy} = \left(\dfrac{\beta}{\bar{c}}\right)^{1/2}\dfrac{d}{d\hat{y}}\)</span>，積分後只剩邊界值乘上這個常數。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-total-energy-principle">
+<h3>(a) proof 總能量原理 (Total energy principle)<a class="headerlink" href="#a-proof-total-energy-principle" title="Link to this heading">#</a></h3>
+<p>把【推導 1】與【推導 2】相加，乘上 <span class="math notranslate nohighlight">\(e^{-z}\)</span> 後對全域積分；通量項被【推導 4】整個殺掉，剩下的依【定義 1】收攏。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{d\mathcal{E}}{dt} &amp;\overset{\text{定義 1(a),推導 3}}{=}&amp; \iiint\frac{\partial}{\partial t}\left[\frac{u^{2} + v^{2}}{2} + \frac{R\,T^{2}}{2\Gamma}\right]e^{-z}\,dV \\
+&amp;\overset{\text{推導 1,推導 2,推導 3,定義 5}}{=}&amp; -\alpha\iiint\left[u^{2} + v^{2} + \frac{R\,T^{2}}{\Gamma}\right]e^{-z}\,dV + \iiint\frac{R\,T\,Q}{\Gamma c_p}e^{-z}\,dV - \mathcal{F} \\
+&amp;\overset{\text{推導 3,定義 1(a)(b)}}{=}&amp; -2\alpha\mathcal{E} + \mathcal{G} - \mathcal{F} \\
+&amp;\overset{\text{推導 4(d)}}{=}&amp; -2\alpha\mathcal{E} + \mathcal{G}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-energy-balance-in-the-steady-state">
+<h3>(b) proof 定常時的能量平衡 (Energy balance in the steady state)<a class="headerlink" href="#b-proof-energy-balance-in-the-steady-state" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{假設 2}}{=}&amp; \frac{d\mathcal{E}}{dt} \\
+0 &amp;\overset{\text{證明 (a)}}{=}&amp; -2\alpha\mathcal{E} + \mathcal{G} \\
+2\alpha\mathcal{E} &amp;=&amp; \mathcal{G}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c-proof-1-bar-c-2-origin-of-the-1-bar-c-2-weight">
+<h3>(c) proof 內積權重 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 的來源 (Origin of the <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> weight)<a class="headerlink" href="#c-proof-1-bar-c-2-origin-of-the-1-bar-c-2-weight" title="Link to this heading">#</a></h3>
+<p>把【已知 2】(c) 的分離形式代進【定義 1】(a)，垂直積分用【推導 5】換掉，<span class="math notranslate nohighlight">\(\lambda/\left(R\Gamma\right)\)</span> 就變成 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\mathcal{E} &amp;\overset{\text{定義 1(a)}}{=}&amp; \iiint\frac{1}{2}\left[u^{2} + v^{2} + \frac{1}{R\Gamma}\left(\frac{\partial \phi}{\partial z}\right)^{2}\right]e^{-z}\,dV \\
+&amp;\overset{\text{已知 2(c)}}{=}&amp; \iint\frac{1}{2}\left[\left(\hat{u}^{2} + \hat{v}^{2}\right)\int_{0}^{z_T}Z^{2}e^{-z}\,dz + \frac{\hat{\phi}^{2}}{R\Gamma}\int_{0}^{z_T}\left(\frac{dZ}{dz}\right)^{2}e^{-z}\,dz\right]dx\,dy \\
+&amp;\overset{\text{推導 5}}{=}&amp; \iint\frac{1}{2}\left[\left(\hat{u}^{2} + \hat{v}^{2}\right)\int_{0}^{z_T}Z^{2}e^{-z}\,dz + \frac{\lambda\,\hat{\phi}^{2}}{R\Gamma}\int_{0}^{z_T}Z^{2}e^{-z}\,dz\right]dx\,dy \\
+&amp;\overset{\text{已知 3}}{=}&amp; \frac{1}{2}\left[\int_{0}^{z_T}Z^{2}e^{-z}\,dz\right]\iint\left[\hat{u}^{2} + \hat{v}^{2} + \frac{1}{\bar{c}^{2}}\hat{\phi}^{2}\right]dx\,dy
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="d-proof-skew-hermiticity-of-the-operator">
+<h3>(d) proof 算符的反厄米性 (Skew-Hermiticity of the operator)<a class="headerlink" href="#d-proof-skew-hermiticity-of-the-operator" title="Link to this heading">#</a></h3>
+<p>【推導 6】與【推導 7】的前四項逐項相同，剩下的微分項之差被【推導 8】證明為零。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left(\mathcal{L}\mathbf{f},\ \mathbf{g}\right) + \left(\mathbf{f},\ \mathcal{L}\mathbf{g}\right)
+&amp;\overset{\text{推導 6,推導 7}}{=}&amp; \int_{-\infty}^{\infty}\left[\frac{df_3}{dy}g_2^{*} + \frac{df_2}{dy}g_3^{*} + f_2\frac{dg_3^{*}}{dy} + f_3\frac{dg_2^{*}}{dy}\right]d\hat{y} \\
+\left(\mathcal{L}\mathbf{f},\ \mathbf{g}\right) + \left(\mathbf{f},\ \mathcal{L}\mathbf{g}\right) &amp;\overset{\text{推導 8}}{=}&amp; 0 \\
+\left(\mathcal{L}\mathbf{f},\ \mathbf{g}\right) &amp;=&amp; -\left(\mathbf{f},\ \mathcal{L}\mathbf{g}\right) \\
+\left(\mathcal{L}\mathbf{f},\ \mathbf{g}\right) &amp;\overset{\text{定義 4}}{=}&amp; \left(\mathbf{f},\ \mathcal{L}^{\dagger}\mathbf{g}\right) \\
+\mathcal{L}^{\dagger} &amp;=&amp; -\mathcal{L}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="e-proof-pure-imaginary-eigenvalues-and-orthogonal-eigenfunctions">
+<h3>(e) proof 本徵值為純虛數且本徵函數正交 (Pure-imaginary eigenvalues and orthogonal eigenfunctions)<a class="headerlink" href="#e-proof-pure-imaginary-eigenvalues-and-orthogonal-eigenfunctions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>本徵值：</strong> 令 <span class="math notranslate nohighlight">\(\mathcal{L}\mathbf{K} = i\nu\mathbf{K}\)</span>，對同一個 <span class="math notranslate nohighlight">\(\mathbf{K}\)</span> 取內積並用【證明 (d)】。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+i\nu\left(\mathbf{K},\ \mathbf{K}\right) &amp;\overset{\text{let}}{=}&amp; \left(\mathcal{L}\mathbf{K},\ \mathbf{K}\right) \\
+i\nu\left(\mathbf{K},\ \mathbf{K}\right) &amp;\overset{\text{證明 (d)}}{=}&amp; -\left(\mathbf{K},\ \mathcal{L}\mathbf{K}\right) \\
+i\nu\left(\mathbf{K},\ \mathbf{K}\right) &amp;\overset{\text{定義 3}}{=}&amp; -\left(i\nu\right)^{*}\left(\mathbf{K},\ \mathbf{K}\right) \\
+i\nu &amp;=&amp; -\left(i\nu\right)^{*} \\
+i\nu &amp;=&amp; i\nu^{*} \\
+\nu &amp;=&amp; \nu^{*}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>正交性：</strong> 取兩個對應到相異本徵值的本徵函數。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+i\nu_{mnr}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) &amp;\overset{\text{let}}{=}&amp; \left(\mathcal{L}\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) \\
+i\nu_{mnr}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) &amp;\overset{\text{證明 (d)}}{=}&amp; -\left(\mathbf{K}_{mnr},\ \mathcal{L}\mathbf{K}_{mn'r'}\right) \\
+i\nu_{mnr}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) &amp;\overset{\text{定義 3}}{=}&amp; -\left(i\nu_{mn'r'}\right)^{*}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) \\
+i\nu_{mnr}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) &amp;=&amp; i\nu_{mn'r'}\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) \\
+0 &amp;=&amp; i\left(\nu_{mnr} - \nu_{mn'r'}\right)\left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) \\
+0 &amp;=&amp; \left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right)
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>結構解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>這一篇為什麼一定要獨立成篇<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>因為<strong>後面每一步都押在它上面</strong>：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">赤道波本徵函數</span></a> 的正交歸一 <span class="math notranslate nohighlight">\((4.17)\)</span> —— 靠【證明 (e)】的正交性。</p></li>
+<li><p><a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a> 的一行除法 <span class="math notranslate nohighlight">\((4.21)\)</span> —— 靠【證明 (d)】把 <span class="math notranslate nohighlight">\(\left(\mathcal{L}\hat{\boldsymbol{\eta}},\ \mathbf{K}\right)\)</span> 翻成 <span class="math notranslate nohighlight">\(i\nu\hat{\eta}\)</span>。</p></li>
+<li><p>頻散關係 <span class="math notranslate nohighlight">\((4.10)\)</span> 的根全為實數 —— 靠【證明 (e)】的 <span class="math notranslate nohighlight">\(\nu \in \mathbb{R}\)</span>（無成長、無衰減，符合線性無耗散波動的物理）。</p></li>
+</ul>
+<p>若 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 不是反厄米的，本徵函數不必正交、不必完備，整套正規模態展開就沒有立足點。</p>
+</section>
+<section id="id5">
+<h3>內積的第三個權重是「算」出來的，不是「猜」出來的<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>論文只寫「the inner product <span class="math notranslate nohighlight">\((4.8)\)</span> is suggested by the total energy principle」。【證明 (c)】把這句話補完：</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{\frac{1}{R\Gamma}\left(\frac{\partial \phi}{\partial z}\right)^{2}}_{\text{三維位能密度}}
+\quad\xrightarrow{\ \text{垂直積分}\ }\quad
+\underbrace{\frac{\lambda}{R\Gamma}\hat{\phi}^{2}}_{\text{二維位能密度}}
+= \underbrace{\frac{1}{\bar{c}^{2}}\hat{\phi}^{2}}_{\text{內積第三項}}\]</div>
+<p>中間那一步靠的就是【推導 5】的 <span class="math notranslate nohighlight">\(\int Z'^{2}e^{-z}dz = \lambda\int Z^{2}e^{-z}dz\)</span>。</p>
+<p>所以：<strong>只要挑了「總能量」當內積，<span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 就沒有選擇餘地。</strong> 反過來說，若隨手把第三項的權重取成 <span class="math notranslate nohighlight">\(1\)</span>，<span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 就<strong>不是</strong>反厄米的（【推導 6】【推導 7】的第三列會湊不起來），整套方法立刻崩潰。</p>
+</section>
+<section id="id6">
+<h3>兩個「剛好對消」各自對應什麼物理<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>【證明 (a)】能成立，全靠兩處精確對消：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>對消</p></th>
+<th class="head"><p>出處</p></th>
+<th class="head"><p>物理意義</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(-\beta y\,uv + \beta y\,uv = 0\)</span></p></td>
+<td><p>【推導 1】</p></td>
+<td><p><strong>科氏力不做功</strong>（它永遠垂直於速度）</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\iiint\phi w\,e^{-z}dV - \iiint\phi w\,e^{-z}dV = 0\)</span></p></td>
+<td><p>【推導 4】(d)</p></td>
+<td><p><strong>壓力作功只在系統內搬運能量</strong>，總量守恆</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>第二個對消特別值得看：它把「<span class="math notranslate nohighlight">\(-\phi\left(\nabla\cdot\mathbf{u}\right)\)</span>」（連續方程式貢獻的 <span class="math notranslate nohighlight">\(-\phi w\)</span>）與「垂直分部積分產生的 <span class="math notranslate nohighlight">\(+\phi w\)</span>」抵掉。<strong>若剛蓋條件 <span class="math notranslate nohighlight">\(w\left(0\right) = w\left(z_T\right) = 0\)</span> 不成立，邊界會有能量進出，<span class="math notranslate nohighlight">\((2.2)\)</span> 就不再是封閉的能量原理。</strong></p>
+</section>
+<section id="vs">
+<h3>反厄米 vs. 厄米：為什麼是「反」<a class="headerlink" href="#vs" title="Link to this heading">#</a></h3>
+<p>厄米算符（<span class="math notranslate nohighlight">\(\mathcal{L}^{\dagger} = \mathcal{L}\)</span>）的本徵值是<strong>實數</strong>，對應到量子力學的可觀測量。</p>
+<p>反厄米算符（<span class="math notranslate nohighlight">\(\mathcal{L}^{\dagger} = -\mathcal{L}\)</span>）的本徵值是<strong>純虛數</strong>。而本系統的時間演化是 <span class="math notranslate nohighlight">\(\dfrac{\partial \hat{\boldsymbol{\eta}}}{\partial t} = -\mathcal{L}\hat{\boldsymbol{\eta}}\)</span>，解為 <span class="math notranslate nohighlight">\(e^{-i\nu t}\)</span> —— 純虛的本徵值 <span class="math notranslate nohighlight">\(i\nu\)</span> 給出<strong>純振盪、不成長不衰減</strong>的解。</p>
+<p>這正是無耗散線性波動該有的行為。系統真正的衰減來自另一處：【證明 (a)】的 <span class="math notranslate nohighlight">\(-2\alpha\mathcal{E}\)</span>，也就是 Rayleigh 摩擦與 Newtonian 冷卻 —— 那一項不在 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 裡，而是 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">淺水系統</span></a>【證明 (e)】那個對角的 <span class="math notranslate nohighlight">\(\left(\alpha - imc/a\right)\)</span> 的實部。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Equatorial_Beta_Plane_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Fourier_Transform_to_Shallow_Water_System.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fourier Transform to the Shallow Water System (隨波座標、緯向傅立葉轉換與淺水系統的算符形式)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Matsuno_Dispersion_Relation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matsuno Dispersion Relation (Matsuno 頻散關係的記法對照與特例)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-total-energy-principle">(a) proof 總能量原理 (Total energy principle)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-energy-balance-in-the-steady-state">(b) proof 定常時的能量平衡 (Energy balance in the steady state)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-1-bar-c-2-origin-of-the-1-bar-c-2-weight">(c) proof 內積權重 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 的來源 (Origin of the <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> weight)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-skew-hermiticity-of-the-operator">(d) proof 算符的反厄米性 (Skew-Hermiticity of the operator)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-pure-imaginary-eigenvalues-and-orthogonal-eigenfunctions">(e) proof 本徵值為純虛數且本徵函數正交 (Pure-imaginary eigenvalues and orthogonal eigenfunctions)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這一篇為什麼一定要獨立成篇</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">內積的第三個權重是「算」出來的，不是「猜」出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">兩個「剛好對消」各自對應什麼物理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">反厄米 vs. 厄米：為什麼是「反」</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

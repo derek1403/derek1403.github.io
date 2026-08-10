@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Gaussian–Hermite Integral (高斯 × Hermite 函數的重疊積分) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Calculus/Gaussian_Hermite_Integral';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Spherical Coordinate Transformation : Momentum Equation" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html" />
+    <link rel="prev" title="Proof \(\int_{-\infty}^{+\infty} \frac{e^{-x^2} \sin^2(x^2)}{x^2} \mathrm{d}x = \sqrt{\pi} (\sqrt{\phi} - 1)\)" href="golden_ratio_gaussian_integral.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Calculus/Gaussian_Hermite_Integral.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Calculus/Gaussian_Hermite_Integral.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Gaussian–Hermite Integral (高斯 × Hermite 函數的重疊積分)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-hermite-gaussian-hermite-overlap-integral">(a) proof 高斯–Hermite 重疊積分 (Gaussian-Hermite overlap integral)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-verify-consistency-in-the-narrow-gaussian-limit">(b) verify 窄高斯極限的自洽性 (Consistency in the narrow-Gaussian limit)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-integrals">積分表 (Table of Integrals)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這條式子在說什麼</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">三個因子各自控制什麼</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-b-0-2-1-2">為什麼會有 <span class="math notranslate nohighlight">\(\hat{b}_0 &lt; 2^{1/2}\)</span> 這道牆</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">為什麼要用生成函數，而不是硬算</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="gaussianhermite-integral-hermite">
+<h1>Gaussian–Hermite Integral (高斯 × Hermite 函數的重疊積分)<a class="headerlink" href="#gaussianhermite-integral-hermite" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>(a) 一個「中心在 <span class="math notranslate nohighlight">\(\hat{y}_0\)</span>、寬度為 <span class="math notranslate nohighlight">\(\hat{b}_0\)</span> 的高斯」與第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數的重疊積分，結果<strong>仍然是同一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></strong>，只是自變數被壓縮、外面多了三個純量因子：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y}
+= \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}
+\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}
+\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]
+\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right)\]</div>
+<p>適用範圍為 <span class="math notranslate nohighlight">\(0 \le \hat{b}_0 &lt; 2^{1/2}\)</span>。</p>
+<ul class="simple">
+<li><p>(b) 上式在 <span class="math notranslate nohighlight">\(\hat{b}_0 \to 0\)</span>（高斯縮成 delta 函數）的極限下自洽：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{\hat{b}_0 \to 0}\frac{1}{\hat{b}_0}\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y} = \pi^{1/2}\,\mathcal{H}_n(\hat{y}_0)\]</div>
+<ul class="simple">
+<li><p>註：這條式子在 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert (2006) MJO 論文</span></a> 中是 Appendix B 的 <span class="math notranslate nohighlight">\((B.1)\)</span>，原文直接引用 Gradshteyn–Ryzhik 積分表；本檔改為<strong>自證</strong>，並在文末附上可查表的<strong>積分表</strong>。</p></li>
+<li><p>註：本檔是純數學結果，<span class="math notranslate nohighlight">\(\hat{y},\ \hat{y}_0,\ \hat{b}_0\)</span> 皆為無因次量，故符號清單的單位欄一律為 <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://dlmf.nist.gov/18.12#E15">Hermite 多項式的生成函數 (Generating function of the Hermite polynomials)</a>：</strong> 物理學慣例的 Hermite 多項式 <span class="math notranslate nohighlight">\(H_n\)</span> 由下式定義，本檔直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[e^{2\eta s - s^{2}} = \sum_{n=0}^{\infty} H_n(\eta)\,\frac{s^{n}}{n!}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 生成函數的自變數位置 (Argument of the generating function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> : 生成函數的形式參數 (Formal parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (The <span class="math notranslate nohighlight">\(n\)</span>-th Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#assumptions-preliminaries">歸一化 Hermite 函數的定義 (Definition of the normalized Hermite functions)</a>：</strong> 此定義已在本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 的【定義 1】【定義 2】給出，此處直接引用</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H}_n(\hat{y}) = c_n\,H_n(\hat{y})\,e^{-\hat{y}^{2}/2}, \qquad c_n = \left(\pi^{1/2}\,2^{n}\,n!\right)^{-1/2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化常數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (The <span class="math notranslate nohighlight">\(n\)</span>-th Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://dlmf.nist.gov/7.4#E1">平移高斯積分 (Shifted Gaussian integral)</a>：</strong> 標準結果，本檔直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} e^{-\Lambda\left(\hat{y} - \mu\right)^{2}}\,d\hat{y} = \left(\frac{\pi}{\Lambda}\right)^{1/2} \qquad \left(\Lambda &gt; 0\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Lambda\)</span> : 高斯的二次項係數 (Quadratic coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 高斯的中心位置 (Center of the Gaussian) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 冪級數的恆等定理 (Identity theorem for power series)：</strong> 兩個冪級數在收斂區內恆等，則同次項係數相等，本檔直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^{\infty} A_n\,\frac{t^{n}}{n!} = \sum_{n=0}^{\infty} B_n\,\frac{t^{n}}{n!} \iff A_n = B_n \quad \left(\forall\, n \ge 0\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_n,\ B_n\)</span> : 兩個冪級數的第 <span class="math notranslate nohighlight">\(n\)</span> 階係數 (Coefficients of the two power series) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 <a class="reference external" href="https://dlmf.nist.gov/1.17#E12">高斯的 delta 函數極限 (Gaussian representation of the delta function)</a>：</strong> 標準結果，本檔直接引用不再重證，僅供【證明 (b)】的自洽檢查使用</p>
+<ul>
+<li><p>(a) 高斯在寬度趨零時收斂到 delta 函數：</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\hat{b}_0 \to 0}\frac{1}{\pi^{1/2}\hat{b}_0}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right] = \delta\left(\hat{y} - \hat{y}_0\right)\]</div>
+</li>
+<li><p>(b) delta 函數的取樣性質：</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}\delta\left(\hat{y} - \hat{y}_0\right)f(\hat{y})\,d\hat{y} = f(\hat{y}_0)\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 狄拉克 delta 函數 (Dirac delta function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\hat{y})\)</span> : 任意連續函數 (Arbitrary continuous function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 高斯寬度的上限 (Upper bound on the Gaussian width)：</strong> 本結果只在高斯不比 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 自身的包絡寬太多時成立</p>
+<ul>
+<li><p>(a) 無因次寬度的適用範圍：</p>
+<div class="math notranslate nohighlight">
+\[0 \le \hat{b}_0 &lt; 2^{1/2}\]</div>
+</li>
+<li><p>(b) 由 (a) 兩側平方，得二次式的正定性：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \hat{b}_0^{2} &amp;\overset{\text{假設 1(a)}}{&lt;}&amp; 2 \\
+    2 - \hat{b}_0^{2} &amp;&gt;&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 由 (b) 與 <span class="math notranslate nohighlight">\(2 + \hat{b}_0^{2} &gt; 0\)</span>，得四次式的正定性：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    4 - \hat{b}_0^{4} &amp;=&amp; \left(2 + \hat{b}_0^{2}\right)\left(2 - \hat{b}_0^{2}\right) \\
+    &amp;\overset{\text{假設 1(b)}}{&gt;}&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：(b)(c) 正是【定義 3】的 <span class="math notranslate nohighlight">\(\chi\)</span> 與【定義 4】的 <span class="math notranslate nohighlight">\(\eta\)</span> <strong>保持實數</strong>的前提。<span class="math notranslate nohighlight">\(\hat{b}_0 \ge 2^{1/2}\)</span> 時 <span class="math notranslate nohighlight">\(\chi^{n/2}\)</span> 與 <span class="math notranslate nohighlight">\(\eta\)</span> 會變成複數，目標式失效；物理上這代表加熱區的經向寬度已經超過赤道變形半徑的 <span class="math notranslate nohighlight">\(2^{1/2}\)</span> 倍。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 積分與求和可交換 (Interchange of integration and summation)：</strong> 被積函數整體帶有 <span class="math notranslate nohighlight">\(e^{-\hat{y}^{2}}\)</span> 量級的高斯壓制，級數在任意有限 <span class="math notranslate nohighlight">\(t\)</span> 下對 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 一致收斂，故可逐項積分</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^{\infty}\left[\int_{-\infty}^{\infty}F_n(\hat{y})\,d\hat{y}\right]\frac{t^{n}}{n!} = \int_{-\infty}^{\infty}\left[\sum_{n=0}^{\infty}F_n(\hat{y})\,\frac{t^{n}}{n!}\right]d\hat{y}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F_n(\hat{y})\)</span> : 被積函數的第 <span class="math notranslate nohighlight">\(n\)</span> 階項 (The <span class="math notranslate nohighlight">\(n\)</span>-th integrand term) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 未歸一化的重疊積分 (Unnormalized overlap integral)：</strong> 把【已知 2】的常數 <span class="math notranslate nohighlight">\(c_n\)</span> 抽出來，剩下只含 <span class="math notranslate nohighlight">\(H_n\)</span> 的部分</p>
+<div class="math notranslate nohighlight">
+\[J_n \overset{\text{def}}{=} \int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(J_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階未歸一化重疊積分 (The <span class="math notranslate nohighlight">\(n\)</span>-th unnormalized overlap integral) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (The <span class="math notranslate nohighlight">\(n\)</span>-th Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 合併後的二次項係數 (Merged quadratic coefficient)：</strong> 兩個高斯（強迫的與 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 包絡的）相乘後，<span class="math notranslate nohighlight">\(\hat{y}^{2}\)</span> 前面的總係數</p>
+<div class="math notranslate nohighlight">
+\[\Lambda \overset{\text{def}}{=} \frac{1}{\hat{b}_0^{2}} + \frac{1}{2} = \frac{2 + \hat{b}_0^{2}}{2\hat{b}_0^{2}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Lambda\)</span> : 合併後的二次項係數 (Merged quadratic coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 階數壓縮比 (Order-compression ratio)：</strong> 決定高階模態被壓抑得多快的比值</p>
+<div class="math notranslate nohighlight">
+\[\chi \overset{\text{def}}{=} \frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span> : 階數壓縮比 (Order-compression ratio) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：由【假設 1】(b)，<span class="math notranslate nohighlight">\(0 &lt; \chi \le 1\)</span>；<span class="math notranslate nohighlight">\(\hat{b}_0 = 0\)</span> 時 <span class="math notranslate nohighlight">\(\chi = 1\)</span>（不壓抑），<span class="math notranslate nohighlight">\(\hat{b}_0 \to 2^{1/2}\)</span> 時 <span class="math notranslate nohighlight">\(\chi \to 0\)</span>（高階全滅）。</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 4】 壓縮後的中心位置 (Compressed center)：</strong> 目標式中 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 真正被取值的地方</p>
+<div class="math notranslate nohighlight">
+\[\eta \overset{\text{def}}{=} \frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 壓縮後的中心位置 (Compressed center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 5】 重疊積分的生成函數 (Generating function of the overlap integrals)：</strong> 把整族 <span class="math notranslate nohighlight">\(J_n\)</span> 打包成一個 <span class="math notranslate nohighlight">\(t\)</span> 的函數，一次算完</p>
+<div class="math notranslate nohighlight">
+\[G(t) \overset{\text{def}}{=} \sum_{n=0}^{\infty} J_n\,\frac{t^{n}}{n!}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G(t)\)</span> : 重疊積分的生成函數 (Generating function of the overlap integrals) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(J_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階未歸一化重疊積分 (The <span class="math notranslate nohighlight">\(n\)</span>-th unnormalized overlap integral) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 指數的整理與配方 (Rearranging and completing the square)：</strong> 把三個指數（強迫高斯、<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 包絡、生成函數）合併成單一個對 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 的完全平方</p>
+<ul>
+<li><p>(a) 展開並依 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 的冪次整理：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    -\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}} - \frac{\hat{y}^{2}}{2} + 2\hat{y}t - t^{2}
+    &amp;=&amp; -\frac{1}{\hat{b}_0^{2}}\left[\hat{y}^{2} - 2\hat{y}\hat{y}_0 + \hat{y}_0^{2}\right] - \frac{\hat{y}^{2}}{2} + 2\hat{y}t - t^{2} \\
+    &amp;=&amp; -\left[\frac{1}{\hat{b}_0^{2}} + \frac{1}{2}\right]\hat{y}^{2} + 2\hat{y}\left[\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2} \\
+    &amp;\overset{\text{定義 2}}{=}&amp; -\Lambda\,\hat{y}^{2} + 2\hat{y}\left[\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 對 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 配方：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    -\Lambda\,\hat{y}^{2} + 2\hat{y}\left[\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}
+    &amp;=&amp; -\Lambda\left[\hat{y}^{2} - \frac{2\hat{y}}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2} \\
+    &amp;=&amp; -\Lambda\left[\hat{y} - \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right]^{2} + \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Lambda\)</span> : 合併後的二次項係數 (Merged quadratic coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 生成函數的封閉式 (Closed form of the generating function)：</strong> 交換積分與求和、代入生成函數、配方後把 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 積掉</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  G(t) &amp;\overset{\text{定義 5,定義 1}}{=}&amp; \sum_{n=0}^{\infty}\left[\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}\right]\frac{t^{n}}{n!} \\
+  &amp;\overset{\text{假設 2}}{=}&amp; \int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]e^{-\hat{y}^{2}/2}\left[\sum_{n=0}^{\infty}H_n(\hat{y})\,\frac{t^{n}}{n!}\right]d\hat{y} \\
+  &amp;\overset{\text{已知 1}}{=}&amp; \int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}} - \frac{\hat{y}^{2}}{2} + 2\hat{y}t - t^{2}\right]d\hat{y} \\
+  &amp;\overset{\text{推導 1(a)(b)}}{=}&amp; \int_{-\infty}^{\infty}\exp\left[-\Lambda\left(\hat{y} - \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right)^{2}\right]\exp\left[\frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}\right]d\hat{y} \\
+  &amp;=&amp; \exp\left[\frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}\right]\int_{-\infty}^{\infty}\exp\left[-\Lambda\left(\hat{y} - \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right)^{2}\right]d\hat{y} \\
+  &amp;\overset{\text{已知 3}}{=}&amp; \left(\frac{\pi}{\Lambda}\right)^{1/2}\exp\left[\frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}\right]
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G(t)\)</span> : 重疊積分的生成函數 (Generating function of the overlap integrals) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (The <span class="math notranslate nohighlight">\(n\)</span>-th Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Lambda\)</span> : 合併後的二次項係數 (Merged quadratic coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：套用【已知 3】時取 <span class="math notranslate nohighlight">\(\mu = \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\)</span>；由【定義 2】<span class="math notranslate nohighlight">\(\Lambda &gt; 0\)</span> 恆成立，故積分收斂。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 生成函數的四個係數 (The four coefficients of the generating function)：</strong> 把【推導 2】的前因子與指數依 <span class="math notranslate nohighlight">\(t\)</span> 的冪次拆開，逐項化到最簡</p>
+<ul>
+<li><p>(a) 前因子：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \left(\frac{\pi}{\Lambda}\right)^{1/2} &amp;\overset{\text{定義 2}}{=}&amp; \left(\pi\cdot\frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2} \\
+    &amp;=&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 指數中與 <span class="math notranslate nohighlight">\(t\)</span> 無關的常數項：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{1}{\Lambda}\frac{\hat{y}_0^{2}}{\hat{b}_0^{4}} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} &amp;\overset{\text{定義 2}}{=}&amp; \frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\cdot\frac{\hat{y}_0^{2}}{\hat{b}_0^{4}} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} \\
+    &amp;=&amp; \frac{2\hat{y}_0^{2}}{\hat{b}_0^{2}\left(2 + \hat{b}_0^{2}\right)} - \frac{\hat{y}_0^{2}\left(2 + \hat{b}_0^{2}\right)}{\hat{b}_0^{2}\left(2 + \hat{b}_0^{2}\right)} \\
+    &amp;=&amp; \frac{\hat{y}_0^{2}\left[2 - 2 - \hat{b}_0^{2}\right]}{\hat{b}_0^{2}\left(2 + \hat{b}_0^{2}\right)} \\
+    &amp;=&amp; -\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(c) 指數中 <span class="math notranslate nohighlight">\(t\)</span> 的一次項係數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{2}{\Lambda}\frac{\hat{y}_0}{\hat{b}_0^{2}} &amp;\overset{\text{定義 2}}{=}&amp; 2\cdot\frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\cdot\frac{\hat{y}_0}{\hat{b}_0^{2}} \\
+    &amp;=&amp; \frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(d) 指數中 <span class="math notranslate nohighlight">\(t\)</span> 的二次項係數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{1}{\Lambda} - 1 &amp;\overset{\text{定義 2}}{=}&amp; \frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}} - 1 \\
+    &amp;=&amp; \frac{2\hat{b}_0^{2} - 2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}} \\
+    &amp;=&amp; -\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}} \\
+    &amp;\overset{\text{定義 3}}{=}&amp; -\chi
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\Lambda\)</span> : 合併後的二次項係數 (Merged quadratic coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span> : 階數壓縮比 (Order-compression ratio) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：把 (a)–(d) 代回【推導 2】，生成函數就長成 <span class="math notranslate nohighlight">\(G(t) = \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\exp\left[\frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}t - \chi t^{2}\right]\)</span>。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 把指數重新認回生成函數 (Recognizing the exponential as a generating function)：</strong> 關鍵的一步 —— 換元 <span class="math notranslate nohighlight">\(s = \chi^{1/2}t\)</span> 之後，<span class="math notranslate nohighlight">\(t\)</span> 的那一塊指數<strong>恰好就是</strong> 【已知 1】在 <span class="math notranslate nohighlight">\(\eta\)</span> 處的生成函數</p>
+<ul>
+<li><p>(a) 先驗證一次項係數對得上：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    2\eta\,\chi^{1/2} &amp;\overset{\text{定義 3,定義 4}}{=}&amp; 2\cdot\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\cdot\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2} \\
+    &amp;\overset{\text{假設 1(c)}}{=}&amp; \frac{4\hat{y}_0}{\left(2 + \hat{b}_0^{2}\right)^{1/2}\left(2 - \hat{b}_0^{2}\right)^{1/2}}\cdot\frac{\left(2 - \hat{b}_0^{2}\right)^{1/2}}{\left(2 + \hat{b}_0^{2}\right)^{1/2}} \\
+    &amp;=&amp; \frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 於是整塊指數展開成 <span class="math notranslate nohighlight">\(\chi^{n/2}H_n(\eta)\)</span> 的級數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \exp\left[\frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}t - \chi t^{2}\right] &amp;\overset{\text{推導 4(a)}}{=}&amp; \exp\left[2\eta\,\chi^{1/2}t - \chi t^{2}\right] \\
+    &amp;=&amp; \exp\left[2\eta\left(\chi^{1/2}t\right) - \left(\chi^{1/2}t\right)^{2}\right] \\
+    &amp;\overset{\text{已知 1}}{=}&amp; \sum_{n=0}^{\infty}H_n(\eta)\,\frac{\left(\chi^{1/2}t\right)^{n}}{n!} \\
+    &amp;=&amp; \sum_{n=0}^{\infty}\chi^{n/2}H_n(\eta)\,\frac{t^{n}}{n!}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 壓縮後的中心位置 (Compressed center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span> : 階數壓縮比 (Order-compression ratio) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (The <span class="math notranslate nohighlight">\(n\)</span>-th Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：這裡把【已知 1】的 <span class="math notranslate nohighlight">\((\eta, s)\)</span> 分別取成本檔的 <span class="math notranslate nohighlight">\(\eta\)</span> 與 <span class="math notranslate nohighlight">\(\chi^{1/2}t\)</span>。由【假設 1】(b) 有 <span class="math notranslate nohighlight">\(\chi &gt; 0\)</span>，故 <span class="math notranslate nohighlight">\(\chi^{1/2}\)</span> 為實數。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 未歸一化重疊積分的顯式 (Explicit form of the unnormalized overlap integral)：</strong> 兩邊都寫成 <span class="math notranslate nohighlight">\(t^{n}/n!\)</span> 的級數，比對係數</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \sum_{n=0}^{\infty}J_n\,\frac{t^{n}}{n!} &amp;\overset{\text{定義 5}}{=}&amp; G(t) \\
+  \sum_{n=0}^{\infty}J_n\,\frac{t^{n}}{n!} &amp;\overset{\text{推導 2,推導 3(a)(b)(c)(d)}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\exp\left[\frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}t - \chi t^{2}\right] \\
+  \sum_{n=0}^{\infty}J_n\,\frac{t^{n}}{n!} &amp;\overset{\text{推導 4(b)}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\sum_{n=0}^{\infty}\chi^{n/2}H_n(\eta)\,\frac{t^{n}}{n!} \\
+  J_n &amp;\overset{\text{已知 4}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]H_n(\eta)
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(J_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階未歸一化重疊積分 (The <span class="math notranslate nohighlight">\(n\)</span>-th unnormalized overlap integral) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(G(t)\)</span> : 重疊積分的生成函數 (Generating function of the overlap integrals) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span> : 階數壓縮比 (Order-compression ratio) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階 Hermite 多項式 (The <span class="math notranslate nohighlight">\(n\)</span>-th Hermite polynomial) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 壓縮後的中心位置 (Compressed center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 6】 兩個指數的合併 (Merging the two exponentials)：</strong> 把【推導 5】的指數與【已知 2】高斯包絡的指數加起來</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  -\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}} + \frac{\eta^{2}}{2} &amp;\overset{\text{定義 4}}{=}&amp; -\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}} + \frac{1}{2}\cdot\frac{4\hat{y}_0^{2}}{4 - \hat{b}_0^{4}} \\
+  &amp;\overset{\text{假設 1(c)}}{=}&amp; -\frac{\hat{y}_0^{2}\left(2 - \hat{b}_0^{2}\right)}{4 - \hat{b}_0^{4}} + \frac{2\hat{y}_0^{2}}{4 - \hat{b}_0^{4}} \\
+  &amp;=&amp; \frac{\hat{y}_0^{2}\left[-2 + \hat{b}_0^{2} + 2\right]}{4 - \hat{b}_0^{4}} \\
+  &amp;=&amp; \frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}_0\)</span> : 高斯的無因次 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Dimensionless <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> : 壓縮後的中心位置 (Compressed center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}_0\)</span> : 高斯的無因次中心位置 (Dimensionless center) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-hermite-gaussian-hermite-overlap-integral">
+<h3>(a) proof 高斯–Hermite 重疊積分 (Gaussian-Hermite overlap integral)<a class="headerlink" href="#a-proof-hermite-gaussian-hermite-overlap-integral" title="Link to this heading">#</a></h3>
+<p>先用【已知 2】把 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 拆成 <span class="math notranslate nohighlight">\(c_nH_n\,e^{-\hat{y}^{2}/2}\)</span> 換成【定義 1】的 <span class="math notranslate nohighlight">\(J_n\)</span>，代入【推導 5】，再用【已知 2】把 <span class="math notranslate nohighlight">\(c_nH_n(\eta)\)</span> 收回成 <span class="math notranslate nohighlight">\(\mathcal{H}_n(\eta)\)</span>，最後由【推導 6】合併指數。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y}
+&amp;\overset{\text{已知 2}}{=}&amp; c_n\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y} \\
+&amp;\overset{\text{定義 1}}{=}&amp; c_n\,J_n \\
+&amp;\overset{\text{推導 5}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]c_nH_n(\eta) \\
+&amp;\overset{\text{已知 2}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\mathcal{H}_n(\eta)\,e^{\eta^{2}/2} \\
+&amp;=&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}} + \frac{\eta^{2}}{2}\right]\mathcal{H}_n(\eta) \\
+&amp;\overset{\text{推導 6}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n(\eta) \\
+&amp;\overset{\text{定義 3,定義 4}}{=}&amp; \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right)
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-verify-consistency-in-the-narrow-gaussian-limit">
+<h3>(b) verify 窄高斯極限的自洽性 (Consistency in the narrow-Gaussian limit)<a class="headerlink" href="#b-verify-consistency-in-the-narrow-gaussian-limit" title="Link to this heading">#</a></h3>
+<p>從 delta 函數那一端出發，繞經【證明 (a)】的封閉式取極限，回到同一個值。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\pi^{1/2}\,\mathcal{H}_n(\hat{y}_0) &amp;\overset{\text{已知 5(b)}}{=}&amp; \pi^{1/2}\int_{-\infty}^{\infty}\delta\left(\hat{y} - \hat{y}_0\right)\mathcal{H}_n(\hat{y})\,d\hat{y} \\
+&amp;\overset{\text{已知 5(a)}}{=}&amp; \lim_{\hat{b}_0 \to 0}\frac{1}{\hat{b}_0}\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y} \\
+&amp;\overset{\text{證明 (a)}}{=}&amp; \lim_{\hat{b}_0 \to 0}\frac{1}{\hat{b}_0}\left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right) \\
+&amp;=&amp; \lim_{\hat{b}_0 \to 0}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right) \\
+&amp;=&amp; \left(\frac{2\pi}{2}\right)^{1/2}\cdot 1^{n/2}\cdot e^{0}\cdot\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{2}\right) \\
+&amp;=&amp; \pi^{1/2}\,\mathcal{H}_n(\hat{y}_0)
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="table-of-integrals">
+<h2>積分表 (Table of Integrals)<a class="headerlink" href="#table-of-integrals" title="Link to this heading">#</a></h2>
+<p>以下各式都是【證明 (a)】的直接後果，供日後查表用。除特別註明外，適用範圍一律是【假設 1】的 <span class="math notranslate nohighlight">\(0 \le \hat{b}_0 &lt; 2^{1/2}\)</span>；記號沿用【定義 3】的 <span class="math notranslate nohighlight">\(\chi = \dfrac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\)</span> 與【定義 4】的 <span class="math notranslate nohighlight">\(\eta = \dfrac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\)</span>。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>積分</p></th>
+<th class="head"><p>結果</p></th>
+<th class="head"><p>出處／備註</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/\hat{b}_0^{2}}\,\mathcal{H}_n(\hat{y})\,d\hat{y}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[\dfrac{\hat{b}_0^{2}\hat{y}_0^{2}}{4-\hat{b}_0^{4}}\right]\mathcal{H}_n(\eta)\)</span></p></td>
+<td><p>【證明 (a)】＝ Schubert (2006) <span class="math notranslate nohighlight">\((B.1)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>T2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/\hat{b}_0^{2}}\,H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\dfrac{\hat{y}_0^{2}}{2+\hat{b}_0^{2}}\right]H_n(\eta)\)</span></p></td>
+<td><p>【推導 5】；未歸一化版本，做數值時較穩</p></td>
+</tr>
+<tr class="row-even"><td><p>T3</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^{\infty}e^{-\hat{y}^{2}/\hat{b}_0^{2}}\,\mathcal{H}_n(\hat{y})\,d\hat{y}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\,\mathcal{H}_n(0)\)</span></p></td>
+<td><p>T1 取 <span class="math notranslate nohighlight">\(\hat{y}_0 = 0\)</span>；<strong>奇數 <span class="math notranslate nohighlight">\(n\)</span> 恆為零</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>T4</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/\hat{b}_0^{2}}\,\mathcal{H}_0(\hat{y})\,d\hat{y}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\pi^{-1/4}\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\exp\left[-\dfrac{\hat{y}_0^{2}}{2+\hat{b}_0^{2}}\right]\)</span></p></td>
+<td><p>T1 取 <span class="math notranslate nohighlight">\(n = 0\)</span>；純高斯 <span class="math notranslate nohighlight">\(\times\)</span> 純高斯</p></td>
+</tr>
+<tr class="row-even"><td><p>T5</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/2}\,H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\pi^{1/2}\,e^{-\hat{y}_0^{2}/4}\,\hat{y}_0^{\,n}\)</span></p></td>
+<td><p>T2 在 <span class="math notranslate nohighlight">\(\hat{b}_0^{2} \to 2\)</span> 的<strong>極限</strong>（<span class="math notranslate nohighlight">\(\chi \to 0\)</span>、<span class="math notranslate nohighlight">\(\eta \to \infty\)</span>，須用 <span class="math notranslate nohighlight">\(\chi^{n/2}H_n(\eta) \to \left(2\chi^{1/2}\eta\right)^{n}\)</span> 取極限）</p></td>
+</tr>
+<tr class="row-odd"><td><p>T6</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^{\infty}e^{-\Lambda\left(\hat{y}-\mu\right)^{2}}\,d\hat{y}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\dfrac{\pi}{\Lambda}\right)^{1/2}\)</span></p></td>
+<td><p>【已知 3】；本篇的基石，<span class="math notranslate nohighlight">\(\Lambda &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>T7</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span> 若 <span class="math notranslate nohighlight">\(n' = n\)</span>；<span class="math notranslate nohighlight">\(0\)</span> 若 <span class="math notranslate nohighlight">\(n' \neq n\)</span></p></td>
+<td><p>見 <a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"><span class="std std-doc">Hermite Orthonormality and Oscillator Eigenvalue</span></a>【證明 (d)】</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>外部積分表</strong>：本篇的 T1 對應 Gradshteyn &amp; Ryzhik, <em>Table of Integrals, Series, and Products</em>, 7.374 節（第七版約 p. 803；Schubert (2006) 引的是 1994 年版 p. 843）。線上可查 <a class="reference external" href="https://dlmf.nist.gov/18.17">DLMF §18.17 Integrals（Hermite 正交多項式的積分表）</a>。</p>
+</section>
+<section id="id3">
+<h2>結構解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>這條式子在說什麼<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>把一個<strong>中心在 <span class="math notranslate nohighlight">\(\hat{y}_0\)</span>、寬度為 <span class="math notranslate nohighlight">\(\hat{b}_0\)</span> 的高斯</strong>，投影到第 <span class="math notranslate nohighlight">\(n\)</span> 階經向模態上。結果長成三個因子的乘積：</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{\left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}}_{\text{總量}}\times\underbrace{\chi^{n/2}}_{\text{高階衰減}}\times\underbrace{\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n(\eta)}_{\text{偏移的選模效果}}\]</div>
+<p><strong>最漂亮的一點是：積完之後還是同一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></strong>，只是自變數從 <span class="math notranslate nohighlight">\(\hat{y}_0\)</span> 被壓縮成 <span class="math notranslate nohighlight">\(\eta = \dfrac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\)</span>。這是「高斯是 Hermite 函數的最低階成員」這件事的必然結果 —— 高斯與 Hermite 函數的重疊，不會跑出這一族之外。</p>
+</section>
+<section id="id5">
+<h3>三個因子各自控制什麼<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\chi^{n/2}\)</span> 決定譜的收斂速度。</strong> 由【定義 3】的註，<span class="math notranslate nohighlight">\(0 &lt; \chi \le 1\)</span>；因此係數隨 <span class="math notranslate nohighlight">\(n\)</span> <strong>指數衰減</strong>（衰減率 <span class="math notranslate nohighlight">\(\frac12\ln\frac{1}{\chi}\)</span>）。Schubert (2006) 說「<span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span> 隨 <span class="math notranslate nohighlight">\(n\)</span> 指數衰減，故可在 <span class="math notranslate nohighlight">\(n = N = 200\)</span> 截斷」，數學根源就在這個因子。加熱區愈寬（<span class="math notranslate nohighlight">\(\hat{b}_0\)</span> 愈大）<span class="math notranslate nohighlight">\(\chi\)</span> 愈小，高階模態被殺得愈乾淨，需要的截斷 <span class="math notranslate nohighlight">\(N\)</span> 愈小。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\mathcal{H}_n(\eta)\)</span> 決定「哪些模態被打開」。</strong> <span class="math notranslate nohighlight">\(\hat{y}_0 = 0\)</span> 時 <span class="math notranslate nohighlight">\(\eta = 0\)</span>，而 <span class="math notranslate nohighlight">\(\mathcal{H}_n(0)\)</span> 對<strong>奇數 <span class="math notranslate nohighlight">\(n\)</span> 恆為零</strong>（見 T3）—— 這就是論文中「對流正對赤道時，混合羅斯貝–重力波等奇模態的貢獻恰好消失、響應南北對稱」的數學原因。一旦 <span class="math notranslate nohighlight">\(\hat{y}_0 \neq 0\)</span>，奇模態被打開，尾流才會出現南北不對稱。</p></li>
+<li><p><strong>前因子與 <span class="math notranslate nohighlight">\(\hat{y}_0\)</span> 無關。</strong> 這呼應論文 <span class="math notranslate nohighlight">\((4.1)\)</span> 的設計：加熱的面積分 <span class="math notranslate nohighlight">\(\pi^{1/2}Q_0a_0b_0\)</span> 完全不隨 <span class="math notranslate nohighlight">\(y_0\)</span> 改變，所以比較 <span class="math notranslate nohighlight">\(y_0 = 0\)</span> 與 <span class="math notranslate nohighlight">\(y_0 = 450\ \text{km}\)</span> 兩組實驗時，<strong>總加熱量一模一樣</strong>，差別純粹來自「加熱擺在哪」。</p></li>
+</ul>
+</section>
+<section id="hat-b-0-2-1-2">
+<h3>為什麼會有 <span class="math notranslate nohighlight">\(\hat{b}_0 &lt; 2^{1/2}\)</span> 這道牆<a class="headerlink" href="#hat-b-0-2-1-2" title="Link to this heading">#</a></h3>
+<p>【假設 1】的上限來自一個很具體的地方：【推導 3】(d) 算出 <span class="math notranslate nohighlight">\(t^{2}\)</span> 的係數是 <span class="math notranslate nohighlight">\(-\chi\)</span>，而【推導 4】要把 <span class="math notranslate nohighlight">\(\exp\left[2\eta\chi^{1/2}t - \chi t^{2}\right]\)</span> 認回生成函數，就必須 <span class="math notranslate nohighlight">\(\chi &gt; 0\)</span>。</p>
+<p><span class="math notranslate nohighlight">\(\chi \le 0\)</span>（即 <span class="math notranslate nohighlight">\(\hat{b}_0 \ge 2^{1/2}\)</span>）時，<span class="math notranslate nohighlight">\(t^{2}\)</span> 的係數變號 —— 生成函數的高斯壓制翻轉成高斯放大，級數不再對應到實數的 <span class="math notranslate nohighlight">\(H_n(\eta)\)</span>。物理上這代表<strong>加熱區的經向寬度超過赤道變形半徑的 <span class="math notranslate nohighlight">\(2^{1/2}\)</span> 倍</strong>，此時它已經寬到「比最低階赤道模態本身還寬」，用赤道波基底展開就不再是好的描述。Schubert (2006) 的 <span class="math notranslate nohighlight">\(b_0 = 450\ \text{km}\)</span> 對應 <span class="math notranslate nohighlight">\(\hat{b}_0 = \epsilon^{1/4}\left(b_0/a\right) \approx 507.3^{1/4}\times\frac{450}{6370} \approx 0.335\)</span>，離這道牆還很遠。</p>
+</section>
+<section id="id6">
+<h3>為什麼要用生成函數，而不是硬算<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>直接算 <span class="math notranslate nohighlight">\(\int e^{-(\hat{y}-\hat{y}_0)^{2}/\hat{b}_0^{2}}H_n(\hat{y})e^{-\hat{y}^{2}/2}\,d\hat{y}\)</span> 會撞上 <span class="math notranslate nohighlight">\(H_n\)</span> 的顯式多項式，<span class="math notranslate nohighlight">\(n\)</span> 一大就無從下手。生成函數的手法把<strong>整族</strong>積分打包成一個 <span class="math notranslate nohighlight">\(t\)</span> 的函數：<span class="math notranslate nohighlight">\(\hat{y}\)</span> 的積分只需要做<strong>一次</strong>（【推導 2】的配方＋高斯積分），得到的答案再重新展開成 <span class="math notranslate nohighlight">\(t\)</span> 的級數，<span class="math notranslate nohighlight">\(n\)</span> 階的答案就一次全部掉出來（【推導 5】）。</p>
+<p>這正是【已知 1】那個看似抽象的生成函數真正的用途 —— 它把「對每個 <span class="math notranslate nohighlight">\(n\)</span> 各做一次積分」換成「做一次積分、再比對一次係數」。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Calculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="golden_ratio_gaussian_integral.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Proof <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty} \frac{e^{-x^2} \sin^2(x^2)}{x^2} \mathrm{d}x = \sqrt{\pi} (\sqrt{\phi} - 1)\)</span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spherical Coordinate Transformation : Momentum Equation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-hermite-gaussian-hermite-overlap-integral">(a) proof 高斯–Hermite 重疊積分 (Gaussian-Hermite overlap integral)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-verify-consistency-in-the-narrow-gaussian-limit">(b) verify 窄高斯極限的自洽性 (Consistency in the narrow-Gaussian limit)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-integrals">積分表 (Table of Integrals)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這條式子在說什麼</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">三個因子各自控制什麼</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-b-0-2-1-2">為什麼會有 <span class="math notranslate nohighlight">\(\hat{b}_0 &lt; 2^{1/2}\)</span> 這道牆</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">為什麼要用生成函數，而不是硬算</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

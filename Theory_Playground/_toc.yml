@@ -5,9 +5,13 @@ root: intro
 chapters:
   - file: 00_Inbox/interessant.md
   - file: 01_Derivations/01_Derivations.md  
-    sections:      
+    sections:
+      - file: 01_Derivations/equations_index.md
+        title: "[索引] 方程式索引"
       - file: 01_Derivations/Calculus/golden_ratio_gaussian_integral
         title: "[微積分] 黃金比例與高斯積分"
+      - file: 01_Derivations/Calculus/Gaussian_Hermite_Integral.ipynb
+        title: "[微積分] 高斯 × Hermite 函數的重疊積分"
       # 座標系統
       - file: 01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.ipynb
         title: "[座標系統] 球坐標變換的動量方程"
@@ -44,9 +48,46 @@ chapters:
       # 微分方程
       - file: 01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.ipynb
         title: "[微分方程] Sturm-Liouville 本徵函數的正交性"
+      - file: 01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.ipynb
+        title: "[微分方程] Hermite 函數的遞迴與微分關係"
+      - file: 01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.ipynb
+        title: "[微分方程] Hermite 函數的正交歸一性與諧振子本徵值"
       # 大氣動力學
       - file: 01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.ipynb
         title: "[大氣動力學] 垂直結構方程式與模態投影"
+      # 赤道 beta 平面動力學（Schubert & Masarik 2006 推導鏈，依相依序排列）
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.ipynb
+        title: "[赤道波動力學] B1 對數氣壓座標的線性化原始方程組"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.ipynb
+        title: "[赤道波動力學] C1 赤道渦度與輻散方程式"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.ipynb
+        title: "[赤道波動力學] C2 赤道位渦方程式與 βy 源項"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.ipynb
+        title: "[赤道波動力學] D1 對數氣壓座標的垂直結構方程式"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.ipynb
+        title: "[赤道波動力學] D2 分離出水平結構方程組"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.ipynb
+        title: "[赤道波動力學] E1 傅立葉轉換到淺水方程組"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.ipynb
+        title: "[赤道波動力學] E2 能量內積與反厄米算符"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.ipynb
+        title: "[赤道波動力學] E3 Matsuno 頻散關係"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.ipynb
+        title: "[赤道波動力學] E4 赤道波本徵函數"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.ipynb
+        title: "[赤道波動力學] F1 赤道模態的受迫解"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.ipynb
+        title: "[赤道波動力學] F2 移動熱源的模態投影"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.ipynb
+        title: "[赤道波動力學] F3 場還原與 Kelvin 波零位渦"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.ipynb
+        title: "[赤道波動力學] G1 移動熱源的位渦尾流"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.ipynb
+        title: "[赤道波動力學] H1 赤道位渦可逆性原理"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.ipynb
+        title: "[赤道波動力學] H2 可逆性原理的 Hermite 轉換解"
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.ipynb
+        title: "[赤道波動力學] I1 平衡羅斯貝波頻散關係"
 
   - file: 02_Concepts/02_Concepts.md
     sections:      # 直接將檔案列在這裡，把它們當作 02_Concepts 的子節點

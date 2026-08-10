@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Separation into the Horizontal Structure System (垂直結構的分離與水平結構方程組) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fourier Transform to the Shallow Water System (隨波座標、緯向傅立葉轉換與淺水系統的算符形式)" href="Fourier_Transform_to_Shallow_Water_System.html" />
+    <link rel="prev" title="Vertical Structure Equation in Log-Pressure (對數氣壓座標下的垂直結構方程式)" href="Vertical_Structure_Equation_in_Log_Pressure.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Separation into the Horizontal Structure System (垂直結構的分離與水平結構方程組)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-separation-of-the-zonal-momentum-equation">(a) proof 緯向動量方程式的分離 (Separation of the zonal momentum equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-separation-of-the-meridional-momentum-equation">(b) proof 經向動量方程式的分離 (Separation of the meridional momentum equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-separation-of-the-hydrostatic-equation">(c) proof 靜力方程式的分離 (Separation of the hydrostatic equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-separation-of-the-continuity-equation">(d) proof 連續方程式的分離 (Separation of the continuity equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-separation-of-the-thermodynamic-equation">(e) proof 熱力學方程式的分離 (Separation of the thermodynamic equation)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-z">「<span class="math notranslate nohighlight">\(Z\)</span> 與 <span class="math notranslate nohighlight">\(Z'\)</span> 的配對」是被逼出來的，不是湊出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三維問題塌縮成什麼</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">「只留第一模態」這條假設有多貴</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="separation-into-the-horizontal-structure-system">
+<h1>Separation into the Horizontal Structure System (垂直結構的分離與水平結構方程組)<a class="headerlink" href="#separation-into-the-horizontal-structure-system" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>把 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">線性化原始方程組</span></a> 的<strong>三維</strong>問題，
+用 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">垂直結構函數</span></a> 壓成一組<strong>二維</strong>的水平結構方程組。</p>
+<ul class="simple">
+<li><p>(a) 分離變數的形式<strong>不是自由選的</strong> —— <span class="math notranslate nohighlight">\(u, v, \phi\)</span> 掛在 <span class="math notranslate nohighlight">\(Z(z)\)</span> 上，而 <span class="math notranslate nohighlight">\(T, w, Q\)</span> 必須掛在 <span class="math notranslate nohighlight">\(Z'(z)\)</span> 上：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix} u \cr v \cr \phi \end{pmatrix}(x,y,z,t) = \begin{pmatrix} \hat{u} \cr \hat{v} \cr \hat{\phi} \end{pmatrix}(x,y,t)\,Z(z),
+\qquad
+\begin{pmatrix} T \cr w \cr Q \end{pmatrix}(x,y,z,t) = \begin{pmatrix} \hat{T} \cr \hat{w} \cr \hat{Q} \end{pmatrix}(x,y,t)\,Z'(z)\]</div>
+<ul class="simple">
+<li><p>(b) 代回原方程組後，垂直依賴整個約掉，只剩五條<strong>二維</strong>方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \hat{u}}{\partial t} - \beta y\,\hat{v} + \frac{\partial \hat{\phi}}{\partial x} = -\alpha\hat{u}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \hat{v}}{\partial t} + \beta y\,\hat{u} + \frac{\partial \hat{\phi}}{\partial y} = -\alpha\hat{v}\]</div>
+<div class="math notranslate nohighlight">
+\[\hat{\phi} = R\hat{T}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y} - \left(\frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\right)\hat{w} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \hat{T}}{\partial t} + \Gamma\hat{w} = -\alpha\hat{T} + \frac{\hat{Q}}{c_p}\]</div>
+<ul class="simple">
+<li><p>註：(a)(b) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((3.4)\)</span> 與 <span class="math notranslate nohighlight">\((3.5)\)</span>。</p></li>
+<li><p>註：本篇的重點<strong>不是</strong>「代進去約掉」這件苦力，而是<strong>證明 (a) 的配對是被逼出來的</strong>：靜力方程式逼出 <span class="math notranslate nohighlight">\(T \propto Z'\)</span>，連續方程式與垂直結構方程式一起逼出 <span class="math notranslate nohighlight">\(w \propto Z'\)</span>。若隨手把 <span class="math notranslate nohighlight">\(T\)</span> 也掛在 <span class="math notranslate nohighlight">\(Z\)</span> 上，方程組<strong>不會閉合</strong>。</p></li>
+<li><p>註：<span class="math notranslate nohighlight">\((3.5)\)</span> 在形式上就是一組<strong>淺水方程式</strong>。<span class="math notranslate nohighlight">\(\hat{\phi}\)</span> 扮演位勢高度、<span class="math notranslate nohighlight">\(\left(\dfrac{\pi^{2}}{z_T^{2}} + \dfrac{1}{4}\right)^{-1}\)</span> 扮演等效深度的角色，這一點在 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">傅立葉轉換至淺水系統</span></a> 會寫成標準形式。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 已於本庫 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">Log-Pressure Linearized Primitive Equations</span></a> 完整證明，此處直接引用不再重證</p>
+<ul>
+<li><p>(a) 緯向動量方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial t} - \beta y\,v + \frac{\partial \phi}{\partial x} = -\alpha u\]</div>
+</li>
+<li><p>(b) 經向動量方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v}{\partial t} + \beta y\,u + \frac{\partial \phi}{\partial y} = -\alpha v\]</div>
+</li>
+<li><p>(c) 靜力方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \phi}{\partial z} = RT\]</div>
+</li>
+<li><p>(d) 連續方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} - w = 0\]</div>
+</li>
+<li><p>(e) 熱力學方程式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#a-proof-eigenvalue-of-the-first-vertical-internal-mode">垂直結構方程式 (Vertical structure equation)</a>：</strong> 已於本庫 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">Vertical Structure Equation in Log-Pressure</span></a>【證明 (a)】完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{d}{dz} - 1\right)\frac{dZ}{dz} = -\left(\frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\right)Z\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(z_T \approx 1.619\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 第一內模態的分離常數 (Separation constant of the first internal mode)：</strong> 【已知 2】右端的常數，之後會反覆出現</p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda \approx 4.014\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(z_T \approx 1.619\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 水平結構函數 (Horizontal structure functions)：</strong> 把三維場的垂直依賴抽出來，剩下的二維部分加帽子</p>
+<ul>
+<li><p>(a) 掛在 <span class="math notranslate nohighlight">\(Z\)</span> 上的三個場：</p>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix} u(x,y,z,t) \cr v(x,y,z,t) \cr \phi(x,y,z,t) \end{pmatrix} \overset{\text{def}}{=} \begin{pmatrix} \hat{u}(x,y,t) \cr \hat{v}(x,y,t) \cr \hat{\phi}(x,y,t) \end{pmatrix} Z(z)\]</div>
+</li>
+<li><p>(b) 掛在 <span class="math notranslate nohighlight">\(Z'\)</span> 上的三個場：</p>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix} T(x,y,z,t) \cr w(x,y,z,t) \cr Q(x,y,z,t) \end{pmatrix} \overset{\text{def}}{=} \begin{pmatrix} \hat{T}(x,y,t) \cr \hat{w}(x,y,t) \cr \hat{Q}(x,y,t) \end{pmatrix} Z'(z)\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{T}\)</span> : 溫度的水平結構函數 (Horizontal structure function of the temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 垂直速度的水平結構函數 (Horizontal structure function of the vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p>註：(b) 用 <span class="math notranslate nohighlight">\(Z'\)</span> 而非 <span class="math notranslate nohighlight">\(Z\)</span> <strong>不是選擇，是被迫的</strong>，理由見【推導 1】【推導 2】。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 只激發第一垂直內模態 (Only the first vertical internal mode is excited)：</strong> 非絕熱強迫的垂直剖面完全落在【已知 2】的第一內模態上，其餘模態的振幅為零</p>
+<div class="math notranslate nohighlight">
+\[\hat{Q}_n = 0 \qquad \left(n \ge 2\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}_n\)</span> : 加熱在第 <span class="math notranslate nohighlight">\(n\)</span> 垂直模態上的投影 (Projection of the heating onto the <span class="math notranslate nohighlight">\(n\)</span>-th vertical mode) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p>註：這是本篇最強的一條假設，也是【定義 2】<strong>能只寫單一個 <span class="math notranslate nohighlight">\(Z(z)\)</span> 的唯一理由</strong> —— 一般情形下每個場都該寫成 <span class="math notranslate nohighlight">\(\sum_n(\cdot)Z_n(z)\)</span> 的級數。它在下方的【證明】中不以 <code class="docutils literal notranslate"><span class="pre">\overset</span></code> 形式出現（它不是等號的依據，而是整個分離變數設定的前提），故列於此處備查。</p></li>
+<li><p>註：論文對這條假設的辯護是觀測 —— Johnson and Ciesielski (2000) 的西太平洋暖池加熱剖面，形狀與 <span class="math notranslate nohighlight">\(Z'(z)\)</span> 幾乎重合。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 垂直結構函數不恆為零 (The structure function is non-trivial)：</strong> 用於在【證明】中兩側同除 <span class="math notranslate nohighlight">\(Z\)</span> 或 <span class="math notranslate nohighlight">\(Z'\)</span></p>
+<div class="math notranslate nohighlight">
+\[Z(z) \not\equiv 0, \qquad Z'(z) \not\equiv 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 靜力方程式逼出 <span class="math notranslate nohighlight">\(T \propto Z'\)</span> (Hydrostatic balance forces <span class="math notranslate nohighlight">\(T \propto Z'\)</span>)：</strong> 一旦把 <span class="math notranslate nohighlight">\(\phi\)</span> 掛在 <span class="math notranslate nohighlight">\(Z\)</span> 上，<span class="math notranslate nohighlight">\(T\)</span> 的垂直結構就沒有選擇餘地</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  RT &amp;\overset{\text{已知 1(c)}}{=}&amp; \frac{\partial \phi}{\partial z} \\
+  RT &amp;\overset{\text{定義 2(a)}}{=}&amp; \frac{\partial}{\partial z}\left[\hat{\phi}(x,y,t)\,Z(z)\right] \\
+  RT &amp;=&amp; \hat{\phi}(x,y,t)\,Z'(z) \\
+  T &amp;=&amp; \frac{\hat{\phi}}{R}\,Z'(z)
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：右端的垂直依賴<strong>只能是 <span class="math notranslate nohighlight">\(Z'\)</span></strong>。這就是【定義 2】(b) 為什麼非得用 <span class="math notranslate nohighlight">\(Z'\)</span> 不可 —— 把 <span class="math notranslate nohighlight">\(\hat{T} = \hat{\phi}/R\)</span> 對照【定義 2】(b) 即得【證明 (c)】。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 連續方程式逼出 <span class="math notranslate nohighlight">\(w \propto Z'\)</span> (Continuity forces <span class="math notranslate nohighlight">\(w \propto Z'\)</span>)：</strong> 【已知 1】(d) 中 <span class="math notranslate nohighlight">\(u, v\)</span> 的水平輻散帶著 <span class="math notranslate nohighlight">\(Z\)</span>，因此 <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} - 1\right)w\)</span> 也必須正比於 <span class="math notranslate nohighlight">\(Z\)</span>；而【已知 2】說<strong>恰好是 <span class="math notranslate nohighlight">\(Z'\)</span> 有這個性質</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \left(\frac{d}{dz} - 1\right)Z'(z) &amp;\overset{\text{已知 2}}{=}&amp; -\lambda\,Z(z) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda \approx 4.014\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{T}\)</span> : 溫度的水平結構函數 (Horizontal structure function of the temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 垂直速度的水平結構函數 (Horizontal structure function of the vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p>註：這一條是整篇的樞紐。它說：<strong><span class="math notranslate nohighlight">\(Z'\)</span> 經過 <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} - 1\right)\)</span> 加工後會變回 <span class="math notranslate nohighlight">\(Z\)</span></strong>。若把 <span class="math notranslate nohighlight">\(w\)</span> 掛在 <span class="math notranslate nohighlight">\(Z\)</span> 上，<span class="math notranslate nohighlight">\(\left(\dfrac{d}{dz} - 1\right)Z\)</span> 一般不會正比於 <span class="math notranslate nohighlight">\(Z\)</span>，連續方程式的垂直依賴就約不掉，方程組<strong>不閉合</strong>。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-separation-of-the-zonal-momentum-equation">
+<h3>(a) proof 緯向動量方程式的分離 (Separation of the zonal momentum equation)<a class="headerlink" href="#a-proof-separation-of-the-zonal-momentum-equation" title="Link to this heading">#</a></h3>
+<p>三項都掛著同一個 <span class="math notranslate nohighlight">\(Z(z)\)</span>，直接提出來約掉。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+-\alpha u &amp;\overset{\text{已知 1(a)}}{=}&amp; \frac{\partial u}{\partial t} - \beta y\,v + \frac{\partial \phi}{\partial x} \\
+-\alpha\hat{u}Z &amp;\overset{\text{定義 2(a)}}{=}&amp; \frac{\partial \hat{u}}{\partial t}Z - \beta y\,\hat{v}Z + \frac{\partial \hat{\phi}}{\partial x}Z \\
+-\alpha\hat{u} &amp;\overset{\text{假設 2}}{=}&amp; \frac{\partial \hat{u}}{\partial t} - \beta y\,\hat{v} + \frac{\partial \hat{\phi}}{\partial x} \\
+\frac{\partial \hat{u}}{\partial t} - \beta y\,\hat{v} + \frac{\partial \hat{\phi}}{\partial x} &amp;=&amp; -\alpha\hat{u}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-separation-of-the-meridional-momentum-equation">
+<h3>(b) proof 經向動量方程式的分離 (Separation of the meridional momentum equation)<a class="headerlink" href="#b-proof-separation-of-the-meridional-momentum-equation" title="Link to this heading">#</a></h3>
+<p>與【證明 (a)】逐步平行。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+-\alpha v &amp;\overset{\text{已知 1(b)}}{=}&amp; \frac{\partial v}{\partial t} + \beta y\,u + \frac{\partial \phi}{\partial y} \\
+-\alpha\hat{v}Z &amp;\overset{\text{定義 2(a)}}{=}&amp; \frac{\partial \hat{v}}{\partial t}Z + \beta y\,\hat{u}Z + \frac{\partial \hat{\phi}}{\partial y}Z \\
+-\alpha\hat{v} &amp;\overset{\text{假設 2}}{=}&amp; \frac{\partial \hat{v}}{\partial t} + \beta y\,\hat{u} + \frac{\partial \hat{\phi}}{\partial y} \\
+\frac{\partial \hat{v}}{\partial t} + \beta y\,\hat{u} + \frac{\partial \hat{\phi}}{\partial y} &amp;=&amp; -\alpha\hat{v}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c-proof-separation-of-the-hydrostatic-equation">
+<h3>(c) proof 靜力方程式的分離 (Separation of the hydrostatic equation)<a class="headerlink" href="#c-proof-separation-of-the-hydrostatic-equation" title="Link to this heading">#</a></h3>
+<p>【推導 1】已經把式子整成 <span class="math notranslate nohighlight">\(T = \left(\hat{\phi}/R\right)Z'\)</span>，對照【定義 2】(b) 即得 —— 微分方程退化成<strong>代數關係</strong>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{T}Z' &amp;\overset{\text{定義 2(b)}}{=}&amp; T \\
+\hat{T}Z' &amp;\overset{\text{推導 1}}{=}&amp; \frac{\hat{\phi}}{R}Z' \\
+\hat{T} &amp;\overset{\text{假設 2}}{=}&amp; \frac{\hat{\phi}}{R} \\
+\hat{\phi} &amp;=&amp; R\hat{T}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="d-proof-separation-of-the-continuity-equation">
+<h3>(d) proof 連續方程式的分離 (Separation of the continuity equation)<a class="headerlink" href="#d-proof-separation-of-the-continuity-equation" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(u, v\)</span> 帶 <span class="math notranslate nohighlight">\(Z\)</span>，<span class="math notranslate nohighlight">\(w\)</span> 帶 <span class="math notranslate nohighlight">\(Z'\)</span>；後者經過 <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} - 1\right)\)</span> 之後被【推導 2】換回 <span class="math notranslate nohighlight">\(-\lambda Z\)</span>，於是兩邊的垂直依賴一致，可以約掉。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{已知 1(d)}}{=}&amp; \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \left(\frac{\partial}{\partial z} - 1\right)w \\
+&amp;\overset{\text{定義 2(a)(b)}}{=}&amp; \frac{\partial \hat{u}}{\partial x}Z + \frac{\partial \hat{v}}{\partial y}Z + \hat{w}\left(\frac{d}{dz} - 1\right)Z' \\
+&amp;\overset{\text{推導 2}}{=}&amp; \frac{\partial \hat{u}}{\partial x}Z + \frac{\partial \hat{v}}{\partial y}Z - \lambda\hat{w}Z \\
+&amp;\overset{\text{假設 2}}{=}&amp; \frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y} - \lambda\hat{w} \\
+&amp;\overset{\text{定義 1}}{=}&amp; \frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y} - \left(\frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\right)\hat{w}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="e-proof-separation-of-the-thermodynamic-equation">
+<h3>(e) proof 熱力學方程式的分離 (Separation of the thermodynamic equation)<a class="headerlink" href="#e-proof-separation-of-the-thermodynamic-equation" title="Link to this heading">#</a></h3>
+<p>四項都掛著同一個 <span class="math notranslate nohighlight">\(Z'(z)\)</span>，直接約掉。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Q}{c_p} &amp;\overset{\text{已知 1(e)}}{=}&amp; \frac{\partial T}{\partial t} + \alpha T + \Gamma w \\
+\frac{\hat{Q}}{c_p}Z' &amp;\overset{\text{定義 2(b)}}{=}&amp; \frac{\partial \hat{T}}{\partial t}Z' + \alpha\hat{T}Z' + \Gamma\hat{w}Z' \\
+\frac{\hat{Q}}{c_p} &amp;\overset{\text{假設 2}}{=}&amp; \frac{\partial \hat{T}}{\partial t} + \alpha\hat{T} + \Gamma\hat{w} \\
+\frac{\partial \hat{T}}{\partial t} + \Gamma\hat{w} &amp;=&amp; -\alpha\hat{T} + \frac{\hat{Q}}{c_p}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>結構解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="z-z">
+<h3>「<span class="math notranslate nohighlight">\(Z\)</span> 與 <span class="math notranslate nohighlight">\(Z'\)</span> 的配對」是被逼出來的，不是湊出來的<a class="headerlink" href="#z-z" title="Link to this heading">#</a></h3>
+<p>這是本篇最值得記住的一句話。整個配對只靠<strong>兩條約束</strong>：</p>
+<ol class="arabic simple">
+<li><p><strong>靜力方程式 <span class="math notranslate nohighlight">\(\dfrac{\partial\phi}{\partial z} = RT\)</span>（【推導 1】）</strong> —— <span class="math notranslate nohighlight">\(T\)</span> 是 <span class="math notranslate nohighlight">\(\phi\)</span> 的垂直導數，所以 <span class="math notranslate nohighlight">\(\phi \propto Z\)</span> 就強迫 <span class="math notranslate nohighlight">\(T \propto Z'\)</span>。</p></li>
+<li><p><strong>連續方程式 ＋ 垂直結構方程式（【推導 2】）</strong> —— 連續方程式要求 <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} - 1\right)w \propto Z\)</span>，而垂直結構方程式<strong>就是</strong>在說 <span class="math notranslate nohighlight">\(\left(\dfrac{d}{dz} - 1\right)Z' = -\lambda Z\)</span>。</p></li>
+</ol>
+<p>換句話說：<a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">垂直結構方程式</span></a>【定義 2】那個看似隨手寫下的
+<span class="math notranslate nohighlight">\(\left(\dfrac{d}{dz} - 1\right)\dfrac{dZ}{dz} = -\lambda Z\)</span>，<strong>它存在的唯一理由就是讓這裡的【證明 (d)】能約掉 <span class="math notranslate nohighlight">\(Z\)</span></strong>。</p>
+<p>熱力學方程式（【證明 (e)】）沒有提供新的約束 —— 它同時含 <span class="math notranslate nohighlight">\(T\)</span> 與 <span class="math notranslate nohighlight">\(w\)</span>，兩者都已是 <span class="math notranslate nohighlight">\(Z'\)</span>，自動相容。<strong>這個自動相容正是分離變數成立的驗證</strong>：若配對錯了，(e) 會在這裡爆掉。</p>
+</section>
+<section id="id4">
+<h3>三維問題塌縮成什麼<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>【證明 (a)】–【證明 (e)】的五條式子裡，<span class="math notranslate nohighlight">\(z\)</span> <strong>完全消失了</strong>。剩下的是一組只含 <span class="math notranslate nohighlight">\((x, y, t)\)</span> 的方程組，其結構與<strong>淺水方程式</strong>完全同構：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>淺水系統</p></th>
+<th class="head"><p>本系統</p></th>
+<th class="head"><p>對應關係</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>水深擾動 <span class="math notranslate nohighlight">\(g h'\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span></p></td>
+<td><p>位勢即「有效水深」</p></td>
+</tr>
+<tr class="row-odd"><td><p>重力波速平方 <span class="math notranslate nohighlight">\(gH\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(R\Gamma/\lambda\)</span></p></td>
+<td><p>等效重力波速 <span class="math notranslate nohighlight">\(\bar{c}^{2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\dfrac{\partial h'}{\partial t} + H\nabla\cdot\mathbf{u} = 0\)</span></p></td>
+<td><p>【證明 (c)(d)(e)】三式合併</p></td>
+<td><p>見下</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>把【證明 (c)】的 <span class="math notranslate nohighlight">\(\hat{T} = \hat\phi/R\)</span> 代進【證明 (e)】，再用【證明 (d)】把 <span class="math notranslate nohighlight">\(\hat{w}\)</span> 換掉：</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{R}\frac{\partial \hat{\phi}}{\partial t} + \frac{\Gamma}{\lambda}\left[\frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y}\right] = -\frac{\alpha}{R}\hat{\phi} + \frac{\hat{Q}}{c_p}\]</div>
+<p>兩側乘 <span class="math notranslate nohighlight">\(R\)</span>，<span class="math notranslate nohighlight">\(\dfrac{R\Gamma}{\lambda}\)</span> 就是等效重力波速的平方 <span class="math notranslate nohighlight">\(\bar{c}^{2} \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span>。這一步的正式版本見 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">傅立葉轉換至淺水系統</span></a>。</p>
+</section>
+<section id="id5">
+<h3>「只留第一模態」這條假設有多貴<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>【假設 1】是本篇唯一沒有數學辯護的一條。它的代價是：</p>
+<ul class="simple">
+<li><p>模式<strong>無法</strong>描述加熱剖面形狀改變所帶來的響應變化（例如淺對流 vs. 深對流的差別）；</p></li>
+<li><p>也無法描述垂直模態之間的能量交換。</p></li>
+</ul>
+<p>論文付得起這個代價，是因為它處理的是 <strong>MJO 對流包絡通過時對流最旺盛的時刻</strong> —— 那個時候的加熱剖面確實非常接近單一的深對流剖面。但如果要研究 MJO 的<strong>起始</strong>或<strong>衰減</strong>階段（淺對流、層狀降水各佔一定比例），這條假設就會成為主要的模式誤差來源。</p>
+<p>本庫 <a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html"><span class="std std-doc">垂直模態分解</span></a> 對「保留多個模態」的一般情形有概念層面的討論。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Equatorial_Beta_Plane_Dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Vertical_Structure_Equation_in_Log_Pressure.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vertical Structure Equation in Log-Pressure (對數氣壓座標下的垂直結構方程式)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Fourier_Transform_to_Shallow_Water_System.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fourier Transform to the Shallow Water System (隨波座標、緯向傅立葉轉換與淺水系統的算符形式)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-separation-of-the-zonal-momentum-equation">(a) proof 緯向動量方程式的分離 (Separation of the zonal momentum equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-separation-of-the-meridional-momentum-equation">(b) proof 經向動量方程式的分離 (Separation of the meridional momentum equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-separation-of-the-hydrostatic-equation">(c) proof 靜力方程式的分離 (Separation of the hydrostatic equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-separation-of-the-continuity-equation">(d) proof 連續方程式的分離 (Separation of the continuity equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-separation-of-the-thermodynamic-equation">(e) proof 熱力學方程式的分離 (Separation of the thermodynamic equation)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-z">「<span class="math notranslate nohighlight">\(Z\)</span> 與 <span class="math notranslate nohighlight">\(Z'\)</span> 的配對」是被逼出來的，不是湊出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三維問題塌縮成什麼</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">「只留第一模態」這條假設有多貴</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

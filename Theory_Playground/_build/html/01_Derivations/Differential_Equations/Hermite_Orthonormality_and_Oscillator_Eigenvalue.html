@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hermite Orthonormality and Oscillator Eigenvalue (Hermite 函數的正交歸一性與諧振子本徵值) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Vertical Structure Equation (垂直結構方程式與加熱的模態投影)" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html" />
+    <link rel="prev" title="Hermite Functions and Recurrence (歸一化 Hermite 函數的遞迴與微分關係)" href="Hermite_Functions_and_Recurrence.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hermite Orthonormality and Oscillator Eigenvalue (Hermite 函數的正交歸一性與諧振子本徵值)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-harmonic-oscillator-eigenvalue">(a) proof 諧振子本徵值 (Harmonic oscillator eigenvalue)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-orthogonality-of-distinct-orders">(b) proof 相異階的正交性 (Orthogonality of distinct orders)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-unit-norm">(c) proof 單位範數 (Unit norm)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-orthonormality">(d) proof 正交歸一性 (Orthonormality)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">兩條關係，一個本徵值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">為什麼「有本徵值」就有「正交」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">歸一化為什麼「免費」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">這兩件事在赤道波理論裡各自負責什麼</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hermite-orthonormality-and-oscillator-eigenvalue-hermite">
+<h1>Hermite Orthonormality and Oscillator Eigenvalue (Hermite 函數的正交歸一性與諧振子本徵值)<a class="headerlink" href="#hermite-orthonormality-and-oscillator-eigenvalue-hermite" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>(a) 歸一化 Hermite 函數是算子 <span class="math notranslate nohighlight">\(\dfrac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\)</span> 的本徵函數，本徵值為 <span class="math notranslate nohighlight">\(-(2n+1)\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\mathcal{H}_n(\hat{y}) = -(2n + 1)\,\mathcal{H}_n(\hat{y})\]</div>
+<ul class="simple">
+<li><p>(b) 相異階數的歸一化 Hermite 函數互相正交：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y} = 0 \qquad \left(n' \neq n\right)\]</div>
+<ul class="simple">
+<li><p>(c) 每一階的範數恰為 <span class="math notranslate nohighlight">\(1\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}\mathcal{H}_n^{2}(\hat{y})\,d\hat{y} = 1\]</div>
+<ul class="simple">
+<li><p>(d) 合起來即<strong>正交歸一性 (Orthonormality)</strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y} =
+\begin{cases}
+1, &amp; n' = n \\
+0, &amp; n' \neq n
+\end{cases}\end{split}\]</div>
+<ul class="simple">
+<li><p>註：本檔<strong>完全不回到 <span class="math notranslate nohighlight">\(H_n\)</span> 的二階常微分方程式</strong>，(a)–(d) 全部只用 <a class="reference internal" href="Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 已證的遞迴關係與微分關係推出來。這是刻意的：那兩條關係才是後續赤道波推導唯一會用到的工具。</p></li>
+<li><p>註：本檔是純數學結果，<span class="math notranslate nohighlight">\(\hat{y}\)</span> 為無因次自變數，故符號清單的單位欄一律為 <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>。</p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#a-proof-recurrence-relation">歸一化 Hermite 函數的遞迴關係 (Recurrence relation of the normalized Hermite functions)</a>：</strong> 此式已於本庫 <a class="reference internal" href="Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 完整證明，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}\,\mathcal{H}_n(\hat{y}) = \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#b-proof-derivative-relation">歸一化 Hermite 函數的微分關係 (Derivative relation of the normalized Hermite functions)</a>：</strong> 同上，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\mathcal{H}_n(\hat{y})}{d\hat{y}} = -\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1}(\hat{y}) + \left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1}(\hat{y})\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#c-proof-lowest-order-explicit-form">最低階歸一化 Hermite 函數的顯式形式 (Lowest-order explicit form)</a>：</strong> 同上，此處直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H}_0(\hat{y}) = \pi^{-1/4}\,e^{-\hat{y}^{2}/2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://dlmf.nist.gov/7.4#E1">高斯積分 (Gaussian integral)</a>：</strong> 標準結果，本檔直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} e^{-\hat{y}^{2}}\,d\hat{y} = \pi^{1/2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 <a class="reference internal" href="Sturm_Liouville_Orthogonality.html"><span class="std std-doc">Lagrange 恆等式 (Lagrange’s identity)</span></a>：</strong> 此恆等式已於本庫 Sturm–Liouville 正交性一篇對一般主係數 <span class="math notranslate nohighlight">\(p(z)\)</span> 完整證明，此處取 <span class="math notranslate nohighlight">\(p \equiv 1\)</span> 的特例直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[f\,\frac{d^{2}g}{d\hat{y}^{2}} - g\,\frac{d^{2}f}{d\hat{y}^{2}} = \frac{d}{d\hat{y}}\left[f\,\frac{dg}{d\hat{y}} - g\,\frac{df}{d\hat{y}}\right]\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(\hat{y}),\ g(\hat{y})\)</span> : 任意二階可微函數 (Arbitrary twice-differentiable functions) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：Sturm–Liouville 那篇的【假設 1】限定<strong>有限閉區間</strong> <span class="math notranslate nohighlight">\(\left[z_b, z_t\right]\)</span>，而本檔的積分域是 <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>，<strong>故不能整篇套用</strong>；邊界項的消失改由本檔的【假設 1】獨立提供。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 6】 <a class="reference external" href="https://dlmf.nist.gov/1.4#E33">分部積分 (Integration by parts)</a>：</strong> 標準結果，本檔直接引用不再重證</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} u\,\frac{dv}{d\hat{y}}\,d\hat{y} = \left[u\,v\right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} v\,\frac{du}{d\hat{y}}\,d\hat{y}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(\hat{y}),\ v(\hat{y})\)</span> : 任意可微函數 (Arbitrary differentiable functions) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 無窮積分域與高斯衰減 (Infinite domain and Gaussian decay)：</strong> 本檔所有積分都取在整條實軸上，而 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 的高斯包絡讓所有邊界項歸零</p>
+<ul>
+<li><p>(a) 積分域為整條實軸：</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty}(\cdot)\,d\hat{y}\]</div>
+</li>
+<li><p>(b) 任何多項式乘上高斯包絡，在無窮遠處都歸零：</p>
+<div class="math notranslate nohighlight">
+\[\lim_{|\hat{y}|\to\infty} P(\hat{y})\,e^{-\hat{y}^{2}/2} = 0 \qquad \left(\forall\,\text{多項式}\ P\right)\]</div>
+</li>
+<li><p>(c) <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 與其導數都是「多項式 <span class="math notranslate nohighlight">\(\times\)</span> 高斯包絡」的形式（由【已知 1】【已知 2】遞推可見，多項式部分的階數有限）：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H}_n(\hat{y}) = P_n(\hat{y})\,e^{-\hat{y}^{2}/2}, \qquad \frac{d\mathcal{H}_n(\hat{y})}{d\hat{y}} = \tilde{P}_n(\hat{y})\,e^{-\hat{y}^{2}/2}\]</div>
+</li>
+<li><p>(d-1) 故 <span class="math notranslate nohighlight">\(\hat{y}\,\mathcal{H}_n^{2}\)</span> 的邊界項為零：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \left[\hat{y}\,\mathcal{H}_n^{2}\right]_{-\infty}^{\infty} &amp;\overset{\text{假設 1(c)}}{=}&amp; \left[\hat{y}\,P_n^{2}(\hat{y})\,e^{-\hat{y}^{2}}\right]_{-\infty}^{\infty} \\
+    &amp;\overset{\text{假設 1(b)}}{=}&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(d-2) 同理，<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 與其一階導數的乘積的邊界項為零：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \left[\mathcal{H}_n\frac{d\mathcal{H}_n}{d\hat{y}}\right]_{-\infty}^{\infty} &amp;\overset{\text{假設 1(c)}}{=}&amp; \left[P_n(\hat{y})\,\tilde{P}_n(\hat{y})\,e^{-\hat{y}^{2}}\right]_{-\infty}^{\infty} \\
+    &amp;\overset{\text{假設 1(b)}}{=}&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(d-3) 同理，兩個相異階組成的 Wronskian 型邊界項為零：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \left[\mathcal{H}_{n'}\frac{d\mathcal{H}_n}{d\hat{y}} - \mathcal{H}_n\frac{d\mathcal{H}_{n'}}{d\hat{y}}\right]_{-\infty}^{\infty} &amp;\overset{\text{假設 1(c)}}{=}&amp; \left[\left(P_{n'}\tilde{P}_n - P_n\tilde{P}_{n'}\right)e^{-\hat{y}^{2}}\right]_{-\infty}^{\infty} \\
+    &amp;\overset{\text{假設 1(b)}}{=}&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P_n(\hat{y}),\ \tilde{P}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階函數與其導數中的多項式部分 (Polynomial parts) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：這一張卡片是本檔與 <a class="reference internal" href="Sturm_Liouville_Orthogonality.html"><span class="std std-doc">Sturm–Liouville 正交性</span></a><strong>唯一實質不同</strong>的地方 —— 那篇靠「有限區間 + 齊次邊界條件」殺掉邊界項，本檔靠「無窮區間 + 高斯衰減」。</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 階數相異 (Distinct orders)：</strong> 【證明 (b)】只比較兩個不同階的函數</p>
+<div class="math notranslate nohighlight">
+\[n' \neq n\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 升降係數 (Ladder coefficients)：</strong> 把【已知 1】【已知 2】反覆出現的兩個根號係數縮寫掉，避免後續代數被根號淹沒</p>
+<ul>
+<li><p>(a) 上行係數：</p>
+<div class="math notranslate nohighlight">
+\[a_n \overset{\text{def}}{=} \left(\frac{n+1}{2}\right)^{1/2}\]</div>
+</li>
+<li><p>(b) 下行係數：</p>
+<div class="math notranslate nohighlight">
+\[b_n \overset{\text{def}}{=} \left(\frac{n}{2}\right)^{1/2}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的上行係數 (Raising coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的下行係數 (Lowering coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：由【定義 1】(a)(b) 直接得到本檔會反覆用到的兩條恆等式 <span class="math notranslate nohighlight">\(b_{n+1} = a_n\)</span> 與 <span class="math notranslate nohighlight">\(a_{n-1} = b_n\)</span>。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 兩條基本關係的縮寫形式 (Shorthand form of the two basic relations)：</strong> 把【定義 1】代進【已知 1】【已知 2】</p>
+<ul>
+<li><p>(a) 遞迴關係：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \hat{y}\,\mathcal{H}_n &amp;\overset{\text{已知 1}}{=}&amp; \left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1} \\
+    &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; a_n\,\mathcal{H}_{n+1} + b_n\,\mathcal{H}_{n-1}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 微分關係：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{d\mathcal{H}_n}{d\hat{y}} &amp;\overset{\text{已知 2}}{=}&amp; -\left(\frac{n+1}{2}\right)^{1/2}\mathcal{H}_{n+1} + \left(\frac{n}{2}\right)^{1/2}\mathcal{H}_{n-1} \\
+    &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; -a_n\,\mathcal{H}_{n+1} + b_n\,\mathcal{H}_{n-1}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的上行係數 (Raising coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的下行係數 (Lowering coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 兩個三項展開 (The two three-term expansions)：</strong> 把【推導 1】各用<strong>兩次</strong>，<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 就被推到 <span class="math notranslate nohighlight">\(\mathcal{H}_{n\pm2}\)</span> 與 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 三項上</p>
+<ul>
+<li><p>(a) 二階導數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} &amp;\overset{\text{推導 1(b)}}{=}&amp; \frac{d}{d\hat{y}}\left[-a_n\,\mathcal{H}_{n+1} + b_n\,\mathcal{H}_{n-1}\right] \\
+    &amp;=&amp; -a_n\frac{d\mathcal{H}_{n+1}}{d\hat{y}} + b_n\frac{d\mathcal{H}_{n-1}}{d\hat{y}} \\
+    &amp;\overset{\text{推導 1(b)}}{=}&amp; -a_n\left[-a_{n+1}\mathcal{H}_{n+2} + b_{n+1}\mathcal{H}_{n}\right] + b_n\left[-a_{n-1}\mathcal{H}_{n} + b_{n-1}\mathcal{H}_{n-2}\right] \\
+    &amp;=&amp; a_na_{n+1}\,\mathcal{H}_{n+2} - \left(a_nb_{n+1} + b_na_{n-1}\right)\mathcal{H}_{n} + b_nb_{n-1}\,\mathcal{H}_{n-2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 乘上 <span class="math notranslate nohighlight">\(\hat{y}^{2}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \hat{y}^{2}\,\mathcal{H}_n &amp;\overset{\text{推導 1(a)}}{=}&amp; \hat{y}\left[a_n\,\mathcal{H}_{n+1} + b_n\,\mathcal{H}_{n-1}\right] \\
+    &amp;=&amp; a_n\left[\hat{y}\,\mathcal{H}_{n+1}\right] + b_n\left[\hat{y}\,\mathcal{H}_{n-1}\right] \\
+    &amp;\overset{\text{推導 1(a)}}{=}&amp; a_n\left[a_{n+1}\mathcal{H}_{n+2} + b_{n+1}\mathcal{H}_{n}\right] + b_n\left[a_{n-1}\mathcal{H}_{n} + b_{n-1}\mathcal{H}_{n-2}\right] \\
+    &amp;=&amp; a_na_{n+1}\,\mathcal{H}_{n+2} + \left(a_nb_{n+1} + b_na_{n-1}\right)\mathcal{H}_{n} + b_nb_{n-1}\,\mathcal{H}_{n-2}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的上行係數 (Raising coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的下行係數 (Lowering coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：(a)(b) 的三項<strong>完全相同</strong>，唯一的差別是中央項的正負號。這個「只差一個符號」正是【已知 1】【已知 2】右端只差一個符號的直接後果。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 中央係數的化簡 (Simplification of the central coefficient)：</strong> 用【定義 1】註記的兩條恆等式把根號整個消掉</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  a_nb_{n+1} + b_na_{n-1} &amp;\overset{\text{定義 1}}{=}&amp; a_n\,a_n + b_n\,b_n \\
+  &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; \frac{n+1}{2} + \frac{n}{2} \\
+  &amp;=&amp; \frac{2n + 1}{2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的上行係數 (Raising coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的下行係數 (Lowering coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 二階導數的封閉式 (Closed form of the second derivative)：</strong> 把【推導 2】兩式相減，<span class="math notranslate nohighlight">\(\mathcal{H}_{n\pm2}\)</span> 對消，只剩 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} - \hat{y}^{2}\,\mathcal{H}_n &amp;\overset{\text{推導 2(a)(b)}}{=}&amp; -\left(a_nb_{n+1} + b_na_{n-1}\right)\mathcal{H}_{n} - \left(a_nb_{n+1} + b_na_{n-1}\right)\mathcal{H}_{n} \\
+  \frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} - \hat{y}^{2}\,\mathcal{H}_n &amp;=&amp; -2\left(a_nb_{n+1} + b_na_{n-1}\right)\mathcal{H}_{n} \\
+  \frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} - \hat{y}^{2}\,\mathcal{H}_n &amp;\overset{\text{推導 3}}{=}&amp; -2\cdot\frac{2n + 1}{2}\,\mathcal{H}_{n} \\
+  \frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} - \hat{y}^{2}\,\mathcal{H}_n &amp;=&amp; -(2n + 1)\,\mathcal{H}_{n} \\
+  \frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} &amp;=&amp; \hat{y}^{2}\,\mathcal{H}_n - (2n + 1)\,\mathcal{H}_{n}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的上行係數 (Raising coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的下行係數 (Lowering coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 反對稱組合的積分為零 (Vanishing of the antisymmetric combination)：</strong> 兩階函數的「交叉相乘再相減」整成全微分，再被【假設 1】殺掉</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty}\left[\mathcal{H}_{n'}\frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} - \mathcal{H}_{n}\frac{d^{2}\mathcal{H}_{n'}}{d\hat{y}^{2}}\right]d\hat{y} &amp;\overset{\text{已知 5}}{=}&amp; \int_{-\infty}^{\infty}\frac{d}{d\hat{y}}\left[\mathcal{H}_{n'}\frac{d\mathcal{H}_n}{d\hat{y}} - \mathcal{H}_{n}\frac{d\mathcal{H}_{n'}}{d\hat{y}}\right]d\hat{y} \\
+  &amp;=&amp; \left[\mathcal{H}_{n'}\frac{d\mathcal{H}_n}{d\hat{y}} - \mathcal{H}_{n}\frac{d\mathcal{H}_{n'}}{d\hat{y}}\right]_{-\infty}^{\infty} \\
+  &amp;\overset{\text{假設 1(d-3)}}{=}&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 6】 兩個分部積分 (Two integrations by parts)：</strong> 把【證明 (c)】會用到的兩個積分先換成不含導數平方的形式</p>
+<ul>
+<li><p>(a) 導數平方的積分：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-\infty}^{\infty}\left(\frac{d\mathcal{H}_n}{d\hat{y}}\right)^{2}d\hat{y} &amp;\overset{\text{已知 6}}{=}&amp; \left[\mathcal{H}_n\frac{d\mathcal{H}_n}{d\hat{y}}\right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty}\mathcal{H}_n\frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}}\,d\hat{y} \\
+    &amp;\overset{\text{假設 1(d-2)}}{=}&amp; -\int_{-\infty}^{\infty}\mathcal{H}_n\frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}}\,d\hat{y}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b) 交叉項的積分：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \int_{-\infty}^{\infty}2\hat{y}\,\mathcal{H}_n\frac{d\mathcal{H}_n}{d\hat{y}}\,d\hat{y} &amp;=&amp; \int_{-\infty}^{\infty}\hat{y}\,\frac{d}{d\hat{y}}\left[\mathcal{H}_n^{2}\right]d\hat{y} \\
+    &amp;\overset{\text{已知 6}}{=}&amp; \left[\hat{y}\,\mathcal{H}_n^{2}\right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} \\
+    &amp;\overset{\text{假設 1(d-1)}}{=}&amp; -\int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 7】 升算子形式 (Raising-operator form)：</strong> 把【推導 1】(a) 減去 (b)，<span class="math notranslate nohighlight">\(\mathcal{H}_{n-1}\)</span> 對消，<span class="math notranslate nohighlight">\(\mathcal{H}_{n+1}\)</span> 被單獨解出來</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \hat{y}\,\mathcal{H}_n - \frac{d\mathcal{H}_n}{d\hat{y}} &amp;\overset{\text{推導 1(a)(b)}}{=}&amp; \left[a_n\mathcal{H}_{n+1} + b_n\mathcal{H}_{n-1}\right] - \left[-a_n\mathcal{H}_{n+1} + b_n\mathcal{H}_{n-1}\right] \\
+  \hat{y}\,\mathcal{H}_n - \frac{d\mathcal{H}_n}{d\hat{y}} &amp;=&amp; 2a_n\,\mathcal{H}_{n+1} \\
+  \mathcal{H}_{n+1} &amp;=&amp; \frac{1}{2a_n}\left[\hat{y}\,\mathcal{H}_n - \frac{d\mathcal{H}_n}{d\hat{y}}\right]
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的上行係數 (Raising coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的下行係數 (Lowering coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：由【定義 1】(a)，<span class="math notranslate nohighlight">\(n \ge 0\)</span> 時 <span class="math notranslate nohighlight">\(a_n = \left(\frac{n+1}{2}\right)^{1/2} &gt; 0\)</span>，故除法合法。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 8】 範數的階不變性 (Order-invariance of the norm)：</strong> 用【推導 7】把 <span class="math notranslate nohighlight">\(\mathcal{H}_{n+1}\)</span> 的範數換算回 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 的範數，結果係數恰好為 <span class="math notranslate nohighlight">\(1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty}\mathcal{H}_{n+1}^{2}\,d\hat{y} &amp;\overset{\text{推導 7}}{=}&amp; \frac{1}{4a_n^{2}}\int_{-\infty}^{\infty}\left[\hat{y}\,\mathcal{H}_n - \frac{d\mathcal{H}_n}{d\hat{y}}\right]^{2}d\hat{y} \\
+  &amp;=&amp; \frac{1}{4a_n^{2}}\int_{-\infty}^{\infty}\left[\hat{y}^{2}\mathcal{H}_n^{2} - 2\hat{y}\,\mathcal{H}_n\frac{d\mathcal{H}_n}{d\hat{y}} + \left(\frac{d\mathcal{H}_n}{d\hat{y}}\right)^{2}\right]d\hat{y} \\
+  &amp;\overset{\text{推導 6(a)(b)}}{=}&amp; \frac{1}{4a_n^{2}}\left[\int_{-\infty}^{\infty}\hat{y}^{2}\mathcal{H}_n^{2}\,d\hat{y} + \int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} - \int_{-\infty}^{\infty}\mathcal{H}_n\frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}}\,d\hat{y}\right] \\
+  &amp;\overset{\text{推導 4}}{=}&amp; \frac{1}{4a_n^{2}}\left[\int_{-\infty}^{\infty}\hat{y}^{2}\mathcal{H}_n^{2}\,d\hat{y} + \int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} - \int_{-\infty}^{\infty}\mathcal{H}_n\left(\hat{y}^{2}\mathcal{H}_n - (2n+1)\mathcal{H}_n\right)d\hat{y}\right] \\
+  &amp;=&amp; \frac{1}{4a_n^{2}}\left[\int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} + (2n+1)\int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y}\right] \\
+  &amp;=&amp; \frac{2n + 2}{4a_n^{2}}\int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} \\
+  &amp;\overset{\text{定義 1(a)}}{=}&amp; \frac{2n + 2}{4\cdot\dfrac{n+1}{2}}\int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} \\
+  &amp;=&amp; \int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階的上行係數 (Raising coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 階數 (Order index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：第四列到第五列，兩個 <span class="math notranslate nohighlight">\(\int\hat{y}^{2}\mathcal{H}_n^{2}\,d\hat{y}\)</span> 剛好對消 —— 這就是為什麼<strong>完全不需要</strong>去算 <span class="math notranslate nohighlight">\(\int\hat{y}^{2}\mathcal{H}_n^{2}\,d\hat{y}\)</span> 這個看起來很麻煩的積分。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 9】 起始範數 (Starting norm)：</strong> 最低階的範數直接算得出來</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty}\mathcal{H}_0^{2}\,d\hat{y} &amp;\overset{\text{已知 3}}{=}&amp; \int_{-\infty}^{\infty}\left(\pi^{-1/4}\,e^{-\hat{y}^{2}/2}\right)^{2}d\hat{y} \\
+  &amp;=&amp; \pi^{-1/2}\int_{-\infty}^{\infty} e^{-\hat{y}^{2}}\,d\hat{y} \\
+  &amp;\overset{\text{已知 4}}{=}&amp; \pi^{-1/2}\cdot\pi^{1/2} \\
+  &amp;=&amp; 1
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n(\hat{y})\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 階歸一化 Hermite 函數 (The <span class="math notranslate nohighlight">\(n\)</span>-th normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-harmonic-oscillator-eigenvalue">
+<h3>(a) proof 諧振子本徵值 (Harmonic oscillator eigenvalue)<a class="headerlink" href="#a-proof-harmonic-oscillator-eigenvalue" title="Link to this heading">#</a></h3>
+<p>把算子拆成兩項，直接引用【推導 4】的封閉式。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\mathcal{H}_n &amp;=&amp; \frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} - \hat{y}^{2}\,\mathcal{H}_n \\
+&amp;\overset{\text{推導 4}}{=}&amp; -(2n + 1)\,\mathcal{H}_n
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="b-proof-orthogonality-of-distinct-orders">
+<h3>(b) proof 相異階的正交性 (Orthogonality of distinct orders)<a class="headerlink" href="#b-proof-orthogonality-of-distinct-orders" title="Link to this heading">#</a></h3>
+<p>從【推導 5】的零起手，把兩個二階導數換成【證明 (a)】的本徵值形式，正交性就掉出來了。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{推導 5}}{=}&amp; \int_{-\infty}^{\infty}\left[\mathcal{H}_{n'}\frac{d^{2}\mathcal{H}_n}{d\hat{y}^{2}} - \mathcal{H}_{n}\frac{d^{2}\mathcal{H}_{n'}}{d\hat{y}^{2}}\right]d\hat{y} \\
+0 &amp;=&amp; \int_{-\infty}^{\infty}\left[\mathcal{H}_{n'}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\mathcal{H}_n - \mathcal{H}_{n}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\mathcal{H}_{n'}\right]d\hat{y} \\
+0 &amp;\overset{\text{證明 (a)}}{=}&amp; \int_{-\infty}^{\infty}\left[-(2n+1)\,\mathcal{H}_{n'}\mathcal{H}_n + (2n'+1)\,\mathcal{H}_{n}\mathcal{H}_{n'}\right]d\hat{y} \\
+0 &amp;=&amp; 2\left(n' - n\right)\int_{-\infty}^{\infty}\mathcal{H}_n\,\mathcal{H}_{n'}\,d\hat{y} \\
+0 &amp;\overset{\text{假設 2}}{=}&amp; \int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c-proof-unit-norm">
+<h3>(c) proof 單位範數 (Unit norm)<a class="headerlink" href="#c-proof-unit-norm" title="Link to this heading">#</a></h3>
+<p>【推導 8】說範數不隨階數改變，於是沿著階梯一路降到【推導 9】的起始值。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{-\infty}^{\infty}\mathcal{H}_n^{2}\,d\hat{y} &amp;\overset{\text{推導 8}}{=}&amp; \int_{-\infty}^{\infty}\mathcal{H}_{n-1}^{2}\,d\hat{y} \\
+&amp;\overset{\text{推導 8}}{=}&amp; \int_{-\infty}^{\infty}\mathcal{H}_{n-2}^{2}\,d\hat{y} \\
+&amp;\overset{\text{推導 8}}{=}&amp; \cdots \\
+&amp;\overset{\text{推導 8}}{=}&amp; \int_{-\infty}^{\infty}\mathcal{H}_{0}^{2}\,d\hat{y} \\
+&amp;\overset{\text{推導 9}}{=}&amp; 1
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="d-proof-orthonormality">
+<h3>(d) proof 正交歸一性 (Orthonormality)<a class="headerlink" href="#d-proof-orthonormality" title="Link to this heading">#</a></h3>
+<p>把【證明 (b)】與【證明 (c)】兩種情形併成一條。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y} \overset{\text{證明 (b)(c)}}{=}
+\begin{cases}
+1, &amp; n' = n \\
+0, &amp; n' \neq n
+\end{cases}\end{split}\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>結構解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>兩條關係，一個本徵值<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>【推導 2】把「二階微分」與「乘 <span class="math notranslate nohighlight">\(\hat{y}^{2}\)</span>」各展成三項，兩式的 <span class="math notranslate nohighlight">\(\mathcal{H}_{n+2}\)</span> 與 <span class="math notranslate nohighlight">\(\mathcal{H}_{n-2}\)</span> 項<strong>係數完全相同</strong>，中央項<strong>恰好反號</strong>。相減之後，兩端的鄰居全數消失，只剩中間那一項的兩倍。</p>
+<p>這件事的來源非常單純：【已知 1】與【已知 2】的右端只差一個負號（見 <a class="reference internal" href="Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence 的數值與結構解釋</span></a>）。<strong>本徵值 <span class="math notranslate nohighlight">\(-(2n+1)\)</span> 完全是這個符號差的產物</strong>，不需要任何額外的微分方程知識。</p>
+</section>
+<section id="id5">
+<h3>為什麼「有本徵值」就有「正交」<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>【證明 (b)】的骨架是所有自伴算子共通的：</p>
+<ol class="arabic simple">
+<li><p>造一個<strong>反對稱</strong>的組合 <span class="math notranslate nohighlight">\(\mathcal{H}_{n'}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\mathcal{H}_n - \mathcal{H}_n\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\mathcal{H}_{n'}\)</span>；</p></li>
+<li><p>用 Lagrange 恆等式把它整成一個<strong>全微分</strong>，積分後只剩邊界項；</p></li>
+<li><p>邊界項為零 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> 整個積分為零；</p></li>
+<li><p>另一邊用本徵值算同一個積分，得到 <span class="math notranslate nohighlight">\(2(n'-n)\int\mathcal{H}_n\mathcal{H}_{n'}\,d\hat{y}\)</span>；</p></li>
+<li><p>兩邊相等，而 <span class="math notranslate nohighlight">\(n' \neq n\)</span>，只好是積分為零。</p></li>
+</ol>
+<p>跟 <a class="reference internal" href="Sturm_Liouville_Orthogonality.html"><span class="std std-doc">Sturm–Liouville 正交性</span></a> 是<strong>完全同一套機制</strong>。唯一的差別在第 3 步：那篇靠「有限區間 + 齊次邊界條件」，本篇靠「無窮區間 + 高斯衰減」（【假設 1】）。<span class="math notranslate nohighlight">\(\hat{y}^{2}\)</span> 這個位能項在無窮遠處把波函數壓死，扮演的正是邊界條件的角色。</p>
+</section>
+<section id="id6">
+<h3>歸一化為什麼「免費」<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\left\{\mathcal{H}_n\right\}\)</span> 的範數之所以<strong>全部</strong>是 <span class="math notranslate nohighlight">\(1\)</span>，並不是每一階各自湊出來的，而是【推導 8】那個 <span class="math notranslate nohighlight">\(\dfrac{2n+2}{4a_n^{2}} = 1\)</span> 的巧合 —— 而這個「巧合」正是 <a class="reference internal" href="Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence 的【定義 1】</span></a> 裡 <span class="math notranslate nohighlight">\(\left(\pi^{1/2}2^{n}n!\right)^{-1/2}\)</span> 這個係數被<strong>刻意挑成如此</strong>的結果。</p>
+<p>換句話說：<span class="math notranslate nohighlight">\(c_n\)</span> 那個看起來莫名其妙的 <span class="math notranslate nohighlight">\(2^{n}n!\)</span>，唯一的任務就是讓升算子 <span class="math notranslate nohighlight">\(\hat{y} - \dfrac{d}{d\hat{y}}\)</span> 在除以 <span class="math notranslate nohighlight">\(2a_n\)</span> 之後<strong>保範</strong>。有了它，只需要驗證 <span class="math notranslate nohighlight">\(\mathcal{H}_0\)</span> 一階（【推導 9】），其餘無窮多階全部自動成立。</p>
+</section>
+<section id="id7">
+<h3>這兩件事在赤道波理論裡各自負責什麼<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>【證明 (d)】正交歸一</strong> —— 讓「把場展開成 <span class="math notranslate nohighlight">\(\sum_n(\cdot)\mathcal{H}_n\)</span>」這件事可逆：投影係數只要做一次內積就取得到，不必解聯立。赤道波的正規模態轉換整個押在這上面。</p></li>
+<li><p><strong>【證明 (a)】本徵值 <span class="math notranslate nohighlight">\(-(2n+1)\)</span></strong> —— 讓含 <span class="math notranslate nohighlight">\(\dfrac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\)</span> 的橢圓型算子在譜空間退化成<strong>一個純量除法</strong>。赤道 PV 可逆性原理之所以能寫成「除以 <span class="math notranslate nohighlight">\(m^{2} + \epsilon^{1/2}(2n+1)\)</span>」這麼簡單的一行，就是這條本徵性質的直接後果。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Differential_Equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Hermite_Functions_and_Recurrence.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hermite Functions and Recurrence (歸一化 Hermite 函數的遞迴與微分關係)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vertical Structure Equation (垂直結構方程式與加熱的模態投影)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-harmonic-oscillator-eigenvalue">(a) proof 諧振子本徵值 (Harmonic oscillator eigenvalue)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-orthogonality-of-distinct-orders">(b) proof 相異階的正交性 (Orthogonality of distinct orders)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-unit-norm">(c) proof 單位範數 (Unit norm)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-orthonormality">(d) proof 正交歸一性 (Orthonormality)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">兩條關係，一個本徵值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">為什麼「有本徵值」就有「正交」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">歸一化為什麼「免費」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">這兩件事在赤道波理論裡各自負責什麼</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
