@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -557,6 +560,21 @@ document.write(`
 <td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">cylindrical_coordinate_transformation_Relative_Vorticity</a></p></td>
 <td><p><span class="math notranslate nohighlight">\(\vec{\zeta} \overset{\text{def}}{=} \nabla\times\vec{V}\)</span></p></td>
 </tr>
+<tr class="row-even"><td><p>球座標尺度因子 (Spherical scale factors)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">h_r</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">\qquad</span> <span class="pre">h_\theta</span> <span class="pre">=</span> <span class="pre">r,</span> <span class="pre">\qquad</span> <span class="pre">h_\phi</span> <span class="pre">=</span> <span class="pre">r\sin\theta</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html#a-proof-scale-factors-and-orthogonality">Spherical_Coordinate_Scale_Factors_and_Laplacian #a-proof</a></p></td>
+<td><p><span class="math notranslate nohighlight">\(x = r\sin\theta\cos\phi\)</span> 等標準球座標；同頁附三基底兩兩正交的證明</p></td>
+</tr>
+<tr class="row-odd"><td><p>球座標體積元素 (Spherical volume element)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dV</span> <span class="pre">=</span> <span class="pre">\left(dr\right)\left(r\,d\theta\right)\left(r\sin\theta\,d\phi\right)</span> <span class="pre">=</span> <span class="pre">r^{2}\sin\theta\,dr\,d\theta\,d\phi</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html#b-proof-volume-element">Spherical_Coordinate_Scale_Factors_and_Laplacian #b-proof</a></p></td>
+<td><p>由尺度因子與基底正交性導出；<span class="math notranslate nohighlight">\(\phi\)</span> 方向的弧長半徑是 <span class="math notranslate nohighlight">\(r\sin\theta\)</span> 而非 <span class="math notranslate nohighlight">\(r\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>球座標拉普拉斯算子 (Laplacian in spherical coordinates)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\nabla^{2}</span> <span class="pre">f</span> <span class="pre">=</span> <span class="pre">\frac{1}{r^{2}}\frac{\partial}{\partial</span> <span class="pre">r}\left[r^{2}\frac{\partial</span> <span class="pre">f}{\partial</span> <span class="pre">r}\right]</span> <span class="pre">+</span> <span class="pre">\frac{1}{r^{2}\sin\theta}\frac{\partial}{\partial</span> <span class="pre">\theta}\left[\sin\theta\frac{\partial</span> <span class="pre">f}{\partial</span> <span class="pre">\theta}\right]</span> <span class="pre">+</span> <span class="pre">\frac{1}{r^{2}\sin^{2}\theta}\frac{\partial^{2}</span> <span class="pre">f}{\partial</span> <span class="pre">\phi^{2}}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html#e-proof-laplacian-operator">Spherical_Coordinate_Scale_Factors_and_Laplacian #e-proof</a></p></td>
+<td><p>由通量定義的散度＋梯度導出，未假設任何對稱性；同頁附球座標梯度與散度</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -606,6 +624,36 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y}</span> <span class="pre">=</span> <span class="pre">\begin{cases}1,</span> <span class="pre">&amp;</span> <span class="pre">n'=n\\</span> <span class="pre">0,</span> <span class="pre">&amp;</span> <span class="pre">n'\neq</span> <span class="pre">n\end{cases}</span></code></p></td>
 <td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html#d-proof-orthonormality">Hermite_Orthonormality_and_Oscillator_Eigenvalue #d-proof</a></p></td>
 <td><p><strong>無窮區間 <span class="math notranslate nohighlight">\((-\infty,\infty)\)</span></strong> ＋高斯衰減使邊界項消失（與 Sturm–Liouville 那篇的有限區間前提不同）。＝ Schubert (2006) <span class="math notranslate nohighlight">\((4.18)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>連帶勒讓德級數遞迴 (Associated Legendre series recurrence)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a_{k+2}</span> <span class="pre">=</span> <span class="pre">\frac{\left(k+\lvert</span> <span class="pre">m\rvert\right)\left(k+\lvert</span> <span class="pre">m\rvert+1\right)</span> <span class="pre">-</span> <span class="pre">\lambda}{\left(k+1\right)\left(k+2\right)}a_k</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization.html#b-proof-series-recurrence-relation">Associated_Legendre_Equation_and_Quantization #b-proof</a></p></td>
+<td><p>先以 <span class="math notranslate nohighlight">\(y=(1-x^{2})^{\lvert m\rvert/2}v\)</span> 剝離端點奇異因子；遞迴每次跨兩階</p></td>
+</tr>
+<tr class="row-even"><td><p>連帶勒讓德量子化條件 (Associated Legendre quantization)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\lambda</span> <span class="pre">=</span> <span class="pre">l\left(l+1\right),</span> <span class="pre">\qquad</span> <span class="pre">l</span> <span class="pre">\in</span> <span class="pre">\left\{\lvert</span> <span class="pre">m\rvert,</span> <span class="pre">\lvert</span> <span class="pre">m\rvert+1,</span> <span class="pre">\dots\right\}</span> <span class="pre">\quad\Longleftrightarrow\quad</span> <span class="pre">m</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">\pm</span> <span class="pre">1,</span> <span class="pre">\dots,</span> <span class="pre">\pm</span> <span class="pre">l</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization.html#d-proof-quantization-of-the-separation-constant-and-the-order">Associated_Legendre_Equation_and_Quantization #d-proof</a></p></td>
+<td><p>要求解在 <span class="math notranslate nohighlight">\(x=\pm1\)</span>（<span class="math notranslate nohighlight">\(\theta=0,\pi\)</span>）有限；<span class="math notranslate nohighlight">\(m\)</span> 須為整數。氫原子的 <span class="math notranslate nohighlight">\(l\)</span>、<span class="math notranslate nohighlight">\(m_l\)</span> 即出自此</p></td>
+</tr>
+<tr class="row-odd"><td><p>連帶勒讓德相鄰階耦合 (Adjacent-order coupling)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\int_{-1}^{1}P_{l'}^{m}(x)\,x\,P_{l}^{m}(x)\,dx</span> <span class="pre">\ne</span> <span class="pre">0</span> <span class="pre">\;\Longrightarrow\;</span> <span class="pre">l'</span> <span class="pre">=</span> <span class="pre">l</span> <span class="pre">\pm</span> <span class="pre">1</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization.html#f-proof-weighted-orthogonality-and-adjacent-order-coupling">Associated_Legendre_Equation_and_Quantization #f-proof</a></p></td>
+<td><p>只用多項式次數守恆＋帶權正交性＋宇稱。電偶極躍遷 <span class="math notranslate nohighlight">\(\Delta l = \pm 1\)</span> 的數學骨架</p></td>
+</tr>
+<tr class="row-even"><td><p>連帶拉蓋爾級數遞迴 (Associated Laguerre series recurrence)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a_{k+1}</span> <span class="pre">=</span> <span class="pre">\frac{k</span> <span class="pre">-</span> <span class="pre">q}{\left(k+1\right)\left(k+p+1\right)}a_k</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html#a-proof-series-recurrence-relation">Associated_Laguerre_Equation_and_Polynomials #a-proof</a></p></td>
+<td><p>方程式 <span class="math notranslate nohighlight">\(xv'' + (p+1-x)v' + qv = 0\)</span>，<span class="math notranslate nohighlight">\(p&gt;-1\)</span>；遞迴每次跨一階故解不具定宇稱</p></td>
+</tr>
+<tr class="row-odd"><td><p>連帶拉蓋爾截斷條件 (Associated Laguerre truncation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">\dots</span> <span class="pre">\qquad</span> <span class="pre">\deg</span> <span class="pre">L_q^{p}</span> <span class="pre">=</span> <span class="pre">q</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html#c-proof-truncation-condition-and-eigenvalue-quantization">Associated_Laguerre_Equation_and_Polynomials #c-proof</a></p></td>
+<td><p>要求 <span class="math notranslate nohighlight">\(e^{-x/2}x^{\alpha}v\)</span> 在 <span class="math notranslate nohighlight">\(x\to\infty\)</span> 趨零；不截斷則 <span class="math notranslate nohighlight">\(v\sim e^{x}\)</span>。氫原子的 <span class="math notranslate nohighlight">\(n\)</span> 即出自此</p></td>
+</tr>
+<tr class="row-even"><td><p>連帶拉蓋爾帶權正交性 (Associated Laguerre orthogonality)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\int_{0}^{\infty}x^{p}e^{-x}L_{q}^{p}(x)\,L_{q'}^{p}(x)\,dx</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">\quad</span> <span class="pre">(q</span> <span class="pre">\ne</span> <span class="pre">q')</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html#d-proof-self-adjoint-form-and-weighted-orthogonality">Associated_Laguerre_Equation_and_Polynomials #d-proof</a></p></td>
+<td><p>自伴形式 <span class="math notranslate nohighlight">\(p_{\text{SL}} = x^{p+1}e^{-x}\)</span>、權 <span class="math notranslate nohighlight">\(w = x^{p}e^{-x}\)</span>；區間 <span class="math notranslate nohighlight">\([0,\infty)\)</span>，兩端邊界項皆消失</p></td>
 </tr>
 </tbody>
 </table>

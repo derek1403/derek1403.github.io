@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -506,7 +509,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-emergence-of-the-potential-vorticity-anomaly">位渦距平的定義 (Definition of the PV anomaly)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (a)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-emergence-of-the-potential-vorticity-anomaly">位渦距平的定義 (Definition of the PV anomaly)</a>：</strong> 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上的位渦距平：相對渦度加上「以 <span class="math notranslate nohighlight">\(\beta y\)</span> 加權的層結項」。因為權重正比於 <span class="math notranslate nohighlight">\(y\)</span>，赤道上這一項自動消失 ─ 這是整條 MJO 推導鏈的物理引擎。（已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (a)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[q = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + \frac{\beta y}{R\Gamma}\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z}\]</div>
 <ul class="simple">
@@ -521,7 +524,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://glossary.ametsoc.org/wiki/Balance_equation">線性平衡關係 (Linear balance relation)</a>：</strong> 從水平動量方程式取散度、丟掉加速度與非線性項後得到的診斷關係，標準結果，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://glossary.ametsoc.org/wiki/Balance_equation">線性平衡關係 (Linear balance relation)</a>：</strong> 從水平動量方程式取散度、丟掉加速度與非線性項後得到的診斷關係。（標準結果，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\nabla\cdot\left(\beta y\,\nabla\psi\right) = \nabla^{2}\phi\]</div>
 <ul class="simple">
@@ -532,7 +535,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#a-proof-eigenvalue-of-the-first-vertical-internal-mode">垂直結構方程式與分離形式 (Vertical structure equation and the separable forms)</a>：</strong> 已於本庫 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">Vertical Structure Equation in Log-Pressure</span></a> 與 <a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"><span class="std std-doc">Physical Field Recovery</span></a>【推導 1】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#a-proof-eigenvalue-of-the-first-vertical-internal-mode">垂直結構方程式與分離形式 (Vertical structure equation and the separable forms)</a>：</strong> 垂直本徵問題與它的分離形式：分離常數 <span class="math notranslate nohighlight">\(\lambda\)</span> 同時等於 <span class="math notranslate nohighlight">\(\frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\)</span> 與 <span class="math notranslate nohighlight">\(\frac{R\Gamma}{\bar{c}^{2}}\)</span>（後者即等效重力波速的來源），而 <span class="math notranslate nohighlight">\(\psi,\ \phi,\ q\)</span> 三者都掛在同一個 <span class="math notranslate nohighlight">\(Z(z)\)</span> 上，因此垂直方向可以整個約掉。（已於本庫 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">Vertical Structure Equation in Log-Pressure</span></a> 與 <a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"><span class="std std-doc">Physical Field Recovery</span></a>【推導 1】完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 垂直結構方程式：</p>
 <div class="math notranslate nohighlight">
@@ -552,10 +555,10 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\psi},\ \hat{q}\)</span> : 流函數與位渦的水平結構函數 (Horizontal structure functions of the streamfunction and the PV) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}],\ [\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 擾動位勢的水平結構函數 (Horizontal structure function of the perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#a-proof-derivative-replacement-in-the-translating-frame">隨波定常化與緯向傅立葉轉換 (Steadiness in the translating frame and the zonal Fourier transform)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (a)(b)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#a-proof-derivative-replacement-in-the-translating-frame">隨波定常化與緯向傅立葉轉換 (Steadiness in the translating frame and the zonal Fourier transform)</a>：</strong> 兩步把緯向微分變成代數乘法：先換到隨熱源移動的座標 <span class="math notranslate nohighlight">\(\xi = x - ct\)</span> 使場變定常，再對 <span class="math notranslate nohighlight">\(\xi\)</span> 做傅立葉轉換 ─ 於是 <span class="math notranslate nohighlight">\(\partial/\partial x\)</span> 整個變成 <span class="math notranslate nohighlight">\(im/a\)</span>。（已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (a)(b)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial x} \to \frac{\partial}{\partial \xi} \to \frac{im}{a}, \qquad \xi = x - ct\]</div>
 <ul class="simple">
@@ -567,7 +570,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 5】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#assumptions-preliminaries">Lamb 參數與無因次經向座標 (Lamb’s parameter and the dimensionless meridional coordinate)</a>：</strong> 已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a>【定義 2】給出，此處直接引用</p>
+<li><p><strong>【已知 5】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#assumptions-preliminaries">Lamb 參數與無因次經向座標 (Lamb’s parameter and the dimensionless meridional coordinate)</a>：</strong> 把經向座標無因次化的兩個量：<span class="math notranslate nohighlight">\(\epsilon\)</span> 量度旋轉相對於層結的強弱，<span class="math notranslate nohighlight">\(\hat{y}\)</span> 以赤道變形半徑為長度單位 ─ 本篇靠它把可逆性方程改寫成標準的量子諧振子形式。（已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a>【定義 2】給出，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\epsilon = \frac{4\Omega^{2}a^{2}}{\bar{c}^{2}}, \qquad \hat{y} = \left(\frac{\beta}{\bar{c}}\right)^{1/2}y\]</div>
 <ul class="simple">
@@ -621,10 +624,11 @@ document.write(`
 </li>
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p>註：這一張卡片<strong>不以 <code class="docutils literal notranslate"><span class="pre">\overset</span></code> 形式出現在下方的【證明】中</strong> —— 邊界條件不是某個等號的依據，而是讓【證明 (c)】的橢圓型方程「解存在且唯一」的定解條件。它真正被用到是在下一篇 <a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html"><span class="std std-doc">Hermite 轉換解</span></a>：(a) 保證 Hermite 展開合法（<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 在無窮遠處歸零），(b) 保證垂直結構取 <span class="math notranslate nohighlight">\(Z(z)\)</span>（見 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">垂直結構方程式</span></a>【假設 1】的同一條件）。</p></li>
 </ul>
 </li>
-<li><p><strong>【推導 1】 相對渦度的流函數形式 (Streamfunction form of the relative vorticity)：</strong></p>
+<li><p><strong>【推導 1】 相對渦度的流函數形式 (Streamfunction form of the relative vorticity)：</strong> 把旋轉流用流函數表示後，相對渦度就退化成流函數的拉普拉斯 ─ 這一步把「兩個風速分量」換成「一個純量場」，是後面位渦可逆性能寫成單一橢圓方程的關鍵。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
   \frac{\partial v_\psi}{\partial x} - \frac{\partial u_\psi}{\partial y} &amp;\overset{\text{假設 1}}{=}&amp; \frac{\partial}{\partial x}\left[\frac{\partial \psi}{\partial x}\right] - \frac{\partial}{\partial y}\left[-\frac{\partial \psi}{\partial y}\right] \\
@@ -652,7 +656,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【推導 3】 垂直算符作用在分離形式上 (The vertical operator acting on the separable form)：</strong></p>
+<li><p><strong>【推導 3】 垂直算符作用在分離形式上 (The vertical operator acting on the separable form)：</strong> 把垂直算符作用在可分離的 <span class="math notranslate nohighlight">\(\psi = \hat{\psi}Z(z)\)</span> 上：垂直結構函數滿足的本徵方程把整個算符收成一個常數 <span class="math notranslate nohighlight">\(-\lambda\)</span>，於是三維問題降成純水平的二維問題。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
   \left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \psi}{\partial z} &amp;\overset{\text{已知 3(b)}}{=}&amp; \hat{\psi}\left(\frac{d}{dz} - 1\right)\frac{dZ}{dz} \\

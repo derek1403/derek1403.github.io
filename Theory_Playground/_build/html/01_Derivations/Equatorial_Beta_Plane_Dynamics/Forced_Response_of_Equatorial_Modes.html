@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -508,7 +511,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">向量形式的淺水系統 (Vector form of the shallow water system)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (e)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">向量形式的淺水系統 (Vector form of the shallow water system)</a>：</strong> 隨波定常化後的淺水系統向量形式：阻尼 <span class="math notranslate nohighlight">\(\alpha\)</span> 與多普勒項 <span class="math notranslate nohighlight">\(-imc/a\)</span> 合成一個純量係數，加上算符 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 作用在未知場上，右端是加熱強迫 ─ 這就是本篇要反解的方程。（已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (e)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\left(\alpha - \frac{imc}{a}\right)\hat{\boldsymbol{\eta}}_m + \mathcal{L}\hat{\boldsymbol{\eta}}_m = \kappa\hat{\mathbf{Q}}_m\]</div>
 <ul class="simple">
@@ -522,7 +525,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#d-proof-skew-hermiticity-of-the-operator">算符的反厄米性與本徵值 (Skew-Hermiticity and the eigenvalues)</a>：</strong> 已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a> 完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#d-proof-skew-hermiticity-of-the-operator">算符的反厄米性與本徵值 (Skew-Hermiticity and the eigenvalues)</a>：</strong> 本篇反解所依賴的三件事：<span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 在能量內積下反厄米、因此本徵值為純虛數 <span class="math notranslate nohighlight">\(i\nu_{mnr}\)</span>（<span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> 為實數），以及內積對第二個引數是共軛線性的 ─ 有了它們，才能把 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 從未知場搬到已知的本徵函數上。（已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a> 完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 反厄米性：</p>
 <div class="math notranslate nohighlight">
@@ -541,9 +544,10 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\sigma\)</span> : 任意複數 (Arbitrary complex number) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> : 水平結構的線性算符 (Linear operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathbf{f},\ \mathbf{g}\)</span> : 複數三分量向量函數 (Complex three-component vector functions) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#d-proof-orthonormality">本徵函數的正交歸一性與完備性 (Orthonormality and completeness of the eigenfunctions)</a>：</strong> 正交歸一已於本庫 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">Equatorial Wave Eigenfunctions</span></a>【證明 (d)】完整證明；完備性為反厄米算符的標準結果 [<em>Wu and Moore</em>, 2004]，此處一併引用不再重證</p>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#d-proof-orthonormality">本徵函數的正交歸一性與完備性 (Orthonormality and completeness of the eigenfunctions)</a>：</strong> 本徵函數構成一組完備的正交歸一基底：任一在該內積下平方可積的場都能唯一展開成它們的線性組合，而正交歸一讓展開係數可以用內積直接取出。（正交歸一已於本庫 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">Equatorial Wave Eigenfunctions</span></a>【證明 (d)】完整證明；完備性為反厄米算符的標準結果 [<em>Wu and Moore</em>, 2004]，此處一併引用。）</p>
 <ul>
 <li><p>(a) 正交歸一：</p>
 <div class="math notranslate nohighlight">
@@ -557,6 +561,8 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\boldsymbol{\eta}}_m\)</span> : 第 <span class="math notranslate nohighlight">\(m\)</span> 個緯向波數的狀態向量 (State vector) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【假設 1】 展開式可逐項取內積 (Term-by-term inner product)：</strong> 級數在該內積下收斂，故內積與求和可交換</p>
@@ -603,14 +609,6 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\eta}_{mnr}\)</span> : 正規模態展開係數 (Normal mode expansion coefficient) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{Q}_{mnr}\)</span> : 強迫的模態投影 (Modal projection of the forcing) <span class="math notranslate nohighlight">\([\text{K}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\mathbf{Q}}_m\)</span> : 強迫向量 (Forcing vector) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\alpha = \left(4 \ \text{days}\right)^{-1}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> : 對流包絡的東移速度 (Eastward propagation speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(c = 5 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p>註：最後一步用到 <span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> <strong>為實數</strong>，故 <span class="math notranslate nohighlight">\(\left(i\nu_{mnr}\right)^{*} = -i\nu_{mnr}\)</span>。<strong>兩個負號相乘變正號</strong> —— 若 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 是厄米而非反厄米，這裡會多一個負號，後面的分母就湊不出「阻尼 ＋ 頻率差」的漂亮形式。</p></li>
 </ul>
 </li>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -517,7 +520,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation">赤道 PV 方程式 (Equatorial PV equation)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (b)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation">赤道 PV 方程式 (Equatorial PV equation)</a>：</strong> 位渦距平的收支：時間變化加上 <span class="math notranslate nohighlight">\(\beta v\)</span> 的行星渦度平流，由阻尼消耗，並由加熱以 <span class="math notranslate nohighlight">\(\beta y\)</span> 為權重的形式產生 ─ 右端的權重在赤道為零，這正是尾流只長在赤道兩側的原因。（已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (b)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\left(\frac{\partial}{\partial z} - 1\right)Q\]</div>
 <ul class="simple">
@@ -533,7 +536,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html#assumptions-preliminaries">垂直分離與加熱形狀 (Vertical separation and the shape of the heating)</a>：</strong> 已於本庫 <a class="reference internal" href="Separation_into_Horizontal_Structure_System.html"><span class="std std-doc">Separation into the Horizontal Structure System</span></a> 與 <a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html"><span class="std std-doc">Projection of a Moving Heat Source</span></a> 完整給出，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html#assumptions-preliminaries">垂直分離與加熱形狀 (Vertical separation and the shape of the heating)</a>：</strong> 本篇熱源的完整規格：垂直方向掛在 <span class="math notranslate nohighlight">\(Z'(z)\)</span> 上，水平方向則是「經向高斯 × 緯向升餘弦帽子」，而 <span class="math notranslate nohighlight">\(Z\)</span> 所滿足的垂直本徵方程同時定出等效重力波速 <span class="math notranslate nohighlight">\(\bar{c}\)</span>。（已於本庫 <a class="reference internal" href="Separation_into_Horizontal_Structure_System.html"><span class="std std-doc">Separation into the Horizontal Structure System</span></a> 與 <a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html"><span class="std std-doc">Projection of a Moving Heat Source</span></a> 完整給出，此處直接引用。）</p>
 <ul>
 <li><p>(a) 加熱的垂直分離：</p>
 <div class="math notranslate nohighlight">
@@ -557,13 +560,14 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g(\xi)\)</span> : 加熱的緯向形狀函數 (Zonal shape function of the heating) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#a-proof-derivative-replacement-in-the-translating-frame">隨波座標的導數替換 (Derivative replacement in the translating frame)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (a)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#a-proof-derivative-replacement-in-the-translating-frame">隨波座標的導數替換 (Derivative replacement in the translating frame)</a>：</strong> 換到隨熱源移動的座標 <span class="math notranslate nohighlight">\(\xi = x - ct\)</span> 後，場對時間定常，於是 <span class="math notranslate nohighlight">\(\partial/\partial t\)</span> 整個變成 <span class="math notranslate nohighlight">\(-c\,\partial/\partial \xi\)</span> ─ 這一步把偏微分方程降成對 <span class="math notranslate nohighlight">\(\xi\)</span> 的常微分方程。（已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a>【證明 (a)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} \to -c\frac{\partial}{\partial \xi}, \qquad \xi = x - ct\]</div>
 <ul class="simple">
@@ -573,7 +577,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 4】 <a class="reference external" href="https://dlmf.nist.gov/1.13">一階線性 ODE 的積分因子解 (Integrating-factor solution of a first-order linear ODE)</a>：</strong> 標準結果，此處直接引用不再重證</p>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://dlmf.nist.gov/1.13">一階線性 ODE 的積分因子解 (Integrating-factor solution of a first-order linear ODE)</a>：</strong> 一階線性常微分方程的標準解法：左端乘上積分因子 <span class="math notranslate nohighlight">\(e^{-\sigma\xi}\)</span> 之後恰好收成一個全微分，於是兩側直接積分即可 ─ 本篇的尾流解就是這樣一路積出來的。（標準結果，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{d\Psi}{d\xi} - \sigma\Psi = h(\xi) \quad \Longleftrightarrow \quad \frac{d}{d\xi}\left[e^{-\sigma\xi}\Psi\right] = h(\xi)\,e^{-\sigma\xi}\]</div>
 <ul class="simple">
@@ -583,7 +587,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 5】 指數與三角乘積的不定積分 (Antiderivative of an exponential times a cosine)：</strong> 標準結果，可對右端微分直接驗證，此處直接引用不再重證</p>
+<li><p><strong>【已知 5】 指數與三角乘積的不定積分 (Antiderivative of an exponential times a cosine)：</strong> 衰減指數乘上餘弦的不定積分：結果仍是同一個衰減指數，乘上 <span class="math notranslate nohighlight">\(\cos\)</span> 與 <span class="math notranslate nohighlight">\(\sin\)</span> 的線性組合；分母的 <span class="math notranslate nohighlight">\(\sigma^{2} + p^{2}\)</span> 來自兩次分部積分後被積函數自我回歸所產生的係數。（標準結果，可對右端微分直接驗證。）</p>
 <div class="math notranslate nohighlight">
 \[\int e^{-\sigma s}\cos\left(ps\right)ds = \frac{e^{-\sigma s}}{\sigma^{2} + p^{2}}\left[-\sigma\cos\left(ps\right) + p\sin\left(ps\right)\right]\]</div>
 <ul class="simple">
@@ -611,16 +615,16 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【定義 1】 隨波緯向衰減率 (Zonal decay rate in the translating frame)：</strong></p>
+<li><p><strong>【定義 1】 隨波緯向衰減率 (Zonal decay rate in the translating frame)：</strong> 把時間上的阻尼率換算成隨波座標裡的空間衰減率：熱源以速度 <span class="math notranslate nohighlight">\(c\)</span> 東移，每往東走一段距離就衰減該段所費時間乘上 <span class="math notranslate nohighlight">\(\alpha\)</span>，故 <span class="math notranslate nohighlight">\(\sigma\)</span> 的倒數就是尾流在緯向的 <span class="math notranslate nohighlight">\(e\)</span>-folding 長度。</p>
 <div class="math notranslate nohighlight">
 \[\sigma \overset{\text{def}}{=} \frac{\alpha}{c}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\sigma\)</span> : 隨波緯向衰減率 (Zonal decay rate) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\alpha = \left(4 \ \text{days}\right)^{-1}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 對流包絡的東移速度 (Eastward propagation speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(c = 5 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【定義 2】 對流的緯向波數 (Zonal wavenumber of the convective hat)：</strong></p>
+<li><p><strong>【定義 2】 對流的緯向波數 (Zonal wavenumber of the convective hat)：</strong> 把對流帽子的緯向半寬換算成波數：帽子在 <span class="math notranslate nohighlight">\(\pm a_0\)</span> 之間恰好是餘弦的半個週期，故對應的波數為 <span class="math notranslate nohighlight">\(\pi/a_0\)</span>。</p>
 <div class="math notranslate nohighlight">
 \[p \overset{\text{def}}{=} \frac{\pi}{a_0}\]</div>
 <ul class="simple">
@@ -628,7 +632,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【定義 3】 通過時間與對流翻轉時間 (Passage time and convective overturning time)：</strong></p>
+<li><p><strong>【定義 3】 通過時間與對流翻轉時間 (Passage time and convective overturning time)：</strong> 尾流的強度取決於兩個時間尺度的競爭：<span class="math notranslate nohighlight">\(\tau_{\mathrm{p}}\)</span> 是熱源掃過一個定點所需的時間，<span class="math notranslate nohighlight">\(\tau_{\mathrm{c}}\)</span> 則是加熱把該處大氣翻轉一次所需的時間。</p>
 <ul>
 <li><p>(a) 對流區通過所需的時間：</p>
 <div class="math notranslate nohighlight">
@@ -679,6 +683,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
@@ -764,34 +769,13 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(p\)</span> : 對流帽子的緯向波數 (Zonal wavenumber of the hat) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【定義 5】 括號因子的簡寫 (Shorthand for the bracket factor)：</strong></p>
+<li><p><strong>【定義 5】 括號因子的簡寫 (Shorthand for the bracket factor)：</strong> 把最終解裡反覆出現的括號收成一個無因次因子，量度阻尼在熱源通過期間的效果：通過得快（<span class="math notranslate nohighlight">\(\alpha\tau_{\mathrm{p}} \ll 1\)</span>）時 <span class="math notranslate nohighlight">\(K \to 1\)</span>、阻尼來不及作用；通過得慢時 <span class="math notranslate nohighlight">\(K \to 0\)</span>、尾流被抹掉。</p>
 <div class="math notranslate nohighlight">
 \[K \overset{\text{def}}{=} \frac{\pi^{2}}{\pi^{2} + \alpha^{2}\tau_{\mathrm{p}}^{2}}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(K\)</span> : 括號因子 (Bracket factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\alpha = \left(4 \ \text{days}\right)^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\tau_{\mathrm{p}}\)</span> : 通過時間 (Passage time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的經向偏移 (Meridional offset) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\tilde{q}(\xi)\)</span> : 位渦的緯向結構函數 (Zonal structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> : 隨波緯向衰減率 (Zonal decay rate) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(J(\xi)\)</span> : 主積分 (The master integral) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p\)</span> : 對流帽子的緯向波數 (Zonal wavenumber of the hat) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g(\xi)\)</span> : 加熱的緯向形狀函數 (Zonal shape function of the heating) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(s\)</span> : 積分變數 (Integration variable) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa = R/c_p\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(F(\xi)\)</span> : 尾流的隨波緯向結構函數 (Translating zonal structure function of the wake) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
 </ul>

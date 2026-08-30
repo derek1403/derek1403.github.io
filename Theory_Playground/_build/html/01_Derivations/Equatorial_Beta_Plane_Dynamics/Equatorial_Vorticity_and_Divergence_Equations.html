@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -493,7 +496,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 此方程組已於本庫 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">Log-Pressure Linearized Primitive Equations</span></a> 完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 對數氣壓座標下、繞靜止基本態線性化後的五條方程式。本篇要做的是對 (a)(b) 分別取旋度與散度，把它們重組成渦度方程式與輻散方程式。（已於本庫 Log-Pressure Linearized Primitive Equations 完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 緯向動量方程式：</p>
 <div class="math notranslate nohighlight">
@@ -517,7 +520,7 @@ document.write(`
 </li>
 <li><p><span class="math notranslate nohighlight">\(u\)</span> : 擾動緯向風速 (Perturbation zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
@@ -532,7 +535,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa = R/c_p\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://dlmf.nist.gov/1.5#E4">Clairaut 定理（混合偏導數可交換）(Clairaut’s theorem)</a>：</strong> 二階連續可微的函數，其混合偏導數與求導次序無關，標準結果，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://dlmf.nist.gov/1.5#E4">Clairaut 定理（混合偏導數可交換）(Clairaut’s theorem)</a>：</strong> 二階連續可微的函數，其混合偏導數與求導次序無關。（標準結果，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial x}\left[\frac{\partial \phi}{\partial y}\right] = \frac{\partial}{\partial y}\left[\frac{\partial \phi}{\partial x}\right]\]</div>
 <ul class="simple">
@@ -548,7 +551,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(C^{2}\)</span> : 二階連續可微的函數類 (Class of twice continuously differentiable functions) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
@@ -575,7 +578,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\delta \overset{\text{def}}{=} \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 水平輻散 (Horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(u\)</span> : 擾動緯向風速 (Perturbation zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
@@ -669,8 +672,8 @@ document.write(`
     &amp;\overset{\text{定義 3(a)}}{=}&amp; \mathcal{D}_t\left[T\right] + \Gamma w
     \end{gather*}\end{split}\]</div>
 </li>
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 水平輻散 (Horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>

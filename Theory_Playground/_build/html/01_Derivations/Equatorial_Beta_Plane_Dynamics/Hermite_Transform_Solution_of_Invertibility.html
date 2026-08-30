@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -521,7 +524,7 @@ im\,\mathcal{H}_n \cr
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html#d-proof-invertibility-principle-in-spectral-space">譜空間的可逆性原理 (Invertibility principle in spectral space)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">Equatorial PV Invertibility Principle</span></a>【證明 (d)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html#d-proof-invertibility-principle-in-spectral-space">譜空間的可逆性原理 (Invertibility principle in spectral space)</a>：</strong> 可逆性原理在緯向傅立葉空間中的樣子：左端是作用在流函數上的諧振子型算符 <span class="math notranslate nohighlight">\(\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\)</span> 再減去 <span class="math notranslate nohighlight">\(m^{2}\)</span>，右端是已知的位渦 ─ 給定 <span class="math notranslate nohighlight">\(q\)</span> 就能解出 <span class="math notranslate nohighlight">\(\psi\)</span>，這正是「可逆」的意思。（已於本庫 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">Equatorial PV Invertibility Principle</span></a>【證明 (d)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_m - m^{2}\hat{\psi}_m = a^{2}\hat{q}_m\]</div>
 <ul class="simple">
@@ -533,7 +536,7 @@ im\,\mathcal{H}_n \cr
 <li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html#d-proof-orthonormality">Hermite 函數的正交歸一性與諧振子本徵值 (Orthonormality and the oscillator eigenvalue)</a>：</strong> 已於本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"><span class="std std-doc">Hermite Orthonormality and Oscillator Eigenvalue</span></a> 完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html#d-proof-orthonormality">Hermite 函數的正交歸一性與諧振子本徵值 (Orthonormality and the oscillator eigenvalue)</a>：</strong> Hermite 函數的三件事：互相正交歸一、是諧振子算符本徵值為 <span class="math notranslate nohighlight">\(-\left(2n + 1\right)\)</span> 的本徵函數，以及 Lagrange 恆等式（高斯衰減讓邊界項消失）─ 有了它們，可逆性方程在 Hermite 基底下就對角化成逐項的代數式。（已於本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"><span class="std std-doc">Hermite Orthonormality and Oscillator Eigenvalue</span></a> 完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 正交歸一：</p>
 <div class="math notranslate nohighlight">
@@ -552,7 +555,7 @@ im\,\mathcal{H}_n \cr
 <li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#a-proof-recurrence-relation">Hermite 函數的遞迴與微分關係 (Recurrence and derivative relations)</a>：</strong> 已於本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#a-proof-recurrence-relation">Hermite 函數的遞迴與微分關係 (Recurrence and derivative relations)</a>：</strong> 乘以 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 與對 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 微分這兩個操作，都只會把 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 送到相鄰的 <span class="math notranslate nohighlight">\(\mathcal{H}_{n \pm 1}\)</span> ─ 這使得含 <span class="math notranslate nohighlight">\(\beta y\)</span> 與 <span class="math notranslate nohighlight">\(d/dy\)</span> 的項在 Hermite 基底下只耦合相鄰階，不會全域糾纏。（已於本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html"><span class="std std-doc">Hermite Functions and Recurrence</span></a> 完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 遞迴關係：</p>
 <div class="math notranslate nohighlight">
@@ -567,7 +570,7 @@ im\,\mathcal{H}_n \cr
 <li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html#b-proof-local-balance-relation">平衡關係、旋轉風與座標換算 (Balance relation, rotational wind, and coordinate conversions)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">Equatorial PV Invertibility Principle</span></a> 完整證明或給出，此處直接引用不再重證</p>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html#b-proof-local-balance-relation">平衡關係、旋轉風與座標換算 (Balance relation, rotational wind, and coordinate conversions)</a>：</strong> 本篇要用到的三組換算：局地平衡關係把位勢綁到流函數（<span class="math notranslate nohighlight">\(\phi = \beta y\,\psi\)</span>）、旋轉風由流函數的兩個偏導給出，以及經向座標的無因次化。（已於本庫 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">Equatorial PV Invertibility Principle</span></a> 完整證明或給出，此處直接引用。）</p>
 <ul>
 <li><p>(a) 局地平衡關係：</p>
 <div class="math notranslate nohighlight">
@@ -596,7 +599,7 @@ im\,\mathcal{H}_n \cr
 <li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 5】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#a-proof-explicit-form-of-the-eigenfunctions">赤道波本徵函數 (Equatorial wave eigenfunctions)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">Equatorial Wave Eigenfunctions</span></a>【證明 (a)】完整證明，僅供【證明 (e)】對照用</p>
+<li><p><strong>【已知 5】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html#a-proof-explicit-form-of-the-eigenfunctions">赤道波本徵函數 (Equatorial wave eigenfunctions)</a>：</strong> 本徵函數的三個分量：第一與第三分量是 <span class="math notranslate nohighlight">\(\mathcal{H}_{n+1}\)</span> 與 <span class="math notranslate nohighlight">\(\mathcal{H}_{n-1}\)</span> 的組合（差在正負號），第二分量則是單一個 <span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> ─ 本篇只拿它來和 Hermite 轉換解出的結果對照。（已於本庫 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">Equatorial Wave Eigenfunctions</span></a>【證明 (a)】完整證明，僅供【證明 (e)】對照用。）</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{K}_{mnr} = A_{mnr}\begin{pmatrix}
   \epsilon^{1/4}\left[\mathcal{P}_{mnr}\mathcal{H}_{n+1} + \mathcal{M}_{mnr}\mathcal{H}_{n-1}\right] \cr
@@ -612,6 +615,7 @@ im\,\mathcal{H}_n \cr
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A_{mnr}\)</span> : 歸一化常數 (Normalization constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【假設 1】 展開的完備性與逐項運算 (Completeness and term-by-term operations)：</strong> <span class="math notranslate nohighlight">\(\hat{\psi}_m\)</span> 與 <span class="math notranslate nohighlight">\(\hat{q}_m\)</span> 都可用 <span class="math notranslate nohighlight">\(\left\{\mathcal{H}_n\right\}\)</span> 展開，且積分／微分可與求和交換</p>
@@ -663,7 +667,7 @@ im\,\mathcal{H}_n \cr
 <li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
 </ul>
 </li>
-<li><p><strong>【推導 2】 座標換算的兩個常數 (Two conversion constants)：</strong></p>
+<li><p><strong>【推導 2】 座標換算的兩個常數 (Two conversion constants)：</strong> 把有因次的 <span class="math notranslate nohighlight">\(y\)</span> 換成無因次 <span class="math notranslate nohighlight">\(\hat{y}\)</span> 時，經向微分與 <span class="math notranslate nohighlight">\(\beta y\)</span> 這兩處各自吐出一個常數係數；先在這裡算清楚，主證明才能一路用無因次量走完。值得注意的是兩者的係數同為 <span class="math notranslate nohighlight">\(\dfrac{\bar{c}\epsilon^{1/4}}{a}\)</span>。</p>
 <ul>
 <li><p>(a) 經向微分：</p>
 <div class="math notranslate nohighlight">
@@ -687,7 +691,7 @@ im\,\mathcal{H}_n \cr
 <li><p>註：(b) 最後一步用到 <span class="math notranslate nohighlight">\(\bar{c} = \dfrac{2\Omega a}{\epsilon^{1/2}}\)</span>，即【已知 4】(c) 中 <span class="math notranslate nohighlight">\(\epsilon\)</span> 定義的改寫。</p></li>
 </ul>
 </li>
-<li><p><strong>【推導 3】 羅斯貝極限下的兩個振幅 (The two amplitudes in the Rossby limit)：</strong></p>
+<li><p><strong>【推導 3】 羅斯貝極限下的兩個振幅 (The two amplitudes in the Rossby limit)：</strong> 在羅斯貝波的低頻極限（<span class="math notranslate nohighlight">\(\epsilon\hat{\nu}_{mnr}^{2} \ll m^{2}\)</span>）下，上下行振幅與第二分量的係數都退化成只含 <span class="math notranslate nohighlight">\(m\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span> 的簡單形式 ─ 這三個近似值就是後面把 Hermite 級數解收成封閉式的全部素材。</p>
 <ul>
 <li><p>(a) 上行振幅：</p>
 <div class="math notranslate nohighlight">
@@ -713,6 +717,7 @@ im\,\mathcal{H}_n \cr
 <li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : 無因次本徵頻率 (Dimensionless eigenfrequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
 </ul>
 </li>
 </ul>

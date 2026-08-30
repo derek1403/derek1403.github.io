@@ -1,0 +1,1140 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Asymptotic Peeling of the Laguerre-Type Radial Equation (拉蓋爾型徑向方程式的漸近行為剝離) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Differential_Equations/Asymptotic_Peeling_of_the_Laguerre_Type_Radial_Equation';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Differential_Equations/Asymptotic_Peeling_of_the_Laguerre_Type_Radial_Equation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Differential_Equations/Asymptotic_Peeling_of_the_Laguerre_Type_Radial_Equation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Asymptotic Peeling of the Laguerre-Type Radial Equation (拉蓋爾型徑向方程式的漸近行為剝離)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-reduction-to-the-associated-laguerre-equation">(a) proof 化為連帶拉蓋爾方程式 (Reduction to the associated Laguerre equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-verify-verification-the-3-d-coulomb-case">(b) verify 三維球座標的庫倫問題 (Verification: the 3-D Coulomb case)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">「剝離」不是技巧，是被冪級數法逼出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">為什麼不能「把方程式取極限」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v">剝離的目的不是把 <span class="math notranslate nohighlight">\(v\)</span> 變成常數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">兩個因子分別來自方程式的哪一項</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">為什麼指標方程式的根一定要選那一個</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">【定義 1(d)】為什麼需要</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dfrac-x-2-x">為什麼指數上是 <span class="math notranslate nohighlight">\(-\dfrac{x}{2}\)</span> 而不是 <span class="math notranslate nohighlight">\(-x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">這份推導覆蓋哪些系統</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="asymptotic-peeling-of-the-laguerre-type-radial-equation">
+<h1>Asymptotic Peeling of the Laguerre-Type Radial Equation (拉蓋爾型徑向方程式的漸近行為剝離)<a class="headerlink" href="#asymptotic-peeling-of-the-laguerre-type-radial-equation" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>任何最終能以連帶拉蓋爾多項式解出的物理系統，其徑向方程式在無因次化之後都可以寫成 <span class="math notranslate nohighlight">\(\frac{d^{2}u}{dx^{2}} + \frac{b}{x}\frac{du}{dx} + \left[ -\frac{1}{4} + \frac{\lambda}{x} - \frac{c}{x^{2}} \right]u = 0\)</span> 而處理這條方程式的第一步，永遠是<strong>先把兩端</strong> <span class="math notranslate nohighlight">\((x \to \infty , x \to 0)\)</span> <strong>的漸近行為以顯式因子提出來</strong>，再對剩下的部分做冪級數 <span class="math notranslate nohighlight">\(v(x)\)</span> 展開</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;\frac{d^{2}u}{dx^{2}} + \frac{b}{x}\frac{du}{dx} + \left[ -\frac{1}{4} + \frac{\lambda}{x} - \frac{c}{x^{2}} \right]u &amp;=&amp; 0 \\
+\Rightarrow&amp; x\frac{d^{2}v}{dx^{2}} + \left( p + 1 - x \right)\frac{dv}{dx} + q\,v &amp;=&amp; 0 \\
+&amp; \left\{\begin{matrix}
+u\left( x \right) &amp;=&amp; e^{-x/2}x^{\alpha}v\left( x \right) \\
+p &amp;=&amp; 2\alpha + b - 1 \\
+q &amp;=&amp; \lambda - \alpha - \frac{b}{2}
+\end{matrix}\right.
+\end{gather*}\end{split}\]</div>
+<p>其中</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次徑向座標 (Dimensionless radial coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(0 &lt; x &lt; \infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 尚未剝離漸近行為的完整徑向解 (Full radial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x)\)</span> : 剝離之後剩下的餘因子 (Residual factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，其冪級數可截斷成多項式</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> : 一階項係數 (First-order coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，三維球座標的徑向問題為 <span class="math notranslate nohighlight">\(b = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 離心項係數 (Centrifugal coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(c \ge 0\)</span>；三維球座標為 <span class="math notranslate nohighlight">\(c = \ell\left( \ell+1 \right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 無因次能量參數 (Dimensionless energy parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，兩端都不主導，其影響全部落在 <span class="math notranslate nohighlight">\(v\)</span> 上</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 原點處的冪次 (Exponent at the origin) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，為指標方程式 <span class="math notranslate nohighlight">\(\alpha^{2} + \left( b-1 \right)\alpha - c = 0\)</span> 的較大根</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-x/2}\)</span> : 無窮遠處的指數衰減因子 (Exponential decay factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 連帶拉蓋爾方程式的階參數 (Order parameter of the associated Laguerre equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 連帶拉蓋爾方程式的本徵值 (Eigenvalue of the associated Laguerre equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【定義 1】 拉蓋爾型徑向方程式 (Laguerre-type radial equation)：</strong> 中心力場的徑向方程式在做完無因次化（把長度尺度吸收進 <span class="math notranslate nohighlight">\(x\)</span>、使無窮遠處的衰減率恰為 <span class="math notranslate nohighlight">\(\tfrac12\)</span>）之後的標準形式。</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^{2}u}{dx^{2}} + p\left( x \right)\frac{du}{dx} + q\left( x \right)u = 0\]</div>
+<ul class="simple">
+<li><p>(a) 一階項的係數函數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p\left( x \right) \overset{\text{def}}{=} \frac{b}{x}\]</div>
+<ul class="simple">
+<li><p>(b) 零階項的係數函數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q\left( x \right) \overset{\text{def}}{=} -\frac{1}{4} + \frac{\lambda}{x} - \frac{c}{x^{2}}\]</div>
+<ul class="simple">
+<li><p>(c) 離心項係數非負：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[c \ge 0\]</div>
+<ul class="simple">
+<li><p>(d) 為使原點處的第二解確實發散（而非有界），另要求：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[c &gt; 0 \quad \text{或} \quad b &gt; 1\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次徑向座標 (Dimensionless radial coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(0 &lt; x &lt; \infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 尚未剝離漸近行為的完整徑向解 (Full radial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(x)\)</span> : 一階項的係數函數 (First-order coefficient function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q(x)\)</span> : 零階項的係數函數 (Zeroth-order coefficient function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> : 一階項係數 (First-order coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，三維球座標的徑向問題為 <span class="math notranslate nohighlight">\(b = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 離心項係數 (Centrifugal coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，三維球座標為 <span class="math notranslate nohighlight">\(c = \ell\left( \ell+1 \right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 無因次能量參數 (Dimensionless energy parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 連帶拉蓋爾方程式的標準形式 (Standard form of the associated Laguerre equation)：</strong> 本文最終要比對的目標形式。此方程式本身的截斷條件與帶權正交性，見本庫 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">⟨Associated Laguerre Equation and Polynomials⟩</a>。</p>
+<div class="math notranslate nohighlight">
+\[x\frac{d^{2}v}{dx^{2}} + \left( p + 1 - x \right)\frac{dv}{dx} + q\,v = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次自變數 (Dimensionless independent variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，與【定義 1】同一個</p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x)\)</span> : 剝離漸近行為之後剩下的餘因子 (Residual factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 階參數 (Order parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 本徵值 (Eigenvalue) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 無窮遠處的可歸一化條件 (Normalizability at infinity)：</strong> 束縛態的解在無窮遠處必須趨於零，否則機率積分發散。</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty}u\left( x \right) = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 完整徑向解 (Full radial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次徑向座標 (Dimensionless radial coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 原點處的有界性 (Boundedness at the origin)：</strong> 原點是物理空間中的<strong>平凡點</strong>（力心所在，但不是物理奇點），解在該處必須有限。</p>
+<div class="math notranslate nohighlight">
+\[\left| u\left( 0 \right) \right| &lt; \infty\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(0)\)</span> : 完整徑向解在原點的值 (Value of the solution at the origin) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 Poincaré–Perron 定理 (Poincaré–Perron theorem)：</strong> 適用前提有二：<span class="math notranslate nohighlight">\(p(x)\)</span> 與 <span class="math notranslate nohighlight">\(q(x)\)</span> 在 <span class="math notranslate nohighlight">\(x \to \infty\)</span> 皆收斂到<strong>有限</strong>極限（見 (a)(b)），且 (d) 特徵方程式的兩根<strong>實部相異</strong>。滿足時，【定義 1】的<strong>任一</strong>非零解的指數成長率必等於其中一根。注意此定理只鎖定<strong>指數</strong>行為，解仍可帶次指數的冪次因子。</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty}\frac{1}{x}\ln\left| u\left( x \right) \right| = s_{i}, \qquad i \in \left\{ +, - \right\}\]</div>
+<ul class="simple">
+<li><p>(a) 一階項係數函數的極限（適用前提之一：須為有限值）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{\infty} \overset{\text{def}}{=} \lim_{x \to \infty}p\left( x \right)\]</div>
+<ul class="simple">
+<li><p>(b) 零階項係數函數的極限（適用前提之一：須為有限值）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q_{\infty} \overset{\text{def}}{=} \lim_{x \to \infty}q\left( x \right)\]</div>
+<ul class="simple">
+<li><p>(c) 無窮遠處的<strong>極限方程式</strong>：把【定義 1】的兩個係數函數各自換成 (a)(b) 的極限值，得到一條常係數方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{d^{2}u}{dx^{2}} + p_{\infty}\frac{du}{dx} + q_{\infty}u = 0\]</div>
+<ul class="simple">
+<li><p>(d) <strong>特徵方程式</strong>：把指數試解 <span class="math notranslate nohighlight">\(u = e^{sx}\)</span> 代入 (c)（<span class="math notranslate nohighlight">\(e^{sx} \ne 0\)</span> 故可整條除掉）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  0 &amp;\overset{\text{已知 1(c)}}{=}&amp; \frac{d^{2}}{dx^{2}}\left[ e^{sx} \right] + p_{\infty}\frac{d}{dx}\left[ e^{sx} \right] + q_{\infty}e^{sx} \\
+  0 &amp;=&amp; s^{2}e^{sx} + p_{\infty}s\,e^{sx} + q_{\infty}e^{sx} \\
+  0 &amp;=&amp; \left( s^{2} + p_{\infty}s + q_{\infty} \right)e^{sx} \\
+  0 &amp;=&amp; s^{2} + p_{\infty}s + q_{\infty}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 【定義 1】的任一非零解 (Any nontrivial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次徑向座標 (Dimensionless radial coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s_{\pm}\)</span> : 特徵方程式的兩根 (Roots of the characteristic equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{\infty}\)</span> : 一階項係數函數在無窮遠處的極限 (Limit of the first-order coefficient function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q_{\infty}\)</span> : 零階項係數函數在無窮遠處的極限 (Limit of the zeroth-order coefficient function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> : 指數試解 <span class="math notranslate nohighlight">\(e^{sx}\)</span> 的成長率 (Growth rate of the exponential trial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 Frobenius 定理 (Frobenius theorem at a regular singular point)：</strong> 適用前提為 <span class="math notranslate nohighlight">\(x = 0\)</span> 是<strong>正規奇點</strong>，即 <span class="math notranslate nohighlight">\(x\,p(x)\)</span> 與 <span class="math notranslate nohighlight">\(x^{2}q(x)\)</span> 在 <span class="math notranslate nohighlight">\(x \to 0\)</span> 皆收斂到<strong>有限</strong>極限（見 (a)(b)）。滿足時，兩個線性獨立解在 <span class="math notranslate nohighlight">\(x \to 0\)</span> 的<strong>領頭行為</strong>由 (d) 指標方程式的兩根 <span class="math notranslate nohighlight">\(\alpha_{\pm}\)</span> 給出。兩根相差整數時，較小根那一支可能另乘一個 <span class="math notranslate nohighlight">\(\ln x\)</span>；由於 <span class="math notranslate nohighlight">\(\ln x\)</span> 在原點本身就發散，這不影響下文「該支是否發散」的判定。</p>
+<div class="math notranslate nohighlight">
+\[u\left( x \right) \sim C_{+}x^{\alpha_{+}} + C_{-}x^{\alpha_{-}}\]</div>
+<ul class="simple">
+<li><p>(a) 一階項的極限（適用前提之一：須為有限值）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{0} \overset{\text{def}}{=} \lim_{x \to 0}x\,p\left( x \right)\]</div>
+<ul class="simple">
+<li><p>(b) 零階項的極限（適用前提之一：須為有限值）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q_{0} \overset{\text{def}}{=} \lim_{x \to 0}x^{2}q\left( x \right)\]</div>
+<ul class="simple">
+<li><p>(c) 原點處的<strong>極限方程式（尤拉方程式）</strong>：把【定義 1】兩側同乘 <span class="math notranslate nohighlight">\(x^{2}\)</span> 之後，一階項與零階項的係數分別是 <span class="math notranslate nohighlight">\(x\,p(x)\)</span> 與 <span class="math notranslate nohighlight">\(x^{2}q(x)\)</span>；在 <span class="math notranslate nohighlight">\(x \to 0\)</span> 各自換成 (a)(b) 的極限值：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[x^{2}\frac{d^{2}u}{dx^{2}} + p_{0}\,x\frac{du}{dx} + q_{0}\,u = 0\]</div>
+<ul class="simple">
+<li><p>(d) <strong>指標方程式</strong>：把冪次試解 <span class="math notranslate nohighlight">\(u = x^{\alpha}\)</span> 代入 (c)（<span class="math notranslate nohighlight">\(x^{\alpha} \ne 0\)</span> 於 <span class="math notranslate nohighlight">\(x &gt; 0\)</span> 故可整條除掉）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  0 &amp;\overset{\text{已知 2(c)}}{=}&amp; x^{2}\frac{d^{2}}{dx^{2}}\left[ x^{\alpha} \right] + p_{0}\,x\frac{d}{dx}\left[ x^{\alpha} \right] + q_{0}\,x^{\alpha} \\
+  0 &amp;=&amp; x^{2}\,\alpha\left( \alpha-1 \right)x^{\alpha-2} + p_{0}\,x\,\alpha x^{\alpha-1} + q_{0}\,x^{\alpha} \\
+  0 &amp;=&amp; \left[ \alpha\left( \alpha-1 \right) + p_{0}\,\alpha + q_{0} \right]x^{\alpha} \\
+  0 &amp;=&amp; \alpha\left( \alpha-1 \right) + p_{0}\,\alpha + q_{0}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 【定義 1】的通解 (General solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次徑向座標 (Dimensionless radial coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha_{\pm}\)</span> : 指標方程式的兩根 (Roots of the indicial equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\alpha_{-} \le \alpha_{+}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{\pm}\)</span> : 兩個線性獨立解的組合係數 (Combination coefficients) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{0}\)</span> : 一階項在正規奇點處的極限 (Limit of the first-order coefficient at the regular singular point) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q_{0}\)</span> : 零階項在正規奇點處的極限 (Limit of the zeroth-order coefficient at the regular singular point) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 冪次試解 <span class="math notranslate nohighlight">\(x^{\alpha}\)</span> 的冪次 (Exponent of the power trial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 一元二次方程式的公式解 (Quadratic formula)：</strong> 適用前提為二次項係數 <span class="math notranslate nohighlight">\(A_2 \ne 0\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  A_2 z^{2} + A_1 z + A_0 &amp;=&amp; 0 \\
+  z_{\pm} &amp;=&amp; \frac{-A_1 \pm \left( A_1^{2} - 4A_2 A_0 \right)^{1/2}}{2A_2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z_{\pm}\)</span> : 兩個根 (The two roots) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_2, A_1, A_0\)</span> : 二次、一次、常數項係數 (Quadratic, linear and constant coefficients) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(A_2 \ne 0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 <span class="math notranslate nohighlight">\(x \to \infty\)</span> 時拉蓋爾型徑向方程式的特徵根 (Characteristic roots of the Laguerre-type radial equation as <span class="math notranslate nohighlight">\(x \to \infty\)</span>)：</strong> 先算出【已知 1】所需的兩個係數極限 (a)(b)（順帶確認兩者皆有限，適用前提之一成立），再餵進【已知 1(d)】的特徵方程式解根 (c)，最後 (d) 驗證兩根實部相異。</p>
+<ul class="simple">
+<li><p>(a) 一階項係數函數的極限：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \lim_{x \to \infty}p\left( x \right) &amp;\overset{\text{定義 1(a)}}{=}&amp; \lim_{x \to \infty}\frac{b}{x} \\
+  \lim_{x \to \infty}p\left( x \right) &amp;=&amp; 0 \\
+  p_{\infty} &amp;\overset{\text{已知 1(a)}}{=}&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 零階項係數函數的極限：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \lim_{x \to \infty}q\left( x \right) &amp;\overset{\text{定義 1(b)}}{=}&amp; \lim_{x \to \infty}\left( -\frac{1}{4} + \frac{\lambda}{x} - \frac{c}{x^{2}} \right) \\
+  \lim_{x \to \infty}q\left( x \right) &amp;=&amp; -\frac{1}{4} + 0 - 0 \\
+  \lim_{x \to \infty}q\left( x \right) &amp;=&amp; -\frac{1}{4} \\
+  q_{\infty} &amp;\overset{\text{已知 1(b)}}{=}&amp; -\frac{1}{4}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 代入特徵方程式解根：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  0 &amp;\overset{\text{已知 1(d)}}{=}&amp; s^{2} + p_{\infty}s + q_{\infty} \\
+  0 &amp;\overset{\text{推導 1(a)(b)}}{=}&amp; s^{2} + 0 \cdot s - \frac{1}{4} \\
+  0 &amp;=&amp; s^{2} - \frac{1}{4} \\
+  s^{2} &amp;=&amp; \frac{1}{4} \\
+  s_{\pm} &amp;=&amp; \pm\frac{1}{2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(d) 兩根實部相異，【已知 1】的第二個適用前提成立：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \mathrm{Re}\left( s_{+} \right) - \mathrm{Re}\left( s_{-} \right) &amp;\overset{\text{推導 1(c)}}{=}&amp; \frac{1}{2} - \left( -\frac{1}{2} \right) \\
+  &amp;=&amp; 1 \\
+  &amp;\ne&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s_{\pm}\)</span> : 特徵方程式的兩根 (Roots of the characteristic equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{\infty}, q_{\infty}\)</span> : 兩個係數函數在無窮遠處的極限 (Limits of the coefficient functions) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 無窮遠處的指數衰減率 (Exponential decay rate at infinity)：</strong> 兩個適用前提已由【推導 1(a)(b)(d)】驗畢，故可用【已知 1】把成長率鎖在 <span class="math notranslate nohighlight">\(\pm\tfrac12\)</span>；再由【假設 1】推出成長率不可能為正，於是只剩負根。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  0 &amp;\overset{\text{假設 1}}{=}&amp; \lim_{x \to \infty}u\left( x \right) \\
+  -\infty &amp;=&amp; \lim_{x \to \infty}\ln\left| u\left( x \right) \right| \\
+  \frac{1}{x}\ln\left| u\left( x \right) \right| &amp;&lt;&amp; 0 &amp;\qquad \left( x \text{ 足夠大時} \right) \\
+  \lim_{x \to \infty}\frac{1}{x}\ln\left| u\left( x \right) \right| &amp;\le&amp; 0 \\
+  \lim_{x \to \infty}\frac{1}{x}\ln\left| u\left( x \right) \right| &amp;\overset{\text{已知 1,推導 1(d)}}{=}&amp; s_{i}&amp;, i \in \left\{ +, - \right\} , \qquad s_{i} &amp;\le&amp; 0 \\
+  \lim_{x \to \infty}\frac{1}{x}\ln\left| u\left( x \right) \right| &amp;\overset{\text{推導 1(c)}}{=}&amp; -\frac{1}{2}   \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 完整徑向解 (Full radial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次徑向座標 (Dimensionless radial coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s_{\pm}\)</span> : 特徵方程式的兩根 (Roots of the characteristic equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，其值由【推導 1(c)】給出</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_{i}\)</span> : 兩根之中實際被解取到的那一個 (The root actually realized by the solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i \in \left\{ +, - \right\}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 <span class="math notranslate nohighlight">\(x \to 0\)</span> 時拉蓋爾型徑向方程式的指標根 (Indicial roots of the Laguerre-type radial equation as <span class="math notranslate nohighlight">\(x \to 0\)</span>)：</strong> 先算出【已知 2】所需的兩個極限 (a)(b)（兩者皆為有限值，故 <span class="math notranslate nohighlight">\(x = 0\)</span> 確為正規奇點，適用前提成立），再餵進【已知 2(d)】的指標方程式解根 (c)。</p>
+<ul class="simple">
+<li><p>(a) 一階項在原點的極限：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \lim_{x \to 0}x\,p\left( x \right) &amp;\overset{\text{定義 1(a)}}{=}&amp; \lim_{x \to 0}x \cdot \frac{b}{x} \\
+  \lim_{x \to 0}x\,p\left( x \right) &amp;=&amp; b \\
+  p_{0} &amp;\overset{\text{已知 2(a)}}{=}&amp; b
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 零階項在原點的極限：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \lim_{x \to 0}x^{2}q\left( x \right) &amp;\overset{\text{定義 1(b)}}{=}&amp; \lim_{x \to 0}x^{2}\left( -\frac{1}{4} + \frac{\lambda}{x} - \frac{c}{x^{2}} \right) \\
+  \lim_{x \to 0}x^{2}q\left( x \right) &amp;=&amp; \lim_{x \to 0}\left( -\frac{x^{2}}{4} + \lambda x - c \right) \\
+  \lim_{x \to 0}x^{2}q\left( x \right) &amp;=&amp; -c \\
+  q_{0} &amp;\overset{\text{已知 2(b)}}{=}&amp; -c
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 代入指標方程式解根（二次項係數 <span class="math notranslate nohighlight">\(A_2 = 1 \ne 0\)</span>，【已知 3】可用）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  0 &amp;\overset{\text{已知 2(d)}}{=}&amp; \alpha\left( \alpha-1 \right) + p_{0}\,\alpha + q_{0} \\
+  0 &amp;\overset{\text{推導 3(a)(b)}}{=}&amp; \alpha\left( \alpha-1 \right) + b\,\alpha - c \\
+  0 &amp;=&amp; \alpha^{2} + \left( b-1 \right)\alpha - c \\
+  \alpha_{\pm} &amp;\overset{\text{已知 3}}{=}&amp; \frac{-\left( b-1 \right) \pm \left[ \left( b-1 \right)^{2} - 4 \cdot 1 \cdot \left( -c \right) \right]^{1/2}}{2 \cdot 1} \\
+  \alpha_{\pm} &amp;=&amp; \frac{\left( 1-b \right) \pm \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2}}{2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha_{\pm}\)</span> : 指標方程式的兩根 (Roots of the indicial equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{0}, q_{0}\)</span> : 正規奇點處的兩個極限 (Limits at the regular singular point) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 較小指標根為負 (The smaller indicial root is negative)：</strong> 由【定義 1(d)】的兩種情形分別推出 <span class="math notranslate nohighlight">\(\alpha_{-} &lt; 0\)</span>，供【推導 5】用【假設 2】剔除該支。</p>
+<ul class="simple">
+<li><p>(a) 當 <span class="math notranslate nohighlight">\(c &gt; 0\)</span> ：只要這個條件成立，就自動滿足了【定義 1(d)】裡的 <strong>或</strong> 條件，此時不需要再去管 <span class="math notranslate nohighlight">\(b\)</span> 是多少。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  1-b &amp;\le&amp; \left| 1-b \right| \\
+  1-b &amp;\overset{\text{定義 1(d)}}{&lt;}&amp; \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2} \\
+  \left( 1-b \right) - \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2} &amp;&lt;&amp; 0 \\
+  \frac{\left( 1-b \right) - \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2}}{2} &amp;&lt;&amp; 0 \\
+  \alpha_{-} &amp;\overset{\text{推導 3(c)}}{&lt;}&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 當 <span class="math notranslate nohighlight">\(c = 0\)</span> 且 <span class="math notranslate nohighlight">\(b &gt; 1\)</span>： 在 <span class="math notranslate nohighlight">\(c=0\)</span> 的前提下，為了繼續滿足【定義 1(d)】，就必須強迫另一個條件成立，也就是必須要求 <span class="math notranslate nohighlight">\(b &gt; 1\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \left( 1-b \right)^{2} + 4c  &amp;=&amp;  \left( 1-b \right)^{2} \\
+  \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2} &amp;=&amp; \left[ \left( 1-b \right)^{2} \right]^{1/2} \\
+  \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2} &amp;=&amp; \left| 1-b \right| \\
+  \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2} &amp;\overset{\text{定義 1(d)}}{=}&amp; b-1 \\
+  \frac{\left( 1-b \right) - \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2}}{2} &amp;=&amp; \frac{\left( 1-b \right) - \left( b-1 \right)}{2} \\
+  \frac{\left( 1-b \right) - \left[ \left( 1-b \right)^{2} + 4c \right]^{1/2}}{2} &amp;=&amp; 1-b \\
+  \alpha_{-} &amp;\overset{\text{推導 3(c)}}{=}&amp; 1-b \\
+  \alpha_{-} &amp;\overset{\text{定義 1(d)}}{&lt;}&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha_{-}\)</span> : 較小的指標根 (The smaller indicial root) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b, c\)</span> : 【定義 1】的兩個係數 (Coefficients of the Laguerre-type radial equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 原點處的領頭冪次 (Leading power at the origin)：</strong> 適用前提已由【推導 3(a)(b)】驗畢，故可用【已知 2】把通解的領頭行為攤成兩支；再由【推導 4】知較小根那支發散，與【假設 2】矛盾，其係數必為零。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;u\left( x \right) &amp;\overset{\text{已知 2,推導 3(c)}}{\sim}&amp; C_{+}x^{\alpha_{+}} + C_{-}x^{\alpha_{-}} \\
+  &amp;\lim_{x \to 0}\left| u\left( x \right) \right| &amp;=&amp; \lim_{x \to 0}\left| C_{+}x^{\alpha_{+}} + C_{-}x^{\alpha_{-}} \right| \\
+  &amp;\lim_{x \to 0}\left| u\left( x \right) \right| &amp;=&amp; \lim_{x\to 0} \left| x^{\alpha_-} \left( C_+ x^{\alpha_+ - \alpha_-} + C_- \right) \right| \\
+  &amp;\lim_{x \to 0}\left| u\left( x \right) \right| &amp;=&amp; \lim_{x\to 0} |x^{\alpha_-}| \cdot \lim_{x\to 0} \left| C_+ x^{\alpha_+ - \alpha_-} + C_- \right|   \\
+  &amp;\lim_{x \to 0}\left| u\left( x \right) \right| &amp;\overset{\text{推導 3(c)}}{=}&amp; \lim_{x\to 0} |x^{\alpha_-}| \cdot  \left| C_+ \cdot 0 + C_- \right|   \\
+  &amp;\lim_{x \to 0}\left| u\left( x \right) \right| &amp;\overset{\text{推導 4(a)(b)}}{=}&amp; \infty \cdot |C_-|\\
+  \overset{\text{假設 2}}{\Rightarrow}&amp;C_{-} &amp;=&amp; 0 \\
+  \Rightarrow&amp;u\left( x \right) &amp;\sim&amp; C_{+}x^{\alpha_{+}} + 0 \cdot x^{\alpha_{-}} \\
+  &amp;u\left( x \right) &amp;\sim&amp; C_{+}x^{\alpha_{+}}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 完整徑向解 (Full radial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha_{\pm}\)</span> : 指標方程式的兩根 (Roots of the indicial equation) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{\pm}\)</span> : 兩支的組合係數 (Combination coefficients) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 6】 漸近因子的剝離設定 (The peeling ansatz)：</strong> 把【推導 2】（無窮遠處的指數行為）與【推導 5】（原點的冪次行為）兩端的領頭行為，以顯式因子 <span class="math notranslate nohighlight">\(f\)</span> 提出來，剩下的部分定義為餘因子 <span class="math notranslate nohighlight">\(v\)</span>。此步驟本身只是<strong>改寫</strong>（<span class="math notranslate nohighlight">\(f &gt; 0\)</span> 於 <span class="math notranslate nohighlight">\(x &gt; 0\)</span>，故 <span class="math notranslate nohighlight">\(v\)</span> 恆為良定義）；前面兩個推導的作用，是保證這樣提出來之後 <span class="math notranslate nohighlight">\(v\)</span> 在兩端都不再帶指數行為或奇異冪次。</p>
+<ul class="simple">
+<li><p>(a) 取較大指標根為剝離冪次（較小根那支已由【推導 5】剔除）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\alpha \overset{\text{let}}{=} \alpha_{+}\]</div>
+<ul class="simple">
+<li><p>(b) 剝離因子（指數部分的 <span class="math notranslate nohighlight">\(-\tfrac12\)</span> 來自【推導 2】、冪次部分的 <span class="math notranslate nohighlight">\(\alpha\)</span> 來自【推導 5】）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f\left( x \right) \overset{\text{let}}{=} e^{-x/2}x^{\alpha}\]</div>
+<ul class="simple">
+<li><p>(c) 餘因子：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[v\left( x \right) \overset{\text{let}}{=} \frac{u\left( x \right)}{f\left( x \right)}\]</div>
+<ul class="simple">
+<li><p>(d) 於是完整解可改寫成：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  u\left( x \right) &amp;\overset{\text{推導 6(c)}}{=}&amp; f\left( x \right)v\left( x \right) \\
+  u\left( x \right) &amp;\overset{\text{推導 6(b)}}{=}&amp; e^{-x/2}x^{\alpha}v\left( x \right)
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 剝離所取的原點冪次 (Peeling exponent at the origin) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha_{+}\)</span> : 較大的指標根 (The larger indicial root) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> : 剝離因子 (Peeling factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，於 <span class="math notranslate nohighlight">\(x &gt; 0\)</span> 恆有 <span class="math notranslate nohighlight">\(f &gt; 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 完整徑向解 (Full radial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x)\)</span> : 剝離之後剩下的餘因子 (Residual factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 7】 剝離因子的導數與代入後的兩個係數 (Derivatives of the peeling factor and the resulting coefficients)：</strong> 把【推導 6】設好的 <span class="math notranslate nohighlight">\(f\)</span> 微分兩次，並先把「代入【定義 1】並除以 <span class="math notranslate nohighlight">\(f\)</span>」之後會出現的一階項係數 (e) 與零階項係數 (f) 算完，讓證明段只剩一條乾淨的代入鏈。</p>
+<ul class="simple">
+<li><p>(a) 一階對數導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{1}{f}\frac{df}{dx} &amp;=&amp; \frac{d}{dx}\left[ \ln f \right] \\
+  \frac{1}{f}\frac{df}{dx} &amp;\overset{\text{推導 6(b)}}{=}&amp; \frac{d}{dx}\left[ \ln\left( e^{-x/2}x^{\alpha} \right) \right] \\
+  \frac{1}{f}\frac{df}{dx} &amp;=&amp; \frac{d}{dx}\left[ \alpha\ln x - \frac{x}{2} \right] \\
+  \frac{1}{f}\frac{df}{dx} &amp;=&amp; \frac{\alpha}{x} - \frac{1}{2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 二階導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{1}{f}\frac{df}{dx} &amp;\overset{\text{推導 7(a)}}{=}&amp; \frac{\alpha}{x} - \frac{1}{2}  \\
+  \frac{df}{dx} &amp;=&amp; f\left( \frac{\alpha}{x} - \frac{1}{2} \right) \\
+  \frac{d^{2}f}{dx^{2}} &amp;=&amp; \frac{df}{dx}\left( \frac{\alpha}{x} - \frac{1}{2} \right) + f\frac{d}{dx}\left[ \frac{\alpha}{x} - \frac{1}{2} \right] \\
+  \frac{d^{2}f}{dx^{2}} &amp;=&amp; f\left( \frac{\alpha}{x} - \frac{1}{2} \right)^{2} + f\left( -\frac{\alpha}{x^{2}} \right) \\
+  \frac{1}{f}\frac{d^{2}f}{dx^{2}} &amp;=&amp; \frac{\alpha^{2}}{x^{2}} - \frac{\alpha}{x} + \frac{1}{4} - \frac{\alpha}{x^{2}}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) <span class="math notranslate nohighlight">\(u = fv\)</span> 的一階導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{du}{dx} &amp;\overset{\text{推導 6(d)}}{=}&amp; \frac{d}{dx}\left[ f v \right] \\
+  \frac{du}{dx} &amp;=&amp; \frac{df}{dx}v + f\frac{dv}{dx}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(d) <span class="math notranslate nohighlight">\(u = fv\)</span> 的二階導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{du}{dx} &amp;\overset{\text{推導 7(c)}}{=}&amp; \frac{df}{dx}v + f\frac{dv}{dx} \\
+  \frac{d^{2}u}{dx^{2}} &amp;=&amp; \frac{d}{dx}\left[ \frac{df}{dx}v + f\frac{dv}{dx} \right] \\
+  \frac{d^{2}u}{dx^{2}} &amp;=&amp; \frac{d^{2}f}{dx^{2}}v + 2\frac{df}{dx}\frac{dv}{dx} + f\frac{d^{2}v}{dx^{2}}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(e) 代入並除以 <span class="math notranslate nohighlight">\(f\)</span> 之後，一階項的係數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{2}{f}\frac{df}{dx} &amp;\overset{\text{推導 7(a)}}{=}&amp; 2\left( \frac{\alpha}{x} - \frac{1}{2} \right)  \\
+  \frac{2}{f}\frac{df}{dx} + p\left( x \right) &amp;=&amp; 2\left( \frac{\alpha}{x} - \frac{1}{2} \right) + p\left( x \right) \\
+  \frac{2}{f}\frac{df}{dx} + p\left( x \right)&amp;\overset{\text{定義 1(a)}}{=}&amp; \frac{2\alpha}{x} - 1 + \frac{b}{x} \\
+  \frac{2}{f}\frac{df}{dx} + p\left( x \right)&amp;=&amp; \frac{2\alpha + b}{x} - 1
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(f) 代入並除以 <span class="math notranslate nohighlight">\(f\)</span> 之後，零階項的係數（<span class="math notranslate nohighlight">\(x^{-2}\)</span> 項的分子恰為【推導 3(c)】的指標方程式左式，而 <span class="math notranslate nohighlight">\(\alpha\)</span> 依【推導 6(a)】正是它的根，故整批消失）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{1}{f}\frac{d^{2}f}{dx^{2}} + p\left( x \right)\frac{1}{f}\frac{df}{dx} + q\left( x \right) &amp;\overset{\text{推導 7(a)(b)}}{=}&amp; \left( \frac{\alpha^{2}}{x^{2}} - \frac{\alpha}{x} + \frac{1}{4} - \frac{\alpha}{x^{2}} \right) + p\left( x \right)\left( \frac{\alpha}{x} - \frac{1}{2} \right) + q\left( x \right) \\
+  &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; \left( \frac{\alpha^{2}}{x^{2}} - \frac{\alpha}{x} + \frac{1}{4} - \frac{\alpha}{x^{2}} \right) + \frac{b}{x}\left( \frac{\alpha}{x} - \frac{1}{2} \right) + \left( -\frac{1}{4} + \frac{\lambda}{x} - \frac{c}{x^{2}} \right) \\
+  &amp;=&amp; \frac{\alpha^{2} - \alpha + b\alpha - c}{x^{2}} + \frac{\lambda - \alpha - \frac{b}{2}}{x} + \frac{1}{4} - \frac{1}{4} \\
+  &amp;\overset{\text{推導 3(c),推導 6(a)}}{=}&amp; \frac{0}{x^{2}} + \frac{\lambda - \alpha - \frac{b}{2}}{x} \\
+  &amp;=&amp; \frac{\lambda - \alpha - \frac{b}{2}}{x}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> : 剝離因子 (Peeling factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x)\)</span> : 完整徑向解 (Full radial solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x)\)</span> : 餘因子 (Residual factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 剝離所取的原點冪次 (Peeling exponent at the origin) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-reduction-to-the-associated-laguerre-equation">
+<h3>(a) proof 化為連帶拉蓋爾方程式 (Reduction to the associated Laguerre equation)<a class="headerlink" href="#a-proof-reduction-to-the-associated-laguerre-equation" title="Link to this heading">#</a></h3>
+<p>把【推導 6】的剝離設定代入【定義 1】、整條除以 <span class="math notranslate nohighlight">\(f\)</span>，再套【推導 7(e)(f)】算好的兩個係數，最後兩側同乘 <span class="math notranslate nohighlight">\(x\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{定義 1}}{=}&amp; \frac{d^{2}u}{dx^{2}} + p\left( x \right)\frac{du}{dx} + q\left( x \right)u \\
+0 &amp;\overset{\text{推導 7(c)(d)}}{=}&amp; \left( \frac{d^{2}f}{dx^{2}}v + 2\frac{df}{dx}\frac{dv}{dx} + f\frac{d^{2}v}{dx^{2}} \right) + p\left( x \right)\left( \frac{df}{dx}v + f\frac{dv}{dx} \right) + q\left( x \right)f v \\
+0 &amp;=&amp; \frac{d^{2}v}{dx^{2}} + \left[ \frac{2}{f}\frac{df}{dx} + p\left( x \right) \right]\frac{dv}{dx} + \left[ \frac{1}{f}\frac{d^{2}f}{dx^{2}} + p\left( x \right)\frac{1}{f}\frac{df}{dx} + q\left( x \right) \right]v \\
+0 &amp;\overset{\text{推導 7(e)(f)}}{=}&amp; \frac{d^{2}v}{dx^{2}} + \left( \frac{2\alpha + b}{x} - 1 \right)\frac{dv}{dx} + \frac{\lambda - \alpha - \frac{b}{2}}{x}v \\
+0 &amp;=&amp; x\frac{d^{2}v}{dx^{2}} + \left( 2\alpha + b - x \right)\frac{dv}{dx} + \left( \lambda - \alpha - \frac{b}{2} \right)v
+\end{gather*}\end{split}\]</div>
+<p>與【定義 2】比對一階項係數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+p + 1 &amp;\overset{\text{定義 2,(a)}}{=}&amp; 2\alpha + b \\
+p &amp;=&amp; 2\alpha + b - 1
+\end{gather*}\end{split}\]</div>
+<p>與【定義 2】比對零階項係數：</p>
+<div class="math notranslate nohighlight">
+\[q \overset{\text{定義 2,(a)}}{=} \lambda - \alpha - \frac{b}{2}\]</div>
+</section>
+<section id="b-verify-verification-the-3-d-coulomb-case">
+<h3>(b) verify 三維球座標的庫倫問題 (Verification: the 3-D Coulomb case)<a class="headerlink" href="#b-verify-verification-the-3-d-coulomb-case" title="Link to this heading">#</a></h3>
+<p>取 <span class="math notranslate nohighlight">\(b = 2\)</span>、<span class="math notranslate nohighlight">\(c = \ell\left( \ell+1 \right)\)</span>，先由【推導 3(c)】求 <span class="math notranslate nohighlight">\(\alpha\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\alpha &amp;\overset{\text{推導 3(c),推導 6(a)}}{=}&amp; \frac{\left( 1-2 \right) + \left[ \left( 1-2 \right)^{2} + 4\ell\left( \ell+1 \right) \right]^{1/2}}{2} \\
+\alpha &amp;=&amp; \frac{-1 + \left( 4\ell^{2} + 4\ell + 1 \right)^{1/2}}{2} \\
+\alpha &amp;=&amp; \frac{-1 + \left( 2\ell+1 \right)}{2} \\
+\alpha &amp;=&amp; \ell
+\end{gather*}\end{split}\]</div>
+<p>再代入 (a) 的兩條係數式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+p &amp;\overset{\text{(a)}}{=}&amp; 2\ell + 2 - 1 \\
+p &amp;=&amp; 2\ell + 1 \\
+q &amp;\overset{\text{(a)}}{=}&amp; \lambda - \ell - \frac{2}{2} \\
+q &amp;=&amp; \lambda - \ell - 1
+\end{gather*}\end{split}\]</div>
+<p>與氫原子問題中直接硬做所得的結果完全相同。</p>
+</section>
+</section>
+<section id="id3">
+<h2>結構解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>「剝離」不是技巧，是被冪級數法逼出來的<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>冪級數 <span class="math notranslate nohighlight">\(\sum_k a_k x^k\)</span> 有兩件事做不到：它在 <span class="math notranslate nohighlight">\(x = 0\)</span> 必定解析（表現不了 <span class="math notranslate nohighlight">\(x^{-3/2}\)</span> 這種奇異冪次），而且它要用無窮多項才能湊出 <span class="math notranslate nohighlight">\(e^{-x/2}\)</span>（因此永遠不會截斷）。方程式在兩端的行為恰好就是這兩種——原點是正規奇點、無窮遠是指數型——所以<strong>先把這兩種行為以顯式因子提出來，剩下的部分才有可能是多項式</strong>。整套「剝離 → 級數 → 截斷 → 量子化」的流程，第一步之所以長這樣，原因僅此而已。</p>
+</section>
+<section id="id5">
+<h3>為什麼不能「把方程式取極限」<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>一個常見但<strong>不嚴謹</strong>的寫法，是把整條方程式加上 <span class="math notranslate nohighlight">\(\left. \cdot \right|_{x \to \infty}\)</span>，說 <span class="math notranslate nohighlight">\(\frac{b}{x}\frac{du}{dx}\)</span> 與 <span class="math notranslate nohighlight">\(\frac{\lambda}{x}u\)</span> 都趨於零因此可丟。問題在於：若 <span class="math notranslate nohighlight">\(u\)</span> 本身像 <span class="math notranslate nohighlight">\(e^{x/2}\)</span> 那樣發散，則 <span class="math notranslate nohighlight">\(\frac{d^{2}u}{dx^{2}}\)</span> 與 <span class="math notranslate nohighlight">\(\frac{b}{x}\frac{du}{dx}\)</span> <strong>兩者都發散</strong>，「趨於零所以可丟」根本不成立。</p>
+<p>嚴謹的做法是把極限取在<strong>係數函數</strong>上，而不是取在方程式或解上。這正是【已知 1(c)】與【已知 2(c)】兩條<strong>極限方程式</strong>的意義：換掉的是常數 <span class="math notranslate nohighlight">\(p_{\infty}, q_{\infty}\)</span>（或 <span class="math notranslate nohighlight">\(p_{0}, q_{0}\)</span>），不是解。而【已知 1】與【已知 2】兩條定理保證了「極限方程式的根」確實鎖死了「原方程式的解」的漸近行為。特徵方程式與指標方程式也不是憑空出現的——它們就是把試解 <span class="math notranslate nohighlight">\(e^{sx}\)</span>、<span class="math notranslate nohighlight">\(x^{\alpha}\)</span> 代進各自的極限方程式、再除掉那個非零因子的結果，見【已知 1(d)】與【已知 2(d)】。這樣一來，【推導 1】與【推導 3】各自都只是「算兩個極限、代一次、解一元二次」，中間不需要任何「某項可丟」的宣告。</p>
+</section>
+<section id="v">
+<h3>剝離的目的不是把 <span class="math notranslate nohighlight">\(v\)</span> 變成常數<a class="headerlink" href="#v" title="Link to this heading">#</a></h3>
+<p>【推導 2】只證出<strong>指數成長率</strong>是 <span class="math notranslate nohighlight">\(-\tfrac12\)</span>，並沒有證出 <span class="math notranslate nohighlight">\(u\)</span> 就等於 <span class="math notranslate nohighlight">\(e^{-x/2}\)</span>——次指數的冪次修正並沒有被鎖定，它會被吸收進 <span class="math notranslate nohighlight">\(v\)</span>。同理 <span class="math notranslate nohighlight">\(x^{\alpha}\)</span> 拿掉的只是<strong>原點的奇異冪次</strong>。因此 <span class="math notranslate nohighlight">\(v\)</span> 在證明 (a) 之後是一個<strong>多項式</strong>而不是常數；它的次數就是 <span class="math notranslate nohighlight">\(q\)</span>，也就是量子數。兩個因子拿掉的，恰好就是冪級數展開處理不了的那兩種行為，不多不少。</p>
+</section>
+<section id="id6">
+<h3>兩個因子分別來自方程式的哪一項<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>看【定義 1(b)】的 <span class="math notranslate nohighlight">\(q(x)\)</span>：<span class="math notranslate nohighlight">\(-\dfrac{1}{4}\)</span> 是<strong>唯一不隨 <span class="math notranslate nohighlight">\(x\)</span> 衰減</strong>的那一項，因此它獨自決定了 <span class="math notranslate nohighlight">\(q_{\infty}\)</span>、給出 <span class="math notranslate nohighlight">\(s_{\pm} = \pm\tfrac12\)</span>；而 <span class="math notranslate nohighlight">\(-\dfrac{c}{x^{2}}\)</span> 是<strong>發散最快</strong>的那一項，因此它獨自決定了 <span class="math notranslate nohighlight">\(q_{0} = -c\)</span>、給出指標方程式。夾在中間的 <span class="math notranslate nohighlight">\(\dfrac{\lambda}{x}\)</span> 在兩個極限中都被壓成零，它的影響全部落在 <span class="math notranslate nohighlight">\(v\)</span> 身上——而 <span class="math notranslate nohighlight">\(v\)</span> 的截斷條件 <span class="math notranslate nohighlight">\(q = \lambda - \alpha - \dfrac{b}{2}\)</span> 為非負整數，正是<strong>能量量子化</strong>的來源。<strong>量子化條件之所以只跟 <span class="math notranslate nohighlight">\(\lambda\)</span> 有關，就是因為 <span class="math notranslate nohighlight">\(\lambda\)</span> 是那個「兩端都不主導」的參數。</strong></p>
+</section>
+<section id="id7">
+<h3>為什麼指標方程式的根一定要選那一個<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>【推導 7(f)】的關鍵在於 <span class="math notranslate nohighlight">\(x^{-2}\)</span> 項的分子 <span class="math notranslate nohighlight">\(\alpha^{2} - \alpha + b\alpha - c\)</span> 恰好就是指標方程式本身。換句話說，<span class="math notranslate nohighlight">\(\alpha\)</span> 之所以要取指標方程式的根，<strong>不是為了讓解在原點有界（那只是篩掉哪一個根的理由），而是為了讓剝離之後的方程式不再有 <span class="math notranslate nohighlight">\(x^{-2}\)</span> 奇異項</strong>——沒有這一步，<span class="math notranslate nohighlight">\(v\)</span> 的方程式就不會落在連帶拉蓋爾的標準形式上。兩個目的剛好被同一條方程式一次滿足，這不是巧合：正規奇點的指標方程式本來就是「把奇異行為抽乾淨」的充要條件。</p>
+</section>
+<section id="d">
+<h3>【定義 1(d)】為什麼需要<a class="headerlink" href="#d" title="Link to this heading">#</a></h3>
+<p>若沒有這條，可能出現 <span class="math notranslate nohighlight">\(\alpha_{-} = 0\)</span> 的情形（例如 <span class="math notranslate nohighlight">\(c = 0\)</span> 且 <span class="math notranslate nohighlight">\(b &lt; 1\)</span>）。那時較小根那一支在原點是<strong>有界</strong>的，【假設 2】就篩不掉它，【推導 5】的邏輯會斷。加上「<span class="math notranslate nohighlight">\(c &gt; 0\)</span> 或 <span class="math notranslate nohighlight">\(b &gt; 1\)</span>」之後，【推導 4】的兩種情形涵蓋所有可能，<span class="math notranslate nohighlight">\(\alpha_{-} &lt; 0\)</span> 恆成立；順帶地，這條也自動保證兩根相異（判別式 <span class="math notranslate nohighlight">\((1-b)^{2} + 4c &gt; 0\)</span>），因此不必再額外要求非重根。下表三個系統都滿足此條件。</p>
+</section>
+<section id="dfrac-x-2-x">
+<h3>為什麼指數上是 <span class="math notranslate nohighlight">\(-\dfrac{x}{2}\)</span> 而不是 <span class="math notranslate nohighlight">\(-x\)</span><a class="headerlink" href="#dfrac-x-2-x" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\tfrac12\)</span> 不是物理，是<strong>無因次化時的人為選擇</strong>：把長度尺度定成讓 <span class="math notranslate nohighlight">\(q_{\infty}\)</span> 恰為 <span class="math notranslate nohighlight">\(-\tfrac14\)</span>，特徵根就會是 <span class="math notranslate nohighlight">\(\pm\sqrt{1/4} = \pm\tfrac12\)</span>。之所以要這樣選，是為了讓證明 (a) 的結果剛好落在連帶拉蓋爾方程式的<strong>標準形式</strong> <span class="math notranslate nohighlight">\(xv'' + (p+1-x)v' + qv = 0\)</span> 上——標準形式裡的 <span class="math notranslate nohighlight">\(-x\dfrac{dv}{dx}\)</span> 係數是 <span class="math notranslate nohighlight">\(-1\)</span>，回推回去就要求衰減率為 <span class="math notranslate nohighlight">\(\tfrac12\)</span>。若當初把尺度定成別的值，方程式仍然可解，只是要多做一次伸縮才對得上文獻裡的 <span class="math notranslate nohighlight">\(L_q^p\)</span>。</p>
+</section>
+<section id="id8">
+<h3>這份推導覆蓋哪些系統<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>只要徑向方程式能化成【定義 1】的形式就適用，<span class="math notranslate nohighlight">\(b\)</span> 與 <span class="math notranslate nohighlight">\(c\)</span> 隨系統改變：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>系統</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(c\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lambda\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>三維庫倫場（氫原子、類氫離子、里德堡態）</p></td>
+<td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\ell\left( \ell+1 \right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\ell\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2\ell+1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{me^{2}}{4\pi\varepsilon_0\hbar^{2}\alpha_{\text{decay}}}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>二維庫倫場</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left| m \right|\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2\left| m \right|\)</span></p></td>
+<td><p>同型</p></td>
+</tr>
+<tr class="row-even"><td><p>三維等向諧振子（先做 <span class="math notranslate nohighlight">\(x \propto r^{2}\)</span> 換元）</p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{3}{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{\ell\left( \ell+1 \right)}{4}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{\ell}{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\ell + \tfrac{1}{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{E}{2\hbar\omega}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>三者的 <span class="math notranslate nohighlight">\(e^{-x/2}\)</span> 完全一樣，差別只在原點的冪次 <span class="math notranslate nohighlight">\(\alpha\)</span>——<strong>這就是為什麼「剝離指數因子」這一步值得單獨寫成一份可引用的推導，而不必在每個系統裡重做一次。</strong></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Differential_Equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-reduction-to-the-associated-laguerre-equation">(a) proof 化為連帶拉蓋爾方程式 (Reduction to the associated Laguerre equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-verify-verification-the-3-d-coulomb-case">(b) verify 三維球座標的庫倫問題 (Verification: the 3-D Coulomb case)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">「剝離」不是技巧，是被冪級數法逼出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">為什麼不能「把方程式取極限」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v">剝離的目的不是把 <span class="math notranslate nohighlight">\(v\)</span> 變成常數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">兩個因子分別來自方程式的哪一項</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">為什麼指標方程式的根一定要選那一個</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">【定義 1(d)】為什麼需要</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dfrac-x-2-x">為什麼指數上是 <span class="math notranslate nohighlight">\(-\dfrac{x}{2}\)</span> 而不是 <span class="math notranslate nohighlight">\(-x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">這份推導覆蓋哪些系統</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

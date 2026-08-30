@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -512,7 +515,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation">赤道 PV 方程式 (Equatorial PV equation)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (b)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation">赤道 PV 方程式 (Equatorial PV equation)</a>：</strong> 位渦距平的收支：時間變化加上 <span class="math notranslate nohighlight">\(\beta v\)</span> 的行星渦度平流，由阻尼消耗，並由加熱以 <span class="math notranslate nohighlight">\(\beta y\)</span> 為權重的形式產生 ─ 右端的權重在赤道為零，這正是「赤道上生不出位渦」的來源。（已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (b)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\left(\frac{\partial}{\partial z} - 1\right)Q\]</div>
 <ul class="simple">
@@ -528,7 +531,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html#b-proof-one-line-division-in-spectral-space">可逆性原理及其譜形式 (Invertibility principle and its spectral form)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">Equatorial PV Invertibility Principle</span></a>【證明 (c)】與 <a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html"><span class="std std-doc">Hermite Transform Solution</span></a>【證明 (b)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html#b-proof-one-line-division-in-spectral-space">可逆性原理及其譜形式 (Invertibility principle and its spectral form)</a>：</strong> 位渦與流函數之間的可逆關係：(a) 在物理空間裡是一個帶 <span class="math notranslate nohighlight">\(\beta^{2}y^{2}\)</span> 加權垂直項的橢圓算符作用在 <span class="math notranslate nohighlight">\(\psi\)</span> 上；(b) 在 Hermite–傅立葉譜空間裡，這個算符對角化成單純的除法 ─ 給定 <span class="math notranslate nohighlight">\(\hat{q}_{mn}\)</span> 就直接得到 <span class="math notranslate nohighlight">\(\hat{\psi}_{mn}\)</span>。（已於本庫 <a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">Equatorial PV Invertibility Principle</span></a>【證明 (c)】與 <a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html"><span class="std std-doc">Hermite Transform Solution</span></a>【證明 (b)】完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 物理空間形式：</p>
 <div class="math notranslate nohighlight">
@@ -551,7 +554,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html#a-proof-notation-mapping-and-scale-restoration">Matsuno 頻散關係 (Matsuno dispersion relation)</a>：</strong> 已於本庫 <a class="reference internal" href="Matsuno_Dispersion_Relation.html"><span class="std std-doc">Matsuno Dispersion Relation</span></a>【證明 (a)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html#a-proof-notation-mapping-and-scale-restoration">Matsuno 頻散關係 (Matsuno dispersion relation)</a>：</strong> 完整淺水系統的頻散關係，三個根分別對應東行重力波、西行重力波與羅斯貝波。本篇要證的是：平衡理論只保留其中的羅斯貝支。（已於本庫 <a class="reference internal" href="Matsuno_Dispersion_Relation.html"><span class="std std-doc">Matsuno Dispersion Relation</span></a>【證明 (a)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\epsilon\hat{\nu}_{mnr}^{2} - m^{2} - \frac{m}{\hat{\nu}_{mnr}} = \epsilon^{1/2}\left(2n + 1\right), \qquad \hat{\nu}_{mnr} = \frac{\nu_{mnr}}{2\Omega}\]</div>
 <ul class="simple">
@@ -562,7 +565,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 第 <span class="math notranslate nohighlight">\((m, n, r)\)</span> 個本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，實數</p></li>
 </ul>
 </li>
-<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html#a-proof-hermite-hermite-transform-pair">垂直分離、緯向傅立葉與 Hermite 轉換 (Vertical separation, zonal Fourier, and Hermite transforms)</a>：</strong> 已於本庫多篇完整證明，此處一併引用</p>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html#a-proof-hermite-hermite-transform-pair">垂直分離、緯向傅立葉與 Hermite 轉換 (Vertical separation, zonal Fourier, and Hermite transforms)</a>：</strong> 本篇一次用到的三層轉換：垂直方向分離出 <span class="math notranslate nohighlight">\(Z(z)\)</span>、緯向轉成波數 <span class="math notranslate nohighlight">\(m\)</span>、經向展開成 Hermite 級數 ─ 三者合起來把偏微分方程變成對 <span class="math notranslate nohighlight">\(\left(m,\ n\right)\)</span> 逐項的代數式。（已於本庫多篇完整證明，此處一併引用。）</p>
 <div class="math notranslate nohighlight">
 \[\left(\psi,\ q\right) = \left(\hat{\psi},\ \hat{q}\right)Z(z), \qquad \frac{\partial}{\partial x} \to \frac{im}{a}, \qquad \hat{\psi}_m(\hat{y}) = \sum_{n = 0}^{\infty}\hat{\psi}_{mn}\mathcal{H}_n(\hat{y})\]</div>
 <ul class="simple">
@@ -587,7 +590,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【假設 2】 用旋轉風近似經向風 (Approximating the meridional wind by its rotational part)：</strong> 這是這套平衡理論<strong>唯一新增</strong>的近似</p>
+<li><p><strong>【假設 2】 用旋轉風近似經向風 (Approximating the meridional wind by its rotational part)：</strong> 把經向風整個用它的旋轉部分取代，等於丟掉輻散風 <span class="math notranslate nohighlight">\(v_\chi\)</span>；這是這套平衡理論<strong>唯一新增</strong>的近似</p>
 <div class="math notranslate nohighlight">
 \[v \approx \frac{\partial \psi}{\partial x}\]</div>
 <ul class="simple">
@@ -610,6 +613,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【假設 4】 振幅不為零 (Nonzero amplitude)：</strong> 【證明 (c)】兩側同除 <span class="math notranslate nohighlight">\(\hat{\psi}_{mn}\)</span> 時需要</p>
@@ -664,6 +668,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\psi}_{mn},\ \hat{q}_{mn}\)</span> : Hermite 轉換係數 (Hermite transform coefficients) <span class="math notranslate nohighlight">\([\text{依變數而定}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【推導 3】 兩個無因次比值的數值 (Numerical values of the two dimensionless ratios)：</strong> 用【證明 (c)】的頻率估計【假設 5】的失準程度</p>

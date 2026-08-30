@@ -10,83 +10,89 @@ chapters:
         title: "[索引] 方程式索引"
       - file: 01_Derivations/Calculus/golden_ratio_gaussian_integral
         title: "[微積分] 黃金比例與高斯積分"
-      - file: 01_Derivations/Calculus/Gaussian_Hermite_Integral.ipynb
+      - file: 01_Derivations/Calculus/Gaussian_Hermite_Integral
         title: "[微積分] 高斯 × Hermite 函數的重疊積分"
       # 座標系統
-      - file: 01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.ipynb
+      - file: 01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation
         title: "[座標系統] 球坐標變換的動量方程"
-      - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.ipynb
+      - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_momentum_equation
         title: "[座標系統] 圓柱坐標變換的動量方程"
-      - file: 01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.ipynb
+      - file: 01_Derivations/Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates
         title: "[座標系統] 圓柱坐標中的散度算子"
-      - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.ipynb
+      - file: 01_Derivations/Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity
         title: "[座標系統] 圓柱坐標變換的相對渦度"
+      - file: 01_Derivations/Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian
+        title: "[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子"
       # 流體力學
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance
         title: "[流體力學] 梯度風平衡"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations
         title: "[流體力學] 擾動的靜力平衡"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation
         title: "[流體力學] 軸對稱連續性方程"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation
         title: "[流體力學] 軸對稱熱力學能量方程"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix
         title: "[流體力學] 軸對稱穩定性矩陣"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix
         title: "[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation
         title: "[流體力學] 軸對稱切向動量方程"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients
         title: "[流體力學] Eliassen 次環流係數"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation
         title: "[流體力學] Eliassen 次環流方程"
-      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV
         title: "[流體力學] 軸對稱結構參數與 PV 的關係"
       # 流體力學-變數變換
-      - file: 01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.ipynb
+      - file: 01_Derivations/Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb
         title: "[流體力學-變數變換] PV 與 PVb 的關係"
       # 微分方程
-      - file: 01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.ipynb
+      - file: 01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality
         title: "[微分方程] Sturm-Liouville 本徵函數的正交性"
-      - file: 01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.ipynb
+      - file: 01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence
         title: "[微分方程] Hermite 函數的遞迴與微分關係"
-      - file: 01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.ipynb
+      - file: 01_Derivations/Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue
         title: "[微分方程] Hermite 函數的正交歸一性與諧振子本徵值"
+      - file: 01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization
+        title: "[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合"
+      - file: 01_Derivations/Differential_Equations/Associated_Laguerre_Equation_and_Polynomials
+        title: "[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性"
       # 大氣動力學
-      - file: 01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation.ipynb
+      - file: 01_Derivations/Atmospheric_Dynamics/Vertical_Structure_Equation
         title: "[大氣動力學] 垂直結構方程式與模態投影"
       # 赤道 beta 平面動力學（Schubert & Masarik 2006 推導鏈，依相依序排列）
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations
         title: "[赤道波動力學] B1 對數氣壓座標的線性化原始方程組"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations
         title: "[赤道波動力學] C1 赤道渦度與輻散方程式"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source
         title: "[赤道波動力學] C2 赤道位渦方程式與 βy 源項"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure
         title: "[赤道波動力學] D1 對數氣壓座標的垂直結構方程式"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System
         title: "[赤道波動力學] D2 分離出水平結構方程組"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System
         title: "[赤道波動力學] E1 傅立葉轉換到淺水方程組"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator
         title: "[赤道波動力學] E2 能量內積與反厄米算符"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation
         title: "[赤道波動力學] E3 Matsuno 頻散關係"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions
         title: "[赤道波動力學] E4 赤道波本徵函數"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes
         title: "[赤道波動力學] F1 赤道模態的受迫解"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source
         title: "[赤道波動力學] F2 移動熱源的模態投影"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV
         title: "[赤道波動力學] F3 場還原與 Kelvin 波零位渦"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source
         title: "[赤道波動力學] G1 移動熱源的位渦尾流"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle
         title: "[赤道波動力學] H1 赤道位渦可逆性原理"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility
         title: "[赤道波動力學] H2 可逆性原理的 Hermite 轉換解"
-      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.ipynb
+      - file: 01_Derivations/Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation
         title: "[赤道波動力學] I1 平衡羅斯貝波頻散關係"
 
   - file: 02_Concepts/02_Concepts.md

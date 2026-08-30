@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -507,7 +510,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 已於本庫 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">Log-Pressure Linearized Primitive Equations</span></a> 完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 對數氣壓座標下、繞靜止基本態線性化後的五條方程式：兩條水平動量方程、靜力方程、連續方程式與熱力學方程式，未知場為 <span class="math notranslate nohighlight">\(u,\ v,\ \phi,\ T,\ w\)</span>。整篇的工作就是把這五條的垂直依賴分離出去。（已於本庫 Log-Pressure Linearized Primitive Equations 完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 緯向動量方程式：</p>
 <div class="math notranslate nohighlight">
@@ -530,7 +533,7 @@ document.write(`
 \[\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
@@ -545,7 +548,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#a-proof-eigenvalue-of-the-first-vertical-internal-mode">垂直結構方程式 (Vertical structure equation)</a>：</strong> 已於本庫 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">Vertical Structure Equation in Log-Pressure</span></a>【證明 (a)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html#a-proof-eigenvalue-of-the-first-vertical-internal-mode">垂直結構方程式 (Vertical structure equation)</a>：</strong> 垂直結構函數所滿足的本徵方程：算符 <span class="math notranslate nohighlight">\(\left(\frac{d}{dz} - 1\right)\frac{d}{dz}\)</span> 作用在 <span class="math notranslate nohighlight">\(Z\)</span> 上會還原成 <span class="math notranslate nohighlight">\(Z\)</span> 本身乘一個常數，該常數即分離常數 <span class="math notranslate nohighlight">\(\lambda\)</span>，並由剛蓋條件量子化成 <span class="math notranslate nohighlight">\(\frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\)</span>。（已於本庫 Vertical Structure Equation in Log-Pressure【證明 (a)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\left(\frac{d}{dz} - 1\right)\frac{dZ}{dz} = -\left(\frac{\pi^{2}}{z_T^{2}} + \frac{1}{4}\right)Z\]</div>
 <ul class="simple">
@@ -574,9 +577,9 @@ document.write(`
 \[\begin{pmatrix} T(x,y,z,t) \cr w(x,y,z,t) \cr Q(x,y,z,t) \end{pmatrix} \overset{\text{def}}{=} \begin{pmatrix} \hat{T}(x,y,t) \cr \hat{w}(x,y,t) \cr \hat{Q}(x,y,t) \end{pmatrix} Z'(z)\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{T}\)</span> : 溫度的水平結構函數 (Horizontal structure function of the temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 垂直速度的水平結構函數 (Horizontal structure function of the vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 擾動位勢的水平結構函數 (Horizontal structure function of the perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{T}\)</span> : 擾動溫度的水平結構函數 (Horizontal structure function of the perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 擾動對數氣壓垂直速度的水平結構函數 (Horizontal structure function of the perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
@@ -585,8 +588,9 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p>註：(b) 用 <span class="math notranslate nohighlight">\(Z'\)</span> 而非 <span class="math notranslate nohighlight">\(Z\)</span> <strong>不是選擇，是被迫的</strong>，理由見【推導 1】【推導 2】。</p></li>
 </ul>
@@ -596,15 +600,17 @@ document.write(`
 \[\hat{Q}_n = 0 \qquad \left(n \ge 2\right)\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\hat{Q}_n\)</span> : 加熱在第 <span class="math notranslate nohighlight">\(n\)</span> 垂直模態上的投影 (Projection of the heating onto the <span class="math notranslate nohighlight">\(n\)</span>-th vertical mode) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p>註：這是本篇最強的一條假設，也是【定義 2】<strong>能只寫單一個 <span class="math notranslate nohighlight">\(Z(z)\)</span> 的唯一理由</strong> —— 一般情形下每個場都該寫成 <span class="math notranslate nohighlight">\(\sum_n(\cdot)Z_n(z)\)</span> 的級數。它在下方的【證明】中不以 <code class="docutils literal notranslate"><span class="pre">\overset</span></code> 形式出現（它不是等號的依據，而是整個分離變數設定的前提），故列於此處備查。</p></li>
 <li><p>註：論文對這條假設的辯護是觀測 —— Johnson and Ciesielski (2000) 的西太平洋暖池加熱剖面，形狀與 <span class="math notranslate nohighlight">\(Z'(z)\)</span> 幾乎重合。</p></li>
 </ul>
 </li>
-<li><p><strong>【假設 2】 垂直結構函數不恆為零 (The structure function is non-trivial)：</strong> 用於在【證明】中兩側同除 <span class="math notranslate nohighlight">\(Z\)</span> 或 <span class="math notranslate nohighlight">\(Z'\)</span></p>
+<li><p><strong>【假設 2】 垂直結構函數不恆為零 (The structure function is non-trivial)：</strong> 垂直結構函數及其導數都不是恆等於零的平凡解 ─ 這排除了「整個擾動場為零」這個沒有物理內容的解，也讓【證明】中兩側同除 <span class="math notranslate nohighlight">\(Z\)</span> 或 <span class="math notranslate nohighlight">\(Z'\)</span> 的動作合法</p>
 <div class="math notranslate nohighlight">
 \[Z(z) \not\equiv 0, \qquad Z'(z) \not\equiv 0\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
@@ -621,11 +627,12 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 擾動位勢的水平結構函數 (Horizontal structure function of the perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p>註：右端的垂直依賴<strong>只能是 <span class="math notranslate nohighlight">\(Z'\)</span></strong>。這就是【定義 2】(b) 為什麼非得用 <span class="math notranslate nohighlight">\(Z'\)</span> 不可 —— 把 <span class="math notranslate nohighlight">\(\hat{T} = \hat{\phi}/R\)</span> 對照【定義 2】(b) 即得【證明 (c)】。</p></li>
 </ul>
 </li>
@@ -637,25 +644,10 @@ document.write(`
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda \approx 4.014\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 位勢的水平結構函數 (Horizontal structure function of the geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{T}\)</span> : 溫度的水平結構函數 (Horizontal structure function of the temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 垂直速度的水平結構函數 (Horizontal structure function of the vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{Q}\)</span> : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p>註：這一條是整篇的樞紐。它說：<strong><span class="math notranslate nohighlight">\(Z'\)</span> 經過 <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} - 1\right)\)</span> 加工後會變回 <span class="math notranslate nohighlight">\(Z\)</span></strong>。若把 <span class="math notranslate nohighlight">\(w\)</span> 掛在 <span class="math notranslate nohighlight">\(Z\)</span> 上，<span class="math notranslate nohighlight">\(\left(\dfrac{d}{dz} - 1\right)Z\)</span> 一般不會正比於 <span class="math notranslate nohighlight">\(Z\)</span>，連續方程式的垂直依賴就約不掉，方程組<strong>不閉合</strong>。</p></li>
 </ul>
 </li>

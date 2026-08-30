@@ -1,0 +1,1016 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Associated Legendre Equation and Quantization (連帶勒讓德方程式的量子化條件與相鄰階耦合) &#8212; Theory_Playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Associated Laguerre Equation and Polynomials (連帶拉蓋爾方程式的截斷條件與正交性)" href="Associated_Laguerre_Equation_and_Polynomials.html" />
+    <link rel="prev" title="Hermite Orthonormality and Oscillator Eigenvalue (Hermite 函數的正交歸一性與諧振子本徵值)" href="Hermite_Orthonormality_and_Oscillator_Eigenvalue.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Theory_Playground - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Theory_Playground - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    歡迎來到 Theory Playground：因為好奇而聚集的小窩
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Inbox/interessant.html"><strong>interessant Video</strong></a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_Derivations.html"><strong>📐 01_Derivations</strong>: 硬核推導區</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../equations_index.html">[索引] 方程式索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/golden_ratio_gaussian_integral.html">[微積分] 黃金比例與高斯積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Calculus/Gaussian_Hermite_Integral.html">[微積分] 高斯 × Hermite 函數的重疊積分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">[座標系統] 球坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">[流體力學] 軸對稱熱力學能量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">[流體力學] 軸對稱穩定性矩陣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix_and_Jacobian_Matrix.html">[流體力學] 軸對稱穩定性矩陣與雅可比矩陣的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangential_Momentum_Equation.html">[流體力學] 軸對稱切向動量方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">[流體力學] Eliassen 次環流係數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">[流體力學] Eliassen 次環流方程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">[流體力學] 軸對稱結構參數與 PV 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_Variable_Coordinate_Physics/PV_Representations_and_Mappings/Relation_Between_PV_and_PVb.html">[流體力學-變數變換] PV 與 PVb 的關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html">[赤道波動力學] C2 赤道位渦方程式與 βy 源項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.html">[赤道波動力學] D1 對數氣壓座標的垂直結構方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Separation_into_Horizontal_Structure_System.html">[赤道波動力學] D2 分離出水平結構方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html">[赤道波動力學] E1 傅立葉轉換到淺水方程組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html">[赤道波動力學] E2 能量內積與反厄米算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.html">[赤道波動力學] E3 Matsuno 頻散關係</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_Wave_Eigenfunctions.html">[赤道波動力學] E4 赤道波本徵函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Forced_Response_of_Equatorial_Modes.html">[赤道波動力學] F1 赤道模態的受迫解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Projection_of_a_Moving_Heat_Source.html">[赤道波動力學] F2 移動熱源的模態投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Physical_Field_Recovery_and_Zero_Kelvin_PV.html">[赤道波動力學] F3 場還原與 Kelvin 波零位渦</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/PV_Wake_of_a_Moving_Heat_Source.html">[赤道波動力學] G1 移動熱源的位渦尾流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Invertibility_Principle.html">[赤道波動力學] H1 赤道位渦可逆性原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Hermite_Transform_Solution_of_Invertibility.html">[赤道波動力學] H2 可逆性原理的 Hermite 轉換解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Equatorial_Beta_Plane_Dynamics/Balanced_Rossby_Dispersion_Relation.html">[赤道波動力學] I1 平衡羅斯貝波頻散關係</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_Concepts/02_Concepts.html"><strong>🧩 02_Concepts</strong>: 核心觀念區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">[抽象代數] 群論基本定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Reynolds_number.html">[流體力學] 雷諾數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Terminal_velocity.html">[流體力學] 終端速度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Anelastic_approximation.html">[流體力學] Anelastic近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Fluid_Dynamics/Boussinesq_approximation.html">[流體力學] Boussinesq近似</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Tropical_Cyclone/CISK_Theorem.html">[熱帶氣旋] CISK 定理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Numerical_Weather_Prediction/Model_Output_Statistics.html">[數值預報] MOS 模式輸出統計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Concepts/Atmospheric_Dynamics/Normal_Mode_Decomposition.html">[大氣動力學] 垂直模態分解</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_Intuitions/03_Intuitions.html"><strong>💡 03_Intuitions</strong>: 物理心法區</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/n_points_coverage_threshold_coverage_ratio.html">[幾何] n 點覆蓋問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Intuitions/Typhoon_Dynamics.html">[待分類] X Typhoon Dynamics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_References/06_References.html"><strong>📚 06_References</strong>: 外部文獻</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/read_paper.html">[方法] 如何讀論文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Kuo2016-Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones/Deep_convection_in_elliptical_and_polygonal_eyewalls_of_tropical_cyclones.html">[熱帶氣旋動力學] Kuo2016</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2020-Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael/Polygonal_eyewall_asymmetries_during_the_rapid_intensification_of_Hurricane_Michael.html">[熱帶氣旋動力學] Cha2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Cha2024-Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model/Tropical_cyclone_asymmetric_eyewall_evolution_and_intensification_in_a_two-layer_model.html">[熱帶氣旋動力學] Cha2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_cyclone_dynamics/Chen2025-Long-Lived_Concentric_Eyewalls_and_Integrated_Kine/Chen2025_Long-Lived_Concentric_Eyewalls_and_Integrated_Kine.html">[熱帶氣旋動力學] Chen2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html">[熱帶波動力學] Schubert2006</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Associated Legendre Equation and Quantization (連帶勒讓德方程式的量子化條件與相鄰階耦合)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-associated-legendre-equation">(a) proof 連帶勒讓德方程式 (Associated Legendre equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-series-recurrence-relation">(b) proof 級數遞迴關係 (Series recurrence relation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-divergence-at-the-endpoints-without-truncation">(c) proof 不截斷則於端點發散 (Divergence at the endpoints without truncation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-quantization-of-the-separation-constant-and-the-order">(d) proof 分離常數與階數的量子化 (Quantization of the separation constant and the order)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-polynomial-structure-and-parity">(e) proof 多項式結構與宇稱 (Polynomial structure and parity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-proof-weighted-orthogonality-and-adjacent-order-coupling">(f) proof 帶權正交性與相鄰階耦合 (Weighted orthogonality and adjacent-order coupling)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">「量子化」不是物理額外加上去的，是微分方程自己逼出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-ge-m"><span class="math notranslate nohighlight">\(l \ge |m|\)</span> 為什麼是「附贈」的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f">(f) 為什麼是「選擇律」的數學骨架</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">這族解在哪裡還會再出現</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="associated-legendre-equation-and-quantization">
+<h1>Associated Legendre Equation and Quantization (連帶勒讓德方程式的量子化條件與相鄰階耦合)<a class="headerlink" href="#associated-legendre-equation-and-quantization" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>球狀對稱問題做完變數分離後，天頂角方向恆得到下列本徵方程式（<span class="math notranslate nohighlight">\(\lambda\)</span> 為分離常數）：</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \left[ \lambda - \frac{m^2}{\sin^2\theta} \right]\Theta = 0\]</div>
+<p>本文從這條式子出發，逐式證明下列六件事：</p>
+<ul>
+<li><p>(a) 換元 <span class="math notranslate nohighlight">\(x = \cos\theta\)</span> 後化為<strong>連帶勒讓德方程式 (Associated Legendre equation)</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx}\left[ \left( 1 - x^2 \right)\frac{dy}{dx} \right] + \left[ \lambda - \frac{m^2}{1-x^2} \right]y = 0\]</div>
+</li>
+<li><p>(b) 以 <span class="math notranslate nohighlight">\(y = \left( 1-x^2 \right)^{|m|/2}v\)</span> 剝離端點奇異因子後，<span class="math notranslate nohighlight">\(v\)</span> 的冪級數係數滿足</p>
+<div class="math notranslate nohighlight">
+\[a_{k+2} = \frac{\left( k + |m| \right)\left( k + |m| + 1 \right) - \lambda}{\left( k+1 \right)\left( k+2 \right)}a_k\]</div>
+</li>
+<li><p>(c) 若級數<strong>不</strong>截斷，則 <span class="math notranslate nohighlight">\(y\)</span> 在 <span class="math notranslate nohighlight">\(x = \pm 1\)</span>（即 <span class="math notranslate nohighlight">\(\theta = 0, \pi\)</span>）發散。</p></li>
+<li><p>(d) 因此級數必須截斷，這<strong>強迫</strong>分離常數與階數量子化：</p>
+<div class="math notranslate nohighlight">
+\[\lambda = l\left( l + 1 \right), \qquad l = |m|, |m|+1, |m|+2, \dots \qquad \Longleftrightarrow \qquad m = 0, \pm 1, \pm 2, \dots, \pm l\]</div>
+</li>
+<li><p>(e) 解的結構為 <span class="math notranslate nohighlight">\(P_l^m(x) = \left( 1-x^2 \right)^{|m|/2}S_l(x)\)</span>，其中 <span class="math notranslate nohighlight">\(S_l\)</span> 為次數恰為 <span class="math notranslate nohighlight">\(l - |m|\)</span> 的多項式，且</p>
+<div class="math notranslate nohighlight">
+\[P_l^m\left( -x \right) = \left( -1 \right)^{l+|m|}P_l^m\left( x \right)\]</div>
+</li>
+<li><p>(f) 在同一個 <span class="math notranslate nohighlight">\(m\)</span> 之下，<span class="math notranslate nohighlight">\(\left\{ P_l^m \right\}\)</span> 帶權正交，且<strong>乘以 <span class="math notranslate nohighlight">\(x\)</span> 只會耦合到相鄰階</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\int_{-1}^{1}P_{l'}^m\left( x \right)\,x\,P_{l}^m\left( x \right)\,dx \ne 0 \quad \Longrightarrow \quad l' = l \pm 1\]</div>
+</li>
+</ul>
+</section>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【定義 1】 天頂角本徵方程式 (Polar-angle eigenvalue equation)：</strong> 變數分離後的 <span class="math notranslate nohighlight">\(\theta\)</span> 方程式，<span class="math notranslate nohighlight">\(\lambda\)</span> 為第二個分離常數。</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \left[ \lambda - \frac{m^2}{\sin^2\theta} \right]\Theta = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Theta(\theta)\)</span> : 天頂角方向的解 (Polar-angle solution) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> : 天頂角 (Polar angle) <span class="math notranslate nohighlight">\([\text{rad}]\)</span>，<span class="math notranslate nohighlight">\(0 \le \theta \le \pi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第二個分離常數 (Second separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，待定</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 第一個分離常數所給定的階數 (Order) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 換元 (Change of variable)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  x &amp;\overset{\text{def}}{=}&amp; \cos\theta \\
+  y\left( x \right) &amp;\overset{\text{def}}{=}&amp; \Theta\left( \theta \right)
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 天頂角的餘弦 (Cosine of the polar angle) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(-1 \le x \le 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y(x)\)</span> : 換元後的解 (Solution in the new variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 剝離端點奇異因子 (Peeling off the endpoint singular factor)：</strong> 端點 <span class="math notranslate nohighlight">\(x = \pm1\)</span> 是方程式的正規奇點，先把奇異行為以顯式因子提出來，剩下的部分才用冪級數展開。</p>
+<div class="math notranslate nohighlight">
+\[y\left( x \right) \overset{\text{def}}{=} \left( 1 - x^2 \right)^{s/2}v\left( x \right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s\)</span> : 階數的絕對值 (Absolute order) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(s \overset{\text{def}}{=} |m|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x)\)</span> : 剝離奇異因子後的餘因子 (Residual factor) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 端點有界性 (Boundedness at the endpoints)：</strong> <span class="math notranslate nohighlight">\(\theta = 0\)</span> 與 <span class="math notranslate nohighlight">\(\theta = \pi\)</span>（南北極）是物理空間中的<strong>平凡點</strong>，解在該處必須有限。</p>
+<div class="math notranslate nohighlight">
+\[\left| y\left( \pm 1 \right) \right| &lt; \infty\]</div>
+</li>
+<li><p><strong>【假設 2】 階數為整數 (Integer order)：</strong> 在球狀對稱問題中，<span class="math notranslate nohighlight">\(m\)</span> 來自方位角方程式的單值條件，故為整數。</p>
+<div class="math notranslate nohighlight">
+\[m \in \mathbb{Z}, \qquad s = |m| \in \left\{ 0, 1, 2, \dots \right\}\]</div>
+</li>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html">Sturm–Liouville 本徵函數的正交性 (Orthogonality of Sturm–Liouville eigenfunctions)</a>：</strong> 適用前提為方程式可寫成自伴形式 <span class="math notranslate nohighlight">\(\dfrac{d}{dz}\left[ p_{\text{SL}}\dfrac{d\psi}{dz} \right] + \left( q_{\text{SL}} + \lambda w \right)\psi = 0\)</span>，且邊界項 <span class="math notranslate nohighlight">\(\left[ p_{\text{SL}}\left( \psi_i\psi_j' - \psi_j\psi_i' \right) \right]_a^b = 0\)</span>；此時對應到相異本徵值的本徵函數，在權函數 <span class="math notranslate nohighlight">\(w\)</span> 之下彼此正交。</p>
+<div class="math notranslate nohighlight">
+\[\int_{a}^{b} w\left( z \right)\psi_{i}\left( z \right)\psi_{j}\left( z \right) dz = 0, \qquad \lambda_i \ne \lambda_j\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi_i\)</span> : 第 <span class="math notranslate nohighlight">\(i\)</span> 個本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w(z)\)</span> : 權函數 (Weight function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_i\)</span> : 第 <span class="math notranslate nohighlight">\(i\)</span> 個本徵值 (Eigenvalue) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{\text{SL}}, q_{\text{SL}}\)</span> : 自伴形式的兩個係數函數 (Coefficients of the self-adjoint form) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a, b\)</span> : 積分區間的兩個端點 (Endpoints of the interval)</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 冪級數展開 (Power series expansion)：</strong> 在正規點鄰域，二階線性 ODE 的解可寫成冪級數。</p>
+<div class="math notranslate nohighlight">
+\[v\left( x \right) = \sum_{k=0}^{\infty}a_k x^{k}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_k\)</span> : 第 <span class="math notranslate nohighlight">\(k\)</span> 階展開係數 (Expansion coefficient) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 二項級數 (Binomial series)：</strong> 用來辨認級數在端點的漸近行為。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \left( 1 - u \right)^{-p} &amp;=&amp; \sum_{j=0}^{\infty}\binom{p+j-1}{j}u^{j} \\
+  -\ln\left( 1 - u \right) &amp;=&amp; \sum_{j=1}^{\infty}\frac{u^{j}}{j}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 冪次 (Exponent) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 展開變數 (Expansion variable) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(|u| &lt; 1\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 微分算子的換元 (Change of variable for the differential operator)：</strong> 由【定義 2】直接微分。</p>
+<ul class="simple">
+<li><p>(a) 一階算子：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{dx}{d\theta} &amp;\overset{\text{定義 2}}{=}&amp; \frac{d}{d\theta}\left[ \cos\theta \right] \\
+  \frac{dx}{d\theta} &amp;=&amp; -\sin\theta
+  \end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d}{d\theta} &amp;=&amp; \frac{dx}{d\theta}\frac{d}{dx} \\
+  \frac{d}{d\theta} &amp;\overset{\text{推導 1(a) 上式}}{=}&amp; -\sin\theta\frac{d}{dx}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 正弦平方：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \sin^2\theta &amp;=&amp; 1 - \cos^2\theta \\
+  \sin^2\theta &amp;\overset{\text{定義 2}}{=}&amp; 1 - x^2
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【推導 2】 剝離奇異因子後的各項 (Terms after peeling off the singular factor)：</strong> 由【定義 3】逐項微分，供 (b) 組裝。</p>
+<ul class="simple">
+<li><p>(a) 一階導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{dy}{dx} &amp;\overset{\text{定義 3}}{=}&amp; \frac{d}{dx}\left[ \left( 1-x^2 \right)^{s/2}v \right] \\
+  &amp;=&amp; \left( 1-x^2 \right)^{s/2}\frac{dv}{dx} - s x \left( 1-x^2 \right)^{s/2-1}v
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 乘上 <span class="math notranslate nohighlight">\(\left( 1-x^2 \right)\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+  \left( 1-x^2 \right)\frac{dy}{dx} &amp;\overset{\text{推導 2(a)}}{=}&amp; \left( 1-x^2 \right)^{s/2+1}\frac{dv}{dx} - s x \left( 1-x^2 \right)^{s/2}v
+  \end{gather*}\]</div>
+<ul class="simple">
+<li><p>(c) 再微分一次（逐項套乘法律）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+  \frac{d}{dx}\left[ \left( 1-x^2 \right)^{s/2+1}\frac{dv}{dx} \right] &amp;=&amp; \left( 1-x^2 \right)^{s/2+1}\frac{d^2v}{dx^2} - \left( s+2 \right)x\left( 1-x^2 \right)^{s/2}\frac{dv}{dx}
+  \end{gather*}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+  \frac{d}{dx}\left[ -s x \left( 1-x^2 \right)^{s/2}v \right] &amp;=&amp; -s\left( 1-x^2 \right)^{s/2}v + s^2 x^2 \left( 1-x^2 \right)^{s/2-1}v - s x \left( 1-x^2 \right)^{s/2}\frac{dv}{dx}
+  \end{gather*}\]</div>
+</li>
+<li><p><strong>【推導 3】 級數各項的指標平移 (Index shift of the series terms)：</strong> 把【已知 2】的冪級數代入下列三個算符項，逐項整理成 <span class="math notranslate nohighlight">\(x^{k}\)</span> 的係數，供 (b) 比對。此處<strong>只做代數展開</strong>，不預設任何方程式成立。</p>
+<ul class="simple">
+<li><p>(a) 二階項（先代入級數、再微分兩次，第一個和的最低冪次為 <span class="math notranslate nohighlight">\(x^{-2}\)</span>，故令 <span class="math notranslate nohighlight">\(k \to k+2\)</span> 平移）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \left( 1-x^2 \right)\frac{d^2v}{dx^2} &amp;\overset{\text{已知 2}}{=}&amp; \left( 1-x^2 \right)\frac{d^2}{dx^2}\left[ \sum_{k=0}^{\infty}a_k x^{k} \right] \\
+  &amp;=&amp; \left( 1-x^2 \right)\sum_{k=0}^{\infty}k\left( k-1 \right)a_k x^{k-2} \\
+  &amp;=&amp; \sum_{k=0}^{\infty}k\left( k-1 \right)a_k x^{k-2} - \sum_{k=0}^{\infty}k\left( k-1 \right)a_k x^{k} \\
+  &amp;=&amp; \sum_{k=0}^{\infty}\left( k+2 \right)\left( k+1 \right)a_{k+2}x^{k} - \sum_{k=0}^{\infty}k\left( k-1 \right)a_k x^{k}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 一階項（先代入級數、再微分一次，乘上 <span class="math notranslate nohighlight">\(x\)</span> 之後冪次已是 <span class="math notranslate nohighlight">\(x^{k}\)</span>，不需平移）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  -2\left( s+1 \right)x\frac{dv}{dx} &amp;\overset{\text{已知 2}}{=}&amp; -2\left( s+1 \right)x\frac{d}{dx}\left[ \sum_{k=0}^{\infty}a_k x^{k} \right] \\
+  &amp;=&amp; -2\left( s+1 \right)x\sum_{k=0}^{\infty}k\,a_k x^{k-1} \\
+  &amp;=&amp; -\sum_{k=0}^{\infty}2\left( s+1 \right)k\,a_k x^{k}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 零階項（不含微分，直接代入級數即可）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\left[ \lambda - s\left( s+1 \right) \right]v \overset{\text{已知 2}}{=} \sum_{k=0}^{\infty}\left[ \lambda - s\left( s+1 \right) \right]a_k x^{k}\]</div>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="a-proof-associated-legendre-equation">
+<h3>(a) proof 連帶勒讓德方程式 (Associated Legendre equation)<a class="headerlink" href="#a-proof-associated-legendre-equation" title="Link to this heading">#</a></h3>
+<p>先把【定義 1】的內層括號換元：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\sin\theta\frac{d\Theta}{d\theta} &amp;\overset{\text{推導 1(a)}}{=}&amp; \sin\theta\left( -\sin\theta \right)\frac{dy}{dx} \\
+&amp;=&amp; -\sin^2\theta\frac{dy}{dx} \\
+&amp;\overset{\text{推導 1(b)}}{=}&amp; -\left( 1 - x^2 \right)\frac{dy}{dx}
+\end{gather*}\end{split}\]</div>
+<p>再套一次外層算子：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{1}{\sin\theta}\frac{d}{d\theta}\left[ \sin\theta\frac{d\Theta}{d\theta} \right] &amp;\overset{\text{(a) 上式}}{=}&amp; \frac{1}{\sin\theta}\frac{d}{d\theta}\left[ -\left( 1-x^2 \right)\frac{dy}{dx} \right] \\
+&amp;\overset{\text{推導 1(a)}}{=}&amp; \frac{1}{\sin\theta}\left( -\sin\theta \right)\frac{d}{dx}\left[ -\left( 1-x^2 \right)\frac{dy}{dx} \right] \\
+&amp;=&amp; \frac{d}{dx}\left[ \left( 1-x^2 \right)\frac{dy}{dx} \right]
+\end{gather*}\end{split}\]</div>
+<p>代回【定義 1】，並用【推導 1(b)】把 <span class="math notranslate nohighlight">\(\sin^2\theta\)</span> 換成 <span class="math notranslate nohighlight">\(1-x^2\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx}\left[ \left( 1 - x^2 \right)\frac{dy}{dx} \right] + \left[ \lambda - \frac{m^2}{1-x^2} \right]y = 0\]</div>
+<p>此即<strong>連帶勒讓德方程式</strong>，且已經是自伴形式，可與【已知 1】對照：<span class="math notranslate nohighlight">\(p\left( x \right) = 1-x^2\)</span>、<span class="math notranslate nohighlight">\(q\left( x \right) = -\dfrac{m^2}{1-x^2}\)</span>、權函數 <span class="math notranslate nohighlight">\(w\left( x \right) = 1\)</span>、本徵值為 <span class="math notranslate nohighlight">\(\lambda\)</span>、區間為 <span class="math notranslate nohighlight">\(\left[ -1, 1 \right]\)</span>。</p>
+</section>
+<section id="b-proof-series-recurrence-relation">
+<h3>(b) proof 級數遞迴關係 (Series recurrence relation)<a class="headerlink" href="#b-proof-series-recurrence-relation" title="Link to this heading">#</a></h3>
+<p>把【推導 2(b)(c)】代入 (a) 的結果，並注意 <span class="math notranslate nohighlight">\(m^2 = s^2\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{(a)}}{=}&amp; \frac{d}{dx}\left[ \left( 1-x^2 \right)\frac{dy}{dx} \right] + \left[ \lambda - \frac{s^2}{1-x^2} \right]y \\
+0 &amp;\overset{\text{推導 2(c),定義 3}}{=}&amp; \left( 1-x^2 \right)^{s/2+1}\frac{d^2v}{dx^2} - \left( 2s+2 \right)x\left( 1-x^2 \right)^{s/2}\frac{dv}{dx} - s\left( 1-x^2 \right)^{s/2}v + s^2x^2\left( 1-x^2 \right)^{s/2-1}v + \lambda\left( 1-x^2 \right)^{s/2}v - s^2\left( 1-x^2 \right)^{s/2-1}v
+\end{gather*}\end{split}\]</div>
+<p>其中兩個 <span class="math notranslate nohighlight">\(\left( 1-x^2 \right)^{s/2-1}\)</span> 項可先合併：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+s^2x^2\left( 1-x^2 \right)^{s/2-1} - s^2\left( 1-x^2 \right)^{s/2-1} &amp;=&amp; -s^2\left( 1 - x^2 \right)\left( 1-x^2 \right)^{s/2-1} \\
+&amp;=&amp; -s^2\left( 1-x^2 \right)^{s/2}
+\end{gather*}\end{split}\]</div>
+<p>代回並整體除以 <span class="math notranslate nohighlight">\(\left( 1-x^2 \right)^{s/2}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;=&amp; \left( 1-x^2 \right)\frac{d^2v}{dx^2} - \left( 2s+2 \right)x\frac{dv}{dx} + \left[ \lambda - s - s^2 \right]v \\
+0 &amp;=&amp; \left( 1-x^2 \right)\frac{d^2v}{dx^2} - 2\left( s+1 \right)x\frac{dv}{dx} + \left[ \lambda - s\left( s+1 \right) \right]v
+\end{gather*}\end{split}\]</div>
+<p>把【推導 3】的三項相加，並要求每一個 <span class="math notranslate nohighlight">\(x^{k}\)</span> 的係數為零：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{推導 3(a)(b)(c)}}{=}&amp; \left( k+2 \right)\left( k+1 \right)a_{k+2} - k\left( k-1 \right)a_k - 2\left( s+1 \right)k\,a_k + \left[ \lambda - s\left( s+1 \right) \right]a_k \\
+\left( k+2 \right)\left( k+1 \right)a_{k+2} &amp;=&amp; \left[ k\left( k-1 \right) + 2\left( s+1 \right)k + s\left( s+1 \right) - \lambda \right]a_k \\
+\left( k+2 \right)\left( k+1 \right)a_{k+2} &amp;=&amp; \left[ k^2 + \left( 2s+1 \right)k + s^2 + s - \lambda \right]a_k \\
+\left( k+2 \right)\left( k+1 \right)a_{k+2} &amp;=&amp; \left[ \left( k+s \right)\left( k+s+1 \right) - \lambda \right]a_k \\
+a_{k+2} &amp;=&amp; \frac{\left( k+s \right)\left( k+s+1 \right) - \lambda}{\left( k+1 \right)\left( k+2 \right)}a_k
+\end{gather*}\end{split}\]</div>
+<p>遞迴每次跨兩階，故偶次項與奇次項各自成一條獨立的級數。</p>
+</section>
+<section id="c-proof-divergence-at-the-endpoints-without-truncation">
+<h3>(c) proof 不截斷則於端點發散 (Divergence at the endpoints without truncation)<a class="headerlink" href="#c-proof-divergence-at-the-endpoints-without-truncation" title="Link to this heading">#</a></h3>
+<p>若級數不截斷，取 <span class="math notranslate nohighlight">\(k \to \infty\)</span> 的漸近比值：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{a_{k+2}}{a_k} &amp;\overset{\text{(b)}}{=}&amp; \frac{k^2 + \left( 2s+1 \right)k + s^2 + s - \lambda}{k^2 + 3k + 2} \\
+&amp;=&amp; 1 + \frac{\left( 2s + 1 - 3 \right)k + s^2 + s - \lambda - 2}{k^2 + 3k + 2} \\
+&amp;=&amp; 1 + \frac{2s-2}{k} + O\left( k^{-2} \right)
+\end{gather*}\end{split}\]</div>
+<p>拿【已知 3】的兩個標準級數當比較對象（令 <span class="math notranslate nohighlight">\(u = x^2\)</span>，故 <span class="math notranslate nohighlight">\(j = k/2\)</span>）：</p>
+<ul class="simple">
+<li><p>(c-1) 當 <span class="math notranslate nohighlight">\(s \ge 1\)</span>，取 <span class="math notranslate nohighlight">\(p = s\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{c_{k+2}}{c_k} &amp;\overset{\text{已知 3}}{=}&amp; \frac{\binom{s+j}{j+1}}{\binom{s+j-1}{j}} \\
+&amp;=&amp; \frac{s+j}{j+1} \\
+&amp;=&amp; 1 + \frac{s-1}{j+1} \\
+&amp;=&amp; 1 + \frac{2\left( s-1 \right)}{k} + O\left( k^{-2} \right)
+\end{gather*}\end{split}\]</div>
+<p>與 (c) 的漸近比值相同，故 <span class="math notranslate nohighlight">\(v\left( x \right)\)</span> 在 <span class="math notranslate nohighlight">\(x \to \pm 1\)</span> 的行為與 <span class="math notranslate nohighlight">\(\left( 1-x^2 \right)^{-s}\)</span> 同階：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+y &amp;\overset{\text{定義 3}}{=}&amp; \left( 1-x^2 \right)^{s/2}v \\
+&amp;\sim&amp; \left( 1-x^2 \right)^{s/2}\left( 1-x^2 \right)^{-s} \\
+&amp;\sim&amp; \left( 1-x^2 \right)^{-s/2}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c-2) 當 <span class="math notranslate nohighlight">\(s = 0\)</span>，取對數級數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{c_{k+2}}{c_k} &amp;\overset{\text{已知 3}}{=}&amp; \frac{j}{j+1} \\
+&amp;=&amp; 1 - \frac{1}{j+1} \\
+&amp;=&amp; 1 - \frac{2}{k} + O\left( k^{-2} \right)
+\end{gather*}\end{split}\]</div>
+<p>同樣與 (c) 的漸近比值一致（<span class="math notranslate nohighlight">\(s = 0\)</span> 時 <span class="math notranslate nohighlight">\(1 + \frac{2s-2}{k} = 1 - \frac{2}{k}\)</span>），故</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+y &amp;\overset{\text{定義 3}}{=}&amp; v \\
+&amp;\sim&amp; -\ln\left( 1 - x^2 \right)
+\end{gather*}\end{split}\]</div>
+<p>兩種情形皆有 <span class="math notranslate nohighlight">\(\left| y\left( \pm 1 \right) \right| \to \infty\)</span>，與【假設 1】矛盾。</p>
+</section>
+<section id="d-proof-quantization-of-the-separation-constant-and-the-order">
+<h3>(d) proof 分離常數與階數的量子化 (Quantization of the separation constant and the order)<a class="headerlink" href="#d-proof-quantization-of-the-separation-constant-and-the-order" title="Link to this heading">#</a></h3>
+<p>由 (c)，級數<strong>必須</strong>截斷。取偶次或奇次其中一條級數在 <span class="math notranslate nohighlight">\(k = k_{\max}\)</span> 截斷（另一條以 <span class="math notranslate nohighlight">\(a_0 = 0\)</span> 或 <span class="math notranslate nohighlight">\(a_1 = 0\)</span> 抹除），截斷即要求 (b) 的分子為零：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+a_{k_{\max}+2} &amp;\overset{\text{def}}{=}&amp; 0 \\
+\left( k_{\max}+s \right)\left( k_{\max}+s+1 \right) - \lambda &amp;\overset{\text{(b)}}{=}&amp; 0 \\
+\lambda &amp;=&amp; \left( k_{\max}+s \right)\left( k_{\max}+s+1 \right)
+\end{gather*}\end{split}\]</div>
+<p>令</p>
+<div class="math notranslate nohighlight">
+\[l \overset{\text{def}}{=} k_{\max} + s\]</div>
+<p>代回上式即得</p>
+<div class="math notranslate nohighlight">
+\[\lambda = l\left( l+1 \right)\]</div>
+<p>而 <span class="math notranslate nohighlight">\(k_{\max} \in \left\{ 0, 1, 2, \dots \right\}\)</span>、由【假設 2】<span class="math notranslate nohighlight">\(s = |m|\)</span> 為非負整數，故</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+l &amp;=&amp; k_{\max} + |m| \\
+l &amp;\in&amp; \left\{ |m|, |m|+1, |m|+2, \dots \right\}
+\end{gather*}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(l\)</span> 必為非負整數且 <span class="math notranslate nohighlight">\(l \ge |m|\)</span>。把這個不等式反過來讀，就是對固定的 <span class="math notranslate nohighlight">\(l\)</span>，階數只能取</p>
+<div class="math notranslate nohighlight">
+\[m = 0, \pm 1, \pm 2, \dots, \pm l\]</div>
+</section>
+<section id="e-proof-polynomial-structure-and-parity">
+<h3>(e) proof 多項式結構與宇稱 (Polynomial structure and parity)<a class="headerlink" href="#e-proof-polynomial-structure-and-parity" title="Link to this heading">#</a></h3>
+<p>由 (d)，<span class="math notranslate nohighlight">\(v\)</span> 是次數恰為 <span class="math notranslate nohighlight">\(k_{\max} = l - |m|\)</span> 的多項式；又由 (b) 遞迴每次跨兩階、且另一條奇偶級數已被抹除，<span class="math notranslate nohighlight">\(v\)</span> 只含與 <span class="math notranslate nohighlight">\(k_{\max}\)</span> 同奇偶的冪次。把這個多項式記為 <span class="math notranslate nohighlight">\(S_l\)</span>，並把對應的解記為 <span class="math notranslate nohighlight">\(P_l^m\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P_l^m\left( x \right) &amp;\overset{\text{定義 3}}{=}&amp; \left( 1-x^2 \right)^{|m|/2}S_l\left( x \right) \\
+\deg S_l &amp;\overset{\text{(d)}}{=}&amp; l - |m| \\
+S_l\left( -x \right) &amp;=&amp; \left( -1 \right)^{l-|m|}S_l\left( x \right)
+\end{gather*}\end{split}\]</div>
+<p>因子 <span class="math notranslate nohighlight">\(\left( 1-x^2 \right)^{|m|/2}\)</span> 為偶函數，故</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P_l^m\left( -x \right) &amp;=&amp; \left( 1-x^2 \right)^{|m|/2}S_l\left( -x \right) \\
+&amp;=&amp; \left( -1 \right)^{l-|m|}P_l^m\left( x \right) \\
+&amp;=&amp; \left( -1 \right)^{l+|m|}P_l^m\left( x \right)
+\end{gather*}\end{split}\]</div>
+<p>（最後一步用到 <span class="math notranslate nohighlight">\(\left( -1 \right)^{-2|m|} = 1\)</span>。）</p>
+</section>
+<section id="f-proof-weighted-orthogonality-and-adjacent-order-coupling">
+<h3>(f) proof 帶權正交性與相鄰階耦合 (Weighted orthogonality and adjacent-order coupling)<a class="headerlink" href="#f-proof-weighted-orthogonality-and-adjacent-order-coupling" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>(f-1) 帶權正交性：由 (a)，方程式已是自伴形式且 <span class="math notranslate nohighlight">\(p\left( \pm 1 \right) = 1 - \left( \pm 1 \right)^2 = 0\)</span>，邊界項自動為零；權函數 <span class="math notranslate nohighlight">\(w = 1\)</span>、本徵值 <span class="math notranslate nohighlight">\(\lambda = l\left( l+1 \right)\)</span> 對相異 <span class="math notranslate nohighlight">\(l\)</span> 相異。套【已知 1】：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{-1}^{1}P_{l'}^m\left( x \right)P_{l}^m\left( x \right)dx = 0, \qquad l' \ne l\]</div>
+<p>代入 (e) 的結構，即知 <span class="math notranslate nohighlight">\(\left\{ S_l \right\}_{l \ge |m|}\)</span> 是權函數為 <span class="math notranslate nohighlight">\(\left( 1-x^2 \right)^{|m|}\)</span> 的一族正交多項式：</p>
+<div class="math notranslate nohighlight">
+\[\int_{-1}^{1}\left( 1-x^2 \right)^{|m|}S_{l'}\left( x \right)S_{l}\left( x \right)dx = 0, \qquad l' \ne l\]</div>
+<ul class="simple">
+<li><p>(f-2) 正交多項式對低次多項式的正交性：<span class="math notranslate nohighlight">\(\left\{ S_{|m|}, S_{|m|+1}, \dots, S_{l'-1} \right\}\)</span> 的次數依序為 <span class="math notranslate nohighlight">\(0, 1, \dots, l'-|m|-1\)</span>，故其線性組合可張出<strong>所有</strong>次數小於 <span class="math notranslate nohighlight">\(l'-|m|\)</span> 的多項式。任取次數小於 <span class="math notranslate nohighlight">\(l'-|m|\)</span> 的多項式 <span class="math notranslate nohighlight">\(g\)</span>，把它展開成這組基底再逐項套 (f-1)：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{-1}^{1}\left( 1-x^2 \right)^{|m|}S_{l'}\left( x \right)g\left( x \right)dx = 0, \qquad \deg g &lt; l' - |m|\]</div>
+<ul class="simple">
+<li><p>(f-3) 上界：把待求積分用 (e) 改寫，並注意 <span class="math notranslate nohighlight">\(\deg\left( xS_l \right) = l - |m| + 1\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\int_{-1}^{1}P_{l'}^m\,x\,P_{l}^m\,dx &amp;\overset{\text{(e)}}{=}&amp; \int_{-1}^{1}\left( 1-x^2 \right)^{|m|}S_{l'}\left( x \right)\left[ xS_l\left( x \right) \right]dx
+\end{gather*}\]</div>
+<p>由 (f-2)，只要 <span class="math notranslate nohighlight">\(\deg\left( xS_l \right) &lt; l'-|m|\)</span> 此積分即為零：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+l - |m| + 1 &amp;&lt;&amp; l' - |m| \\
+l' &amp;&gt;&amp; l + 1
+\end{gather*}\end{split}\]</div>
+<p>故 <span class="math notranslate nohighlight">\(l' &gt; l+1\)</span> 時積分為零。</p>
+<ul class="simple">
+<li><p>(f-4) 下界：把 <span class="math notranslate nohighlight">\(x\)</span> 改配給另一側，同理由 (f-2)：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\int_{-1}^{1}P_{l'}^m\,x\,P_{l}^m\,dx &amp;\overset{\text{(e)}}{=}&amp; \int_{-1}^{1}\left( 1-x^2 \right)^{|m|}S_{l}\left( x \right)\left[ xS_{l'}\left( x \right) \right]dx
+\end{gather*}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+l' - |m| + 1 &amp;&lt;&amp; l - |m| \\
+l' &amp;&lt;&amp; l - 1
+\end{gather*}\end{split}\]</div>
+<p>故 <span class="math notranslate nohighlight">\(l' &lt; l-1\)</span> 時積分亦為零。</p>
+<ul class="simple">
+<li><p>(f-5) 剔除 <span class="math notranslate nohighlight">\(l' = l\)</span>：由 (e) 的宇稱，被積函數的宇稱為</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P_{l'}^m\left( -x \right)\left( -x \right)P_{l}^m\left( -x \right) &amp;\overset{\text{(e)}}{=}&amp; \left( -1 \right)^{l'+|m|}\left( -1 \right)\left( -1 \right)^{l+|m|}P_{l'}^m\left( x \right)\,x\,P_{l}^m\left( x \right) \\
+&amp;=&amp; \left( -1 \right)^{l+l'+1}P_{l'}^m\left( x \right)\,x\,P_{l}^m\left( x \right)
+\end{gather*}\end{split}\]</div>
+<p>在對稱區間 <span class="math notranslate nohighlight">\(\left[ -1, 1 \right]\)</span> 上，奇函數的積分為零，故積分不為零要求 <span class="math notranslate nohighlight">\(l+l'+1\)</span> 為偶數，即 <span class="math notranslate nohighlight">\(l+l'\)</span> 為奇數，於是 <span class="math notranslate nohighlight">\(l' \ne l\)</span>。</p>
+<ul class="simple">
+<li><p>(f-6) 合併 (f-3)(f-4)(f-5)：唯一可能不為零的情形是</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[l' = l \pm 1\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>結構解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>「量子化」不是物理額外加上去的，是微分方程自己逼出來的<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>整條鏈的關鍵只有一句話：<strong>級數若不截斷就在端點爆掉</strong>。<span class="math notranslate nohighlight">\(\theta = 0, \pi\)</span> 是南北極，在真實空間中和其他點沒有兩樣，解在那裡必須是有限值——這不是額外假設，而是「<span class="math notranslate nohighlight">\(y\)</span> 是一個定義在球面上的函數」這件事本身。一旦要求有限，遞迴分子就必須在某一階歸零，而分子 <span class="math notranslate nohighlight">\(\left( k+s \right)\left( k+s+1 \right)-\lambda\)</span> 歸零的條件恰好把 <span class="math notranslate nohighlight">\(\lambda\)</span> 鎖成 <span class="math notranslate nohighlight">\(l(l+1)\)</span> 的形式。<strong>先寫成 <span class="math notranslate nohighlight">\(l(l+1)\)</span> 不是先知道答案，而是因為兩個相鄰整數的乘積正是這個分子的形狀。</strong></p>
+</section>
+<section id="l-ge-m">
+<h3><span class="math notranslate nohighlight">\(l \ge |m|\)</span> 為什麼是「附贈」的<a class="headerlink" href="#l-ge-m" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(l\)</span> 的定義是 <span class="math notranslate nohighlight">\(l = k_{\max} + |m|\)</span>：<span class="math notranslate nohighlight">\(|m|\)</span> 來自被剝離出去的奇異因子 <span class="math notranslate nohighlight">\(\left( 1-x^2 \right)^{|m|/2}\)</span>，<span class="math notranslate nohighlight">\(k_{\max}\)</span> 來自剩下多項式的次數。多項式次數不可能為負，所以 <span class="math notranslate nohighlight">\(l\)</span> 至少是 <span class="math notranslate nohighlight">\(|m|\)</span>。也就是說，<span class="math notranslate nohighlight">\(|m| \le l\)</span> 這條在量子力學裡看起來像是額外規則的東西，其實只是「多項式次數 <span class="math notranslate nohighlight">\(\ge 0\)</span>」的改寫。</p>
+</section>
+<section id="f">
+<h3>(f) 為什麼是「選擇律」的數學骨架<a class="headerlink" href="#f" title="Link to this heading">#</a></h3>
+<p>(f) 說的是：把 <span class="math notranslate nohighlight">\(P_l^m\)</span> 乘上一個 <span class="math notranslate nohighlight">\(x\)</span>（在球座標裡就是 <span class="math notranslate nohighlight">\(\cos\theta\)</span>，也就是 <span class="math notranslate nohighlight">\(z/r\)</span>），結果只會落在 <span class="math notranslate nohighlight">\(l\pm1\)</span> 這兩個階上。三個限制各司其職——(f-3)(f-4) 是<strong>次數守恆</strong>（乘一個 <span class="math notranslate nohighlight">\(x\)</span> 只能把次數推高一階，所以跨不到 <span class="math notranslate nohighlight">\(l\pm2\)</span> 以上），(f-5) 是<strong>宇稱</strong>（<span class="math notranslate nohighlight">\(x\)</span> 是奇函數，把同階配對打掉）。原子物理中電偶極躍遷的 <span class="math notranslate nohighlight">\(\Delta l = \pm 1\)</span> 就是這三行的直接後果，跟「電子」「光子」都沒有關係，純粹是正交多項式的代數性質。</p>
+</section>
+<section id="id5">
+<h3>這族解在哪裡還會再出現<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>同一條方程式（換不同的 <span class="math notranslate nohighlight">\(m\)</span> 與 <span class="math notranslate nohighlight">\(\lambda\)</span>）會在任何具球狀對稱的線性問題中出現：地球重力場與磁場的球諧展開、電磁學的多極展開、行星大氣的 Hough 函數、以及本文的直接目標——氫原子的角向波函數。因此把量子化條件在這裡一次證清楚，之後各領域都只需引用而不必重證。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_Derivations\Differential_Equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hermite Orthonormality and Oscillator Eigenvalue (Hermite 函數的正交歸一性與諧振子本徵值)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Associated_Laguerre_Equation_and_Polynomials.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Associated Laguerre Equation and Polynomials (連帶拉蓋爾方程式的截斷條件與正交性)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-associated-legendre-equation">(a) proof 連帶勒讓德方程式 (Associated Legendre equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-series-recurrence-relation">(b) proof 級數遞迴關係 (Series recurrence relation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-divergence-at-the-endpoints-without-truncation">(c) proof 不截斷則於端點發散 (Divergence at the endpoints without truncation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-quantization-of-the-separation-constant-and-the-order">(d) proof 分離常數與階數的量子化 (Quantization of the separation constant and the order)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-polynomial-structure-and-parity">(e) proof 多項式結構與宇稱 (Polynomial structure and parity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-proof-weighted-orthogonality-and-adjacent-order-coupling">(f) proof 帶權正交性與相鄰階耦合 (Weighted orthogonality and adjacent-order coupling)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">結構解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">「量子化」不是物理額外加上去的，是微分方程自己逼出來的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-ge-m"><span class="math notranslate nohighlight">\(l \ge |m|\)</span> 為什麼是「附贈」的</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f">(f) 為什麼是「選擇律」的數學骨架</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">這族解在哪裡還會再出現</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

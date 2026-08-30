@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Matsuno_Dispersion_Relation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -501,7 +504,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project2/project2_1.html">赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面無因次淺水方程的頻散關係 (Dispersion relation of the nondimensional equatorial shallow water equations)</a>：</strong> 此式已於 Advanced Atmospheric Dynamics 的 project2_1 完整證明（含 Weber 方程式、Hermite 量子化與本徵函數），此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project2/project2_1.html">赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面無因次淺水方程的頻散關係 (Dispersion relation of the nondimensional equatorial shallow water equations)</a>：</strong> 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面淺水系統的頻散關係（project2_1 記法）：頻率與緯向波數被一條三次方程綁在一起，右端的 <span class="math notranslate nohighlight">\(2n\)</span> 來自經向 Hermite 模態的量子化。本篇要做的就是把它翻譯成 Schubert 的無因次記法。（已於 Advanced Atmospheric Dynamics 的 project2_1 完整證明，含 Weber 方程式、Hermite 量子化與本徵函數；此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\omega^{2} - k^{2} - \frac{k}{\omega} - 1 = 2n \qquad \left(n = 0,\ 1,\ 2,\ \ldots\right)\]</div>
 <ul class="simple">
@@ -511,7 +514,7 @@ document.write(`
 <li><p>註：project2_1 的無因次化取赤道變形半徑 <span class="math notranslate nohighlight">\(L_e = \left(\bar{c}/\beta\right)^{1/2}\)</span> 為長度尺度、<span class="math notranslate nohighlight">\(T_e = \left(\beta\bar{c}\right)^{-1/2}\)</span> 為時間尺度。</p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">線性算符 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 與其本徵值問題 (Linear operator and its eigenvalue problem)</a>：</strong> 已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a> 完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Fourier_Transform_to_Shallow_Water_System.html#e-proof-vector-form">線性算符 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 與其本徵值問題 (Linear operator and its eigenvalue problem)</a>：</strong> 水平結構方程組的算符形式與它的本徵值問題：<span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 作用在本徵函數 <span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> 上等於 <span class="math notranslate nohighlight">\(i\nu_{mnr}\)</span> 乘回自己，本徵值為純虛數 ─ 這保證模態是不增不減的振盪，而頻散關係就是這個本徵值問題的可解條件。（已於本庫 <a class="reference internal" href="Fourier_Transform_to_Shallow_Water_System.html"><span class="std std-doc">Fourier Transform to the Shallow Water System</span></a> 完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 算符本身：</p>
 <div class="math notranslate nohighlight">
@@ -533,9 +536,10 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(U,\ V\)</span> : 本徵函數的速度分量 (Velocity components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 本徵函數的位勢分量 (Geopotential component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#assumptions-preliminaries">Lamb 參數與無因次經向座標 (Lamb’s parameter and dimensionless meridional coordinate)</a>：</strong> 已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a>【定義 2】給出，此處直接引用</p>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#assumptions-preliminaries">Lamb 參數與無因次經向座標 (Lamb’s parameter and dimensionless meridional coordinate)</a>：</strong> 兩個把問題無因次化的量：<span class="math notranslate nohighlight">\(\epsilon\)</span> 量度旋轉相對於層結的強弱，<span class="math notranslate nohighlight">\(\hat{y}\)</span> 則以赤道變形半徑為長度單位 ─ 本篇的記法換算全靠這兩個定義。（已於本庫 <a class="reference internal" href="Energy_Inner_Product_and_Skew_Hermitian_Operator.html"><span class="std std-doc">Energy Inner Product and the Skew-Hermitian Operator</span></a>【定義 2】給出，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\epsilon = \frac{4\Omega^{2}a^{2}}{\bar{c}^{2}}, \qquad \hat{y} = \left(\frac{\beta}{\bar{c}}\right)^{1/2}y = \epsilon^{1/4}\frac{y}{a}\]</div>
 <ul class="simple">
@@ -635,6 +639,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> : 本徵函數的位勢分量 (Geopotential component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【推導 3】 Kelvin 波解的有界性篩選 (Boundedness selection for the Kelvin wave)：</strong> 兩個根裡只有一個滿足【假設 1】</p>
@@ -669,12 +674,6 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> : 無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(k\)</span> : 無因次緯向波數 (Dimensionless zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\hat{\nu}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p>註：(b) 最後一列是解一階可分離變數 ODE 的<strong>巨大跳躍</strong>，故用行首箭頭；過程為 <span class="math notranslate nohighlight">\(\dfrac{d\Phi}{\Phi} = \mp\dfrac{\beta y}{\bar{c}}dy\)</span>，兩側積分得 <span class="math notranslate nohighlight">\(\ln\Phi = \mp\dfrac{\beta y^{2}}{2\bar{c}}\)</span>，再用【已知 3】的 <span class="math notranslate nohighlight">\(\hat{y}^{2} = \dfrac{\beta}{\bar{c}}y^{2}\)</span> 換掉。</p></li>
 </ul>
 </li>

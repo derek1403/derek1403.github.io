@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -511,12 +514,12 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#a-proof-vorticity-equation">赤道渦度方程式 (Equatorial vorticity equation)</a>：</strong> 已於本庫 <a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html"><span class="std std-doc">Equatorial Vorticity and Divergence Equations</span></a>【證明 (a)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#a-proof-vorticity-equation">赤道渦度方程式 (Equatorial vorticity equation)</a>：</strong> 相對渦度在阻尼下的收支：除了輻散造成的渦度伸展 <span class="math notranslate nohighlight">\(\beta y\,\delta\)</span>，還多出一項 <span class="math notranslate nohighlight">\(\beta v\)</span> ─ 氣塊往北走就換到不同的行星渦度值。這個 <span class="math notranslate nohighlight">\(\beta v\)</span> 正是後面「赤道上生不出位渦」的源頭。（已於本庫 Equatorial Vorticity and Divergence Equations【證明 (a)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{D}_t\left[\zeta\right] + \beta y\,\delta + \beta v = 0\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\zeta\)</span> : 擾動相對渦度 (Perturbation relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\zeta = \dfrac{\partial v}{\partial x} - \dfrac{\partial u}{\partial y}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 水平輻散 (Horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
@@ -524,7 +527,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#b-proof-geopotentialdivergence-equation">赤道位勢–輻散方程式 (Equatorial geopotential–divergence equation)</a>：</strong> 已於同一篇【證明 (b)】完整證明，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#b-proof-geopotentialdivergence-equation">赤道位勢–輻散方程式 (Equatorial geopotential–divergence equation)</a>：</strong> 位勢垂直結構在阻尼下的收支：左端是位勢的垂直梯度經 <span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 加工後隨時間變化，扣掉輻散造成的層結調整；右端由非絕熱加熱驅動。它與【已知 1】合起來即可消去輻散 <span class="math notranslate nohighlight">\(\delta\)</span>，導出位渦方程式。（已於同一篇【證明 (b)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta = \kappa\,\mathcal{D}_z\left[Q\right]\]</div>
 <ul class="simple">
@@ -536,7 +539,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa = R/c_p\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 水平輻散 (Horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
 </ul>
 </li>
@@ -616,7 +619,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 水平輻散 (Horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1\)</span></p></li>
 </ul>
 </li>

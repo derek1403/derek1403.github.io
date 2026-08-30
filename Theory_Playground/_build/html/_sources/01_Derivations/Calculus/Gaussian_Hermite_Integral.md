@@ -1,0 +1,382 @@
+# Gaussian–Hermite Integral (高斯 × Hermite 函數的重疊積分)
+
++++
+
+## 證明目標:
+
+* (a) 一個「中心在 $\hat{y}_0$、寬度為 $\hat{b}_0$ 的高斯」與第 $n$ 階歸一化 Hermite 函數的重疊積分，結果**仍然是同一個 $\mathcal{H}_n$**，只是自變數被壓縮、外面多了三個純量因子：
+
+$$\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y}
+= \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}
+\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}
+\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]
+\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right)$$
+
+  適用範圍為 $0 \le \hat{b}_0 < 2^{1/2}$。
+
+* (b) 上式在 $\hat{b}_0 \to 0$（高斯縮成 delta 函數）的極限下自洽：
+
+$$\lim_{\hat{b}_0 \to 0}\frac{1}{\hat{b}_0}\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y} = \pi^{1/2}\,\mathcal{H}_n(\hat{y}_0)$$
+
+* 註：這條式子在 [Schubert (2006) MJO 論文](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 中是 Appendix B 的 $(B.1)$，原文直接引用 Gradshteyn–Ryzhik 積分表；本檔改為**自證**，並在文末附上可查表的**積分表**。
+* 註：本檔是純數學結果，$\hat{y},\ \hat{y}_0,\ \hat{b}_0$ 皆為無因次量，故符號清單的單位欄一律為 $[\text{無單位}]$。
+
++++
+
+## 假設與已知 (Assumptions & Preliminaries)
+
+* **【已知 1】 [Hermite 多項式的生成函數 (Generating function of the Hermite polynomials)](https://dlmf.nist.gov/18.12#E15)：** 物理學慣例的 Hermite 多項式 $H_n$ 由下式定義，本檔直接引用不再重證
+
+  $$e^{2\eta s - s^{2}} = \sum_{n=0}^{\infty} H_n(\eta)\,\frac{s^{n}}{n!}$$
+
+  * $\eta$ : 生成函數的自變數位置 (Argument of the generating function) $[\text{無單位}]$
+  * $s$ : 生成函數的形式參數 (Formal parameter) $[\text{無單位}]$
+  * $H_n$ : 第 $n$ 階 Hermite 多項式 (The $n$-th Hermite polynomial) $[\text{無單位}]$
+  * $n$ : 階數 (Order index) $[\text{無單位}]$
+
+* **【已知 2】 [歸一化 Hermite 函數的定義 (Definition of the normalized Hermite functions)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Hermite_Functions_and_Recurrence.html#assumptions-preliminaries)：** 此定義已在本庫 [Hermite Functions and Recurrence](../Differential_Equations/Hermite_Functions_and_Recurrence.md) 的【定義 1】【定義 2】給出，此處直接引用
+
+  $$\mathcal{H}_n(\hat{y}) = c_n\,H_n(\hat{y})\,e^{-\hat{y}^{2}/2}, \qquad c_n = \left(\pi^{1/2}\,2^{n}\,n!\right)^{-1/2}$$
+
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\mathcal{H}_n(\hat{y})$ : 第 $n$ 階歸一化 Hermite 函數 (The $n$-th normalized Hermite function) $[\text{無單位}]$
+  * $c_n$ : 第 $n$ 階歸一化常數 (The $n$-th normalization constant) $[\text{無單位}]$
+  * $H_n$ : 第 $n$ 階 Hermite 多項式 (The $n$-th Hermite polynomial) $[\text{無單位}]$
+
+* **【已知 3】 [平移高斯積分 (Shifted Gaussian integral)](https://dlmf.nist.gov/7.4#E1)：** 標準結果，本檔直接引用不再重證
+
+  $$\int_{-\infty}^{\infty} e^{-\Lambda\left(\hat{y} - \mu\right)^{2}}\,d\hat{y} = \left(\frac{\pi}{\Lambda}\right)^{1/2} \qquad \left(\Lambda > 0\right)$$
+
+  * $\Lambda$ : 高斯的二次項係數 (Quadratic coefficient) $[\text{無單位}]$
+  * $\mu$ : 高斯的中心位置 (Center of the Gaussian) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+
+* **【已知 4】 冪級數的恆等定理 (Identity theorem for power series)：** 兩個冪級數在收斂區內恆等，則同次項係數相等，本檔直接引用不再重證
+
+  $$\sum_{n=0}^{\infty} A_n\,\frac{t^{n}}{n!} = \sum_{n=0}^{\infty} B_n\,\frac{t^{n}}{n!} \iff A_n = B_n \quad \left(\forall\, n \ge 0\right)$$
+
+  * $A_n,\ B_n$ : 兩個冪級數的第 $n$ 階係數 (Coefficients of the two power series) $[\text{無單位}]$
+  * $t$ : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) $[\text{無單位}]$
+
+* **【已知 5】 [高斯的 delta 函數極限 (Gaussian representation of the delta function)](https://dlmf.nist.gov/1.17#E12)：** 標準結果，本檔直接引用不再重證，僅供【證明 (b)】的自洽檢查使用
+
+  * (a) 高斯在寬度趨零時收斂到 delta 函數：
+
+    $$\lim_{\hat{b}_0 \to 0}\frac{1}{\pi^{1/2}\hat{b}_0}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right] = \delta\left(\hat{y} - \hat{y}_0\right)$$
+
+  * (b) delta 函數的取樣性質：
+
+    $$\int_{-\infty}^{\infty}\delta\left(\hat{y} - \hat{y}_0\right)f(\hat{y})\,d\hat{y} = f(\hat{y}_0)$$
+
+  * $\delta$ : 狄拉克 delta 函數 (Dirac delta function) $[\text{無單位}]$
+  * $f(\hat{y})$ : 任意連續函數 (Arbitrary continuous function) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+
+* **【假設 1】 高斯寬度的上限 (Upper bound on the Gaussian width)：** 本結果只在高斯不比 $\mathcal{H}_n$ 自身的包絡寬太多時成立
+
+  * (a) 無因次寬度的適用範圍：
+
+    $$0 \le \hat{b}_0 < 2^{1/2}$$
+
+  * (b) 由 (a) 兩側平方，得二次式的正定性：
+
+    $$\begin{gather*}
+    \hat{b}_0^{2} &\overset{\text{假設 1(a)}}{<}& 2 \\
+    2 - \hat{b}_0^{2} &>& 0
+    \end{gather*}$$
+
+  * (c) 由 (b) 與 $2 + \hat{b}_0^{2} > 0$，得四次式的正定性：
+
+    $$\begin{gather*}
+    4 - \hat{b}_0^{4} &=& \left(2 + \hat{b}_0^{2}\right)\left(2 - \hat{b}_0^{2}\right) \\
+    &\overset{\text{假設 1(b)}}{>}& 0
+    \end{gather*}$$
+
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+  * 註：(b)(c) 正是【定義 3】的 $\chi$ 與【定義 4】的 $\eta$ **保持實數**的前提。$\hat{b}_0 \ge 2^{1/2}$ 時 $\chi^{n/2}$ 與 $\eta$ 會變成複數，目標式失效；物理上這代表加熱區的經向寬度已經超過赤道變形半徑的 $2^{1/2}$ 倍。
+
+* **【假設 2】 積分與求和可交換 (Interchange of integration and summation)：** 被積函數整體帶有 $e^{-\hat{y}^{2}}$ 量級的高斯壓制，級數在任意有限 $t$ 下對 $\hat{y}$ 一致收斂，故可逐項積分
+
+  $$\sum_{n=0}^{\infty}\left[\int_{-\infty}^{\infty}F_n(\hat{y})\,d\hat{y}\right]\frac{t^{n}}{n!} = \int_{-\infty}^{\infty}\left[\sum_{n=0}^{\infty}F_n(\hat{y})\,\frac{t^{n}}{n!}\right]d\hat{y}$$
+
+  * $F_n(\hat{y})$ : 被積函數的第 $n$ 階項 (The $n$-th integrand term) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $t$ : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) $[\text{無單位}]$
+
+* **【定義 1】 未歸一化的重疊積分 (Unnormalized overlap integral)：** 把【已知 2】的常數 $c_n$ 抽出來，剩下只含 $H_n$ 的部分
+
+  $$J_n \overset{\text{def}}{=} \int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}$$
+
+  * $J_n$ : 第 $n$ 階未歸一化重疊積分 (The $n$-th unnormalized overlap integral) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $H_n$ : 第 $n$ 階 Hermite 多項式 (The $n$-th Hermite polynomial) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+
+* **【定義 2】 合併後的二次項係數 (Merged quadratic coefficient)：** 兩個高斯（強迫的與 $\mathcal{H}_n$ 包絡的）相乘後，$\hat{y}^{2}$ 前面的總係數
+
+  $$\Lambda \overset{\text{def}}{=} \frac{1}{\hat{b}_0^{2}} + \frac{1}{2} = \frac{2 + \hat{b}_0^{2}}{2\hat{b}_0^{2}}$$
+
+  * $\Lambda$ : 合併後的二次項係數 (Merged quadratic coefficient) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+
+* **【定義 3】 階數壓縮比 (Order-compression ratio)：** 決定高階模態被壓抑得多快的比值
+
+  $$\chi \overset{\text{def}}{=} \frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}$$
+
+  * $\chi$ : 階數壓縮比 (Order-compression ratio) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * 註：由【假設 1】(b)，$0 < \chi \le 1$；$\hat{b}_0 = 0$ 時 $\chi = 1$（不壓抑），$\hat{b}_0 \to 2^{1/2}$ 時 $\chi \to 0$（高階全滅）。
+
+* **【定義 4】 壓縮後的中心位置 (Compressed center)：** 目標式中 $\mathcal{H}_n$ 真正被取值的地方
+
+  $$\eta \overset{\text{def}}{=} \frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}$$
+
+  * $\eta$ : 壓縮後的中心位置 (Compressed center) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+
+* **【定義 5】 重疊積分的生成函數 (Generating function of the overlap integrals)：** 把整族 $J_n$ 打包成一個 $t$ 的函數，一次算完
+
+  $$G(t) \overset{\text{def}}{=} \sum_{n=0}^{\infty} J_n\,\frac{t^{n}}{n!}$$
+
+  * $G(t)$ : 重疊積分的生成函數 (Generating function of the overlap integrals) $[\text{無單位}]$
+  * $t$ : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) $[\text{無單位}]$
+  * $J_n$ : 第 $n$ 階未歸一化重疊積分 (The $n$-th unnormalized overlap integral) $[\text{無單位}]$
+  * $n$ : 階數 (Order index) $[\text{無單位}]$
+
+* **【推導 1】 指數的整理與配方 (Rearranging and completing the square)：** 把三個指數（強迫高斯、$\mathcal{H}_n$ 包絡、生成函數）合併成單一個對 $\hat{y}$ 的完全平方
+
+  * (a) 展開並依 $\hat{y}$ 的冪次整理：
+
+    $$\begin{gather*}
+    -\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}} - \frac{\hat{y}^{2}}{2} + 2\hat{y}t - t^{2}
+    &=& -\frac{1}{\hat{b}_0^{2}}\left[\hat{y}^{2} - 2\hat{y}\hat{y}_0 + \hat{y}_0^{2}\right] - \frac{\hat{y}^{2}}{2} + 2\hat{y}t - t^{2} \\
+    &=& -\left[\frac{1}{\hat{b}_0^{2}} + \frac{1}{2}\right]\hat{y}^{2} + 2\hat{y}\left[\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2} \\
+    &\overset{\text{定義 2}}{=}& -\Lambda\,\hat{y}^{2} + 2\hat{y}\left[\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}
+    \end{gather*}$$
+
+  * (b) 對 $\hat{y}$ 配方：
+
+    $$\begin{gather*}
+    -\Lambda\,\hat{y}^{2} + 2\hat{y}\left[\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}
+    &=& -\Lambda\left[\hat{y}^{2} - \frac{2\hat{y}}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right] - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2} \\
+    &=& -\Lambda\left[\hat{y} - \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right]^{2} + \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}
+    \end{gather*}$$
+
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $t$ : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) $[\text{無單位}]$
+  * $\Lambda$ : 合併後的二次項係數 (Merged quadratic coefficient) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+
+* **【推導 2】 生成函數的封閉式 (Closed form of the generating function)：** 交換積分與求和、代入生成函數、配方後把 $\hat{y}$ 積掉
+
+  $$\begin{gather*}
+  G(t) &\overset{\text{定義 5,定義 1}}{=}& \sum_{n=0}^{\infty}\left[\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}\right]\frac{t^{n}}{n!} \\
+  &\overset{\text{假設 2}}{=}& \int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]e^{-\hat{y}^{2}/2}\left[\sum_{n=0}^{\infty}H_n(\hat{y})\,\frac{t^{n}}{n!}\right]d\hat{y} \\
+  &\overset{\text{已知 1}}{=}& \int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}} - \frac{\hat{y}^{2}}{2} + 2\hat{y}t - t^{2}\right]d\hat{y} \\
+  &\overset{\text{推導 1(a)(b)}}{=}& \int_{-\infty}^{\infty}\exp\left[-\Lambda\left(\hat{y} - \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right)^{2}\right]\exp\left[\frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}\right]d\hat{y} \\
+  &=& \exp\left[\frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}\right]\int_{-\infty}^{\infty}\exp\left[-\Lambda\left(\hat{y} - \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)\right)^{2}\right]d\hat{y} \\
+  &\overset{\text{已知 3}}{=}& \left(\frac{\pi}{\Lambda}\right)^{1/2}\exp\left[\frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)^{2} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} - t^{2}\right]
+  \end{gather*}$$
+
+  * $G(t)$ : 重疊積分的生成函數 (Generating function of the overlap integrals) $[\text{無單位}]$
+  * $t$ : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $H_n$ : 第 $n$ 階 Hermite 多項式 (The $n$-th Hermite polynomial) $[\text{無單位}]$
+  * $n$ : 階數 (Order index) $[\text{無單位}]$
+  * $\Lambda$ : 合併後的二次項係數 (Merged quadratic coefficient) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+  * 註：套用【已知 3】時取 $\mu = \frac{1}{\Lambda}\left(\frac{\hat{y}_0}{\hat{b}_0^{2}} + t\right)$；由【定義 2】$\Lambda > 0$ 恆成立，故積分收斂。
+
+* **【推導 3】 生成函數的四個係數 (The four coefficients of the generating function)：** 把【推導 2】的前因子與指數依 $t$ 的冪次拆開，逐項化到最簡
+
+  * (a) 前因子：
+
+    $$\begin{gather*}
+    \left(\frac{\pi}{\Lambda}\right)^{1/2} &\overset{\text{定義 2}}{=}& \left(\pi\cdot\frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2} \\
+    &=& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}
+    \end{gather*}$$
+
+  * (b) 指數中與 $t$ 無關的常數項：
+
+    $$\begin{gather*}
+    \frac{1}{\Lambda}\frac{\hat{y}_0^{2}}{\hat{b}_0^{4}} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} &\overset{\text{定義 2}}{=}& \frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\cdot\frac{\hat{y}_0^{2}}{\hat{b}_0^{4}} - \frac{\hat{y}_0^{2}}{\hat{b}_0^{2}} \\
+    &=& \frac{2\hat{y}_0^{2}}{\hat{b}_0^{2}\left(2 + \hat{b}_0^{2}\right)} - \frac{\hat{y}_0^{2}\left(2 + \hat{b}_0^{2}\right)}{\hat{b}_0^{2}\left(2 + \hat{b}_0^{2}\right)} \\
+    &=& \frac{\hat{y}_0^{2}\left[2 - 2 - \hat{b}_0^{2}\right]}{\hat{b}_0^{2}\left(2 + \hat{b}_0^{2}\right)} \\
+    &=& -\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}
+    \end{gather*}$$
+
+  * (c) 指數中 $t$ 的一次項係數：
+
+    $$\begin{gather*}
+    \frac{2}{\Lambda}\frac{\hat{y}_0}{\hat{b}_0^{2}} &\overset{\text{定義 2}}{=}& 2\cdot\frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\cdot\frac{\hat{y}_0}{\hat{b}_0^{2}} \\
+    &=& \frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}
+    \end{gather*}$$
+
+  * (d) 指數中 $t$ 的二次項係數：
+
+    $$\begin{gather*}
+    \frac{1}{\Lambda} - 1 &\overset{\text{定義 2}}{=}& \frac{2\hat{b}_0^{2}}{2 + \hat{b}_0^{2}} - 1 \\
+    &=& \frac{2\hat{b}_0^{2} - 2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}} \\
+    &=& -\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}} \\
+    &\overset{\text{定義 3}}{=}& -\chi
+    \end{gather*}$$
+
+  * $\Lambda$ : 合併後的二次項係數 (Merged quadratic coefficient) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\chi$ : 階數壓縮比 (Order-compression ratio) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+  * 註：把 (a)–(d) 代回【推導 2】，生成函數就長成 $G(t) = \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\exp\left[\frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}t - \chi t^{2}\right]$。
+
+* **【推導 4】 把指數重新認回生成函數 (Recognizing the exponential as a generating function)：** 關鍵的一步 —— 換元 $s = \chi^{1/2}t$ 之後，$t$ 的那一塊指數**恰好就是** 【已知 1】在 $\eta$ 處的生成函數
+
+  * (a) 先驗證一次項係數對得上：
+
+    $$\begin{gather*}
+    2\eta\,\chi^{1/2} &\overset{\text{定義 3,定義 4}}{=}& 2\cdot\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\cdot\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2} \\
+    &\overset{\text{假設 1(c)}}{=}& \frac{4\hat{y}_0}{\left(2 + \hat{b}_0^{2}\right)^{1/2}\left(2 - \hat{b}_0^{2}\right)^{1/2}}\cdot\frac{\left(2 - \hat{b}_0^{2}\right)^{1/2}}{\left(2 + \hat{b}_0^{2}\right)^{1/2}} \\
+    &=& \frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}
+    \end{gather*}$$
+
+  * (b) 於是整塊指數展開成 $\chi^{n/2}H_n(\eta)$ 的級數：
+
+    $$\begin{gather*}
+    \exp\left[\frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}t - \chi t^{2}\right] &\overset{\text{推導 4(a)}}{=}& \exp\left[2\eta\,\chi^{1/2}t - \chi t^{2}\right] \\
+    &=& \exp\left[2\eta\left(\chi^{1/2}t\right) - \left(\chi^{1/2}t\right)^{2}\right] \\
+    &\overset{\text{已知 1}}{=}& \sum_{n=0}^{\infty}H_n(\eta)\,\frac{\left(\chi^{1/2}t\right)^{n}}{n!} \\
+    &=& \sum_{n=0}^{\infty}\chi^{n/2}H_n(\eta)\,\frac{t^{n}}{n!}
+    \end{gather*}$$
+
+  * $\eta$ : 壓縮後的中心位置 (Compressed center) $[\text{無單位}]$
+  * $\chi$ : 階數壓縮比 (Order-compression ratio) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $t$ : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) $[\text{無單位}]$
+  * $H_n$ : 第 $n$ 階 Hermite 多項式 (The $n$-th Hermite polynomial) $[\text{無單位}]$
+  * $n$ : 階數 (Order index) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+  * 註：這裡把【已知 1】的 $(\eta, s)$ 分別取成本檔的 $\eta$ 與 $\chi^{1/2}t$。由【假設 1】(b) 有 $\chi > 0$，故 $\chi^{1/2}$ 為實數。
+
+* **【推導 5】 未歸一化重疊積分的顯式 (Explicit form of the unnormalized overlap integral)：** 兩邊都寫成 $t^{n}/n!$ 的級數，比對係數
+
+  $$\begin{gather*}
+  \sum_{n=0}^{\infty}J_n\,\frac{t^{n}}{n!} &\overset{\text{定義 5}}{=}& G(t) \\
+  \sum_{n=0}^{\infty}J_n\,\frac{t^{n}}{n!} &\overset{\text{推導 2,推導 3(a)(b)(c)(d)}}{=}& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\exp\left[\frac{4\hat{y}_0}{2 + \hat{b}_0^{2}}t - \chi t^{2}\right] \\
+  \sum_{n=0}^{\infty}J_n\,\frac{t^{n}}{n!} &\overset{\text{推導 4(b)}}{=}& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\sum_{n=0}^{\infty}\chi^{n/2}H_n(\eta)\,\frac{t^{n}}{n!} \\
+  J_n &\overset{\text{已知 4}}{=}& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]H_n(\eta)
+  \end{gather*}$$
+
+  * $J_n$ : 第 $n$ 階未歸一化重疊積分 (The $n$-th unnormalized overlap integral) $[\text{無單位}]$
+  * $n$ : 階數 (Order index) $[\text{無單位}]$
+  * $t$ : 本檔用來承載生成函數的形式參數 (Formal parameter used in this file) $[\text{無單位}]$
+  * $G(t)$ : 重疊積分的生成函數 (Generating function of the overlap integrals) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\chi$ : 階數壓縮比 (Order-compression ratio) $[\text{無單位}]$
+  * $H_n$ : 第 $n$ 階 Hermite 多項式 (The $n$-th Hermite polynomial) $[\text{無單位}]$
+  * $\eta$ : 壓縮後的中心位置 (Compressed center) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+
+* **【推導 6】 兩個指數的合併 (Merging the two exponentials)：** 把【推導 5】的指數與【已知 2】高斯包絡的指數加起來
+
+  $$\begin{gather*}
+  -\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}} + \frac{\eta^{2}}{2} &\overset{\text{定義 4}}{=}& -\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}} + \frac{1}{2}\cdot\frac{4\hat{y}_0^{2}}{4 - \hat{b}_0^{4}} \\
+  &\overset{\text{假設 1(c)}}{=}& -\frac{\hat{y}_0^{2}\left(2 - \hat{b}_0^{2}\right)}{4 - \hat{b}_0^{4}} + \frac{2\hat{y}_0^{2}}{4 - \hat{b}_0^{4}} \\
+  &=& \frac{\hat{y}_0^{2}\left[-2 + \hat{b}_0^{2} + 2\right]}{4 - \hat{b}_0^{4}} \\
+  &=& \frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}
+  \end{gather*}$$
+
+  * $\hat{y}$ : 無因次自變數 (Dimensionless independent variable) $[\text{無單位}]$
+  * $\hat{b}_0$ : 高斯的無因次 $e$-folding 寬度 (Dimensionless $e$-folding width) $[\text{無單位}]$
+  * $\eta$ : 壓縮後的中心位置 (Compressed center) $[\text{無單位}]$
+  * $\hat{y}_0$ : 高斯的無因次中心位置 (Dimensionless center) $[\text{無單位}]$
+
++++
+
+## 證明:
+
+### (a) proof 高斯–Hermite 重疊積分 (Gaussian-Hermite overlap integral)
+
+先用【已知 2】把 $\mathcal{H}_n$ 拆成 $c_nH_n\,e^{-\hat{y}^{2}/2}$ 換成【定義 1】的 $J_n$，代入【推導 5】，再用【已知 2】把 $c_nH_n(\eta)$ 收回成 $\mathcal{H}_n(\eta)$，最後由【推導 6】合併指數。
+
+$$\begin{gather*}
+\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y}
+&\overset{\text{已知 2}}{=}& c_n\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y} \\
+&\overset{\text{定義 1}}{=}& c_n\,J_n \\
+&\overset{\text{推導 5}}{=}& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]c_nH_n(\eta) \\
+&\overset{\text{已知 2}}{=}& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}}\right]\mathcal{H}_n(\eta)\,e^{\eta^{2}/2} \\
+&=& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\frac{\hat{y}_0^{2}}{2 + \hat{b}_0^{2}} + \frac{\eta^{2}}{2}\right]\mathcal{H}_n(\eta) \\
+&\overset{\text{推導 6}}{=}& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n(\eta) \\
+&\overset{\text{定義 3,定義 4}}{=}& \left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right)
+\end{gather*}$$
+
+### (b) verify 窄高斯極限的自洽性 (Consistency in the narrow-Gaussian limit)
+
+從 delta 函數那一端出發，繞經【證明 (a)】的封閉式取極限，回到同一個值。
+
+$$\begin{gather*}
+\pi^{1/2}\,\mathcal{H}_n(\hat{y}_0) &\overset{\text{已知 5(b)}}{=}& \pi^{1/2}\int_{-\infty}^{\infty}\delta\left(\hat{y} - \hat{y}_0\right)\mathcal{H}_n(\hat{y})\,d\hat{y} \\
+&\overset{\text{已知 5(a)}}{=}& \lim_{\hat{b}_0 \to 0}\frac{1}{\hat{b}_0}\int_{-\infty}^{\infty}\exp\left[-\frac{\left(\hat{y} - \hat{y}_0\right)^{2}}{\hat{b}_0^{2}}\right]\mathcal{H}_n(\hat{y})\,d\hat{y} \\
+&\overset{\text{證明 (a)}}{=}& \lim_{\hat{b}_0 \to 0}\frac{1}{\hat{b}_0}\left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right) \\
+&=& \lim_{\hat{b}_0 \to 0}\left(\frac{2\pi}{2 + \hat{b}_0^{2}}\right)^{1/2}\left(\frac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{n/2}\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}\right) \\
+&=& \left(\frac{2\pi}{2}\right)^{1/2}\cdot 1^{n/2}\cdot e^{0}\cdot\mathcal{H}_n\!\left(\frac{2\hat{y}_0}{2}\right) \\
+&=& \pi^{1/2}\,\mathcal{H}_n(\hat{y}_0)
+\end{gather*}$$
+
++++
+
+## 積分表 (Table of Integrals)
+
+以下各式都是【證明 (a)】的直接後果，供日後查表用。除特別註明外，適用範圍一律是【假設 1】的 $0 \le \hat{b}_0 < 2^{1/2}$；記號沿用【定義 3】的 $\chi = \dfrac{2 - \hat{b}_0^{2}}{2 + \hat{b}_0^{2}}$ 與【定義 4】的 $\eta = \dfrac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}$。
+
+| # | 積分 | 結果 | 出處／備註 |
+|---|---|---|---|
+| T1 | $\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/\hat{b}_0^{2}}\,\mathcal{H}_n(\hat{y})\,d\hat{y}$ | $\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[\dfrac{\hat{b}_0^{2}\hat{y}_0^{2}}{4-\hat{b}_0^{4}}\right]\mathcal{H}_n(\eta)$ | 【證明 (a)】＝ Schubert (2006) $(B.1)$ |
+| T2 | $\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/\hat{b}_0^{2}}\,H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}$ | $\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\exp\left[-\dfrac{\hat{y}_0^{2}}{2+\hat{b}_0^{2}}\right]H_n(\eta)$ | 【推導 5】；未歸一化版本，做數值時較穩 |
+| T3 | $\displaystyle\int_{-\infty}^{\infty}e^{-\hat{y}^{2}/\hat{b}_0^{2}}\,\mathcal{H}_n(\hat{y})\,d\hat{y}$ | $\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\chi^{n/2}\,\mathcal{H}_n(0)$ | T1 取 $\hat{y}_0 = 0$；**奇數 $n$ 恆為零** |
+| T4 | $\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/\hat{b}_0^{2}}\,\mathcal{H}_0(\hat{y})\,d\hat{y}$ | $\pi^{-1/4}\left(\dfrac{2\pi\hat{b}_0^{2}}{2+\hat{b}_0^{2}}\right)^{1/2}\exp\left[-\dfrac{\hat{y}_0^{2}}{2+\hat{b}_0^{2}}\right]$ | T1 取 $n = 0$；純高斯 $\times$ 純高斯 |
+| T5 | $\displaystyle\int_{-\infty}^{\infty}e^{-\left(\hat{y}-\hat{y}_0\right)^{2}/2}\,H_n(\hat{y})\,e^{-\hat{y}^{2}/2}\,d\hat{y}$ | $\pi^{1/2}\,e^{-\hat{y}_0^{2}/4}\,\hat{y}_0^{\,n}$ | T2 在 $\hat{b}_0^{2} \to 2$ 的**極限**（$\chi \to 0$、$\eta \to \infty$，須用 $\chi^{n/2}H_n(\eta) \to \left(2\chi^{1/2}\eta\right)^{n}$ 取極限） |
+| T6 | $\displaystyle\int_{-\infty}^{\infty}e^{-\Lambda\left(\hat{y}-\mu\right)^{2}}\,d\hat{y}$ | $\left(\dfrac{\pi}{\Lambda}\right)^{1/2}$ | 【已知 3】；本篇的基石，$\Lambda > 0$ |
+| T7 | $\displaystyle\int_{-\infty}^{\infty}\mathcal{H}_n(\hat{y})\,\mathcal{H}_{n'}(\hat{y})\,d\hat{y}$ | $1$ 若 $n' = n$；$0$ 若 $n' \neq n$ | 見 [Hermite Orthonormality and Oscillator Eigenvalue](../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.md)【證明 (d)】 |
+
+**外部積分表**：本篇的 T1 對應 Gradshteyn & Ryzhik, *Table of Integrals, Series, and Products*, 7.374 節（第七版約 p. 803；Schubert (2006) 引的是 1994 年版 p. 843）。線上可查 [DLMF §18.17 Integrals（Hermite 正交多項式的積分表）](https://dlmf.nist.gov/18.17)。
+
++++
+
+## 結構解釋
+
+### 這條式子在說什麼
+
+把一個**中心在 $\hat{y}_0$、寬度為 $\hat{b}_0$ 的高斯**，投影到第 $n$ 階經向模態上。結果長成三個因子的乘積：
+
+$$\underbrace{\left(\frac{2\pi\hat{b}_0^{2}}{2 + \hat{b}_0^{2}}\right)^{1/2}}_{\text{總量}}\times\underbrace{\chi^{n/2}}_{\text{高階衰減}}\times\underbrace{\exp\left[\frac{\hat{b}_0^{2}\hat{y}_0^{2}}{4 - \hat{b}_0^{4}}\right]\mathcal{H}_n(\eta)}_{\text{偏移的選模效果}}$$
+
+**最漂亮的一點是：積完之後還是同一個 $\mathcal{H}_n$**，只是自變數從 $\hat{y}_0$ 被壓縮成 $\eta = \dfrac{2\hat{y}_0}{\left(4 - \hat{b}_0^{4}\right)^{1/2}}$。這是「高斯是 Hermite 函數的最低階成員」這件事的必然結果 —— 高斯與 Hermite 函數的重疊，不會跑出這一族之外。
+
+### 三個因子各自控制什麼
+
+* **$\chi^{n/2}$ 決定譜的收斂速度。** 由【定義 3】的註，$0 < \chi \le 1$；因此係數隨 $n$ **指數衰減**（衰減率 $\frac12\ln\frac{1}{\chi}$）。Schubert (2006) 說「$\hat{\eta}_{mnr}$ 隨 $n$ 指數衰減，故可在 $n = N = 200$ 截斷」，數學根源就在這個因子。加熱區愈寬（$\hat{b}_0$ 愈大）$\chi$ 愈小，高階模態被殺得愈乾淨，需要的截斷 $N$ 愈小。
+
+* **$\mathcal{H}_n(\eta)$ 決定「哪些模態被打開」。** $\hat{y}_0 = 0$ 時 $\eta = 0$，而 $\mathcal{H}_n(0)$ 對**奇數 $n$ 恆為零**（見 T3）—— 這就是論文中「對流正對赤道時，混合羅斯貝–重力波等奇模態的貢獻恰好消失、響應南北對稱」的數學原因。一旦 $\hat{y}_0 \neq 0$，奇模態被打開，尾流才會出現南北不對稱。
+
+* **前因子與 $\hat{y}_0$ 無關。** 這呼應論文 $(4.1)$ 的設計：加熱的面積分 $\pi^{1/2}Q_0a_0b_0$ 完全不隨 $y_0$ 改變，所以比較 $y_0 = 0$ 與 $y_0 = 450\ \text{km}$ 兩組實驗時，**總加熱量一模一樣**，差別純粹來自「加熱擺在哪」。
+
+### 為什麼會有 $\hat{b}_0 < 2^{1/2}$ 這道牆
+
+【假設 1】的上限來自一個很具體的地方：【推導 3】(d) 算出 $t^{2}$ 的係數是 $-\chi$，而【推導 4】要把 $\exp\left[2\eta\chi^{1/2}t - \chi t^{2}\right]$ 認回生成函數，就必須 $\chi > 0$。
+
+$\chi \le 0$（即 $\hat{b}_0 \ge 2^{1/2}$）時，$t^{2}$ 的係數變號 —— 生成函數的高斯壓制翻轉成高斯放大，級數不再對應到實數的 $H_n(\eta)$。物理上這代表**加熱區的經向寬度超過赤道變形半徑的 $2^{1/2}$ 倍**，此時它已經寬到「比最低階赤道模態本身還寬」，用赤道波基底展開就不再是好的描述。Schubert (2006) 的 $b_0 = 450\ \text{km}$ 對應 $\hat{b}_0 = \epsilon^{1/4}\left(b_0/a\right) \approx 507.3^{1/4}\times\frac{450}{6370} \approx 0.335$，離這道牆還很遠。
+
+### 為什麼要用生成函數，而不是硬算
+
+直接算 $\int e^{-(\hat{y}-\hat{y}_0)^{2}/\hat{b}_0^{2}}H_n(\hat{y})e^{-\hat{y}^{2}/2}\,d\hat{y}$ 會撞上 $H_n$ 的顯式多項式，$n$ 一大就無從下手。生成函數的手法把**整族**積分打包成一個 $t$ 的函數：$\hat{y}$ 的積分只需要做**一次**（【推導 2】的配方＋高斯積分），得到的答案再重新展開成 $t$ 的級數，$n$ 階的答案就一次全部掉出來（【推導 5】）。
+
+這正是【已知 1】那個看似抽象的生成函數真正的用途 —— 它把「對每個 $n$ 各做一次積分」換成「做一次積分、再比對一次係數」。

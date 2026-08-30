@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_momentum_equation.html">[座標系統] 圓柱坐標變換的動量方程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Divergence_Operator_in_Cylindrical_Coordinates.html">[座標系統] 圓柱坐標中的散度算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/cylindrical_coordinate_transformation_Relative_Vorticity.html">[座標系統] 圓柱坐標變換的相對渦度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html">[座標系統] 球座標的尺度因子、體積元素與拉普拉斯算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">[流體力學] 梯度風平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">[流體力學] 擾動的靜力平衡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">[流體力學] 軸對稱連續性方程</a></li>
@@ -206,6 +207,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Sturm_Liouville_Orthogonality.html">[微分方程] Sturm-Liouville 本徵函數的正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Functions_and_Recurrence.html">[微分方程] Hermite 函數的遞迴與微分關係</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html">[微分方程] Hermite 函數的正交歸一性與諧振子本徵值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Legendre_Equation_and_Quantization.html">[微分方程] 連帶勒讓德方程式的量子化條件與相鄰階耦合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html">[微分方程] 連帶拉蓋爾方程式的截斷條件與正交性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html">[大氣動力學] 垂直結構方程式與模態投影</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html">[赤道波動力學] B1 對數氣壓座標的線性化原始方程組</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html">[赤道波動力學] C1 赤道渦度與輻散方程式</a></li>
@@ -351,7 +354,7 @@
       
       
       
-      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.ipynb" target="_blank"
+      <li><a href="../../_sources/01_Derivations/Equatorial_Beta_Plane_Dynamics/Vertical_Structure_Equation_in_Log_Pressure.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -511,7 +514,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 已於本庫 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">Log-Pressure Linearized Primitive Equations</span></a> 完整證明，本篇只用到其中的連續方程式與上下邊界條件</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">對數氣壓座標下的線性化原始方程組 (Log-pressure linearized primitive equations)</a>：</strong> 本篇只用到方程組裡的兩件事：連續方程式（水平輻散與垂直運動的平衡，含對數氣壓座標特有的 <span class="math notranslate nohighlight">\(-w\)</span> 項），以及對流層上下界的剛蓋條件（<span class="math notranslate nohighlight">\(w\)</span> 在 <span class="math notranslate nohighlight">\(z = 0\)</span> 與 <span class="math notranslate nohighlight">\(z = z_T\)</span> 為零）─ 後者正是垂直結構本徵值被量子化的來源。（已於本庫 Log-Pressure Linearized Primitive Equations 完整證明，此處直接引用。）</p>
 <ul>
 <li><p>(a) 連續方程式：</p>
 <div class="math notranslate nohighlight">
@@ -521,7 +524,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\left.w\right|_{z = 0} = \left.w\right|_{z = z_T} = 0\]</div>
 </li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
@@ -530,7 +533,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://dlmf.nist.gov/1.13">二階線性常係數常微分方程式的通解 (General solution of a second-order linear ODE with constant coefficients)</a>：</strong> 特徵方程式有一對純虛根 <span class="math notranslate nohighlight">\(\pm ik\)</span> 時，通解為正弦與餘弦的線性組合，標準結果，此處直接引用不再重證</p>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://dlmf.nist.gov/1.13">二階線性常係數常微分方程式的通解 (General solution of a second-order linear ODE with constant coefficients)</a>：</strong> 特徵方程式有一對純虛根 <span class="math notranslate nohighlight">\(\pm ik\)</span> 時，通解為正弦與餘弦的線性組合。（標準結果，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^{2}Y}{dz^{2}} + k^{2}Y = 0 \quad \Longleftrightarrow \quad Y(z) = A\sin\left(kz\right) + B\cos\left(kz\right)\]</div>
 <ul class="simple">
@@ -556,9 +559,11 @@ document.write(`
 \[\left(\frac{d}{dz} - 1\right)\frac{dZ}{dz} \overset{\text{def}}{=} -\lambda\,Z\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' \overset{\text{def}}{=} \dfrac{dZ}{dz}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 分離常數（本徵值）(Separation constant / eigenvalue) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p>註：這條式子<strong>目前只是一個定義</strong>（我們宣告要找滿足它的 <span class="math notranslate nohighlight">\(Z\)</span>）。它為什麼非長這樣不可，要到 <a class="reference internal" href="Separation_into_Horizontal_Structure_System.html"><span class="std std-doc">水平結構方程組的分離</span></a>【證明 (d)】才看得出來 —— 那裡連續方程式裡的 <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} - 1\right)w\)</span> 必須正比於 <span class="math notranslate nohighlight">\(Z\)</span>，才能讓整組方程式閉合。</p></li>
+<li><p>註（撇號的記號慣例）：本推導鏈的撇號 <span class="math notranslate nohighlight">\('\)</span> <strong>一律只表示對 <span class="math notranslate nohighlight">\(z\)</span> 微分</strong>，不表示擾動。書寫上分兩種場合：在<strong>推導列</strong>寫 <span class="math notranslate nohighlight">\(\dfrac{dZ}{dz}\)</span>，讓「對誰微分」一眼可見；在<strong>命名與引用</strong>時寫 <span class="math notranslate nohighlight">\(Z'\)</span>，以對齊 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((3.3)\)</span> 與 Fig. 1 圖說 —— 兩種寫法完全同義。擾動量為何反而<strong>不</strong>用撇號，見 <a class="reference internal" href="Log_Pressure_Linearized_Primitive_Equations.html"><span class="std std-doc">線性化原始方程組</span></a>【假設 2】末的〈記號慣例〉註。</p></li>
 </ul>
 </li>
 <li><p><strong>【假設 1】 剛蓋邊界條件 (Rigid-lid boundary conditions)：</strong> 上下邊界不允許垂直運動，而垂直速度的垂直結構取為 <span class="math notranslate nohighlight">\(dZ/dz\)</span>，故邊界條件落在 <span class="math notranslate nohighlight">\(Z\)</span> 的<strong>導數</strong>上</p>
@@ -571,7 +576,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\left.\frac{dZ}{dz}\right|_{z = 0} = \left.\frac{dZ}{dz}\right|_{z = z_T} = 0\]</div>
 </li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 對數氣壓垂直速度 (Log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
@@ -589,8 +594,9 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[Z'\left(z_m\right) = 1\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z'\)</span> 取極大值的高度 (Height where <span class="math notranslate nohighlight">\(Z'\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的微分 <span class="math notranslate nohighlight">\(\dfrac{dZ}{dz}\)</span>（即 <span class="math notranslate nohighlight">\(Z'\)</span>）取極大值的高度 (Height where <span class="math notranslate nohighlight">\(dZ/dz\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【推導 1】 消去一階項的代換 (Substitution removing the first-order term)：</strong> 【定義 2】展開後含有一階導數項，用 <span class="math notranslate nohighlight">\(Z = e^{z/2}Y\)</span> 把它消掉，方程式就退化成最單純的簡諧形式</p>
@@ -656,6 +662,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(A,\ B\)</span> : 待定常數 (Undetermined constants) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【推導 3】 第二個邊界條件與本徵值 (Second boundary condition and the eigenvalue)：</strong> <span class="math notranslate nohighlight">\(z = z_T\)</span> 的條件把 <span class="math notranslate nohighlight">\(k\)</span> 量子化，第一內模態的本徵值於是確定</p>
@@ -693,8 +700,9 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(A,\ B\)</span> : 待定常數 (Undetermined constants) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> : 垂直波數 (Vertical wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
-<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z'\)</span> 取極大值的高度 (Height where <span class="math notranslate nohighlight">\(Z'\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的微分 <span class="math notranslate nohighlight">\(\dfrac{dZ}{dz}\)</span>（即 <span class="math notranslate nohighlight">\(Z'\)</span>）取極大值的高度 (Height where <span class="math notranslate nohighlight">\(dZ/dz\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 <li><p>註：最後一步取的是<strong>第二象限</strong>的那個根（<span class="math notranslate nohighlight">\(\pi/2 &lt; \pi z_m/z_T &lt; \pi\)</span>）。取第一象限的根會落在 <span class="math notranslate nohighlight">\(\sin\)</span> 為正、<span class="math notranslate nohighlight">\(\cos\)</span> 也為正的區間，對應的是 <span class="math notranslate nohighlight">\(Z'\)</span> 的<strong>極小</strong>而非極大；而 <span class="math notranslate nohighlight">\(\tan^{-1}\)</span> 的主值域是 <span class="math notranslate nohighlight">\(\left(-\pi/2, \pi/2\right)\)</span>，故需補上 <span class="math notranslate nohighlight">\(\pi\)</span>。</p></li>
 </ul>
 </li>
@@ -713,8 +721,9 @@ document.write(`
 </li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
-<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z'\)</span> 取極大值的高度 (Height where <span class="math notranslate nohighlight">\(Z'\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的微分 <span class="math notranslate nohighlight">\(\dfrac{dZ}{dz}\)</span>（即 <span class="math notranslate nohighlight">\(Z'\)</span>）取極大值的高度 (Height where <span class="math notranslate nohighlight">\(dZ/dz\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【推導 6】 歸一化常數 (Normalization constant)：</strong> 用【假設 3】把 <span class="math notranslate nohighlight">\(A\)</span> 定下來</p>
@@ -730,8 +739,9 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(A,\ B\)</span> : 待定常數 (Undetermined constants) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
-<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z'\)</span> 取極大值的高度 (Height where <span class="math notranslate nohighlight">\(Z'\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的微分 <span class="math notranslate nohighlight">\(\dfrac{dZ}{dz}\)</span>（即 <span class="math notranslate nohighlight">\(Z'\)</span>）取極大值的高度 (Height where <span class="math notranslate nohighlight">\(dZ/dz\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
 </ul>
 </li>
 </ul>
