@@ -5,7 +5,7 @@
 ## 證明目標:
 
 在赤道 $\beta$ 平面上，把層結、可壓縮、準靜力大氣的原始方程組，寫成以
-$z = \ln\left(p_0/p\right)$ 為垂直座標的**線性化**形式。五條方程式收束為一組：
+$z = \ln\left(p_0/P\right)$ 為垂直座標的**線性化**形式。五條方程式收束為一組：
 
 * (a) 緯向動量方程式：
 
@@ -27,6 +27,28 @@ $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial
 
 $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
 
+* $u$ : 擾動緯向風速 (Perturbation zonal velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $v$ : 擾動經向風速 (Perturbation meridional velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $T$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
+* $Q$ : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $x$ : 緯向座標 (Zonal coordinate) $[\text{m}]$
+* $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $t$ : 時間 (Time) $[\text{s}]$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma \approx 23.79 \ \text{K}$
+* $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+* $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+* $p_0$ : 參考氣壓 (Reference pressure) $[\text{Pa}]$，$p_0 = 1010 \ \text{mb}$
+* $P$ : 氣壓 (Pressure) $[\text{Pa}]$
+* 註（符號提醒）：本段的符號有四處容易誤讀 ——
+  * $u,\ v,\ w$ 寫成光禿的形式**就是擾動量**：由【假設 2】(a)(b-1)，$\bar{u} = \bar{v} = \bar{w} = 0$，故 $u \equiv u'$、$v \equiv v'$、$w \equiv w'$。這是恆等式，不是撇號省略。
+  * $T$ 在本段指**擾動**溫度 $T'$；但【已知 1/3/4】【推導 4/5/7】中的 $T$ 是**全場**溫度。這是一次明確的符號重新定義，交接點在【證明 (c)(e)】末，見【假設 2】末的〈記號慣例〉註。
+  * $\phi$（擾動位勢）、$\Phi$（全場位勢）、$\varphi$（緯度）是**三個不同的量**，僅字形相近；本段出現的是 $\phi$。
+  * $Q$ 是**外加的強迫**而非因變數，故不冠「擾動」二字（見【假設 2】末的使用規則）。
 * 註：這五條就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(2.1)$，是整條 MJO 推導鏈的起點。
 * 註：球座標原始方程式、連續方程式、狀態方程式、靜力平衡**都已在別處證過**，本檔一律引用（見【已知】卡片）。真正新做的只有三件事：**對數氣壓座標變換**、**繞靜止基本態線性化**、**赤道 $\beta$ 平面近似**。
 * 註：$z$ 是**無因次**的對數氣壓座標，因此 $w = Dz/Dt$ 的單位是 $\left[\text{s}^{-1}\right]$ 而非 $\left[\text{m}\cdot\text{s}^{-1}\right]$。
