@@ -49,16 +49,16 @@ $$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partia
   * $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
   * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
   * $T$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
-  * $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+  * $Q$ : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
   * $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
   * $t$ : 時間 (Time) $[\text{s}]$
   * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
-  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1}$
+  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
   * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
-  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
-  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
-  * $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$，$\kappa = R/c_p$
+  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+  * $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$，$\kappa \approx 0.286$
 
 * **【已知 2】 [Clairaut 定理（混合偏導數可交換）(Clairaut's theorem)](https://dlmf.nist.gov/1.5#E4)：** 二階連續可微的函數，其混合偏導數與求導次序無關。（標準結果，此處直接引用。）
 
@@ -76,7 +76,7 @@ $$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partia
   * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
   * $T$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
   * $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
-  * $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+  * $Q$ : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
   * $C^{2}$ : 二階連續可微的函數類 (Class of twice continuously differentiable functions) $[\text{無單位}]$
 
 * **【假設 2】 [靜力穩定度為常數 (Constant static stability)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries)：** 沿用 [線性化原始方程組](Log_Pressure_Linearized_Primitive_Equations.md)【假設 5】的模式設定，$\Gamma$ 不隨 $x, y, z, t$ 變化
@@ -117,7 +117,7 @@ $$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partia
   * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$
   * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
   * $t$ : 時間 (Time) $[\text{s}]$
-  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1}$
+  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
   * 註：$\mathcal{D}_z$ 就是 [線性化原始方程組](Log_Pressure_Linearized_Primitive_Equations.md)【證明 (d)】那個 $\dfrac{\partial w}{\partial z} - w$ 的算子形式；它的來源是密度隨高度指數遞減。
 
@@ -143,7 +143,7 @@ $$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partia
   * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
   * $t$ : 時間 (Time) $[\text{s}]$
-  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1}$
+  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
   * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
   * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
 
@@ -164,7 +164,7 @@ $$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partia
     \end{gather*}$$
 
   * $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
-  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1}$
+  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
   * $v$ : 擾動經向風速 (Perturbation meridional velocity) $[\text{m}\cdot\text{s}^{-1}]$
   * $t$ : 時間 (Time) $[\text{s}]$
   * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
@@ -193,11 +193,11 @@ $$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partia
   * $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
   * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$
-  * $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
-  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+  * $Q$ : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
   * $T$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
   * $t$ : 時間 (Time) $[\text{s}]$
-  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1}$
+  * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
   * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
   * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
 
