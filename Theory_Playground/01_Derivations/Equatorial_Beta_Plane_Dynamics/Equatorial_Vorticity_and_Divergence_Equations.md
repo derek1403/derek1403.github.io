@@ -9,11 +9,11 @@
 
 * (a) 渦度方程式，由兩條水平動量方程式交叉微分得到：
 
-$$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right) + \beta y\left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) + \beta v = 0$$
+$$\mathcal{D}_t\Big[\zeta\Big] + \beta y\,\delta + \beta v= 0$$
 
 * (b) 位勢–輻散方程式，由靜力、連續、熱力學三式消去 $T$ 與 $w$ 得到：
 
-$$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z} - R\Gamma\left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) = \kappa\left(\frac{\partial}{\partial z} - 1\right)Q$$
+$$\kappa\,\mathcal{D}_z\Big[Q\Big] = \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta$$
 
 * 註：這兩條就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(2.4)$ 與 $(2.5)$。它們的**唯一目的**是為了在下一篇 [赤道 PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md) 中把水平輻散消掉。
 * 註：兩條式子裡出現的水平輻散 $\dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}$ 是**同一個量**，只是係數不同 —— (a) 是 $\beta y$、(b) 是 $-R\Gamma$。要消去它，得把 (b) 乘上 $\dfrac{\beta y}{R\Gamma}$ 再與 (a) 相加；**乘進去的這個 $\beta y$ 不是常數**，它就是下一篇 PV 方程式源項裡那個 $y$ 因子的來源，也是「赤道上生不出 PV」的根本原因。
@@ -88,8 +88,8 @@ $$\left(\frac{\partial}{\partial t} + \alpha\right)\left(\frac{\partial}{\partia
 
 * **【假設 2】 [靜力穩定度為常數 (Constant static stability)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries)：** 沿用 [線性化原始方程組](Log_Pressure_Linearized_Primitive_Equations.md)【假設 5】的模式設定，$\Gamma$ 不隨 $x, y, z, t$ 變化
 
-  $$\begin{gather*} 
-  \Gamma &=&  23.79 \ \text{K} 
+  $$\begin{gather*}
+  \Gamma &=&  23.79 \ \text{K}
   \end{gather*}$$
 
   * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
