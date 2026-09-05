@@ -38,12 +38,12 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
   * $q$ : 位渦距平 (PV anomaly) $[\text{s}^{-1}]$
   * $u,\ v$ : 擾動緯向、經向風速 (Perturbation velocities) $[\text{m}\cdot\text{s}^{-1}]$
   * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
-  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
-  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
-  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$
+  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
+  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
   * $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
-  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$
+  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$，$z_T = 1.619$
 
 * **【已知 2】 [線性平衡關係 (Linear balance relation)](https://glossary.ametsoc.org/wiki/Balance_equation)：** 從水平動量方程式取散度、丟掉加速度與非線性項後得到的診斷關係。（標準結果，此處直接引用。）
 
@@ -51,7 +51,7 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
 
   * $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
   * $\nabla^{2}$ : 水平拉普拉斯算符 (Horizontal Laplacian) $[\text{m}^{-2}]$，$\nabla^{2} = \dfrac{\partial^{2}}{\partial x^{2}} + \dfrac{\partial^{2}}{\partial y^{2}}$
-  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
+  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
   * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
 
@@ -66,11 +66,11 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
     $$\left(\psi,\ \phi,\ q\right) = \left(\hat{\psi},\ \hat{\phi},\ \hat{q}\right)Z(z)$$
 
   * $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
-  * $\lambda$ : 第一內模態的分離常數 (Separation constant) $[\text{無單位}]$
-  * $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$
-  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$
-  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
-  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$
+  * $\lambda$ : 第一內模態的分離常數 (Separation constant) $[\text{無單位}]$，$\lambda \approx 4.014$
+  * $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$，$\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}$
+  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$，$z_T = 1.619$
+  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
   * $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
   * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
   * $q$ : 位渦距平 (PV anomaly) $[\text{s}^{-1}]$
@@ -82,10 +82,10 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
   $$\frac{\partial}{\partial x} \to \frac{\partial}{\partial \xi} \to \frac{im}{a}, \qquad \xi = x - ct$$
 
   * $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
-  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$
+  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
   * $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
   * $\xi$ : 隨波緯向座標 (Translating zonal coordinate) $[\text{m}]$
-  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
   * $t$ : 時間 (Time) $[\text{s}]$
 
 * **【已知 5】 [Lamb 參數與無因次經向座標 (Lamb's parameter and the dimensionless meridional coordinate)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Energy_Inner_Product_and_Skew_Hermitian_Operator.html#assumptions-preliminaries)：** 把經向座標無因次化的兩個量：$\epsilon$ 量度旋轉相對於層結的強弱，$\hat{y}$ 以赤道變形半徑為長度單位 ─ 本篇靠它把可逆性方程改寫成標準的量子諧振子形式。（已於本庫 [Energy Inner Product and the Skew-Hermitian Operator](Energy_Inner_Product_and_Skew_Hermitian_Operator.md)【定義 2】給出，此處直接引用。）
@@ -94,10 +94,10 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
 
   * $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
   * $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$
-  * $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{s}^{-1}]$
-  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$
-  * $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$
-  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
+  * $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{s}^{-1}]$，$\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}$
+  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
+  * $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$，$\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}$
+  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
 
 * **【假設 1】 流場以旋轉部分為主 (The flow is dominated by its rotational part)：** 水平風場用流函數表示，忽略輻散部分
@@ -112,7 +112,7 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
 
   $$\nabla\cdot\left(\beta y\,\nabla\psi\right) \approx \nabla^{2}\left(\beta y\,\psi\right)$$
 
-  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
+  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
   * $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
   * 註：**這是全篇唯一一條「有代價」的假設**。嚴格展開時 $\nabla^{2}\left(\beta y\psi\right) = \beta y\nabla^{2}\psi + 2\beta\dfrac{\partial\psi}{\partial y}$，而 $\nabla\cdot\left(\beta y\nabla\psi\right) = \beta y\nabla^{2}\psi + \beta\dfrac{\partial\psi}{\partial y}$ —— 兩者差一個 $\beta\dfrac{\partial\psi}{\partial y}$。當 $\psi$ 的經向尺度遠小於 $y$ 本身時（即遠離赤道），該項相對可忽略。
@@ -122,7 +122,7 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
   $$\lim_{\left|y\right| \to \infty}\left(\phi - \beta y\,\psi\right) = 0$$
 
   * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
-  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
+  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
   * $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
 
@@ -136,7 +136,7 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
 
     $$\left.\frac{\partial \psi}{\partial z}\right|_{z = 0} = \left.\frac{\partial \psi}{\partial z}\right|_{z = z_T} = 0$$
 
-  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$
+  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$，$z_T = 1.619$
   * $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
   * 註：這一張卡片**不以 `\overset` 形式出現在下方的【證明】中** —— 邊界條件不是某個等號的依據，而是讓【證明 (c)】的橢圓型方程「解存在且唯一」的定解條件。它真正被用到是在下一篇 [Hermite 轉換解](Hermite_Transform_Solution_of_Invertibility.md)：(a) 保證 Hermite 展開合法（$\mathcal{H}_n$ 在無窮遠處歸零），(b) 保證垂直結構取 $Z(z)$（見 [垂直結構方程式](Vertical_Structure_Equation_in_Log_Pressure.md)【假設 1】的同一條件）。
@@ -163,7 +163,7 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
   \end{gather*}$$
 
   * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
-  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
+  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
   * $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
 
@@ -174,11 +174,11 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
   &\overset{\text{已知 3(a)}}{=}& -\lambda\,\hat{\psi}\,Z
   \end{gather*}$$
 
-  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$
+  * $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$，$z_T = 1.619$
   * $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
   * $\hat{\psi},\ \hat{q}$ : 流函數與位渦的水平結構函數 (Horizontal structure functions of the streamfunction and the PV) $[\text{m}^{2}\cdot\text{s}^{-1}],\ [\text{s}^{-1}]$
   * $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
-  * $\lambda$ : 第一內模態的分離常數 (Separation constant) $[\text{無單位}]$
+  * $\lambda$ : 第一內模態的分離常數 (Separation constant) $[\text{無單位}]$，$\lambda \approx 4.014$
 
 * **【推導 4】 經向座標的無因次化 (Nondimensionalizing the meridional coordinate)：** 兩個關鍵的換算
 
@@ -203,11 +203,11 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
     \end{gather*}$$
 
   * $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
-  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
-  * $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$
+  * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
+  * $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$，$\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}$
   * $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$
-  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$
-  * $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{s}^{-1}]$
+  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
+  * $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{s}^{-1}]$，$\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}$
   * $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
 
 +++
