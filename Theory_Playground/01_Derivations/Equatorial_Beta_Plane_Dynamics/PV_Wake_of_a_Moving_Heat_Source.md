@@ -31,6 +31,26 @@ $$F(\xi) = 0$$
 
 $$\frac{c}{\alpha} \approx 1728 \ \text{km}, \qquad \frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}} \approx 5.9, \qquad \frac{y_0}{b_0} = 0 \ \text{或} \ 1$$
 
+其中
+
+* $q$ : 位渦距平 (PV anomaly) $[\text{s}^{-1}]$
+* $F(\xi)$ : 位渦的緯向結構函數 (Zonal structure function of the PV) $[\text{無單位}]$
+* $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $v$ : 擾動經向風速 (Perturbation meridional velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
+* $\xi$ : 隨波緯向座標 (Translating zonal coordinate) $[\text{m}]$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1}$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$
+* $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+* $c$ : 對流包絡的東移速度 (Eastward propagation speed) $[\text{m}\cdot\text{s}^{-1}]$，$c = 5 \ \text{m}\cdot\text{s}^{-1}$
+* $a_0$ : 對流區的緯向半寬 (Zonal half-width) $[\text{m}]$，$a_0 = 1250 \ \text{km}$
+* $b_0$ : 對流區的經向 $e$-folding 寬度 (Meridional $e$-folding width) $[\text{m}]$，$b_0 = 450 \ \text{km}$
+* $y_0$ : 對流中心的經向偏移 (Meridional offset) $[\text{m}]$
+* $\tau_{\mathrm{p}}$ : 通過時間 (Passage time) $[\text{s}]$
+* $\tau_{\mathrm{c}}$ : 對流翻轉時間 (Convective overturning time) $[\text{s}]$
 * 註：(a)–(e) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(5.1)$–$(5.4)$。
 * 註：**這是一個刻意做壞的解。** 把它與完整解（[場還原](Physical_Field_Recovery_and_Zero_Kelvin_PV.md)）相比，論文發現忽略 $\beta v$ 的 $q$ 場**只有正確強度的 $68\%$**，而且往極側、往西側都伸展不夠遠。**拆掉一項再看差多少**，正是這一節的方法論價值。
 
@@ -374,7 +394,7 @@ $$\begin{gather*}
 
 $$q = \underbrace{-\frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}}K}_{\text{強度}}\times\underbrace{F(\xi)}_{\text{緯向形狀}}\times\underbrace{\beta y\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]}_{\text{經向形狀}}\times\underbrace{Z(z)}_{\text{垂直形狀}}$$
 
-**經向形狀 $\beta y\,e^{-\left(\left(y - y_0\right)/b_0\right)^{2}}$ 就是 [赤道 PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md)【推導 3】那個「奇函數 $\times$ 偶函數」的結果。** 在 $y = 0$ 為零、南北兩側取極值且反號 —— 兩條反號 PV 帶的形狀完全由此決定，本篇只是把緯向與強度補齊。
+**經向形狀 $\beta y\,e^{-\left(\left(y - y_0\right)/b_0\right)^{2}}$ 就是 [赤道 PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md)【推導 5】那個「奇函數 $\times$ 偶函數」的結果。** 在 $y = 0$ 為零、南北兩側取極值且反號 —— 兩條反號 PV 帶的形狀完全由此決定，本篇只是把緯向與強度補齊。
 
 ### 三個控制參數各管什麼
 

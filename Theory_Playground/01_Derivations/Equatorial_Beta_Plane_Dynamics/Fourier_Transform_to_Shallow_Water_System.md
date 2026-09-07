@@ -44,6 +44,27 @@ $$\mathcal{L} = \begin{pmatrix} 0 & -\beta y & im/a \cr \beta y & 0 & d/dy \cr \
 
 $$\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}$$
 
+其中
+
+* $\hat{u},\ \hat{v}$ : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) $[\text{m}\cdot\text{s}^{-1}]$
+* $\hat{\phi}$ : 擾動位勢的水平結構函數 (Horizontal structure function of the perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $\hat{w}$ : 擾動對數氣壓垂直速度的水平結構函數 (Horizontal structure function of the perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
+* $\hat{Q}$ : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $\hat{\boldsymbol{\eta}}_m$ : 第 $m$ 個緯向波數的狀態向量 (State vector) $[\text{依分量而定}]$
+* $\hat{\mathbf{Q}}_m$ : 第 $m$ 個緯向波數的強迫向量 (Forcing vector) $[\text{依分量而定}]$
+* $\xi$ : 隨波緯向座標 (Translating zonal coordinate) $[\text{m}]$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $t$ : 時間 (Time) $[\text{s}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $i$ : 虛數單位 (Imaginary unit) $[\text{無單位}]$，$i^{2} = -1$
+* $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6370 \ \text{km}$
+* $c$ : 對流包絡的東移速度 (Eastward propagation speed) $[\text{m}\cdot\text{s}^{-1}]$，$c = 5 \ \text{m}\cdot\text{s}^{-1}$
+* $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
+* $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$，$\kappa \approx 0.286$
+* $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$
+* $\mathcal{L}$ : 水平結構的線性算符 (Linear operator of the horizontal structure) $[\text{s}^{-1}]$
 * 註：(a)–(f) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(4.2)$–$(4.4)$、$(4.6)$、$(4.7)$。加熱項本身的緯向傅立葉係數 $(4.5)$ 留到 [移動熱源的模態投影](Projection_of_a_Moving_Heat_Source.md)，因為它需要先給定加熱的具體形式 $(4.1)$。
 * 註：「把流體力學偏微分方程組轉成線性代數的矩陣方程式」這個手法，已在 Advanced Atmospheric Dynamics 的 [project1_2](https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project1_2.html) 完整示範過。本篇只是把同一套手法套在 Schubert 的方程組上。
 

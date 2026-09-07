@@ -25,6 +25,29 @@ $$\frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y} - \l
 
 $$\frac{\partial \hat{T}}{\partial t} + \Gamma\hat{w} = -\alpha\hat{T} + \frac{\hat{Q}}{c_p}$$
 
+其中
+
+* $u,\ v$ : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) $[\text{m}\cdot\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $T$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
+* $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
+* $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $\hat{u},\ \hat{v}$ : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) $[\text{m}\cdot\text{s}^{-1}]$
+* $\hat{\phi}$ : 擾動位勢的水平結構函數 (Horizontal structure function of the perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $\hat{T}$ : 擾動溫度的水平結構函數 (Horizontal structure function of the perturbation temperature) $[\text{K}]$
+* $\hat{w}$ : 擾動對數氣壓垂直速度的水平結構函數 (Horizontal structure function of the perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
+* $\hat{Q}$ : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
+* $Z'$ : 垂直結構函數 $Z$ 對 $z$ 的一階微分 (First derivative of the vertical structure function with respect to $z$) $[\text{無單位}]$，$Z' = \dfrac{dZ}{dz}$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $t$ : 時間 (Time) $[\text{s}]$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$
+* $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+* $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+* $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$，$z_T \approx 1.619$
 * 註：(a)(b) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(3.4)$ 與 $(3.5)$。
 * 註：本篇的重點**不是**「代進去約掉」這件苦力，而是**證明 (a) 的配對是被逼出來的**：靜力方程式逼出 $T \propto Z'$，連續方程式與垂直結構方程式一起逼出 $w \propto Z'$。若隨手把 $T$ 也掛在 $Z$ 上，方程組**不會閉合**。
 * 註：$(3.5)$ 在形式上就是一組**淺水方程式**。$\hat{\phi}$ 扮演位勢高度、$\left(\dfrac{\pi^{2}}{z_T^{2}} + \dfrac{1}{4}\right)^{-1}$ 扮演等效深度的角色，這一點在 [傅立葉轉換至淺水系統](Fourier_Transform_to_Shallow_Water_System.md) 會寫成標準形式。

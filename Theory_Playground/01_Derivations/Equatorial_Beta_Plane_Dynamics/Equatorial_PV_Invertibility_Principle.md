@@ -23,6 +23,23 @@ $$\nabla^{2}\psi + \frac{\beta^{2}y^{2}}{R\Gamma}\left(\frac{\partial}{\partial 
 
 $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_m - m^{2}\hat{\psi}_m = a^{2}\hat{q}_m$$
 
+其中
+
+* $q$ : 位渦距平 (PV anomaly) $[\text{s}^{-1}]$
+* $\psi$ : 旋轉流的流函數 (Streamfunction of the rotational flow) $[\text{m}^{2}\cdot\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $u_\psi,\ v_\psi$ : 旋轉風的兩個分量 (Rotational wind components) $[\text{m}\cdot\text{s}^{-1}]$
+* $\hat{\psi},\ \hat{q}$ : 流函數與位渦的水平結構函數 (Horizontal structure functions of the streamfunction and the PV) $[\text{m}^{2}\cdot\text{s}^{-1}],\ [\text{s}^{-1}]$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
+* $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+* $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
+* $\nabla^{2}$ : 水平拉普拉斯算符 (Horizontal Laplacian) $[\text{m}^{-2}]$，$\nabla^{2} = \dfrac{\partial^{2}}{\partial x^{2}} + \dfrac{\partial^{2}}{\partial y^{2}}$
 * 註：(a)–(d) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(6.1)$–$(6.3)$。
 * 註：**(b) 是整個赤道可逆性原理的樞紐。** 它把中緯度的地轉關係 $\phi = f\psi$ 直接搬到赤道 $\beta$ 平面（$f \to \beta y$）。有了它，知道 $q$ 就能解出 $\psi$，進而由 $\left(u_\psi, v_\psi\right) = \left(-\partial\psi/\partial y,\ \partial\psi/\partial x\right)$ 與 $\phi = \beta y\psi$ 還原全部平衡場。
 * 註：(d) 左端的算符 $\dfrac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}$ **正是** [Hermite 函數的諧振子本徵值](../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.md)【證明 (a)】那一個。下一篇 [Hermite 轉換解](Hermite_Transform_Solution_of_Invertibility.md) 就靠這件事把整條方程式壓成一行除法。

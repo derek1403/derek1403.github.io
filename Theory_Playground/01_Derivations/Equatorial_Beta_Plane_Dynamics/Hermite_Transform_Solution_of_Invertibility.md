@@ -36,6 +36,28 @@ im\,\mathcal{H}_n \cr
 
 $$\lim_{\epsilon^{1/2}\hat{\nu}_{mnr} \to 0}\mathbf{K}_{mnr} \propto \begin{pmatrix}U_{mn} \cr V_{mn} \cr \Phi_{mn}\end{pmatrix}$$
 
+其中
+
+* $\psi$ : 旋轉流的流函數 (Streamfunction) $[\text{m}^{2}\cdot\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $u_\psi,\ v_\psi$ : 旋轉風的兩個分量 (Rotational wind components) $[\text{m}\cdot\text{s}^{-1}]$
+* $\hat{\psi}_m$ : 流函數的緯向傅立葉係數 (Fourier coefficient of the streamfunction) $[\text{m}^{2}\cdot\text{s}^{-1}]$
+* $\hat{\psi}_{mn},\ \hat{q}_{mn}$ : Hermite 轉換係數 (Hermite transform coefficients) $[\text{依變數而定}]$
+* $U_{mn},\ V_{mn},\ \Phi_{mn}$ : 本徵函數的速度與位勢分量 (Velocity and geopotential components of the eigenfunction) $[\text{依分量而定}]$
+* $\mathbf{K}_{mnr}$ : 本徵函數 (Eigenfunction) $[\text{依分量而定}]$
+* $\mathcal{H}_n$ : 歸一化 Hermite 函數 (Normalized Hermite function) $[\text{無單位}]$
+* $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
+* $\hat{\nu}_{mnr}$ : 無因次本徵頻率 (Dimensionless eigenfrequency) $[\text{無單位}]$
+* $\xi$ : 隨波緯向座標 (Translating zonal coordinate) $[\text{m}]$
+* $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
+* $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $i$ : 虛數單位 (Imaginary unit) $[\text{無單位}]$，$i^{2} = -1$
+* $a$ : 地球半徑 (Earth's radius) $[\text{m}]$
+* $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
+* $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$
 * 註：(a)–(d) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(6.4)$–$(6.9)$。
 * 註：本篇比 [受迫解](Forced_Response_of_Equatorial_Modes.md) **簡單得多** —— 那裡要用三分量的向量內積 $(4.8)$ 與向量轉換對，這裡因為方程式是**純量**的，只要用最單純的 Hermite 正交性即可。
 * 註：(e) 是一個很有力的一致性檢查：可逆性原理**抓的就是羅斯貝波那一支**，這在數學上驗證了「PV 動力 $\approx$ 羅斯貝波動力」這個直覺。

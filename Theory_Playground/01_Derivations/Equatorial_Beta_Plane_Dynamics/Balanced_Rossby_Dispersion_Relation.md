@@ -27,6 +27,23 @@ $$\epsilon\hat{\nu}^{2} \ll m^{2} \quad \Longrightarrow \quad \epsilon\hat{\nu}^
 
 $$\left.\frac{\epsilon\hat{\nu}_{mn}^{2}}{m^{2}}\right|_{n = 0,\ m = 1} \approx 0.92 \qquad \text{vs.} \qquad \left.\frac{\epsilon\hat{\nu}_{mn}^{2}}{m^{2}}\right|_{n = 3,\ m = 1} \approx 0.02$$
 
+其中
+
+* $q$ : 位渦距平 (PV anomaly) $[\text{s}^{-1}]$
+* $\psi$ : 旋轉流的流函數 (Streamfunction) $[\text{m}^{2}\cdot\text{s}^{-1}]$
+* $v$ : 擾動經向風速 (Perturbation meridional velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $\nu_{mn}$ : 平衡模式的本徵頻率 (Eigenfrequency of the balanced model) $[\text{s}^{-1}]$
+* $\hat{\nu}_{mnr}$ : 原始方程模式的無因次本徵頻率 (Dimensionless eigenfrequency of the primitive equation model) $[\text{無單位}]$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $t$ : 時間 (Time) $[\text{s}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{s}^{-1}]$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta = 2\Omega/a$
+* $R,\ \Gamma$ : 氣體常數與靜力穩定度 (Gas constant and static stability) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}],\ [\text{K}]$
+* $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
+* $\nabla^{2}$ : 水平拉普拉斯算符 (Horizontal Laplacian) $[\text{m}^{-2}]$，$\nabla^{2} = \dfrac{\partial^{2}}{\partial x^{2}} + \dfrac{\partial^{2}}{\partial y^{2}}$
 * 註：(a)–(c) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(7.1)$–$(7.3)$。
 * 註：**(a) 是這套平衡理論唯一新增的近似**：它把 [PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md) 中的 Rossby 項 $\beta v$ 換成 $\beta\,\partial\psi/\partial x$，也就是**只保留旋轉風的貢獻、丟掉輻散風**。論文實測的結果是：**這條近似才是平衡模式模擬 MJO 尾流時失準的元凶，不是 (b)**。
 

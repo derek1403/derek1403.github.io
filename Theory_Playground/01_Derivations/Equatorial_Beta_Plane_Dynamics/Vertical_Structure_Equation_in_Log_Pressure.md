@@ -26,6 +26,16 @@ $$\frac{\pi z_m}{z_T} = \pi + \tan^{-1}\left(-\frac{2\pi}{z_T}\right), \qquad Z'
 
 $$z_m \approx 0.5803\,z_T$$
 
+其中
+
+* $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
+* $Z'$ : 垂直結構函數 $Z$ 對 $z$ 的一階微分 (First derivative of the vertical structure function with respect to $z$) $[\text{無單位}]$，$Z' = \dfrac{dZ}{dz}$
+* $T$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
+* $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
+* $Q$ : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$，$z_T \approx 1.619$
+* $z_m$ : $Z$ 對 $z$ 的微分 $\dfrac{dZ}{dz}$（即 $Z'$）取極大值的高度 (Height where $dZ/dz$ is maximum) $[\text{無單位}]$
 * 註：(a)–(d) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(3.1)$–$(3.3)$。
 * 註：本篇與本庫 [垂直結構方程式（Boussinesq 版）](../Atmospheric_Dynamics/Vertical_Structure_Equation.md) 是**同一套 Sturm–Liouville 手法在不同座標下的兩個實例** —— 那裡的算子是 $\dfrac{\partial}{\partial z}\left[\dfrac{1}{N^{2}}\dfrac{\partial}{\partial z}\right]$，這裡是 $\left(\dfrac{d}{dz} - 1\right)\dfrac{d}{dz}$。差別全部來自「對數氣壓座標帶著密度指數遞減」這一件事。
 * 註：為什麼「只留第一內模態」是合理的？論文的證據是觀測：Johnson and Ciesielski (2000) 針對西太平洋暖池所算的 $120$ 天平均加熱率剖面 $Q/c_p$，其**形狀與 $Z'(z)$ 幾乎重合**（原論文 Fig. 1）。本篇只做數學，不重複那個觀測論證。

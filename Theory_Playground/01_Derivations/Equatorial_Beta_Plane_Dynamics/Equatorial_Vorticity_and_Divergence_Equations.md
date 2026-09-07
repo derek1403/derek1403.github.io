@@ -9,12 +9,29 @@
 
 * (a) 渦度方程式，由兩條水平動量方程式交叉微分得到：
 
-$$\mathcal{D}_t\Big[\zeta\Big] + \beta y\,\delta + \beta v= 0$$
+$$\mathcal{D}_t\Big[\zeta\Big] + \beta y\,\delta + \beta v = 0$$
 
 * (b) 位勢–輻散方程式，由靜力、連續、熱力學三式消去 $T$ 與 $w$ 得到：
 
 $$\kappa\,\mathcal{D}_z\Big[Q\Big] = \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta$$
 
+其中
+
+* $\zeta$ : 擾動相對渦度 (Perturbation relative vorticity) $[\text{s}^{-1}]$，$\zeta = \dfrac{\partial v}{\partial x} - \dfrac{\partial u}{\partial y}$
+* $\delta$ : 擾動水平輻散 (Perturbation horizontal divergence) $[\text{s}^{-1}]$，$\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}$
+* $u$ : 擾動緯向風速 (Perturbation zonal velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $v$ : 擾動經向風速 (Perturbation meridional velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $Q$ : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
+* $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+* $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$，$\kappa = R/c_p \approx 0.286$
+* $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$，$\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha$
+* $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$，$\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1$
 * 註：這兩條就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(2.4)$ 與 $(2.5)$。它們的**唯一目的**是為了在下一篇 [赤道 PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md) 中把水平輻散消掉。
 * 註：兩條式子裡出現的水平輻散 $\dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}$ 是**同一個量**，只是係數不同 —— (a) 是 $\beta y$、(b) 是 $-R\Gamma$。要消去它，得把 (b) 乘上 $\dfrac{\beta y}{R\Gamma}$ 再與 (a) 相加；**乘進去的這個 $\beta y$ 不是常數**，它就是下一篇 PV 方程式源項裡那個 $y$ 因子的來源，也是「赤道上生不出 PV」的根本原因。
 
@@ -130,7 +147,7 @@ $$\kappa\,\mathcal{D}_z\Big[Q\Big] = \mathcal{D}_t\left[\mathcal{D}_z\left[\frac
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
   * 註：$\mathcal{D}_z$ 就是 [線性化原始方程組](Log_Pressure_Linearized_Primitive_Equations.md)【證明 (d)】那個 $\dfrac{\partial w}{\partial z} - w$ 的算子形式；它的來源是密度隨高度指數遞減。
 
-* **【推導 1】 兩個算子的可交換性 (Commutativity of the two operators)：** $\mathcal{D}_t$ 只含 $t$、$\mathcal{D}_z$ 只含 $z$，且 $\alpha,\ \Gamma,\ R,\ c_p$ 皆為常數，故兩算子可任意交換次序、也可與常數係數對調
+* **【推導 1】 兩個算子的可交換性 (Commutativity of the two operators)：** $\mathcal{D}_t$ 只含 $t$、$\mathcal{D}_z$ 只含 $z$，兩者作用在不同自變數上，故彼此可任意交換次序；又因 $\mathcal{D}_z$ 是線性算子，任何不隨 $z$ 變化的係數都能直接穿過它
 
   * (a) 兩算子彼此可交換：
 
@@ -141,33 +158,22 @@ $$\kappa\,\mathcal{D}_z\Big[Q\Big] = \mathcal{D}_t\left[\mathcal{D}_z\left[\frac
     &\overset{\text{定義 3(a)(b)}}{=}& \mathcal{D}_t\Big[\mathcal{D}_z\,X\Big]
     \end{gather*}$$
 
-  * (b) 靜力穩定度可穿過 $\mathcal{D}_z$：
-
-    $$\begin{gather*}
-    \mathcal{D}_z\Big[\Gamma\,X\Big] &\overset{\text{定義 3(b)}}{=}& \frac{\partial}{\partial z}\Big[\Gamma X\Big] - \Gamma X \\
-    &\overset{\text{假設 2}}{=}& \Gamma\frac{\partial X}{\partial z} - \Gamma X \\
-    &\overset{\text{定義 3(b)}}{=}& \Gamma\,\mathcal{D}_z\Big[X\Big]
-    \end{gather*}$$
-
-  * (c) 普適物理常數可穿過 $\mathcal{D}_z$：
+  * (b) 常數係數可穿過 $\mathcal{D}_z$：
 
     $$\begin{gather*}
     \mathcal{D}_z\Big[c\,X\Big] &\overset{\text{定義 3(b)}}{=}& \frac{\partial}{\partial z}\Big[c X\Big] - c X \\
-    &\overset{\text{已知 3}}{=}& c\frac{\partial X}{\partial z} - c X \\
+    &=& c\frac{\partial X}{\partial z} - c X \\
     &\overset{\text{定義 3(b)}}{=}& c\,\mathcal{D}_z\Big[X\Big]
     \end{gather*}$$
 
   * $X$ : 任意二階連續可微的場 (Arbitrary $C^{2}$ field) $[\text{依應用而定}]$
-  * $c$ : 任意不隨 $z$ 變化的物理常數（本篇用到的是 $R$ 與 $c_p$）(Arbitrary physical constant) $[\text{依應用而定}]$
+  * $c$ : 任意不隨 $z$ 變化的係數 (Arbitrary $z$-independent coefficient) $[\text{依應用而定}]$
   * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$
+  * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
   * $t$ : 時間 (Time) $[\text{s}]$
   * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
-  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
-  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
-  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
-  * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
-  * 註：(b) 與 (c) 形式相同、依據卻不同 —— (c) 的 $R$ 與 $c_p$ 是普適物理常數，本來就不隨 $z$ 變化；(b) 的 $\Gamma$ 則是**靠【假設 2】才成為常數**的模式設定量。真實大氣的 $\Gamma$ 隨高度變化，那時 (b) 就不成立，【證明 (b)】也就做不下去。
+  * 註：(b) 只是線性算子的基本性質，**真正該留意的是「誰有資格當這個 $c$」**。本篇會拿三個東西去套：$R$ 與 $c_p$ 是普適物理常數，本來就不隨 $z$ 變化，套進去不必額外付代價；$\Gamma$ 卻不是 —— 它在 [線性化原始方程組](Log_Pressure_Linearized_Primitive_Equations.md)【定義 6】是由基本態剖面算出的 $\Gamma\left(z\right) = \dfrac{d\bar{T}}{dz} + \kappa\bar{T}$，**唯有靠【假設 2】才取得常數資格**。因此【證明 (b)】把 $\Gamma$ 拉出 $\mathcal{D}_z$ 的那一列必須連同【假設 2】一起引用，$\dfrac{1}{R}$、$\dfrac{1}{c_p}$ 那一列則不必。
 
 * **【推導 2】 兩條動量方程式的交叉微分 (Cross-differentiation of the momentum equations)：** 對【已知 1】(b) 取 $\partial/\partial x$、對【已知 1】(a) 取 $\partial/\partial y$，注意 $\beta y$ 對 $x$ 是常數、對 $y$ 不是
 
@@ -259,10 +265,10 @@ $$\begin{gather*}
 $$\begin{gather*}
 \frac{Q}{c_p} &\overset{\text{推導 3(b)}}{=}& \mathcal{D}_t\Big[T\Big] + \Gamma w \\
 \mathcal{D}_z\left[\frac{Q}{c_p}\right] &=& \mathcal{D}_z\left[\mathcal{D}_t\Big[T\Big] + \Gamma w\right] \\
-\mathcal{D}_z\left[\frac{Q}{c_p}\right] &\overset{\text{推導 1(a)(b)}}{=}& \mathcal{D}_t\left[\mathcal{D}_z\Big[T\Big]\right] + \Gamma\,\mathcal{D}_z\Big[w\Big] \\
+\mathcal{D}_z\left[\frac{Q}{c_p}\right] &\overset{\text{推導 1(a)(b),假設 2}}{=}& \mathcal{D}_t\left[\mathcal{D}_z\Big[T\Big]\right] + \Gamma\,\mathcal{D}_z\Big[w\Big] \\
 \mathcal{D}_z\left[\frac{Q}{c_p}\right] &\overset{\text{推導 3(a)}}{=}& \mathcal{D}_t\left[\mathcal{D}_z\Big[T\Big]\right] - \Gamma\delta \\
 \mathcal{D}_z\left[\frac{Q}{c_p}\right] &\overset{\text{已知 1(c)}}{=}& \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{1}{R}\frac{\partial \phi}{\partial z}\right]\right] - \Gamma\delta \\
-\frac{1}{c_p}\mathcal{D}_z\Big[Q\Big] &\overset{\text{推導 1(c)}}{=}& \frac{1}{R}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \Gamma\delta \\
+\frac{1}{c_p}\mathcal{D}_z\Big[Q\Big] &\overset{\text{推導 1(b)}}{=}& \frac{1}{R}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \Gamma\delta \\
 \frac{R}{c_p}\,\mathcal{D}_z\Big[Q\Big] &=& \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta \\
 \kappa\,\mathcal{D}_z\Big[Q\Big] &\overset{\text{已知 3}}{=}& \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta
 \end{gather*}$$

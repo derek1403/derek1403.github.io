@@ -45,6 +45,23 @@ $$\mathbf{K}_{0n0}(\hat{y}) = \left(2n + 1\right)^{-1/2}
 
 $$\beta y\,U_{0n0} + \frac{d\Phi_{0n0}}{dy} = 0$$
 
+其中
+
+* $\mathbf{K}_{mnr}$ : 本徵函數 (Eigenfunction) $[\text{依分量而定}]$
+* $A_{mnr}$ : 歸一化常數 (Normalization constant) $[\text{無單位}]$
+* $U,\ V$ : 本徵函數的速度分量 (Velocity components of the eigenfunction) $[\text{無單位}]$
+* $\Phi$ : 本徵函數的位勢分量 (Geopotential component) $[\text{m}\cdot\text{s}^{-1}]$
+* $\mathcal{H}_n$ : 歸一化 Hermite 函數 (Normalized Hermite function) $[\text{無單位}]$
+* $\hat{\nu}_{mnr}$ : Schubert 記法的無因次頻率 (Dimensionless frequency) $[\text{無單位}]$
+* $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$
+* $y$ : 有因次經向座標 (Dimensional meridional coordinate) $[\text{m}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $r$ : 波型指標 (Wave-type index) $[\text{無單位}]$
+* $i$ : 虛數單位 (Imaginary unit) $[\text{無單位}]$，$i^{2} = -1$
+* $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
+* $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$
 * 註：(a)–(e) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(4.11)$、$(4.15)$、$(4.16)$、$(4.17)$、$(A.1)$。
 * 註：$\mathcal{H}_n$ 的所有性質（遞迴、微分、正交歸一）都引用本庫 [Hermite Functions and Recurrence](../Differential_Equations/Hermite_Functions_and_Recurrence.md) 與 [Hermite Orthonormality and Oscillator Eigenvalue](../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.md)，本篇不重證。
 
