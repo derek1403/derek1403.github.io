@@ -58,7 +58,7 @@ $$\frac{c}{\alpha} \approx 1728 \ \text{km}, \qquad \frac{\tau_{\mathrm{p}}}{\ta
 
 ## 假設與已知 (Assumptions & Preliminaries)
 
-* **【已知 1】 [赤道 PV 方程式 (Equatorial PV equation)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation)：** 位渦距平的收支：時間變化加上 $\beta v$ 的行星渦度平流，由阻尼消耗，並由加熱以 $\beta y$ 為權重的形式產生 ─ 右端的權重在赤道為零，這正是尾流只長在赤道兩側的原因。（已於本庫 [Equatorial PV Equation and the Beta-y Source](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (b)】完整證明，此處直接引用。）
+* **【已知 1】 [赤道 PV 方程式 (Equatorial PV equation)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-pv-potential-vorticity-equation)：** 位渦距平的收支：時間變化加上 $\beta v$ 的行星渦度平流，由阻尼消耗，並由加熱以 $\beta y$ 為權重的形式產生 ─ 右端的權重在赤道為零，這正是尾流只長在赤道兩側的原因。（已於本庫 [Equatorial PV Equation and the Beta-y Source](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (a)】完整證明，此處直接引用。）
 
   $$\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\left(\frac{\partial}{\partial z} - 1\right)Q$$
 
@@ -428,6 +428,6 @@ $\tau_{\mathrm{p}}/\tau_{\mathrm{c}}$ 的物理意義最值得記：它是**「�
 
 $$q \approx -0.15\left(\frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}}\right)\beta y\exp\left[-\frac{\left(y - y_0\right)^{2}}{b_0^{2}}\right]$$
 
-當 $\tau_{\mathrm{p}}/\tau_{\mathrm{c}}$ 繼續增大，$q$（乃至相對渦度）終將**超過 $\beta y$ 本身**。一旦如此，[赤道 PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (b)】源項中的 $\beta y$ 就該換成**全位渦**、[渦度方程式](Equatorial_Vorticity_and_Divergence_Equations.md)【證明 (a)】輻散項中的 $\beta y$ 就該換成**絕對渦度** —— 那就是非線性了。
+當 $\tau_{\mathrm{p}}/\tau_{\mathrm{c}}$ 繼續增大，$q$（乃至相對渦度）終將**超過 $\beta y$ 本身**。一旦如此，[赤道 PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (a)】源項中的 $\beta y$ 就該換成**全位渦**、[渦度方程式](Equatorial_Vorticity_and_Divergence_Equations.md)【證明 (a)】輻散項中的 $\beta y$ 就該換成**絕對渦度** —— 那就是非線性了。
 
 論文判斷：$\tau_{\mathrm{p}}/\tau_{\mathrm{c}} \approx 5.9$ 這個個案加進非線性項不會造成定性改變；但若比值大到能激出 $\sim 15 \ \text{m}\cdot\text{s}^{-1}$ 的強西風爆發，非線性就不可忽略。

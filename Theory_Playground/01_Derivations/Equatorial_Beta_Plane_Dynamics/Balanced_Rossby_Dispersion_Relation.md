@@ -51,7 +51,7 @@ $$\left.\frac{\epsilon\hat{\nu}_{mn}^{2}}{m^{2}}\right|_{n = 0,\ m = 1} \approx 
 
 ## 假設與已知 (Assumptions & Preliminaries)
 
-* **【已知 1】 [赤道 PV 方程式 (Equatorial PV equation)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation)：** 位渦距平的收支：時間變化加上 $\beta v$ 的行星渦度平流，由阻尼消耗，並由加熱以 $\beta y$ 為權重的形式產生 ─ 右端的權重在赤道為零，這正是「赤道上生不出位渦」的來源。（已於本庫 [Equatorial PV Equation and the Beta-y Source](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (b)】完整證明，此處直接引用。）
+* **【已知 1】 [赤道 PV 方程式 (Equatorial PV equation)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-pv-potential-vorticity-equation)：** 位渦距平的收支：時間變化加上 $\beta v$ 的行星渦度平流，由阻尼消耗，並由加熱以 $\beta y$ 為權重的形式產生 ─ 右端的權重在赤道為零，這正是「赤道上生不出位渦」的來源。（已於本庫 [Equatorial PV Equation and the Beta-y Source](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (a)】完整證明，此處直接引用。）
 
   $$\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\left(\frac{\partial}{\partial z} - 1\right)Q$$
 

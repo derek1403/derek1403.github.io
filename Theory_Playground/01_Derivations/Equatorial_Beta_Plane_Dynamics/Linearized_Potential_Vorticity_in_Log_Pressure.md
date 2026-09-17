@@ -439,7 +439,7 @@ $$\frac{\left(\beta y_0 + \beta Y + \zeta\right)\Delta\theta}{\Delta m} = \frac{
 
 $$\zeta - \beta y\,\mathcal{D}_z\left[\eta\right] = -\beta Y \qquad \Longrightarrow \qquad q = -\beta Y$$
 
-**$q$ 不多不少就是「$-\beta\ \times$ 氣塊離開原本緯度的距離」。** 對時間微分、注意 $\dfrac{\partial Y}{\partial t} = v$，立刻回到 [PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (b)】的 Rossby 項 $\dfrac{\partial q}{\partial t} + \beta v = 0$。
+**$q$ 不多不少就是「$-\beta\ \times$ 氣塊離開原本緯度的距離」。** 對時間微分、注意 $\dfrac{\partial Y}{\partial t} = v$，立刻回到 [PV 方程式](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (a)】的 Rossby 項 $\dfrac{\partial q}{\partial t} + \beta v = 0$。
 
 這個讀法順手解釋了本鏈另一個結論：**[Kelvin 波的 $q$ 恰好為零](Physical_Field_Recovery_and_Zero_Kelvin_PV.md)**。Kelvin 波的定義性質就是 $v \equiv 0$ —— 沒有經向運動，就沒有任何氣塊離開它的原始緯度，$Y \equiv 0$，於是 $q \equiv 0$。那不是近似造成的巧合，而是**恆等式**：Kelvin 波根本沒有把任何資訊存進 $q$ 這個變數裡。
 

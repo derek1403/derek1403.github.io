@@ -48,7 +48,7 @@ $$\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_
 
 ## 假設與已知 (Assumptions & Preliminaries)
 
-* **【已知 1】 [位渦距平的定義 (Definition of the PV anomaly)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-emergence-of-the-potential-vorticity-anomaly)：** 赤道 $\beta$ 平面上的位渦距平：相對渦度加上「以 $\beta y$ 加權的層結項」。因為權重正比於 $y$，赤道上這一項自動消失 ─ 這是整條 MJO 推導鏈的物理引擎。（已於本庫 [Equatorial PV Equation and the Beta-y Source](Equatorial_PV_Equation_and_Beta_y_Source.md)【證明 (a)】完整證明，此處直接引用。）
+* **【已知 1】 [位渦距平的定義 (Definition of the PV anomaly)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#assumptions-preliminaries)：** 赤道 $\beta$ 平面上的位渦距平：相對渦度加上「以 $\beta y$ 加權的層結項」。因為權重正比於 $y$，赤道上這一項自動消失 ─ 這是整條 MJO 推導鏈的物理引擎。（已於本庫 [Equatorial PV Equation and the Beta-y Source](Equatorial_PV_Equation_and_Beta_y_Source.md)【定義 1】定義，此處直接引用。）
 
   $$q = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + \frac{\beta y}{R\Gamma}\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z}$$
 

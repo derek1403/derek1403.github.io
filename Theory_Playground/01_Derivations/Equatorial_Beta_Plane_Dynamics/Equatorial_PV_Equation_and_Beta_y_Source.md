@@ -7,23 +7,19 @@
 把 [渦度方程式與位勢–輻散方程式](Equatorial_Vorticity_and_Divergence_Equations.md) 之間的水平輻散消掉，
 就會浮現一個**只含單一變數**的守恆型方程式。那個變數就是位渦距平 $q$。
 
-* (a) 消去水平輻散後，$\mathcal{D}_t$ 括號裡自然浮現的組合即為**位渦距平**：
+* (a) $q$ 滿足帶阻尼與源項的 PV 方程式：
 
-$$q = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + \frac{\beta y}{R\Gamma}\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z}$$
+$$\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\mathcal{D}_z\Big[Q\Big]$$
 
-* (b) 它滿足帶阻尼與源項的 PV 方程式：
-
-$$\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\left(\frac{\partial}{\partial z} - 1\right)Q$$
-
-* (c) **★ 源項在赤道上恆為零** —— 不論加熱多強：
+* (b) **★ 源項在赤道上恆為零** —— 不論加熱多強：
 
 $$\left.S\right|_{y = 0} = 0$$
 
-* (d) **★ 對南北對稱的加熱，源項是 $y$ 的奇函數** —— 因此赤道南北兩側生成的 PV 距平**大小相等、正負相反**：
+* (c) **★ 對南北對稱的加熱，源項是 $y$ 的奇函數** —— 因此赤道南北兩側生成的 PV 距平**大小相等、正負相反**：
 
 $$S(x, -y, z) = -S(x, y, z)$$
 
-* (e) **★ 對高斯型的經向加熱剖面，源項的極值不在加熱中心，而在中心南北兩側 $b_0/2^{1/2}$ 處**：
+* (d) **★ 對高斯型的經向加熱剖面，源項的極值不在加熱中心，而在中心南北兩側 $b_0/2^{1/2}$ 處**：
 
 $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
 
@@ -47,9 +43,9 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
 * $b_0$ : 加熱區的經向 $e$-folding 寬度 (Meridional $e$-folding width) $[\text{m}]$，$b_0 = 450 \ \text{km}$
 * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$，$\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha$
 * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$，$\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1$
-* 註：(a)(b) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(2.7)$ 與 $(2.6)$。
+* 註：【定義 1】與 (a) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(2.7)$ 與 $(2.6)$。
 * 註：本篇證的是「$q$ **滿足什麼方程式**」。至於「$q$ **憑什麼叫位渦**」，是另一件事，已在 [線性化位渦](Linearized_Potential_Vorticity_in_Log_Pressure.md) 從 Ertel 位渦的原始定義證出來，本篇以【已知 6】【已知 7】直接引用。兩篇合起來，$q$ 與 $S$ 才算完全沒有留白。
-* 註：**(c)(d)(e) 是全文的物理引擎。** 它們合起來說：一個東移的赤道熱源，會在身後拖出**兩條反號的 PV 帶** —— 作者把這個形態比喻為大型飛機後方的一對**翼尖渦 (wing-tip vortices)**。後續 [PV 尾流](PV_Wake_of_a_Moving_Heat_Source.md)、[可逆性原理](Equatorial_PV_Invertibility_Principle.md) 兩個端點都建立在這三條之上。
+* 註：**(b)(c)(d) 是全文的物理引擎。** 它們合起來說：一個東移的赤道熱源，會在身後拖出**兩條反號的 PV 帶** —— 作者把這個形態比喻為大型飛機後方的一對**翼尖渦 (wing-tip vortices)**。後續 [PV 尾流](PV_Wake_of_a_Moving_Heat_Source.md)、[可逆性原理](Equatorial_PV_Invertibility_Principle.md) 兩個端點都建立在這三條之上。
 
 +++
 
@@ -88,7 +84,7 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
 
 * **【已知 2】 [赤道渦度方程式 (Equatorial vorticity equation)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#a-proof-vorticity-equation)：** 相對渦度在阻尼下的收支：除了輻散造成的渦度伸展 $\beta y\,\delta$，還多出一項 $\beta v$ ─ 氣塊往北走就換到不同的行星渦度值。這個 $\beta v$ 正是後面「赤道上生不出位渦」的源頭。（已於本庫 Equatorial Vorticity and Divergence Equations【證明 (a)】完整證明，此處直接引用。）
 
-  $$\mathcal{D}_t\left[\zeta\right] + \beta y\,\delta + \beta v = 0$$
+  $$\mathcal{D}_t\Big[\zeta\Big] + \beta y\,\delta + \beta v = 0$$
 
   * $\zeta$ : 擾動相對渦度 (Perturbation relative vorticity) $[\text{s}^{-1}]$
   * $\delta$ : 擾動水平輻散 (Perturbation horizontal divergence) $[\text{s}^{-1}]$
@@ -99,7 +95,7 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
 
 * **【已知 3】 [赤道位勢–輻散方程式 (Equatorial geopotential–divergence equation)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#b-proof-geopotentialdivergence-equation)：** 位勢垂直結構在阻尼下的收支：左端是位勢的垂直梯度經 $\mathcal{D}_z$ 加工後隨時間變化，扣掉輻散造成的層結調整；右端由非絕熱加熱驅動。它與【已知 2】合起來即可消去輻散 $\delta$，導出位渦方程式。（已於同一篇【證明 (b)】完整證明，此處直接引用。）
 
-  $$\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta = \kappa\,\mathcal{D}_z\left[Q\right]$$
+  $$\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta = \kappa\,\mathcal{D}_z\Big[Q\Big]$$
 
   * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$
   * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
@@ -111,7 +107,7 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
   * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
   * $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$
 
-* **【已知 4】 [Poisson 常數 (Poisson constant)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries)：** 乾空氣氣體常數與定壓比熱之比。本篇只在【推導 4】用它把源項係數裡的 $R$ 約掉。（已於本庫 Log-Pressure Linearized Primitive Equations【定義 4】定義，此處直接引用。）
+* **【已知 4】 [Poisson 常數 (Poisson constant)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries)：** 乾空氣氣體常數與定壓比熱之比。本篇只在【推導 2】用它把源項係數裡的 $R$ 約掉。（已於本庫 Log-Pressure Linearized Primitive Equations【定義 4】定義，此處直接引用。）
 
   $$\kappa = \frac{R}{c_p}$$
 
@@ -184,7 +180,7 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
   * $b_0$ : 加熱區的經向 $e$-folding 寬度 (Meridional $e$-folding width) $[\text{m}]$，$b_0 = 450 \ \text{km}$
   * $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
-  * 註：**這是本篇唯一的假設。** 【證明 (a)(b)(c)】完全用不到它；【證明 (d)】只需要它推出的「南北對稱」（見【推導 2】）；只有【證明 (e)】真正動用到高斯的具體形狀。
+  * 註：**這是本篇唯一的假設。** 【證明 (a)(b)】完全用不到它；【證明 (c)】只需要它推出的「南北對稱」（見【推導 4】）；只有【證明 (d)】真正動用到高斯的具體形狀。
   * 註：這正是論文 $(4.1)$ 在 $y_0 = 0$ 時的經向形狀，見 [移動熱源的模態投影](Projection_of_a_Moving_Heat_Source.md)。
 
 * **【定義 1】 位渦距平 (Potential vorticity anomaly)：** 給【已知 6】那個組合一個名字
@@ -207,7 +203,7 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
 
 * **【定義 2】 PV 源項 (PV source term)：** 給【已知 7】那個生成率一個名字
 
-  $$S \overset{\text{def}}{=} \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right]$$
+  $$S \overset{\text{def}}{=} \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]$$
 
   * $S$ : PV 源項 (PV source term) $[\text{s}^{-2}]$
   * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
@@ -216,17 +212,18 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
   * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
   * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
   * $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
-  * 註：與【定義 1】同構 —— 由【已知 7】它是加熱對位渦的**生成率**，由【證明 (b)】它也是消去 $\delta$ 之後自動留在右端的那一團。「源項」二字因此是名副其實的，不是修辭。
+  * 註：與【定義 1】同構 —— 由【已知 7】它是加熱對位渦的**生成率**，由【證明 (a)】它也是消去 $\delta$ 之後自動留在右端的那一團。「源項」二字因此是名副其實的，不是修辭。
 
 * **【推導 1】 $\beta y$ 可以穿過阻尼時間算子 (The factor $\beta y$ commutes with the damped-tendency operator)：** $\beta$ 是常數、$y$ 是獨立於 $t$ 的座標，故乘積律那一項為零
 
   $$\begin{gather*}
-  \mathcal{D}_t\left[\beta y\,X\right] &\overset{\text{已知 1(c)}}{=}& \frac{\partial}{\partial t}\left[\beta y\,X\right] + \alpha\,\beta y\,X \\
-  &\overset{\text{已知 5(b)}}{=}& \beta\frac{\partial}{\partial t}\left[y\,X\right] + \alpha\,\beta y\,X \\
+  \mathcal{D}_t\Big[\beta y\,X\Big] &\overset{\text{已知 1(c)}}{=}& \left( \frac{\partial}{\partial t} + \alpha \right) \Big[\beta y\,X\Big] \\
+  &=& \frac{\partial}{\partial t}\Big[\beta y\,X\Big] + \alpha\,\beta y\,X \\
+  &\overset{\text{已知 5(b)}}{=}& \beta\frac{\partial}{\partial t}\Big[y\,X\Big] + \alpha\,\beta y\,X \\
   &=& \beta\frac{\partial y}{\partial t}X + \beta y\frac{\partial X}{\partial t} + \alpha\,\beta y\,X \\
   &\overset{\text{已知 5(c)}}{=}& \beta \cdot 0 \cdot X + \beta y\frac{\partial X}{\partial t} + \alpha\,\beta y\,X \\
-  &=& \beta y\left[\frac{\partial X}{\partial t} + \alpha X\right] \\
-  &\overset{\text{已知 1(c)}}{=}& \beta y\,\mathcal{D}_t\left[X\right]
+  &=& \beta y\left(\frac{\partial X}{\partial t} + \alpha X\right) \\
+  &\overset{\text{已知 1(c)}}{=}& \beta y\,\mathcal{D}_t\Big[X\Big]
   \end{gather*}$$
 
   * $X$ : 任意可微的場 (Arbitrary differentiable field) $[\text{依應用而定}]$
@@ -237,7 +234,39 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
   * $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$
   * 註：**$\beta y$ 能穿過 $\mathcal{D}_t$，卻不能穿過 $\dfrac{\partial}{\partial y}$。** [渦度方程式](Equatorial_Vorticity_and_Divergence_Equations.md)【推導 2】(b) 裡那個單獨的 $-\beta v$，正是後者辦不到所留下的殘骸。本篇能把 $\zeta$ 與層結項收成單一個 $q$，靠的就是前者辦得到。
 
-* **【推導 2】 高斯剖面必為南北對稱 (A Gaussian profile is necessarily north–south symmetric)：** 高斯的指數裡 $y$ 只以平方出現，換號不變
+* **【推導 2】 源項的係數化簡 (Simplifying the source coefficient)：** $\kappa$ 的定義讓 $R$ 消掉
+
+  $$\begin{gather*}
+  \frac{\kappa}{R\Gamma} &\overset{\text{已知 4}}{=}& \frac{R/c_p}{R\Gamma} \\
+  &=& \frac{1}{c_p\Gamma}
+  \end{gather*}$$
+
+  * $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$
+  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
+  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+
+* **【推導 3】 從位勢–輻散方程式解出水平輻散 (Solving the geopotential–divergence equation for the divergence)：** 【已知 3】對 $\delta$ 而言是純代數式，直接移項；最後一步用【推導 2】把係數裡的 $R$ 約掉，此後全篇不再出現 $\kappa$
+
+  $$\begin{gather*}
+  \kappa\,\mathcal{D}_z\Big[Q\Big] &\overset{\text{已知 3}}{=}& \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta \\
+  R\Gamma\delta &=& \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \kappa\,\mathcal{D}_z\Big[Q\Big] \\
+  \delta &=& \frac{1}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa}{R\Gamma}\,\mathcal{D}_z\Big[Q\Big] \\
+  \delta &\overset{\text{推導 2}}{=}& \frac{1}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{1}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]
+  \end{gather*}$$
+
+  * $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$
+  * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$
+  * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
+  * $\delta$ : 擾動水平輻散 (Perturbation horizontal divergence) $[\text{s}^{-1}]$
+  * $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+  * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+  * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
+  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+
+* **【推導 4】 高斯剖面必為南北對稱 (A Gaussian profile is necessarily north–south symmetric)：** 高斯的指數裡 $y$ 只以平方出現，換號不變
 
   $$\begin{gather*}
   Q(x, -y, z) &\overset{\text{假設 1}}{=}& \tilde{Q}(x, z)\exp\left[-\left(\frac{-y}{b_0}\right)^{2}\right] \\
@@ -251,42 +280,12 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
   * $b_0$ : 加熱區的經向 $e$-folding 寬度 (Meridional $e$-folding width) $[\text{m}]$，$b_0 = 450 \ \text{km}$
   * $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
-  * 註：【證明 (d)】用到的其實**只有這個結論**，也就是「$Q$ 對 $y$ 是偶函數」。因此 (d) 對**任何**南北對稱的加熱分布都成立，並不限於高斯；高斯只是本鏈實際採用的具體形狀，順便讓【證明 (e)】也做得下去。
-
-* **【推導 3】 從位勢–輻散方程式解出水平輻散 (Solving the geopotential–divergence equation for the divergence)：** 【已知 3】對 $\delta$ 而言是純代數式，直接移項
-
-  $$\begin{gather*}
-  \kappa\,\mathcal{D}_z\Big[Q\Big] &\overset{\text{已知 3}}{=}& \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta \\
-  R\Gamma\delta &=& \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \kappa\,\mathcal{D}_z\Big[Q\Big] \\
-  \delta &=& \frac{1}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa}{R\Gamma}\,\mathcal{D}_z\Big[Q\Big]
-  \end{gather*}$$
-
-  * $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$
-  * $\mathcal{D}_t$ : 阻尼時間算子 (Damped-tendency operator) $[\text{s}^{-1}]$
-  * $\mathcal{D}_z$ : 垂直算子 (Vertical operator) $[\text{無單位}]$
-  * $\delta$ : 擾動水平輻散 (Perturbation horizontal divergence) $[\text{s}^{-1}]$
-  * $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
-  * $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
-  * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
-  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
-  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
-
-* **【推導 4】 源項的係數化簡 (Simplifying the source coefficient)：** $\kappa$ 的定義讓 $R$ 消掉
-
-  $$\begin{gather*}
-  \frac{\kappa}{R\Gamma} &\overset{\text{已知 4}}{=}& \frac{R/c_p}{R\Gamma} \\
-  &=& \frac{1}{c_p\Gamma}
-  \end{gather*}$$
-
-  * $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$
-  * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
-  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
-  * $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+  * 註：【證明 (c)】用到的其實**只有這個結論**，也就是「$Q$ 對 $y$ 是偶函數」。因此 (c) 對**任何**南北對稱的加熱分布都成立，並不限於高斯；高斯只是本鏈實際採用的具體形狀，順便讓【證明 (d)】也做得下去。
 
 * **【推導 5】 高斯剖面下源項的經向結構 (Meridional structure of the source for a Gaussian profile)：** 把【假設 1】代進【定義 2】，$\mathcal{D}_z$ 只作用在 $z$ 上，故整個經向依賴收成 $y\,e^{-\left(y/b_0\right)^{2}}$
 
   $$\begin{gather*}
-  S &\overset{\text{定義 2}}{=}& \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right] \\
+  S &\overset{\text{定義 2}}{=}& \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] \\
   &\overset{\text{假設 1}}{=}& \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}(x, z)\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
   &=& \frac{\beta}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}(x, z)\right]\,y\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]
   \end{gather*}$$
@@ -306,62 +305,54 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
 
 ## 證明:
 
-### (a) proof 位渦距平的浮現 (Emergence of the potential vorticity anomaly)
+### (a) proof PV 方程式 (Potential vorticity equation)
 
-把【推導 3】的 $\delta$ 代進【已知 2】。關鍵在下一步：$\beta y$ 可以穿過 $\mathcal{D}_t$（【推導 1】），因此可以**縮進 $\mathcal{D}_t$ 裡面**，於是 $\zeta$ 與層結項合併成單一個變數。
-
-$$\begin{gather*}
-0 &\overset{\text{已知 2}}{=}& \mathcal{D}_t\left[\zeta\right] + \beta y\,\delta + \beta v \\
-0 &\overset{\text{推導 3}}{=}& \mathcal{D}_t\left[\zeta\right] + \frac{\beta y}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &\overset{\text{推導 1}}{=}& \mathcal{D}_t\left[\zeta\right] + \mathcal{D}_t\left[\frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &=& \mathcal{D}_t\left[\zeta + \frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &\overset{\text{定義 1}}{=}& \mathcal{D}_t\left[q\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v
-\end{gather*}$$
-
-### (b) proof PV 方程式 (Potential vorticity equation)
-
-把【證明 (a)】的源項係數用【推導 4】化簡，再把 $\mathcal{D}_t$ 展開。
+把【推導 3】的 $\delta$ 代進【已知 2】。關鍵在下一步：$\beta y$ 可以穿過 $\mathcal{D}_t$（【推導 1】），因此可以**縮進 $\mathcal{D}_t$ 裡面**，於是 $\zeta$ 與層結項合併成單一個 $q$；最後把 $\mathcal{D}_t$ 展開。
 
 $$\begin{gather*}
-0 &\overset{\text{證明 (a)}}{=}& \mathcal{D}_t\left[q\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &\overset{\text{推導 4}}{=}& \mathcal{D}_t\left[q\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &\overset{\text{定義 2}}{=}& \mathcal{D}_t\left[q\right] - S + \beta v \\
+0 &\overset{\text{已知 2}}{=}& \mathcal{D}_t\Big[\zeta\Big] + \beta y\,\delta + \beta v \\
+0 &\overset{\text{推導 3}}{=}& \mathcal{D}_t\Big[\zeta\Big] + \frac{\beta y}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &\overset{\text{推導 1}}{=}& \mathcal{D}_t\Big[\zeta\Big] + \mathcal{D}_t\left[\frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &=& \mathcal{D}_t\left[\zeta + \frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &\overset{\text{定義 1}}{=}& \mathcal{D}_t\Big[q\Big] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &\overset{\text{定義 2}}{=}& \mathcal{D}_t\Big[q\Big] - S + \beta v \\
 0 &\overset{\text{已知 1(c)}}{=}& \frac{\partial q}{\partial t} + \alpha q - S + \beta v \\
 \frac{\partial q}{\partial t} + \beta v &=& -\alpha q + S
 \end{gather*}$$
 
-### (c) proof 赤道上的源項為零 (Vanishing of the source at the equator)
+### (b) proof 赤道上的源項為零 (Vanishing of the source at the equator)
 
 $\beta y$ 在赤道上為零，把整個 $\mathcal{D}_z\left[Q\right]$ 乘成零，**與加熱強度完全無關**。
 
 $$\begin{gather*}
-\left.S\right|_{y = 0} &\overset{\text{定義 2}}{=}& \left.\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right]\right|_{y = 0} \\
-&=& \frac{\beta \cdot 0}{c_p\Gamma}\,\left.\mathcal{D}_z\left[Q\right]\right|_{y = 0} \\
+S\Big|_{y = 0} &\overset{\text{定義 2}}{=}& \left.\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]\right|_{y = 0} \\
+&=& \frac{\beta \cdot 0}{c_p\Gamma}\,\left.\mathcal{D}_z\Big[Q\Big]\right|_{y = 0} \\
 &=& 0
 \end{gather*}$$
 
-### (d) proof 源項為 $y$ 的奇函數 (Oddness of the source in $y$)
+### (c) proof 源項為 $y$ 的奇函數 (Oddness of the source in $y$)
 
-$\beta y$ 是奇函數、加熱是偶函數（【推導 2】），兩者相乘必為奇函數。
+$\beta y$ 是奇函數、加熱是偶函數（【推導 4】），兩者相乘必為奇函數。
 
 $$\begin{gather*}
-S(x, -y, z) &\overset{\text{定義 2}}{=}& \frac{\beta\left(-y\right)}{c_p\Gamma}\,\mathcal{D}_z\left[Q(x, -y, z)\right] \\
-&\overset{\text{推導 2}}{=}& -\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q(x, y, z)\right] \\
+S(x, -y, z) &\overset{\text{定義 2}}{=}& \frac{\beta\left(-y\right)}{c_p\Gamma}\,\mathcal{D}_z\Big[Q(x, -y, z)\Big] \\
+&\overset{\text{推導 4}}{=}& -\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q(x, y, z)\Big] \\
 &\overset{\text{定義 2}}{=}& -S(x, y, z)
 \end{gather*}$$
 
-### (e) proof 源項極值的位置 (Location of the source extrema)
+### (d) proof 源項 $S$ 的極值緯度 (Extremal latitudes of the source $S$)
 
 把【推導 5】的經向結構對 $y$ 微分並令其為零。$\dfrac{\beta}{c_p\Gamma}\mathcal{D}_z\left[\tilde{Q}\right]$ 與 $y$ 無關，可整個約掉。
 
 $$\begin{gather*}
+0 &=& \frac{\partial S}{\partial y}\\
 0 &\overset{\text{推導 5}}{=}& \frac{\partial}{\partial y}\left[\frac{\beta}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}\right]\,y\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
 0 &=& \frac{\partial}{\partial y}\left[y\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
 0 &=& \exp\left[-\left(\frac{y}{b_0}\right)^{2}\right] + y\left(-\frac{2y}{b_0^{2}}\right)\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right] \\
 0 &=& \left[1 - \frac{2y^{2}}{b_0^{2}}\right]\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right] \\
 1 &=& \frac{2y^{2}}{b_0^{2}} \\
 y_{\text{ext}} &=& \pm\frac{b_0}{2^{1/2}} \\
-y_{\text{ext}} &\overset{\text{假設 1}}{\approx}& \pm\frac{450 \ \text{km}}{1.414} \\
+y_{\text{ext}} &\overset{\text{假設 1}}{=}& \pm\frac{450 \ \text{km}}{2^{1/2}} \\
 y_{\text{ext}} &\approx& \pm 318 \ \text{km}
 \end{gather*}$$
 
@@ -383,7 +374,7 @@ $$q = \beta y\,\frac{\delta PV}{\overline{PV}} = \underbrace{\zeta}_{\text{渦�
 
 ### 這一篇為什麼是全文的物理引擎
 
-【證明 (b)】把 PV 的變化拆成三項：
+【證明 (a)】把 PV 的變化拆成三項：
 
 $$\underbrace{\frac{\partial q}{\partial t}}_{\text{局地變化}} = \underbrace{-\beta v}_{\text{Rossby 項}} \underbrace{- \alpha q}_{\text{阻尼}} + \underbrace{S}_{\text{生成}}$$
 
@@ -391,9 +382,9 @@ $$\underbrace{\frac{\partial q}{\partial t}}_{\text{局地變化}} = \underbrace
 
 在中緯度 $f$ 平面上，源項的係數是常數 $f_0$，加熱在哪裡最強，PV 就在哪裡生成最多。**赤道 $\beta$ 平面完全不是這樣**：
 
-* **【證明 (c)】** —— 赤道正上方（$y = 0$）**生不出任何 PV**。這不是「比較弱」，是**嚴格為零**，而且與加熱多強無關。
-* **【證明 (d)】** —— 北半球生出的 PV 與南半球**大小相等、正負相反**。
-* **【證明 (e)】** —— 生成的極大值不在加熱最強的地方（$y = 0$），而在**南北兩側 $b_0/2^{1/2} \approx 318 \ \text{km}$**（約 $2.9^{\circ}$ 緯度）處。
+* **【證明 (b)】** —— 赤道正上方（$y = 0$）**生不出任何 PV**。這不是「比較弱」，是**嚴格為零**，而且與加熱多強無關。
+* **【證明 (c)】** —— 北半球生出的 PV 與南半球**大小相等、正負相反**。
+* **【證明 (d)】** —— 生成的極大值不在加熱最強的地方（$y = 0$），而在**南北兩側 $b_0/2^{1/2} \approx 318 \ \text{km}$**（約 $2.9^{\circ}$ 緯度）處。
 
 三者合起來就是那個著名的圖像：**一個東移的赤道深對流區，會在身後拖出兩條反號的 PV 帶**，北側為正、南側為負。作者的比喻是**大型飛機後方的一對翼尖渦 (wing-tip vortices)** —— 機翼在空氣中留下的，也是這樣一對大小相等、旋向相反的渦旋。
 
