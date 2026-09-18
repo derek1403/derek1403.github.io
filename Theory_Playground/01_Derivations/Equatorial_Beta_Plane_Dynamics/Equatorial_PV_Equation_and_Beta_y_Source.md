@@ -158,7 +158,7 @@ $$y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}$$
 
 * **【已知 7】 [位渦源項的顯式形式 (Explicit form of the PV source)](https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Linearized_Potential_Vorticity_in_Log_Pressure.html#c-proof-potential-vorticity-source)：** 加熱不直接生成渦度，只能透過改變兩張等熵面之間的質量來生成位渦；把這個生成率算出來，就是下面這個組合。這是【定義 2】那個名字的**物理依據**。（已於本庫 [線性化位渦](Linearized_Potential_Vorticity_in_Log_Pressure.md)【證明 (c)】完整證明，此處直接引用。）
 
-  $$\left(\frac{\partial}{\partial t}\left[\beta y\,\frac{\delta PV}{\overline{PV}}\right]\right)_{\text{加熱}} = \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right]$$
+  $$\left(\frac{\partial}{\partial t}\left[\beta y\,\frac{\delta PV}{\overline{PV}}\right]\right)_{\text{加熱}} = \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]$$
 
   * $PV$ : Ertel 位渦 (Ertel potential vorticity) $[\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]$
   * $\overline{PV}$ : 基本態的 Ertel 位渦 (Basic-state Ertel potential vorticity) $[\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]$
