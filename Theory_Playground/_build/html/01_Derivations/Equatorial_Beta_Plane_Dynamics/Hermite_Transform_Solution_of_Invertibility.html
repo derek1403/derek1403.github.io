@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -515,7 +515,28 @@ im\,\mathcal{H}_n \cr
 </ul>
 <div class="math notranslate nohighlight">
 \[\lim_{\epsilon^{1/2}\hat{\nu}_{mnr} \to 0}\mathbf{K}_{mnr} \propto \begin{pmatrix}U_{mn} \cr V_{mn} \cr \Phi_{mn}\end{pmatrix}\]</div>
+<p>其中</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u_\psi,\ v_\psi\)</span> : 旋轉風的兩個分量 (Rotational wind components) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\psi}_m\)</span> : 流函數的緯向傅立葉係數 (Fourier coefficient of the streamfunction) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\psi}_{mn},\ \hat{q}_{mn}\)</span> : Hermite 轉換係數 (Hermite transform coefficients) <span class="math notranslate nohighlight">\([\text{依變數而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U_{mn},\ V_{mn},\ \Phi_{mn}\)</span> : 本徵函數的速度與位勢分量 (Velocity and geopotential components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> : 歸一化 Hermite 函數 (Normalized Hermite function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}_{mnr}\)</span> : 無因次本徵頻率 (Dimensionless eigenfrequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(i^{2} = -1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p>註：(a)–(d) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((6.4)\)</span>–<span class="math notranslate nohighlight">\((6.9)\)</span>。</p></li>
 <li><p>註：本篇比 <a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a> <strong>簡單得多</strong> —— 那裡要用三分量的向量內積 <span class="math notranslate nohighlight">\((4.8)\)</span> 與向量轉換對，這裡因為方程式是<strong>純量</strong>的，只要用最單純的 Hermite 正交性即可。</p></li>
 <li><p>註：(e) 是一個很有力的一致性檢查：可逆性原理<strong>抓的就是羅斯貝波那一支</strong>，這在數學上驗證了「PV 動力 <span class="math notranslate nohighlight">\(\approx\)</span> 羅斯貝波動力」這個直覺。</p></li>

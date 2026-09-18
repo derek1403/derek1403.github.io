@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -495,7 +495,15 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[\epsilon^{1/2}\hat{\nu} = m\]</div>
+<p>其中</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\nu}\)</span> : Schubert 記法的無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> : 無因次頻率 (Dimensionless frequency) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 無因次緯向波數 (Dimensionless zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U,\ V\)</span> : 本徵函數的速度分量 (Velocity components of the eigenfunction) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
 <li><p>註：(a)–(c) 對應 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((4.10)\)</span> 及其後的討論。</p></li>
 <li><p>註：<strong>本篇是整條推導鏈中唯一的「記法橋樑」</strong>，被 <a class="reference internal" href="Equatorial_Wave_Eigenfunctions.html"><span class="std std-doc">赤道波本徵函數</span></a>、<a class="reference internal" href="Forced_Response_of_Equatorial_Modes.html"><span class="std std-doc">受迫解</span></a>、<a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"><span class="std std-doc">場還原與 Kelvin 波零 PV</span></a>、<a class="reference internal" href="Balanced_Rossby_Dispersion_Relation.html"><span class="std std-doc">平衡頻散關係</span></a> 四篇引用。取消它的話那四篇各自都要重寫一次對照。</p></li>
 <li><p>註：<span class="math notranslate nohighlight">\((2n+1)\)</span> 這個「量子化」的來源是 Weber 方程式的有界性要求（Hermite 函數的階數必須是非負整數），已在 project2_1 證過；其數學根源見本庫 <a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"><span class="std std-doc">Hermite 函數的正交歸一性與諧振子本徵值</span></a>【證明 (a)】的 <span class="math notranslate nohighlight">\(-(2n+1)\)</span>。</p></li>

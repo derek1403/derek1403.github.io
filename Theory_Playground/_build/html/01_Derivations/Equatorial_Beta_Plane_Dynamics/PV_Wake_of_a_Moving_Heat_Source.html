@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -512,7 +512,26 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[\frac{c}{\alpha} \approx 1728 \ \text{km}, \qquad \frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}} \approx 5.9, \qquad \frac{y_0}{b_0} = 0 \ \text{或} \ 1\]</div>
+<p>其中</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F(\xi)\)</span> : 位渦的緯向結構函數 (Zonal structure function of the PV) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\alpha = \left(4 \ \text{days}\right)^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 對流包絡的東移速度 (Eastward propagation speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(c = 5 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 對流區的緯向半寬 (Zonal half-width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 = 1250 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 對流區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0\)</span> : 對流中心的經向偏移 (Meridional offset) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{\mathrm{p}}\)</span> : 通過時間 (Passage time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{\mathrm{c}}\)</span> : 對流翻轉時間 (Convective overturning time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
 <li><p>註：(a)–(e) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((5.1)\)</span>–<span class="math notranslate nohighlight">\((5.4)\)</span>。</p></li>
 <li><p>註：<strong>這是一個刻意做壞的解。</strong> 把它與完整解（<a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"><span class="std std-doc">場還原</span></a>）相比，論文發現忽略 <span class="math notranslate nohighlight">\(\beta v\)</span> 的 <span class="math notranslate nohighlight">\(q\)</span> 場<strong>只有正確強度的 <span class="math notranslate nohighlight">\(68\%\)</span></strong>，而且往極側、往西側都伸展不夠遠。<strong>拆掉一項再看差多少</strong>，正是這一節的方法論價值。</p></li>
 </ul>
@@ -520,7 +539,7 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation">赤道 PV 方程式 (Equatorial PV equation)</a>：</strong> 位渦距平的收支：時間變化加上 <span class="math notranslate nohighlight">\(\beta v\)</span> 的行星渦度平流，由阻尼消耗，並由加熱以 <span class="math notranslate nohighlight">\(\beta y\)</span> 為權重的形式產生 ─ 右端的權重在赤道為零，這正是尾流只長在赤道兩側的原因。（已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (b)】完整證明，此處直接引用。）</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-pv-potential-vorticity-equation">赤道 PV 方程式 (Equatorial PV equation)</a>：</strong> 位渦距平的收支：時間變化加上 <span class="math notranslate nohighlight">\(\beta v\)</span> 的行星渦度平流，由阻尼消耗，並由加熱以 <span class="math notranslate nohighlight">\(\beta y\)</span> 為權重的形式產生 ─ 右端的權重在赤道為零，這正是尾流只長在赤道兩側的原因。（已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (a)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\left(\frac{\partial}{\partial z} - 1\right)Q\]</div>
 <ul class="simple">
@@ -877,7 +896,7 @@ J(-a_0) &amp;\overset{\text{定義 5,推導 5(b)}}{=}&amp; \frac{2K\sinh\left(\s
 <p>【證明 (b)】的解可以拆成三個獨立的因子：</p>
 <div class="math notranslate nohighlight">
 \[q = \underbrace{-\frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}}K}_{\text{強度}}\times\underbrace{F(\xi)}_{\text{緯向形狀}}\times\underbrace{\beta y\exp\left[-\left(\frac{y - y_0}{b_0}\right)^{2}\right]}_{\text{經向形狀}}\times\underbrace{Z(z)}_{\text{垂直形狀}}\]</div>
-<p><strong>經向形狀 <span class="math notranslate nohighlight">\(\beta y\,e^{-\left(\left(y - y_0\right)/b_0\right)^{2}}\)</span> 就是 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">赤道 PV 方程式</span></a>【推導 3】那個「奇函數 <span class="math notranslate nohighlight">\(\times\)</span> 偶函數」的結果。</strong> 在 <span class="math notranslate nohighlight">\(y = 0\)</span> 為零、南北兩側取極值且反號 —— 兩條反號 PV 帶的形狀完全由此決定，本篇只是把緯向與強度補齊。</p>
+<p><strong>經向形狀 <span class="math notranslate nohighlight">\(\beta y\,e^{-\left(\left(y - y_0\right)/b_0\right)^{2}}\)</span> 就是 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">赤道 PV 方程式</span></a>【推導 5】那個「奇函數 <span class="math notranslate nohighlight">\(\times\)</span> 偶函數」的結果。</strong> 在 <span class="math notranslate nohighlight">\(y = 0\)</span> 為零、南北兩側取極值且反號 —— 兩條反號 PV 帶的形狀完全由此決定，本篇只是把緯向與強度補齊。</p>
 </section>
 <section id="id4">
 <h3>三個控制參數各管什麼<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
@@ -930,7 +949,7 @@ J(-a_0) &amp;\overset{\text{定義 5,推導 5(b)}}{=}&amp; \frac{2K\sinh\left(\s
 <p>把【證明 (b)】代入 <span class="math notranslate nohighlight">\(850 \ \text{hPa}\)</span>、<span class="math notranslate nohighlight">\(\xi = -a_0\)</span>、<span class="math notranslate nohighlight">\(\alpha\tau_{\mathrm{p}} \approx 0.72\)</span>，解退化成</p>
 <div class="math notranslate nohighlight">
 \[q \approx -0.15\left(\frac{\tau_{\mathrm{p}}}{\tau_{\mathrm{c}}}\right)\beta y\exp\left[-\frac{\left(y - y_0\right)^{2}}{b_0^{2}}\right]\]</div>
-<p>當 <span class="math notranslate nohighlight">\(\tau_{\mathrm{p}}/\tau_{\mathrm{c}}\)</span> 繼續增大，<span class="math notranslate nohighlight">\(q\)</span>（乃至相對渦度）終將<strong>超過 <span class="math notranslate nohighlight">\(\beta y\)</span> 本身</strong>。一旦如此，<a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">赤道 PV 方程式</span></a>【證明 (b)】源項中的 <span class="math notranslate nohighlight">\(\beta y\)</span> 就該換成<strong>全位渦</strong>、<a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html"><span class="std std-doc">渦度方程式</span></a>【證明 (a)】輻散項中的 <span class="math notranslate nohighlight">\(\beta y\)</span> 就該換成<strong>絕對渦度</strong> —— 那就是非線性了。</p>
+<p>當 <span class="math notranslate nohighlight">\(\tau_{\mathrm{p}}/\tau_{\mathrm{c}}\)</span> 繼續增大，<span class="math notranslate nohighlight">\(q\)</span>（乃至相對渦度）終將<strong>超過 <span class="math notranslate nohighlight">\(\beta y\)</span> 本身</strong>。一旦如此，<a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">赤道 PV 方程式</span></a>【證明 (a)】源項中的 <span class="math notranslate nohighlight">\(\beta y\)</span> 就該換成<strong>全位渦</strong>、<a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html"><span class="std std-doc">渦度方程式</span></a>【證明 (a)】輻散項中的 <span class="math notranslate nohighlight">\(\beta y\)</span> 就該換成<strong>絕對渦度</strong> —— 那就是非線性了。</p>
 <p>論文判斷：<span class="math notranslate nohighlight">\(\tau_{\mathrm{p}}/\tau_{\mathrm{c}} \approx 5.9\)</span> 這個個案加進非線性項不會造成定性改變；但若比值大到能激出 <span class="math notranslate nohighlight">\(\sim 15 \ \text{m}\cdot\text{s}^{-1}\)</span> 的強西風爆發，非線性就不可忽略。</p>
 </section>
 </section>

@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -513,7 +513,33 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[\nu_{mnr} \in \mathbb{R}, \qquad \left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) = 0 \quad \left(\nu_{mnr} \neq \nu_{mn'r'}\right)\]</div>
+<p>其中</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{E}\)</span> : 總能量 (Total energy) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{G}\)</span> : 非絕熱生成項 (Diabatic generation term) <span class="math notranslate nohighlight">\([\text{m}^{4}\cdot\text{s}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> : 水平結構的線性算符 (Linear operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}^{\dagger}\)</span> : <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 的伴隨算符 (Adjoint of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(I_Z\)</span> : 垂直結構函數的加權積分 (Weighted vertical integral of the structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(I_Z = \int_0^{z_T}Z^{2}e^{-z}\,dz\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{K}_{mnr}\)</span> : 本徵函數 (Eigenfunction) <span class="math notranslate nohighlight">\([\text{依分量而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{mnr}\)</span> : 本徵頻率 (Eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u},\ \hat{v}\)</span> : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}\)</span> : 擾動位勢的水平結構函數 (Horizontal structure function of the perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 經向模態指標 (Meridional mode index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 波型指標 (Wave-type index) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p>註：(a)(b) 是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((2.2)\)</span>–<span class="math notranslate nohighlight">\((2.3)\)</span>，(c)(d) 對應 <span class="math notranslate nohighlight">\((4.8)\)</span> 與其後的敘述。</p></li>
 <li><p>註：論文只說內積 <span class="math notranslate nohighlight">\((4.8)\)</span> 是「由總能量原理<strong>暗示 (suggested)</strong>」出來的。本篇的【證明 (c)】把這句話<strong>升級成嚴格推導</strong> —— 權重 <span class="math notranslate nohighlight">\(1/\bar{c}^{2}\)</span> 是垂直積分恆等式 <span class="math notranslate nohighlight">\(\int Z'^{2}e^{-z}dz = \lambda\int Z^{2}e^{-z}dz\)</span>（【推導 5】）的必然結果。</p></li>
 <li><p>註：反厄米性的證明手法已在 Advanced Atmospheric Dynamics 的 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project1_3.html">project1_3</a> 對另一個算符完整示範過，內積的正定性見 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project1_4.html">project1_4</a>。本篇只是把同一套手法套在 Schubert 的 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> 上。</p></li>

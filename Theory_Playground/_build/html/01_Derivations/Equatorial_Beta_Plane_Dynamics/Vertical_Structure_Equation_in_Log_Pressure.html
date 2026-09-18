@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -505,7 +505,16 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[z_m \approx 0.5803\,z_T\]</div>
+<p>其中</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z'\)</span> : 垂直結構函數 <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的一階微分 (First derivative of the vertical structure function with respect to <span class="math notranslate nohighlight">\(z\)</span>) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(Z' = \dfrac{dZ}{dz}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(z_T \approx 1.619\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_m\)</span> : <span class="math notranslate nohighlight">\(Z\)</span> 對 <span class="math notranslate nohighlight">\(z\)</span> 的微分 <span class="math notranslate nohighlight">\(\dfrac{dZ}{dz}\)</span>（即 <span class="math notranslate nohighlight">\(Z'\)</span>）取極大值的高度 (Height where <span class="math notranslate nohighlight">\(dZ/dz\)</span> is maximum) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p>註：(a)–(d) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((3.1)\)</span>–<span class="math notranslate nohighlight">\((3.3)\)</span>。</p></li>
 <li><p>註：本篇與本庫 <a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html"><span class="std std-doc">垂直結構方程式（Boussinesq 版）</span></a> 是<strong>同一套 Sturm–Liouville 手法在不同座標下的兩個實例</strong> —— 那裡的算子是 <span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial z}\left[\dfrac{1}{N^{2}}\dfrac{\partial}{\partial z}\right]\)</span>，這裡是 <span class="math notranslate nohighlight">\(\left(\dfrac{d}{dz} - 1\right)\dfrac{d}{dz}\)</span>。差別全部來自「對數氣壓座標帶著密度指數遞減」這一件事。</p></li>
 <li><p>註：為什麼「只留第一內模態」是合理的？論文的證據是觀測：Johnson and Ciesielski (2000) 針對西太平洋暖池所算的 <span class="math notranslate nohighlight">\(120\)</span> 天平均加熱率剖面 <span class="math notranslate nohighlight">\(Q/c_p\)</span>，其<strong>形狀與 <span class="math notranslate nohighlight">\(Z'(z)\)</span> 幾乎重合</strong>（原論文 Fig. 1）。本篇只做數學，不重複那個觀測論證。</p></li>

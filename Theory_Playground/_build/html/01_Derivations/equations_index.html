@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -828,22 +828,22 @@ I1                      端點④ 平衡頻散關係
 </tr>
 <tr class="row-even"><td><p>位渦距平 (Potential vorticity anomaly) <span class="math notranslate nohighlight">\((2.7)\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">\frac{\partial</span> <span class="pre">v}{\partial</span> <span class="pre">x}</span> <span class="pre">-</span> <span class="pre">\frac{\partial</span> <span class="pre">u}{\partial</span> <span class="pre">y}</span> <span class="pre">+</span> <span class="pre">\frac{\beta</span> <span class="pre">y}{R\Gamma}\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)\frac{\partial</span> <span class="pre">\phi}{\partial</span> <span class="pre">z}</span></code></p></td>
-<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-emergence-of-the-potential-vorticity-anomaly">C2 #a-proof</a></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#assumptions-preliminaries">C2 #定義 1</a></p></td>
 <td><p>消去 <span class="math notranslate nohighlight">\((2.4)(2.5)\)</span> 之間的水平輻散後<strong>自動浮現</strong>的組合</p></td>
 </tr>
 <tr class="row-odd"><td><p>赤道 PV 方程式 (Equatorial PV equation) <span class="math notranslate nohighlight">\((2.6)\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">q}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\beta</span> <span class="pre">v</span> <span class="pre">=</span> <span class="pre">-\alpha</span> <span class="pre">q</span> <span class="pre">+</span> <span class="pre">\frac{\beta</span> <span class="pre">y}{c_p\Gamma}\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)Q</span></code></p></td>
-<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-pv-potential-vorticity-equation">C2 #b-proof</a></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-pv-potential-vorticity-equation">C2 #a-proof</a></p></td>
 <td><p>同上</p></td>
 </tr>
 <tr class="row-even"><td><p>★ 源項在赤道恆為零 (Vanishing source at the equator)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">\left.\frac{\beta</span> <span class="pre">y}{c_p\Gamma}\left(\frac{\partial}{\partial</span> <span class="pre">z}</span> <span class="pre">-</span> <span class="pre">1\right)Q\right|_{y</span> <span class="pre">=</span> <span class="pre">0}</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
-<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#c-proof-vanishing-of-the-source-at-the-equator">C2 #c-proof</a></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#b-proof-vanishing-of-the-source-at-the-equator">C2 #b-proof</a></p></td>
 <td><p>與加熱強度無關；<strong>全文物理引擎</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>★ 高斯加熱下源項的極值位置 (Source extrema)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">y_{\text{ext}}</span> <span class="pre">=</span> <span class="pre">\pm\frac{b_0}{2^{1/2}}</span></code></p></td>
-<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#e-proof-location-of-the-source-extrema">C2 #e-proof</a></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#d-proof-s-extremal-latitudes-of-the-source-s">C2 #d-proof</a></p></td>
 <td><p>加熱經向剖面為中心在赤道的高斯；<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span> 時 <span class="math notranslate nohighlight">\(\approx \pm318 \ \text{km}\)</span></p></td>
 </tr>
 </tbody>

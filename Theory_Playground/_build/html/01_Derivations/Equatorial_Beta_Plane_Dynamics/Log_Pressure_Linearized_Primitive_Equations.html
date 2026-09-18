@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -448,9 +448,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-zonal-momentum-equation">(a) proof 緯向動量方程式 (Zonal momentum equation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-meridional-momentum-equation">(b) proof 經向動量方程式 (Meridional momentum equation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-hydrostatic-equation">(c) proof 靜力方程式 (Hydrostatic equation)</a></li>
@@ -478,9 +478,9 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="log-pressure-linearized-primitive-equations">
 <h1>Log-Pressure Linearized Primitive Equations (對數氣壓座標下的線性化原始方程組)<a class="headerlink" href="#log-pressure-linearized-primitive-equations" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>證明目標:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>證明目標<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>在赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上，把層結、可壓縮、準靜力大氣的原始方程組，寫成以
-<span class="math notranslate nohighlight">\(z = \ln\left(p_0/p\right)\)</span> 為垂直座標的<strong>線性化</strong>形式。五條方程式收束為一組：</p>
+<span class="math notranslate nohighlight">\(z = \ln\left(p_0/P\right)\)</span> 為垂直座標的<strong>線性化</strong>形式。五條方程式收束為一組：</p>
 <ul class="simple">
 <li><p>(a) 緯向動量方程式：</p></li>
 </ul>
@@ -506,7 +506,33 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}\]</div>
+<p>其中</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 擾動緯向風速 (Perturbation zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 擾動溫度 (Perturbation temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 緯向座標 (Zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_0\)</span> : 參考氣壓 (Reference pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span>，<span class="math notranslate nohighlight">\(p_0 = 1010 \ \text{mb}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> : 氣壓 (Pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p>註（符號提醒）：本段的符號有四處容易誤讀 ——</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(u,\ v,\ w\)</span> 寫成光禿的形式<strong>就是擾動量</strong>：由【假設 2】(a)(b-1)，<span class="math notranslate nohighlight">\(\bar{u} = \bar{v} = \bar{w} = 0\)</span>，故 <span class="math notranslate nohighlight">\(u \equiv u'\)</span>、<span class="math notranslate nohighlight">\(v \equiv v'\)</span>、<span class="math notranslate nohighlight">\(w \equiv w'\)</span>。這是恆等式，不是撇號省略。</p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> 在本段指<strong>擾動</strong>溫度 <span class="math notranslate nohighlight">\(T'\)</span>；但【已知 1/3/4】【推導 4/5/7】中的 <span class="math notranslate nohighlight">\(T\)</span> 是<strong>全場</strong>溫度。這是一次明確的符號重新定義，交接點在【證明 (c)(e)】末，見【假設 2】末的〈記號慣例〉註。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span>（擾動位勢）、<span class="math notranslate nohighlight">\(\Phi\)</span>（全場位勢）、<span class="math notranslate nohighlight">\(\varphi\)</span>（緯度）是<strong>三個不同的量</strong>，僅字形相近；本段出現的是 <span class="math notranslate nohighlight">\(\phi\)</span>。</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> 是<strong>外加的強迫</strong>而非因變數，故不冠「擾動」二字（見【假設 2】末的使用規則）。</p></li>
+</ul>
+</li>
 <li><p>註：這五條就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((2.1)\)</span>，是整條 MJO 推導鏈的起點。</p></li>
 <li><p>註：球座標原始方程式、連續方程式、狀態方程式、靜力平衡<strong>都已在別處證過</strong>，本檔一律引用（見【已知】卡片）。真正新做的只有三件事：<strong>對數氣壓座標變換</strong>、<strong>繞靜止基本態線性化</strong>、<strong>赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面近似</strong>。</p></li>
 <li><p>註：<span class="math notranslate nohighlight">\(z\)</span> 是<strong>無因次</strong>的對數氣壓座標，因此 <span class="math notranslate nohighlight">\(w = Dz/Dt\)</span> 的單位是 <span class="math notranslate nohighlight">\(\left[\text{s}^{-1}\right]\)</span> 而非 <span class="math notranslate nohighlight">\(\left[\text{m}\cdot\text{s}^{-1}\right]\)</span>。</p></li>
@@ -537,7 +563,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(g\)</span> : 重力加速度 (Gravitational acceleration) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-2}]\)</span>，<span class="math notranslate nohighlight">\(g \approx 9.81 \ \text{m}\cdot\text{s}^{-2}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(f\)</span> : 科氏參數 (Coriolis parameter) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(f = 2\Omega\sin\varphi\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a \approx 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) <span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\varphi\)</span> : 緯度 (Latitude) <span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(F_\lambda,\ F_\varphi\)</span> : 緯向、經向的摩擦力 (Frictional forces) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-2}]\)</span></p></li>
@@ -628,7 +654,7 @@ document.write(`
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a \approx 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【定義 6】 靜力穩定度 (Static stability)：</strong> 由基本態溫度剖面算出的層結度量</p>
@@ -672,7 +698,7 @@ document.write(`
 </li>
 <li><p><span class="math notranslate nohighlight">\(x\)</span> : 緯向座標 (Zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a \approx 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) <span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\varphi\)</span> : 緯度 (Latitude) <span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(f\)</span> : 科氏參數 (Coriolis parameter) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(f = 2\Omega\sin\varphi\)</span></p></li>
@@ -755,7 +781,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(w\)</span> : 全場對數氣壓垂直速度 (Total log-pressure vertical velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\varphi\)</span> : 緯度 (Latitude) <span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a \approx 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\frac{D}{Dt}\)</span> : 全質導數 (Material derivative) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><strong>註（記號慣例）：</strong> 風速與溫度的撇號處理<strong>不是同一回事</strong>，必須分開講：</p>
 <ul class="simple">
@@ -809,7 +835,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\Gamma = \text{const} \]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span> ， <span class="math notranslate nohighlight">\(\Gamma \approx 23.79  \text{K}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
 <li><p>註：<strong>本篇的五條【證明】並不需要這一條</strong> —— <span class="math notranslate nohighlight">\(\Gamma\)</span> 在【證明 (e)】只是被【定義 6】收攏起來的一個符號。列在此處是因為它是模式設定的一部分，且從 <a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html"><span class="std std-doc">渦度與位勢–輻散方程式</span></a> 起就必須用到（<span class="math notranslate nohighlight">\(\Gamma\)</span> 要能穿過垂直算子 <span class="math notranslate nohighlight">\(\partial/\partial z - 1\)</span>，才做得成消去）。</p></li>
 </ul>
 </li>
@@ -1013,7 +1039,7 @@ document.write(`
 </ul>
 </section>
 <section id="id2">
-<h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>證明<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="a-proof-zonal-momentum-equation">
 <h3>(a) proof 緯向動量方程式 (Zonal momentum equation)<a class="headerlink" href="#a-proof-zonal-momentum-equation" title="Link to this heading">#</a></h3>
 <p>從【已知 1】(a) 起手，依序丟掉度規項、換掉壓力梯度力與科氏參數、線性化全質導數，最後接上阻尼。</p>
@@ -1205,9 +1231,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-zonal-momentum-equation">(a) proof 緯向動量方程式 (Zonal momentum equation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-meridional-momentum-equation">(b) proof 經向動量方程式 (Meridional momentum equation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-hydrostatic-equation">(c) proof 靜力方程式 (Hydrostatic equation)</a></li>

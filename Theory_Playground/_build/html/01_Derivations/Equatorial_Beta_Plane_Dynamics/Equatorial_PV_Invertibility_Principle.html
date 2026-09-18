@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -500,7 +500,23 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[\epsilon^{1/2}\left(\frac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\right)\hat{\psi}_m - m^{2}\hat{\psi}_m = a^{2}\hat{q}_m\]</div>
+<p>其中</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u_\psi,\ v_\psi\)</span> : 旋轉風的兩個分量 (Rotational wind components) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\psi},\ \hat{q}\)</span> : 流函數與位渦的水平結構函數 (Horizontal structure functions of the streamfunction and the PV) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}],\ [\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla^{2}\)</span> : 水平拉普拉斯算符 (Horizontal Laplacian) <span class="math notranslate nohighlight">\([\text{m}^{-2}]\)</span>，<span class="math notranslate nohighlight">\(\nabla^{2} = \dfrac{\partial^{2}}{\partial x^{2}} + \dfrac{\partial^{2}}{\partial y^{2}}\)</span></p></li>
 <li><p>註：(a)–(d) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((6.1)\)</span>–<span class="math notranslate nohighlight">\((6.3)\)</span>。</p></li>
 <li><p>註：<strong>(b) 是整個赤道可逆性原理的樞紐。</strong> 它把中緯度的地轉關係 <span class="math notranslate nohighlight">\(\phi = f\psi\)</span> 直接搬到赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面（<span class="math notranslate nohighlight">\(f \to \beta y\)</span>）。有了它，知道 <span class="math notranslate nohighlight">\(q\)</span> 就能解出 <span class="math notranslate nohighlight">\(\psi\)</span>，進而由 <span class="math notranslate nohighlight">\(\left(u_\psi, v_\psi\right) = \left(-\partial\psi/\partial y,\ \partial\psi/\partial x\right)\)</span> 與 <span class="math notranslate nohighlight">\(\phi = \beta y\psi\)</span> 還原全部平衡場。</p></li>
 <li><p>註：(d) 左端的算符 <span class="math notranslate nohighlight">\(\dfrac{d^{2}}{d\hat{y}^{2}} - \hat{y}^{2}\)</span> <strong>正是</strong> <a class="reference internal" href="../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.html"><span class="std std-doc">Hermite 函數的諧振子本徵值</span></a>【證明 (a)】那一個。下一篇 <a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html"><span class="std std-doc">Hermite 轉換解</span></a> 就靠這件事把整條方程式壓成一行除法。</p></li>
@@ -509,19 +525,19 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#a-proof-emergence-of-the-potential-vorticity-anomaly">位渦距平的定義 (Definition of the PV anomaly)</a>：</strong> 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上的位渦距平：相對渦度加上「以 <span class="math notranslate nohighlight">\(\beta y\)</span> 加權的層結項」。因為權重正比於 <span class="math notranslate nohighlight">\(y\)</span>，赤道上這一項自動消失 ─ 這是整條 MJO 推導鏈的物理引擎。（已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【證明 (a)】完整證明，此處直接引用。）</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_PV_Equation_and_Beta_y_Source.html#assumptions-preliminaries">位渦距平的定義 (Definition of the PV anomaly)</a>：</strong> 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上的位渦距平：相對渦度加上「以 <span class="math notranslate nohighlight">\(\beta y\)</span> 加權的層結項」。因為權重正比於 <span class="math notranslate nohighlight">\(y\)</span>，赤道上這一項自動消失 ─ 這是整條 MJO 推導鏈的物理引擎。（已於本庫 <a class="reference internal" href="Equatorial_PV_Equation_and_Beta_y_Source.html"><span class="std std-doc">Equatorial PV Equation and the Beta-y Source</span></a>【定義 1】定義，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
 \[q = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + \frac{\beta y}{R\Gamma}\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(u,\ v\)</span> : 擾動緯向、經向風速 (Perturbation velocities) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(z_T = 1.619\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【已知 2】 <a class="reference external" href="https://glossary.ametsoc.org/wiki/Balance_equation">線性平衡關係 (Linear balance relation)</a>：</strong> 從水平動量方程式取散度、丟掉加速度與非線性項後得到的診斷關係。（標準結果，此處直接引用。）</p>
@@ -530,7 +546,7 @@ document.write(`
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\nabla^{2}\)</span> : 水平拉普拉斯算符 (Horizontal Laplacian) <span class="math notranslate nohighlight">\([\text{m}^{-2}]\)</span>，<span class="math notranslate nohighlight">\(\nabla^{2} = \dfrac{\partial^{2}}{\partial x^{2}} + \dfrac{\partial^{2}}{\partial y^{2}}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 </ul>
@@ -546,11 +562,11 @@ document.write(`
 \[\left(\psi,\ \phi,\ q\right) = \left(\hat{\psi},\ \hat{\phi},\ \hat{q}\right)Z(z)\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda \approx 4.014\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(z_T = 1.619\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (PV anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
@@ -563,10 +579,10 @@ document.write(`
 \[\frac{\partial}{\partial x} \to \frac{\partial}{\partial \xi} \to \frac{im}{a}, \qquad \xi = x - ct\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(m\)</span> : 緯向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，整數</p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\xi\)</span> : 隨波緯向座標 (Translating zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
 </ul>
 </li>
@@ -576,10 +592,10 @@ document.write(`
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
 </li>
@@ -596,7 +612,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\nabla\cdot\left(\beta y\,\nabla\psi\right) \approx \nabla^{2}\left(\beta y\,\psi\right)\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p>註：<strong>這是全篇唯一一條「有代價」的假設</strong>。嚴格展開時 <span class="math notranslate nohighlight">\(\nabla^{2}\left(\beta y\psi\right) = \beta y\nabla^{2}\psi + 2\beta\dfrac{\partial\psi}{\partial y}\)</span>，而 <span class="math notranslate nohighlight">\(\nabla\cdot\left(\beta y\nabla\psi\right) = \beta y\nabla^{2}\psi + \beta\dfrac{\partial\psi}{\partial y}\)</span> —— 兩者差一個 <span class="math notranslate nohighlight">\(\beta\dfrac{\partial\psi}{\partial y}\)</span>。當 <span class="math notranslate nohighlight">\(\psi\)</span> 的經向尺度遠小於 <span class="math notranslate nohighlight">\(y\)</span> 本身時（即遠離赤道），該項相對可忽略。</p></li>
@@ -607,7 +623,7 @@ document.write(`
 \[\lim_{\left|y\right| \to \infty}\left(\phi - \beta y\,\psi\right) = 0\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 </ul>
@@ -622,7 +638,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\left.\frac{\partial \psi}{\partial z}\right|_{z = 0} = \left.\frac{\partial \psi}{\partial z}\right|_{z = z_T} = 0\]</div>
 </li>
-<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(z_T = 1.619\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p>註：這一張卡片<strong>不以 <code class="docutils literal notranslate"><span class="pre">\overset</span></code> 形式出現在下方的【證明】中</strong> —— 邊界條件不是某個等號的依據，而是讓【證明 (c)】的橢圓型方程「解存在且唯一」的定解條件。它真正被用到是在下一篇 <a class="reference internal" href="Hermite_Transform_Solution_of_Invertibility.html"><span class="std std-doc">Hermite 轉換解</span></a>：(a) 保證 Hermite 展開合法（<span class="math notranslate nohighlight">\(\mathcal{H}_n\)</span> 在無窮遠處歸零），(b) 保證垂直結構取 <span class="math notranslate nohighlight">\(Z(z)\)</span>（見 <a class="reference internal" href="Vertical_Structure_Equation_in_Log_Pressure.html"><span class="std std-doc">垂直結構方程式</span></a>【假設 1】的同一條件）。</p></li>
@@ -651,7 +667,7 @@ document.write(`
   \end{gather*}\end{split}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 </ul>
@@ -663,11 +679,11 @@ document.write(`
   &amp;\overset{\text{已知 3(a)}}{=}&amp; -\lambda\,\hat{\psi}\,Z
   \end{gather*}\end{split}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_T\)</span> : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(z_T = 1.619\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 旋轉流的流函數 (Streamfunction of the rotational flow) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\psi},\ \hat{q}\)</span> : 流函數與位渦的水平結構函數 (Horizontal structure functions of the streamfunction and the PV) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}],\ [\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Z(z)\)</span> : 垂直結構函數 (Vertical structure function) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 第一內模態的分離常數 (Separation constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\lambda \approx 4.014\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>【推導 4】 經向座標的無因次化 (Nondimensionalizing the meridional coordinate)：</strong> 兩個關鍵的換算</p>
@@ -693,11 +709,11 @@ document.write(`
     \end{gather*}\end{split}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta = 2\Omega/a\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{c}\)</span> : 等效重力波速 (Equivalent gravity wave speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\bar{c} \approx 41.25 \ \text{m}\cdot\text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> : 無因次經向座標 (Dimensionless meridional coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> : Lamb 參數 (Lamb’s parameter) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\epsilon \approx 507.3\)</span></p></li>
 </ul>
 </li>

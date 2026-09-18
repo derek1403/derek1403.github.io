@@ -2,10 +2,10 @@
 
 +++
 
-## 證明目標:
+## 證明目標
 
 在赤道 $\beta$ 平面上，把層結、可壓縮、準靜力大氣的原始方程組，寫成以
-$z = \ln\left(p_0/p\right)$ 為垂直座標的**線性化**形式。五條方程式收束為一組：
+$z = \ln\left(p_0/P\right)$ 為垂直座標的**線性化**形式。五條方程式收束為一組：
 
 * (a) 緯向動量方程式：
 
@@ -27,6 +27,30 @@ $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial
 
 $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
 
+其中
+
+* $u$ : 擾動緯向風速 (Perturbation zonal velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $v$ : 擾動經向風速 (Perturbation meridional velocity) $[\text{m}\cdot\text{s}^{-1}]$
+* $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $T$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
+* $Q$ : 單位質量的外加對流加熱率 (Convective heating rate per unit mass) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $x$ : 緯向座標 (Zonal coordinate) $[\text{m}]$
+* $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $t$ : 時間 (Time) $[\text{s}]$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}$
+* $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
+* $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+* $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
+* $p_0$ : 參考氣壓 (Reference pressure) $[\text{Pa}]$，$p_0 = 1010 \ \text{mb}$
+* $P$ : 氣壓 (Pressure) $[\text{Pa}]$
+* 註（符號提醒）：本段的符號有四處容易誤讀 ——
+  * $u,\ v,\ w$ 寫成光禿的形式**就是擾動量**：由【假設 2】(a)(b-1)，$\bar{u} = \bar{v} = \bar{w} = 0$，故 $u \equiv u'$、$v \equiv v'$、$w \equiv w'$。這是恆等式，不是撇號省略。
+  * $T$ 在本段指**擾動**溫度 $T'$；但【已知 1/3/4】【推導 4/5/7】中的 $T$ 是**全場**溫度。這是一次明確的符號重新定義，交接點在【證明 (c)(e)】末，見【假設 2】末的〈記號慣例〉註。
+  * $\phi$（擾動位勢）、$\Phi$（全場位勢）、$\varphi$（緯度）是**三個不同的量**，僅字形相近；本段出現的是 $\phi$。
+  * $Q$ 是**外加的強迫**而非因變數，故不冠「擾動」二字（見【假設 2】末的使用規則）。
 * 註：這五條就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(2.1)$，是整條 MJO 推導鏈的起點。
 * 註：球座標原始方程式、連續方程式、狀態方程式、靜力平衡**都已在別處證過**，本檔一律引用（見【已知】卡片）。真正新做的只有三件事：**對數氣壓座標變換**、**繞靜止基本態線性化**、**赤道 $\beta$ 平面近似**。
 * 註：$z$ 是**無因次**的對數氣壓座標，因此 $w = Dz/Dt$ 的單位是 $\left[\text{s}^{-1}\right]$ 而非 $\left[\text{m}\cdot\text{s}^{-1}\right]$。
@@ -57,7 +81,7 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
   * $g$ : 重力加速度 (Gravitational acceleration) $[\text{m}\cdot\text{s}^{-2}]$，$g \approx 9.81 \ \text{m}\cdot\text{s}^{-2}$
   * $f$ : 科氏參數 (Coriolis parameter) $[\text{s}^{-1}]$，$f = 2\Omega\sin\varphi$
   * $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{s}^{-1}]$，$\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}$
-  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a \approx 6.37\times10^{6} \ \text{m}$
+  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
   * $\lambda$ : 經度 (Longitude) $[\text{rad}]$
   * $\varphi$ : 緯度 (Latitude) $[\text{rad}]$
   * $F_\lambda,\ F_\varphi$ : 緯向、經向的摩擦力 (Frictional forces) $[\text{m}\cdot\text{s}^{-2}]$
@@ -140,7 +164,7 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
 
   * $\beta$ : 赤道 $\beta$ 參數 (Equatorial beta parameter) $[\text{m}^{-1}\cdot\text{s}^{-1}]$，$\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}$
   * $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{s}^{-1}]$，$\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}$
-  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a \approx 6.37\times10^{6} \ \text{m}$
+  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
 
 * **【定義 6】 靜力穩定度 (Static stability)：** 由基本態溫度剖面算出的層結度量
 
@@ -180,10 +204,9 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
     \partial y &=& a \partial \varphi \\
     \end{gather*}$$
 
-
   * $x$ : 緯向座標 (Zonal coordinate) $[\text{m}]$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
-  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a \approx 6.37\times10^{6} \ \text{m}$
+  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
   * $\lambda$ : 經度 (Longitude) $[\text{rad}]$
   * $\varphi$ : 緯度 (Latitude) $[\text{rad}]$
   * $f$ : 科氏參數 (Coriolis parameter) $[\text{s}^{-1}]$，$f = 2\Omega\sin\varphi$
@@ -211,8 +234,6 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
 
     $$\left(\text{擾動}\right)\times\left(\text{擾動}\right) \approx 0$$
 
-    
-
   * (c-1) 由 (a)(b)(c)，作用在任一擾動量 $X'$ 上的全質導數退化成純時間導數：
 
     $$\begin{gather*}
@@ -221,8 +242,6 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
     &\overset{\text{假設 2(a)}}{=}& \frac{\partial X'}{\partial t} + u'\frac{\partial X'}{\partial x} + v'\frac{\partial X'}{\partial y} + w'\frac{\partial X'}{\partial z} \\
     &\overset{\text{假設 2(c)}}{\approx}& \frac{\partial X'}{\partial t}
     \end{gather*}$$
-
-    
 
   * (c-2) 【已知 1】(a) 的度規項是兩個**全場**風速的乘積，展開後只剩擾動的二次項：
 
@@ -249,8 +268,6 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
     &\overset{\text{假設 2(b-1)}}{=}& w'\frac{d\bar{T}}{dz}
     \end{gather*}$$
 
-
-
   * $u',\ v'$ : 擾動緯向、經向風速 (Perturbation zonal and meridional velocities) $[\text{m}\cdot\text{s}^{-1}]$
   * $w'$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
   * $T'$ : 擾動溫度 (Perturbation temperature) $[\text{K}]$
@@ -271,7 +288,7 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
   * $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
   * $w$ : 全場對數氣壓垂直速度 (Total log-pressure vertical velocity) $[\text{s}^{-1}]$
   * $\varphi$ : 緯度 (Latitude) $[\text{rad}]$
-  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a \approx 6.37\times10^{6} \ \text{m}$
+  * $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6.37\times10^{6} \ \text{m}$
   * $\frac{D}{Dt}$ : 全質導數 (Material derivative) $[\text{s}^{-1}]$
   * **註（記號慣例）：** 風速與溫度的撇號處理**不是同一回事**，必須分開講：
     * **$u,\ v,\ w$**：由 (a)(b-1)，$u \equiv u'$、$v \equiv v'$、$w \equiv w'$ —— 這是**恆等式**。寫 $u$ 或寫 $u'$ 指的是同一個量，因此【證明】中一律寫光禿的 $u, v, w$，並無資訊損失。
@@ -319,7 +336,7 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
 
   $$\Gamma = \text{const} $$
 
-  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$ ， $\Gamma \approx 23.79  \text{K}$
+  * $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$，$\Gamma = 23.79 \ \text{K}$
   * 註：**本篇的五條【證明】並不需要這一條** —— $\Gamma$ 在【證明 (e)】只是被【定義 6】收攏起來的一個符號。列在此處是因為它是模式設定的一部分，且從 [渦度與位勢–輻散方程式](Equatorial_Vorticity_and_Divergence_Equations.md) 起就必須用到（$\Gamma$ 要能穿過垂直算子 $\partial/\partial z - 1$，才做得成消去）。
 
 * **【假設 6】 基本態靜力平衡 (Basic-state hydrostatic balance)：** 基本態自身即為系統的一個解（靜止、無強迫、只隨高度變化），故【推導 4】的靜力關係對它單獨成立
@@ -331,7 +348,6 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
   * $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$，$R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$
   * $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
   * 註：這一條**推導不出來** —— 【推導 4】只給一條 $\dfrac{d\bar{\Phi}}{dz} + \dfrac{\partial \phi}{\partial z} = R\bar{T} + RT'$，一條方程式拆不出兩條。要拆開，必須另外要求基本態自身是平衡態。本庫在 [擾動場的流體靜力平衡](../Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.md) 的【假設 2】亦作同樣處理。
-
 
 * **【推導 1】 座標變換算子 (Coordinate transformation operators)：** 【定義 1】兩側取指數再微分，得到 $z$ 與 $P$ 之間的三條換算
 
@@ -514,7 +530,7 @@ $$\frac{\partial T}{\partial t} + \Gamma w = -\alpha T + \frac{Q}{c_p}$$
 
 +++
 
-## 證明:
+## 證明
 
 ### (a) proof 緯向動量方程式 (Zonal momentum equation)
 

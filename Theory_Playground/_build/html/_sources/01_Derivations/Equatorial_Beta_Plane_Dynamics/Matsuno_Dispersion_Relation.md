@@ -19,6 +19,15 @@ $$\left(\epsilon^{1/2}\hat{\nu} + m\right)\left(\epsilon^{1/2}\hat{\nu}^{2} - m\
 
 $$\epsilon^{1/2}\hat{\nu} = m$$
 
+其中
+
+* $\hat{\nu}$ : Schubert 記法的無因次頻率 (Dimensionless frequency) $[\text{無單位}]$
+* $\omega$ : 無因次頻率 (Dimensionless frequency) $[\text{無單位}]$
+* $k$ : 無因次緯向波數 (Dimensionless zonal wavenumber) $[\text{無單位}]$
+* $U,\ V$ : 本徵函數的速度分量 (Velocity components of the eigenfunction) $[\text{無單位}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
 * 註：(a)–(c) 對應 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(4.10)$ 及其後的討論。
 * 註：**本篇是整條推導鏈中唯一的「記法橋樑」**，被 [赤道波本徵函數](Equatorial_Wave_Eigenfunctions.md)、[受迫解](Forced_Response_of_Equatorial_Modes.md)、[場還原與 Kelvin 波零 PV](Physical_Field_Recovery_and_Zero_Kelvin_PV.md)、[平衡頻散關係](Balanced_Rossby_Dispersion_Relation.md) 四篇引用。取消它的話那四篇各自都要重寫一次對照。
 * 註：$(2n+1)$ 這個「量子化」的來源是 Weber 方程式的有界性要求（Hermite 函數的階數必須是非負整數），已在 project2_1 證過；其數學根源見本庫 [Hermite 函數的正交歸一性與諧振子本徵值](../Differential_Equations/Hermite_Orthonormality_and_Oscillator_Eigenvalue.md)【證明 (a)】的 $-(2n+1)$。

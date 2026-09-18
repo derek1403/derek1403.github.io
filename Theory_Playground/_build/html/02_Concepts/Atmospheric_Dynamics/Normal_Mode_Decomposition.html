@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -584,15 +584,15 @@ document.write(`
 <p>用常數 <span class="math notranslate nohighlight">\(N = 10^{-2}\ \text{s}^{-1}\)</span>、厚度 <span class="math notranslate nohighlight">\(16\ \text{km}\)</span> 的剛蓋大氣，直接把垂直結構方程式離散成矩陣本徵值問題解出來，再把兩種加熱剖面投影上去。資料每次執行時即時生成，沒有任何檔案被存下來。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">G</span><span class="p">,</span> <span class="n">THETA0</span> <span class="o">=</span> <span class="mf">9.81</span><span class="p">,</span> <span class="mf">300.0</span>     <span class="c1"># 重力加速度 [m/s^2]、參考位溫 [K]</span>
 <span class="n">N2</span> <span class="o">=</span> <span class="mf">1.0e-4</span>                 <span class="c1"># 浮力頻率平方 N^2 [s^-2]</span>
 <span class="n">ZT</span> <span class="o">=</span> <span class="mf">16000.0</span>                <span class="c1"># 剛蓋高度 [m]</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">vertical_modes</span><span class="p">(</span><span class="n">n_mode</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">nz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">zt</span><span class="o">=</span><span class="n">ZT</span><span class="p">,</span> <span class="n">N2</span><span class="o">=</span><span class="n">N2</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">vertical_modes</span><span class="p">(</span><span class="n">n_mode</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">nz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">zt</span><span class="o">=</span><span class="n">ZT</span><span class="p">,</span> <span class="n">N2</span><span class="o">=</span><span class="n">N2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;數值解垂直結構方程式 d/dz[(1/N^2) dPsi/dz] = -(1/c^2) Psi，剛蓋(Neumann)邊界。&quot;&quot;&quot;</span>
     <span class="n">dz</span> <span class="o">=</span> <span class="n">zt</span> <span class="o">/</span> <span class="n">nz</span>
     <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nz</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dz</span>                       <span class="c1"># cell-centered 網格</span>
@@ -616,7 +616,7 @@ document.write(`
     <span class="k">return</span> <span class="n">z</span><span class="p">,</span> <span class="n">dz</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">vec</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">heating</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">deep_K_day</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">z_peak</span><span class="o">=</span><span class="mf">6500.0</span><span class="p">,</span> <span class="n">z_wid</span><span class="o">=</span><span class="mf">12000.0</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">heating</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">deep_K_day</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">z_peak</span><span class="o">=</span><span class="mf">6500.0</span><span class="p">,</span> <span class="n">z_wid</span><span class="o">=</span><span class="mf">12000.0</span><span class="p">,</span>
             <span class="n">surf_K_day</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">h_s</span><span class="o">=</span><span class="mf">1500.0</span><span class="p">,</span> <span class="n">zt</span><span class="o">=</span><span class="n">ZT</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;深對流加熱（上下邊界嚴格歸零）＋ 可選的地表感熱（下邊界不歸零）。&quot;&quot;&quot;</span>
     <span class="n">shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="n">zt</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">z</span> <span class="o">-</span> <span class="n">z_peak</span><span class="p">)</span> <span class="o">/</span> <span class="n">z_wid</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -626,7 +626,7 @@ document.write(`
     <span class="k">return</span> <span class="n">q_b</span><span class="p">,</span> <span class="n">q_b</span> <span class="o">/</span> <span class="n">N2</span>                                 <span class="c1"># 層結縮放後的 Q [m/s]</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">projection</span><span class="p">(</span><span class="n">dz</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">modes</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">projection</span><span class="p">(</span><span class="n">dz</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">modes</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;模態投影 P_m = int (-dQ/dz) Psi_m dz。&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">dz</span><span class="p">))</span> <span class="o">@</span> <span class="n">modes</span> <span class="o">*</span> <span class="n">dz</span>
 
@@ -685,7 +685,7 @@ Psi_0 的起伏 / 平均值 = 2.8e-12  -&gt;  數值上確實是常數
 邊界項理論值 -Psi_0*[Q(z_t)-Q(z_b)] = 1.188e-04，數值投影 P_0 = 1.196e-04
 </pre></div>
 </div>
-<img alt="../../_images/6dd19719e829e83caeefb9ea13c705b74a175f620a4fd5a334fcf827b44b3b6d.png" src="../../_images/6dd19719e829e83caeefb9ea13c705b74a175f620a4fd5a334fcf827b44b3b6d.png" />
+<img alt="../../_images/d1074992aab7f23372b58d6fd12b65942cf6e3848f27898eae7486ef069eb23d.png" src="../../_images/d1074992aab7f23372b58d6fd12b65942cf6e3848f27898eae7486ef069eb23d.png" />
 </div>
 </div>
 <p>三件事被驗證了：</p>

@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -625,20 +625,20 @@ document.write(`
 <p>（這是把「<span class="math notranslate nohighlight">\(D \ll H_\rho\)</span>」具體化的<strong>其中一種</strong>量法，不是形式上的誤差上界；不同的取法會讓門檻的數字前後移動，但量級與趨勢是一樣的。）資料每次執行時即時生成，沒有任何檔案被存下來。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">G</span><span class="p">,</span> <span class="n">RD</span><span class="p">,</span> <span class="n">T0</span> <span class="o">=</span> <span class="mf">9.81</span><span class="p">,</span> <span class="mf">287.0</span><span class="p">,</span> <span class="mf">250.0</span>      <span class="c1"># 重力加速度 [m/s^2]、乾空氣氣體常數 [J/kg/K]、等溫背景溫度 [K]</span>
 <span class="n">H</span> <span class="o">=</span> <span class="n">RD</span> <span class="o">*</span> <span class="n">T0</span> <span class="o">/</span> <span class="n">G</span>                     <span class="c1"># 密度標高 H = R_d T / g [m]</span>
 <span class="n">RHO_S</span> <span class="o">=</span> <span class="mf">1.2</span>                         <span class="c1"># 地面密度 [kg/m^3]</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">rho_bar</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">rho_bar</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;等溫大氣的背景密度剖面。&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">RHO_S</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span> <span class="o">/</span> <span class="n">H</span><span class="p">)</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">boussinesq_error</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">boussinesq_error</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;把層平均密度當成常數 rho_0 時，層內密度的最大相對誤差。&quot;&quot;&quot;</span>
     <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
     <span class="n">rho0</span> <span class="o">=</span> <span class="n">RHO_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">H</span> <span class="o">/</span> <span class="n">D</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">D</span> <span class="o">/</span> <span class="n">H</span><span class="p">))</span>       <span class="c1"># 層平均密度（解析積分）</span>
@@ -647,7 +647,7 @@ document.write(`
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">dev_bot</span><span class="p">,</span> <span class="n">dev_top</span><span class="p">)</span> <span class="o">/</span> <span class="n">rho0</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">crossing</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">crossing</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;用二分法找誤差達到 target 的層厚。&quot;&quot;&quot;</span>
     <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0e4</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
@@ -715,7 +715,7 @@ document.write(`
 誤差達 10% 的層厚：D = 1417 m
 </pre></div>
 </div>
-<img alt="../../_images/2a98f7a8b4f2fb4c049cbf949acb0b7808b9d2e10ce7b7a9817c7f63efd38492.png" src="../../_images/2a98f7a8b4f2fb4c049cbf949acb0b7808b9d2e10ce7b7a9817c7f63efd38492.png" />
+<img alt="../../_images/0fdd5fcc22383fdb19bd37506586e0792dd7b9927961e2a72840b9ce5281aa7c.png" src="../../_images/0fdd5fcc22383fdb19bd37506586e0792dd7b9927961e2a72840b9ce5281aa7c.png" />
 </div>
 </div>
 <p>數字比想像中嚴格：</p>

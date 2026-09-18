@@ -31,6 +31,28 @@ $$\hat{Q}_{m,-1,2} = \frac{A_{m,-1,2}\,\epsilon^{1/4}\,\pi Q_0\,a_0\,b_0}{2\bar{
 
 $$\left.\hat{Q}_{mnr}\right|_{\hat{y}_0 = 0} = 0 \qquad \left(n \ \text{為偶數}\right)$$
 
+其中
+
+* $\hat{Q}$ : 加熱率的水平結構函數 (Horizontal structure function of the heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $\hat{Q}_m$ : 加熱的緯向傅立葉係數 (Fourier coefficient of the heating) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $\hat{Q}_{mnr}$ : 強迫的模態投影 (Modal projection of the forcing) $[\text{K}\cdot\text{s}^{-1}]$
+* $A_{mnr}$ : 本徵函數的歸一化常數 (Normalization constant) $[\text{無單位}]$
+* $\mathcal{H}_n$ : 歸一化 Hermite 函數 (Normalized Hermite function) $[\text{無單位}]$
+* $\hat{\nu}_{mnr}$ : 無因次本徵頻率 (Dimensionless eigenfrequency) $[\text{無單位}]$
+* $\xi$ : 隨波緯向座標 (Translating zonal coordinate) $[\text{m}]$
+* $y$ : 經向座標，以赤道為原點 (Meridional coordinate) $[\text{m}]$
+* $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$，$\hat{y} = \epsilon^{1/4}y/a$
+* $\hat{b}_0,\ \hat{y}_0$ : 無因次的加熱寬度與偏移 (Dimensionless width and offset) $[\text{無單位}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $r$ : 波型指標 (Wave-type index) $[\text{無單位}]$
+* $Q_0$ : 加熱率的峰值 (Peak heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$，$Q_0/c_p = 12 \ \text{K}\cdot\text{day}^{-1}$
+* $a_0$ : 對流區的緯向半寬 (Zonal half-width) $[\text{m}]$，$a_0 = 1250 \ \text{km}$
+* $b_0$ : 對流區的經向 $e$-folding 寬度 (Meridional $e$-folding width) $[\text{m}]$，$b_0 = 450 \ \text{km}$
+* $y_0$ : 對流中心的緯向偏移 (Meridional offset of the convection center) $[\text{m}]$，$y_0 = 0$ 或 $450 \ \text{km}$
+* $a$ : 地球半徑 (Earth's radius) $[\text{m}]$，$a = 6370 \ \text{km}$
+* $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$，$\epsilon \approx 507.3$
+* $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$
 * 註：(a)–(d) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(4.1)$ 之下的敘述、$(4.5)$、$(4.22)$、$(4.23)$。
 * 註：本篇的兩個積分**都不重算**：緯向的升餘弦積分在【推導 2】自證（只是三角恆等式），經向的高斯 $\times$ Hermite 積分直接引用本庫 [Gaussian–Hermite Integral](../Calculus/Gaussian_Hermite_Integral.md)（論文的 $(B.1)$）。
 

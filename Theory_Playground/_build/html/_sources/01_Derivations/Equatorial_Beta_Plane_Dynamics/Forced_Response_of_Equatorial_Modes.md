@@ -25,6 +25,23 @@ $$\hat{\eta}_{mnr} = \frac{\kappa\hat{Q}_{mnr}}{\alpha + i\left(\nu_{mnr} - \dfr
 
 $$\left.\left|\hat{\eta}_{mnr}\right|\right|_{\nu_{mnr} = cm/a} = \frac{\kappa\left|\hat{Q}_{mnr}\right|}{\alpha}$$
 
+其中
+
+* $\hat{\boldsymbol{\eta}}_m$ : 第 $m$ 個緯向波數的狀態向量 (State vector) $[\text{依分量而定}]$
+* $\hat{\eta}_{mnr}$ : 正規模態展開係數 (Normal mode expansion coefficient) $[\text{m}\cdot\text{s}^{-1}]$
+* $\mathbf{K}_{mnr}$ : 本徵函數 (Eigenfunction) $[\text{依分量而定}]$
+* $\hat{\mathbf{Q}}_m$ : 強迫向量 (Forcing vector) $[\text{依分量而定}]$
+* $\hat{Q}_{mnr}$ : 強迫的模態投影 (Modal projection of the forcing) $[\text{K}\cdot\text{s}^{-1}]$
+* $\nu_{mnr}$ : 本徵頻率 (Eigenfrequency) $[\text{s}^{-1}]$
+* $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $r$ : 波型指標 (Wave-type index) $[\text{無單位}]$
+* $i$ : 虛數單位 (Imaginary unit) $[\text{無單位}]$，$i^{2} = -1$
+* $a$ : 地球半徑 (Earth's radius) $[\text{m}]$
+* $c$ : 對流包絡的東移速度 (Eastward propagation speed) $[\text{m}\cdot\text{s}^{-1}]$，$c = 5 \ \text{m}\cdot\text{s}^{-1}$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$，$\alpha = \left(4 \ \text{days}\right)^{-1}$
+* $\kappa$ : Poisson 常數 (Poisson constant) $[\text{無單位}]$
 * 註：(a)–(c) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(4.20)$、$(4.19)$、$(4.21)$。
 * 註：(c) 的物理讀法是**受迫阻尼振子的響應函數**：分子是強迫投影到該模態上的分量，分母的實部是阻尼、虛部是「該模態的自然頻率」與「強迫的移動頻率」之差。
 * 註：強迫項 $\hat{Q}_{mnr}$ 的顯式形式需要先給定加熱的具體形狀，留到 [移動熱源的模態投影](Projection_of_a_Moving_Heat_Source.md)。

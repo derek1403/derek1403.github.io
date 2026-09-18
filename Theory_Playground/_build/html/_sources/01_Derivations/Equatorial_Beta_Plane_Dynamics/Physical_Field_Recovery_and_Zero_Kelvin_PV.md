@@ -27,6 +27,33 @@ $$\hat{q}_{m,-1,2} = 0$$
 
 $$w\left(\xi, y, z\right) = \frac{Z'(z)}{R\Gamma}\sum_{m = -\infty}^{\infty}\sum_{n = -1}^{\infty}\sum_{r}i\nu_{mnr}\,\hat{\eta}_{mnr}\,\Phi_{mnr}(\hat{y})\,e^{im\xi/a}$$
 
+其中
+
+* $u,\ v$ : 擾動緯向、經向風速 (Perturbation velocities) $[\text{m}\cdot\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $q$ : 位渦距平 (PV anomaly) $[\text{s}^{-1}]$
+* $w$ : 擾動對數氣壓垂直速度 (Perturbation log-pressure vertical velocity) $[\text{s}^{-1}]$
+* $\hat{\eta}_{mnr}$ : 正規模態展開係數 (Expansion coefficient) $[\text{m}\cdot\text{s}^{-1}]$
+* $\hat{q}_{mnr}$ : 位渦的譜係數 (Spectral PV coefficient) $[\text{s}^{-1}]$
+* $\mathbf{K}_{mnr} = \left(U_{mnr},\ V_{mnr},\ \Phi_{mnr}\right)^{\mathsf{T}}$ : 本徵函數 (Eigenfunction) $[\text{依分量而定}]$
+* $A_{mnr}$ : 歸一化常數 (Normalization constant) $[\text{無單位}]$
+* $\mathcal{H}_n$ : 歸一化 Hermite 函數 (Normalized Hermite function) $[\text{無單位}]$
+* $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
+* $Z'$ : 垂直結構函數 $Z$ 對 $z$ 的一階微分 (First derivative of the vertical structure function with respect to $z$) $[\text{無單位}]$，$Z' = \dfrac{dZ}{dz}$
+* $\nu_{mnr}$ : 本徵頻率 (Eigenfrequency) $[\text{s}^{-1}]$，實數
+* $\hat{\nu}_{mnr}$ : 無因次本徵頻率 (Dimensionless eigenfrequency) $[\text{無單位}]$，$\hat{\nu}_{mnr} = \nu_{mnr}/\left(2\Omega\right)$
+* $\xi$ : 隨波緯向座標 (Translating zonal coordinate) $[\text{m}]$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $\hat{y}$ : 無因次經向座標 (Dimensionless meridional coordinate) $[\text{無單位}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $r$ : 波型指標 (Wave-type index) $[\text{無單位}]$
+* $i$ : 虛數單位 (Imaginary unit) $[\text{無單位}]$，$i^{2} = -1$
+* $a$ : 地球半徑 (Earth's radius) $[\text{m}]$
+* $\epsilon$ : Lamb 參數 (Lamb's parameter) $[\text{無單位}]$
+* $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$
 * 註：(a)–(e) 就是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(4.24)$–$(4.27)$。
 * 註：**(d) 是全文最重要的一條負面結果。** 它說 Kelvin 波把它所有的資訊都藏在 PV **以外**的地方。這直接導致 [可逆性原理](Equatorial_PV_Invertibility_Principle.md)（端點③）救不回對流**東側**的流場 —— 那不是近似不夠好，而是**資訊在 $q$ 這個變數裡根本不存在**。
 

@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -571,11 +571,11 @@ document.write(`
 <p><strong>訓練期與驗證期一定要切開</strong>：前 2 年配係數，第 3 年驗證。不切開的話，你看到的「改善」有一部分只是模型把訓練期的噪音也背起來了。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">make_station_data</span><span class="p">(</span><span class="n">n_year</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">make_station_data</span><span class="p">(</span><span class="n">n_year</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;生成一組測站 2m 氣溫的「觀測」與「模式預報」，並種進四種系統性誤差。&quot;&quot;&quot;</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">n_year</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span>              <span class="c1"># 逐時</span>
@@ -616,7 +616,7 @@ document.write(`
                 <span class="n">T_obs</span><span class="o">=</span><span class="n">T_obs</span><span class="p">,</span> <span class="n">T_mod</span><span class="o">=</span><span class="n">T_mod</span><span class="p">,</span> <span class="n">wind</span><span class="o">=</span><span class="n">wind</span><span class="p">,</span> <span class="n">rh</span><span class="o">=</span><span class="n">rh</span><span class="p">)</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">scores</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">scores</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;回傳 (bias, RMSE)。&quot;&quot;&quot;</span>
     <span class="n">diff</span> <span class="o">=</span> <span class="n">pred</span> <span class="o">-</span> <span class="n">obs</span>
     <span class="k">return</span> <span class="n">diff</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">diff</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
@@ -665,7 +665,7 @@ document.write(`
 原始模式 test:  bias = +1.82 K,  RMSE = 2.71 K
 </pre></div>
 </div>
-<img alt="../../_images/ca4d987cbc60b7952795cfe704ccf3d4a2d559b1aae8cb720339062282b71969.png" src="../../_images/ca4d987cbc60b7952795cfe704ccf3d4a2d559b1aae8cb720339062282b71969.png" />
+<img alt="../../_images/87b6a54245f2f9458be1788a83012170b08ef502512329dd6a5a562e556d1870.png" src="../../_images/87b6a54245f2f9458be1788a83012170b08ef502512329dd6a5a562e556d1870.png" />
 </div>
 </div>
 <p>三張圖各講一件事：</p>
@@ -681,7 +681,7 @@ document.write(`
 <p>最直覺的修法是「算出平均偏差、然後扣掉」。在動手之前，先把誤差<strong>分層</strong>看一下。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bias_by_group</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bias_by_group</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;依照 edges 把 values 分箱，回傳每箱的中心與平均誤差。&quot;&quot;&quot;</span>
     <span class="n">centers</span><span class="p">,</span> <span class="n">means</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
@@ -725,7 +725,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/29f947f7ccb84a5aa3041366f36b69ac1493514e06393c222e82c58702eb2524.png" src="../../_images/29f947f7ccb84a5aa3041366f36b69ac1493514e06393c222e82c58702eb2524.png" />
+<img alt="../../_images/f081566d8ac56fd525cca30130757ed3dc0bfc2725c9b3605888e3d4610d0a08.png" src="../../_images/f081566d8ac56fd525cca30130757ed3dc0bfc2725c9b3605888e3d4610d0a08.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>夏(7月) +2.61 K   冬(1月) +1.00 K
 凌晨3時 +4.24 K   下午3時 -0.24 K
 風速&lt;1 m/s +2.52 K   風速&gt;6 m/s +1.59 K
@@ -764,7 +764,7 @@ document.write(`
 <p>解法就是最小平方，<code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code> 一行 —— MOS 的數學核心真的就只有這樣。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">design_matrix</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">design_matrix</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;建立 MOS 的設計矩陣。level=1 只有模式本身，2 加氣候循環，3 再加 regime 交互作用。&quot;&quot;&quot;</span>
     <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">]),</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">]]</span>
     <span class="k">if</span> <span class="n">level</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
@@ -776,7 +776,7 @@ document.write(`
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">fit_mos</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">i_train</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">fit_mos</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">i_train</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;只用訓練期解最小平方，再套用到全部樣本。&quot;&quot;&quot;</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">design_matrix</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
     <span class="n">beta</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i_train</span><span class="p">],</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_obs&quot;</span><span class="p">][</span><span class="n">i_train</span><span class="p">],</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -849,7 +849,7 @@ Step3 係數 beta = [ 7.360e-01  9.230e-01 -3.000e-03 -6.000e-03 -3.000e-03  1.1
  -1.405e+00 -1.413e+00 -3.711e+00]
 </pre></div>
 </div>
-<img alt="../../_images/89e073e82509583db0fafc3fe67f22259a221120f5a70d6d792c88aeb7014415.png" src="../../_images/89e073e82509583db0fafc3fe67f22259a221120f5a70d6d792c88aeb7014415.png" />
+<img alt="../../_images/5b7e1ece8e3162599eaee61779a842795670a902c448052a70c24ea25ad64aa1.png" src="../../_images/5b7e1ece8e3162599eaee61779a842795670a902c448052a70c24ea25ad64aa1.png" />
 </div>
 </div>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1004,14 +1004,14 @@ Step3 係數 beta = [ 7.360e-01  9.230e-01 -3.000e-03 -6.000e-03 -3.000e-03  1.1
 <p>其中 <span class="math notranslate nohighlight">\(S^{2}\)</span> 是 ensemble 自己的變異數。<span class="math notranslate nohighlight">\(\mu\)</span> 一樣用最小平方配；<span class="math notranslate nohighlight">\(\sigma^{2}\)</span> 則用「殘差平方對 ensemble 變異數迴歸」來配 —— 也就是讓模型學會：<strong>ensemble 散得開的時候，我確實比較不確定</strong>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_ensemble</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_ensemble</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;由模式預報生成一個刻意 under-dispersive 的 ensemble。&quot;&quot;&quot;</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">shared</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">])</span>                       <span class="c1"># 共同擾動</span>
     <span class="k">return</span> <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;T_mod&quot;</span><span class="p">][:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">shared</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">],</span> <span class="n">m</span><span class="p">))</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">rank_of_obs</span><span class="p">(</span><span class="n">members</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">rank_of_obs</span><span class="p">(</span><span class="n">members</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;觀測值在 ensemble members 中的排名，用來畫 rank histogram。&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">members</span> <span class="o">&lt;</span> <span class="n">obs</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
@@ -1071,7 +1071,7 @@ Step3 係數 beta = [ 7.360e-01  9.230e-01 -3.000e-03 -6.000e-03 -3.000e-03  1.1
 sigma^2 = 0.827 + 0.172 * S^2   -&gt;  平均 sigma = 0.94 K
 </pre></div>
 </div>
-<img alt="../../_images/48d5821a84eec78ee48692cb00bfa4093950eaaa36590436c602dd1b8609524e.png" src="../../_images/48d5821a84eec78ee48692cb00bfa4093950eaaa36590436c602dd1b8609524e.png" />
+<img alt="../../_images/3348f8e03c399be65e0dfe37e9ea68770e2b8700ac402b22ae50103c741cbf33.png" src="../../_images/3348f8e03c399be65e0dfe37e9ea68770e2b8700ac402b22ae50103c741cbf33.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1233,7 +1233,7 @@ sigma^2 = 0.827 + 0.172 * S^2   -&gt;  平均 sigma = 0.94 K
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TARGET</span><span class="p">,</span> <span class="n">SPEC_LO</span><span class="p">,</span> <span class="n">SPEC_HI</span> <span class="o">=</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">19.6</span><span class="p">,</span> <span class="mf">20.4</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">make_wafer_data</span><span class="p">(</span><span class="n">n_wafer</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">make_wafer_data</span><span class="p">(</span><span class="n">n_wafer</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;生成 wafer 的 CD 量測：tool offset + chamber offset + 緩慢 drift + 隨機變異。&quot;&quot;&quot;</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">tool</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_wafer</span><span class="p">)</span>
@@ -1245,7 +1245,7 @@ sigma^2 = 0.827 + 0.172 * S^2   -&gt;  平均 sigma = 0.94 K
     <span class="k">return</span> <span class="n">tool</span><span class="p">,</span> <span class="n">chamber</span><span class="p">,</span> <span class="n">cd</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">remove_group_offset</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">i_train</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">remove_group_offset</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">i_train</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;用訓練期的組平均估計各組 offset 並扣掉 —— 和 Step1 mean-BC 是同一件事。&quot;&quot;&quot;</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">cd</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
@@ -1292,7 +1292,7 @@ sigma^2 = 0.827 + 0.172 * S^2   -&gt;  平均 sigma = 0.94 K
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>落在規格內：raw = 39.5%  -&gt;  corrected = 74.5%
 </pre></div>
 </div>
-<img alt="../../_images/fc538ed4366705943129ba63b2ca15d2e2a3ca52f8b0dd1d73208d102260225a.png" src="../../_images/fc538ed4366705943129ba63b2ca15d2e2a3ca52f8b0dd1d73208d102260225a.png" />
+<img alt="../../_images/4959a1ad2472c8a0b8f49d1cd11320caa1070fb7a1a4b86375c031a76544a950.png" src="../../_images/4959a1ad2472c8a0b8f49d1cd11320caa1070fb7a1a4b86375c031a76544a950.png" />
 </div>
 </div>
 <p>(a) 長得跟示範一的圖幾乎一樣：三台機台各自有固定的 offset，整群資料被系統性地推離目標值。把 tool 與 chamber 的效應扣掉之後，落在規格內的比例從 <span class="math notranslate nohighlight">\(39.5\%\)</span> 拉到 <span class="math notranslate nohighlight">\(74.5\%\)</span>。</p>
@@ -1300,7 +1300,7 @@ sigma^2 = 0.827 + 0.172 * S^2   -&gt;  平均 sigma = 0.94 K
 <p>但 (b) 也留下一條尾巴 —— <strong>還有一個隨批次緩慢上升的 drift 沒有被處理掉</strong>。而這正好帶出兩個領域最關鍵的差別。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run_process</span><span class="p">(</span><span class="n">n_lot</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">drift</span><span class="o">=</span><span class="mf">0.010</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_process</span><span class="p">(</span><span class="n">n_lot</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">drift</span><span class="o">=</span><span class="mf">0.010</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;比較三種策略：什麼都不做 / 事後修報告(open-loop) / 回饋控制製程(closed-loop)。&quot;&quot;&quot;</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">e</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">n_lot</span><span class="p">)</span>
@@ -1346,7 +1346,7 @@ sigma^2 = 0.827 + 0.172 * S^2   -&gt;  平均 sigma = 0.94 K
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/49d524bb61f52700a83f994587c0b7e744cb47cd9dcc4b7d534f5698989260ff.png" src="../../_images/49d524bb61f52700a83f994587c0b7e744cb47cd9dcc4b7d534f5698989260ff.png" />
+<img alt="../../_images/04dcbd775a1c56e2a595c38e872d5acefde9abe1887e1b6cefbe468dbf65357d.png" src="../../_images/04dcbd775a1c56e2a595c38e872d5acefde9abe1887e1b6cefbe468dbf65357d.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>實際做出來的晶片落在規格內：不控制 = 21.5%,  閉迴路控制 = 100.0%
 </pre></div>
 </div>

@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -451,14 +451,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-emergence-of-the-potential-vorticity-anomaly">(a) proof 位渦距平的浮現 (Emergence of the potential vorticity anomaly)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-pv-potential-vorticity-equation">(b) proof PV 方程式 (Potential vorticity equation)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-vanishing-of-the-source-at-the-equator">(c) proof 赤道上的源項為零 (Vanishing of the source at the equator)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-y-oddness-of-the-source-in-y">(d) proof 源項為 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數 (Oddness of the source in <span class="math notranslate nohighlight">\(y\)</span>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-location-of-the-source-extrema">(e) proof 源項極值的位置 (Location of the source extrema)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-pv-potential-vorticity-equation">(a) proof PV 方程式 (Potential vorticity equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-vanishing-of-the-source-at-the-equator">(b) proof 赤道上的源項為零 (Vanishing of the source at the equator)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-y-oddness-of-the-source-in-y">(c) proof 源項為 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數 (Oddness of the source in <span class="math notranslate nohighlight">\(y\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-s-extremal-latitudes-of-the-source-s">(d) proof 源項 <span class="math notranslate nohighlight">\(S\)</span> 的極值緯度 (Extremal latitudes of the source <span class="math notranslate nohighlight">\(S\)</span>)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q"><span class="math notranslate nohighlight">\(q\)</span> 不只是「代數上剛好收得起來的那一團」</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這一篇為什麼是全文的物理引擎</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-d-z">為什麼 <span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 讓上下對流層反號</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">對後續三個端點的意義</a></li>
@@ -482,259 +482,399 @@ document.write(`
 <p>把 <a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html"><span class="std std-doc">渦度方程式與位勢–輻散方程式</span></a> 之間的水平輻散消掉，
 就會浮現一個<strong>只含單一變數</strong>的守恆型方程式。那個變數就是位渦距平 <span class="math notranslate nohighlight">\(q\)</span>。</p>
 <ul class="simple">
-<li><p>(a) 消去水平輻散後，<span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> 括號裡自然浮現的組合即為<strong>位渦距平</strong>：</p></li>
+<li><p>(a) <span class="math notranslate nohighlight">\(q\)</span> 滿足帶阻尼與源項的 PV 方程式：</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[q = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + \frac{\beta y}{R\Gamma}\left(\frac{\partial}{\partial z} - 1\right)\frac{\partial \phi}{\partial z}\]</div>
+\[\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\mathcal{D}_z\Big[Q\Big]\]</div>
 <ul class="simple">
-<li><p>(b) 它滿足帶阻尼與源項的 PV 方程式：</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\frac{\partial q}{\partial t} + \beta v = -\alpha q + \frac{\beta y}{c_p\Gamma}\left(\frac{\partial}{\partial z} - 1\right)Q\]</div>
-<ul class="simple">
-<li><p>(c) <strong>★ 源項在赤道上恆為零</strong> —— 不論加熱多強：</p></li>
+<li><p>(b) <strong>★ 源項在赤道上恆為零</strong> —— 不論加熱多強：</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\left.S\right|_{y = 0} = 0\]</div>
 <ul class="simple">
-<li><p>(d) <strong>★ 對南北對稱的加熱，源項是 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數</strong> —— 因此赤道南北兩側生成的 PV 距平<strong>大小相等、正負相反</strong>：</p></li>
+<li><p>(c) <strong>★ 對南北對稱的加熱，源項是 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數</strong> —— 因此赤道南北兩側生成的 PV 距平<strong>大小相等、正負相反</strong>：</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[S(x, -y, z) = -S(x, y, z)\]</div>
 <ul class="simple">
-<li><p>(e) <strong>★ 對高斯型的經向加熱剖面，源項的極值不在加熱中心，而在中心南北兩側 <span class="math notranslate nohighlight">\(b_0/2^{1/2}\)</span> 處</strong>：</p></li>
+<li><p>(d) <strong>★ 對高斯型的經向加熱剖面，源項的極值不在加熱中心，而在中心南北兩側 <span class="math notranslate nohighlight">\(b_0/2^{1/2}\)</span> 處</strong>：</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[y_{\text{ext}} = \pm\frac{b_0}{2^{1/2}}\]</div>
+<p>其中</p>
 <ul class="simple">
-<li><p>註：(a)(b) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((2.7)\)</span> 與 <span class="math notranslate nohighlight">\((2.6)\)</span>。</p></li>
-<li><p>註：<strong>(c)(d)(e) 是全文的物理引擎。</strong> 它們合起來說：一個東移的赤道熱源，會在身後拖出<strong>兩條反號的 PV 帶</strong> —— 作者把這個形態比喻為大型飛機後方的一對<strong>翼尖渦 (wing-tip vortices)</strong>。後續 <a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html"><span class="std std-doc">PV 尾流</span></a>、<a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">可逆性原理</span></a> 兩個端點都建立在這三條之上。</p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (Potential vorticity anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> : PV 源項 (PV source term) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 擾動緯向風速 (Perturbation zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_{\text{ext}}\)</span> : 源項極值的經向位置 (Meridional location of the source extrema) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 加熱區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1\)</span></p></li>
+<li><p>註：【定義 1】與 (a) 就是 <a class="reference internal" href="../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.html"><span class="std std-doc">Schubert &amp; Masarik (2006)</span></a> 的 <span class="math notranslate nohighlight">\((2.7)\)</span> 與 <span class="math notranslate nohighlight">\((2.6)\)</span>。</p></li>
+<li><p>註：本篇證的是「<span class="math notranslate nohighlight">\(q\)</span> <strong>滿足什麼方程式</strong>」。至於「<span class="math notranslate nohighlight">\(q\)</span> <strong>憑什麼叫位渦</strong>」，是另一件事，已在 <a class="reference internal" href="Linearized_Potential_Vorticity_in_Log_Pressure.html"><span class="std std-doc">線性化位渦</span></a> 從 Ertel 位渦的原始定義證出來，本篇以【已知 6】【已知 7】直接引用。兩篇合起來，<span class="math notranslate nohighlight">\(q\)</span> 與 <span class="math notranslate nohighlight">\(S\)</span> 才算完全沒有留白。</p></li>
+<li><p>註：<strong>(b)(c)(d) 是全文的物理引擎。</strong> 它們合起來說：一個東移的赤道熱源，會在身後拖出<strong>兩條反號的 PV 帶</strong> —— 作者把這個形態比喻為大型飛機後方的一對<strong>翼尖渦 (wing-tip vortices)</strong>。後續 <a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html"><span class="std std-doc">PV 尾流</span></a>、<a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">可逆性原理</span></a> 兩個端點都建立在這三條之上。</p></li>
 </ul>
 </section>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#a-proof-vorticity-equation">赤道渦度方程式 (Equatorial vorticity equation)</a>：</strong> 相對渦度在阻尼下的收支：除了輻散造成的渦度伸展 <span class="math notranslate nohighlight">\(\beta y\,\delta\)</span>，還多出一項 <span class="math notranslate nohighlight">\(\beta v\)</span> ─ 氣塊往北走就換到不同的行星渦度值。這個 <span class="math notranslate nohighlight">\(\beta v\)</span> 正是後面「赤道上生不出位渦」的源頭。（已於本庫 Equatorial Vorticity and Divergence Equations【證明 (a)】完整證明，此處直接引用。）</p>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#assumptions-preliminaries">符號約定：兩個場與兩個算子 (Notation: two fields and two operators)</a>：</strong> 本篇全程使用的四個縮寫，全部在 <a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html"><span class="std std-doc">渦度與位勢–輻散方程式</span></a> 已經取好名字，此處集中列出、後續卡片不再重複。（已於本庫 Equatorial Vorticity and Divergence Equations【定義 1】【定義 2】【定義 3】定義，此處直接引用。）</p>
+<ul>
+<li><p>(a) 擾動相對渦度：</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{D}_t\left[\zeta\right] + \beta y\,\delta + \beta v = 0\]</div>
+\[\zeta = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\]</div>
+</li>
+<li><p>(b) 擾動水平輻散：</p>
+<div class="math notranslate nohighlight">
+\[\delta = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\]</div>
+</li>
+<li><p>(c) 阻尼時間算子：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{D}_t = \frac{\partial}{\partial t} + \alpha\]</div>
+</li>
+<li><p>(d) 垂直算子：</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{D}_z = \frac{\partial}{\partial z} - 1\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> : 擾動相對渦度 (Perturbation relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 擾動緯向風速 (Perturbation zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\alpha = \left(4 \ \text{days}\right)^{-1} \approx 2.89\times10^{-6} \ \text{s}^{-1}\)</span></p></li>
+<li><p>註：(c)(d) 這兩個算子彼此可交換，且任何不隨 <span class="math notranslate nohighlight">\(z\)</span> 變化的係數都能穿過 <span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> —— 已於同一篇【推導 1】(a)(b) 證明，本篇需要時直接使用。</p></li>
+<li><p>註：<span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 那個 <span class="math notranslate nohighlight">\(-1\)</span> 不是為了湊式子。由 <a class="reference internal" href="Linearized_Potential_Vorticity_in_Log_Pressure.html"><span class="std std-doc">線性化位渦</span></a>【推導 3】，<span class="math notranslate nohighlight">\(\mathcal{D}_z\left[X\right] = \dfrac{1}{\rho_{*}}\dfrac{\partial}{\partial z}\left[\rho_{*}X\right]\)</span>，也就是對數氣壓座標的<strong>質量加權垂直微分</strong>（偽密度 <span class="math notranslate nohighlight">\(\rho_{*} = P/g \propto e^{-z}\)</span>）。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#a-proof-vorticity-equation">赤道渦度方程式 (Equatorial vorticity equation)</a>：</strong> 相對渦度在阻尼下的收支：除了輻散造成的渦度伸展 <span class="math notranslate nohighlight">\(\beta y\,\delta\)</span>，還多出一項 <span class="math notranslate nohighlight">\(\beta v\)</span> ─ 氣塊往北走就換到不同的行星渦度值。這個 <span class="math notranslate nohighlight">\(\beta v\)</span> 正是後面「赤道上生不出位渦」的源頭。（已於本庫 Equatorial Vorticity and Divergence Equations【證明 (a)】完整證明，此處直接引用。）</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{D}_t\Big[\zeta\Big] + \beta y\,\delta + \beta v = 0\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> : 擾動相對渦度 (Perturbation relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\zeta = \dfrac{\partial v}{\partial x} - \dfrac{\partial u}{\partial y}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> : 擾動相對渦度 (Perturbation relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(v\)</span> : 擾動經向風速 (Perturbation meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#b-proof-geopotentialdivergence-equation">赤道位勢–輻散方程式 (Equatorial geopotential–divergence equation)</a>：</strong> 位勢垂直結構在阻尼下的收支：左端是位勢的垂直梯度經 <span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 加工後隨時間變化，扣掉輻散造成的層結調整；右端由非絕熱加熱驅動。它與【已知 1】合起來即可消去輻散 <span class="math notranslate nohighlight">\(\delta\)</span>，導出位渦方程式。（已於同一篇【證明 (b)】完整證明，此處直接引用。）</p>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Equatorial_Vorticity_and_Divergence_Equations.html#b-proof-geopotentialdivergence-equation">赤道位勢–輻散方程式 (Equatorial geopotential–divergence equation)</a>：</strong> 位勢垂直結構在阻尼下的收支：左端是位勢的垂直梯度經 <span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 加工後隨時間變化，扣掉輻散造成的層結調整；右端由非絕熱加熱驅動。它與【已知 2】合起來即可消去輻散 <span class="math notranslate nohighlight">\(\delta\)</span>，導出位渦方程式。（已於同一篇【證明 (b)】完整證明，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta = \kappa\,\mathcal{D}_z\left[Q\right]\]</div>
+\[\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta = \kappa\,\mathcal{D}_z\Big[Q\Big]\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa = R/c_p\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【假設 1】 <span class="math notranslate nohighlight">\(\beta y\)</span> 與時間無關 (The factor <span class="math notranslate nohighlight">\(\beta y\)</span> is time-independent)：</strong> <span class="math notranslate nohighlight">\(\beta\)</span> 為常數、<span class="math notranslate nohighlight">\(y\)</span> 為獨立座標，故 <span class="math notranslate nohighlight">\(\beta y\)</span> 可自由穿過 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span></p>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">Poisson 常數 (Poisson constant)</a>：</strong> 乾空氣氣體常數與定壓比熱之比。本篇只在【推導 2】用它把源項係數裡的 <span class="math notranslate nohighlight">\(R\)</span> 約掉。（已於本庫 Log-Pressure Linearized Primitive Equations【定義 4】定義，此處直接引用。）</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t}\left[\beta y\right] = 0\]</div>
+\[\kappa = \frac{R}{c_p}\]</div>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa \approx 0.286\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(R \approx 287 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(c_p \approx 1004 \ \text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Log_Pressure_Linearized_Primitive_Equations.html#assumptions-preliminaries">赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面的科氏參數 (Coriolis parameter on the equatorial <span class="math notranslate nohighlight">\(\beta\)</span>-plane)</a>：</strong> 科氏參數線性化成 <span class="math notranslate nohighlight">\(\beta y\)</span>，其中 <span class="math notranslate nohighlight">\(\beta\)</span> 由地球半徑與自轉率決定、是不折不扣的常數；而 <span class="math notranslate nohighlight">\(y\)</span> 是 Eulerian 框架下的獨立自變數。（已於本庫 Log-Pressure Linearized Primitive Equations【假設 1】【定義 5】【假設 2】(c-1) 設定，此處直接引用。）</p>
+<ul>
+<li><p>(a) 科氏參數：</p>
+<div class="math notranslate nohighlight">
+\[f = \beta y\]</div>
+</li>
+<li><p>(b) <span class="math notranslate nohighlight">\(\beta\)</span> 是常數：</p>
+<div class="math notranslate nohighlight">
+\[\beta = \frac{2\Omega}{a} = \text{const}\]</div>
+</li>
+<li><p>(c) <span class="math notranslate nohighlight">\(x,\ y,\ z,\ t\)</span> 是<strong>互相獨立</strong>的自變數（這正是把全質導數寫成 <span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial t} + u\dfrac{\partial}{\partial x} + v\dfrac{\partial}{\partial y} + w\dfrac{\partial}{\partial z}\)</span> 的前提）：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial y}{\partial t} = 0\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> : 科氏參數 (Coriolis parameter) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\beta \approx 2.29\times10^{-11} \ \text{m}^{-1}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 緯向座標 (Zonal coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times10^{-5} \ \text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a = 6.37\times10^{6} \ \text{m}\)</span></p></li>
+<li><p>註：(b)(c) 合起來就是「<span class="math notranslate nohighlight">\(\beta y\)</span> 與時間無關」。這<strong>不是假設</strong>，而是座標系與 <span class="math notranslate nohighlight">\(\beta\)</span> 平面近似本身帶來的結果，因此列在【已知】而非【假設】；用它推出「<span class="math notranslate nohighlight">\(\beta y\)</span> 可穿過 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span>」的那一步見【推導 1】。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 6】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Linearized_Potential_Vorticity_in_Log_Pressure.html#b-proof-potential-vorticity-anomaly">位渦距平的顯式形式 (Explicit form of the PV anomaly)</a>：</strong> 把 Ertel 位渦繞靜止基本態線性化，取「跟著氣塊走的相對距平」再乘上局地科氏參數 <span class="math notranslate nohighlight">\(\beta y\)</span> 換回渦度單位，得到的就是下面這個組合。這是【定義 1】那個名字的<strong>物理依據</strong>。（已於本庫 <a class="reference internal" href="Linearized_Potential_Vorticity_in_Log_Pressure.html"><span class="std std-doc">線性化位渦</span></a>【證明 (b)】完整證明，此處直接引用。）</p>
+<div class="math notranslate nohighlight">
+\[\beta y\,\frac{\delta PV}{\overline{PV}} = \zeta + \frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PV\)</span> : Ertel 位渦 (Ertel potential vorticity) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{PV}\)</span> : 基本態的 Ertel 位渦 (Basic-state Ertel potential vorticity) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta PV\)</span> : 跟著氣塊走的位渦距平 (Material potential vorticity anomaly) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> : 擾動相對渦度 (Perturbation relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【假設 2】 加熱的南北對稱性 (North–south symmetry of the heating)：</strong> 【證明 (d)】只討論經向對稱的加熱分布</p>
-<div class="math notranslate nohighlight">
-\[Q(x, -y, z) = Q(x, y, z)\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：一定要取<strong>材料</strong>距平（跟著氣塊走），不能取固定高度上的 Eulerian 擾動 —— 後者算出來的括號是 <span class="math notranslate nohighlight">\(\left(\dfrac{\partial}{\partial z} + \kappa\right)\)</span> 而非 <span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span>，對不上。理由見該篇〈物理解釋〉第一節。</p></li>
 </ul>
 </li>
-<li><p><strong>【假設 3】 高斯型經向加熱剖面 (Gaussian meridional heating profile)：</strong> 【證明 (e)】另外指定加熱的經向形狀為中心在赤道、<span class="math notranslate nohighlight">\(e\)</span>-folding 寬度為 <span class="math notranslate nohighlight">\(b_0\)</span> 的高斯</p>
+<li><p><strong>【已知 7】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Equatorial_Beta_Plane_Dynamics/Linearized_Potential_Vorticity_in_Log_Pressure.html#c-proof-potential-vorticity-source">位渦源項的顯式形式 (Explicit form of the PV source)</a>：</strong> 加熱不直接生成渦度，只能透過改變兩張等熵面之間的質量來生成位渦；把這個生成率算出來，就是下面這個組合。這是【定義 2】那個名字的<strong>物理依據</strong>。（已於本庫 <a class="reference internal" href="Linearized_Potential_Vorticity_in_Log_Pressure.html"><span class="std std-doc">線性化位渦</span></a>【證明 (c)】完整證明，此處直接引用。）</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{\partial}{\partial t}\left[\beta y\,\frac{\delta PV}{\overline{PV}}\right]\right)_{\text{加熱}} = \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PV\)</span> : Ertel 位渦 (Ertel potential vorticity) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{PV}\)</span> : 基本態的 Ertel 位渦 (Basic-state Ertel potential vorticity) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta PV\)</span> : 跟著氣塊走的位渦距平 (Material potential vorticity anomaly) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-1}\cdot\text{K}\cdot\text{kg}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 高斯型經向加熱剖面 (Gaussian meridional heating profile)：</strong> 指定加熱的經向形狀為中心在赤道、<span class="math notranslate nohighlight">\(e\)</span>-folding 寬度為 <span class="math notranslate nohighlight">\(b_0\)</span> 的高斯</p>
 <div class="math notranslate nohighlight">
 \[Q(x, y, z) = \tilde{Q}(x, z)\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 加熱區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\tilde{Q}(x, z)\)</span> : 加熱的緯向與垂直結構 (Zonal and vertical structure of the heating) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p>註：本卡片是【假設 2】的一個具體實現（高斯是偶函數）。這正是論文 <span class="math notranslate nohighlight">\((4.1)\)</span> 在 <span class="math notranslate nohighlight">\(y_0 = 0\)</span> 時的經向形狀，見 <a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html"><span class="std std-doc">移動熱源的模態投影</span></a>。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{Q}(x, z)\)</span> : 加熱的緯向與垂直結構 (Zonal and vertical structure of the heating) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 加熱區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：<strong>這是本篇唯一的假設。</strong> 【證明 (a)(b)】完全用不到它；【證明 (c)】只需要它推出的「南北對稱」（見【推導 4】）；只有【證明 (d)】真正動用到高斯的具體形狀。</p></li>
+<li><p>註：這正是論文 <span class="math notranslate nohighlight">\((4.1)\)</span> 在 <span class="math notranslate nohighlight">\(y_0 = 0\)</span> 時的經向形狀，見 <a class="reference internal" href="Projection_of_a_Moving_Heat_Source.html"><span class="std std-doc">移動熱源的模態投影</span></a>。</p></li>
 </ul>
 </li>
-<li><p><strong>【定義 1】 位渦距平 (Potential vorticity anomaly)：</strong> 相對渦度加上「<span class="math notranslate nohighlight">\(\beta y\)</span> 加權的層結項」</p>
+<li><p><strong>【定義 1】 位渦距平 (Potential vorticity anomaly)：</strong> 給【已知 6】那個組合一個名字</p>
 <div class="math notranslate nohighlight">
 \[q \overset{\text{def}}{=} \zeta + \frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(q\)</span> : 位渦距平 (Potential vorticity anomaly) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> : 擾動相對渦度 (Perturbation relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\zeta = \dfrac{\partial v}{\partial x} - \dfrac{\partial u}{\partial y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> : 擾動相對渦度 (Perturbation relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1\)</span></p></li>
-<li><p>註：這個組合<strong>不是憑空指定的</strong>，而是【證明 (a)】消去 <span class="math notranslate nohighlight">\(\delta\)</span> 之後，<span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> 括號裡<strong>自動浮現</strong>的東西；本卡片只是替它取個名字。</p></li>
+<li><p>註：這個組合<strong>有兩個彼此獨立的來源</strong>，兩邊指向同一個東西 ——</p>
+<ul>
+<li><p><strong>它是位渦。</strong> 由【已知 6】，它就是 Ertel 位渦線性化後的材料相對距平乘上 <span class="math notranslate nohighlight">\(\beta y\)</span>。「位渦距平」這個名字是這樣來的，不是硬安上去的。</p></li>
+<li><p><strong>它會自己冒出來。</strong> 由【證明 (a)】，它也是本篇消去 <span class="math notranslate nohighlight">\(\delta\)</span> 之後、<span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> 括號裡自動浮現的組合；就算完全不知道位渦是什麼，純代數操作也會走到這裡。</p></li>
 </ul>
 </li>
-<li><p><strong>【定義 2】 PV 源項 (PV source term)：</strong> 加熱透過 <span class="math notranslate nohighlight">\(\beta y\)</span> 加權後真正注入 PV 的部分</p>
+<li><p>註：兩條路殊途同歸，正是 <span class="math notranslate nohighlight">\(q\)</span> 之所以能滿足一條乾淨守恆型方程式的原因 —— 代數上的「可收攏性」與物理上的「隨氣塊守恆」本來就是同一件事。</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 PV 源項 (PV source term)：</strong> 給【已知 7】那個生成率一個名字</p>
 <div class="math notranslate nohighlight">
-\[S \overset{\text{def}}{=} \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right]\]</div>
+\[S \overset{\text{def}}{=} \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(S\)</span> : PV 源項 (PV source term) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1\)</span></p></li>
+<li><p>註：與【定義 1】同構 —— 由【已知 7】它是加熱對位渦的<strong>生成率</strong>，由【證明 (a)】它也是消去 <span class="math notranslate nohighlight">\(\delta\)</span> 之後自動留在右端的那一團。「源項」二字因此是名副其實的，不是修辭。</p></li>
 </ul>
 </li>
-<li><p><strong>【推導 1】 從位勢–輻散方程式解出水平輻散 (Solving the geopotential–divergence equation for the divergence)：</strong> 【已知 2】對 <span class="math notranslate nohighlight">\(\delta\)</span> 而言是純代數式，直接移項</p>
+<li><p><strong>【推導 1】 <span class="math notranslate nohighlight">\(\beta y\)</span> 可以穿過阻尼時間算子 (The factor <span class="math notranslate nohighlight">\(\beta y\)</span> commutes with the damped-tendency operator)：</strong> <span class="math notranslate nohighlight">\(\beta\)</span> 是常數、<span class="math notranslate nohighlight">\(y\)</span> 是獨立於 <span class="math notranslate nohighlight">\(t\)</span> 的座標，故乘積律那一項為零</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-  \kappa\,\mathcal{D}_z\left[Q\right] &amp;\overset{\text{已知 2}}{=}&amp; \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta \\
-  R\Gamma\delta &amp;=&amp; \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \kappa\,\mathcal{D}_z\left[Q\right] \\
-  \delta &amp;=&amp; \frac{1}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa}{R\Gamma}\,\mathcal{D}_z\left[Q\right]
+  \mathcal{D}_t\Big[\beta y\,X\Big] &amp;\overset{\text{已知 1(c)}}{=}&amp; \left( \frac{\partial}{\partial t} + \alpha \right) \Big[\beta y\,X\Big] \\
+  &amp;=&amp; \frac{\partial}{\partial t}\Big[\beta y\,X\Big] + \alpha\,\beta y\,X \\
+  &amp;\overset{\text{已知 5(b)}}{=}&amp; \beta\frac{\partial}{\partial t}\Big[y\,X\Big] + \alpha\,\beta y\,X \\
+  &amp;=&amp; \beta\frac{\partial y}{\partial t}X + \beta y\frac{\partial X}{\partial t} + \alpha\,\beta y\,X \\
+  &amp;\overset{\text{已知 5(c)}}{=}&amp; \beta \cdot 0 \cdot X + \beta y\frac{\partial X}{\partial t} + \alpha\,\beta y\,X \\
+  &amp;=&amp; \beta y\left(\frac{\partial X}{\partial t} + \alpha X\right) \\
+  &amp;\overset{\text{已知 1(c)}}{=}&amp; \beta y\,\mathcal{D}_t\Big[X\Big]
   \end{gather*}\end{split}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa = R/c_p\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\delta = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span> : 任意可微的場 (Arbitrary differentiable field) <span class="math notranslate nohighlight">\([\text{依應用而定}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 常數阻尼率 (Constant damping rate) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p>註：<strong><span class="math notranslate nohighlight">\(\beta y\)</span> 能穿過 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span>，卻不能穿過 <span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial y}\)</span>。</strong> <a class="reference internal" href="Equatorial_Vorticity_and_Divergence_Equations.html"><span class="std std-doc">渦度方程式</span></a>【推導 2】(b) 裡那個單獨的 <span class="math notranslate nohighlight">\(-\beta v\)</span>，正是後者辦不到所留下的殘骸。本篇能把 <span class="math notranslate nohighlight">\(\zeta\)</span> 與層結項收成單一個 <span class="math notranslate nohighlight">\(q\)</span>，靠的就是前者辦得到。</p></li>
 </ul>
 </li>
 <li><p><strong>【推導 2】 源項的係數化簡 (Simplifying the source coefficient)：</strong> <span class="math notranslate nohighlight">\(\kappa\)</span> 的定義讓 <span class="math notranslate nohighlight">\(R\)</span> 消掉</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-  \frac{\kappa}{R\Gamma} &amp;\overset{\text{已知 2}}{=}&amp; \frac{R/c_p}{R\Gamma} \\
+  \frac{\kappa}{R\Gamma} &amp;\overset{\text{已知 4}}{=}&amp; \frac{R/c_p}{R\Gamma} \\
   &amp;=&amp; \frac{1}{c_p\Gamma}
   \end{gather*}\end{split}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\kappa = R/c_p\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【推導 3】 高斯剖面下源項的經向結構 (Meridional structure of the source for a Gaussian profile)：</strong> 把【假設 3】代進【定義 2】，<span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 只作用在 <span class="math notranslate nohighlight">\(z\)</span> 上，故整個經向依賴收成 <span class="math notranslate nohighlight">\(y\,e^{-\left(y/b_0\right)^{2}}\)</span></p>
+<li><p><strong>【推導 3】 從位勢–輻散方程式解出水平輻散 (Solving the geopotential–divergence equation for the divergence)：</strong> 【已知 3】對 <span class="math notranslate nohighlight">\(\delta\)</span> 而言是純代數式，直接移項；最後一步用【推導 2】把係數裡的 <span class="math notranslate nohighlight">\(R\)</span> 約掉，此後全篇不再出現 <span class="math notranslate nohighlight">\(\kappa\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-  S &amp;\overset{\text{定義 2}}{=}&amp; \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right] \\
-  &amp;\overset{\text{假設 3}}{=}&amp; \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}(x, z)\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
+  \kappa\,\mathcal{D}_z\Big[Q\Big] &amp;\overset{\text{已知 3}}{=}&amp; \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - R\Gamma\delta \\
+  R\Gamma\delta &amp;=&amp; \mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \kappa\,\mathcal{D}_z\Big[Q\Big] \\
+  \delta &amp;=&amp; \frac{1}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa}{R\Gamma}\,\mathcal{D}_z\Big[Q\Big] \\
+  \delta &amp;\overset{\text{推導 2}}{=}&amp; \frac{1}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{1}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> : Poisson 常數 (Poisson constant) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> : 擾動水平輻散 (Perturbation horizontal divergence) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 擾動位勢 (Perturbation geopotential) <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> : 乾空氣氣體常數 (Gas constant for dry air) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 高斯剖面必為南北對稱 (A Gaussian profile is necessarily north–south symmetric)：</strong> 高斯的指數裡 <span class="math notranslate nohighlight">\(y\)</span> 只以平方出現，換號不變</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  Q(x, -y, z) &amp;\overset{\text{假設 1}}{=}&amp; \tilde{Q}(x, z)\exp\left[-\left(\frac{-y}{b_0}\right)^{2}\right] \\
+  &amp;=&amp; \tilde{Q}(x, z)\exp\left[-\frac{y^{2}}{b_0^{2}}\right] \\
+  &amp;=&amp; \tilde{Q}(x, z)\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right] \\
+  &amp;\overset{\text{假設 1}}{=}&amp; Q(x, y, z)
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{Q}(x, z)\)</span> : 加熱的緯向與垂直結構 (Zonal and vertical structure of the heating) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 加熱區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>註：【證明 (c)】用到的其實<strong>只有這個結論</strong>，也就是「<span class="math notranslate nohighlight">\(Q\)</span> 對 <span class="math notranslate nohighlight">\(y\)</span> 是偶函數」。因此 (c) 對<strong>任何</strong>南北對稱的加熱分布都成立，並不限於高斯；高斯只是本鏈實際採用的具體形狀，順便讓【證明 (d)】也做得下去。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 高斯剖面下源項的經向結構 (Meridional structure of the source for a Gaussian profile)：</strong> 把【假設 1】代進【定義 2】，<span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 只作用在 <span class="math notranslate nohighlight">\(z\)</span> 上，故整個經向依賴收成 <span class="math notranslate nohighlight">\(y\,e^{-\left(y/b_0\right)^{2}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  S &amp;\overset{\text{定義 2}}{=}&amp; \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] \\
+  &amp;\overset{\text{假設 1}}{=}&amp; \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}(x, z)\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
   &amp;=&amp; \frac{\beta}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}(x, z)\right]\,y\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]
   \end{gather*}\end{split}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(S\)</span> : PV 源項 (PV source term) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 參數 (Equatorial beta parameter) <span class="math notranslate nohighlight">\([\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y\)</span> : 經向座標，以赤道為原點 (Meridional coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(c_p\)</span> : 定壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 靜力穩定度 (Static stability) <span class="math notranslate nohighlight">\([\text{K}]\)</span>，<span class="math notranslate nohighlight">\(\Gamma = 23.79 \ \text{K}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> : 阻尼時間算子 (Damped-tendency operator) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_t = \dfrac{\partial}{\partial t} + \alpha\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Q\)</span> : 非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\tilde{Q}(x, z)\)</span> : 加熱的緯向與垂直結構 (Zonal and vertical structure of the heating) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x,\ y\)</span> : 緯向、經向座標 (Zonal and meridional coordinates) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\)</span> : 對數氣壓垂直座標 (Log-pressure vertical coordinate) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(b_0\)</span> : 加熱區的經向 <span class="math notranslate nohighlight">\(e\)</span>-folding 寬度 (Meridional <span class="math notranslate nohighlight">\(e\)</span>-folding width) <span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(b_0 = 450 \ \text{km}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> : 垂直算子 (Vertical operator) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(\mathcal{D}_z = \dfrac{\partial}{\partial z} - 1\)</span></p></li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="id2">
 <h2>證明:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<section id="a-proof-emergence-of-the-potential-vorticity-anomaly">
-<h3>(a) proof 位渦距平的浮現 (Emergence of the potential vorticity anomaly)<a class="headerlink" href="#a-proof-emergence-of-the-potential-vorticity-anomaly" title="Link to this heading">#</a></h3>
-<p>把【推導 1】的 <span class="math notranslate nohighlight">\(\delta\)</span> 代進【已知 1】。關鍵在下一步：<span class="math notranslate nohighlight">\(\beta y\)</span> 與時間無關（【假設 1】），因此可以<strong>縮進 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> 裡面</strong>，於是 <span class="math notranslate nohighlight">\(\zeta\)</span> 與層結項合併成單一個變數。</p>
+<section id="a-proof-pv-potential-vorticity-equation">
+<h3>(a) proof PV 方程式 (Potential vorticity equation)<a class="headerlink" href="#a-proof-pv-potential-vorticity-equation" title="Link to this heading">#</a></h3>
+<p>把【推導 3】的 <span class="math notranslate nohighlight">\(\delta\)</span> 代進【已知 2】。關鍵在下一步：<span class="math notranslate nohighlight">\(\beta y\)</span> 可以穿過 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span>（【推導 1】），因此可以<strong>縮進 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> 裡面</strong>，於是 <span class="math notranslate nohighlight">\(\zeta\)</span> 與層結項合併成單一個 <span class="math notranslate nohighlight">\(q\)</span>；最後把 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> 展開。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-0 &amp;\overset{\text{已知 1}}{=}&amp; \mathcal{D}_t\left[\zeta\right] + \beta y\,\delta + \beta v \\
-0 &amp;\overset{\text{推導 1}}{=}&amp; \mathcal{D}_t\left[\zeta\right] + \frac{\beta y}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &amp;\overset{\text{假設 1}}{=}&amp; \mathcal{D}_t\left[\zeta\right] + \mathcal{D}_t\left[\frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &amp;=&amp; \mathcal{D}_t\left[\zeta + \frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &amp;\overset{\text{定義 1}}{=}&amp; \mathcal{D}_t\left[q\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v
-\end{gather*}\end{split}\]</div>
-</section>
-<section id="b-proof-pv-potential-vorticity-equation">
-<h3>(b) proof PV 方程式 (Potential vorticity equation)<a class="headerlink" href="#b-proof-pv-potential-vorticity-equation" title="Link to this heading">#</a></h3>
-<p>把【證明 (a)】的源項係數用【推導 2】化簡，再把 <span class="math notranslate nohighlight">\(\mathcal{D}_t\)</span> 展開。</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-0 &amp;\overset{\text{證明 (a)}}{=}&amp; \mathcal{D}_t\left[q\right] - \frac{\kappa\,\beta y}{R\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &amp;\overset{\text{推導 2}}{=}&amp; \mathcal{D}_t\left[q\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right] + \beta v \\
-0 &amp;\overset{\text{定義 2}}{=}&amp; \mathcal{D}_t\left[q\right] - S + \beta v \\
-0 &amp;\overset{\text{已知 1}}{=}&amp; \frac{\partial q}{\partial t} + \alpha q - S + \beta v \\
+0 &amp;\overset{\text{已知 2}}{=}&amp; \mathcal{D}_t\Big[\zeta\Big] + \beta y\,\delta + \beta v \\
+0 &amp;\overset{\text{推導 3}}{=}&amp; \mathcal{D}_t\Big[\zeta\Big] + \frac{\beta y}{R\Gamma}\,\mathcal{D}_t\left[\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &amp;\overset{\text{推導 1}}{=}&amp; \mathcal{D}_t\Big[\zeta\Big] + \mathcal{D}_t\left[\frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &amp;=&amp; \mathcal{D}_t\left[\zeta + \frac{\beta y}{R\Gamma}\,\mathcal{D}_z\left[\frac{\partial \phi}{\partial z}\right]\right] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &amp;\overset{\text{定義 1}}{=}&amp; \mathcal{D}_t\Big[q\Big] - \frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big] + \beta v \\
+0 &amp;\overset{\text{定義 2}}{=}&amp; \mathcal{D}_t\Big[q\Big] - S + \beta v \\
+0 &amp;\overset{\text{已知 1(c)}}{=}&amp; \frac{\partial q}{\partial t} + \alpha q - S + \beta v \\
 \frac{\partial q}{\partial t} + \beta v &amp;=&amp; -\alpha q + S
 \end{gather*}\end{split}\]</div>
 </section>
-<section id="c-proof-vanishing-of-the-source-at-the-equator">
-<h3>(c) proof 赤道上的源項為零 (Vanishing of the source at the equator)<a class="headerlink" href="#c-proof-vanishing-of-the-source-at-the-equator" title="Link to this heading">#</a></h3>
+<section id="b-proof-vanishing-of-the-source-at-the-equator">
+<h3>(b) proof 赤道上的源項為零 (Vanishing of the source at the equator)<a class="headerlink" href="#b-proof-vanishing-of-the-source-at-the-equator" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\beta y\)</span> 在赤道上為零，把整個 <span class="math notranslate nohighlight">\(\mathcal{D}_z\left[Q\right]\)</span> 乘成零，<strong>與加熱強度完全無關</strong>。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\left.S\right|_{y = 0} &amp;\overset{\text{定義 2}}{=}&amp; \left.\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q\right]\right|_{y = 0} \\
-&amp;=&amp; \frac{\beta \cdot 0}{c_p\Gamma}\,\left.\mathcal{D}_z\left[Q\right]\right|_{y = 0} \\
+S\Big|_{y = 0} &amp;\overset{\text{定義 2}}{=}&amp; \left.\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q\Big]\right|_{y = 0} \\
+&amp;=&amp; \frac{\beta \cdot 0}{c_p\Gamma}\,\left.\mathcal{D}_z\Big[Q\Big]\right|_{y = 0} \\
 &amp;=&amp; 0
 \end{gather*}\end{split}\]</div>
 </section>
-<section id="d-proof-y-oddness-of-the-source-in-y">
-<h3>(d) proof 源項為 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數 (Oddness of the source in <span class="math notranslate nohighlight">\(y\)</span>)<a class="headerlink" href="#d-proof-y-oddness-of-the-source-in-y" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\beta y\)</span> 是奇函數、加熱是偶函數（【假設 2】），兩者相乘必為奇函數。</p>
+<section id="c-proof-y-oddness-of-the-source-in-y">
+<h3>(c) proof 源項為 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數 (Oddness of the source in <span class="math notranslate nohighlight">\(y\)</span>)<a class="headerlink" href="#c-proof-y-oddness-of-the-source-in-y" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\beta y\)</span> 是奇函數、加熱是偶函數（【推導 4】），兩者相乘必為奇函數。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-S(x, -y, z) &amp;\overset{\text{定義 2}}{=}&amp; \frac{\beta\left(-y\right)}{c_p\Gamma}\,\mathcal{D}_z\left[Q(x, -y, z)\right] \\
-&amp;\overset{\text{假設 2}}{=}&amp; -\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\left[Q(x, y, z)\right] \\
+S(x, -y, z) &amp;\overset{\text{定義 2}}{=}&amp; \frac{\beta\left(-y\right)}{c_p\Gamma}\,\mathcal{D}_z\Big[Q(x, -y, z)\Big] \\
+&amp;\overset{\text{推導 4}}{=}&amp; -\frac{\beta y}{c_p\Gamma}\,\mathcal{D}_z\Big[Q(x, y, z)\Big] \\
 &amp;\overset{\text{定義 2}}{=}&amp; -S(x, y, z)
 \end{gather*}\end{split}\]</div>
 </section>
-<section id="e-proof-location-of-the-source-extrema">
-<h3>(e) proof 源項極值的位置 (Location of the source extrema)<a class="headerlink" href="#e-proof-location-of-the-source-extrema" title="Link to this heading">#</a></h3>
-<p>把【推導 3】的經向結構對 <span class="math notranslate nohighlight">\(y\)</span> 微分並令其為零。<span class="math notranslate nohighlight">\(\dfrac{\beta}{c_p\Gamma}\mathcal{D}_z\left[\tilde{Q}\right]\)</span> 與 <span class="math notranslate nohighlight">\(y\)</span> 無關，可整個約掉。</p>
+<section id="d-proof-s-extremal-latitudes-of-the-source-s">
+<h3>(d) proof 源項 <span class="math notranslate nohighlight">\(S\)</span> 的極值緯度 (Extremal latitudes of the source <span class="math notranslate nohighlight">\(S\)</span>)<a class="headerlink" href="#d-proof-s-extremal-latitudes-of-the-source-s" title="Link to this heading">#</a></h3>
+<p>把【推導 5】的經向結構對 <span class="math notranslate nohighlight">\(y\)</span> 微分並令其為零。<span class="math notranslate nohighlight">\(\dfrac{\beta}{c_p\Gamma}\mathcal{D}_z\left[\tilde{Q}\right]\)</span> 與 <span class="math notranslate nohighlight">\(y\)</span> 無關，可整個約掉。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-0 &amp;\overset{\text{推導 3}}{=}&amp; \frac{\partial}{\partial y}\left[\frac{\beta}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}\right]\,y\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
+0 &amp;=&amp; \frac{\partial S}{\partial y}\\
+0 &amp;\overset{\text{推導 5}}{=}&amp; \frac{\partial}{\partial y}\left[\frac{\beta}{c_p\Gamma}\,\mathcal{D}_z\left[\tilde{Q}\right]\,y\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
 0 &amp;=&amp; \frac{\partial}{\partial y}\left[y\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right]\right] \\
 0 &amp;=&amp; \exp\left[-\left(\frac{y}{b_0}\right)^{2}\right] + y\left(-\frac{2y}{b_0^{2}}\right)\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right] \\
 0 &amp;=&amp; \left[1 - \frac{2y^{2}}{b_0^{2}}\right]\exp\left[-\left(\frac{y}{b_0}\right)^{2}\right] \\
 1 &amp;=&amp; \frac{2y^{2}}{b_0^{2}} \\
 y_{\text{ext}} &amp;=&amp; \pm\frac{b_0}{2^{1/2}} \\
-y_{\text{ext}} &amp;\overset{\text{假設 3}}{\approx}&amp; \pm\frac{450 \ \text{km}}{1.414} \\
+y_{\text{ext}} &amp;\overset{\text{假設 1}}{=}&amp; \pm\frac{450 \ \text{km}}{2^{1/2}} \\
 y_{\text{ext}} &amp;\approx&amp; \pm 318 \ \text{km}
 \end{gather*}\end{split}\]</div>
 </section>
 </section>
 <section id="id3">
 <h2>物理解釋<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="q">
+<h3><span class="math notranslate nohighlight">\(q\)</span> 不只是「代數上剛好收得起來的那一團」<a class="headerlink" href="#q" title="Link to this heading">#</a></h3>
+<p>【證明 (a)】給人的印象很容易是：<span class="math notranslate nohighlight">\(q\)</span> 是為了讓式子收乾淨而硬湊出來的組合，「位渦距平」只是個好聽的名字。<strong>不是這樣。</strong></p>
+<p>由【已知 6】，把 Ertel 位渦 <span class="math notranslate nohighlight">\(PV = \dfrac{1}{\rho}\boldsymbol{\eta}_a\cdot\nabla\theta\)</span> 繞靜止基本態線性化，取跟著氣塊走的相對距平再乘上 <span class="math notranslate nohighlight">\(\beta y\)</span>，得到的<strong>恰好逐項是</strong> <span class="math notranslate nohighlight">\(q\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[q = \beta y\,\frac{\delta PV}{\overline{PV}} = \underbrace{\zeta}_{\text{渦度變了}} - \underbrace{\beta y\,\mathcal{D}_z\left[\eta\right]}_{\text{等熵層的質量變了}}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\eta = -\dfrac{1}{R\Gamma}\dfrac{\partial\phi}{\partial z}\)</span> 是等熵面的垂直位移。也就是說 <span class="math notranslate nohighlight">\(q\)</span> 就是課本上那句「位渦＝絕對渦度 ÷ 層厚」的線性化版本，一項都不多、一項都不少。</p>
+<p>由 <a class="reference internal" href="Linearized_Potential_Vorticity_in_Log_Pressure.html"><span class="std std-doc">線性化位渦</span></a>〈物理解釋〉還可以更進一步：絕熱無阻尼時 <span class="math notranslate nohighlight">\(q = -\beta Y\)</span>，其中 <span class="math notranslate nohighlight">\(Y\)</span> 是氣塊離開原本緯度的距離。<span class="math notranslate nohighlight">\(q\)</span> 說穿了就是**「這塊空氣離家多遠」的度量**。這個讀法順手解釋了 <a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"><span class="std std-doc">Kelvin 波的 <span class="math notranslate nohighlight">\(q\)</span> 為零</span></a>：Kelvin 波的 <span class="math notranslate nohighlight">\(v \equiv 0\)</span>，沒有任何氣塊離開過它的緯度。</p>
+</section>
 <section id="id4">
 <h3>這一篇為什麼是全文的物理引擎<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>【證明 (b)】把 PV 的變化拆成三項：</p>
+<p>【證明 (a)】把 PV 的變化拆成三項：</p>
 <div class="math notranslate nohighlight">
 \[\underbrace{\frac{\partial q}{\partial t}}_{\text{局地變化}} = \underbrace{-\beta v}_{\text{Rossby 項}} \underbrace{- \alpha q}_{\text{阻尼}} + \underbrace{S}_{\text{生成}}\]</div>
 <p>其中生成項 <span class="math notranslate nohighlight">\(S = \dfrac{\beta y}{c_p\Gamma}\mathcal{D}_z\left[Q\right]\)</span> 前面那個 <strong><span class="math notranslate nohighlight">\(\beta y\)</span> 因子</strong>，是本文與所有「<span class="math notranslate nohighlight">\(f\)</span> 平面加熱響應」文獻最關鍵的差別。</p>
 <p>在中緯度 <span class="math notranslate nohighlight">\(f\)</span> 平面上，源項的係數是常數 <span class="math notranslate nohighlight">\(f_0\)</span>，加熱在哪裡最強，PV 就在哪裡生成最多。<strong>赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面完全不是這樣</strong>：</p>
 <ul class="simple">
-<li><p><strong>【證明 (c)】</strong> —— 赤道正上方（<span class="math notranslate nohighlight">\(y = 0\)</span>）<strong>生不出任何 PV</strong>。這不是「比較弱」，是<strong>嚴格為零</strong>，而且與加熱多強無關。</p></li>
-<li><p><strong>【證明 (d)】</strong> —— 北半球生出的 PV 與南半球<strong>大小相等、正負相反</strong>。</p></li>
-<li><p><strong>【證明 (e)】</strong> —— 生成的極大值不在加熱最強的地方（<span class="math notranslate nohighlight">\(y = 0\)</span>），而在<strong>南北兩側 <span class="math notranslate nohighlight">\(b_0/2^{1/2} \approx 318 \ \text{km}\)</span></strong>（約 <span class="math notranslate nohighlight">\(2.9^{\circ}\)</span> 緯度）處。</p></li>
+<li><p><strong>【證明 (b)】</strong> —— 赤道正上方（<span class="math notranslate nohighlight">\(y = 0\)</span>）<strong>生不出任何 PV</strong>。這不是「比較弱」，是<strong>嚴格為零</strong>，而且與加熱多強無關。</p></li>
+<li><p><strong>【證明 (c)】</strong> —— 北半球生出的 PV 與南半球<strong>大小相等、正負相反</strong>。</p></li>
+<li><p><strong>【證明 (d)】</strong> —— 生成的極大值不在加熱最強的地方（<span class="math notranslate nohighlight">\(y = 0\)</span>），而在<strong>南北兩側 <span class="math notranslate nohighlight">\(b_0/2^{1/2} \approx 318 \ \text{km}\)</span></strong>（約 <span class="math notranslate nohighlight">\(2.9^{\circ}\)</span> 緯度）處。</p></li>
 </ul>
 <p>三者合起來就是那個著名的圖像：<strong>一個東移的赤道深對流區，會在身後拖出兩條反號的 PV 帶</strong>，北側為正、南側為負。作者的比喻是<strong>大型飛機後方的一對翼尖渦 (wing-tip vortices)</strong> —— 機翼在空氣中留下的，也是這樣一對大小相等、旋向相反的渦旋。</p>
 <p>值得對照的是本庫 <a class="reference internal" href="../Atmospheric_Dynamics/Vertical_Structure_Equation.html"><span class="std std-doc">垂直結構方程式</span></a>【證明 (a)】—— 那裡說「動力感受到的不是加熱 <span class="math notranslate nohighlight">\(Q\)</span>，而是 <span class="math notranslate nohighlight">\(-\partial Q/\partial z\)</span>」，講的是<strong>垂直</strong>方向的同類機制。本篇的 <span class="math notranslate nohighlight">\(\beta y\)</span> 因子扮演的是<strong>經向</strong>方向的相同角色：真正決定響應的，永遠不是加熱本身，而是加熱被某個算子加工之後的東西。</p>
@@ -763,11 +903,12 @@ y_{\text{ext}} &amp;\approx&amp; \pm 318 \ \text{km}
 </table>
 </div>
 <p>低層的那一對，就是論文所稱的「雙 ITCZ」的動力來源 —— 低層氣旋式渦度 → 邊界層輻合 → Ekman pumping → 雲量與降雨。</p>
+<p>用【已知 7】的等熵面圖像看，上下反號的物理很直白：在加熱極大值<strong>下方</strong>，加熱隨高度遞增，把等熵層<strong>壓薄</strong> → PV 增加；在極大值<strong>上方</strong>恰好相反，層<strong>變厚</strong> → PV 減少。<span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 管垂直、<span class="math notranslate nohighlight">\(\beta y\)</span> 管南北，兩個機制各管一個方向，乘起來就是這張四格表。</p>
 </section>
 <section id="id5">
 <h3>對後續三個端點的意義<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong><a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html"><span class="std std-doc">PV 尾流</span></a>（端點②）</strong> —— 把【證明 (b)】的 Rossby 項 <span class="math notranslate nohighlight">\(\beta v\)</span> 拿掉，剩下「強迫 ＋ 阻尼」就能解析求解，直接讀出控制尾流的三個參數。<span class="math notranslate nohighlight">\(q \propto -\beta y\,e^{-\left(y-y_0\right)^{2}/b_0^{2}}\)</span> 這個形狀正是【推導 3】的產物。</p></li>
+<li><p><strong><a class="reference internal" href="PV_Wake_of_a_Moving_Heat_Source.html"><span class="std std-doc">PV 尾流</span></a>（端點②）</strong> —— 把【證明 (b)】的 Rossby 項 <span class="math notranslate nohighlight">\(\beta v\)</span> 拿掉，剩下「強迫 ＋ 阻尼」就能解析求解，直接讀出控制尾流的三個參數。<span class="math notranslate nohighlight">\(q \propto -\beta y\,e^{-\left(y-y_0\right)^{2}/b_0^{2}}\)</span> 這個形狀正是【推導 5】的產物。</p></li>
 <li><p><strong><a class="reference internal" href="Equatorial_PV_Invertibility_Principle.html"><span class="std std-doc">可逆性原理</span></a>（端點③）</strong> —— 【定義 1】的 <span class="math notranslate nohighlight">\(q\)</span> 就是被反演的對象；反演能不能成功，完全看流場的資訊有沒有被裝進這個組合裡。</p></li>
 <li><p><strong><a class="reference internal" href="Physical_Field_Recovery_and_Zero_Kelvin_PV.html"><span class="std std-doc">Kelvin 波 PV 為零</span></a></strong> —— 答案是「有些沒有」。Kelvin 波的 <span class="math notranslate nohighlight">\(q\)</span> <strong>恰好為零</strong>，所以端點③救不回對流東側的流場。那不是近似不夠好，而是<strong>資訊在 <span class="math notranslate nohighlight">\(q\)</span> 這個變數裡根本不存在</strong>。</p></li>
 </ul>
@@ -842,14 +983,14 @@ y_{\text{ext}} &amp;\approx&amp; \pm 318 \ \text{km}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明目標:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-emergence-of-the-potential-vorticity-anomaly">(a) proof 位渦距平的浮現 (Emergence of the potential vorticity anomaly)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-pv-potential-vorticity-equation">(b) proof PV 方程式 (Potential vorticity equation)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-vanishing-of-the-source-at-the-equator">(c) proof 赤道上的源項為零 (Vanishing of the source at the equator)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-y-oddness-of-the-source-in-y">(d) proof 源項為 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數 (Oddness of the source in <span class="math notranslate nohighlight">\(y\)</span>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-proof-location-of-the-source-extrema">(e) proof 源項極值的位置 (Location of the source extrema)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-proof-pv-potential-vorticity-equation">(a) proof PV 方程式 (Potential vorticity equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-proof-vanishing-of-the-source-at-the-equator">(b) proof 赤道上的源項為零 (Vanishing of the source at the equator)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-proof-y-oddness-of-the-source-in-y">(c) proof 源項為 <span class="math notranslate nohighlight">\(y\)</span> 的奇函數 (Oddness of the source in <span class="math notranslate nohighlight">\(y\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-proof-s-extremal-latitudes-of-the-source-s">(d) proof 源項 <span class="math notranslate nohighlight">\(S\)</span> 的極值緯度 (Extremal latitudes of the source <span class="math notranslate nohighlight">\(S\)</span>)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">物理解釋</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q"><span class="math notranslate nohighlight">\(q\)</span> 不只是「代數上剛好收得起來的那一團」</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">這一篇為什麼是全文的物理引擎</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-d-z">為什麼 <span class="math notranslate nohighlight">\(\mathcal{D}_z\)</span> 讓上下對流層反號</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">對後續三個端點的意義</a></li>

@@ -34,6 +34,33 @@ $$\mathcal{L}^{\dagger} = -\mathcal{L}$$
 
 $$\nu_{mnr} \in \mathbb{R}, \qquad \left(\mathbf{K}_{mnr},\ \mathbf{K}_{mn'r'}\right) = 0 \quad \left(\nu_{mnr} \neq \nu_{mn'r'}\right)$$
 
+其中
+
+* $\mathcal{E}$ : 總能量 (Total energy) $[\text{m}^{4}\cdot\text{s}^{-2}]$
+* $\mathcal{G}$ : 非絕熱生成項 (Diabatic generation term) $[\text{m}^{4}\cdot\text{s}^{-3}]$
+* $\mathcal{L}$ : 水平結構的線性算符 (Linear operator) $[\text{s}^{-1}]$
+* $\mathcal{L}^{\dagger}$ : $\mathcal{L}$ 的伴隨算符 (Adjoint of $\mathcal{L}$) $[\text{s}^{-1}]$
+* $I_Z$ : 垂直結構函數的加權積分 (Weighted vertical integral of the structure function) $[\text{無單位}]$，$I_Z = \int_0^{z_T}Z^{2}e^{-z}\,dz$
+* $\mathbf{K}_{mnr}$ : 本徵函數 (Eigenfunction) $[\text{依分量而定}]$
+* $\nu_{mnr}$ : 本徵頻率 (Eigenfrequency) $[\text{s}^{-1}]$
+* $u,\ v$ : 擾動緯向、經向風速 (Perturbation velocities) $[\text{m}\cdot\text{s}^{-1}]$
+* $\phi$ : 擾動位勢 (Perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $Q$ : 非絕熱加熱率 (Diabatic heating rate) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{s}^{-1}]$
+* $\hat{u},\ \hat{v}$ : 緯向、經向風的水平結構函數 (Horizontal structure functions of the velocities) $[\text{m}\cdot\text{s}^{-1}]$
+* $\hat{\phi}$ : 擾動位勢的水平結構函數 (Horizontal structure function of the perturbation geopotential) $[\text{m}^{2}\cdot\text{s}^{-2}]$
+* $Z(z)$ : 垂直結構函數 (Vertical structure function) $[\text{無單位}]$
+* $x,\ y$ : 緯向、經向座標 (Zonal and meridional coordinates) $[\text{m}]$
+* $z$ : 對數氣壓垂直座標 (Log-pressure vertical coordinate) $[\text{無單位}]$
+* $t$ : 時間 (Time) $[\text{s}]$
+* $m$ : 緯向波數 (Zonal wavenumber) $[\text{無單位}]$，整數
+* $n$ : 經向模態指標 (Meridional mode index) $[\text{無單位}]$
+* $r$ : 波型指標 (Wave-type index) $[\text{無單位}]$
+* $\alpha$ : 常數阻尼率 (Constant damping rate) $[\text{s}^{-1}]$
+* $R$ : 乾空氣氣體常數 (Gas constant for dry air) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+* $\Gamma$ : 靜力穩定度 (Static stability) $[\text{K}]$
+* $c_p$ : 定壓比熱 (Specific heat at constant pressure) $[\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}]$
+* $\bar{c}$ : 等效重力波速 (Equivalent gravity wave speed) $[\text{m}\cdot\text{s}^{-1}]$，$\bar{c}^{2} = R\Gamma/\lambda \approx \left(41.25 \ \text{m}\cdot\text{s}^{-1}\right)^{2}$
+* $z_T$ : 對流層頂的對數氣壓高度 (Log-pressure height of the tropopause) $[\text{無單位}]$
 * 註：(a)(b) 是 [Schubert & Masarik (2006)](../../06_References/Tropical_wave_dynamics/Schubert2006-Potential_vorticity_aspects_of_the_MJO/Potential_vorticity_aspects_of_the_MJO.ipynb) 的 $(2.2)$–$(2.3)$，(c)(d) 對應 $(4.8)$ 與其後的敘述。
 * 註：論文只說內積 $(4.8)$ 是「由總能量原理**暗示 (suggested)**」出來的。本篇的【證明 (c)】把這句話**升級成嚴格推導** —— 權重 $1/\bar{c}^{2}$ 是垂直積分恆等式 $\int Z'^{2}e^{-z}dz = \lambda\int Z^{2}e^{-z}dz$（【推導 5】）的必然結果。
 * 註：反厄米性的證明手法已在 Advanced Atmospheric Dynamics 的 [project1_3](https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project1_3.html) 對另一個算符完整示範過，內積的正定性見 [project1_4](https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project1_4.html)。本篇只是把同一套手法套在 Schubert 的 $\mathcal{L}$ 上。
