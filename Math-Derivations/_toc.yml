@@ -10,4 +10,5 @@ chapters:
   - file: Levi-Civita_symbol/progrem  # <--- 這是父節點 (Parent)，也就是我們剛建的那個檔案
     sections:      # <--- 代表下面的檔案都屬於它
       - file: Levi-Civita_symbol/Levi-Civita_symbol
+      - file: Levi-Civita_symbol/TKE
       - file: Levi-Civita_symbol/new_project

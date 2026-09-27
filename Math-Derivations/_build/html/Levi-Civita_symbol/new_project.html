@@ -28,9 +28,9 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Levi-Civita_symbol/new_project';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Levi-Civita Symbol in 3D" href="Levi-Civita_symbol.html" />
+    <link rel="prev" title="紊流動能方程式 (Turbulent Kinetic Energy Equation, TKE)" href="TKE.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,6 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition.html">經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="progrem.html">測試選單</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Levi-Civita_symbol.html">Levi-Civita Symbol in 3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TKE.html">紊流動能方程式 (Turbulent Kinetic Energy Equation, TKE)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">讓我們試著把您學到的恆等式 <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)</span>，直接對應到風場與渦度上！</a></li>
 </ul>
 </details></li>
@@ -385,7 +386,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">第一步：定義我們的氣象變數</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第二步：把氣象變數套入恆等式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">第二步：把氣象變數套入恆等式</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第三步：這在氣象上代表什麼意義？</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">如何用您的資料進行驗證？（計算策略）</a></li>
 </ul>
@@ -411,10 +412,9 @@ document.write(`
 <li><p>讓 <span class="math notranslate nohighlight">\(\mathbf{B} = \boldsymbol{\omega}\)</span> （三維渦度向量 Vorticity，定義為 <span class="math notranslate nohighlight">\(\boldsymbol{\omega} = \nabla \times \mathbf{V}\)</span>）。</p></li>
 </ul>
 <p>這時候，恆等式左邊括號裡面的叉積 <span class="math notranslate nohighlight">\(\mathbf{V} \times \boldsymbol{\omega}\)</span> 有一個專屬的物理名稱，叫做 <strong>蘭姆向量 (Lamb Vector)</strong> 或 <strong>渦動量流 (Vortex Force)</strong>。這項在探討颱風結構或氣旋發展時非常關鍵，它代表了因為風場與渦度交錯而產生的非線性加速度。</p>
-<p><a id="test"></a></p>
 </section>
-<section id="id2">
-<h2>第二步：把氣象變數套入恆等式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="test">
+<span id="id2"></span><h2>第二步：把氣象變數套入恆等式<a class="headerlink" href="#test" title="Link to this heading">#</a></h2>
 <p>我們把 <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> 和 <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span>  代入您的恆等式：</p>
 <div class="math notranslate nohighlight">
 \[\nabla \cdot (\mathbf{V} \times \boldsymbol{\omega}) = \boldsymbol{\omega} \cdot (\nabla \times \mathbf{V}) - \mathbf{V} \cdot (\nabla \times \boldsymbol{\omega})\]</div>
@@ -484,12 +484,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Levi-Civita_symbol.html"
+       href="TKE.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Levi-Civita Symbol in 3D</p>
+        <p class="prev-next-title">紊流動能方程式 (Turbulent Kinetic Energy Equation, TKE)</p>
       </div>
     </a>
 </div>
@@ -509,7 +509,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">第一步：定義我們的氣象變數</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第二步：把氣象變數套入恆等式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">第二步：把氣象變數套入恆等式</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第三步：這在氣象上代表什麼意義？</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">如何用您的資料進行驗證？（計算策略）</a></li>
 </ul>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Math Derivations</title>
+    <title>紊流動能方程式 (Turbulent Kinetic Energy Equation, TKE) &#8212; Math Derivations</title>
   
   
   
@@ -28,9 +28,9 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,16 +50,20 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Levi-Civita_symbol/TKE';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="讓我們試著把您學到的恆等式 \(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)，直接對應到風場與渦度上！" href="new_project.html" />
+    <link rel="prev" title="Levi-Civita Symbol in 3D" href="Levi-Civita_symbol.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,12 +181,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Derivation_of_Higher_Order_Moments_Normal_Distribution.html">常態分佈高階期望值 <span class="math notranslate nohighlight">\(E[x^n]\)</span> 之證明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Empirical_Orthogonal_Functions_The_Math_and_Physical_Intuition.html">經驗正交函數 (Empirical Orthogonal Functions, EOF) : The Math and Physical Intuition</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="progrem.html">測試選單</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="progrem.html">測試選單</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Levi-Civita_symbol.html">Levi-Civita Symbol in 3D</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">紊流動能方程式 (Turbulent Kinetic Energy Equation, TKE)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="new_project.html">讓我們試著把您學到的恆等式 <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)</span>，直接對應到風場與渦度上！</a></li>
 </ul>
 </details></li>
@@ -289,7 +292,7 @@
       
       
       
-      <li><a href="../_sources/Levi-Civita_symbol/TKE.ipynb" target="_blank"
+      <li><a href="../_sources/Levi-Civita_symbol/TKE.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +302,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -373,7 +376,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>紊流動能方程式 (Turbulent Kinetic Energy Equation, TKE)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,9 +385,20 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">證明 (Derivation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-proof-perturbation-momentum-equation">Step 1 proof 擾動動量方程式 (Perturbation Momentum Equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-proof-u-i-tke-dot-with-u-i-average-rearrange">Step 2 proof 內積 <span class="math notranslate nohighlight">\(u'_i\)</span> 取平均並整理成 TKE 方程式 (Dot with <span class="math notranslate nohighlight">\(u'_i\)</span>, Average, Rearrange)</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-form-physical-meaning">向量形式對照與物理意義 (Vector Form &amp; Physical Meaning)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-form">向量形式 (vector form)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">各項物理意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">參考資料</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -395,7 +409,454 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a class="reference external" href="https://boundary-layer-meteo.github.io/lectures/7_tke.html">gogo TKE</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="turbulent-kinetic-energy-equation-tke">
+<h1>紊流動能方程式 (Turbulent Kinetic Energy Equation, TKE)<a class="headerlink" href="#turbulent-kinetic-energy-equation-tke" title="Link to this heading">#</a></h1>
+<p>從 <strong>【已知 1】動量方程式 (Momentum Equation)</strong> 出發，經兩步得到紊流動能方程式：</p>
+<ol class="arabic simple">
+<li><p><strong>Step 1</strong>：雷諾分解後，工作方程式減去平均動量方程式，得 <strong>擾動動量方程式 (Perturbation Momentum Equation)</strong>。</p></li>
+<li><p><strong>Step 2</strong>：整條方程式乘上 <span class="math notranslate nohighlight">\(u'_i\)</span> 並取系集平均，逐項化簡後直接整理成標準 TKE 方程式。</p></li>
+</ol>
+<p>本推導的<strong>核心亮點</strong>：科氏力項 <span class="math notranslate nohighlight">\(-2\varepsilon_{ijk}\Omega_j u'_k\)</span> 中，<span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> <strong>全反對稱</strong>而 <span class="math notranslate nohighlight">\(u'_i u'_k\)</span> <strong>對稱</strong>，雙重縮併必為零（【推導 4】）。這一眼就看出「科氏力不做功」，完全免去傳統向量微積分中 <span class="math notranslate nohighlight">\(\mathbf{u}'\cdot(\boldsymbol{\Omega}\times\mathbf{u}')=0\)</span> 的外積展開。</p>
+<blockquote>
+<div><p><strong>符號釐清</strong>：本檔的 <span class="math notranslate nohighlight">\(\varepsilon\)</span> 有兩種用法，靠<strong>指標數量</strong>區分，不會混淆——
+<span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span>（<strong>三個指標</strong>）是 Levi-Civita 符號；<span class="math notranslate nohighlight">\(\varepsilon\)</span>（<strong>無指標</strong>）是黏滯耗散率（【定義 2】）。</p>
+</div></blockquote>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>先把所有武器編號攤開，之後的 <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">證明</span></code> 只做「引用」。</p>
+</div></blockquote>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#momentum-equation-navier-stokes">動量方程式 (Momentum Equation, Navier–Stokes)</a></strong> ： 以愛因斯坦求和約定改寫，並令 <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> 指向 <span class="math notranslate nohighlight">\(-z\)</span>，即 <span class="math notranslate nohighlight">\(g_i = -g\,\delta_{i3}\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla) \mathbf{u} &amp;=&amp; \mathbf{g} - \frac{1}{\rho} \nabla P + \frac{\mu}{\rho} \nabla^2 \mathbf{u} \\
+  \frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{\partial x_j} &amp;=&amp; -g\,\delta_{i3} - \frac{1}{\rho}\frac{\partial P}{\partial x_i} + \frac{\mu}{\rho}\frac{\partial^2 u_i}{\partial x_j \partial x_j}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span> : <span class="math notranslate nohighlight">\(3\)</span> 維速度向量 (velocity vector) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> : 壓力 (pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 密度 (density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 動力黏滯係數 (dynamic viscosity) <span class="math notranslate nohighlight">\([\text{Pa}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{g}\)</span> : 重力加速度向量 (gravitational acceleration) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u_i\)</span> : 速度分量 (velocity component) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span> : 座標分量 (coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 (time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 重力加速度大小 (gravity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-2}]\)</span>，<span class="math notranslate nohighlight">\(g \approx 9.81\ \text{m}\cdot\text{s}^{-2}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 張量工具 (Tensor Toolbox)</strong> ：詳見 <a class="reference internal" href="Levi-Civita_symbol.html"><span class="std std-doc">Levi-Civita symbol 主筆記</span></a>。</p>
+<ul>
+<li><p><strong>(a-1) Levi-Civita 符號的全反對稱性 (total antisymmetry)</strong>：交換任兩個指標即變號。</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon_{ijk} = -\varepsilon_{kji}\]</div>
+</li>
+<li><p><strong>(a-2) 以 Levi-Civita 符號展開外積 (cross product)</strong>：本檔以 <span class="math notranslate nohighlight">\(\overset{\text{LC}}{=}\)</span> 標記這一步。</p>
+<div class="math notranslate nohighlight">
+\[(\mathbf{a} \times \mathbf{b})_i \overset{\text{LC}}{=} \varepsilon_{ijk}\, a_j\, b_k\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> : Levi-Civita 符號分量 (Levi-Civita symbol)，值為 <span class="math notranslate nohighlight">\(\pm 1\)</span> 或 <span class="math notranslate nohighlight">\(0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a},\ \mathbf{b}\)</span> : <span class="math notranslate nohighlight">\(3\)</span> 維向量 (3-dim vector)</p></li>
+<li><p><span class="math notranslate nohighlight">\(i,j,k\)</span> : 指標 (index)，取值 <span class="math notranslate nohighlight">\(1,2,3\)</span>；重複指標依愛因斯坦求和約定 (<span class="math notranslate nohighlight">\(\overset{\text{Esc}}{=}\)</span>) 對 <span class="math notranslate nohighlight">\(1\)</span> 到 <span class="math notranslate nohighlight">\(3\)</span> 求和</p></li>
+</ul>
+</li>
+<li><p><strong>(b-1) Kronecker delta 的定義 (definition)</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\delta_{ij} \overset{\text{def}}{=} \begin{cases} 1 &amp; (i=j) \\ 0 &amp; (i \ne j)\end{cases}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\delta_{ij}\)</span> : Kronecker delta 分量 (Kronecker delta)，值為 <span class="math notranslate nohighlight">\(1\)</span> 或 <span class="math notranslate nohighlight">\(0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>(b-2) Kronecker delta 的篩選性質 (sifting property)</strong>：與 <span class="math notranslate nohighlight">\(\delta\)</span> 縮併，等於把啞指標換成 <span class="math notranslate nohighlight">\(\delta\)</span> 的另一個指標。</p>
+<div class="math notranslate nohighlight">
+\[\delta_{i3}\, A_i = A_3\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_i\)</span> : 任意帶指標量 (any indexed quantity)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 雷諾平均律 (Reynolds Averaging Rules)</strong> ：系集平均 <span class="math notranslate nohighlight">\(\overline{(\cdot)}\)</span> 的五條運算規則。設 <span class="math notranslate nohighlight">\(a,\ b\)</span> 為任意場量，<span class="math notranslate nohighlight">\(a'\)</span> 為擾動量、<span class="math notranslate nohighlight">\(\bar{a}\)</span> 為平均量。</p>
+<ul>
+<li><p><strong>(a) 線性 (linearity)</strong></p>
+<div class="math notranslate nohighlight">
+\[\overline{a + b} = \bar{a} + \bar{b}\]</div>
+</li>
+<li><p><strong>(b) 擾動的平均為零 (zero mean of perturbation)</strong></p>
+<div class="math notranslate nohighlight">
+\[\overline{a'} = 0\]</div>
+</li>
+<li><p><strong>(c) 平均量可提出平均之外 (mean is deterministic)</strong></p>
+<div class="math notranslate nohighlight">
+\[\overline{\bar{a}} = \bar{a}, \qquad \overline{\bar{a}\, b} = \bar{a}\,\bar{b}\]</div>
+</li>
+<li><p><strong>(d) 與空間微分可交換 (commutes with spatial derivative)</strong></p>
+<div class="math notranslate nohighlight">
+\[\overline{\frac{\partial a}{\partial x_j}} = \frac{\partial \bar{a}}{\partial x_j}\]</div>
+</li>
+<li><p><strong>(e) 與時間微分可交換 (commutes with time derivative)</strong></p>
+<div class="math notranslate nohighlight">
+\[\overline{\frac{\partial a}{\partial t}} = \frac{\partial \bar{a}}{\partial t}\]</div>
+</li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 雷諾分解 (Reynolds Decomposition)</strong> ：任一場量拆成「系集平均 + 擾動」。本檔採<strong>系集平均</strong>（對大量實現取平均），故平均量與擾動量<strong>都是 <span class="math notranslate nohighlight">\((x,y,z,t)\)</span> 的函數</strong>（例如 <span class="math notranslate nohighlight">\(u_i(x,y,z,t) = \bar{u}_i(x,y,z,t) + u'_i(x,y,z,t)\)</span>）；因為自變數完全相同，以下一律省略不寫。唯一的例外是【假設 3(c)】的基本態壓力 <span class="math notranslate nohighlight">\(P_0(z)\)</span>，它<strong>只</strong>依賴高度，那裡才特別標出自變數。</p>
+<ul>
+<li><p><strong>(a) 速度 (velocity)</strong></p>
+<div class="math notranslate nohighlight">
+\[u_i = \bar{u}_i + u'_i\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{u}_i\)</span> : 平均速度 (mean velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u'_i\)</span> : 擾動速度 (velocity perturbation) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span>；並令 <span class="math notranslate nohighlight">\(w' \overset{\text{let}}{=} u'_3\)</span> 為垂直擾動速度</p></li>
+</ul>
+</li>
+<li><p><strong>(b) 壓力 (pressure)</strong></p>
+<div class="math notranslate nohighlight">
+\[p = \bar{p} + p'\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{p}\)</span> : 平均擾動壓力 (mean of <span class="math notranslate nohighlight">\(p\)</span>) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p'\)</span> : 壓力擾動 (pressure perturbation) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>(c) 密度 (density)</strong>：這裡被分解的是密度<strong>偏差</strong> <span class="math notranslate nohighlight">\(\tilde{\rho}\)</span>（其定義見【假設 3(a)】），不是總密度 <span class="math notranslate nohighlight">\(\rho\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\rho} = \bar{\rho} + \rho'\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> : 密度偏差的平均 (mean of <span class="math notranslate nohighlight">\(\tilde{\rho}\)</span>) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho'\)</span> : 密度擾動 (density perturbation) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 不可壓縮 (Incompressibility)</strong> ：連續方程式退化為速度場無散度。</p>
+<ul>
+<li><p><strong>(a) 全速度場無散度 (divergence-free)</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u_i}{\partial x_i} = 0\]</div>
+</li>
+<li><p><strong>(b) 平均場無散度</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{\partial \bar{u}_i}{\partial x_i} &amp;\overset{\text{已知 3(d)}}{=}&amp; \overline{\frac{\partial u_i}{\partial x_i}} \\
+    &amp;\overset{\text{假設 2(a)}}{=}&amp; \overline{0} \\
+    &amp;=&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>(c) 擾動場無散度</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    0 &amp;\overset{\text{假設 2(a)}}{=}&amp; \frac{\partial u_i}{\partial x_i} \\
+    &amp;\overset{\text{假設 1(a)}}{=}&amp; \frac{\partial \bar{u}_i}{\partial x_i} + \frac{\partial u'_i}{\partial x_i} \\
+    &amp;\overset{\text{假設 2(b)}}{=}&amp; \frac{\partial u'_i}{\partial x_i}
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 Boussinesq 近似 (Boussinesq Approximation)</strong> ：把密度寫成「常數參考值 <span class="math notranslate nohighlight">\(\rho_0\)</span> ＋微小偏差 <span class="math notranslate nohighlight">\(\tilde{\rho}\)</span>」，並約定 <span class="math notranslate nohighlight">\(\tilde{\rho}\)</span> <strong>只在重力（浮力）項中保留</strong>，其餘各項一律以 <span class="math notranslate nohighlight">\(\rho_0\)</span> 取代 <span class="math notranslate nohighlight">\(\rho\)</span>。以下 (a)(b)(c) 分別處理密度、黏滯係數、壓力三個場量。</p>
+<ul>
+<li><p><strong>(a) 密度分解 (density decomposition)</strong>：<span class="math notranslate nohighlight">\(\tilde{\rho}\)</span> 是 <span class="math notranslate nohighlight">\(\rho\)</span> 對參考值 <span class="math notranslate nohighlight">\(\rho_0\)</span> 的偏差，且假設它遠小於 <span class="math notranslate nohighlight">\(\rho_0\)</span>；故在浮力項以外的地方 <span class="math notranslate nohighlight">\(\rho\)</span> 可直接近似為常數 <span class="math notranslate nohighlight">\(\rho_0\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \rho(x,y,z,t) &amp;\overset{\text{let}}{=}&amp; \rho_0 + \tilde{\rho}(x,y,z,t)\ , \qquad |\tilde{\rho}| \ll \rho_0 \\
+    &amp;\approx&amp; \rho_0
+    \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rho_0\)</span> : 常數參考密度 (constant reference density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span>，純量常數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{\rho}\)</span> : 密度對 <span class="math notranslate nohighlight">\(\rho_0\)</span> 的偏差 (density deviation) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span>，純量場；其雷諾分解見【假設 1(c)】</p></li>
+</ul>
+</li>
+<li><p><strong>(b) 運動黏滯係數為常數 (constant kinematic viscosity)</strong>：由 (a) 的 <span class="math notranslate nohighlight">\(\rho \approx \rho_0\)</span>，<span class="math notranslate nohighlight">\(\nu\)</span> 可提到微分之外。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \nu &amp;\overset{\text{def}}{=}&amp; \frac{\mu}{\rho} \\
+    &amp;\overset{\text{假設 3(a)}}{\approx}&amp; \frac{\mu}{\rho_0} \ =\ \text{常數}
+    \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 運動黏滯係數 (kinematic viscosity) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-1}]\)</span>，純量常數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 動力黏滯係數 (dynamic viscosity) <span class="math notranslate nohighlight">\([\text{Pa}\cdot\text{s}]\)</span>，見【已知 1】</p></li>
+</ul>
+</li>
+<li><p><strong>(c) 壓力分解 (pressure decomposition)</strong>：【已知 1】裡的 <span class="math notranslate nohighlight">\(P\)</span> 是<strong>總壓力</strong>。把它拆成「只隨高度變化的基本態 <span class="math notranslate nohighlight">\(P_0(z)\)</span>」與「其餘部分 <span class="math notranslate nohighlight">\(p\)</span>」；並要求 <span class="math notranslate nohighlight">\(P_0\)</span> 與參考密度 <span class="math notranslate nohighlight">\(\rho_0\)</span> 滿足<strong>靜力平衡 (hydrostatic balance)</strong>，<span class="math notranslate nohighlight">\(\dfrac{\mathrm{d}P_0}{\mathrm{d}z} = -\rho_0\, g\)</span>。第二列成立是因為 <span class="math notranslate nohighlight">\(P_0\)</span> 僅為 <span class="math notranslate nohighlight">\(z\,(=x_3)\)</span> 的函數，故 <span class="math notranslate nohighlight">\(i=1,2\)</span> 的偏微分為零。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    P(x,y,z,t) &amp;\overset{\text{let}}{=}&amp; P_0(z) + p(x,y,z,t) \\
+    \frac{\partial P_0}{\partial x_i} &amp;=&amp; \frac{\mathrm{d}P_0}{\mathrm{d}z}\,\delta_{i3} \\
+    &amp;\overset{\text{靜力平衡}}{=}&amp; -\rho_0\, g\, \delta_{i3}
+    \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P\)</span> : 總壓力 (total pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span>，純量場，即【已知 1】中的 <span class="math notranslate nohighlight">\(P\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_0(z)\)</span> : 靜力平衡基本態壓力 (hydrostatic base-state pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span>，僅依賴高度 <span class="math notranslate nohighlight">\(z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(x,y,z,t)\)</span> : 擾動壓力 (perturbation pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span>，純量場；其雷諾分解見【假設 1(b)】</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{i3}\)</span> : Kronecker delta，見【已知 2(b-1)】</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>【假設 4】 旋轉座標 (Rotating Frame)</strong> ：在隨地球轉動的座標系中，動量方程式右側須補上科氏加速度。</p>
+<div class="math notranslate nohighlight">
+\[(-2\,\boldsymbol{\Omega} \times \mathbf{u})_i \overset{\text{LC}}{=} -2\,\varepsilon_{ijk}\,\Omega_j\, u_k\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\boldsymbol{\Omega}\)</span> : 地球自轉角速度向量 (Earth’s rotation vector) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega_j\)</span> : 其第 <span class="math notranslate nohighlight">\(j\)</span> 分量 <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p>外積展開依【已知 2(a-2)】</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 紊流動能 (Turbulent Kinetic Energy, TKE)</strong> ：單位質量的擾動動能。</p>
+<div class="math notranslate nohighlight">
+\[e \overset{\text{def}}{=} \frac{1}{2}\overline{u'_i u'_i}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(e\)</span> : 單位質量紊流動能 (TKE per unit mass) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 黏滯耗散率 (Turbulent Dissipation Rate)</strong> ：擾動動能轉為熱能的速率，恆非負。</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon \overset{\text{def}}{=} \nu\,\overline{\frac{\partial u'_i}{\partial x_j}\frac{\partial u'_i}{\partial x_j}} \;\ge\; 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\varepsilon\)</span> : 耗散率 (dissipation rate) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-3}]\)</span>（<strong>無指標</strong>，勿與 Levi-Civita 的 <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> 混淆）</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 浮力項 (Buoyancy Term)</strong> ：把【已知 1】的重力項與壓力梯度項，在 Boussinesq 近似下合併。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  -g\,\delta_{i3} - \frac{1}{\rho}\frac{\partial P}{\partial x_i}
+  &amp;\overset{\text{假設 3(a),假設 3(c)}}{=}&amp; -g\,\delta_{i3} - \frac{1}{\rho_0 + \tilde{\rho}}\frac{\partial (P_0 + p)}{\partial x_i} \\
+  &amp;\overset{\text{假設 3(a)}}{\approx}&amp; -g\,\delta_{i3} - \frac{1}{\rho_0}\Bigl(1 - \frac{\tilde{\rho}}{\rho_0}\Bigr)\frac{\partial P_0}{\partial x_i} - \frac{1}{\rho_0}\frac{\partial p}{\partial x_i} \\
+  &amp;\overset{\text{假設 3(c)}}{=}&amp; -g\,\delta_{i3} - \frac{1}{\rho_0}\Bigl(1 - \frac{\tilde{\rho}}{\rho_0}\Bigr)\bigl(-\rho_0\, g\,\delta_{i3}\bigr) - \frac{1}{\rho_0}\frac{\partial p}{\partial x_i} \\
+  &amp;=&amp; -g\,\delta_{i3} + g\,\delta_{i3} - \frac{\tilde{\rho}}{\rho_0} g\,\delta_{i3} - \frac{1}{\rho_0}\frac{\partial p}{\partial x_i} \\
+  &amp;=&amp; -\frac{g\,\tilde{\rho}}{\rho_0}\,\delta_{i3} - \frac{1}{\rho_0}\frac{\partial p}{\partial x_i}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>第二列丟棄的是 <span class="math notranslate nohighlight">\(O(\tilde{\rho}^2/\rho_0^2)\)</span> 的高階小量（【假設 3(a)】的 <span class="math notranslate nohighlight">\(|\tilde{\rho}| \ll \rho_0\)</span>）。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 工作方程式 (Working Equation)</strong> ：把【推導 1】的浮力項與【假設 4】的科氏力代回【已知 1】，即本推導真正的起點。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{\partial x_j}
+  &amp;\overset{\text{已知 1,假設 4}}{=}&amp; -g\,\delta_{i3} - \frac{1}{\rho}\frac{\partial P}{\partial x_i} - 2\varepsilon_{ijk}\Omega_j u_k + \frac{\mu}{\rho}\frac{\partial^2 u_i}{\partial x_j \partial x_j} \\
+  &amp;\overset{\text{推導 1}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial p}{\partial x_i} - \frac{g\,\tilde{\rho}}{\rho_0}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j u_k + \frac{\mu}{\rho}\frac{\partial^2 u_i}{\partial x_j \partial x_j} \\
+  &amp;\overset{\text{假設 3(b)}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial p}{\partial x_i} - \frac{g\,\tilde{\rho}}{\rho_0}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j u_k + \nu \frac{\partial^2 u_i}{\partial x_j \partial x_j}
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【推導 3】 平均動量方程式 (Mean Momentum Equation)</strong> ：對【推導 2】的工作方程式整條取系集平均。(a)(b) 是逐項的中間結果，(c) 是本卡片要交付的方程式。</p>
+<ul>
+<li><p><strong>(a) 平流項取平均</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \overline{u_j \frac{\partial u_i}{\partial x_j}}
+    &amp;\overset{\text{chain rule}}{=}&amp; \overline{\frac{\partial}{\partial x_j}\Bigl[u_i u_j\Bigr] - u_i \frac{\partial u_j}{\partial x_j}} \\
+    &amp;\overset{\text{假設 2(a)}}{=}&amp; \overline{\frac{\partial}{\partial x_j}\Bigl[u_i u_j\Bigr]} \\
+    &amp;\overset{\text{已知 3(d)}}{=}&amp; \frac{\partial}{\partial x_j}\overline{u_i u_j} \\
+    &amp;\overset{\text{假設 1(a)}}{=}&amp; \frac{\partial}{\partial x_j}\overline{\Bigl[(\bar{u}_i + u'_i)(\bar{u}_j + u'_j)\Bigr]} \\
+    &amp;\overset{\text{已知 3(a)}}{=}&amp; \frac{\partial}{\partial x_j}\Bigl[\overline{\bar{u}_i \bar{u}_j} + \overline{\bar{u}_i u'_j} + \overline{u'_i \bar{u}_j} + \overline{u'_i u'_j}\Bigr] \\
+    &amp;\overset{\text{已知 3(c)}}{=}&amp; \frac{\partial}{\partial x_j}\Bigl[\bar{u}_i \bar{u}_j + \bar{u}_i \overline{u'_j} + \bar{u}_j \overline{u'_i} + \overline{u'_i u'_j}\Bigr] \\
+    &amp;\overset{\text{已知 3(b)}}{=}&amp; \frac{\partial}{\partial x_j}\Bigl[\bar{u}_i \bar{u}_j\Bigr] + \frac{\partial \overline{u'_i u'_j}}{\partial x_j} \\
+    &amp;\overset{\text{chain rule}}{=}&amp; \bar{u}_j \frac{\partial \bar{u}_i}{\partial x_j} + \bar{u}_i \frac{\partial \bar{u}_j}{\partial x_j} + \frac{\partial \overline{u'_i u'_j}}{\partial x_j} \\
+    &amp;\overset{\text{假設 2(b)}}{=}&amp; \bar{u}_j \frac{\partial \bar{u}_i}{\partial x_j} + \frac{\partial \overline{u'_i u'_j}}{\partial x_j}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>(b) 其餘各項取平均</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \overline{\frac{\partial u_i}{\partial t}} &amp;\overset{\text{已知 3(e)}}{=}&amp; \frac{\partial \bar{u}_i}{\partial t} \\
+    \overline{\frac{\partial p}{\partial x_i}} &amp;\overset{\text{已知 3(d)}}{=}&amp; \frac{\partial \bar{p}}{\partial x_i} \\
+    \overline{\tilde{\rho}} &amp;\overset{\text{假設 1(c)}}{=}&amp; \bar{\rho} \\
+    \overline{u_k} &amp;\overset{\text{假設 1(a),已知 3(b)}}{=}&amp; \bar{u}_k \\
+    \overline{\frac{\partial^2 u_i}{\partial x_j \partial x_j}} &amp;\overset{\text{已知 3(d)}}{=}&amp; \frac{\partial^2 \bar{u}_i}{\partial x_j \partial x_j}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>(c) 平均動量方程式</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \overline{\frac{\partial u_i}{\partial t}} + \overline{u_j \frac{\partial u_i}{\partial x_j}}
+    &amp;\overset{\text{推導 2,已知 3(a)}}{=}&amp; -\frac{1}{\rho_0}\overline{\frac{\partial p}{\partial x_i}} - \frac{g}{\rho_0}\overline{\tilde{\rho}}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j \overline{u_k} + \nu\, \overline{\frac{\partial^2 u_i}{\partial x_j \partial x_j}} \\
+    \frac{\partial \bar{u}_i}{\partial t} + \bar{u}_j \frac{\partial \bar{u}_i}{\partial x_j} + \frac{\partial \overline{u'_i u'_j}}{\partial x_j}
+    &amp;\overset{\text{推導 3(a),推導 3(b)}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial \bar{p}}{\partial x_i} - \frac{g\,\bar{\rho}}{\rho_0}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j \bar{u}_k + \nu \frac{\partial^2 \bar{u}_i}{\partial x_j \partial x_j}
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 科氏力項歸零 (Coriolis Term Vanishes)</strong> ：反對稱張量 <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> 與對稱張量 <span class="math notranslate nohighlight">\(u'_i u'_k\)</span> 的雙重縮併必為零。這是本推導最關鍵的一步。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \varepsilon_{ijk}\, u'_i u'_k &amp;\overset{\text{啞指標改名 } i \leftrightarrow k}{=}&amp; \varepsilon_{kji}\, u'_k u'_i \\
+  &amp;\overset{\text{已知 2(a-1)}}{=}&amp; -\varepsilon_{ijk}\, u'_k u'_i \\
+  &amp;=&amp; -\varepsilon_{ijk}\, u'_i u'_k \\
+  2\,\varepsilon_{ijk}\, u'_i u'_k &amp;=&amp; 0 \\
+  \varepsilon_{ijk}\, u'_i u'_k &amp;=&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>物理意義</strong>：科氏力恆與速度垂直，故對流體<strong>不做功</strong>，不能生成或消滅 TKE。</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 黏滯項拆分 (Splitting the Viscous Term)</strong> ：把 <span class="math notranslate nohighlight">\(u'_i\)</span> 乘上黏滯項後的平均，拆成「黏滯擴散」與「耗散」。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \nu\, u'_i \frac{\partial^2 u'_i}{\partial x_j \partial x_j}
+  &amp;\overset{\text{chain rule}}{=}&amp; \nu\,\frac{\partial}{\partial x_j}\Bigl[u'_i \frac{\partial u'_i}{\partial x_j}\Bigr] - \nu\,\frac{\partial u'_i}{\partial x_j}\frac{\partial u'_i}{\partial x_j} \\
+  &amp;\overset{\text{chain rule}}{=}&amp; \nu\,\frac{\partial}{\partial x_j}\frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}u'_i u'_i\Bigr] - \nu\,\frac{\partial u'_i}{\partial x_j}\frac{\partial u'_i}{\partial x_j} \\
+  \nu\,\overline{u'_i \frac{\partial^2 u'_i}{\partial x_j \partial x_j}}
+  &amp;\overset{\text{已知 3(d)}}{=}&amp; \nu\,\frac{\partial^2}{\partial x_j \partial x_j}\overline{\Bigl[\frac{1}{2}u'_i u'_i\Bigr]} - \nu\,\overline{\frac{\partial u'_i}{\partial x_j}\frac{\partial u'_i}{\partial x_j}} \\
+  &amp;\overset{\text{定義 1,定義 2}}{=}&amp; \nu\,\frac{\partial^2 e}{\partial x_j \partial x_j} - \varepsilon
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【推導 6】 內積 <span class="math notranslate nohighlight">\(u'_i\)</span> 後各項的合併 (Term-by-term Reduction after Dotting with <span class="math notranslate nohighlight">\(u'_i\)</span>)</strong> ：以下六個小結果供 Step 2 直接引用。</p>
+<ul>
+<li><p><strong>(a) 時間項</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \overline{u'_i \frac{\partial u'_i}{\partial t}} &amp;\overset{\text{chain rule}}{=}&amp; \overline{\frac{\partial}{\partial t}\Bigl[\frac{1}{2}u'_i u'_i\Bigr]} \\
+    &amp;\overset{\text{已知 3(e)}}{=}&amp; \frac{\partial}{\partial t}\overline{\Bigl[\frac{1}{2}u'_i u'_i\Bigr]} \\
+    &amp;\overset{\text{定義 1}}{=}&amp; \frac{\partial e}{\partial t}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>(b) 平均流平流項</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \overline{\bar{u}_j\, u'_i \frac{\partial u'_i}{\partial x_j}} &amp;\overset{\text{chain rule}}{=}&amp; \overline{\bar{u}_j \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}u'_i u'_i\Bigr]} \\
+    &amp;\overset{\text{已知 3(c)}}{=}&amp; \bar{u}_j\, \overline{\frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}u'_i u'_i\Bigr]} \\
+    &amp;\overset{\text{已知 3(d)}}{=}&amp; \bar{u}_j \frac{\partial}{\partial x_j}\overline{\Bigl[\frac{1}{2}u'_i u'_i\Bigr]} \\
+    &amp;\overset{\text{定義 1}}{=}&amp; \bar{u}_j \frac{\partial e}{\partial x_j}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>(c) 剪力生成項</strong></p>
+<div class="math notranslate nohighlight">
+\[\overline{u'_i u'_j \frac{\partial \bar{u}_i}{\partial x_j}} \overset{\text{已知 3(c)}}{=} \overline{u'_i u'_j}\,\frac{\partial \bar{u}_i}{\partial x_j}\]</div>
+</li>
+<li><p><strong>(d) 三階動差傳輸項</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    u'_i u'_j \frac{\partial u'_i}{\partial x_j} &amp;\overset{\text{chain rule}}{=}&amp; u'_j \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}u'_i u'_i\Bigr] \\
+    &amp;\overset{\text{chain rule}}{=}&amp; \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}u'_i u'_i u'_j\Bigr] - \frac{1}{2}u'_i u'_i \frac{\partial u'_j}{\partial x_j} \\
+    &amp;\overset{\text{假設 2(c)}}{=}&amp; \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}u'_i u'_i u'_j\Bigr] \\
+    \overline{u'_i u'_j \frac{\partial u'_i}{\partial x_j}} &amp;\overset{\text{已知 3(d)}}{=}&amp; \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}\overline{u'_i u'_i u'_j}\Bigr]
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>(e) 雷諾應力散度項歸零</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \overline{u'_i \frac{\partial \overline{u'_i u'_j}}{\partial x_j}} &amp;\overset{\text{已知 3(c)}}{=}&amp; \frac{\partial \overline{u'_i u'_j}}{\partial x_j}\,\overline{u'_i} \\
+    &amp;\overset{\text{已知 3(b)}}{=}&amp; 0
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>(f) 壓力項</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    u'_i \frac{\partial p'}{\partial x_i} &amp;\overset{\text{chain rule}}{=}&amp; \frac{\partial}{\partial x_i}\Bigl[p' u'_i\Bigr] - p' \frac{\partial u'_i}{\partial x_i} \\
+    &amp;\overset{\text{假設 2(c)}}{=}&amp; \frac{\partial}{\partial x_i}\Bigl[p' u'_i\Bigr] \\
+    \overline{u'_i \frac{\partial p'}{\partial x_i}} &amp;\overset{\text{已知 3(d)}}{=}&amp; \frac{\partial \overline{p' u'_i}}{\partial x_i}
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="derivation">
+<h2>證明 (Derivation)<a class="headerlink" href="#derivation" title="Link to this heading">#</a></h2>
+<section id="step-1-proof-perturbation-momentum-equation">
+<h3>Step 1 proof 擾動動量方程式 (Perturbation Momentum Equation)<a class="headerlink" href="#step-1-proof-perturbation-momentum-equation" title="Link to this heading">#</a></h3>
+<p>從【推導 2】的<strong>工作方程式</strong>出發（第一列），以【假設 1】把全場量展開成「平均 ＋ 擾動」（第二列）；寫下【推導 3(c)】的<strong>平均動量方程式</strong>（第三列）；第二列減第三列，即得<strong>擾動動量方程式</strong>（第四列）。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{\partial x_j}
+&amp;\overset{\text{推導 2}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial p}{\partial x_i} - \frac{g\,\tilde{\rho}}{\rho_0}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j u_k + \nu \frac{\partial^2 u_i}{\partial x_j \partial x_j} \\
+\frac{\partial \bar{u}_i}{\partial t} + \frac{\partial u'_i}{\partial t} + \bar{u}_j \frac{\partial \bar{u}_i}{\partial x_j} + \bar{u}_j \frac{\partial u'_i}{\partial x_j} + u'_j \frac{\partial \bar{u}_i}{\partial x_j} + u'_j \frac{\partial u'_i}{\partial x_j}
+&amp;\overset{\text{假設 1}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial (\bar{p} + p')}{\partial x_i} - \frac{g\,(\bar{\rho} + \rho')}{\rho_0}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j (\bar{u}_k + u'_k) + \nu \frac{\partial^2 (\bar{u}_i + u'_i)}{\partial x_j \partial x_j} \\
+\frac{\partial \bar{u}_i}{\partial t} + \bar{u}_j \frac{\partial \bar{u}_i}{\partial x_j} + \frac{\partial \overline{u'_i u'_j}}{\partial x_j}
+&amp;\overset{\text{推導 3(c)}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial \bar{p}}{\partial x_i} - \frac{g\,\bar{\rho}}{\rho_0}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j \bar{u}_k + \nu \frac{\partial^2 \bar{u}_i}{\partial x_j \partial x_j} \\
+\frac{\partial u'_i}{\partial t} + \bar{u}_j \frac{\partial u'_i}{\partial x_j} + u'_j \frac{\partial \bar{u}_i}{\partial x_j} + u'_j \frac{\partial u'_i}{\partial x_j} - \frac{\partial \overline{u'_i u'_j}}{\partial x_j}
+&amp;\overset{\text{第二列} - \text{第三列}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial p'}{\partial x_i} - \frac{g\,\rho'}{\rho_0}\,\delta_{i3} - 2\varepsilon_{ijk}\Omega_j u'_k + \nu \frac{\partial^2 u'_i}{\partial x_j \partial x_j}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="step-2-proof-u-i-tke-dot-with-u-i-average-rearrange">
+<h3>Step 2 proof 內積 <span class="math notranslate nohighlight">\(u'_i\)</span> 取平均並整理成 TKE 方程式 (Dot with <span class="math notranslate nohighlight">\(u'_i\)</span>, Average, Rearrange)<a class="headerlink" href="#step-2-proof-u-i-tke-dot-with-u-i-average-rearrange" title="Link to this heading">#</a></h3>
+<p>把 Step 1 的擾動動量方程式整條乘上 <span class="math notranslate nohighlight">\(u'_i\)</span> 再取系集平均，逐項套用【推導 4】【推導 5】【推導 6】，最後移項並把傳輸項收成單一散度。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\overline{u'_i \frac{\partial u'_i}{\partial t}} + \overline{\bar{u}_j u'_i \frac{\partial u'_i}{\partial x_j}} + \overline{u'_i u'_j \frac{\partial \bar{u}_i}{\partial x_j}} + \overline{u'_i u'_j \frac{\partial u'_i}{\partial x_j}} - \overline{u'_i \frac{\partial \overline{u'_i u'_j}}{\partial x_j}}
+&amp;\overset{\text{Step 1} \times u'_i}{=}&amp; -\frac{1}{\rho_0}\overline{u'_i \frac{\partial p'}{\partial x_i}} - \frac{g}{\rho_0}\delta_{i3}\,\overline{u'_i \rho'} - 2\Omega_j\, \overline{\varepsilon_{ijk} u'_i u'_k} + \nu\, \overline{u'_i \frac{\partial^2 u'_i}{\partial x_j \partial x_j}} \\
+\frac{\partial e}{\partial t} + \bar{u}_j \frac{\partial e}{\partial x_j} + \overline{u'_i u'_j}\frac{\partial \bar{u}_i}{\partial x_j} + \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}\overline{u'_i u'_i u'_j}\Bigr] - 0
+&amp;\overset{\text{推導 6}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial \overline{p' u'_j}}{\partial x_j} - \frac{g}{\rho_0}\delta_{i3}\,\overline{u'_i \rho'} - 2\Omega_j\, \overline{\varepsilon_{ijk} u'_i u'_k} + \nu\, \overline{u'_i \frac{\partial^2 u'_i}{\partial x_j \partial x_j}} \\
+\frac{\partial e}{\partial t} + \bar{u}_j \frac{\partial e}{\partial x_j} + \overline{u'_i u'_j}\frac{\partial \bar{u}_i}{\partial x_j} + \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}\overline{u'_i u'_i u'_j}\Bigr]
+&amp;\overset{\text{已知 2(b-2),推導 4,推導 5}}{=}&amp; -\frac{1}{\rho_0}\frac{\partial \overline{p' u'_j}}{\partial x_j} - \frac{g}{\rho_0}\overline{w' \rho'} + \nu \frac{\partial^2 e}{\partial x_j \partial x_j} - \varepsilon \\
+\frac{\partial e}{\partial t} + \bar{u}_j \frac{\partial e}{\partial x_j}
+&amp;=&amp; -\overline{u'_i u'_j}\frac{\partial \bar{u}_i}{\partial x_j} - \frac{g}{\rho_0}\overline{w' \rho'} - \frac{1}{\rho_0}\frac{\partial \overline{p' u'_j}}{\partial x_j} - \frac{\partial}{\partial x_j}\Bigl[\frac{1}{2}\overline{u'_i u'_i u'_j}\Bigr] + \nu \frac{\partial^2 e}{\partial x_j \partial x_j} - \varepsilon \\
+&amp;=&amp; -\overline{u'_i u'_j}\frac{\partial \bar{u}_i}{\partial x_j} - \frac{g}{\rho_0}\overline{w' \rho'} - \frac{\partial}{\partial x_j}\Bigl[\frac{1}{\rho_0}\overline{p' u'_j} + \frac{1}{2}\overline{u'_i u'_i u'_j} - \nu \frac{\partial e}{\partial x_j}\Bigr] - \varepsilon
+\end{gather*}\end{split}\]</div>
+<p>即得 <strong>TKE 方程式</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial e}{\partial t} + \bar{u}_j \frac{\partial e}{\partial x_j} = \underbrace{-\overline{u'_i u'_j}\frac{\partial \bar{u}_i}{\partial x_j}}_{M} \underbrace{- \frac{g}{\rho_0}\overline{w' \rho'}}_{B} \underbrace{- \frac{\partial}{\partial x_j}\Bigl[\frac{1}{\rho_0}\overline{p' u'_j} + \frac{1}{2}\overline{u'_i u'_i u'_j} - \nu \frac{\partial e}{\partial x_j}\Bigr]}_{T} \underbrace{- \varepsilon}_{\text{耗散}}\]</div>
+</section>
+</section>
+<section id="vector-form-physical-meaning">
+<h2>向量形式對照與物理意義 (Vector Form &amp; Physical Meaning)<a class="headerlink" href="#vector-form-physical-meaning" title="Link to this heading">#</a></h2>
+<section id="vector-form">
+<h3>向量形式 (vector form)<a class="headerlink" href="#vector-form" title="Link to this heading">#</a></h3>
+<p>指標形式利於推導，向量形式利於理解幾何與物理。逐項翻譯：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial e}{\partial t} + (\bar{\mathbf{u}} \cdot \nabla) e = -\overline{\mathbf{u}' \cdot \bigl[(\mathbf{u}' \cdot \nabla) \bar{\mathbf{u}}\bigr]} - \frac{g}{\rho_0}\overline{w' \rho'} - \nabla \cdot \Bigl(\frac{1}{\rho_0}\overline{p' \mathbf{u}'} + \frac{1}{2}\overline{|\mathbf{u}'|^2\, \mathbf{u}'} - \nu \nabla e\Bigr) - \varepsilon\]</div>
+<ul>
+<li><p>剪力生成項的翻譯：<span class="math notranslate nohighlight">\((\mathbf{u}' \cdot \nabla) \bar{\mathbf{u}}\)</span> 的第 <span class="math notranslate nohighlight">\(i\)</span> 分量為 <span class="math notranslate nohighlight">\(u'_j \dfrac{\partial \bar{u}_i}{\partial x_j}\)</span>（擾動沿自身方向「看到」的平均流變化）；再與 <span class="math notranslate nohighlight">\(\mathbf{u}'\)</span> 內積並取平均，因 <span class="math notranslate nohighlight">\(\bar{\mathbf{u}}\)</span> 已是平均量可提到平均號外，故</p>
+<div class="math notranslate nohighlight">
+\[\overline{\mathbf{u}' \cdot \bigl[(\mathbf{u}' \cdot \nabla) \bar{\mathbf{u}}\bigr]} \overset{\text{Esc}}{=} \overline{u'_i u'_j \frac{\partial \bar{u}_i}{\partial x_j}} = \overline{u'_i u'_j}\frac{\partial \bar{u}_i}{\partial x_j}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(|\mathbf{u}'|^2 = \mathbf{u}' \cdot \mathbf{u}' \overset{\text{Esc}}{=} u'_i u'_i\)</span>；<span class="math notranslate nohighlight">\(\nabla \cdot (\cdots)\)</span> 對應指標形式的 <span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial x_j}(\cdots)_j\)</span>。</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>各項物理意義<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>項</p></th>
+<th class="head"><p>指標形式</p></th>
+<th class="head"><p>名稱</p></th>
+<th class="head"><p>物理意義</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\dfrac{\partial e}{\partial t} + \bar{u}_j \dfrac{\partial e}{\partial x_j}\)</span></p></td>
+<td><p>—</p></td>
+<td><p>全導數 (material derivative)</p></td>
+<td><p>TKE 沿平均流的時間變化率 + 平均平流</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(M\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\overline{u'_i u'_j}\dfrac{\partial \bar{u}_i}{\partial x_j}\)</span></p></td>
+<td><p>剪力生成 (shear production)</p></td>
+<td><p>平均流動能經雷諾應力轉換給亂流；有風切就有亂流</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\dfrac{g}{\rho_0}\overline{w' \rho'}\)</span></p></td>
+<td><p>浮力生成／消耗 (buoyancy production)</p></td>
+<td><p>輕的往上（<span class="math notranslate nohighlight">\(\overline{w'\rho'}&lt;0\)</span>）則 <span class="math notranslate nohighlight">\(B&gt;0\)</span> 產生亂流；穩定層結則消耗亂流</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\dfrac{\partial}{\partial x_j}\Bigl[\cdots\Bigr]\)</span></p></td>
+<td><p>傳輸 (transport)</p></td>
+<td><p>壓力做功 + 三階動差傳輸 + 黏滯擴散；<strong>散度形式</strong>故只重分布、不產生淨能量</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\varepsilon\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\nu\,\overline{\dfrac{\partial u'_i}{\partial x_j}\dfrac{\partial u'_i}{\partial x_j}}\)</span></p></td>
+<td><p>黏滯耗散 (dissipation)</p></td>
+<td><p>動能轉為熱能，恆 <span class="math notranslate nohighlight">\(\ge 0\)</span>，是 TKE 的最終匯</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>科氏力項在 Step 2 已由【推導 4】歸零，<strong>不出現</strong>在 TKE 方程式中——科氏力不做功。</p></li>
+<li><p>若定義浮力 <span class="math notranslate nohighlight">\(b' \overset{\text{def}}{=} -\dfrac{g\rho'}{\rho_0}\)</span>，則浮力項可寫成更常見的 <span class="math notranslate nohighlight">\(B = \overline{w' b'}\)</span>。</p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2>參考資料<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://boundary-layer-meteo.github.io/lectures/7_tke.html">Boundary Layer Meteorology — TKE</a></p></li>
+<li><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#momentum-equation-navier-stokes">動量方程式 (Navier–Stokes) — Advanced Atmospheric Dynamics, week1</a></p></li>
+<li><p><a class="reference internal" href="Levi-Civita_symbol.html"><span class="std std-doc">Levi-Civita symbol 主筆記</span></a></p></li>
+</ul>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -427,6 +888,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Levi-Civita_symbol.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Levi-Civita Symbol in 3D</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="new_project.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">讓我們試著把您學到的恆等式 <span class="math notranslate nohighlight">\(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\)</span>，直接對應到風場與渦度上！</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -442,9 +921,20 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">證明 (Derivation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-proof-perturbation-momentum-equation">Step 1 proof 擾動動量方程式 (Perturbation Momentum Equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-proof-u-i-tke-dot-with-u-i-average-rearrange">Step 2 proof 內積 <span class="math notranslate nohighlight">\(u'_i\)</span> 取平均並整理成 TKE 方程式 (Dot with <span class="math notranslate nohighlight">\(u'_i\)</span>, Average, Rearrange)</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-form-physical-meaning">向量形式對照與物理意義 (Vector Form &amp; Physical Meaning)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-form">向量形式 (vector form)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">各項物理意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">參考資料</a></li>
+</ul>
   </nav></div>
 
 </div></div>
