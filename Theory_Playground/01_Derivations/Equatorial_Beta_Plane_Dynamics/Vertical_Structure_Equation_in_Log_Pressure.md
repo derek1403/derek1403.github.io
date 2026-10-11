@@ -64,7 +64,10 @@ $$z_m \approx 0.5803\,z_T$$
 
 * **【已知 2】 [二階線性常係數常微分方程式的通解 (General solution of a second-order linear ODE with constant coefficients)](https://dlmf.nist.gov/1.13)：** 特徵方程式有一對純虛根 $\pm ik$ 時，通解為正弦與餘弦的線性組合。（標準結果，此處直接引用。）
 
-  $$\frac{d^{2}Y}{dz^{2}} + k^{2}Y = 0 \quad \Longleftrightarrow \quad Y(z) = A\sin\left(kz\right) + B\cos\left(kz\right)$$
+  $$\begin{gather*}
+  &\frac{d^{2}Y}{dz^{2}} + k^{2}Y &=& 0  \\
+  \Rightarrow & Y(z) &=& A\sin\left(kz\right) + B\cos\left(kz\right)
+  \end{gather*}$$
 
   * $Y(z)$ : 待解函數 (Unknown function) $[\text{依應用而定}]$
   * $k$ : 垂直波數 (Vertical wavenumber) $[\text{無單位}]$
